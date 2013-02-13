@@ -1,0 +1,601 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Los fundamentos}{1}{part.I}
+\contentsline {chapter}{\numberline {1}Introducci\'on. \IeC {\textquestiondown }Qu\'e es un SIG?}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Un peque\~no ejemplo}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}\IeC {\textquestiondown }Qu\'e es un SIG?}{8}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}SIG como integrador de informaci\'on}{9}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}SIG como integrador de tecnolog\IeC {\'\i }as}{10}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}SIG como integrador de personas}{10}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}SIG como integrador de teor\IeC {\'\i }as y fundamentos}{11}{subsection.1.3.4}
+\contentsline {section}{\numberline {1.4}\IeC {\textquestiondown }Qu\'e no es un SIG?}{12}{section.1.4}
+\contentsline {section}{\numberline {1.5}Componentes de un SIG}{15}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Datos}{18}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Procesos}{19}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Visualizaci\'on}{19}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.4}Tecnolog\IeC {\'\i }a}{20}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.5.5}Factor organizativo}{21}{subsection.1.5.5}
+\contentsline {section}{\numberline {1.6}Resumen}{22}{section.1.6}
+\contentsline {chapter}{\numberline {2}Historia de los SIG}{23}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introducci\'on}{23}{section.2.1}
+\contentsline {section}{\numberline {2.2}Los or\IeC {\'\i }genes}{23}{section.2.2}
+\contentsline {section}{\numberline {2.3}La evoluci\'on de los SIG como disciplina}{26}{section.2.3}
+\contentsline {section}{\numberline {2.4}La evoluci\'on de la tecnolog\IeC {\'\i }a}{28}{section.2.4}
+\contentsline {section}{\numberline {2.5}La evoluci\'on de los datos}{30}{section.2.5}
+\contentsline {section}{\numberline {2.6}La evoluci\'on de las t\'ecnicas y formulaciones}{31}{section.2.6}
+\contentsline {section}{\numberline {2.7}Resumen}{33}{section.2.7}
+\contentsline {chapter}{\numberline {3}Fundamentos cartogr\'aficos y geod\'esicos}{35}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introducci\'on}{35}{section.3.1}
+\contentsline {section}{\numberline {3.2}Conceptos geod\'esicos b\'asicos}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Elipsoide de referencia y geoide}{37}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}El datum geod\'esico}{40}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Sistemas de coordenadas}{41}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Coordenadas geogr\'aficas}{41}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Proyecciones cartogr\'aficas}{42}{subsection.3.3.2}
+\contentsline {subsubsection}{Tipos de proyecciones}{44}{section*.10}
+\contentsline {subsection}{\numberline {3.3.3}El sistema UTM}{47}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Transformaci\'on y conversi\'on de coordenadas}{49}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Codificaci\'on de sistemas de referencia}{49}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Escala}{50}{section.3.4}
+\contentsline {section}{\numberline {3.5}Generalizaci\'on cartogr\'afica}{52}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Operaciones de generalizaci\'on}{53}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Generalizaci\'on en el contexto de un SIG}{54}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Resumen}{57}{section.3.6}
+\contentsline {part}{II\hspace {1em}Los datos}{59}{part.II}
+\contentsline {chapter}{\numberline {4}Introducci\'on. \IeC {\textquestiondown }Con qu\'e trabajo en un SIG?}{63}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{63}{section.4.1}
+\contentsline {section}{\numberline {4.2}Datos \emph {vs} Informaci\'on}{63}{section.4.2}
+\contentsline {section}{\numberline {4.3}Las componentes de la informaci\'on geogr\'afica}{65}{section.4.3}
+\contentsline {section}{\numberline {4.4}Divisi\'on horizontal de la informaci\'on geogr\'afica}{67}{section.4.4}
+\contentsline {section}{\numberline {4.5}Divisi\'on vertical de la informaci\'on. Capas}{69}{section.4.5}
+\contentsline {section}{\numberline {4.6}Resumen}{72}{section.4.6}
+\contentsline {chapter}{\numberline {5}Modelos para la informaci\'on geogr\'afica}{73}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introducci\'on}{73}{section.5.1}
+\contentsline {section}{\numberline {5.2}Modelos geogr\'aficos}{74}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Campos}{74}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Entidades discretas}{75}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Modelos de representaci\'on}{76}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Modelo r\'aster}{79}{subsection.5.3.1}
+\contentsline {subsubsection}{El caso de las im\'agenes}{83}{section*.11}
+\contentsline {subsection}{\numberline {5.3.2}Modelo vectorial}{84}{subsection.5.3.2}
+\contentsline {subsubsection}{La componente tem\'atica en el modelo vectorial}{87}{section*.12}
+\contentsline {subsubsection}{Topolog\IeC {\'\i }a}{88}{section*.13}
+\contentsline {subsubsection}{Modelo vectorial sin topolog\IeC {\'\i }a (\emph {spaguetti})}{90}{section*.14}
+\contentsline {subsubsection}{Con topolog\IeC {\'\i }a}{91}{section*.15}
+\contentsline {subsubsection}{TIN}{94}{section*.16}
+\contentsline {subsection}{\numberline {5.3.3}Raster \emph {vs} vectorial}{95}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Modelos de almacenamiento}{98}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Modelos para representaciones r\'aster}{98}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Modelos para representaciones vectoriales}{103}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Resumen}{106}{section.5.5}
+\contentsline {chapter}{\numberline {6}Fuentes principales de datos espaciales}{107}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introducci\'on}{107}{section.6.1}
+\contentsline {section}{\numberline {6.2}Datos digitales y datos anal\'ogicos}{108}{section.6.2}
+\contentsline {section}{\numberline {6.3}Fuentes primarias y fuentes secundarias}{110}{section.6.3}
+\contentsline {section}{\numberline {6.4}Teledetecci\'on}{110}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Fundamentos f\IeC {\'\i }sicos}{112}{subsection.6.4.1}
+\contentsline {subsubsection}{La radiaci\'on electromagn\'etica}{112}{section*.17}
+\contentsline {subsubsection}{Interacci\'on entre radiaci\'on y materia}{114}{section*.18}
+\contentsline {subsection}{\numberline {6.4.2}Sensores y plataformas}{115}{subsection.6.4.2}
+\contentsline {subsubsection}{Plataformas}{115}{section*.19}
+\contentsline {subsubsection}{Sensores}{117}{section*.20}
+\contentsline {subsubsection}{Resoluciones}{119}{section*.21}
+\contentsline {subsection}{\numberline {6.4.3}Principales sensores y productos}{123}{subsection.6.4.3}
+\contentsline {section}{\numberline {6.5}Cartograf\IeC {\'\i }a impresa. Digitalizaci\'on}{125}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Digitalizaci\'on manual}{126}{subsection.6.5.1}
+\contentsline {subsubsection}{Con equipo especializado (\emph {heads--down})}{127}{section*.22}
+\contentsline {subsubsection}{En pantalla (\emph {heads--up})}{128}{section*.23}
+\contentsline {subsection}{\numberline {6.5.2}Digitalizaci\'on autom\'atica}{130}{subsection.6.5.2}
+\contentsline {subsubsection}{Escaneo}{131}{section*.24}
+\contentsline {subsubsection}{Vectorizaci\'on autom\'atica}{134}{section*.25}
+\contentsline {subsection}{\numberline {6.5.3}Digitalizaci\'on o creaci\'on de capas a partir de coordenadas. Geocodificaci\'on}{135}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {6.5.4}Fotogrametr\IeC {\'\i }a}{138}{subsection.6.5.4}
+\contentsline {subsection}{\numberline {6.5.5}Calidad de la digitalizaci\'on}{141}{subsection.6.5.5}
+\contentsline {section}{\numberline {6.6}GPS}{143}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Fundamentos del sistema GPS}{143}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Tipos de receptores}{147}{subsection.6.6.2}
+\contentsline {subsection}{\numberline {6.6.3}Operaciones con la unidad GPS}{149}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.4}Integraci\'on de GPS y SIG}{152}{subsection.6.6.4}
+\contentsline {section}{\numberline {6.7}Informaci\'on Geogr\'afica Voluntaria}{153}{section.6.7}
+\contentsline {section}{\numberline {6.8}Sobre cartograf\IeC {\'\i }a de elevaciones}{155}{section.6.8}
+\contentsline {section}{\numberline {6.9}Formatos de archivo}{157}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Formatos para datos r\'aster}{158}{subsection.6.9.1}
+\contentsline {subsubsection}{Formatos para im\'agenes}{158}{section*.26}
+\contentsline {subsubsection}{Formatos para datos SIG}{160}{section*.27}
+\contentsline {subsubsection}{Principales formatos existentes}{161}{section*.28}
+\contentsline {subsection}{\numberline {6.9.2}Formatos para datos vectoriales}{162}{subsection.6.9.2}
+\contentsline {subsubsection}{Principales formatos existentes}{163}{section*.29}
+\contentsline {section}{\numberline {6.10}Resumen}{163}{section.6.10}
+\contentsline {chapter}{\numberline {7}La calidad de los datos espaciales}{165}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introducci\'on}{165}{section.7.1}
+\contentsline {section}{\numberline {7.2}La importancia de la calidad de los datos}{166}{section.7.2}
+\contentsline {section}{\numberline {7.3}Conceptos y definiciones sobre calidad de datos}{167}{section.7.3}
+\contentsline {section}{\numberline {7.4}Fuentes y tipos de errores}{168}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Las componentes de la calidad}{169}{subsection.7.4.1}
+\contentsline {section}{\numberline {7.5}Detecci\'on y medici\'on de errores}{172}{section.7.5}
+\contentsline {section}{\numberline {7.6}Propagaci\'on de errores y modelaci\'on del error}{175}{section.7.6}
+\contentsline {section}{\numberline {7.7}Gesti\'on de errores}{177}{section.7.7}
+\contentsline {section}{\numberline {7.8}Resumen}{178}{section.7.8}
+\contentsline {chapter}{\numberline {8}Bases de datos}{181}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introducci\'on}{181}{section.8.1}
+\contentsline {section}{\numberline {8.2}Fundamentos de bases de datos}{182}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}\IeC {\textquestiondown }Qu\'e es una base de datos?}{182}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}\IeC {\textquestiondown }Por qu\'e interesa usar una base de datos?}{183}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Modelos de bases de datos}{185}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Bases de datos relacionales}{186}{subsection.8.2.4}
+\contentsline {subsection}{\numberline {8.2.5}Sistemas gestores de bases de datos}{190}{subsection.8.2.5}
+\contentsline {subsection}{\numberline {8.2.6}Dise\~no y creaci\'on de una base de datos}{191}{subsection.8.2.6}
+\contentsline {subsection}{\numberline {8.2.7}Bases de datos espaciales}{196}{subsection.8.2.7}
+\contentsline {section}{\numberline {8.3}Evoluci\'on del uso de bases de datos en los SIG}{197}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Primera generaci\'on. Ficheros}{197}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Segunda generaci\'on. Bases de datos relacionales}{197}{subsection.8.3.2}
+\contentsline {subsubsection}{Arquitectura dual}{198}{section*.30}
+\contentsline {subsubsection}{Arquitectura en capas}{199}{section*.31}
+\contentsline {subsection}{\numberline {8.3.3}Tercera generaci\'on. Bases de datos extensibles}{200}{subsection.8.3.3}
+\contentsline {section}{\numberline {8.4}Resumen}{201}{section.8.4}
+\contentsline {part}{III\hspace {1em}Los procesos}{203}{part.III}
+\contentsline {chapter}{\numberline {9}Introducci\'on. \IeC {\textquestiondown }Qu\'e puedo hacer con un SIG?}{207}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introducci\'on}{207}{section.9.1}
+\contentsline {section}{\numberline {9.2}\IeC {\textquestiondown }Qu\'e es el an\'alisis espacial?}{208}{section.9.2}
+\contentsline {section}{\numberline {9.3}Razonamiento y consulta geogr\'afica en un SIG}{209}{section.9.3}
+\contentsline {section}{\numberline {9.4}Tipos de an\'alisis espacial}{211}{section.9.4}
+\contentsline {section}{\numberline {9.5}Resumen}{215}{section.9.5}
+\contentsline {chapter}{\numberline {10}Conceptos b\'asicos para el an\'alisis espacial}{217}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introducci\'on}{217}{section.10.1}
+\contentsline {section}{\numberline {10.2}Particularidades de los datos espaciales}{218}{section.10.2}
+\contentsline {subsection}{\numberline {10.2.1}Escala}{218}{subsection.10.2.1}
+\contentsline {subsection}{\numberline {10.2.2}El \emph {Problema de la Unidad de \'Area Modificable}}{221}{subsection.10.2.2}
+\contentsline {subsection}{\numberline {10.2.3}Autocorrelaci\'on espacial}{222}{subsection.10.2.3}
+\contentsline {subsection}{\numberline {10.2.4}Existencia de estructura}{224}{subsection.10.2.4}
+\contentsline {subsection}{\numberline {10.2.5}Existencia de tendencias espaciales}{225}{subsection.10.2.5}
+\contentsline {subsection}{\numberline {10.2.6}Efectos de borde}{225}{subsection.10.2.6}
+\contentsline {subsection}{\numberline {10.2.7}Localizaci\'on representada}{227}{subsection.10.2.7}
+\contentsline {section}{\numberline {10.3}Algunos c\'alculos espaciales b\'asicos}{227}{section.10.3}
+\contentsline {section}{\numberline {10.4}Relaciones espaciales}{231}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}Relaciones topol\'ogicas}{233}{subsection.10.4.1}
+\contentsline {subsection}{\numberline {10.4.2}\'Indices m\'etricos}{235}{subsection.10.4.2}
+\contentsline {subsection}{\numberline {10.4.3}Otras relaciones}{236}{subsection.10.4.3}
+\contentsline {section}{\numberline {10.5}Resumen}{237}{section.10.5}
+\contentsline {chapter}{\numberline {11}Consultas y operaciones con bases de datos}{239}{chapter.11}
+\contentsline {section}{\numberline {11.1}Introducci\'on}{239}{section.11.1}
+\contentsline {section}{\numberline {11.2}Consultas dentro de un SIG}{240}{section.11.2}
+\contentsline {section}{\numberline {11.3}Consultas tem\'aticas}{242}{section.11.3}
+\contentsline {subsection}{\numberline {11.3.1}Mecanismos de consulta y operaciones b\'asicas}{242}{subsection.11.3.1}
+\contentsline {subsection}{\numberline {11.3.2}El lenguaje SQL}{247}{subsection.11.3.2}
+\contentsline {section}{\numberline {11.4}Consultas espaciales}{250}{section.11.4}
+\contentsline {subsection}{\numberline {11.4.1}Lenguajes de consulta espacial}{252}{subsection.11.4.1}
+\contentsline {subsection}{\numberline {11.4.2}\'Indices espaciales}{254}{subsection.11.4.2}
+\contentsline {section}{\numberline {11.5}Resumen}{256}{section.11.5}
+\contentsline {chapter}{\numberline {12}Estad\IeC {\'\i }sticas espaciales}{259}{chapter.12}
+\contentsline {section}{\numberline {12.1}Introducci\'on}{259}{section.12.1}
+\contentsline {section}{\numberline {12.2}Medidas centrogr\'aficas}{260}{section.12.2}
+\contentsline {section}{\numberline {12.3}Estad\IeC {\'\i }sticas sobre l\IeC {\'\i }neas. Variables circulares}{264}{section.12.3}
+\contentsline {section}{\numberline {12.4}An\'alisis de patrones de puntos}{266}{section.12.4}
+\contentsline {subsection}{\numberline {12.4.1}An\'alisis de cuadrantes}{268}{subsection.12.4.1}
+\contentsline {subsection}{\numberline {12.4.2}An\'alisis de vecino m\'as cercano}{269}{subsection.12.4.2}
+\contentsline {subsection}{\numberline {12.4.3}Funci\'on K de Ripley}{270}{subsection.12.4.3}
+\contentsline {section}{\numberline {12.5}Autocorrelaci\'on espacial}{272}{section.12.5}
+\contentsline {subsection}{\numberline {12.5.1}La matriz de ponderaci\'on espacial}{272}{subsection.12.5.1}
+\contentsline {subsection}{\numberline {12.5.2}Medidas de autocorrelaci\'on espacial}{273}{subsection.12.5.2}
+\contentsline {subsection}{\numberline {12.5.3}Variogramas}{274}{subsection.12.5.3}
+\contentsline {subsection}{\numberline {12.5.4}Correlogramas}{280}{subsection.12.5.4}
+\contentsline {section}{\numberline {12.6}Resumen}{281}{section.12.6}
+\contentsline {chapter}{\numberline {13}Creaci\'on de capas r\'aster}{283}{chapter.13}
+\contentsline {section}{\numberline {13.1}Introducci\'on}{283}{section.13.1}
+\contentsline {section}{\numberline {13.2}Interpolaci\'on}{286}{section.13.2}
+\contentsline {subsection}{\numberline {13.2.1}Por vecindad}{288}{subsection.13.2.1}
+\contentsline {subsection}{\numberline {13.2.2}M\'etodos basados en ponderaci\'on por distancia}{289}{subsection.13.2.2}
+\contentsline {subsection}{\numberline {13.2.3}Ajuste de funciones. Superficies de tendencia}{290}{subsection.13.2.3}
+\contentsline {subsection}{\numberline {13.2.4}Curvas adaptativas (Splines)}{293}{subsection.13.2.4}
+\contentsline {subsection}{\numberline {13.2.5}Kriging}{294}{subsection.13.2.5}
+\contentsline {subsection}{\numberline {13.2.6}Muestreo de datos para interpolaci\'on}{296}{subsection.13.2.6}
+\contentsline {subsection}{\numberline {13.2.7}Elecci\'on del m\'etodo adecuado}{299}{subsection.13.2.7}
+\contentsline {subsection}{\numberline {13.2.8}Elecci\'on de las caracter\IeC {\'\i }sticas de la capa resultante}{300}{subsection.13.2.8}
+\contentsline {subsection}{\numberline {13.2.9}Comprobaci\'on del ajuste. Validaci\'on}{302}{subsection.13.2.9}
+\contentsline {section}{\numberline {13.3}Densidad}{303}{section.13.3}
+\contentsline {section}{\numberline {13.4}Resumen}{306}{section.13.4}
+\contentsline {chapter}{\numberline {14}\'Algebra de mapas}{307}{chapter.14}
+\contentsline {section}{\numberline {14.1}Introducci\'on}{307}{section.14.1}
+\contentsline {section}{\numberline {14.2}Tipos de funciones en el \'algebra de mapas}{310}{section.14.2}
+\contentsline {subsection}{\numberline {14.2.1}Funciones locales}{310}{subsection.14.2.1}
+\contentsline {subsection}{\numberline {14.2.2}Funciones focales}{318}{subsection.14.2.2}
+\contentsline {subsection}{\numberline {14.2.3}Funciones zonales o regionales}{321}{subsection.14.2.3}
+\contentsline {subsection}{\numberline {14.2.4}Funciones globales}{323}{subsection.14.2.4}
+\contentsline {section}{\numberline {14.3}Las variables del \'algebra de mapas y su preparaci\'on}{325}{section.14.3}
+\contentsline {section}{\numberline {14.4}Formalizaci\'on y extensi\'on del \'algebra de mapas}{327}{section.14.4}
+\contentsline {section}{\numberline {14.5}Resumen}{328}{section.14.5}
+\contentsline {chapter}{\numberline {15}Geomorfometr\IeC {\'\i }a y an\'alisis del terreno}{329}{chapter.15}
+\contentsline {section}{\numberline {15.1}Introducci\'on}{329}{section.15.1}
+\contentsline {section}{\numberline {15.2}El Modelo Digital de Elevaciones}{330}{section.15.2}
+\contentsline {section}{\numberline {15.3}Creaci\'on y preparaci\'on del MDE}{332}{section.15.3}
+\contentsline {subsection}{\numberline {15.3.1}Creaci\'on del MDE}{332}{subsection.15.3.1}
+\contentsline {subsection}{\numberline {15.3.2}Preparaci\'on del MDE}{333}{subsection.15.3.2}
+\contentsline {section}{\numberline {15.4}Modelos matem\'aticos locales del MDE}{334}{section.15.4}
+\contentsline {section}{\numberline {15.5}An\'alisis morfom\'etrico}{336}{section.15.5}
+\contentsline {subsection}{\numberline {15.5.1}Medidas geom\'etricas}{337}{subsection.15.5.1}
+\contentsline {subsubsection}{Medidas basadas en derivadas de primer grado}{337}{section*.32}
+\contentsline {subsubsection}{Medidas basadas en derivadas de segundo grado}{345}{section*.33}
+\contentsline {subsection}{\numberline {15.5.2}Medidas estad\IeC {\'\i }sticas}{347}{subsection.15.5.2}
+\contentsline {section}{\numberline {15.6}An\'alisis hidrol\'ogico}{349}{section.15.6}
+\contentsline {subsection}{\numberline {15.6.1}Direcciones de flujo}{349}{subsection.15.6.1}
+\contentsline {subsection}{\numberline {15.6.2}Zonas llanas y depresiones}{352}{subsection.15.6.2}
+\contentsline {subsubsection}{Zonas llanas}{352}{section*.34}
+\contentsline {subsubsection}{Depresiones}{355}{section*.35}
+\contentsline {subsection}{\numberline {15.6.3}\'Area acumulada y par\'ametros derivados}{357}{subsection.15.6.3}
+\contentsline {subsection}{\numberline {15.6.4}Extracci\'on de redes de drenaje}{359}{subsection.15.6.4}
+\contentsline {subsection}{\numberline {15.6.5}Delimitaci\'on y caracterizaci\'on de cuencas vertientes}{363}{subsection.15.6.5}
+\contentsline {subsubsection}{Delimitaci\'on. Cuencas y subcuencas}{363}{section*.36}
+\contentsline {subsubsection}{Caracterizaci\'on}{365}{section*.37}
+\contentsline {subsection}{\numberline {15.6.6}\'Indices hidrol\'ogicos}{368}{subsection.15.6.6}
+\contentsline {section}{\numberline {15.7}Visibilidad}{369}{section.15.7}
+\contentsline {section}{\numberline {15.8}Caracterizaci\'on de formas del terreno}{372}{section.15.8}
+\contentsline {section}{\numberline {15.9}Resumen}{375}{section.15.9}
+\contentsline {chapter}{\numberline {16}Procesado de im\'agenes}{377}{chapter.16}
+\contentsline {section}{\numberline {16.1}Introducci\'on}{377}{section.16.1}
+\contentsline {subsection}{\numberline {16.1.1}La utilidad de las im\'agenes en un SIG}{378}{subsection.16.1.1}
+\contentsline {subsection}{\numberline {16.1.2}Tipos de procesos con im\'agenes}{379}{subsection.16.1.2}
+\contentsline {subsection}{\numberline {16.1.3}An\'alisis visual y an\'alisis autom\'atico}{380}{subsection.16.1.3}
+\contentsline {section}{\numberline {16.2}Correcciones y preparaci\'on de im\'agenes}{381}{section.16.2}
+\contentsline {subsection}{\numberline {16.2.1}Correcci\'on geom\'etrica}{381}{subsection.16.2.1}
+\contentsline {subsubsection}{Rectificaci\'on}{382}{section*.38}
+\contentsline {subsubsection}{Ortorrectificaci\'on}{383}{section*.39}
+\contentsline {subsection}{\numberline {16.2.2}Correcci\'on radiom\'etrica}{385}{subsection.16.2.2}
+\contentsline {section}{\numberline {16.3}Mejoras}{387}{section.16.3}
+\contentsline {subsection}{\numberline {16.3.1}Operaciones p\IeC {\'\i }xel a p\IeC {\'\i }xel}{387}{subsection.16.3.1}
+\contentsline {subsubsection}{Segmentaci\'on}{388}{section*.40}
+\contentsline {subsubsection}{Expansi\'on de contraste}{390}{section*.41}
+\contentsline {subsubsection}{Modificaci\'on de brillo y contraste}{392}{section*.42}
+\contentsline {subsubsection}{Ecualizaci\'on}{394}{section*.43}
+\contentsline {subsection}{\numberline {16.3.2}Filtros}{394}{subsection.16.3.2}
+\contentsline {subsubsection}{Filtros de suavizado}{395}{section*.44}
+\contentsline {subsubsection}{Filtros de realce}{397}{section*.45}
+\contentsline {subsubsection}{Filtros de detecci\'on de bordes}{398}{section*.46}
+\contentsline {subsection}{\numberline {16.3.3}Fusi\'on de im\'agenes}{401}{subsection.16.3.3}
+\contentsline {subsubsection}{Transformaci\'on IHS}{402}{section*.47}
+\contentsline {subsubsection}{Transformaci\'on por componentes principales}{403}{section*.48}
+\contentsline {subsubsection}{Transformaci\'on de Brovey}{403}{section*.49}
+\contentsline {section}{\numberline {16.4}An\'alisis y extracci\'on de informaci\'on}{404}{section.16.4}
+\contentsline {subsection}{\numberline {16.4.1}Visualizaci\'on}{404}{subsection.16.4.1}
+\contentsline {subsection}{\numberline {16.4.2}Operaciones morfol\'ogicas}{406}{subsection.16.4.2}
+\contentsline {subsubsection}{Erosi\'on y dilataci\'on}{408}{section*.50}
+\contentsline {subsubsection}{Apertura y cierre}{409}{section*.51}
+\contentsline {subsubsection}{Esqueletizaci\'on}{410}{section*.52}
+\contentsline {subsection}{\numberline {16.4.3}Estimaci\'on de par\'ametros f\IeC {\'\i }sicos}{411}{subsection.16.4.3}
+\contentsline {subsubsection}{Par\'ametros de la vegetaci\'on}{413}{section*.53}
+\contentsline {subsubsection}{Par\'ametros del suelo}{418}{section*.54}
+\contentsline {subsubsection}{Par\'ametros del agua}{419}{section*.55}
+\contentsline {subsubsection}{Transformacion \emph {Tasseled Cap}}{419}{section*.56}
+\contentsline {subsection}{\numberline {16.4.4}Detecci\'on de elementos}{421}{subsection.16.4.4}
+\contentsline {section}{\numberline {16.5}Resumen}{422}{section.16.5}
+\contentsline {chapter}{\numberline {17}Creaci\'on de capas vectoriales}{425}{chapter.17}
+\contentsline {section}{\numberline {17.1}Introducci\'on}{425}{section.17.1}
+\contentsline {section}{\numberline {17.2}Vectorizaci\'on de entidades}{427}{section.17.2}
+\contentsline {subsection}{\numberline {17.2.1}Vectorizaci\'on de l\IeC {\'\i }neas}{429}{subsection.17.2.1}
+\contentsline {subsection}{\numberline {17.2.2}Vectorizaci\'on de pol\IeC {\'\i }gonos}{432}{subsection.17.2.2}
+\contentsline {section}{\numberline {17.3}Isol\IeC {\'\i }neas}{434}{section.17.3}
+\contentsline {section}{\numberline {17.4}Creaci\'on de TIN}{437}{section.17.4}
+\contentsline {subsection}{\numberline {17.4.1}Selecci\'on de puntos}{437}{subsection.17.4.1}
+\contentsline {subsection}{\numberline {17.4.2}Triangulaci\'on}{438}{subsection.17.4.2}
+\contentsline {subsection}{\numberline {17.4.3}Simplificaci\'on}{440}{subsection.17.4.3}
+\contentsline {section}{\numberline {17.5}Resumen}{441}{section.17.5}
+\contentsline {chapter}{\numberline {18}Operaciones geom\'etricas con datos vectoriales}{445}{chapter.18}
+\contentsline {section}{\numberline {18.1}Introducci\'on}{445}{section.18.1}
+\contentsline {section}{\numberline {18.2}Zonas de influencia}{446}{section.18.2}
+\contentsline {section}{\numberline {18.3}Operaciones de solape}{450}{section.18.3}
+\contentsline {subsection}{\numberline {18.3.1}Recorte}{451}{subsection.18.3.1}
+\contentsline {subsection}{\numberline {18.3.2}Diferencia}{453}{subsection.18.3.2}
+\contentsline {subsection}{\numberline {18.3.3}Intersecci\'on}{453}{subsection.18.3.3}
+\contentsline {subsection}{\numberline {18.3.4}Uni\'on}{454}{subsection.18.3.4}
+\contentsline {subsection}{\numberline {18.3.5}Pol\IeC {\'\i }gonos esp\'ureos}{455}{subsection.18.3.5}
+\contentsline {section}{\numberline {18.4}Juntar capas}{456}{section.18.4}
+\contentsline {section}{\numberline {18.5}Modificaciones basadas en atributos. Disoluci\'on}{458}{section.18.5}
+\contentsline {section}{\numberline {18.6}Contornos m\IeC {\'\i }nimos}{459}{section.18.6}
+\contentsline {subsection}{\numberline {18.6.1}Envolvente convexa m\IeC {\'\i }nima (convex hull)}{460}{subsection.18.6.1}
+\contentsline {subsection}{\numberline {18.6.2}C\IeC {\'\i }rculo m\IeC {\'\i }nimo}{461}{subsection.18.6.2}
+\contentsline {subsection}{\numberline {18.6.3}Rect\'angulo m\IeC {\'\i }nimo}{462}{subsection.18.6.3}
+\contentsline {section}{\numberline {18.7}Generalizaci\'on de l\IeC {\'\i }neas}{462}{section.18.7}
+\contentsline {subsection}{\numberline {18.7.1}M\'etodos}{464}{subsection.18.7.1}
+\contentsline {section}{\numberline {18.8}Resumen}{466}{section.18.8}
+\contentsline {chapter}{\numberline {19}Costes, distancias y \'areas de influencia}{469}{chapter.19}
+\contentsline {section}{\numberline {19.1}Introducci\'on}{469}{section.19.1}
+\contentsline {section}{\numberline {19.2}Superficies de fricci\'on}{470}{section.19.2}
+\contentsline {section}{\numberline {19.3}Superficies de coste acumulado}{471}{section.19.3}
+\contentsline {subsection}{\numberline {19.3.1}Coste isotr\'opico \emph {vs} coste anisotr\'opico}{473}{subsection.19.3.1}
+\contentsline {section}{\numberline {19.4}C\'alculo de rutas \'optimas}{476}{section.19.4}
+\contentsline {section}{\numberline {19.5}Zonas de influencia}{477}{section.19.5}
+\contentsline {subsection}{\numberline {19.5.1}Zonas de influencia de dimensi\'on fija}{478}{subsection.19.5.1}
+\contentsline {subsection}{\numberline {19.5.2}Zonas de influencia de dimensi\'on variable}{480}{subsection.19.5.2}
+\contentsline {section}{\numberline {19.6}Influencia acumulada}{482}{section.19.6}
+\contentsline {section}{\numberline {19.7}An\'alisis de redes}{483}{section.19.7}
+\contentsline {section}{\numberline {19.8}Resumen}{486}{section.19.8}
+\contentsline {chapter}{\numberline {20}M\'as estad\IeC {\'\i }stica espacial}{489}{chapter.20}
+\contentsline {section}{\numberline {20.1}Introducci\'on}{489}{section.20.1}
+\contentsline {section}{\numberline {20.2}Clasificaci\'on}{490}{section.20.2}
+\contentsline {subsection}{\numberline {20.2.1}Clasificaci\'on supervisada}{492}{subsection.20.2.1}
+\contentsline {subsubsection}{Paralelep\IeC {\'\i }pedos}{494}{section*.57}
+\contentsline {subsubsection}{M\IeC {\'\i }nima distancia}{494}{section*.58}
+\contentsline {subsubsection}{M\'axima verosimilitud}{496}{section*.59}
+\contentsline {subsection}{\numberline {20.2.2}Clasificaci\'on no supervisada}{497}{subsection.20.2.2}
+\contentsline {subsubsection}{Distancia m\IeC {\'\i }nima iterativa}{498}{section*.60}
+\contentsline {subsubsection}{ISODATA}{500}{section*.61}
+\contentsline {subsubsection}{Clustering jer\'arquico}{501}{section*.62}
+\contentsline {subsection}{\numberline {20.2.3}Incorporaci\'on del criterio espacial}{502}{subsection.20.2.3}
+\contentsline {subsection}{\numberline {20.2.4}Clasificaci\'on \emph {d\'ebil} (\emph {soft classification})}{503}{subsection.20.2.4}
+\contentsline {subsection}{\numberline {20.2.5}Validaci\'on}{504}{subsection.20.2.5}
+\contentsline {section}{\numberline {20.3}Regresi\'on espacial}{507}{section.20.3}
+\contentsline {section}{\numberline {20.4}Evaluaci\'on multicriterio y combinaci\'on de capas}{508}{section.20.4}
+\contentsline {subsection}{\numberline {20.4.1}Creaci\'on de capas a combinar}{510}{subsection.20.4.1}
+\contentsline {subsection}{\numberline {20.4.2}M\'etodos de combinaci\'on de capas}{514}{subsection.20.4.2}
+\contentsline {subsubsection}{Regla de Dempster}{515}{section*.63}
+\contentsline {subsubsection}{Jerarqu\IeC {\'\i }as Anal\IeC {\'\i }ticas}{516}{section*.64}
+\contentsline {subsubsection}{Factores y restricciones}{517}{section*.65}
+\contentsline {section}{\numberline {20.5}An\'alisis de Componentes Principales}{517}{section.20.5}
+\contentsline {section}{\numberline {20.6}Resumen}{520}{section.20.6}
+\contentsline {part}{IV\hspace {1em}La tecnolog\IeC {\'\i }a}{521}{part.IV}
+\contentsline {chapter}{\numberline {21}Introducci\'on. \IeC {\textquestiondown }C\'omo son las aplicaciones SIG?}{525}{chapter.21}
+\contentsline {section}{\numberline {21.1}Introducci\'on}{525}{section.21.1}
+\contentsline {section}{\numberline {21.2}La convergencia de las aplicaciones en el \'ambito SIG}{526}{section.21.2}
+\contentsline {section}{\numberline {21.3}La especializaci\'on de las aplicaciones SIG}{527}{section.21.3}
+\contentsline {section}{\numberline {21.4}Tipos de aplicaciones}{527}{section.21.4}
+\contentsline {section}{\numberline {21.5}La adaptaci\'on de las aplicaciones SIG. El SIG como base gen\'erica}{529}{section.21.5}
+\contentsline {section}{\numberline {21.6}Resumen}{530}{section.21.6}
+\contentsline {chapter}{\numberline {22}Herramientas de escritorio}{531}{chapter.22}
+\contentsline {section}{\numberline {22.1}Introducci\'on}{531}{section.22.1}
+\contentsline {section}{\numberline {22.2}Funciones b\'asicas}{531}{section.22.2}
+\contentsline {subsection}{\numberline {22.2.1}Entrada y salida de datos}{531}{subsection.22.2.1}
+\contentsline {subsection}{\numberline {22.2.2}Visualizaci\'on}{532}{subsection.22.2.2}
+\contentsline {subsection}{\numberline {22.2.3}An\'alisis}{535}{subsection.22.2.3}
+\contentsline {subsection}{\numberline {22.2.4}Edici\'on}{538}{subsection.22.2.4}
+\contentsline {subsection}{\numberline {22.2.5}Generaci\'on de cartograf\IeC {\'\i }a}{540}{subsection.22.2.5}
+\contentsline {section}{\numberline {22.3}Tipos de herramientas de escritorio}{541}{section.22.3}
+\contentsline {subsection}{\numberline {22.3.1}Visores y exploradores}{542}{subsection.22.3.1}
+\contentsline {subsection}{\numberline {22.3.2}Soluciones de escritorio completas}{544}{subsection.22.3.2}
+\contentsline {section}{\numberline {22.4}Resumen}{545}{section.22.4}
+\contentsline {chapter}{\numberline {23}Servidores remotos y clientes. \emph {Web Mapping}}{547}{chapter.23}
+\contentsline {section}{\numberline {23.1}Introducci\'on}{547}{section.23.1}
+\contentsline {section}{\numberline {23.2}\IeC {\textquestiondown }C\'omo funciona Internet?}{548}{section.23.2}
+\contentsline {section}{\numberline {23.3}El valor de las tecnolog\IeC {\'\i }as SIG Web}{549}{section.23.3}
+\contentsline {section}{\numberline {23.4}Formas de cartograf\IeC {\'\i }a en la Web}{552}{section.23.4}
+\contentsline {subsection}{\numberline {23.4.1} \emph {Mashups}}{557}{subsection.23.4.1}
+\contentsline {section}{\numberline {23.5}Clientes y servidores}{558}{section.23.5}
+\contentsline {subsection}{\numberline {23.5.1}Servidores}{559}{subsection.23.5.1}
+\contentsline {subsection}{\numberline {23.5.2}Clientes}{561}{subsection.23.5.2}
+\contentsline {section}{\numberline {23.6}Limitaciones y problemas de la cartograf\IeC {\'\i }a Web}{562}{section.23.6}
+\contentsline {subsection}{\numberline {23.6.1}\emph {Tiling} y \emph {cacheo}}{563}{subsection.23.6.1}
+\contentsline {section}{\numberline {23.7}Resumen}{565}{section.23.7}
+\contentsline {chapter}{\numberline {24}SIG m\'ovil}{567}{chapter.24}
+\contentsline {section}{\numberline {24.1}Introducci\'on}{567}{section.24.1}
+\contentsline {section}{\numberline {24.2}Qu\'e es el SIG m\'ovil}{568}{section.24.2}
+\contentsline {section}{\numberline {24.3}Particularidades del SIG m\'ovil}{572}{section.24.3}
+\contentsline {section}{\numberline {24.4}Aplicaciones del SIG m\'ovil}{572}{section.24.4}
+\contentsline {section}{\numberline {24.5}M\'etodos de posicionamiento}{575}{section.24.5}
+\contentsline {section}{\numberline {24.6}Redes inal\'ambricas}{577}{section.24.6}
+\contentsline {section}{\numberline {24.7}El \emph {sofware} SIG m\'ovil}{578}{section.24.7}
+\contentsline {subsection}{\numberline {24.7.1}El contexto}{580}{subsection.24.7.1}
+\contentsline {section}{\numberline {24.8}Resumen}{584}{section.24.8}
+\contentsline {part}{V\hspace {1em}La visualizaci\'on}{585}{part.V}
+\contentsline {chapter}{\numberline {25}Introducci\'on. Los SIG como herramientas de visualizaci\'on}{589}{chapter.25}
+\contentsline {section}{\numberline {25.1}Introducci\'on}{589}{section.25.1}
+\contentsline {section}{\numberline {25.2}Particularidades del SIG como herramienta de visualizaci\'on}{590}{section.25.2}
+\contentsline {section}{\numberline {25.3}La visualizaci\'on cient\IeC {\'\i }fica y los SIG}{591}{section.25.3}
+\contentsline {section}{\numberline {25.4}Los SIG frente a las aplicaciones de dise\~no}{595}{section.25.4}
+\contentsline {section}{\numberline {25.5}Resumen}{596}{section.25.5}
+\contentsline {chapter}{\numberline {26}Conceptos b\'asicos de visualizaci\'on y representaci\'on}{597}{chapter.26}
+\contentsline {section}{\numberline {26.1}Introducci\'on}{597}{section.26.1}
+\contentsline {section}{\numberline {26.2}Las variables visuales}{598}{section.26.2}
+\contentsline {subsection}{\numberline {26.2.1}Posici\'on}{599}{subsection.26.2.1}
+\contentsline {subsection}{\numberline {26.2.2}Forma}{599}{subsection.26.2.2}
+\contentsline {subsection}{\numberline {26.2.3}Tama\~no}{600}{subsection.26.2.3}
+\contentsline {subsection}{\numberline {26.2.4}Color}{600}{subsection.26.2.4}
+\contentsline {subsection}{\numberline {26.2.5}Textura}{602}{subsection.26.2.5}
+\contentsline {subsection}{\numberline {26.2.6}Orientaci\'on}{603}{subsection.26.2.6}
+\contentsline {section}{\numberline {26.3}Las propiedades de las variables visuales}{603}{section.26.3}
+\contentsline {section}{\numberline {26.4}Uso combinado de las variables visuales}{606}{section.26.4}
+\contentsline {section}{\numberline {26.5}La percepci\'on visual}{608}{section.26.5}
+\contentsline {subsection}{\numberline {26.5.1}Las constancias y contrastes perceptivos}{608}{subsection.26.5.1}
+\contentsline {subsection}{\numberline {26.5.2}Ayudas a la percepci\'on}{610}{subsection.26.5.2}
+\contentsline {section}{\numberline {26.6}Resumen}{612}{section.26.6}
+\contentsline {chapter}{\numberline {27}El mapa y la comunicaci\'on cartogr\'afica}{615}{chapter.27}
+\contentsline {section}{\numberline {27.1}Introducci\'on}{615}{section.27.1}
+\contentsline {section}{\numberline {27.2}El prop\'osito del mapa}{616}{section.27.2}
+\contentsline {section}{\numberline {27.3}Cartograf\IeC {\'\i }a tem\'atica y cartograf\IeC {\'\i }a base}{617}{section.27.3}
+\contentsline {section}{\numberline {27.4}Los tipos de informaci\'on y su representaci\'on}{619}{section.27.4}
+\contentsline {subsection}{\numberline {27.4.1}Creaci\'on y asignaci\'on de clases}{622}{subsection.27.4.1}
+\contentsline {section}{\numberline {27.5}Elementos del mapa. Composici\'on}{626}{section.27.5}
+\contentsline {section}{\numberline {27.6}Tipos de mapas tem\'aticos}{631}{section.27.6}
+\contentsline {subsection}{\numberline {27.6.1}Mapas de s\IeC {\'\i }mbolos proporcionales}{631}{subsection.27.6.1}
+\contentsline {subsection}{\numberline {27.6.2}Mapas de puntos}{633}{subsection.27.6.2}
+\contentsline {subsection}{\numberline {27.6.3}Mapas de isol\IeC {\'\i }neas}{635}{subsection.27.6.3}
+\contentsline {subsection}{\numberline {27.6.4}Mapas de coropletas}{637}{subsection.27.6.4}
+\contentsline {subsection}{\numberline {27.6.5}Otros tipos de mapas}{638}{subsection.27.6.5}
+\contentsline {section}{\numberline {27.7}Resumen}{639}{section.27.7}
+\contentsline {chapter}{\numberline {28}La visualizaci\'on en t\'erminos SIG}{641}{chapter.28}
+\contentsline {section}{\numberline {28.1}Introducci\'on}{641}{section.28.1}
+\contentsline {section}{\numberline {28.2}Visualizaci\'on de capas vectoriales}{642}{section.28.2}
+\contentsline {subsection}{\numberline {28.2.1}Etiquetado}{643}{subsection.28.2.1}
+\contentsline {section}{\numberline {28.3}Visualizaci\'on de capas r\'aster}{647}{section.28.3}
+\contentsline {section}{\numberline {28.4}Combinaci\'on de capas}{650}{section.28.4}
+\contentsline {section}{\numberline {28.5}Particularidades de la representaci\'on en pantalla}{654}{section.28.5}
+\contentsline {section}{\numberline {28.6}Visualizaci\'on tridimensional}{658}{section.28.6}
+\contentsline {section}{\numberline {28.7}Visualizaci\'on din\'amica}{661}{section.28.7}
+\contentsline {section}{\numberline {28.8}Otros elementos de visualizaci\'on}{663}{section.28.8}
+\contentsline {section}{\numberline {28.9}Resumen}{665}{section.28.9}
+\contentsline {part}{VI\hspace {1em}El factor organizativo}{667}{part.VI}
+\contentsline {chapter}{\numberline {29}Introducci\'on. \IeC {\textquestiondown }C\'omo se organiza un SIG?}{671}{chapter.29}
+\contentsline {section}{\numberline {29.1}Introducci\'on}{671}{section.29.1}
+\contentsline {section}{\numberline {29.2}La importancia de la organizaci\'on}{672}{section.29.2}
+\contentsline {section}{\numberline {29.3}Organizando los distintos elementos de un SIG}{673}{section.29.3}
+\contentsline {subsection}{\numberline {29.3.1}Datos}{673}{subsection.29.3.1}
+\contentsline {subsection}{\numberline {29.3.2}Personas}{675}{subsection.29.3.2}
+\contentsline {subsection}{\numberline {29.3.3}Software}{677}{subsection.29.3.3}
+\contentsline {subsection}{\numberline {29.3.4}Hardware}{680}{subsection.29.3.4}
+\contentsline {section}{\numberline {29.4}Distintos niveles de organizaci\'on. Organizaci\'on de un proyecto SIG}{680}{section.29.4}
+\contentsline {section}{\numberline {29.5}Resumen}{681}{section.29.5}
+\contentsline {chapter}{\numberline {30}Infraestructuras de Datos Espaciales}{683}{chapter.30}
+\contentsline {section}{\numberline {30.1}Introducci\'on}{683}{section.30.1}
+\contentsline {section}{\numberline {30.2}La aparici\'on de las IDE}{684}{section.30.2}
+\contentsline {section}{\numberline {30.3}\IeC {\textquestiondown }Qu\'e es una IDE?}{685}{section.30.3}
+\contentsline {subsection}{\numberline {30.3.1}Estructura de una IDE. Niveles.}{686}{subsection.30.3.1}
+\contentsline {subsection}{\numberline {30.3.2}Componentes de una IDE}{687}{subsection.30.3.2}
+\contentsline {subsection}{\numberline {30.3.3}Actores de una IDE}{689}{subsection.30.3.3}
+\contentsline {section}{\numberline {30.4}Algo m\'as sobre cat\'alogos}{690}{section.30.4}
+\contentsline {section}{\numberline {30.5}Claves para el \'exito}{693}{section.30.5}
+\contentsline {section}{\numberline {30.6}Principales acuerdos e iniciativas}{694}{section.30.6}
+\contentsline {subsection}{\numberline {30.6.1}GSDI}{695}{subsection.30.6.1}
+\contentsline {subsection}{\numberline {30.6.2}NSDI}{695}{subsection.30.6.2}
+\contentsline {subsection}{\numberline {30.6.3}INSPIRE}{696}{subsection.30.6.3}
+\contentsline {subsection}{\numberline {30.6.4}Las IDE en Espa\~na}{698}{subsection.30.6.4}
+\contentsline {section}{\numberline {30.7}Resumen}{700}{section.30.7}
+\contentsline {chapter}{\numberline {31}Metadatos}{703}{chapter.31}
+\contentsline {section}{\numberline {31.1}Introducci\'on}{703}{section.31.1}
+\contentsline {section}{\numberline {31.2}La utilidad de los metadatos}{704}{section.31.2}
+\contentsline {subsection}{\numberline {31.2.1}Garantizar el uso correcto de los datos}{705}{subsection.31.2.1}
+\contentsline {subsection}{\numberline {31.2.2}Facilitar la gesti\'on los datos}{706}{subsection.31.2.2}
+\contentsline {section}{\numberline {31.3}Caracter\IeC {\'\i }sticas de los metadatos}{707}{section.31.3}
+\contentsline {subsection}{\numberline {31.3.1}Contenido de los metadatos}{707}{subsection.31.3.1}
+\contentsline {subsection}{\numberline {31.3.2}Granularidad de los metadatos}{709}{subsection.31.3.2}
+\contentsline {subsection}{\numberline {31.3.3}Forma de almacenamiento de los metadatos}{710}{subsection.31.3.3}
+\contentsline {section}{\numberline {31.4}Creaci\'on de metadatos}{711}{section.31.4}
+\contentsline {subsection}{\numberline {31.4.1}Herramientas para crear metadatos}{713}{subsection.31.4.1}
+\contentsline {section}{\numberline {31.5}Algunos ejemplos}{714}{section.31.5}
+\contentsline {section}{\numberline {31.6}Resumen}{714}{section.31.6}
+\contentsline {chapter}{\numberline {32}Est\'andares}{717}{chapter.32}
+\contentsline {section}{\numberline {32.1}Introducci\'on}{717}{section.32.1}
+\contentsline {section}{\numberline {32.2}Est\'andares abiertos e interoperabilidad}{718}{section.32.2}
+\contentsline {section}{\numberline {32.3}Entidades creadoras de est\'andares}{721}{section.32.3}
+\contentsline {subsection}{\numberline {32.3.1}Open Geospatial Consortium (OGC)}{721}{subsection.32.3.1}
+\contentsline {subsection}{\numberline {32.3.2}ISO}{722}{subsection.32.3.2}
+\contentsline {subsection}{\numberline {32.3.3}W3C}{722}{subsection.32.3.3}
+\contentsline {section}{\numberline {32.4}Est\'andares para representaci\'on y obtenci\'on de informaci\'on geogr\'afica}{723}{section.32.4}
+\contentsline {subsection}{\numberline {32.4.1}Simple Features for SQL (SFS)}{723}{subsection.32.4.1}
+\contentsline {subsection}{\numberline {32.4.2}Geography Markup Language (GML)}{724}{subsection.32.4.2}
+\contentsline {subsection}{\numberline {32.4.3}Web Feature Service (WFS)}{725}{subsection.32.4.3}
+\contentsline {subsection}{\numberline {32.4.4}Filter Encoding}{726}{subsection.32.4.4}
+\contentsline {subsection}{\numberline {32.4.5}Web Coverage Service (WCS)}{727}{subsection.32.4.5}
+\contentsline {section}{\numberline {32.5}Est\'andares para mapas y visualizaci\'on}{727}{section.32.5}
+\contentsline {subsection}{\numberline {32.5.1}Web Map Service (WMS)}{727}{subsection.32.5.1}
+\contentsline {subsection}{\numberline {32.5.2}Standard Layer Description (SLD)}{728}{subsection.32.5.2}
+\contentsline {subsection}{\numberline {32.5.3}Web Mapping Context (WMC)}{729}{subsection.32.5.3}
+\contentsline {section}{\numberline {32.6}Est\'andares para metadatos, cat\'alogos y consulta de datos}{729}{section.32.6}
+\contentsline {subsection}{\numberline {32.6.1}ISO 19115 e ISO 19119}{730}{subsection.32.6.1}
+\contentsline {subsection}{\numberline {32.6.2}Nomencl\'ator (Gazetteer)}{731}{subsection.32.6.2}
+\contentsline {section}{\numberline {32.7}Est\'andares para procesamiento}{731}{section.32.7}
+\contentsline {subsection}{\numberline {32.7.1}Web Processing Service (WPS)}{731}{subsection.32.7.1}
+\contentsline {section}{\numberline {32.8}Relaci\'on entre est\'andares}{732}{section.32.8}
+\contentsline {section}{\numberline {32.9}Resumen}{733}{section.32.9}
+\contentsline {part}{VII\hspace {1em}Las aplicaciones y usos pr\'acticos}{735}{part.VII}
+\contentsline {chapter}{\numberline {33}Introducci\'on. \IeC {\textquestiondown }Para qu\'e puedo utilizar un SIG?}{739}{chapter.33}
+\contentsline {section}{\numberline {33.1}Introducci\'on}{739}{section.33.1}
+\contentsline {section}{\numberline {33.2}Caracterizaci\'on de las aplicaciones de un SIG}{740}{section.33.2}
+\contentsline {section}{\numberline {33.3}\'Areas de aplicaci\'on de un SIG}{742}{section.33.3}
+\contentsline {subsection}{\numberline {33.3.1}Gesti\'on de recursos naturales}{742}{subsection.33.3.1}
+\contentsline {subsection}{\numberline {33.3.2}Gesti\'on de riesgos}{742}{subsection.33.3.2}
+\contentsline {subsection}{\numberline {33.3.3}Ecolog\IeC {\'\i }a}{743}{subsection.33.3.3}
+\contentsline {subsection}{\numberline {33.3.4}Negocios y marketing}{743}{subsection.33.3.4}
+\contentsline {subsection}{\numberline {33.3.5}Ciencias sociales}{743}{subsection.33.3.5}
+\contentsline {subsection}{\numberline {33.3.6}Planificaci\'on}{744}{subsection.33.3.6}
+\contentsline {subsection}{\numberline {33.3.7}Militar}{744}{subsection.33.3.7}
+\contentsline {section}{\numberline {33.4}Acerca de los cap\IeC {\'\i }tulos de esta parte}{744}{section.33.4}
+\contentsline {section}{\numberline {33.5}Resumen}{745}{section.33.5}
+\contentsline {chapter}{\numberline {34}An\'alisis y gesti\'on de riesgos}{747}{chapter.34}
+\contentsline {section}{\numberline {34.1}Introduccion}{747}{section.34.1}
+\contentsline {section}{\numberline {34.2}Riesgos climatol\'ogicos}{748}{section.34.2}
+\contentsline {subsection}{\numberline {34.2.1}Modelizaci\'on cartogr\'afica del clima}{749}{subsection.34.2.1}
+\contentsline {subsection}{\numberline {34.2.2}Modelizaci\'on din\'amica del clima}{751}{subsection.34.2.2}
+\contentsline {section}{\numberline {34.3}Riesgos hidrol\'ogicos}{753}{section.34.3}
+\contentsline {subsection}{\numberline {34.3.1}Delimitaci\'on de zonas de inundaci\'on}{753}{subsection.34.3.1}
+\contentsline {subsubsection}{Estimaci\'on de variables meteorol\'ogicas}{754}{section*.66}
+\contentsline {subsubsection}{Aplicaci\'on de modelos hidr\'ologicos}{754}{section*.67}
+\contentsline {subsubsection}{Aplicaci\'on de modelos hidr\'aulicos}{760}{section*.68}
+\contentsline {subsubsection}{\emph {Software}}{761}{section*.69}
+\contentsline {subsection}{\numberline {34.3.2}Aludes}{763}{subsection.34.3.2}
+\contentsline {subsection}{\numberline {34.3.3}Contaminaci\'on de aguas}{765}{subsection.34.3.3}
+\contentsline {section}{\numberline {34.4}Desplazamientos en masa}{766}{section.34.4}
+\contentsline {section}{\numberline {34.5}Incendios}{767}{section.34.5}
+\contentsline {subsection}{\numberline {34.5.1}Modelizaci\'on de incendios}{768}{subsection.34.5.1}
+\contentsline {subsection}{\numberline {34.5.2}An\'alisis de riesgo}{771}{subsection.34.5.2}
+\contentsline {subsection}{\numberline {34.5.3}Apoyo en tareas relacionadas con riesgo de incendios}{773}{subsection.34.5.3}
+\contentsline {section}{\numberline {34.6}Resumen}{775}{section.34.6}
+\contentsline {chapter}{\numberline {35}Ecolog\IeC {\'\i }a}{777}{chapter.35}
+\contentsline {section}{\numberline {35.1}Introducci\'on}{777}{section.35.1}
+\contentsline {section}{\numberline {35.2}Ecolog\IeC {\'\i }a del paisaje}{778}{section.35.2}
+\contentsline {subsection}{\numberline {35.2.1}M\'etricas de composici\'on}{780}{subsection.35.2.1}
+\contentsline {subsection}{\numberline {35.2.2}M\'etricas de configuraci\'on}{781}{subsection.35.2.2}
+\contentsline {subsection}{\numberline {35.2.3}\emph {Software}}{783}{subsection.35.2.3}
+\contentsline {section}{\numberline {35.3}Modelizaci\'on de h\'abitats. Modelos predictivos}{784}{section.35.3}
+\contentsline {subsection}{\numberline {35.3.1}Algunos modelos de uso frecuente}{786}{subsection.35.3.1}
+\contentsline {subsection}{\numberline {35.3.2}Validaci\'on}{787}{subsection.35.3.2}
+\contentsline {subsection}{\numberline {35.3.3}\emph {Software}}{788}{subsection.35.3.3}
+\contentsline {subsection}{\numberline {35.3.4}Otros usos de los modelos predictivos}{789}{subsection.35.3.4}
+\contentsline {section}{\numberline {35.4}Resumen}{791}{section.35.4}
+\contentsline {chapter}{\numberline {36}Gesti\'on de recursos y planificaci\'on}{793}{chapter.36}
+\contentsline {section}{\numberline {36.1}Introducci\'on}{793}{section.36.1}
+\contentsline {section}{\numberline {36.2}Gesti\'on de recursos naturales}{794}{section.36.2}
+\contentsline {subsection}{\numberline {36.2.1}Gesti\'on forestal}{794}{subsection.36.2.1}
+\contentsline {subsection}{\numberline {36.2.2}Recursos energ\'eticos}{795}{subsection.36.2.2}
+\contentsline {subsection}{\numberline {36.2.3}Agricultura}{797}{subsection.36.2.3}
+\contentsline {section}{\numberline {36.3}Planificaci\'on y gesti\'on del territorio}{799}{section.36.3}
+\contentsline {subsection}{\numberline {36.3.1}Modelizaci\'on de usos del suelo}{800}{subsection.36.3.1}
+\contentsline {section}{\numberline {36.4}Modelos de localizaci\'on \'optima}{803}{section.36.4}
+\contentsline {section}{\numberline {36.5}Resumen}{806}{section.36.5}
+\contentsline {part}{VIII\hspace {1em}Anexos}{809}{part.VIII}
+\contentsline {chapter}{\numberline {A}Juego de datos}{811}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Panorama actual de las aplicaciones SIG}{815}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Introducci\'on}{815}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}\emph {Software} libre y \emph {software} privativo}{816}{section.Alph2.2}
+\contentsline {section}{\numberline {B.3}Panorama actual aplicaciones SIG privativas}{817}{section.Alph2.3}
+\contentsline {subsection}{\numberline {B.3.1}Servidores de bases de datos geogr\'aficas}{817}{subsection.Alph2.3.1}
+\contentsline {subsubsection}{SQL Server}{817}{section*.70}
+\contentsline {subsubsection}{DB2 Spatial Extender}{817}{section*.71}
+\contentsline {subsubsection}{Oracle Spatial}{818}{section*.72}
+\contentsline {subsection}{\numberline {B.3.2}Servidores}{818}{subsection.Alph2.3.2}
+\contentsline {subsubsection}{ArcGISServer y ArcIMS}{818}{section*.73}
+\contentsline {subsection}{\numberline {B.3.3}Herramientas de metadatos}{818}{subsection.Alph2.3.3}
+\contentsline {subsubsection}{GeoMedia Catalog}{818}{section*.74}
+\contentsline {subsubsection}{ArcCatalog}{819}{section*.75}
+\contentsline {subsection}{\numberline {B.3.4}Clientes pesados o de escritorio}{819}{subsection.Alph2.3.4}
+\contentsline {subsubsection}{ArcMAP}{819}{section*.76}
+\contentsline {subsubsection}{GeoMedia}{819}{section*.77}
+\contentsline {subsubsection}{Idrisi}{820}{section*.78}
+\contentsline {subsubsection}{PCRaster}{820}{section*.79}
+\contentsline {subsubsection}{Mapinfo}{821}{section*.80}
+\contentsline {subsubsection}{Manifold}{821}{section*.81}
+\contentsline {subsubsection}{Erdas Imagine}{821}{section*.82}
+\contentsline {subsubsection}{Google Earth}{821}{section*.83}
+\contentsline {subsection}{\numberline {B.3.5}Clientes ligeros, Web}{821}{subsection.Alph2.3.5}
+\contentsline {subsubsection}{Google Maps}{821}{section*.84}
+\contentsline {subsection}{\numberline {B.3.6}Bibliotecas de funcionalidad com\'un}{822}{subsection.Alph2.3.6}
+\contentsline {subsubsection}{FME (Feature Manipulation Engine)}{822}{section*.85}
+\contentsline {section}{\numberline {B.4}Panorama actual aplicaciones SIG libres}{822}{section.Alph2.4}
+\contentsline {subsection}{\numberline {B.4.1}Servidores de bases de datos geogr\'aficas}{822}{subsection.Alph2.4.1}
+\contentsline {subsubsection}{PostGIS}{823}{section*.86}
+\contentsline {subsubsection}{MySQL}{823}{section*.87}
+\contentsline {subsection}{\numberline {B.4.2}Servidores}{823}{subsection.Alph2.4.2}
+\contentsline {subsubsection}{UMN MapServer}{823}{section*.88}
+\contentsline {subsubsection}{GeoServer}{824}{section*.89}
+\contentsline {subsubsection}{deegree}{824}{section*.90}
+\contentsline {subsubsection}{MapGuide Open Source}{824}{section*.91}
+\contentsline {subsubsection}{52North}{825}{section*.92}
+\contentsline {subsection}{\numberline {B.4.3}Herramientas de metadatos}{825}{subsection.Alph2.4.3}
+\contentsline {subsubsection}{Geonetwork}{825}{section*.93}
+\contentsline {subsubsection}{CatMDEdit}{825}{section*.94}
+\contentsline {subsection}{\numberline {B.4.4}Clientes pesados o de escritorio}{825}{subsection.Alph2.4.4}
+\contentsline {subsubsection}{GRASS}{826}{section*.95}
+\contentsline {subsubsection}{Quantum GIS}{826}{section*.96}
+\contentsline {subsubsection}{gvSIG}{826}{section*.97}
+\contentsline {subsubsection}{SAGA}{827}{section*.98}
+\contentsline {subsubsection}{World Wind}{829}{section*.99}
+\contentsline {subsubsection}{Open JUMP}{829}{section*.100}
+\contentsline {subsubsection}{uDig}{829}{section*.101}
+\contentsline {subsection}{\numberline {B.4.5}Clientes ligeros, Web}{829}{subsection.Alph2.4.5}
+\contentsline {subsubsection}{CartoWeb}{830}{section*.102}
+\contentsline {subsubsection}{OpenLayers}{830}{section*.103}
+\contentsline {subsubsection}{Mapbender}{830}{section*.104}
+\contentsline {subsubsection}{MapBuilder}{831}{section*.105}
+\contentsline {subsection}{\numberline {B.4.6}Bibliotecas de funcionalidad com\'un}{831}{subsection.Alph2.4.6}
+\contentsline {subsubsection}{GDAL/OGR}{831}{section*.106}
+\contentsline {subsubsection}{Proj4}{832}{section*.107}
+\contentsline {subsubsection}{GeoTools}{832}{section*.108}
+\contentsline {subsubsection}{FDO}{832}{section*.109}
+\contentsline {subsubsection}{SEXTANTE}{832}{section*.110}
+\contentsline {chapter}{\numberline {C}Sobre la preparaci\'on de este libro}{833}{appendix.Alph3}

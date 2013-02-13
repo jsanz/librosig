@@ -1,0 +1,87 @@
+%\graphicspath{{front/}}
+
+\begin{frontmatter}
+
+\pagestyle{empty}
+\maketitle
+
+\newpage
+\onecolumn
+\vspace*{120mm}
+\small
+\noindent
+Sistemas de Información Geográfica\\
+Copyright \copyright 2008 Víctor Olaya\\
+
+\vspace{20mm}
+\noindent Edición 0.1\\
+\noindent Rev. \today{}\\
+
+
+\vspace{6mm}
+\noindent
+Se concede permiso para copiar, distribuir o modificar esta obra bajo los términos expresados en la licencia Creative Common Attribution Share--alike, la cual puede encontrarse en www.creativecommons.org. La licencia se aplica a todo el texto, así como las imágenes creadas por los propios autores, que serán aquellas para las que no se especifique de modo explicito una distinta procedencia. Este libro puede descargarse de forma libre en varios formatos, incluyendo formatos editables, en la dirección web *****.\\
+\vspace{4cm}
+\noindent \rule{\textwidth}{1pt}
+
+
+\cleardoublepage
+\vspace*{3.5cm}
+\begin{flushright}
+¿Una cita?
+\end{flushright}
+\cleardoublepage
+\vspace*{3.5cm}
+\begin{flushright}
+¿Una dedicatoria?
+\end{flushright}
+\cleardoublepage
+
+
+\vspace*{3cm}
+\small
+\noindent \textrm{Con la intención de favorecer la difusión de los conocimientos recogidos en esta obra en la medida de lo posible y hacer los mismos accesibles con carácter general y sin restricciones ni impedimentos, ésta se distribuye de forma libre bajo una licencia de tipo \emph{Creative Commons Attribution}. Esto significa que\\}
+
+%\vspace*{0.5cm}
+\noindent \textbf{\textrm{Usted tiene total libertad para:}}
+\textrm{
+\begin{itemize}
+	\item Copiar o distribuir partes o la totalidad de este trabajo.
+	\item Crear nuevos trabajos a partir de éste, modificarlo o tomar y utilizar elementos del mismo.
+	\item Realizar un uso comercial de esta obra.
+\end{itemize}}
+
+%\vspace*{0.5cm}
+\noindent \textbf{\textrm{Bajo las condiciones:}}
+\textrm{
+\begin{itemize}
+	\item Debe darse crédito en todo momento al autor original.
+	\item 
+\end{itemize}}
+
+\noindent \textrm{Para consultar los términos detallados de la licencia de distribución vaya a}
+
+\begin{center}
+\url{http://creativecommons.org/licenses/by/1.0/}
+\end{center}
+
+\noindent \textrm{Este libro puede obtenerse en formato PDF, así como las fuentes originales del mismo en formato \LaTeX en la dirección web}
+
+\begin{center}
+\texttt{*****}
+\end{center}
+
+\normalsize
+
+\input{front/Agradecimientos/Agradecimientos}
+\input{front/Autores/Autores}
+\input{front/Colaboradores/Colaboradores}
+
+\twocolumn
+\cleardoublepage
+
+\input{front/Intro}
+
+\tableofcontents
+
+\end{frontmatter}

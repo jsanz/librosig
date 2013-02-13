@@ -1,0 +1,101 @@
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[switch,pagewise]{def/lineno}
+\usepackage{makeidx}
+\makeindex
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{fixltx2e}
+
+\geometry{verbose,dvips,paperwidth=17cm,paperheight=23.5cm,tmargin=1.8cm,bmargin=1.6cm, left=1.8cm, right=1.2cm}
+\newcommand{\mycolumnwidth}{\textwidth}
+
+%\linenumbers
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancyhf{}
+\fancyhead[LE,RO]{\textsc{\thepage}}
+\fancyhead[RE]{\textsc{Sistemas de Información Geográfica}}
+\fancyhead[LO]{\textsc{\leftmark}}
+\fancypagestyle{plain}{%
+\fancyhead{} 
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@
+    {\raggedleft \reset@font
+      \scshape \@chapapp{} \thechapter\par\nobreak}%
+    \par\nobreak
+    \vspace*{20\p@}
+    \interlinepenalty\@M
+    {\raggedright \Large \bfseries #1}%
+    \par\nobreak
+     \hrulefill
+     \par\nobreak
+    \vskip 20\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@
+    {\raggedleft \reset@font
+      \scshape \vphantom{\@chapapp{} \thechapter}\par\nobreak}%
+    \par\nobreak
+    \vspace*{20\p@}
+    \interlinepenalty\@M
+    {\raggedright \Large \bfseries #1}%
+    \par\nobreak
+    \hrulefill
+    \par\nobreak
+    \vskip 20\p@
+  }}
+
+%\makeindex
+
+\renewcommand{\v}[1]{\ensuremath{\overline{\mathbf{#1}}}}
+\newcommand{\chapterauthor}[1]{\begin{center}\sffamily{#1}\end{center}\medskip}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newenvironment{intro}{\sffamily \small}{\normalsize\par\nobreak\noindent \rule{\textwidth}{0.5pt}}
+\newenvironment{keypoints}{ \small\sffamily\bfseries}{\small}
+
+
+%Colores
+\definecolor{urlcolor}{rgb}{0,0,0.5}
+\definecolor{granate}{rgb}{0.5,0.0,0.0}
+
+%Comandos
+\newcommand{\extr}[1]{\emph{#1}\xspace}
+\newcommand{\footurl}[1]{\footnote{\url{#1}\xspace}}
+%\newcommand{\soft}[1]{#1\xspace}
+
+\newcommand{\SL}{software libre\xspace}
+
+%%Configuración de hyperref, SE RECOMIENDA DEJAR SIEMPRE AL FINAL DEL PREÁMBULO
+\hypersetup{
+    pdftitle=Sistemas de Información Geográfica,
+    pdfstartview=FitH,
+    pdfproducer=PDFLaTeX,
+    naturalnames,
+    plainpages,
+    colorlinks,
+    linkcolor=black,
+    urlcolor=urlcolor,
+    citecolor=granate,
+    }

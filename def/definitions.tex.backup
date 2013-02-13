@@ -1,0 +1,98 @@
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[pdftex]{graphicx}
+\usepackage[spanish]{babel}
+%\usepackage[T2A]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage[switch,pagewise]{def/lineno}
+\usepackage[nonamebreak,sectionbib]{def/natbib}
+\usepackage{makeidx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage[sectionbib]{chapterbib}
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@
+    {\raggedleft \reset@font
+      \scshape \@chapapp{} \thechapter\par\nobreak}%
+    \par\nobreak
+    \vspace*{20\p@}
+    \interlinepenalty\@M
+    {\raggedright \LARGE \bfseries #1}%
+    \par\nobreak
+     \hrulefill
+     \par\nobreak
+    \vskip 20\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@
+    {\raggedleft \reset@font
+      \scshape \vphantom{\@chapapp{} \thechapter}\par\nobreak}%
+    \par\nobreak
+    \vspace*{20\p@}
+    \interlinepenalty\@M
+    {\raggedright \LARGE \bfseries #1}%
+    \par\nobreak
+    \hrulefill
+    \par\nobreak
+    \vskip 20\p@
+  }}
+
+\addtolength{\textheight}{+3.5 cm}
+\voffset -1.6cm
+\addtolength{\textwidth}{+1.8cm}
+\addtolength{\evensidemargin}{-1.8cm}
+
+\makeindex
+
+\renewcommand{\v}[1]{\ensuremath{\overline{\mathbf{#1}}}}
+\newcommand{\chapterauthor}[1]{\begin{center}\sffamily{#1}\end{center}\medskip}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newenvironment{intro}{\sffamily \small}{\normalsize\par\nobreak\noindent \rule{\columnwidth}{0.5pt}}
+\newenvironment{keypoints}{ \small\sffamily\bfseries}{\small}
+
+
+%Colores
+\definecolor{softcolor}{rgb}{0,0,0.5}
+\definecolor{osgeocolor}{rgb}{0.0,0.4,0}
+\definecolor{granate}{rgb}{0.5,0.0,0.0}
+
+%Comandos
+\newcommand{\extr}[1]{\emph{#1}\xspace}
+\newcommand{\footurl}[1]{\footnote{\url{#1}\xspace}}
+\newcommand{\soft}[1]{\textcolor{softcolor}{\emph{#1}\xspace}}
+
+%Atajos para el artículo del panorama, están por revisar, ojo
+\newcommand{\SL}{\extr{Software} Libre\xspace}
+\newcommand{\OG}{\textcolor{osgeocolor}{OSGeo}\xspace}
+\newcommand{\software}{\extr{software}}
+\newcommand{\raster}{\extr{raster}}
+\newcommand{\Internet}{\extr{Internet}}
+\newcommand{\web}{\extr{web}}
+\newcommand{\java}{\soft{Java}}
+
+
+%%Configuración de hyperref, SE RECOMIENDA DEJAR SIEMPRE AL FINAL DEL PREÁMBULO
+\hypersetup{
+    pdftitle=Sistemas de Información Geográfica,
+    pdfstartview=FitH,
+    pdfproducer=PDFLaTeX,
+    naturalnames,
+    plainpages,
+    colorlinks,
+    linkcolor=black,
+    urlcolor=softcolor,
+    citecolor=granate,
+    }

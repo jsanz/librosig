@@ -1,0 +1,45 @@
+\documentclass[9pt]{book}
+%\documentclass[10pt,a4paper,twocolumn]{book}
+\input{def/definitions}
+
+\date{}
+\title{
+{\huge \textsf{\bfseries S i s t e m a s \hspace{0.4cm} d e \vspace{.5cm}\\I n f o r m a c i ó n  \hspace{0.4cm} G e o g r á f i c a}} 
+\vspace*{0.5cm}
+\rule{\textwidth}{1pt}
+}
+\author{
+{\LARGE \textsf{Víctor Olaya}}\vspace*{.9cm}\\\textsf{Versión 1.0 --- Rev. \today{}}
+}
+
+\begin{document}
+
+%\begin{pagewiselinenumbers}
+
+\setcounter{tocdepth}{2}
+
+\input{front/frontmatter}
+
+\begin {mainmatter}
+\pagestyle{fancy}
+\input{Introduccion/Introduccion}
+\input{Fundamentos/Fundamentos}
+\input{Datos/Datos}
+\input{Procesos/Procesos}
+\input{Tecnologia/Tecnologia}
+\input{Visualizacion/Visualizacion}
+\input{Factor_organizativo/Factor_organizativo}
+\input{Aplicaciones/Aplicaciones}
+\end{mainmatter}
+
+\appendix
+\input{Anexos/Anexos}
+
+\small
+
+\cleardoublepage
+\printindex
+
+%\end{pagewiselinenumbers}
+
+\end{document}

@@ -1,0 +1,499 @@
+\BOOKMARK [-1][-]{part.I}{I Los fundamentos}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n. \277Qu\351 es un SIG?}{part.I}% 2
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Un peque\361o ejemplo}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{\277Qu\351 es un SIG?}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.3.1}{SIG como integrador de informaci\363n}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.2}{SIG como integrador de tecnolog\355as}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.3}{SIG como integrador de personas}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.4}{SIG como integrador de teor\355as y fundamentos}{section.1.3}% 9
+\BOOKMARK [1][-]{section.1.4}{\277Qu\351 no es un SIG?}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.5}{Componentes de un SIG}{chapter.1}% 11
+\BOOKMARK [2][-]{subsection.1.5.1}{Datos}{section.1.5}% 12
+\BOOKMARK [2][-]{subsection.1.5.2}{Procesos}{section.1.5}% 13
+\BOOKMARK [2][-]{subsection.1.5.3}{Visualizaci\363n}{section.1.5}% 14
+\BOOKMARK [2][-]{subsection.1.5.4}{Tecnolog\355a}{section.1.5}% 15
+\BOOKMARK [2][-]{subsection.1.5.5}{Factor organizativo}{section.1.5}% 16
+\BOOKMARK [1][-]{section.1.6}{Resumen}{chapter.1}% 17
+\BOOKMARK [0][-]{chapter.2}{Historia de los SIG}{part.I}% 18
+\BOOKMARK [1][-]{section.2.1}{Introducci\363n}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.2}{Los or\355genes}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.3}{La evoluci\363n de los SIG como disciplina}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.4}{La evoluci\363n de la tecnolog\355a}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.5}{La evoluci\363n de los datos}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.6}{La evoluci\363n de las t\351cnicas y formulaciones}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.7}{Resumen}{chapter.2}% 25
+\BOOKMARK [0][-]{chapter.3}{Fundamentos cartogr\341ficos y geod\351sicos}{part.I}% 26
+\BOOKMARK [1][-]{section.3.1}{Introducci\363n}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.2}{Conceptos geod\351sicos b\341sicos}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.2.1}{Elipsoide de referencia y geoide}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.2}{El datum geod\351sico}{section.3.2}% 30
+\BOOKMARK [1][-]{section.3.3}{Sistemas de coordenadas}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.1}{Coordenadas geogr\341ficas}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.2}{Proyecciones cartogr\341ficas}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.3}{El sistema UTM}{section.3.3}% 34
+\BOOKMARK [2][-]{subsection.3.3.4}{Transformaci\363n y conversi\363n de coordenadas}{section.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.5}{Codificaci\363n de sistemas de referencia}{section.3.3}% 36
+\BOOKMARK [1][-]{section.3.4}{Escala}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.5}{Generalizaci\363n cartogr\341fica}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.5.1}{Operaciones de generalizaci\363n}{section.3.5}% 39
+\BOOKMARK [2][-]{subsection.3.5.2}{Generalizaci\363n en el contexto de un SIG}{section.3.5}% 40
+\BOOKMARK [1][-]{section.3.6}{Resumen}{chapter.3}% 41
+\BOOKMARK [-1][-]{part.II}{II Los datos}{}% 42
+\BOOKMARK [0][-]{chapter.4}{Introducci\363n. \277Con qu\351 trabajo en un SIG?}{part.II}% 43
+\BOOKMARK [1][-]{section.4.1}{Introducci\363n}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.2}{Datos vs Informaci\363n}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.3}{Las componentes de la informaci\363n geogr\341fica}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.4}{Divisi\363n horizontal de la informaci\363n geogr\341fica}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Divisi\363n vertical de la informaci\363n. Capas}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.6}{Resumen}{chapter.4}% 49
+\BOOKMARK [0][-]{chapter.5}{Modelos para la informaci\363n geogr\341fica}{part.II}% 50
+\BOOKMARK [1][-]{section.5.1}{Introducci\363n}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.2}{Modelos geogr\341ficos}{chapter.5}% 52
+\BOOKMARK [2][-]{subsection.5.2.1}{Campos}{section.5.2}% 53
+\BOOKMARK [2][-]{subsection.5.2.2}{Entidades discretas}{section.5.2}% 54
+\BOOKMARK [1][-]{section.5.3}{Modelos de representaci\363n}{chapter.5}% 55
+\BOOKMARK [2][-]{subsection.5.3.1}{Modelo r\341ster}{section.5.3}% 56
+\BOOKMARK [2][-]{subsection.5.3.2}{Modelo vectorial}{section.5.3}% 57
+\BOOKMARK [2][-]{subsection.5.3.3}{Raster vs vectorial}{section.5.3}% 58
+\BOOKMARK [1][-]{section.5.4}{Modelos de almacenamiento}{chapter.5}% 59
+\BOOKMARK [2][-]{subsection.5.4.1}{Modelos para representaciones r\341ster}{section.5.4}% 60
+\BOOKMARK [2][-]{subsection.5.4.2}{Modelos para representaciones vectoriales}{section.5.4}% 61
+\BOOKMARK [1][-]{section.5.5}{Resumen}{chapter.5}% 62
+\BOOKMARK [0][-]{chapter.6}{Fuentes principales de datos espaciales}{part.II}% 63
+\BOOKMARK [1][-]{section.6.1}{Introducci\363n}{chapter.6}% 64
+\BOOKMARK [1][-]{section.6.2}{Datos digitales y datos anal\363gicos}{chapter.6}% 65
+\BOOKMARK [1][-]{section.6.3}{Fuentes primarias y fuentes secundarias}{chapter.6}% 66
+\BOOKMARK [1][-]{section.6.4}{Teledetecci\363n}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.4.1}{Fundamentos f\355sicos}{section.6.4}% 68
+\BOOKMARK [2][-]{subsection.6.4.2}{Sensores y plataformas}{section.6.4}% 69
+\BOOKMARK [2][-]{subsection.6.4.3}{Principales sensores y productos}{section.6.4}% 70
+\BOOKMARK [1][-]{section.6.5}{Cartograf\355a impresa. Digitalizaci\363n}{chapter.6}% 71
+\BOOKMARK [2][-]{subsection.6.5.1}{Digitalizaci\363n manual}{section.6.5}% 72
+\BOOKMARK [2][-]{subsection.6.5.2}{Digitalizaci\363n autom\341tica}{section.6.5}% 73
+\BOOKMARK [2][-]{subsection.6.5.3}{Digitalizaci\363n o creaci\363n de capas a partir de coordenadas. Geocodificaci\363n}{section.6.5}% 74
+\BOOKMARK [2][-]{subsection.6.5.4}{Fotogrametr\355a}{section.6.5}% 75
+\BOOKMARK [2][-]{subsection.6.5.5}{Calidad de la digitalizaci\363n}{section.6.5}% 76
+\BOOKMARK [1][-]{section.6.6}{GPS}{chapter.6}% 77
+\BOOKMARK [2][-]{subsection.6.6.1}{Fundamentos del sistema GPS}{section.6.6}% 78
+\BOOKMARK [2][-]{subsection.6.6.2}{Tipos de receptores}{section.6.6}% 79
+\BOOKMARK [2][-]{subsection.6.6.3}{Operaciones con la unidad GPS}{section.6.6}% 80
+\BOOKMARK [2][-]{subsection.6.6.4}{Integraci\363n de GPS y SIG}{section.6.6}% 81
+\BOOKMARK [1][-]{section.6.7}{Informaci\363n Geogr\341fica Voluntaria}{chapter.6}% 82
+\BOOKMARK [1][-]{section.6.8}{Sobre cartograf\355a de elevaciones}{chapter.6}% 83
+\BOOKMARK [1][-]{section.6.9}{Formatos de archivo}{chapter.6}% 84
+\BOOKMARK [2][-]{subsection.6.9.1}{Formatos para datos r\341ster}{section.6.9}% 85
+\BOOKMARK [2][-]{subsection.6.9.2}{Formatos para datos vectoriales}{section.6.9}% 86
+\BOOKMARK [1][-]{section.6.10}{Resumen}{chapter.6}% 87
+\BOOKMARK [0][-]{chapter.7}{La calidad de los datos espaciales}{part.II}% 88
+\BOOKMARK [1][-]{section.7.1}{Introducci\363n}{chapter.7}% 89
+\BOOKMARK [1][-]{section.7.2}{La importancia de la calidad de los datos}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.3}{Conceptos y definiciones sobre calidad de datos}{chapter.7}% 91
+\BOOKMARK [1][-]{section.7.4}{Fuentes y tipos de errores}{chapter.7}% 92
+\BOOKMARK [2][-]{subsection.7.4.1}{Las componentes de la calidad}{section.7.4}% 93
+\BOOKMARK [1][-]{section.7.5}{Detecci\363n y medici\363n de errores}{chapter.7}% 94
+\BOOKMARK [1][-]{section.7.6}{Propagaci\363n de errores y modelaci\363n del error}{chapter.7}% 95
+\BOOKMARK [1][-]{section.7.7}{Gesti\363n de errores}{chapter.7}% 96
+\BOOKMARK [1][-]{section.7.8}{Resumen}{chapter.7}% 97
+\BOOKMARK [0][-]{chapter.8}{Bases de datos}{part.II}% 98
+\BOOKMARK [1][-]{section.8.1}{Introducci\363n}{chapter.8}% 99
+\BOOKMARK [1][-]{section.8.2}{Fundamentos de bases de datos}{chapter.8}% 100
+\BOOKMARK [2][-]{subsection.8.2.1}{\277Qu\351 es una base de datos?}{section.8.2}% 101
+\BOOKMARK [2][-]{subsection.8.2.2}{\277Por qu\351 interesa usar una base de datos?}{section.8.2}% 102
+\BOOKMARK [2][-]{subsection.8.2.3}{Modelos de bases de datos}{section.8.2}% 103
+\BOOKMARK [2][-]{subsection.8.2.4}{Bases de datos relacionales}{section.8.2}% 104
+\BOOKMARK [2][-]{subsection.8.2.5}{Sistemas gestores de bases de datos}{section.8.2}% 105
+\BOOKMARK [2][-]{subsection.8.2.6}{Dise\361o y creaci\363n de una base de datos}{section.8.2}% 106
+\BOOKMARK [2][-]{subsection.8.2.7}{Bases de datos espaciales}{section.8.2}% 107
+\BOOKMARK [1][-]{section.8.3}{Evoluci\363n del uso de bases de datos en los SIG}{chapter.8}% 108
+\BOOKMARK [2][-]{subsection.8.3.1}{Primera generaci\363n. Ficheros}{section.8.3}% 109
+\BOOKMARK [2][-]{subsection.8.3.2}{Segunda generaci\363n. Bases de datos relacionales}{section.8.3}% 110
+\BOOKMARK [2][-]{subsection.8.3.3}{Tercera generaci\363n. Bases de datos extensibles}{section.8.3}% 111
+\BOOKMARK [1][-]{section.8.4}{Resumen}{chapter.8}% 112
+\BOOKMARK [-1][-]{part.III}{III Los procesos}{}% 113
+\BOOKMARK [0][-]{chapter.9}{Introducci\363n. \277Qu\351 puedo hacer con un SIG?}{part.III}% 114
+\BOOKMARK [1][-]{section.9.1}{Introducci\363n}{chapter.9}% 115
+\BOOKMARK [1][-]{section.9.2}{\277Qu\351 es el an\341lisis espacial?}{chapter.9}% 116
+\BOOKMARK [1][-]{section.9.3}{Razonamiento y consulta geogr\341fica en un SIG}{chapter.9}% 117
+\BOOKMARK [1][-]{section.9.4}{Tipos de an\341lisis espacial}{chapter.9}% 118
+\BOOKMARK [1][-]{section.9.5}{Resumen}{chapter.9}% 119
+\BOOKMARK [0][-]{chapter.10}{Conceptos b\341sicos para el an\341lisis espacial}{part.III}% 120
+\BOOKMARK [1][-]{section.10.1}{Introducci\363n}{chapter.10}% 121
+\BOOKMARK [1][-]{section.10.2}{Particularidades de los datos espaciales}{chapter.10}% 122
+\BOOKMARK [2][-]{subsection.10.2.1}{Escala}{section.10.2}% 123
+\BOOKMARK [2][-]{subsection.10.2.2}{El Problema de la Unidad de \301rea Modificable}{section.10.2}% 124
+\BOOKMARK [2][-]{subsection.10.2.3}{Autocorrelaci\363n espacial}{section.10.2}% 125
+\BOOKMARK [2][-]{subsection.10.2.4}{Existencia de estructura}{section.10.2}% 126
+\BOOKMARK [2][-]{subsection.10.2.5}{Existencia de tendencias espaciales}{section.10.2}% 127
+\BOOKMARK [2][-]{subsection.10.2.6}{Efectos de borde}{section.10.2}% 128
+\BOOKMARK [2][-]{subsection.10.2.7}{Localizaci\363n representada}{section.10.2}% 129
+\BOOKMARK [1][-]{section.10.3}{Algunos c\341lculos espaciales b\341sicos}{chapter.10}% 130
+\BOOKMARK [1][-]{section.10.4}{Relaciones espaciales}{chapter.10}% 131
+\BOOKMARK [2][-]{subsection.10.4.1}{Relaciones topol\363gicas}{section.10.4}% 132
+\BOOKMARK [2][-]{subsection.10.4.2}{\315ndices m\351tricos}{section.10.4}% 133
+\BOOKMARK [2][-]{subsection.10.4.3}{Otras relaciones}{section.10.4}% 134
+\BOOKMARK [1][-]{section.10.5}{Resumen}{chapter.10}% 135
+\BOOKMARK [0][-]{chapter.11}{Consultas y operaciones con bases de datos}{part.III}% 136
+\BOOKMARK [1][-]{section.11.1}{Introducci\363n}{chapter.11}% 137
+\BOOKMARK [1][-]{section.11.2}{Consultas dentro de un SIG}{chapter.11}% 138
+\BOOKMARK [1][-]{section.11.3}{Consultas tem\341ticas}{chapter.11}% 139
+\BOOKMARK [2][-]{subsection.11.3.1}{Mecanismos de consulta y operaciones b\341sicas}{section.11.3}% 140
+\BOOKMARK [2][-]{subsection.11.3.2}{El lenguaje SQL}{section.11.3}% 141
+\BOOKMARK [1][-]{section.11.4}{Consultas espaciales}{chapter.11}% 142
+\BOOKMARK [2][-]{subsection.11.4.1}{Lenguajes de consulta espacial}{section.11.4}% 143
+\BOOKMARK [2][-]{subsection.11.4.2}{\315ndices espaciales}{section.11.4}% 144
+\BOOKMARK [1][-]{section.11.5}{Resumen}{chapter.11}% 145
+\BOOKMARK [0][-]{chapter.12}{Estad\355sticas espaciales}{part.III}% 146
+\BOOKMARK [1][-]{section.12.1}{Introducci\363n}{chapter.12}% 147
+\BOOKMARK [1][-]{section.12.2}{Medidas centrogr\341ficas}{chapter.12}% 148
+\BOOKMARK [1][-]{section.12.3}{Estad\355sticas sobre l\355neas. Variables circulares}{chapter.12}% 149
+\BOOKMARK [1][-]{section.12.4}{An\341lisis de patrones de puntos}{chapter.12}% 150
+\BOOKMARK [2][-]{subsection.12.4.1}{An\341lisis de cuadrantes}{section.12.4}% 151
+\BOOKMARK [2][-]{subsection.12.4.2}{An\341lisis de vecino m\341s cercano}{section.12.4}% 152
+\BOOKMARK [2][-]{subsection.12.4.3}{Funci\363n K de Ripley}{section.12.4}% 153
+\BOOKMARK [1][-]{section.12.5}{Autocorrelaci\363n espacial}{chapter.12}% 154
+\BOOKMARK [2][-]{subsection.12.5.1}{La matriz de ponderaci\363n espacial}{section.12.5}% 155
+\BOOKMARK [2][-]{subsection.12.5.2}{Medidas de autocorrelaci\363n espacial}{section.12.5}% 156
+\BOOKMARK [2][-]{subsection.12.5.3}{Variogramas}{section.12.5}% 157
+\BOOKMARK [2][-]{subsection.12.5.4}{Correlogramas}{section.12.5}% 158
+\BOOKMARK [1][-]{section.12.6}{Resumen}{chapter.12}% 159
+\BOOKMARK [0][-]{chapter.13}{Creaci\363n de capas r\341ster}{part.III}% 160
+\BOOKMARK [1][-]{section.13.1}{Introducci\363n}{chapter.13}% 161
+\BOOKMARK [1][-]{section.13.2}{Interpolaci\363n}{chapter.13}% 162
+\BOOKMARK [2][-]{subsection.13.2.1}{Por vecindad}{section.13.2}% 163
+\BOOKMARK [2][-]{subsection.13.2.2}{M\351todos basados en ponderaci\363n por distancia}{section.13.2}% 164
+\BOOKMARK [2][-]{subsection.13.2.3}{Ajuste de funciones. Superficies de tendencia}{section.13.2}% 165
+\BOOKMARK [2][-]{subsection.13.2.4}{Curvas adaptativas \(Splines\)}{section.13.2}% 166
+\BOOKMARK [2][-]{subsection.13.2.5}{Kriging}{section.13.2}% 167
+\BOOKMARK [2][-]{subsection.13.2.6}{Muestreo de datos para interpolaci\363n}{section.13.2}% 168
+\BOOKMARK [2][-]{subsection.13.2.7}{Elecci\363n del m\351todo adecuado}{section.13.2}% 169
+\BOOKMARK [2][-]{subsection.13.2.8}{Elecci\363n de las caracter\355sticas de la capa resultante}{section.13.2}% 170
+\BOOKMARK [2][-]{subsection.13.2.9}{Comprobaci\363n del ajuste. Validaci\363n}{section.13.2}% 171
+\BOOKMARK [1][-]{section.13.3}{Densidad}{chapter.13}% 172
+\BOOKMARK [1][-]{section.13.4}{Resumen}{chapter.13}% 173
+\BOOKMARK [0][-]{chapter.14}{\301lgebra de mapas}{part.III}% 174
+\BOOKMARK [1][-]{section.14.1}{Introducci\363n}{chapter.14}% 175
+\BOOKMARK [1][-]{section.14.2}{Tipos de funciones en el \341lgebra de mapas}{chapter.14}% 176
+\BOOKMARK [2][-]{subsection.14.2.1}{Funciones locales}{section.14.2}% 177
+\BOOKMARK [2][-]{subsection.14.2.2}{Funciones focales}{section.14.2}% 178
+\BOOKMARK [2][-]{subsection.14.2.3}{Funciones zonales o regionales}{section.14.2}% 179
+\BOOKMARK [2][-]{subsection.14.2.4}{Funciones globales}{section.14.2}% 180
+\BOOKMARK [1][-]{section.14.3}{Las variables del \341lgebra de mapas y su preparaci\363n}{chapter.14}% 181
+\BOOKMARK [1][-]{section.14.4}{Formalizaci\363n y extensi\363n del \341lgebra de mapas}{chapter.14}% 182
+\BOOKMARK [1][-]{section.14.5}{Resumen}{chapter.14}% 183
+\BOOKMARK [0][-]{chapter.15}{Geomorfometr\355a y an\341lisis del terreno}{part.III}% 184
+\BOOKMARK [1][-]{section.15.1}{Introducci\363n}{chapter.15}% 185
+\BOOKMARK [1][-]{section.15.2}{El Modelo Digital de Elevaciones}{chapter.15}% 186
+\BOOKMARK [1][-]{section.15.3}{Creaci\363n y preparaci\363n del MDE}{chapter.15}% 187
+\BOOKMARK [2][-]{subsection.15.3.1}{Creaci\363n del MDE}{section.15.3}% 188
+\BOOKMARK [2][-]{subsection.15.3.2}{Preparaci\363n del MDE}{section.15.3}% 189
+\BOOKMARK [1][-]{section.15.4}{Modelos matem\341ticos locales del MDE}{chapter.15}% 190
+\BOOKMARK [1][-]{section.15.5}{An\341lisis morfom\351trico}{chapter.15}% 191
+\BOOKMARK [2][-]{subsection.15.5.1}{Medidas geom\351tricas}{section.15.5}% 192
+\BOOKMARK [2][-]{subsection.15.5.2}{Medidas estad\355sticas}{section.15.5}% 193
+\BOOKMARK [1][-]{section.15.6}{An\341lisis hidrol\363gico}{chapter.15}% 194
+\BOOKMARK [2][-]{subsection.15.6.1}{Direcciones de flujo}{section.15.6}% 195
+\BOOKMARK [2][-]{subsection.15.6.2}{Zonas llanas y depresiones}{section.15.6}% 196
+\BOOKMARK [2][-]{subsection.15.6.3}{\301rea acumulada y par\341metros derivados}{section.15.6}% 197
+\BOOKMARK [2][-]{subsection.15.6.4}{Extracci\363n de redes de drenaje}{section.15.6}% 198
+\BOOKMARK [2][-]{subsection.15.6.5}{Delimitaci\363n y caracterizaci\363n de cuencas vertientes}{section.15.6}% 199
+\BOOKMARK [2][-]{subsection.15.6.6}{\315ndices hidrol\363gicos}{section.15.6}% 200
+\BOOKMARK [1][-]{section.15.7}{Visibilidad}{chapter.15}% 201
+\BOOKMARK [1][-]{section.15.8}{Caracterizaci\363n de formas del terreno}{chapter.15}% 202
+\BOOKMARK [1][-]{section.15.9}{Resumen}{chapter.15}% 203
+\BOOKMARK [0][-]{chapter.16}{Procesado de im\341genes}{part.III}% 204
+\BOOKMARK [1][-]{section.16.1}{Introducci\363n}{chapter.16}% 205
+\BOOKMARK [2][-]{subsection.16.1.1}{La utilidad de las im\341genes en un SIG}{section.16.1}% 206
+\BOOKMARK [2][-]{subsection.16.1.2}{Tipos de procesos con im\341genes}{section.16.1}% 207
+\BOOKMARK [2][-]{subsection.16.1.3}{An\341lisis visual y an\341lisis autom\341tico}{section.16.1}% 208
+\BOOKMARK [1][-]{section.16.2}{Correcciones y preparaci\363n de im\341genes}{chapter.16}% 209
+\BOOKMARK [2][-]{subsection.16.2.1}{Correcci\363n geom\351trica}{section.16.2}% 210
+\BOOKMARK [2][-]{subsection.16.2.2}{Correcci\363n radiom\351trica}{section.16.2}% 211
+\BOOKMARK [1][-]{section.16.3}{Mejoras}{chapter.16}% 212
+\BOOKMARK [2][-]{subsection.16.3.1}{Operaciones p\355xel a p\355xel}{section.16.3}% 213
+\BOOKMARK [2][-]{subsection.16.3.2}{Filtros}{section.16.3}% 214
+\BOOKMARK [2][-]{subsection.16.3.3}{Fusi\363n de im\341genes}{section.16.3}% 215
+\BOOKMARK [1][-]{section.16.4}{An\341lisis y extracci\363n de informaci\363n}{chapter.16}% 216
+\BOOKMARK [2][-]{subsection.16.4.1}{Visualizaci\363n}{section.16.4}% 217
+\BOOKMARK [2][-]{subsection.16.4.2}{Operaciones morfol\363gicas}{section.16.4}% 218
+\BOOKMARK [2][-]{subsection.16.4.3}{Estimaci\363n de par\341metros f\355sicos}{section.16.4}% 219
+\BOOKMARK [2][-]{subsection.16.4.4}{Detecci\363n de elementos}{section.16.4}% 220
+\BOOKMARK [1][-]{section.16.5}{Resumen}{chapter.16}% 221
+\BOOKMARK [0][-]{chapter.17}{Creaci\363n de capas vectoriales}{part.III}% 222
+\BOOKMARK [1][-]{section.17.1}{Introducci\363n}{chapter.17}% 223
+\BOOKMARK [1][-]{section.17.2}{Vectorizaci\363n de entidades}{chapter.17}% 224
+\BOOKMARK [2][-]{subsection.17.2.1}{Vectorizaci\363n de l\355neas}{section.17.2}% 225
+\BOOKMARK [2][-]{subsection.17.2.2}{Vectorizaci\363n de pol\355gonos}{section.17.2}% 226
+\BOOKMARK [1][-]{section.17.3}{Isol\355neas}{chapter.17}% 227
+\BOOKMARK [1][-]{section.17.4}{Creaci\363n de TIN}{chapter.17}% 228
+\BOOKMARK [2][-]{subsection.17.4.1}{Selecci\363n de puntos}{section.17.4}% 229
+\BOOKMARK [2][-]{subsection.17.4.2}{Triangulaci\363n}{section.17.4}% 230
+\BOOKMARK [2][-]{subsection.17.4.3}{Simplificaci\363n}{section.17.4}% 231
+\BOOKMARK [1][-]{section.17.5}{Resumen}{chapter.17}% 232
+\BOOKMARK [0][-]{chapter.18}{Operaciones geom\351tricas con datos vectoriales}{part.III}% 233
+\BOOKMARK [1][-]{section.18.1}{Introducci\363n}{chapter.18}% 234
+\BOOKMARK [1][-]{section.18.2}{Zonas de influencia}{chapter.18}% 235
+\BOOKMARK [1][-]{section.18.3}{Operaciones de solape}{chapter.18}% 236
+\BOOKMARK [2][-]{subsection.18.3.1}{Recorte}{section.18.3}% 237
+\BOOKMARK [2][-]{subsection.18.3.2}{Diferencia}{section.18.3}% 238
+\BOOKMARK [2][-]{subsection.18.3.3}{Intersecci\363n}{section.18.3}% 239
+\BOOKMARK [2][-]{subsection.18.3.4}{Uni\363n}{section.18.3}% 240
+\BOOKMARK [2][-]{subsection.18.3.5}{Pol\355gonos esp\372reos}{section.18.3}% 241
+\BOOKMARK [1][-]{section.18.4}{Juntar capas}{chapter.18}% 242
+\BOOKMARK [1][-]{section.18.5}{Modificaciones basadas en atributos. Disoluci\363n}{chapter.18}% 243
+\BOOKMARK [1][-]{section.18.6}{Contornos m\355nimos}{chapter.18}% 244
+\BOOKMARK [2][-]{subsection.18.6.1}{Envolvente convexa m\355nima \(convex hull\)}{section.18.6}% 245
+\BOOKMARK [2][-]{subsection.18.6.2}{C\355rculo m\355nimo}{section.18.6}% 246
+\BOOKMARK [2][-]{subsection.18.6.3}{Rect\341ngulo m\355nimo}{section.18.6}% 247
+\BOOKMARK [1][-]{section.18.7}{Generalizaci\363n de l\355neas}{chapter.18}% 248
+\BOOKMARK [2][-]{subsection.18.7.1}{M\351todos}{section.18.7}% 249
+\BOOKMARK [1][-]{section.18.8}{Resumen}{chapter.18}% 250
+\BOOKMARK [0][-]{chapter.19}{Costes, distancias y \341reas de influencia}{part.III}% 251
+\BOOKMARK [1][-]{section.19.1}{Introducci\363n}{chapter.19}% 252
+\BOOKMARK [1][-]{section.19.2}{Superficies de fricci\363n}{chapter.19}% 253
+\BOOKMARK [1][-]{section.19.3}{Superficies de coste acumulado}{chapter.19}% 254
+\BOOKMARK [2][-]{subsection.19.3.1}{Coste isotr\363pico vs coste anisotr\363pico}{section.19.3}% 255
+\BOOKMARK [1][-]{section.19.4}{C\341lculo de rutas \363ptimas}{chapter.19}% 256
+\BOOKMARK [1][-]{section.19.5}{Zonas de influencia}{chapter.19}% 257
+\BOOKMARK [2][-]{subsection.19.5.1}{Zonas de influencia de dimensi\363n fija}{section.19.5}% 258
+\BOOKMARK [2][-]{subsection.19.5.2}{Zonas de influencia de dimensi\363n variable}{section.19.5}% 259
+\BOOKMARK [1][-]{section.19.6}{Influencia acumulada}{chapter.19}% 260
+\BOOKMARK [1][-]{section.19.7}{An\341lisis de redes}{chapter.19}% 261
+\BOOKMARK [1][-]{section.19.8}{Resumen}{chapter.19}% 262
+\BOOKMARK [0][-]{chapter.20}{M\341s estad\355stica espacial}{part.III}% 263
+\BOOKMARK [1][-]{section.20.1}{Introducci\363n}{chapter.20}% 264
+\BOOKMARK [1][-]{section.20.2}{Clasificaci\363n}{chapter.20}% 265
+\BOOKMARK [2][-]{subsection.20.2.1}{Clasificaci\363n supervisada}{section.20.2}% 266
+\BOOKMARK [2][-]{subsection.20.2.2}{Clasificaci\363n no supervisada}{section.20.2}% 267
+\BOOKMARK [2][-]{subsection.20.2.3}{Incorporaci\363n del criterio espacial}{section.20.2}% 268
+\BOOKMARK [2][-]{subsection.20.2.4}{Clasificaci\363n d\351bil \(soft classification\)}{section.20.2}% 269
+\BOOKMARK [2][-]{subsection.20.2.5}{Validaci\363n}{section.20.2}% 270
+\BOOKMARK [1][-]{section.20.3}{Regresi\363n espacial}{chapter.20}% 271
+\BOOKMARK [1][-]{section.20.4}{Evaluaci\363n multicriterio y combinaci\363n de capas}{chapter.20}% 272
+\BOOKMARK [2][-]{subsection.20.4.1}{Creaci\363n de capas a combinar}{section.20.4}% 273
+\BOOKMARK [2][-]{subsection.20.4.2}{M\351todos de combinaci\363n de capas}{section.20.4}% 274
+\BOOKMARK [1][-]{section.20.5}{An\341lisis de Componentes Principales}{chapter.20}% 275
+\BOOKMARK [1][-]{section.20.6}{Resumen}{chapter.20}% 276
+\BOOKMARK [-1][-]{part.IV}{IV La tecnolog\355a}{}% 277
+\BOOKMARK [0][-]{chapter.21}{Introducci\363n. \277C\363mo son las aplicaciones SIG?}{part.IV}% 278
+\BOOKMARK [1][-]{section.21.1}{Introducci\363n}{chapter.21}% 279
+\BOOKMARK [1][-]{section.21.2}{La convergencia de las aplicaciones en el \341mbito SIG}{chapter.21}% 280
+\BOOKMARK [1][-]{section.21.3}{La especializaci\363n de las aplicaciones SIG}{chapter.21}% 281
+\BOOKMARK [1][-]{section.21.4}{Tipos de aplicaciones}{chapter.21}% 282
+\BOOKMARK [1][-]{section.21.5}{La adaptaci\363n de las aplicaciones SIG. El SIG como base gen\351rica}{chapter.21}% 283
+\BOOKMARK [1][-]{section.21.6}{Resumen}{chapter.21}% 284
+\BOOKMARK [0][-]{chapter.22}{Herramientas de escritorio}{part.IV}% 285
+\BOOKMARK [1][-]{section.22.1}{Introducci\363n}{chapter.22}% 286
+\BOOKMARK [1][-]{section.22.2}{Funciones b\341sicas}{chapter.22}% 287
+\BOOKMARK [2][-]{subsection.22.2.1}{Entrada y salida de datos}{section.22.2}% 288
+\BOOKMARK [2][-]{subsection.22.2.2}{Visualizaci\363n}{section.22.2}% 289
+\BOOKMARK [2][-]{subsection.22.2.3}{An\341lisis}{section.22.2}% 290
+\BOOKMARK [2][-]{subsection.22.2.4}{Edici\363n}{section.22.2}% 291
+\BOOKMARK [2][-]{subsection.22.2.5}{Generaci\363n de cartograf\355a}{section.22.2}% 292
+\BOOKMARK [1][-]{section.22.3}{Tipos de herramientas de escritorio}{chapter.22}% 293
+\BOOKMARK [2][-]{subsection.22.3.1}{Visores y exploradores}{section.22.3}% 294
+\BOOKMARK [2][-]{subsection.22.3.2}{Soluciones de escritorio completas}{section.22.3}% 295
+\BOOKMARK [1][-]{section.22.4}{Resumen}{chapter.22}% 296
+\BOOKMARK [0][-]{chapter.23}{Servidores remotos y clientes. Web Mapping}{part.IV}% 297
+\BOOKMARK [1][-]{section.23.1}{Introducci\363n}{chapter.23}% 298
+\BOOKMARK [1][-]{section.23.2}{\277C\363mo funciona Internet?}{chapter.23}% 299
+\BOOKMARK [1][-]{section.23.3}{El valor de las tecnolog\355as SIG Web}{chapter.23}% 300
+\BOOKMARK [1][-]{section.23.4}{Formas de cartograf\355a en la Web}{chapter.23}% 301
+\BOOKMARK [2][-]{subsection.23.4.1}{ Mashups}{section.23.4}% 302
+\BOOKMARK [1][-]{section.23.5}{Clientes y servidores}{chapter.23}% 303
+\BOOKMARK [2][-]{subsection.23.5.1}{Servidores}{section.23.5}% 304
+\BOOKMARK [2][-]{subsection.23.5.2}{Clientes}{section.23.5}% 305
+\BOOKMARK [1][-]{section.23.6}{Limitaciones y problemas de la cartograf\355a Web}{chapter.23}% 306
+\BOOKMARK [2][-]{subsection.23.6.1}{Tiling y cacheo}{section.23.6}% 307
+\BOOKMARK [1][-]{section.23.7}{Resumen}{chapter.23}% 308
+\BOOKMARK [0][-]{chapter.24}{SIG m\363vil}{part.IV}% 309
+\BOOKMARK [1][-]{section.24.1}{Introducci\363n}{chapter.24}% 310
+\BOOKMARK [1][-]{section.24.2}{Qu\351 es el SIG m\363vil}{chapter.24}% 311
+\BOOKMARK [1][-]{section.24.3}{Particularidades del SIG m\363vil}{chapter.24}% 312
+\BOOKMARK [1][-]{section.24.4}{Aplicaciones del SIG m\363vil}{chapter.24}% 313
+\BOOKMARK [1][-]{section.24.5}{M\351todos de posicionamiento}{chapter.24}% 314
+\BOOKMARK [1][-]{section.24.6}{Redes inal\341mbricas}{chapter.24}% 315
+\BOOKMARK [1][-]{section.24.7}{El sofware SIG m\363vil}{chapter.24}% 316
+\BOOKMARK [2][-]{subsection.24.7.1}{El contexto}{section.24.7}% 317
+\BOOKMARK [1][-]{section.24.8}{Resumen}{chapter.24}% 318
+\BOOKMARK [-1][-]{part.V}{V La visualizaci\363n}{}% 319
+\BOOKMARK [0][-]{chapter.25}{Introducci\363n. Los SIG como herramientas de visualizaci\363n}{part.V}% 320
+\BOOKMARK [1][-]{section.25.1}{Introducci\363n}{chapter.25}% 321
+\BOOKMARK [1][-]{section.25.2}{Particularidades del SIG como herramienta de visualizaci\363n}{chapter.25}% 322
+\BOOKMARK [1][-]{section.25.3}{La visualizaci\363n cient\355fica y los SIG}{chapter.25}% 323
+\BOOKMARK [1][-]{section.25.4}{Los SIG frente a las aplicaciones de dise\361o}{chapter.25}% 324
+\BOOKMARK [1][-]{section.25.5}{Resumen}{chapter.25}% 325
+\BOOKMARK [0][-]{chapter.26}{Conceptos b\341sicos de visualizaci\363n y representaci\363n}{part.V}% 326
+\BOOKMARK [1][-]{section.26.1}{Introducci\363n}{chapter.26}% 327
+\BOOKMARK [1][-]{section.26.2}{Las variables visuales}{chapter.26}% 328
+\BOOKMARK [2][-]{subsection.26.2.1}{Posici\363n}{section.26.2}% 329
+\BOOKMARK [2][-]{subsection.26.2.2}{Forma}{section.26.2}% 330
+\BOOKMARK [2][-]{subsection.26.2.3}{Tama\361o}{section.26.2}% 331
+\BOOKMARK [2][-]{subsection.26.2.4}{Color}{section.26.2}% 332
+\BOOKMARK [2][-]{subsection.26.2.5}{Textura}{section.26.2}% 333
+\BOOKMARK [2][-]{subsection.26.2.6}{Orientaci\363n}{section.26.2}% 334
+\BOOKMARK [1][-]{section.26.3}{Las propiedades de las variables visuales}{chapter.26}% 335
+\BOOKMARK [1][-]{section.26.4}{Uso combinado de las variables visuales}{chapter.26}% 336
+\BOOKMARK [1][-]{section.26.5}{La percepci\363n visual}{chapter.26}% 337
+\BOOKMARK [2][-]{subsection.26.5.1}{Las constancias y contrastes perceptivos}{section.26.5}% 338
+\BOOKMARK [2][-]{subsection.26.5.2}{Ayudas a la percepci\363n}{section.26.5}% 339
+\BOOKMARK [1][-]{section.26.6}{Resumen}{chapter.26}% 340
+\BOOKMARK [0][-]{chapter.27}{El mapa y la comunicaci\363n cartogr\341fica}{part.V}% 341
+\BOOKMARK [1][-]{section.27.1}{Introducci\363n}{chapter.27}% 342
+\BOOKMARK [1][-]{section.27.2}{El prop\363sito del mapa}{chapter.27}% 343
+\BOOKMARK [1][-]{section.27.3}{Cartograf\355a tem\341tica y cartograf\355a base}{chapter.27}% 344
+\BOOKMARK [1][-]{section.27.4}{Los tipos de informaci\363n y su representaci\363n}{chapter.27}% 345
+\BOOKMARK [2][-]{subsection.27.4.1}{Creaci\363n y asignaci\363n de clases}{section.27.4}% 346
+\BOOKMARK [1][-]{section.27.5}{Elementos del mapa. Composici\363n}{chapter.27}% 347
+\BOOKMARK [1][-]{section.27.6}{Tipos de mapas tem\341ticos}{chapter.27}% 348
+\BOOKMARK [2][-]{subsection.27.6.1}{Mapas de s\355mbolos proporcionales}{section.27.6}% 349
+\BOOKMARK [2][-]{subsection.27.6.2}{Mapas de puntos}{section.27.6}% 350
+\BOOKMARK [2][-]{subsection.27.6.3}{Mapas de isol\355neas}{section.27.6}% 351
+\BOOKMARK [2][-]{subsection.27.6.4}{Mapas de coropletas}{section.27.6}% 352
+\BOOKMARK [2][-]{subsection.27.6.5}{Otros tipos de mapas}{section.27.6}% 353
+\BOOKMARK [1][-]{section.27.7}{Resumen}{chapter.27}% 354
+\BOOKMARK [0][-]{chapter.28}{La visualizaci\363n en t\351rminos SIG}{part.V}% 355
+\BOOKMARK [1][-]{section.28.1}{Introducci\363n}{chapter.28}% 356
+\BOOKMARK [1][-]{section.28.2}{Visualizaci\363n de capas vectoriales}{chapter.28}% 357
+\BOOKMARK [2][-]{subsection.28.2.1}{Etiquetado}{section.28.2}% 358
+\BOOKMARK [1][-]{section.28.3}{Visualizaci\363n de capas r\341ster}{chapter.28}% 359
+\BOOKMARK [1][-]{section.28.4}{Combinaci\363n de capas}{chapter.28}% 360
+\BOOKMARK [1][-]{section.28.5}{Particularidades de la representaci\363n en pantalla}{chapter.28}% 361
+\BOOKMARK [1][-]{section.28.6}{Visualizaci\363n tridimensional}{chapter.28}% 362
+\BOOKMARK [1][-]{section.28.7}{Visualizaci\363n din\341mica}{chapter.28}% 363
+\BOOKMARK [1][-]{section.28.8}{Otros elementos de visualizaci\363n}{chapter.28}% 364
+\BOOKMARK [1][-]{section.28.9}{Resumen}{chapter.28}% 365
+\BOOKMARK [-1][-]{part.VI}{VI El factor organizativo}{}% 366
+\BOOKMARK [0][-]{chapter.29}{Introducci\363n. \277C\363mo se organiza un SIG?}{part.VI}% 367
+\BOOKMARK [1][-]{section.29.1}{Introducci\363n}{chapter.29}% 368
+\BOOKMARK [1][-]{section.29.2}{La importancia de la organizaci\363n}{chapter.29}% 369
+\BOOKMARK [1][-]{section.29.3}{Organizando los distintos elementos de un SIG}{chapter.29}% 370
+\BOOKMARK [2][-]{subsection.29.3.1}{Datos}{section.29.3}% 371
+\BOOKMARK [2][-]{subsection.29.3.2}{Personas}{section.29.3}% 372
+\BOOKMARK [2][-]{subsection.29.3.3}{Software}{section.29.3}% 373
+\BOOKMARK [2][-]{subsection.29.3.4}{Hardware}{section.29.3}% 374
+\BOOKMARK [1][-]{section.29.4}{Distintos niveles de organizaci\363n. Organizaci\363n de un proyecto SIG}{chapter.29}% 375
+\BOOKMARK [1][-]{section.29.5}{Resumen}{chapter.29}% 376
+\BOOKMARK [0][-]{chapter.30}{Infraestructuras de Datos Espaciales}{part.VI}% 377
+\BOOKMARK [1][-]{section.30.1}{Introducci\363n}{chapter.30}% 378
+\BOOKMARK [1][-]{section.30.2}{La aparici\363n de las IDE}{chapter.30}% 379
+\BOOKMARK [1][-]{section.30.3}{\277Qu\351 es una IDE?}{chapter.30}% 380
+\BOOKMARK [2][-]{subsection.30.3.1}{Estructura de una IDE. Niveles.}{section.30.3}% 381
+\BOOKMARK [2][-]{subsection.30.3.2}{Componentes de una IDE}{section.30.3}% 382
+\BOOKMARK [2][-]{subsection.30.3.3}{Actores de una IDE}{section.30.3}% 383
+\BOOKMARK [1][-]{section.30.4}{Algo m\341s sobre cat\341logos}{chapter.30}% 384
+\BOOKMARK [1][-]{section.30.5}{Claves para el \351xito}{chapter.30}% 385
+\BOOKMARK [1][-]{section.30.6}{Principales acuerdos e iniciativas}{chapter.30}% 386
+\BOOKMARK [2][-]{subsection.30.6.1}{GSDI}{section.30.6}% 387
+\BOOKMARK [2][-]{subsection.30.6.2}{NSDI}{section.30.6}% 388
+\BOOKMARK [2][-]{subsection.30.6.3}{INSPIRE}{section.30.6}% 389
+\BOOKMARK [2][-]{subsection.30.6.4}{Las IDE en Espa\361a}{section.30.6}% 390
+\BOOKMARK [1][-]{section.30.7}{Resumen}{chapter.30}% 391
+\BOOKMARK [0][-]{chapter.31}{Metadatos}{part.VI}% 392
+\BOOKMARK [1][-]{section.31.1}{Introducci\363n}{chapter.31}% 393
+\BOOKMARK [1][-]{section.31.2}{La utilidad de los metadatos}{chapter.31}% 394
+\BOOKMARK [2][-]{subsection.31.2.1}{Garantizar el uso correcto de los datos}{section.31.2}% 395
+\BOOKMARK [2][-]{subsection.31.2.2}{Facilitar la gesti\363n los datos}{section.31.2}% 396
+\BOOKMARK [1][-]{section.31.3}{Caracter\355sticas de los metadatos}{chapter.31}% 397
+\BOOKMARK [2][-]{subsection.31.3.1}{Contenido de los metadatos}{section.31.3}% 398
+\BOOKMARK [2][-]{subsection.31.3.2}{Granularidad de los metadatos}{section.31.3}% 399
+\BOOKMARK [2][-]{subsection.31.3.3}{Forma de almacenamiento de los metadatos}{section.31.3}% 400
+\BOOKMARK [1][-]{section.31.4}{Creaci\363n de metadatos}{chapter.31}% 401
+\BOOKMARK [2][-]{subsection.31.4.1}{Herramientas para crear metadatos}{section.31.4}% 402
+\BOOKMARK [1][-]{section.31.5}{Algunos ejemplos}{chapter.31}% 403
+\BOOKMARK [1][-]{section.31.6}{Resumen}{chapter.31}% 404
+\BOOKMARK [0][-]{chapter.32}{Est\341ndares}{part.VI}% 405
+\BOOKMARK [1][-]{section.32.1}{Introducci\363n}{chapter.32}% 406
+\BOOKMARK [1][-]{section.32.2}{Est\341ndares abiertos e interoperabilidad}{chapter.32}% 407
+\BOOKMARK [1][-]{section.32.3}{Entidades creadoras de est\341ndares}{chapter.32}% 408
+\BOOKMARK [2][-]{subsection.32.3.1}{Open Geospatial Consortium \(OGC\)}{section.32.3}% 409
+\BOOKMARK [2][-]{subsection.32.3.2}{ISO}{section.32.3}% 410
+\BOOKMARK [2][-]{subsection.32.3.3}{W3C}{section.32.3}% 411
+\BOOKMARK [1][-]{section.32.4}{Est\341ndares para representaci\363n y obtenci\363n de informaci\363n geogr\341fica}{chapter.32}% 412
+\BOOKMARK [2][-]{subsection.32.4.1}{Simple Features for SQL \(SFS\)}{section.32.4}% 413
+\BOOKMARK [2][-]{subsection.32.4.2}{Geography Markup Language \(GML\)}{section.32.4}% 414
+\BOOKMARK [2][-]{subsection.32.4.3}{Web Feature Service \(WFS\)}{section.32.4}% 415
+\BOOKMARK [2][-]{subsection.32.4.4}{Filter Encoding}{section.32.4}% 416
+\BOOKMARK [2][-]{subsection.32.4.5}{Web Coverage Service \(WCS\)}{section.32.4}% 417
+\BOOKMARK [1][-]{section.32.5}{Est\341ndares para mapas y visualizaci\363n}{chapter.32}% 418
+\BOOKMARK [2][-]{subsection.32.5.1}{Web Map Service \(WMS\)}{section.32.5}% 419
+\BOOKMARK [2][-]{subsection.32.5.2}{Standard Layer Description \(SLD\)}{section.32.5}% 420
+\BOOKMARK [2][-]{subsection.32.5.3}{Web Mapping Context \(WMC\)}{section.32.5}% 421
+\BOOKMARK [1][-]{section.32.6}{Est\341ndares para metadatos, cat\341logos y consulta de datos}{chapter.32}% 422
+\BOOKMARK [2][-]{subsection.32.6.1}{ISO 19115 e ISO 19119}{section.32.6}% 423
+\BOOKMARK [2][-]{subsection.32.6.2}{Nomencl\341tor \(Gazetteer\)}{section.32.6}% 424
+\BOOKMARK [1][-]{section.32.7}{Est\341ndares para procesamiento}{chapter.32}% 425
+\BOOKMARK [2][-]{subsection.32.7.1}{Web Processing Service \(WPS\)}{section.32.7}% 426
+\BOOKMARK [1][-]{section.32.8}{Relaci\363n entre est\341ndares}{chapter.32}% 427
+\BOOKMARK [1][-]{section.32.9}{Resumen}{chapter.32}% 428
+\BOOKMARK [-1][-]{part.VII}{VII Las aplicaciones y usos pr\341cticos}{}% 429
+\BOOKMARK [0][-]{chapter.33}{Introducci\363n. \277Para qu\351 puedo utilizar un SIG?}{part.VII}% 430
+\BOOKMARK [1][-]{section.33.1}{Introducci\363n}{chapter.33}% 431
+\BOOKMARK [1][-]{section.33.2}{Caracterizaci\363n de las aplicaciones de un SIG}{chapter.33}% 432
+\BOOKMARK [1][-]{section.33.3}{\301reas de aplicaci\363n de un SIG}{chapter.33}% 433
+\BOOKMARK [2][-]{subsection.33.3.1}{Gesti\363n de recursos naturales}{section.33.3}% 434
+\BOOKMARK [2][-]{subsection.33.3.2}{Gesti\363n de riesgos}{section.33.3}% 435
+\BOOKMARK [2][-]{subsection.33.3.3}{Ecolog\355a}{section.33.3}% 436
+\BOOKMARK [2][-]{subsection.33.3.4}{Negocios y marketing}{section.33.3}% 437
+\BOOKMARK [2][-]{subsection.33.3.5}{Ciencias sociales}{section.33.3}% 438
+\BOOKMARK [2][-]{subsection.33.3.6}{Planificaci\363n}{section.33.3}% 439
+\BOOKMARK [2][-]{subsection.33.3.7}{Militar}{section.33.3}% 440
+\BOOKMARK [1][-]{section.33.4}{Acerca de los cap\355tulos de esta parte}{chapter.33}% 441
+\BOOKMARK [1][-]{section.33.5}{Resumen}{chapter.33}% 442
+\BOOKMARK [0][-]{chapter.34}{An\341lisis y gesti\363n de riesgos}{part.VII}% 443
+\BOOKMARK [1][-]{section.34.1}{Introduccion}{chapter.34}% 444
+\BOOKMARK [1][-]{section.34.2}{Riesgos climatol\363gicos}{chapter.34}% 445
+\BOOKMARK [2][-]{subsection.34.2.1}{Modelizaci\363n cartogr\341fica del clima}{section.34.2}% 446
+\BOOKMARK [2][-]{subsection.34.2.2}{Modelizaci\363n din\341mica del clima}{section.34.2}% 447
+\BOOKMARK [1][-]{section.34.3}{Riesgos hidrol\363gicos}{chapter.34}% 448
+\BOOKMARK [2][-]{subsection.34.3.1}{Delimitaci\363n de zonas de inundaci\363n}{section.34.3}% 449
+\BOOKMARK [2][-]{subsection.34.3.2}{Aludes}{section.34.3}% 450
+\BOOKMARK [2][-]{subsection.34.3.3}{Contaminaci\363n de aguas}{section.34.3}% 451
+\BOOKMARK [1][-]{section.34.4}{Desplazamientos en masa}{chapter.34}% 452
+\BOOKMARK [1][-]{section.34.5}{Incendios}{chapter.34}% 453
+\BOOKMARK [2][-]{subsection.34.5.1}{Modelizaci\363n de incendios}{section.34.5}% 454
+\BOOKMARK [2][-]{subsection.34.5.2}{An\341lisis de riesgo}{section.34.5}% 455
+\BOOKMARK [2][-]{subsection.34.5.3}{Apoyo en tareas relacionadas con riesgo de incendios}{section.34.5}% 456
+\BOOKMARK [1][-]{section.34.6}{Resumen}{chapter.34}% 457
+\BOOKMARK [0][-]{chapter.35}{Ecolog\355a}{part.VII}% 458
+\BOOKMARK [1][-]{section.35.1}{Introducci\363n}{chapter.35}% 459
+\BOOKMARK [1][-]{section.35.2}{Ecolog\355a del paisaje}{chapter.35}% 460
+\BOOKMARK [2][-]{subsection.35.2.1}{M\351tricas de composici\363n}{section.35.2}% 461
+\BOOKMARK [2][-]{subsection.35.2.2}{M\351tricas de configuraci\363n}{section.35.2}% 462
+\BOOKMARK [2][-]{subsection.35.2.3}{Software}{section.35.2}% 463
+\BOOKMARK [1][-]{section.35.3}{Modelizaci\363n de h\341bitats. Modelos predictivos}{chapter.35}% 464
+\BOOKMARK [2][-]{subsection.35.3.1}{Algunos modelos de uso frecuente}{section.35.3}% 465
+\BOOKMARK [2][-]{subsection.35.3.2}{Validaci\363n}{section.35.3}% 466
+\BOOKMARK [2][-]{subsection.35.3.3}{Software}{section.35.3}% 467
+\BOOKMARK [2][-]{subsection.35.3.4}{Otros usos de los modelos predictivos}{section.35.3}% 468
+\BOOKMARK [1][-]{section.35.4}{Resumen}{chapter.35}% 469
+\BOOKMARK [0][-]{chapter.36}{Gesti\363n de recursos y planificaci\363n}{part.VII}% 470
+\BOOKMARK [1][-]{section.36.1}{Introducci\363n}{chapter.36}% 471
+\BOOKMARK [1][-]{section.36.2}{Gesti\363n de recursos naturales}{chapter.36}% 472
+\BOOKMARK [2][-]{subsection.36.2.1}{Gesti\363n forestal}{section.36.2}% 473
+\BOOKMARK [2][-]{subsection.36.2.2}{Recursos energ\351ticos}{section.36.2}% 474
+\BOOKMARK [2][-]{subsection.36.2.3}{Agricultura}{section.36.2}% 475
+\BOOKMARK [1][-]{section.36.3}{Planificaci\363n y gesti\363n del territorio}{chapter.36}% 476
+\BOOKMARK [2][-]{subsection.36.3.1}{Modelizaci\363n de usos del suelo}{section.36.3}% 477
+\BOOKMARK [1][-]{section.36.4}{Modelos de localizaci\363n \363ptima}{chapter.36}% 478
+\BOOKMARK [1][-]{section.36.5}{Resumen}{chapter.36}% 479
+\BOOKMARK [-1][-]{part.VIII}{VIII Anexos}{}% 480
+\BOOKMARK [0][-]{appendix.Alph1}{Juego de datos}{part.VIII}% 481
+\BOOKMARK [0][-]{appendix.Alph2}{Panorama actual de las aplicaciones SIG}{part.VIII}% 482
+\BOOKMARK [1][-]{section.Alph2.1}{Introducci\363n}{appendix.Alph2}% 483
+\BOOKMARK [1][-]{section.Alph2.2}{Software libre y software privativo}{appendix.Alph2}% 484
+\BOOKMARK [1][-]{section.Alph2.3}{Panorama actual aplicaciones SIG privativas}{appendix.Alph2}% 485
+\BOOKMARK [2][-]{subsection.Alph2.3.1}{Servidores de bases de datos geogr\341ficas}{section.Alph2.3}% 486
+\BOOKMARK [2][-]{subsection.Alph2.3.2}{Servidores}{section.Alph2.3}% 487
+\BOOKMARK [2][-]{subsection.Alph2.3.3}{Herramientas de metadatos}{section.Alph2.3}% 488
+\BOOKMARK [2][-]{subsection.Alph2.3.4}{Clientes pesados o de escritorio}{section.Alph2.3}% 489
+\BOOKMARK [2][-]{subsection.Alph2.3.5}{Clientes ligeros, Web}{section.Alph2.3}% 490
+\BOOKMARK [2][-]{subsection.Alph2.3.6}{Bibliotecas de funcionalidad com\372n}{section.Alph2.3}% 491
+\BOOKMARK [1][-]{section.Alph2.4}{Panorama actual aplicaciones SIG libres}{appendix.Alph2}% 492
+\BOOKMARK [2][-]{subsection.Alph2.4.1}{Servidores de bases de datos geogr\341ficas}{section.Alph2.4}% 493
+\BOOKMARK [2][-]{subsection.Alph2.4.2}{Servidores}{section.Alph2.4}% 494
+\BOOKMARK [2][-]{subsection.Alph2.4.3}{Herramientas de metadatos}{section.Alph2.4}% 495
+\BOOKMARK [2][-]{subsection.Alph2.4.4}{Clientes pesados o de escritorio}{section.Alph2.4}% 496
+\BOOKMARK [2][-]{subsection.Alph2.4.5}{Clientes ligeros, Web}{section.Alph2.4}% 497
+\BOOKMARK [2][-]{subsection.Alph2.4.6}{Bibliotecas de funcionalidad com\372n}{section.Alph2.4}% 498
+\BOOKMARK [0][-]{appendix.Alph3}{Sobre la preparaci\363n de este libro}{part.VIII}% 499

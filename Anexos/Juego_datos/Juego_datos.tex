@@ -1,0 +1,64 @@
+\chapter{Juego de datos} \label{Juegos_datos}
+\pagestyle{fancy}
+
+Acompañando a este libro, existe un juego de datos de ejemplo empleado en buen número de los contenidos cartográficos, especialmente en los de la parte de procesos. Este juego de datos se distribuye, al igual que el propio texto, de forma libre, de tal modo que el lector pueda trabajar con dichos datos, operar con ellos, y de este modo tener una experiencia más cercana que contribuya a una mejor comprensión de los contenidos.
+
+En la medida de lo posible, es de interés que el lector trabaje con estos datos de ejemplo y, en caso de disponer de un Sistema de Información Geográfica, abra dichos datos, los estudie y analice, siguiendo los conceptos desarrollados a lo largo de esta obra.
+
+Todos los datos corresponden a la región de \emph{Baranja hill} en el este de Croacia, y abarcan una región con una extensión de 13,69 km$²$, aproximadamente similar a la de una fotografía aérea a escala 1:20000, centrada en la coordenadas 45$\degree$47$'$40$''$N, $18\degree$41$'$27$''$E (Figura \ref{Fig:Baranja_hill}). 
+
+\begin{figure}[!hbt] 
+\centering
+\includegraphics[width=.8\textwidth]{Juego_datos/Baranja_hill.png}
+\caption{\small a) Situación de la zona de estudio en el este de Croacia, b) mapa 1:5000 con las principales características de la zona, c) representación tridimensional del relieve (imágenes cortesía de la Administración Geodésica Estatal de Croacia)}
+\label{Fig:Baranja_hill} 
+\end{figure}
+
+Se ha elegido este juego de datos por haber sido empleado en textos similares como datos de referencia, habiendo sido estudiados en profundidad y demostrándose así su buena disposición para el trabajo educativo y de investigación en el ámbito geográfico.
+
+El juego de datos de ejemplo puede descargarse de la misma pagina Web del libro, como un fichero comprimido. Al descomprimir este, se tendrán los siguientes archivos con capas geográficas:
+
+\begin{itemize}
+\item \texttt{mde25.asc}. Modelo Digital de Elevaciones con un tamaño de celda de 25 metros, obtenido a partir de interpolación de curvas de nivel y posterior tratamiento.
+ \item \texttt{mde25srtm.asc}. Modelo Digital de Elevaciones con un tamaño de celda de 25 metros, obtenido a partir de datos de la Shuttle Radar Topographic Mission, remuestreado posteriormente para coincidir en extensión y tamaño de celda con el anterior. Se adjunta a modo de ejemplo para poder efectuar comparaciones entre ambos.
+ \item \texttt{mde5.asc}. Modelo Digital de Elevaciones con un tamaño de celda de 5 metros, obtenido a partir de un par de imágenes estereoscópicas.
+ \item \texttt{topo.tif}. Mapa topográfico a escala 1:5000.
+ \item \texttt{orto.tif}. Fotografía aérea ortorrectificada, con un tamaño de celda de 5 metros.
+ \item \texttt{pts\_elev.shp}. Capa de puntos (n=853) con medidas precisas de elevación.
+ \item \texttt{curv\_nivel.shp}. Curvas de nivel del mapa 1:5000 digitalizadas.
+ \item \texttt{hidro.shp}. Red hidrografica de la zona de estudio.
+ \item \texttt{landsatX.tif}. 7 bandas de una imagen LANDSAT correspondiente a septiembre de 1999.
+ \item \texttt{uso\_suelo.shp}. Capa de polígonos con usos de suelo.
+ \item \texttt{formas\_relieve.shp}. Capa de polígonos con las principales formas del relieve.
+ \item \texttt{calicatas.asc}. Capa de puntos (n=59) con información de suelo, correspondientes a calicatas efectuadas en la zona de estudio. 
+\item \texttt{peque.asc}. Una pequeña capa ráster, utilizada en algunos ejemplos puntuales de este libro. La figura \ref{Fig:Raster_peque} muestra dicha capa.
+\end{itemize}
+
+Por simplicidad, se ha utilizado el formato TIFF para las imágenes, el formato ASCII Arc/Info para las capas ráster y el SHP (\emph{shapefile}) para las capas vectoriales, entendiéndose que de este modo será sencillo incorporar las capas de ejemplo en la mayoría de programas.
+
+Una visión general de este conjunto de datos puede encontrarse en la figura \ref{Fig:Baranja_resumen}. 
+
+\begin{figure}[!hbt] 
+\centering
+\includegraphics[width=.3\textwidth]{Juego_datos/Raster_peque.pdf}
+\caption{\small Una pequeña capa ráster de ejemplo}
+\label{Fig:Raster_peque} 
+\end{figure}
+
+\begin{figure}[!hbt] 
+\centering
+\includegraphics[width=.8\textwidth]{Juego_datos/Baranja_resumen.png}
+\caption{\small Esquema del juego de datos de ejemplo}
+\label{Fig:Baranja_resumen} 
+\end{figure}
+
+Junto con lo anterior, se incluyen ficheros de proyección en diversos formatos, y un archivo de texto plano (\texttt{descrip.txt}) con descripción detallada de todos los elementos, que se recomienda consultar antes de trabajar con los datos.
+
+El juego de datos puede descargarse desde la página Web del libro.
+
+En los siguientes enlaces encontrarás otros juegos de datos libres que, aunque no han sido utilizados para la confección de este libro, son igualmente aptos para seguir los contenidos de este y emplearse con carácter didáctico.
+
+\begin{itemize}
+	\item \url{http://www.grassbook.org/data_menu3rd.php}
+	\item \url{http://www.geomorphometry.org/content/data-sets}
+\end{itemize}
