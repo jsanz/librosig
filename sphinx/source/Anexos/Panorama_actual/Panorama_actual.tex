@@ -1,0 +1,646 @@
+**********************************************************
+Panorama actual de las aplicaciones SIG
+**********************************************************
+
+.. _Panorama_actual:
+
+\chapterauthor{Sanz, Jorge; Montesinos, Miguel; Olaya, Víctor}
+
+
+  En este anexo se exponen los principales proyectos que encontramos en el ámbito SIG, tanto en el área del *software* privativo como en la del *software* libre. Estos proyectos cubren la totalidad de posibles soluciones tecnológicas dentro de este terreno, y representan el estado actual de su mercado.
+	
+
+Introducción
+=====================================================
+
+El del *software* SIG es un mercado amplio con numerosas alternativas, pudiendo resultar complejo elegir la adecuada a cada necesidad, pues para ello es necesario tener una visión global de todos sus representantes y de las características que los diferencian. A pesar de que el objetivo de este libro es formar en los conceptos fundamentales de los SIG, y el software SIG no es sino una herramienta que implementa y se fundamenta sobre esos conceptos, tener una visión de conjunto de los principales proyectos existentes en el mercado es fundamental para un usuario, pues como tal habrá de acudir a un *software* SIG para realizar su trabajo.
+
+Conocer los fundamentos del SIG es vital para un usuario de SIG, como lo es también conocer las herramientas que ha de emplear, y las diferentes formas en que esas herramientas se presentan, con objeto de elegir una de ellas. En este capítulo veremos los principales representantes de cada uno de los grupos que fueron definidos en los capítulos de la parte correspondiente a la tecnología SIG, explicando brevemente sus características. No ha de olvidarse en ningún momento que el contenido de este capítulo es altamente susceptible de quedar desfasado en un breve periodo de tiempo, ya que el número de aplicaciones nuevas que entran en el mercado es muy elevado, así como el desarrollo de los proyectos ya existentes. En un contexto tan variable, resulta difícil dar una imagen actual de la situación existente, aunque este capítulo sirve de cualquier forma para presentar a los principales representantes de cada grupo de aplicaciones y esperemos que sea de utilidad para introducirse en el mundo del SIG, en lo que a la tecnología existente respecta.
+
+Dividiremos para su estudio el conjunto de aplicaciones en dos grupos principales:*software* libre y *software* propietario. La diferencia entre las formas de licenciamiento bajo las que se distribuye los programas SIG afecta no solo a la propia distribución y uso, sino también a sus características o a otros aspectos tales como las interrelaciones entre proyectos o la implementación de estándares abiertos, también de gran importancia.
+
+Comenzaremos describiendo con algo más de detalle las diferencias entre estos dos tipos de *software*.
+
+*Software* libre y *software* privativo
+=====================================================
+
+.. _Software_libre_vs_privativo:
+
+El *software* tradicional se distribuye con licencias restrictivas que no permiten que el usuario emplee este de todas las formas posibles y saque de él el mayor provecho. Un usuario puede adquirir un determinado *software* y después no podrá realizar copias con objeto de distribuirlas a sus conocidos, u ofrecer ese *software* para descarga en Internet, entre otras cosas. El usuario no es libre para utilizar el programa, y se encuentra privado de ciertas libertades. Por ello, este *software* se conoce como <<*software* privativo>>.
+
+Por el contrario, existe otro tipo de *software* denominado <<*software* libre>>, el cual se distribuye de tal forma que todo usuario tiene las siguientes libertades fundamentales\cite{webFSF}:
+
+
+* Ejecutar el programa con cualquier propósito
+* Estudiar cómo funciona el programa y adaptarlo a sus necesidades. El acceso al código fuente es una condición previa para esto.
+* Distribuir copias. Estas copias se pueden distribuir de forma gratuita o no gratuita.
+* Mejorar el programa y hacer públicas las mejoras a los demás, de modo que toda la comunidad se beneficie. El acceso al código fuente es un requisito previo para esto.
+
+
+Para ello, el *software* libre se distribuye bajo licencias distintas a las del *software* privativo, en particular las conocidas como licencias <<libres>>, siendo la GNU General Public License (GPL) \cite{webGPL} la más popular de ellas
+
+Un ejemplo de *software* privativo es el sistema operativo Windows de Microsoft. Un ejemplo clásico de *software* libre es el sistema operativo Linux.
+
+Las diferencias entre estas dos formas *software* no quedan solo en las condiciones de distribución, sino que buena parte de las características de los programas se ven afectadas por estas. Así, el *software* libre favorece en general la reutilización de código y de componentes, lo que provoca que los proyectos de *software* libre estén muchos más interrelacionados entre sí que los de *software* privativo y presenten arquitecturas y diseños distintos en muchos casos.
+
+Aunque la disponibilidad del código fuente es un requisito necesario para el \SL, existe un planteamiento intermedio conocido como *Open Source* (Código Abierto) en el cual ese código está disponible pero no necesariamente se han de presentar las cuatro libertades enunciadas anteriormente. El *software* de código abierto y el libre comparten, no obstante, muchas similitudes en cuanto a su filosofía, y es habitual hacer referencia a ellos bajo la denominación FOSS\footnote{*Free and Open Source Software*, Software Libre y de Código Abierto}.
+
+Para profundizar en las diferencias entre *software* libre y *software* privativo, en \cite{Culebro2006} puede encontrarse un extenso estudio comparativo.
+
+Panorama actual aplicaciones SIG privativas
+===================================================== 
+
+.. _Soft_privativo:
+
+Las aplicaciones privativas son empleadas actualmente en el ámbito SIG en mayor medida que las soluciones libres, aunque estas últimas experimentan un importante crecimiento. En áreas como la generación de cartografía en soluciones de escritorio, presentan un desarrollo mayor que las aplicaciones libres, y se hayan mejor preparadas para un uso industrial.
+
+Una característica importante de las aplicaciones privativas es que un mismo fabricante provee soluciones en varios grupos tecnológicos, pudiendo suministrar aplicaciones que abarcan desde clientes hasta servidores, todos como parte de una familia completa de aplicaciones SIG. Existe una alta integración entre los miembros de esta familia, aunque la interoperabilidad con soluciones de otros fabricantes no suele ser tan elevada, un hecho que obedece a la lógica comercial de estos productos. En la lista de aplicaciones que a continuación se muestra, no se han incluido todos los representantes posibles de cada sección, ya que algunos de ellos no son particularmente conocidos como aplicaciones independientes y forman parte de una familia de estas, dentro de las cuales solo alguno de sus miembros es relevante en términos de popularidad y uso. En general, los SIG de escritorio son los mejor representados, ya que son las aplicaciones SIG originales y aquellas con un mayor desarrollo a sus espaldas. Se recomienda consultar las páginas Web correspondientes a estos para más información acerca de la *suite* informática de la que habitualmente forman parte, y que puede incorporar un amplio conjunto de otros programas que cubren todas las tipologías en que hemos dividido esta sección.
+
+Los productos de *software* privativo no solo se agrupan a nivel del propio *software*, sino que a veces datos y programas se distribuyen de forma pareja. El *software* es una herramienta para utilizar y explotar un juego de datos, y el conjunto de ambos constituye el producto final.
+
+Señalar, por último, que muchas de estas aplicaciones cuentan con varias versiones en el mercado (por ejemplo, una básica, una intermedia y otra avanzada), dimensionadas para distintos perfiles de usuarios y con un número creciente de funcionalidades, en lo que también responde a una estrategia comercial de creación de productos más asequibles pero con funcionalidades limitadas. Esta circunstancia no se cita en la descripción de la aplicación, recomendándose una vez más al lector interesado la consulta de la correspondiente página Web para más detalles.
+
+Servidores de bases de datos geográficas
+--------------------------------------------------------------
+
+SQL Server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SQL server \cite{webSQLServer} es el servidor de bases de datos de Microsoft. Dispone de soporte par datos espaciales y un tipo de dato *geometry* para almacenamiento de datos espaciales, que cumple con las especificaciones de SFS para SQL.
+
+
+DB2 Spatial Extender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DB2 Spatial Extender \cite{webDB2Spatial} es una extensión para la base de datos DB2 de IBM que implementa los tipos de datos y funciones definidas por ISO SQL/MM y el OGC. Esta disponible tanto para Windows como para Linux, y las principales aplicaciones SIG ofrecen acceso a esta base de datos.
+
+Oracle Spatial
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Oracle Spatial \cite{webOracleSpatial} es un componente para la base de datos Oracle que permite el manejo de datos geográficos de forma nativa. Incluye no solo elementos para soporte de tipos de datos geométricos, sino también indexación espacial, operaciones de análisis espacial, modelos de datos para almacenamiento de topología y redes (mediante nodos y enlaces), y un elemento *GeoRaster* para permitir el manejo de capas ráster e imágenes junto a sus metadatos correspondientes.
+
+Oracle Spatial está disponible desde la versión 8 de Oracle, aunque ya existía en anteriores versiones bajo el nombre de Spatial Data Option(SDO).
+
+Servidores
+--------------------------------------------------------------
+
+Los servidores privativos son en su mayoría servidores de mapas, aunque en algunos casos ofrecen servicios adicionales. Originalmente, el soporte de estándares no era una de sus características principales (por motivos de estrategia comercial, fundamentalmente), aunque en la actualidad, y dada la popularización y uso creciente de estos, soportan el uso de la mayor parte de ellos o de, al menos, los más populares. Algunas compañías como ESRI forman incluso parte de organizaciones dedicadas a promover estándares, tales como OGC.
+
+ArcGISServer y ArcIMS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ArcGISServer \cite{webEsri} es la tecnología de la empresa ESRI para distribuir servicios Web basados en información geográfica. Soporta el uso de estándares OGC y W3C, aunque también cuenta con sus propios formatos para cada uno de los servicios que es capaz de proveer. Estos van desde los habituales servicios de mapas hasta servicios de edición cartográfica (usando el estándar WFS--T) o servicios de geoprocesamiento avanzado, cubriendo en conjunto la práctica totalidad de servicios que actualmente se utilizan y convirtiendo a este servidor en uno de los más completos del mercado.
+
+ArcIMS es el nombre de la tecnología de ESRI para los servicios de mapas. Dado que ArcGISServer es un producto más completo y puede ofrecer otros servicios además del de mapas, ArcIMS es ya un producto obsoleto, aunque muy presente en el mercado. ESRI, no obstante, no provee ya servicio para este servidor, recomendando la adopción de ArcGISServer.
+
+Herramientas de metadatos
+--------------------------------------------------------------
+
+GeoMedia Catalog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GeoMedia Catalog es la aplicación desarrollada por Intergraph \cite{webIntergraph} para el trabajo con metadatos. Se trata de una aplicación dependiente del SIG de escritorio de esta misma compañía, no pudiendo ser utilizada sin este, ya sea en su versión común o profesional. Soporta los estándares FGDC y ISO 19115, siendo asimismo capaz de exportar metadatos en el estándar ISO 19139. Incorpora funcionalidades para creación automática de metadatos a partir de ficheros SIG en diversos formatos, publicación en formato HTML, así como realización de búsquedas y consultas en base esos metadatos.
+
+ArcCatalog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ArcCatalog es la herramienta de ESRI para la creación y mantenimiento de metadatos. Permite la creación de metadatos según los estándares ISO y FGDC, aunque pueden extenderse sus funcionalidades para adaptarse a otros esquemas distintos. Por ejemplo, existe un módulo que permite la creación de datos conforme al Núcleo Español de Metadatos.
+
+El programa incluye funcionalidades de importación y exportación, así como otras que lo conectan a distintos elementos de la familia de productos ESRI.
+
+Clientes pesados o de escritorio
+--------------------------------------------------------------
+
+En el campo de los clientes de escritorio, las soluciones propietarias aventajan a las libres en la mayoría de tareas relacionadas con la producción directa de resultados, tales como la creación de cartografía o informes, o la implementación de simbología avanzada. Aunque en muchos casos no incluyen gran cantidad de funcionalidades de análisis y se centran en otros aspectos de corte productivo, encontramos algunos de ellos con abundante número de procesos, adecuados igualmente para su uso en investigación o estudios diversos.
+
+
+ArcMAP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ArcMAP es el principal componente de la *suite* de aplicaciones ArcGIS de ESRI, y el que contiene las funcionalidades clásicas del SIG de escritorio, respondiendo a la definición de este. ArcMAP es una herramienta que permite la visualización y manejo de información geográfica, y que cuenta con una arquitectura extensible mediante la que pueden añadírsele nuevas funcionalidades. Existen numerosos paquetes adicionales proporcionados por ESRI, con los cuales las capacidades de ArcMAP pueden extenderse hasta cubrir la práctica totalidad de capacidades que un SIG plenamente productivo en cualquier ámbito debe presentar hoy en día. Algunos de los paquetes más destacados son los correspondientes a las funciones de análisis, tales como *Spatial Analyst* (análisis ráster), *3D Analyst* (análisis 3D y de relieve) o *Geostatistical Analyst* (geoestadística).
+
+Cuenta además con una interfaz de programación y lenguajes de *script* que permiten desarrollar nuevas funcionalidades de forma sencilla. El número de extensiones desarrolladas por terceros es también muy elevado, ya sean estas privativas o libres.
+
+La imagen \ref{Fig:ArcMap} muestra la interfaz principal del programa.
+
+.. figure:: arcmap.png
+
+	Interfaz principal de ArcMap.
+
+
+.. _Fig:ArcMap: 
+
+
+GeoMedia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Geomedia es el SIG de escritorio de la empresa Intergraph, y producto principal de su familia de aplicaciones. Se trata de un SIG completo con capacidades de manejo de datos, visualización, análisis y funciones avanzadas de creación de cartografía. Permite el acceso a datos remotos mediante estándares OGC y puede extenderse empleando herramientas de programación sencillas.
+
+Geomedia está particularmente enfocado para un uso industrial, respondiendo a las necesidades de grandes organismos y empresas tales como compañía de telecomunicaciones o de suministros, que trabajan con grandes cantidades de datos que es necesario estructurar adecuadamente.
+
+Idrisi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Idrisi es un SIG de escritorio desarrollado por la empresa Clark Labs \cite{webClarkLabs}. El punto fuerte de Idrisi son sus herramientas de análisis, muy abundantes, que van desde formulaciones sencillas hasta complejos algoritmos. La última versión, denominada *Taiga*, incluye por ejemplo como novedad respecto a las anteriores un importante conjunto de algoritmos para modelización dinámica y otro para segmentación de imágenes. En general, se incorporan además de las funcionalidades estándar de análisis una serie de otras más avanzadas y en ocasiones con carácter experimental.
+
+Idrisi presenta un enfoque claramente científico y está dirigido principalmente a la comunidad investigadora, aunque sus abundantes funcionalidades de análisis pueden ser de utilidad en un entorno productivo. No obstante, otras tales como la creación de cartografía no se encuentran representadas.
+
+Aunque incluye también algoritmos para análisis de capas vectoriales, la gran mayoría de sus funcionalidades se basan en capas ráster.
+
+
+PCRaster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PCRaster \cite{webPCRaster} es una aplicación SIG de orientación similar a Idrisi, con numerosos algoritmos de análisis y principalmente enfocado al trabajo con datos ráster dentro de la comunidad científica. Una de sus características más destacables es el lenguaje PCRaster Environmental Modelling Language, que permite la creación de modelos en los que la variable temporal tiene gran importancia, siendo más sencillo implementar este tipo de modelos con este *software* que con otros menos específicos para esta tarea.
+
+
+Mapinfo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mapinfo \cite{webMapinfo} es un SIG de escritorio completo, con especial atención a las funcionalidades de creación y edición de datos, y producción de cartografía. Es capaz de conectarse a bases de datos espaciales  y posee módulos de uso sencillo que permiten la publicación de cartografía en Internet, tanto mediante mapas estáticos como mediante mapas interactivos.
+
+Manifold
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Manifold \cite{webManifold} es una aplicación completa que integra las características princiaples del SIG de escritorio junto con otras capacidades SIG tales como los servicios de mapas. A diferencia de otros fabricantes, que disponen de una familia de aplicaciones, Manifold incluye todas sus funcionalidades en un único programa.
+
+Destaca por su acceso a bases de datos y por su soporte para un número muy elevado (:math:`>100`) de formatos de archivo.
+
+Erdas Imagine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Erdas Imagine \cite{webErdas} es la aplicación de referencia para el manejo de imágenes y el análisis de estas. Incorpora una larga serie de algoritmos de análisis de imágenes, con especial atención a aquellos que permiten la creación de nuevas capas a partir de imágenes, como por ejemplo las basadas en clasificación o las de vectorización y detección de elementos.
+
+
+Google Earth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+.. _GoogleEarth:
+
+Google Earth \cite{webGoogleEarth} no es un SIG de escritorio propiamente dicho, ya que carece de gran parte de las funcionalidades que caracterizan a estos. Se trata básicamente de un globo 3D que permite visualizar cartografía propia, acceder a servicios WMS y, especialmente, explorar la cartografía ofrecida por Google, en la cual se incluyen imágenes de alta resolución de todo el globo, así como otras capas con información variada, tales como calles o puntos de interés, entre otras. Es, con diferencia, el globo 3D más popular en la actualidad.
+
+Clientes ligeros, Web
+--------------------------------------------------------------
+
+Los clientes ligeros están representados en el sector privativo en menor medida que en el sector libre. Esto es debido a que, en general, servidores y clientes existen de forma paralela en lo que a aplicaciones privativas respecta, mientras que en las aplicaciones libres el número de clientes es mayor que el de servidores. No obstante, la tecnología cliente más extendida en el ámbito del *Web Mapping*, Google Maps, está dentro de este grupo.
+
+Google Maps
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mas que un cliente Web para visualización de mapas, Google Maps \cite{webGoogleMaps} es un servicio de cartografía Web que dispone de una interfaz de programación mediante la cual puede emplearse para la creación de servicios relacionados. Google Maps incluye datos (imágenes aéreas con cobertura global a excepción de las zonas polares) y un cliente Web para visualizar esas imágenes, el cual permite a su vez, y a través de esa interfaz de programación, ciertas funcionalidades adicionales tales como la creación de puntos de interés o el calculo de rutas óptimas.
+
+Bibliotecas de funcionalidad común
+--------------------------------------------------------------
+
+FME (Feature Manipulation Engine)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FME \cite{webFME} es una herramienta ETL (Extract, Transform, Load) que permite la lectura y conversión de datos espaciales en más de 250 formatos. Está concebida para facilitar el uso y difusión de datos espaciales, solucionando algunos de los problemas más habituales que se presentan, la mayor parte de ellos debido al amplio número de formatos existentes en la actualidad. Algunas de las aplicaciones en las que FME resulta especial potente son las siguientes:
+
+
+	* Conversión de formato
+	* Conversión de sistema de coordenadas
+	* Integración de datos espaciales y no espaciales
+	* Integración de SIG y CAD
+	* Distribución de datos a través de Internet (preparación para descarga directa de datos)
+	* Chequeo de calidad de datos espaciales
+
+
+Panorama actual aplicaciones SIG libres
+=====================================================
+
+La característica más destacable del *software* libre para SIG es su modularidad, un hecho inherente al propio tipo de *software*. Ello favorece las interrelaciones entre proyectos, que se conectan unos con otros y reutilizan elementos de otros proyectos con mucho mayor frecuencia que en el caso del *software* privativo, ya que la licencia bajo la que se liberan así lo permite.
+
+La principal fortaleza de las soluciones libres en el entorno SIG las encontramos en el acceso a datos, ya que estas presentan una mayor interoperabilidad y respetan en mayor medida los estándares. Existen aún algunas áreas donde las soluciones SIG libres no alcanzan el nivel de las soluciones privativas, como por ejemplo en lo relativo al procesado de imágenes y productos de la teledetección. En otras, como por ejemplo las relacionadas con análisis, encontramos soluciones libres perfectamente capaces de reemplazar a las privativas, mientras que existen elementos como los clientes Web donde las soluciones libres incluso se muestran superiores.
+
+Esta parte del anexo se basa en el trabajo publicado por \cite{panorama08}. Consúltese esta referencia para un análisis más detallado al respecto.
+
+Servidores de bases de datos geográficas
+--------------------------------------------------------------
+
+Una característica fundamental de los servidores de bases de datos geográficas es el cumplimiento de normas estándar, como por ejemplo la norma *Simple Features*. Los productos libres siguen estando en primera línea en la implementación de estándares, ofreciendo productos potentes muy enfocados a lograr la mayor interoperabilidad posible. En \cite{martinez05} se puede ver una comparativa del cumplimiento de este estándar entre
+PostGIS (solución libre que veremos a continuación) y Oracle Spatial (solución privativa que vimos anteriormente).
+
+PostGIS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PostGIS \cite{webPostgis} es un módulo para la base de datos libre PostgreSQL, desarrollado
+principalmente por Refractions Research Inc. Este módulo proporciona a
+PostgreSQL la capacidad no solo de almacenar información geoespacial y
+cumplir la norma SFSS, sino de realizar operaciones de análisis geográfico.
+
+Se trata de un producto muy difundido, con importantes referencias a
+nivel mundial \cite{webPostgisCaseStudies} y con un gran abanico de herramientas de todo tipo con acceso a
+PostGIS. Es, asimismo, un proyecto muy activo, en continua evolución y con numerosas mejoras previstas.
+
+MySQL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MySQL \cite{webMySQL} es la base de datos de mayor éxito en aplicaciones Web,
+pero en la actualidad no cumple la norma SFSS y puede no considerarse como un verdadero gestor de base de datos espacial, sino como un mero  <<contenedor>> de información geográfica.
+
+Servidores
+--------------------------------------------------------------
+
+En los últimos años la publicación de información geográfica en Internet ha
+sido uno de los ámbitos en los que las aplicaciones libres para SIG han tenido un papel más notable. Esto
+se debe a varias razones: los productos comerciales son caros y difíciles de
+manejar, a menudo imponen a otros la adopción de otros productos comerciales
+(*middleware*), no funcionan sobre todos los sistemas operativos, no han adoptado
+con rapidez las estandarizaciones promovidas por el OGC, no ofrecen libertad
+de uso, etc.
+
+Aunque en su mayoría son servidores de mapas, también encontramos entre las soluciones libres capacidades para proveer otro tipo de servicios tales como los de procesos.
+
+UMN MapServer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Este proyecto nació como unos scripts para ArcInfo que generaban de
+ forma dinámica impresiones de cartografía para publicar en Web. Inicialmente
+ fue un proyecto financiado por la NASA, la Universidad de Minnesota y el
+ departamento de recursos forestales de Minnesota (MNDNR).
+
+Ha evolucionado mucho y en la actualidad se presenta en dos modalidades:
+
+
+ * Como ejecutable *CGI*, es el uso más común que se le ha dado a este
+ servidor de mapas. Se trata de un ejecutable que puede ser invocado desde
+ páginas Web para generar de forma dinámica imágenes en los formatos más
+ habituales para la publicación en Web (gif, png, etc.).
+ * Como biblioteca. La necesidad de realizar tareas específicas en el lado
+ del servidor obligó a <<exponer>> las funcionalidades de este servidor a
+ diferentes lenguajes de programación para poder
+ realizar tareas con un alto contenido dinámico: consultas especializadas,
+ análisis al vuelo, etc.
+
+
+Las características por las que destaca este servidor son:
+
+
+* Sencillez de configuración y administración
+* Plataformas sobre las que puede operar
+* Velocidad de acceso a datos
+* Cantidad de formatos tanto vectoriales como ráster soportados
+
+
+GeoServer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Geoserver \cite{webGeoserver}  es un servidor de mapas forma parte de la nueva generación de aplicaciones
+desarrolladas sobre la especificación J2EE. El objeto principal de esta nueva
+generación de servidores es la utilización de las últimas tecnologías en el
+desarrollo de soluciones Web empresariales, con lenguaje de programación
+Java. 
+
+Es el proyecto estrella sobre la biblioteca GeoTools (ver sección más adelante)
+y está potenciado por la empresa canadiense Refractions Research.
+
+Destaca especialmente por el soporte para el protocolo WFS--T, convirtiéndose en
+no solo un servidor de cartografía sino en un intermediario para la edición
+remota de información geográfica mediante estándares.
+
+deegree
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deegree es un servidor de mapas que nació como un proyecto del Departamento de Geografía de
+la Universidad de Bonn, fundándose posteriormente la empresa lat/lon
+GmbH, que además de continuar con la evolución
+del proyecto, presta servicios comerciales alrededor de esta plataforma.
+
+Deegree destaca por el elevado número de especificaciones OGC que afirma cumplir, entre
+los que destacan WMS, WFS(--T), WCS, CSW, WPS, SOS, etc.
+
+Las características más destacables de deegree son las siguientes:
+
+
+    * Elevada capacidad de configuración y adaptación
+    * Instalación y configuración complejas.
+    * Buen rendimiento comparado con otros servidores basados en tecnologías similares
+    * Amplio abanico de estándares OGC (aunque no siempre 100\% conformes).
+
+
+Alrededor de este servidor se han ido desarrollando otros proyectos
+complementarios como deegree iGeoPortal (Geoportal IDE), deegree
+iGeo3D (cliente Web IDE 3D), deeJUMP (adaptación de la herramienta de
+escritorio JUMP), etc.
+
+MapGuide Open Source
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La empresa Autodesk ha liberado este servidor de mapas recientemente, pasando a ser distribuido como *software* libre. Todavía poco conocido en este ámbito
+libre, dispone de ciertas características que pueden hacerlo un producto
+válido. Dispone de un sistema de publicación en Web que lo hace fácil de
+configurar y administrar y dispone de herramientas comerciales para la
+publicación desde AutoCAD, fabricado por la misma empresa aunque no libre.
+
+Hace uso de la también liberada biblioteca FDO para el acceso a datos de
+todo tipo.
+
+52North
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+La iniciativa 52North \cite{web52N} ha desarrollado un servidor de procesos que implementa todas las capacidades y elementos del estándar WPS 1.0 para servir procesos remotos. Está completamente desarrollado en Java y ofrece una arquitectura modular tanto en lo que respecta a los algoritmos como en lo referente a los datos, de forma que permite extender sus capacidades e incorporar nuevos procesos de forma sencilla, así como ampliar el soporte para distintos tipos y formatos de datos. Puede servir procesos basados en librerias libres (como, por ejemplo, SEXTANTE) o en aplicaciones propietarias (por ejemplo, las de la familia ArcGIS de ESRI).
+
+Herramientas de metadatos
+--------------------------------------------------------------
+
+Geonetwork
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Este proyecto \cite{webGeonetwork}, financiado por la FAO--UN (\extr{Food and Agriculture Organization -- United Nations}),
+ se ha convertido en la aplicación de referencia para la publicación de metadatos de información geográfica. Se trata de un catálogo de metadatos que integra las siguientes aplicaciones:
+  
+
+	* Editor de metadatos con soporte para los estándares ISO 19115, FGDC y Dublin Core.
+	* Catálogo de metadatos para la búsqueda de información geográfica en catálogos locales o remotos.
+	* Servidor de catálogo para la publicación de metadatos.
+
+
+CatMDEdit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CatMDEdit \cite{webCatMDEdit} es una herramienta de escritorio que permite la creación y
+edición de metadatos, conforme a los estándares ISO 19115, el Núcleo Español de
+Metadatos, Dublin Core y CSDGM (\extr{Content Standard for Digital
+Geospatial Metadata}).
+
+CatMDEdit ha sido desarrollada por el consorcio español
+TeiDE \cite{webTeide}, formado por la unión de
+tres Grupos de Trabajo de tres Universidades:
+
+
+ * Grupo MERCATOR de Tecnologías de la Geoinformación de la
+ Universidad Politécnica de Madrid.
+ * Grupo de Sistemas de Información Avanzados (IAAA) de la
+ Universidad de Zaragoza.
+ * Grupo de Información Geográfica de la Universidad Jaume I de
+ Castellón.
+
+
+Esta herramienta está muy difundida, especial aunque no únicamente en el ámbito
+español.
+
+Clientes pesados o de escritorio
+--------------------------------------------------------------
+
+Existen muchos representantes de este grupo dentro del *software* libre. Carecen de las capacidades productivas de los SIG de escritorio propietarios, y en la gran mayoría de casos se encuentran más enfocados al análisis o son simples visores de datos con ciertas capacidades de edición y manejo de datos.
+
+Una característica importante es la integración de estándares, de tal modo que muchos de ellos son clientes de servicios remotos y permiten el acceso a datos remotos en mayor medida que sus equivalentes propietarios.
+
+Algunos de los más representativos SIG de escritorio libres son los siguientes.
+
+GRASS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GRASS \cite{webGRASS} es el proyecto SIG libre más veterano, con un desarrollo de más de 20 años. Surgió como un proyecto del ejército norteamericano, más concretamente del \extr{Construction Engineering
+Research Laboratory}(CERL) que comenzó el proyecto ante la necesidad de
+gestionar la gran cantidad de recursos naturales a cargo del ejército en los
+Estados Unidos. Actualmente, la infraestructura principal se
+gestiona entre el Instituto de Cultura de Trento y el \extr{Gesellschaft für Datenanalyse und Fernerkundung}(GDF) en Hannover.
+
+La principal característica de GRASS es su gran número de distintas funcionalidades, derivadas de todos los años de desarrollo y de la estructura modular del programa, que favorece que los desarrolladores aporten al proyecto contribuciones individuales centradas en un campo concreto de aplicación.
+
+El mayor problema de cara a su difusión y adopción es su complejidad y su curva de aprendizaje. Aun siendo un *software* muy potente, carece de una interfaz amigable, y no está diseñado para ser empleado en un entorno de producción. La aparición de herramientas adicionales que facilitan el acceso a la potencia de GRASS, especialmente en el campo del análisis, está cambiando esta situación. Dentro de estas herramientas, Quantum GIS es la más destacable, constituyendo una interfaz de usuario sencilla para GRASS.
+
+Aunque originalmente era una aplicación desarrollada para sistemas UNIX, existe en la actualidad una versión nativa sobre Windows (Figura \ref{Fig:GRASS}) que facilita el trabajo con el programa a los usuarios de este sistema operativo.
+
+
+.. figure:: grass.png
+
+	Interfaz gráfica de GRASS sobre Windows.
+
+
+.. _Fig:GRASS: 
+
+
+
+Quantum GIS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Quantum GIS (QGis) \cite{webQGis} es una aplicación de escritorio que pretende ofrecer a usuarios con necesidades básicas un entorno sencillo y agradable.  Hasta no hace demasiado, era el
+único editor de PostGIS para Windows y se destaca por su sencillez y velocidad. Se
+presenta además como un interfaz <<amigable>> para trabajar con bases de datos
+GRASS. En relación con este otro *software*, es posible abordar no solo operaciones de visualización y acceso a datos, sino también de análisis tanto ráster como vectorial, utilizando como base las propias capacidades de GRASS.
+
+gvSIG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gvSIG \cite{webgvSIG} es una herramienta de escritorio completa y multiplataforma con las siguientes características:
+
+
+ * Lectura de formatos vectoriales: \extr{shapefiles}, dxf, dwg (2000), dgn (v7),
+ PostGIS, MySQL, WFS, ArcIMS vectorial y Oracle vectorial
+ * Lectura de formatos \extr{ráster}: WMS, WCS, ECW, MrSID, geoTIFF, ArcIMS, IMG
+ (Erdas), formatos RAW, etc.
+ * Capacidades de proceso vectoriales.
+ * Maquetación de mapas
+ * Edición avanzada de cartografía
+ * Gestión avanzada de sistemas de coordenadas y sistemas de referencia.
+
+
+Se trata de un proyecto con un crecimiento muy rápido y una gran expansión, alrededor del cual se desarrolla actualmente gran cantidad de trabajo. La comunidad de usuarios es amplia y en constante aumento, lo que garantiza el futuro del programa y su utilización e implantación a largo plazo.
+
+El aspecto general del programa puede verse en la figura \ref{Fig:gvSIG}.
+
+.. figure:: gvsig.png
+
+	Interfaz de usuario de gvSIG.
+
+
+.. _Fig:gvSIG: 
+
+
+SAGA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SAGA \cite{webSAGA} es un SIG de escritorio multiplataforma desarrollado en Alemania y con un fuerte enfoque hacia el análisis de datos geoespaciales. SAGA incluye una amplia serie de algoritmos y una interfaz de desarrollo que facilita la programación de nuevas funcionalidades de análisis, siendo esta la mayor potencialidad del programa. Otras capacidades, tales como la creación de cartografía o la edición, se encuentran presentes pero muy poco desarrolladas y con escasa funcionalidad, evidenciando que el principal objetivo de este *software* es servir como herramienta de análisis.
+
+En la figura \ref{Fig:SAGA} se muestra una captura de pantalla del programa, mostrando su interfaz de usuario.
+
+.. figure:: saga.png
+
+	Interfaz de usuario de SAGA
+
+
+.. _Fig:SAGA: 
+
+
+
+World Wind
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+WorldWind \cite{webWorldWind} es un globo 3D promovido por NASA, de similares características que Google Earth pero con una orientación mucho más <<científica>> que este. Admite la creación de extensiones que amplían sus funcionalidades, y gran número de estas pueden encontrarse en un repositorio central \cite{webWorldWindCentral}.
+
+Se ofrece además como un componente para aplicaciones, de tal forma que resulta muy sencillo incorporar sus capacidades dentro de otro *software*, o incluso desde una página Web.
+
+Aunque no dispone de la cartografía de Google Earth, mediante un \extr{plugin} se
+puede adquirir la cartografía servida por Microsoft Live. 
+
+Open JUMP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JUMP \cite{webJUMP} (Java Unified Mapping Platform) es un GIS de escritorio vectorial (aunque también puede acceder a datos en formato ráster) con algunas capacidades de análisis espacial y edición. JUMP utiliza estándares en la medida de lo posible y busca fomentar el uso de estos.
+
+A raíz de JUMP surgió el proyecto JPP (The JUMP Pilot Project), que pretende coordinar de forma más democrática las contribuciones de diferentes equipos de desarrollo para evitar duplicidad de esfuerzos. Como *software*, OpenJUMP es el resultado principal de este proyecto, y añade a las posibilidades de JUMP algunas como por ejemplo la internacionalización (OpenJUMP está actualmente traducido a numerosos idiomas) o mayor capacidad para el trabajo con datos ráster.
+
+Basados en OpenJUMP se han desarrollado numerosos productos derivados, formando una gran familia de soluciones SIG de escritorio. Una de ellas es Kosmo \cite{webKosmo}, desarrollada por la empresa SAIG en España, con una gran número de funcionalidades adicionales.
+
+
+uDig
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+uDig \cite{webuDIG} es un proyecto desarrollado por la empresa canadiense Refractions Research Inc. Tiene como principal objetivo ofrecer un cliente de escritorio que soporte el mayor número de fuentes de datos tanto locales como remotas, y especialmente las basadas en protocolos OGC como WMS y WFS.
+
+Se plantea como un producto construido sobre la biblioteca GeoTools (ver más adelante en el apartado \ref{bibliotecasFOSS}) combinado con las experiencias adquiridas por el proyecto JUMP, con el cual comparte un origen común \cite{ramsey03}.
+
+Aunque presenta únicamente capacidades de análisis y edición vectorial, el proyecto JGrass \cite{webJGrass} añade capacidades ráster adaptadas desde GRASS (con especial énfasis en las relacionadas con análisis del terreno y similares), así como la posibilidad de ejecutar operaciones de GRASS desde el propio uDIG. En este sentido, se convierte en una interfaz amigable para GRASS, de la misma manera que lo es QGIS.
+
+Para concluir esta sección, la tabla \ref{Tabla:Comparativa_SIG_escritorio} muestra una comparativa esquemática de los principales productos de escritorio, tanto libres como propietarios, indicando cuáles de las funcionalidades principales de este tipo de aplicaciones se implementan en cada una de ellas.
+
+\begin{table*}[!hbt]
+\small
+\centering  
+
+.. _Tabla:Comparativa_SIG_escritorio:
+\begin{tabular}{p{3.6cm}cccccccccccc} \toprule 
+ & \rotatebox{90}{\textbf{ArcGIS}} & \rotatebox{90}{\textbf{Idrisi}} & \rotatebox{90}{\textbf{E.Imagine}} & \rotatebox{90}{\textbf{Manifold}} & \rotatebox{90}{\textbf{Geomedia}} & \rotatebox{90}{\textbf{G.Earth}} & \rotatebox{90}{\textbf{GRASS}} & \rotatebox{90}{\textbf{SAGA}} & \rotatebox{90}{\textbf{O.JUMP}} & \rotatebox{90}{\textbf{uDig}} & \rotatebox{90}{\textbf{gvSIG}} & \rotatebox{90}{\textbf{QGIS}} \\ \midrule   
+\textbf{Lectura ráster}& :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Lectura vectorial}& :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Escritura ráster}&:math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & - & - & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Escritura vectorial}&:math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Conexión BBDD}&:math:`\diamondsuit` & - & - & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Edición vectorial}&:math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Análisis vectorial}&:math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Análisis ráster}&:math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` \\
+\textbf{Servicios mapas}&:math:`\diamondsuit` & - & - & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & - & - & - & :math:`\diamondsuit` & - \\
+\textbf{Datos remotos}&:math:`\diamondsuit` & - & - & - & :math:`\diamondsuit` & - & :math:`\diamondsuit` & - & - & - & :math:`\diamondsuit` & - \\
+\bottomrule \end{tabular}
+
+	Comparación de funcionalidades entre los principales SIG de escritorio.
+\end{table*}
+
+
+Clientes ligeros, Web
+--------------------------------------------------------------
+
+Con la proliferación de Internet, la aparición de los servidores de mapas se
+produjo de forma conjunta a la de aplicaciones Web que exponían los contenidos
+servidos por estos productos. Al principio, la mayor parte de ellas se
+materializaban como desarrollos ex profeso y por tanto se resolvían los mismos
+problemas una y otra vez.
+
+Esta situación derivó hacia proyectos que intentan proporcionar
+un conjunto de componentes comunes que proporcionan al desarrollador una base
+sobre la que realizar su aplicación específica.
+
+CartoWeb
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CartoWeb \cite{webCartoWeb} es una solución SIG Web completa, además de un marco de trabajo que permite el desarrollo de aplicaciones personalizadas. Utiliza el motor de UMN MapServer y tiene una arquitectura muy modular y adaptable. 
+
+Funcionalmente, presenta un abanico muy completo de características propias de
+un geoportal, con la posibilidad de ir añadiendo o desarrollando nuevos plugins. Los existentes en la actualidad incorporan funcionalidades de análisis de rutas, métodos geoestadísticos, o edición, entre otros.
+
+OpenLayers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OpenLayers es un cliente Web ligero sin dependencia de servidores de mapas concretos, desarrollado por la compañía estadounidense MetaCarta. Ofrece un interfaz de usuario
+simplificado que ataca a servicios WMS y WFS de forma transparente para el
+usuario y desarrollador. Las características por las que ha destacado OpenLayers en
+su difusión en la comunidad es la simplicidad de uso, el soporte de \extr{tiles} y
+\extr{cache} y el acceso a mapas de Google Maps y Yahoo Maps.
+
+La figura \ref{Fig:OpenLayers} muestra el visor habitual de OpenLayers.
+
+.. figure:: OpenLayers.png
+
+	Visor de OpenLayers.
+
+
+.. _Fig:OpenLayers: 
+
+
+Mapbender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mapbender \cite{MapBender} es un cliente Web--GIS que ofrece un interfaz de usuario
+configurable no dependiente de ningún servidor de mapas concreto. Permite
+interactuar con servicios WMS, WFS(--T) y WMC. Incluye interfaces de
+administración de usuarios, grupos y servicios OGC (OWS). Una característica
+diferenciadora de Mapbender es la capacidad de edición en cliente sobre
+navegador, utilizando WFS--T.
+
+El principal objetivo de Mapbender es crear una herramienta transparente y flexible para la gestión de multiples datos y usuarios y la creación de geoportales.
+
+MapBuilder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MapBuilder \cite{webMapBuilder} es un potente cliente Web con soporte para los estándares OGC WMS, WFS(--T) y SLD. Soporta asimismo GeoRSS y es capaz de utilizar cartografía de Google Maps. Es fácilmente extensible y su interfaz es amigable y sencilla de utilizar. MapBuilder destaca por los cuidados detalles de documentación, patrones de diseño y metodologías de desarrollo y gestión utilizadas.
+
+La versión actual es 1.5. Pese al avanzado estado de desarrollo y la gran cantidad de funcionalidades, sus responsables anunciaron tras la liberación de esta versión que no continuarán el desarrollo del programa.
+
+Bibliotecas de funcionalidad común
+-------------------------------------------------------------- 
+
+.. _bibliotecasFOSS:
+
+GDAL/OGR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GDAL (\extr{Geospatial Data Abstraction Library}) \cite{webGDAL}) es una biblioteca y un conjunto de
+utilidades de línea de comandos para la traducción de formatos ráster
+geoespaciales, soportada en una amplia gama de
+plataformas.
+
+Actualmente GDAL es la biblioteca de acceso a datos geospaciales ráster
+referente no solo en el panorama del *software* libre, sino también en *software* propietario, ya que es empleada por la gran mayoría de los grandes proyectos, tales como ArcGIS, Google Earth, MapServer, gvSIG o GRASS, entre otros.
+
+GDAL es un proyecto que contiene un subproyecto conocido como OGR (OGR Simple
+Features Library). OGR es una biblioteca de acceso y un conjunto de utilidades de
+línea de comandos para acceso de lectura (y en algunas ocasiones de escritura)
+a formatos de ficheros vectoriales. 
+
+Tanto GDAL como OGR son proyectos bastante activos que van incorporando nuevas
+características de manera continua. 
+
+Proj4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Proj4 \cite{webProj4} es una biblioteca de gestión de proyecciones cartográficas surgida como
+una reprogramación de antiguas utilidades del USGS. PROJ4 se utiliza fundamentalmente para funciones de reproyección
+entre diferentes sistemas de coordenadas o referencia.
+
+Al igual que GDAL, Proj4 es una biblioteca de referencia dentro del panorama del *software* libre para
+sistemas de información geográfica, siendo el motor de reproyección de los
+principales proyectos existentes (GDAL, MapServer, PostGIS, GRASS, etc.).
+
+
+GeoTools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GeoTools \cite{webGeotools} es una biblioteca para la manipulación de información
+geospacial, dirigido a ser utilizado en otras aplicaciones  tanto
+servidoras como clientes. Con más de diez años de experiencia, proporciona los componentes básicos de acceso a datos necesarios para la construcción de otras aplicaciones SIG tales como soluciones de escritorio o servidores. 
+
+Geotools ofrece acceso a
+numerosos formatos de datos vectoriales (Shapefiles, PostGIS, MySQL, Oracle, etc.) y ráster (GeoTIFF, ArcGrid, ...), así como el cumplimiento de varias especificaciones OpenGIS
+(WFS, SLD, Filter Encoding, ...). 
+
+GeoTools es la base de otros proyectos, destacando principalmente GeoServer y
+uDig. 
+
+FDO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FDO es el otro gran proyecto aportado por Autodesk al unirse al mundo del
+*software* libre. Se trata de una biblioteca de acceso a datos vectoriales y
+ráster utilizada por MapGuide Open Source. Coincide en objetivos con la
+biblioteca OGR al pretender establecer una capa de abstracción sobre diferentes
+formatos de datos. Dispone de diferentes \extr{providers} (se denominan así los *software* que pueden servir como proveedores de datos para esta biblioteca), como ArcSDE, Oracle o incluso la propia GDAL. 
+
+SEXTANTE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SEXTANTE (Sistema EXTremeño de ANálisis TErritorial) \cite{webSextante} es una librería de geoprocesos desarrollada en Java que actualmente cuenta con más de 280 algoritmos distintos que cubren la práctica totalidad de áreas dentro del análisis geoespacial. Es empleada por los principales proyectos libres también desarrollados en Java, tales como gvSIG, OpenJUMP o uDig, para incorporar funcionalidades de análisis, tanto de datos ráster como vectoriales. Cuenta, asimismo, con componentes gráficos que facilitan el uso de los algoritmos, y que pueden igualmente reutilizarse e incorporarse con sencillez a una u otra aplicación gracias a su arquitectura. 
+
+Además de los SIG de escritorio, otras aplicaciones SIG hacen uso de SEXTANTE, como pueden ser los servidores de procesos que implementan el estándar WPS, como por ejemplo el desarrollado por 52N.
