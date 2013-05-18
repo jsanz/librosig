@@ -6,7 +6,7 @@ SIG móvil
 
 
 
-Los SIG no han sido ajenos a la popularización de las tecnologías móviles y la imparable expansión que sufren en la actualidad. Más aún, tratándose de un área relacionada con el manejo de información geográfica y el análisis del medio, el aprovechamiento de tecnologías que permiten llevar el SIG directamente a ese medio e <<interactuar>> directamente con la información geográfica ha abierto nuevos horizontes dentro del mundo de los SIG. 
+Los SIG no han sido ajenos a la popularización de las tecnologías móviles y la imparable expansión que sufren en la actualidad. Más aún, tratándose de un área relacionada con el manejo de información geográfica y el análisis del medio, el aprovechamiento de tecnologías que permiten llevar el SIG directamente a ese medio e *interactuar* directamente con la información geográfica ha abierto nuevos horizontes dentro del mundo de los SIG. 
 
 En este capítulo veremos las características de una nueva forma de SIG basada en su uso sobre dispositivos móviles, y trataremos las nuevas posibilidades que esto ofrece. Asimismo, y puesto que los SIG móviles se apoyan en otra serie de tecnologías (especialmente de comunicación y posicionamiento), desarrollaremos estas para definir el marco tecnológico en el que se encuadra esta rama particular del SIG.
 
@@ -34,7 +34,7 @@ Qué es el SIG móvil
 
 .. _SIG_Moviles:
 
-Comencemos viendo qué entendemos por SIG móvil y de qué formas puede presentarse. Para ello, analicemos como hemos hecho en otros apartados una situación habitual en el entorno de trabajo de un SIG, en particular la relativa a la creación de datos geográficos. Según vimos en el capítulo \ref{Fuentes_datos}, una de las formas de obtener datos con los que trabajar en un SIG es la toma de estos directamente en campo y su posterior incorporación dentro del SIG. Esto requería habitualmente la digitalización de los datos tomados, ya que dicha toma se desarrollaba en la mayor parte de los casos mediante medios analógicos. 
+Comencemos viendo qué entendemos por SIG móvil y de qué formas puede presentarse. Para ello, analicemos como hemos hecho en otros apartados una situación habitual en el entorno de trabajo de un SIG, en particular la relativa a la creación de datos geográficos. Según vimos en el capítulo :ref:`Fuentes_datos`, una de las formas de obtener datos con los que trabajar en un SIG es la toma de estos directamente en campo y su posterior incorporación dentro del SIG. Esto requería habitualmente la digitalización de los datos tomados, ya que dicha toma se desarrollaba en la mayor parte de los casos mediante medios analógicos. 
 
 Una importante mejora en este proceso se daría si la recogida de datos se efectuara empleando medios digitales, ya que el resultado sería mucho más cercano a lo que posteriormente va a necesitarse para el trabajo en gabinete. Además de esta ventaja inmediata y del ahorro de tiempo que traería consigo, existen otras ventajas directas que los medios digitales aportarían. Por ejemplo, si en lugar de un dispositivo de toma de datos contamos con dos de ellos, es relativamente sencillo (especialmente si los dispositivos pueden comunicarse entre sí) replicar los datos tomados, teniéndose así una copia de seguridad que evitará en gran medida la pérdida de los datos tomados por circunstancias diversas. El software instalado en el dispositivo puede a su vez contar con elementos que efectúen algún tipo de control de calidad, asegurándose de que no se introducen por descuido valores erróneos o de que no se deja sin rellenar ningún campo de un estadillo.
 
@@ -42,7 +42,7 @@ No obstante, y a pesar de que esa recogida de datos se realiza con el fin de tra
 
 Llevar el SIG al campo y sacarlo de su lugar fijo en el gabinete es lo que da lugar al denominado *SIG móvil*, cuyas particularidades, como veremos, van más allá del mero hecho de una localización de trabajo distinta. Cuando hablamos de SIG móvil, no nos referimos únicamente a un SIG habitual ejecutándose en una plataforma móvil, sino también a una filosofía distinta a la que existe en el uso de otros elementos tecnológicos del ámbito SIG que ya conocemos, en una localización fija. Es decir, llevar el SIG al campo no conlleva tan solo un cambio físico del entorno de trabajo, sino también una notable adaptación en otros aspectos.
 
-Hoy en día son muchos los dispositivos que podemos emplear para disponer de una herramienta móvil con capacidad de proceso. Sin ir más lejos, un ordenador portátil con una conexión inalámbrica a Internet (empleando telefonía móvil de tercera generación) nos serviría para replicar en campo el entorno de trabajo de un SIG de escritorio, poniendo a nuestra disposición todas las capacidades de este. Esta solución, no obstante, es poco práctica, ya que, si bien es cierto que podemos <<mover>> un ordenador portátil con relativa facilidad, no es un dispositivo pensado para moverse mientras se encuentra en funcionamiento, con lo que más bien tendríamos un *SIG portátil* en lugar de un *SIG móvil*. Hay otros tipos de *hardware* mucho más adecuados para este cometido, como pueden ser los siguientes (Figura \ref{Fig:TiposDispositivosMoviles}):
+Hoy en día son muchos los dispositivos que podemos emplear para disponer de una herramienta móvil con capacidad de proceso. Sin ir más lejos, un ordenador portátil con una conexión inalámbrica a Internet (empleando telefonía móvil de tercera generación) nos serviría para replicar en campo el entorno de trabajo de un SIG de escritorio, poniendo a nuestra disposición todas las capacidades de este. Esta solución, no obstante, es poco práctica, ya que, si bien es cierto que podemos *mover* un ordenador portátil con relativa facilidad, no es un dispositivo pensado para moverse mientras se encuentra en funcionamiento, con lo que más bien tendríamos un *SIG portátil* en lugar de un *SIG móvil*. Hay otros tipos de *hardware* mucho más adecuados para este cometido, como pueden ser los siguientes (Figura :num:`#figtiposdispositivosmoviles`):
 
 
 	* Unidades GPS (a).
@@ -57,7 +57,7 @@ Hoy en día son muchos los dispositivos que podemos emplear para disponer de una 
 	
 	Distintos tipos de dispositivos móviles
 
-.. _Fig:TiposDispositivosMoviles: 
+.. _figtiposdispositivosmoviles: 
 
 
 
@@ -69,7 +69,7 @@ Por su parte, los teléfonos móviles son los dispositivos versátiles por excelenc
 
 Las unidades GPS más básicas se limitan a mostrar la localización, disponiendo de funcionalidades reducidas. Las más completas, no obstante, incorporan capacidades más cercanas a las de una PDA, con posibilidad de ejecutar aplicaciones complejas tales como un SIG adaptado. El interés de la tecnología GPS está, sin embargo, en considerarla como una tecnología adicional que enriquece a algunos de los dispositivos anteriores. Así, tanto teléfonos móviles como PDA (o incluso otros dispositivos como cámaras fotográficas) pueden incorporar receptores GPS y disponen por tanto de información acerca de su posición. Esta combinación es la que da como resultado los dispositivos más potentes para el SIG móvil, ofreciendo todas las funcionalidades que iremos viendo a lo largo de este apartado.
 
-Asimismo, la conexión remota a Internet, que a día de hoy presenta un avanzado estado de desarrollo, abre la puerta a muchas de las capacidades más potentes y novedosas del SIG actual, como pueden ser la consulta o incluso la edición de cartografía, según vimos en el capítulo \ref{Servidores_y_clientes_remotos}.
+Asimismo, la conexión remota a Internet, que a día de hoy presenta un avanzado estado de desarrollo, abre la puerta a muchas de las capacidades más potentes y novedosas del SIG actual, como pueden ser la consulta o incluso la edición de cartografía, según vimos en el capítulo :ref:`Servidores_y_clientes_remotos`.
 
 Para dar una definición más formal de lo que entendemos por SIG móvil, podemos decir que es una tecnología que integra una o más de las siguientes \cite{ESRI2007MobileGIS}:
 
@@ -79,13 +79,13 @@ Para dar una definición más formal de lo que entendemos por SIG móvil, podemos d
 	* Acceso inalámbrico a Internet.
 
 
-Por su parte, \cite{Brimicombre2002GIS} distingue tres elementos principales que dan forma al contexto de las aplicaciones SIG móviles: SIG, Internet, y dispositivos móviles y Nuevas Tecnologías de la Información y la Comunicación (NTIC). La figura \ref{Fig:LBSInterseccion} esquematiza esto.
+Por su parte, \cite{Brimicombre2002GIS} distingue tres elementos principales que dan forma al contexto de las aplicaciones SIG móviles: SIG, Internet, y dispositivos móviles y Nuevas Tecnologías de la Información y la Comunicación (NTIC). La figura :num:`#figlbsinterseccion` esquematiza esto.
 
 .. figure:: LBSInterseccion.pdf
 	
 	Clasificación de aplicaciones del ámbito del SIG móvil en función de las tecnologías empleadas (según \cite{Brimicombre2002GIS)}
 
-.. _Fig:LBSInterseccion: 
+.. _figlbsinterseccion: 
 
 
 En el centro, como tecnologías aglutinadoras de las anteriores, encontramos los *Servicios Basados en Localización* (LBS\footnote{*Location--Based Services*}). En general, se suelen recoger bajo esta denominación los servicios que toman en consideración la posición del usuario, y en los que se produce la participación de un tercero, el encargado de proveer el servicio como parte fundamental de un negocio. Dichos servicios pueden ir desde la localización del comercio más próximo hasta el envío de avisos cuando se encuentre cerca de otro usuario conocido. 
@@ -94,7 +94,7 @@ En el centro, como tecnologías aglutinadoras de las anteriores, encontramos los 
 Podemos, con lo anterior, tener así una primera y muy general clasificación de las áreas de aplicación del SIG móvil en los dos siguientes grupos:
 
 
-	* SIG <<en campo>>. Se centra más en los trabajos propios del SIG y en la recolección y edición de datos.
+	* SIG *en campo*. Se centra más en los trabajos propios del SIG y en la recolección y edición de datos.
 	* Servicios Basados en Localización. Servicios ofrecidos por terceros en función de la posición del dispositivo y del usuario. 
 
 
@@ -126,19 +126,19 @@ Los siguientes son algunos de los principales aspectos a considerar que caracter
 Aplicaciones del SIG móvil
 =====================================================
 
-Para estudiar las posibilidades que el SIG móvil nos brinda, podemos analizar el papel que la información geográfica juega en el trabajo de campo. De este modo, descubriremos en qué fases de este existirán diferencias si podemos contar con una herramienta con las capacidades de un SIG, ampliada además con otros elementos tales como un sistema GPS incorporado en el dispositivo. Entendemos aquí trabajo de campo no en el sentido tradicional, sino como cualquier actividad desarrollada al aire libre en la que pueda aplicarse de algún modo un SIG móvil, y que no necesariamente ha de constituir un <<trabajo>> como tal. 
+Para estudiar las posibilidades que el SIG móvil nos brinda, podemos analizar el papel que la información geográfica juega en el trabajo de campo. De este modo, descubriremos en qué fases de este existirán diferencias si podemos contar con una herramienta con las capacidades de un SIG, ampliada además con otros elementos tales como un sistema GPS incorporado en el dispositivo. Entendemos aquí trabajo de campo no en el sentido tradicional, sino como cualquier actividad desarrollada al aire libre en la que pueda aplicarse de algún modo un SIG móvil, y que no necesariamente ha de constituir un *trabajo* como tal. 
 
 Por una parte, la información geográfica es una herramienta en la que nos apoyamos para desarrollar la actividad en cuestión. Es decir, *usamos* la información geográfica de forma directa. Así sucede, por ejemplo, cuando debemos tomar datos en una localización concreta como por ejemplo una parcela de inventario en un inventario forestal o un punto de alcantarillado para realizar un control del estado de una red de saneamiento. También hacemos un uso similar cuando buscamos el restaurante más próximo o queremos encontrar el camino más rápido para tomar una carretera desde nuestro emplazamiento actual.
 
-Tradicionalmente, la información geográfica se ha llevado al campo en forma de mapas impresos. Consultando estos se encontraba el lugar seleccionado y la forma de desplazarse hasta él. Empleábamos mapas topográficos para encontrar esa parcela de inventario, callejeros para localizar la alcantarilla o un mapa de carreteras para saber cómo desplazarnos en coche. Con el SIG móvil, la información geográfica <<viaja>> al campo en formato digital, almacenada dentro del propio dispositivo o bien accediendo mediante este a información remota a través de Internet. Esto ofrece ventajas tales como una mayor comodidad o como la posibilidad de tener varios dispositivos que compartan la cartografía. Es decir, varios técnicos que trabajen en campo pueden <<llevar>> el mismo mapa sin necesidad de tener varias copias de este, sino tan solo varias <<copias>> del dispositivo, que es por otra parte el mismo que emplearán para la toma de datos o para cualquiera de las restantes tareas de su trabajo.
+Tradicionalmente, la información geográfica se ha llevado al campo en forma de mapas impresos. Consultando estos se encontraba el lugar seleccionado y la forma de desplazarse hasta él. Empleábamos mapas topográficos para encontrar esa parcela de inventario, callejeros para localizar la alcantarilla o un mapa de carreteras para saber cómo desplazarnos en coche. Con el SIG móvil, la información geográfica *viaja* al campo en formato digital, almacenada dentro del propio dispositivo o bien accediendo mediante este a información remota a través de Internet. Esto ofrece ventajas tales como una mayor comodidad o como la posibilidad de tener varios dispositivos que compartan la cartografía. Es decir, varios técnicos que trabajen en campo pueden *llevar* el mismo mapa sin necesidad de tener varias copias de este, sino tan solo varias *copias* del dispositivo, que es por otra parte el mismo que emplearán para la toma de datos o para cualquiera de las restantes tareas de su trabajo.
 
-Por otra parte, la información geográfica en sí puede ser parte de la información recogida en campo. Es decir, es objeto de interés directo del trabajo de campo, y no solo un medio para realizar este. En este caso, los dispositivos móviles van a permitir recoger con más precisión cualquier tipo de dato espacial sobre el terreno, al mismo tiempo que facilitan la creación de dicho dato espacial o la edición de uno ya existente en función de lo observado. Se unen en este punto la capacidad del dispositivo para conocer las coordenadas de su localización y las capacidades de las aplicaciones SIG para edición de datos, así como las propias ventajas de los datos digitales en lo que a su actualización respecta (véase \ref{Datos_digitales_y_analogicos}). 
+Por otra parte, la información geográfica en sí puede ser parte de la información recogida en campo. Es decir, es objeto de interés directo del trabajo de campo, y no solo un medio para realizar este. En este caso, los dispositivos móviles van a permitir recoger con más precisión cualquier tipo de dato espacial sobre el terreno, al mismo tiempo que facilitan la creación de dicho dato espacial o la edición de uno ya existente en función de lo observado. Se unen en este punto la capacidad del dispositivo para conocer las coordenadas de su localización y las capacidades de las aplicaciones SIG para edición de datos, así como las propias ventajas de los datos digitales en lo que a su actualización respecta (véase :ref:`Datos_digitales_y_analogicos`). 
 
-Esta es una de las razones principales del auge actual de los proyectos colaborativos para la creación de cartografía (véase \ref{VGI}). Los complejos y caros equipos empleados en la cartografía clásica pueden sustituirse en muchos casos por dispositivos simples como un teléfono móvil o una unidad GPS de consumo, ambos sencillos de manejar para el usuario no especializado. Este puede así tomar información geográfica y aportarla a algún proyecto comunitario, o bien guardarla para su uso personal. 
+Esta es una de las razones principales del auge actual de los proyectos colaborativos para la creación de cartografía (véase :ref:`VGI`). Los complejos y caros equipos empleados en la cartografía clásica pueden sustituirse en muchos casos por dispositivos simples como un teléfono móvil o una unidad GPS de consumo, ambos sencillos de manejar para el usuario no especializado. Este puede así tomar información geográfica y aportarla a algún proyecto comunitario, o bien guardarla para su uso personal. 
 
 Con las ideas anteriores, podemos localizar las principales tareas que el SIG móvil va a desarrollar en los distintos ámbitos de aplicación y dividirlas en dos bloques: aquellas que permiten a los usuarios optimizar su movilidad durante el trabajo de campo, y aquellas que facilitan el desarrollo de la labor en cuestión una vez que se ha posicionado correctamente. 
 
-Con respecto a las relacionadas con la movilidad, no se ha de pensar que estas se limitan a la localización de un emplazamiento puntual como se ha mencionado anteriormente, en lo que sería un uso casi exclusivo del sistema de posicionamiento del dispositivo. También el análisis, parte importante de un SIG, puede servir para mejorar el desplazamiento que el trabajo en campo conlleva. El cálculo de rutas es el principal ejemplo en este sentido, tal y como se implementa en los navegadores GPS, aunque no el único. Elaborar un plan de ruta en tiempo real puede ser útil para muchos profesionales, que pueden hacer uso de algoritmos como el del <<problema del viajante>> si estos se encuentran implementados en su SIG móvil.
+Con respecto a las relacionadas con la movilidad, no se ha de pensar que estas se limitan a la localización de un emplazamiento puntual como se ha mencionado anteriormente, en lo que sería un uso casi exclusivo del sistema de posicionamiento del dispositivo. También el análisis, parte importante de un SIG, puede servir para mejorar el desplazamiento que el trabajo en campo conlleva. El cálculo de rutas es el principal ejemplo en este sentido, tal y como se implementa en los navegadores GPS, aunque no el único. Elaborar un plan de ruta en tiempo real puede ser útil para muchos profesionales, que pueden hacer uso de algoritmos como el del *problema del viajante* si estos se encuentran implementados en su SIG móvil.
 
 Dentro de las actividades que facilitan la labor en campo son de especial interés las relacionadas con la captura de información geográfica, que se simplifica notablemente como ya hemos dicho. Asimismo, también debemos citar cualquier tipo de servicio al que pueda accederse mediante la conexión inalámbrica del dispositivo y proporcione información complementaria o algún tipo de apoyo a la persona que opera con este. Y por último, no ha de olvidarse el análisis SIG como una herramienta con gran utilidad, ya que permitirá realizar procesos adicionales que pueden añadir nuevas posibilidades, tales como, por ejemplo, la validación en tiempo real de los datos recogidos.
 
@@ -172,21 +172,21 @@ Los métodos mediante los cuales puede determinarse la posición de un dispositivo
 	* Metodos basados en terminal.
 
 
-La introducción manual es el método más obvio y simple que, no obstante, puede implicar también el uso de algún tipo de tecnología y requiere algunas matizaciones. Además de introducir directamente en el dispositivo las coordenadas actuales de este, es posible establecer una posición mediante la denominada *geocodificación inversa*. En el capítulo \ref{Geocodificacion} veíamos que mediante la geocodificación asignábamos coordenadas a un determinado elemento, que podía ser un punto dado o cualquier otro elemento susceptible de ser georreferenciada. Aplicando este razonamiento de forma inversa, y si disponemos una base de datos con un conjunto de esos elementos y sus coordenadas asociadas, podemos obtener estas últimas haciendo búsquedas en esa base de datos con el nombre del elemento. Es decir, podemos decirle al dispositivo que la posición actual es *Badajoz* o *Estadio Vicente Calderón* y él se encargará de convertir esa información en una coordenada numérica similar a la que se obtendría si tuviera instalado un receptor GPS o alguna otra tecnología similar.
+La introducción manual es el método más obvio y simple que, no obstante, puede implicar también el uso de algún tipo de tecnología y requiere algunas matizaciones. Además de introducir directamente en el dispositivo las coordenadas actuales de este, es posible establecer una posición mediante la denominada *geocodificación inversa*. En el capítulo :ref:`Geocodificacion` veíamos que mediante la geocodificación asignábamos coordenadas a un determinado elemento, que podía ser un punto dado o cualquier otro elemento susceptible de ser georreferenciada. Aplicando este razonamiento de forma inversa, y si disponemos una base de datos con un conjunto de esos elementos y sus coordenadas asociadas, podemos obtener estas últimas haciendo búsquedas en esa base de datos con el nombre del elemento. Es decir, podemos decirle al dispositivo que la posición actual es *Badajoz* o *Estadio Vicente Calderón* y él se encargará de convertir esa información en una coordenada numérica similar a la que se obtendría si tuviera instalado un receptor GPS o alguna otra tecnología similar.
 
-Algunos servicios de consulta de los que presentábamos en el capítulo \ref{Servidores_y_clientes_remotos} permiten este tipo de operaciones, y devuelven coordenadas asociadas a un determinado fenómeno geográfico. En particular, los denominadas servicios de *Nomenclator* son los encargados de ello, como veremos con más detalle en el apartado \ref{Nomenclator}.
+Algunos servicios de consulta de los que presentábamos en el capítulo :ref:`Servidores_y_clientes_remotos` permiten este tipo de operaciones, y devuelven coordenadas asociadas a un determinado fenómeno geográfico. En particular, los denominadas servicios de *Nomenclator* son los encargados de ello, como veremos con más detalle en el apartado :ref:`Nomenclator`.
 
 Con respecto a los dos tipos restantes, ambos se apoyan en una red de estaciones cuyas posiciones son conocidas. Los basados en red obtienen su posición mediante cálculos realizados en función de una señal emitida por el dispositivo. El método más habitual de esta clase es el empleado por los teléfonos móviles para calcular su posición en función del repetidor más cercano de entre los que le ofrecen cobertura. 
 
 Por el contrario, en los métodos basados en terminal es el propio dispositivo el que recibe la señal que procede de las estaciones, y en función de estas calcula su posición. El sistema GPS es el ejemplo más popular de un método de esta última clase. Existen asimismo métodos combinados que emplean ambas técnicas para el cálculo posicional.
 
-La figura \ref{Fig:MetodosPosicionamiento} esquematiza lo anterior.
+La figura :num:`#figmetodosposicionamiento` esquematiza lo anterior.
 
 .. figure:: MetodosPosicionamiento.pdf
 	
 	Metodos de posicionamiento basados en red (a) y en terminal (b)
 
-.. _Fig:MetodosPosicionamiento: 
+.. _figmetodosposicionamiento: 
 
 
 Con independencia del tipo de método, el proceso de cálculo de posición sigue un esquema como el siguiente:
@@ -197,7 +197,7 @@ Con independencia del tipo de método, el proceso de cálculo de posición sigue un
 	* La posición se calcula conociendo las distancias a un número dado de estaciones base.
 
 
-Esto coincide con lo que ya vimos en el apartado \ref{GPS} dedicado al sistema GPS.
+Esto coincide con lo que ya vimos en el apartado :ref:`GPS` dedicado al sistema GPS.
 
 Para convertir la información de la señal en una posición, encontramos diversas técnicas, a saber:
 
@@ -249,7 +249,7 @@ Aunque un SIG móvil era en su concepción inicial un elemento autónomo capaz de c
 
 En los dispositivos de mayor potencia, adecuados para un desarrollo profesional del SIG en campo y para la recogida de datos, el SIG conserva sus capacidades de acceder a datos locales, mientras que en otros menos potentes y especializados, tales como teléfonos móviles, se consumen exclusivamente datos remotos. Algunas aplicaciones con base SIG, tales como navegadores, pueden utilizar cartografía digital almacenada en el dispositivo, pero la aplicación como tal no permite la utilización de otros datos distintos o la lectura de diversos formatos, como sí sucede en un SIG de escritorio.
 
-En lo referente a la representación, la principal diferencia que se ha de considerar a la hora de diseñar un SIG móvil es, como parece lógico, la reducida dimensión de las pantallas. Especialmente a la hora de visualizar datos y aplicar una simbología a estos, se ha de tener en cuenta que existe una limitación de tamaño y que no pueden aplicarse ideas idénticas a las que serían adecuadas para una pantalla de ordenador común, ya que, al trasladarlas a la del dispositivo móvil, puede obtenerse como resultado un mapa carente de utilidad que no transmite adecuadamente la información geográfica que contiene. Los conceptos de generalización cartográfica que mencionamos en el apartado \ref{GeneralizacionCartografica} (por ejemplo, la exageración de elementos) han de tenerse muy presentes en la creación de un SIG móvil.
+En lo referente a la representación, la principal diferencia que se ha de considerar a la hora de diseñar un SIG móvil es, como parece lógico, la reducida dimensión de las pantallas. Especialmente a la hora de visualizar datos y aplicar una simbología a estos, se ha de tener en cuenta que existe una limitación de tamaño y que no pueden aplicarse ideas idénticas a las que serían adecuadas para una pantalla de ordenador común, ya que, al trasladarlas a la del dispositivo móvil, puede obtenerse como resultado un mapa carente de utilidad que no transmite adecuadamente la información geográfica que contiene. Los conceptos de generalización cartográfica que mencionamos en el apartado :ref:`GeneralizacionCartografica` (por ejemplo, la exageración de elementos) han de tenerse muy presentes en la creación de un SIG móvil.
 
 No solo en la forma de representación existen diferencias, sino también en las propias funcionalidades de visualización incorporadas en la aplicación. Esto está relacionado no únicamente con las limitaciones de la aplicación ---podemos decir que, en general, el SIG sobre un dispositivo móvil es una versión más simplificada y menos compleja de un SIG de escritorio---, sino con las necesidades que el usuario va a tener en este aspecto. 
 
@@ -257,28 +257,28 @@ Por ejemplo, podemos asumir que un usuario de un SIG móvil va a requerir menos c
 
 Aunque también los SIG móviles tienen parte del carácter generalista de los SIG de escritorio, su contexto está más acotado o, al menos, más limitado en cuanto a la extensión de las actividades que pueden llevarse a cabo y las necesidades que van a plantear. Por esta razón, sus funcionalidades, con la visualización en lugar predominante, también se encuentran limitadas.
 
-Gracias al acceso a Internet que se mencionó anteriormente, no solo las tareas de acceso y procesado de datos se delegan en un servidor, sino también las relacionadas con la representación. Por eso, es más habitual que los SIG móviles actúen como clientes de servicios de mapas (es decir, de representaciones ya hechas y listas para visualizarse, como vimos en el apartado \ref{Servidores}), y no como clientes de servicios más complejos en los cuales se obtienen los datos y después es la aplicación la que se encarga de formar la representación a partir de ellos. 
+Gracias al acceso a Internet que se mencionó anteriormente, no solo las tareas de acceso y procesado de datos se delegan en un servidor, sino también las relacionadas con la representación. Por eso, es más habitual que los SIG móviles actúen como clientes de servicios de mapas (es decir, de representaciones ya hechas y listas para visualizarse, como vimos en el apartado :ref:`Servidores`), y no como clientes de servicios más complejos en los cuales se obtienen los datos y después es la aplicación la que se encarga de formar la representación a partir de ellos. 
 
 Esto no quiere decir que este tipo de capacidades no se encuentren en los SIG móviles. De hecho, algunas aplicaciones SIG móviles permiten incluso que la edición de la cartografía sea también un servicio remoto, es decir, que cuando el usuario edite o añada nuevos elementos en su trabajo de campo, estos cambios no tengan lugar en los datos locales que existen en el dispositivo, sino que modifica los presentes en un repositorio remoto. Esta funcionalidad, poco frecuente incluso en los SIG de escritorio más completos, aparece en algunos SIG móviles. No obstante, las posibilidades de representación son menores en el SIG móvil, entendiéndose que no es necesario ofrecer capacidades avanzadas de este tipo.
 
-A modo de ejemplo, y tras lo explicado hasta este punto, se muestra en la figura \ref{Fig:SIGMovil} el aspecto de una aplicación SIG móvil.
+A modo de ejemplo, y tras lo explicado hasta este punto, se muestra en la figura :num:`#figsigmovil` el aspecto de una aplicación SIG móvil.
 
 .. figure:: SigMovil.png
 	
 	Aspecto de una aplicación SIG móvil (gvSIG Mobile)
 
-.. _Fig:SIGMovil: 
+.. _figsigmovil: 
 
 
-En los servicios basados en localización, todo lo anterior tiene lugar de un modo aún más patente, reduciéndose por lo general más aún las funcionalidades. El usuario tiene menos capacidad para <<operar>> con el dispositivo y con el *software*, y los servicios se diseñan para que sean sencillos de consumir. Los teléfonos móviles, que representan el dispositivo por excelencia para este tipo de aplicaciones, tienen capacidades más reducidas que otros de los adecuados para el SIG móvil, por lo que esta limitación de funcionalidades es también producto del dispositivo al que están orientadas mayoritariamente. La menor especialización de los usuarios influye también en que las aplicaciones presenten esas características.
+En los servicios basados en localización, todo lo anterior tiene lugar de un modo aún más patente, reduciéndose por lo general más aún las funcionalidades. El usuario tiene menos capacidad para *operar* con el dispositivo y con el *software*, y los servicios se diseñan para que sean sencillos de consumir. Los teléfonos móviles, que representan el dispositivo por excelencia para este tipo de aplicaciones, tienen capacidades más reducidas que otros de los adecuados para el SIG móvil, por lo que esta limitación de funcionalidades es también producto del dispositivo al que están orientadas mayoritariamente. La menor especialización de los usuarios influye también en que las aplicaciones presenten esas características.
 
-La imagen \ref{Fig:EjemplosLBS} muestra dos ejemplos de aplicaciones para servicios basados en localización. Adviértase que estas no tienen necesariamente que guardar similitud con la idea clásica de un SIG, y que pueden no incluir ningún tipo de representación cartográfica. Es decir, que pueden proveer el servicio dando algún tipo de información geográfica (en el caso del ejemplo de la izquierda, se ofrecen mensajes de otros usuarios del servicio localizados en la misma zona) sin necesidad de mostrarla sobre un mapa. En el caso de la captura de pantalla mostrada en el lado derecho, la información sí aparece en un mapa, en el cual se muestran los contactos del usuario que se encuentran cercanos. El servicio en este caso es una forma particular de agenda de contactos que hace énfasis en algunos de ellos en función de su localización y la del usuario.
+La imagen :num:`#figejemploslbs` muestra dos ejemplos de aplicaciones para servicios basados en localización. Adviértase que estas no tienen necesariamente que guardar similitud con la idea clásica de un SIG, y que pueden no incluir ningún tipo de representación cartográfica. Es decir, que pueden proveer el servicio dando algún tipo de información geográfica (en el caso del ejemplo de la izquierda, se ofrecen mensajes de otros usuarios del servicio localizados en la misma zona) sin necesidad de mostrarla sobre un mapa. En el caso de la captura de pantalla mostrada en el lado derecho, la información sí aparece en un mapa, en el cual se muestran los contactos del usuario que se encuentran cercanos. El servicio en este caso es una forma particular de agenda de contactos que hace énfasis en algunos de ellos en función de su localización y la del usuario.
 
 .. figure:: EjemplosLBS.png
 	
 	Dos servicios basados en localizacion sobre un teléfono móvil. A la izquierda, Foursquare[\url{http://www.foursquare.com]. A la derecha, Google Latitude[\url{http://www.google.com/latitude}].}
 
-.. _Fig:EjemplosLBS: 
+.. _figejemploslbs: 
 
 
 
@@ -324,7 +324,7 @@ Al contrario que en el caso de usar un dispositivo móvil como un navegador GPS, 
 	
 	Dos ejemplos de realidad aumentada (cortesía de 5 Magazine)
 
-.. _Fig:RealidadAumentada: 
+.. _figrealidadaumentada: 
 
 
 El *software* debe diseñarse de forma que pueda responder a ese contexto y adaptarse a él. Las siguientes son las áreas principales en las que esa adaptación puede producirse \cite{Reichenbacher2004PhD}:
@@ -336,11 +336,11 @@ El *software* debe diseñarse de forma que pueda responder a ese contexto y adapt
 * Presentación. Si la información requiere ser representada, esto puede hacerse de diversas formas en función del contexto. La simbología empleada se adapta, por ejemplo, a las preferencias del usuario (resaltando aquellos elementos que le resultan de mayor interés) o a la hora del día (señalando de algún modo explicito el hecho de que algunos elementos pueden no estar disponibles, tales como comercios si es de madrugada), entre otros factores.
 
 
-La adaptación a un contexto dado puede ser mayor o menor en función de las propias características del servicio y de cómo este se plantee. En algunos casos puede llegar a ser muy intensa, tal y como sucede en la denominada *realidad aumentada*, donde la frontera entre la realidad y el dispositivo se difumina gracias a que aquella se <<sumerge>> en este y es ampliada. En la realidad aumentada, vemos en la pantalla de nuestro dispositivo imágenes del entorno en el que nos encontramos, pero complementadas con elementos adicionales tales como gráficos, vídeos o sonido. Estos elementos es posible incorporarlos gracias a que se conoce con exactitud el contexto, y esa información puede emplearse para buscar nueva información que añadir. La figura \ref{Fig:RealidadAumentada} muestra sendos ejemplos muy ilustrativos de lo anterior.
+La adaptación a un contexto dado puede ser mayor o menor en función de las propias características del servicio y de cómo este se plantee. En algunos casos puede llegar a ser muy intensa, tal y como sucede en la denominada *realidad aumentada*, donde la frontera entre la realidad y el dispositivo se difumina gracias a que aquella se *sumerge* en este y es ampliada. En la realidad aumentada, vemos en la pantalla de nuestro dispositivo imágenes del entorno en el que nos encontramos, pero complementadas con elementos adicionales tales como gráficos, vídeos o sonido. Estos elementos es posible incorporarlos gracias a que se conoce con exactitud el contexto, y esa información puede emplearse para buscar nueva información que añadir. La figura :num:`#figrealidadaumentada` muestra sendos ejemplos muy ilustrativos de lo anterior.
 Resumen
 =====================================================
 
-Los SIG móviles combinan las tecnologías SIG con los dispositivos móviles, el acceso inalámbrico a Internet y los sistemas de posicionamiento, para ofrecer una solución ventajosa para el desarrollo de trabajo de campo. De particular interés son los denominados Servicios Basados en Localización, donde un tercero ofrece servicios que dependen de la posición en cada momento del dispositivo. Otras de las tareas fundamentales del SIG móvil son la navegación o la captura de datos espaciales directamente en el dispositivo, las cuales son las principales en lo que hemos denominado SIG <<en campo>>.
+Los SIG móviles combinan las tecnologías SIG con los dispositivos móviles, el acceso inalámbrico a Internet y los sistemas de posicionamiento, para ofrecer una solución ventajosa para el desarrollo de trabajo de campo. De particular interés son los denominados Servicios Basados en Localización, donde un tercero ofrece servicios que dependen de la posición en cada momento del dispositivo. Otras de las tareas fundamentales del SIG móvil son la navegación o la captura de datos espaciales directamente en el dispositivo, las cuales son las principales en lo que hemos denominado SIG *en campo*.
 
 Para comprender el funcionamiento de las tecnologías implicadas en el SIG móvil, hemos analizando por separado los métodos de posicionamiento, las redes inalámbricas y las aplicaciones de *software*, cada una de las cuales desempeña un papel básico en definir las capacidades de un sistema SIG móvil.
 

@@ -16,7 +16,7 @@ Introducción
 
 El análisis de los datos geográficos es, junto con la generación cartográfica, una de las tareas fundamentales sin las cuales el concepto de SIG no alcanza su verdadero significado. La información que manejamos en un SIG es a su vez una fuente de nueva información, y solo es a través de su análisis como podemos obtener esta última y sacar partido de ella.
 
-Los datos espaciales contienen mucha más información de la que a primera vista nos muestran. Todo dato espacial es el resultado de un proceso localizado espacialmente, el cual podemos conocer en mayor medida si sabemos <<leer>> la información subyacente que dicho dato contiene. Los cursos de los ríos informan sobre la estructura del terreno o la litología existente. Los patrones en los que se disponen los nidos de una especie de ave dicen mucho acerca del comportamiento de esta. Y así, muchos otros ejemplos que pueden analizarse según alguna o varias de las formulaciones que veremos a lo largo de esta parte del libro. Lo importante es conocer qué formas hay de  de convertir la información espacial en información sobre un proceso dado, o cómo extraer parámetros de utilidad a partir de datos espaciales relacionados con nuestro área de estudio.
+Los datos espaciales contienen mucha más información de la que a primera vista nos muestran. Todo dato espacial es el resultado de un proceso localizado espacialmente, el cual podemos conocer en mayor medida si sabemos *leer* la información subyacente que dicho dato contiene. Los cursos de los ríos informan sobre la estructura del terreno o la litología existente. Los patrones en los que se disponen los nidos de una especie de ave dicen mucho acerca del comportamiento de esta. Y así, muchos otros ejemplos que pueden analizarse según alguna o varias de las formulaciones que veremos a lo largo de esta parte del libro. Lo importante es conocer qué formas hay de  de convertir la información espacial en información sobre un proceso dado, o cómo extraer parámetros de utilidad a partir de datos espaciales relacionados con nuestro área de estudio.
 
 Ahora que ya conocemos cómo son los datos que podemos incorporar a un SIG, es el momento de ver cómo los SIG constituyen herramientas de gran potencia para estudiar dichos datos. El análisis de estos datos geográficos ha cobrado una nueva dimensión desde la aparición de los SIG, surgiendo nuevos planteamientos y mejorándose los ya existentes. A lo largo de toda su historia, el análisis ha sido uno de los elementos más importantes de un SIG, y a día de hoy existen formulaciones que cubren casi todo el abanico posible de necesidades. Dados unos datos espaciales y un problema a resolver, es probable que exista algún procedimiento que, si no nos da una solución como tal a partir de dichos datos, pueda emplearlos para acercarnos a esta. El objetivo de esta parte del libro es mostrar los más importantes de dichos procedimientos, con el fin de dejar clara la potencialidad de los datos espaciales en los más diversos contextos de estudio.
 
@@ -65,42 +65,42 @@ Según \cite{Nyerges1991CartoAndGIS}, pueden distinguirse las siguientes categor
 \cite{Slater1982Heineman} cita la siguiente lista como compendió básico de las cuestiones que pueden plantearse en el análisis espacial.
 
 
- * ¿Dónde se encuentra?
- * ¿Dónde tiene lugar?
- * ¿Qué hay ahí?
- * ¿Por qué esta ahí?
- * ¿Por qué no está en otro lugar?
- * ¿Qué podría haber ahí?
- * ¿Podría estar en otro lugar?
- * ¿Cuánto hay en ese lugar?
- * ¿Hasta dónde se extiende?
- * ¿Por qué tiene esa estructura particular?
- * ¿Existe regularidad en esa estructura?
- * ¿De qué naturaleza es esa regularidad?
- * ¿Por qué el patrón de distribución espacial tiene que mostrar regularidad?
- * ¿Dónde se encuentra en relación a otros de su misma clase?
- * ¿Qué clase de distribución conforma?
- * ¿Se encuentra en todo el mundo?
- * ¿Es universal?
- * ¿Donde están sus límites?
- * ¿Cual es la naturaleza de esos límites?
- * ¿Por qué esos límites acotan su distribución?
- * ¿Qué otras cosas encontramos asociadas espacialmente a ese fenómeno?
- * ¿Aparecen esas cosas asociadas espacialmente en otros lugares?
- * ¿Por qué deben estar asociadas espacialmente?
- * ¿Ha estado siempre allí?
- * ¿Cuándo apareció por primera vez?
- * ¿Cómo ha variado espacialmente a través del tiempo?
+* ¿Dónde se encuentra?
+* ¿Dónde tiene lugar?
+* ¿Qué hay ahí?
+* ¿Por qué esta ahí?
+* ¿Por qué no está en otro lugar?
+* ¿Qué podría haber ahí?
+* ¿Podría estar en otro lugar?
+* ¿Cuánto hay en ese lugar?
+* ¿Hasta dónde se extiende?
+* ¿Por qué tiene esa estructura particular?
+* ¿Existe regularidad en esa estructura?
+* ¿De qué naturaleza es esa regularidad?
+* ¿Por qué el patrón de distribución espacial tiene que mostrar regularidad?
+* ¿Dónde se encuentra en relación a otros de su misma clase?
+* ¿Qué clase de distribución conforma?
+* ¿Se encuentra en todo el mundo?
+* ¿Es universal?
+* ¿Donde están sus límites?
+* ¿Cual es la naturaleza de esos límites?
+* ¿Por qué esos límites acotan su distribución?
+* ¿Qué otras cosas encontramos asociadas espacialmente a ese fenómeno?
+* ¿Aparecen esas cosas asociadas espacialmente en otros lugares?
+* ¿Por qué deben estar asociadas espacialmente?
+* ¿Ha estado siempre allí?
+* ¿Cuándo apareció por primera vez?
+* ¿Cómo ha variado espacialmente a través del tiempo?
 *  ¿Qué factores han influido en su dispersión?
- * ¿Por qué se ha dispersado de esa manera?
- * ¿Qué factores geográficos han limitado su dispersión?
+* ¿Por qué se ha dispersado de esa manera?
+* ¿Qué factores geográficos han limitado su dispersión?
 
 
 Con todo lo anterior, un SIG es una herramienta de primer orden tanto para formular cuestiones geográficas como para resolverlas.
 
 Por ejemplo, a través de la mera representación de los datos geográficos, un SIG puede ayudar a identificar y definir los problemas a plantear, ya que la exploración visual de los datos es un elemento clave en la formulación de interrogantes geográficos. Esa misma representación puede ser también empleada para dar respuesta a dichos interrogantes, ya que estas respuestas quedan muchas veces patentes con el simple análisis visual. Considerando la gran variedad de formas en que los datos espaciales pueden representarse dentro de un SIG, ello hace que la visualización sea de por sí una componente de los SIG de gran interés para el análisis.
 
-Asimismo, mediante las capacidades de superposición de capas y la visualización de dicha superposición se pueden tratar en un SIG las cuestiones relativas a la asociación entre distintas variables espaciales, y las que conciernen a la variación temporal de estas variables pueden estudiarse con conjuntos de representaciones sucesivas a modo de <<instantáneas>>. También en esto las funcionalidades de visualización de la información espacial son herramientas de indudable utilidad.
+Asimismo, mediante las capacidades de superposición de capas y la visualización de dicha superposición se pueden tratar en un SIG las cuestiones relativas a la asociación entre distintas variables espaciales, y las que conciernen a la variación temporal de estas variables pueden estudiarse con conjuntos de representaciones sucesivas a modo de *instantáneas*. También en esto las funcionalidades de visualización de la información espacial son herramientas de indudable utilidad.
 
 A lo anterior deben sumarse los distintos algoritmos de análisis geográfico, que iremos viendo a lo largo de los próximos capítulos, y que aprovechan la arquitectura particular de un SIG para explotar en profundidad la información espacial.
 
@@ -125,7 +125,7 @@ Este tipo de operaciones da respuestas a preguntas de tipo
 	* ¿Qué tipo de suelo encontramos en una coordenada :math:`(x,y)` dada?
 	* ¿Dónde se encuentra la localidad x?
 
-Son, como puede verse, análisis que se pueden resolver simplemente <<mirando>> al mapa que contiene la información de partida, y por ello constituyen la forma más sencilla de análisis espacial.
+Son, como puede verse, análisis que se pueden resolver simplemente *mirando* al mapa que contiene la información de partida, y por ello constituyen la forma más sencilla de análisis espacial.
 
 Puesto que en la información geográfica dentro de un SIG todo elemento tiene asociadas unas propiedades en forma de valores, también podemos consultar estos valores. Así, podemos plantear consultas no necesariamente relacionadas con la componente espacial, tales como
 
@@ -134,7 +134,7 @@ Puesto que en la información geográfica dentro de un SIG todo elemento tiene a
 
 Combinar este tipo de consultas con las puramente espaciales constituye un análisis sencillo pero fundamental dentro de los posibles en un SIG, y representa una de las utilidades más frecuentemente empleadas de estos en el trabajo diario.
 
-* Análisis topológico. Las consultas hechas a las capas de datos espaciales pueden tener relación no solo con su posición sino con la relación con otros elementos de la misma capa. La existencia de topología (ver \ref{Topologia}) puede emplearse para la realización de consultas que respondan a cuestiones como, entre otras, las siguientes:
+* Análisis topológico. Las consultas hechas a las capas de datos espaciales pueden tener relación no solo con su posición sino con la relación con otros elementos de la misma capa. La existencia de topología (ver :ref:`Topologia`) puede emplearse para la realización de consultas que respondan a cuestiones como, entre otras, las siguientes:
 
 	* ¿Cómo llegar desde mi posición actual hasta una coordenada concreta por la red viaria existente?
 	* ¿Qué comunidades autónomas comparten límite con Madrid?

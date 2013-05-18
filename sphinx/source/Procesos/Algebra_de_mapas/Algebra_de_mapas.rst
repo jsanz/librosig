@@ -20,7 +20,7 @@ Introducción
 
 La información contenida en las capas es susceptible de ser analizada para la obtención de otras capas referentes al mismo espacio geográfico, pero que contengan distinta información derivada de aquella. El álgebra de mapas es el conjunto de procedimientos y métodos que permiten llevar a cabo dicho análisis y extraer nuevos valores a partir de los contenidos en una o varias capas. En este capítulo revisaremos las bases e ideas fundamentales del álgebra de mapas, que nos ayudaran a comprender todos los restantes procesos que se construyen sobre sus conceptos.
 
-Se entiende por *álgebra de mapas*\footnote{Aunque esta denominación es la original y más extendida, puede dar lugar a malentendidos. No debe confundirse aquí la idea de *mapa* y pensar que hablamos de un documento cartográfico en su sentido clásico, sino que hablamos de capas, y en particular de capas ráster. Sería más correcto hablar de un *álgebra de capas ráster*, pero se mantiene por costumbre el uso de *álgebra de mapas* para definir al conjunto de técnicas que veremos a lo largo de este capítulo.} el conjunto de técnicas y procedimientos que, operando sobre una o varias capas en formato ráster, nos permite obtener información derivada, generalmente en forma de nuevas capas de datos. Aunque nada impide que este proceso se lleve a cabo sobre capas vectoriales, se entiende que el álgebra de mapas hace referencia al análisis desarrollado sobre capas ráster, pues estas, por su estructura regular y sus características inherentes, son mucho más adecuadas para plantear los algoritmos y formulaciones correspondientes. Los procedimientos que se aplican sobre información geográfica en formato vectorial son por regla general clasificados dentro de otros bloques de conocimiento, como es por ejemplo el caso de la operaciones geométricas sobre datos vectoriales (incluidos dentro de la geometría computacional), cuyos procesos se tratarán en el capítulo ~\ref{Operaciones_geometricas}.
+Se entiende por *álgebra de mapas*\footnote{Aunque esta denominación es la original y más extendida, puede dar lugar a malentendidos. No debe confundirse aquí la idea de *mapa* y pensar que hablamos de un documento cartográfico en su sentido clásico, sino que hablamos de capas, y en particular de capas ráster. Sería más correcto hablar de un *álgebra de capas ráster*, pero se mantiene por costumbre el uso de *álgebra de mapas* para definir al conjunto de técnicas que veremos a lo largo de este capítulo.} el conjunto de técnicas y procedimientos que, operando sobre una o varias capas en formato ráster, nos permite obtener información derivada, generalmente en forma de nuevas capas de datos. Aunque nada impide que este proceso se lleve a cabo sobre capas vectoriales, se entiende que el álgebra de mapas hace referencia al análisis desarrollado sobre capas ráster, pues estas, por su estructura regular y sus características inherentes, son mucho más adecuadas para plantear los algoritmos y formulaciones correspondientes. Los procedimientos que se aplican sobre información geográfica en formato vectorial son por regla general clasificados dentro de otros bloques de conocimiento, como es por ejemplo el caso de la operaciones geométricas sobre datos vectoriales (incluidos dentro de la geometría computacional), cuyos procesos se tratarán en el capítulo ~:ref:`Operaciones_geometricas`.
 
 Conviene aclarar que, en la práctica y el uso diario de los SIG, el término *álgebra de mapas* es habitualmente usado de forma errónea. Ello es debido a que la gran mayoría de las aplicaciones SIG implementan algún tipo de funcionalidad para la combinación de un número dado de capas ráster, de forma que pueden relacionarse mediante expresiones matemáticas para la obtención de una nueva capa, y esta funcionalidad se designa normalmente como *álgebra de mapas* o en ocasiones *calculadora de mapas*. 
 
@@ -43,28 +43,28 @@ Para comenzar el estudio del álgebra de mapas, veamos unos casos prácticos que
 	 A = R\cdot K \cdot LS \cdot C \cdot P
  
 
-donde :math:`A` representa las pérdidas totales en toneladas por hectárea y año, y los factores :math:`R, K, LS, C` y :math:`P` representan la influencia de los diversos factores (agresividad del clima, tipo de suelo, topografía, uso de suelo, y prácticas de conservación) sobre dichas pérdidas. La USLE representa, por tanto, un modelo sencillo que combina cinco variables, todas ellas susceptibles de ser recogidas en las correspondientes capas ráster. Si extendemos el cálculo puntual de la variable :math:`A` a todos los puntos de la zona estudiada, obtendremos una nueva capa de dicha variable, evaluando la anterior expresión para cada una de las celdas de esas capas ráster (Figura \ref{Fig:USLE}).
+donde :math:`A` representa las pérdidas totales en toneladas por hectárea y año, y los factores :math:`R, K, LS, C` y :math:`P` representan la influencia de los diversos factores (agresividad del clima, tipo de suelo, topografía, uso de suelo, y prácticas de conservación) sobre dichas pérdidas. La USLE representa, por tanto, un modelo sencillo que combina cinco variables, todas ellas susceptibles de ser recogidas en las correspondientes capas ráster. Si extendemos el cálculo puntual de la variable :math:`A` a todos los puntos de la zona estudiada, obtendremos una nueva capa de dicha variable, evaluando la anterior expresión para cada una de las celdas de esas capas ráster (Figura :num:`#figusle`).
 
 .. figure:: USLE.pdf
 
 	Puede extenderse una formula algebraica tal como la de la Ecuación Universal de Pérdidas de Suelo (USLE) a un conjunto de capas. Basta operar celda a celda con las capas que contienen las variables implicadas, para obtener una nueva capa resultante con el conjunto de valores calculados.
 
 
-.. _Fig:USLE: 
+.. _figusle: 
 
 
-La discretización del espacio que implica la representación en formato ráster de un parámetro sobre una superficie dada, hace que ese análisis de <<todos los puntos>> se materialice en un análisis de todas las celdas que contiene la nueva capa a obtener. Esto nos hace ver la idoneidad de este formato para trasladar las ideas matemáticas de modelos sencillos como la USLE a un álgebra de mapas donde estos modelos no sean aplicados a un emplazamiento concreto, sino a toda una región de interés a tratar.
+La discretización del espacio que implica la representación en formato ráster de un parámetro sobre una superficie dada, hace que ese análisis de *todos los puntos* se materialice en un análisis de todas las celdas que contiene la nueva capa a obtener. Esto nos hace ver la idoneidad de este formato para trasladar las ideas matemáticas de modelos sencillos como la USLE a un álgebra de mapas donde estos modelos no sean aplicados a un emplazamiento concreto, sino a toda una región de interés a tratar.
 
-En este caso, basta con aplicar la expresión mostrada en la figura \ref{Fig:USLE} celda a celda, y obtener tantos valores resultantes como celdas haya, que conformarán una nueva capa con la distribución espacial de las pérdidas de suelo correspondientes.
+En este caso, basta con aplicar la expresión mostrada en la figura :num:`#figusle` celda a celda, y obtener tantos valores resultantes como celdas haya, que conformarán una nueva capa con la distribución espacial de las pérdidas de suelo correspondientes.
 
-Consideremos ahora que, junto con el mapa de pérdidas de suelo obtenido según lo anterior, disponemos de una división en subcuencas de la zona de estudio. Puede resultar interesante asociar a cada una de las unidades hidrológicas un valor relacionado con los valores de pérdidas de suelo que se dan en ella. Por ejemplo, la media de los valores de pérdidas de suelo de todas las celdas de la subcuenca. Partiendo de estos dos mapas, podemos obtener un tercero que nos indique las pérdidas medias en cada cuenca, de interés sin duda para localizar las unidades que puedan presentar mayores problemas de erosión (Figura \ref{Fig:USLE_por_subcuencas}).
+Consideremos ahora que, junto con el mapa de pérdidas de suelo obtenido según lo anterior, disponemos de una división en subcuencas de la zona de estudio. Puede resultar interesante asociar a cada una de las unidades hidrológicas un valor relacionado con los valores de pérdidas de suelo que se dan en ella. Por ejemplo, la media de los valores de pérdidas de suelo de todas las celdas de la subcuenca. Partiendo de estos dos mapas, podemos obtener un tercero que nos indique las pérdidas medias en cada cuenca, de interés sin duda para localizar las unidades que puedan presentar mayores problemas de erosión (Figura :num:`#figusleporsubcuencas`).
 
 .. figure:: USLE_por_subcuencas.png
 
 	Valores de pérdidas de suelo por subcuencas.
 
 
-.. _Fig:USLE_por_subcuencas: 
+.. _figusle_por_subcuencas: 
 
 
 La base conceptual en este caso vemos que es distinta al primer supuesto, ya que no extendemos ningún modelo puntual aplicándolo en todas las celdas con distintos valores de entrada para cada una de ellas, sino que estas van a contener un valor medio asociado al total de celdas incluidas en su misma subcuenca. Esta forma de proceder ya no se corresponde con el caso anterior y no puede ser llevada a cabo con las funcionalidades de *calculadora de mapas* que citábamos como habituales en los SIG, ya que no se da un análisis entre capas celda a celda, sino un análisis dentro de la propia capa con otras celdas relacionadas a través de esa pertenencia a la misma unidad hidrológica. No obstante, como veremos, este tipo de funciones también forman parte del álgebra de mapas.
@@ -95,7 +95,7 @@ Funciones locales
 .. _Funciones_locales:
 
 
-Las funciones locales asignan valores a una celda en base a los valores que esa misma celda presenta para cada una de las capas de entrada, operando con estos de una forma u otra. Es decir, el valor resultante para una localización dada es función exclusivamente de lo que se encuentra en dicha localización, no dependiendo en modo alguno de otras localizaciones (otras celdas) (Figura \ref{Fig:Funciones_locales}).
+Las funciones locales asignan valores a una celda en base a los valores que esa misma celda presenta para cada una de las capas de entrada, operando con estos de una forma u otra. Es decir, el valor resultante para una localización dada es función exclusivamente de lo que se encuentra en dicha localización, no dependiendo en modo alguno de otras localizaciones (otras celdas) (Figura :num:`#figfuncioneslocales`).
 
 .. figure:: Funciones_locales.pdf
 \caption{Las funciones de análisis local analizan los valores de una
@@ -103,7 +103,7 @@ celda concreta en una serie de capas para obtener el valor resultante. En rojo,
 celdas de partida analizadas. En verde, celda que recoge el resultado.}
 
 
-.. _Fig:Funciones_locales: 
+.. _figfunciones_locales: 
 
 
 Las funciones locales son las que utilizamos cuando empleamos esa anteriormente
@@ -114,7 +114,7 @@ Una función de tipo local puede ser también aplicada sin necesidad de tener un
 De igual modo, convertir los valores de una capa de pendientes de radianes a
 grados requiere multiplicar sus valores por :math:`180/\pi`.
 
-Además de operar con escalares, podemos aplicar también funciones matemáticas. Por ejemplo, las capas que presentan un gran coeficiente de variación (elevada varianza en relación a la media de los valores de la capa) muestran mucha más información si aplicamos una transformación logarítmica. En la figura \ref{Fig:Transformacion_logaritmica} vemos una capa de área acumulada :math:`a` (este concepto hidrológico se explicará en el apartado \ref{Area_acumulada}) junto a otra que representa el parámetro :math:`\log(a)`, apreciándose claramente la diferencia entre ambas en cuanto a la riqueza de información visual que aportan. Esta transformación logarítmica es, claramente, una función local dentro del álgebra de mapas.
+Además de operar con escalares, podemos aplicar también funciones matemáticas. Por ejemplo, las capas que presentan un gran coeficiente de variación (elevada varianza en relación a la media de los valores de la capa) muestran mucha más información si aplicamos una transformación logarítmica. En la figura :num:`#figtransformacionlogaritmica` vemos una capa de área acumulada :math:`a` (este concepto hidrológico se explicará en el apartado :ref:`Areaacumulada`) junto a otra que representa el parámetro :math:`\log(a)`, apreciándose claramente la diferencia entre ambas en cuanto a la riqueza de información visual que aportan. Esta transformación logarítmica es, claramente, una función local dentro del álgebra de mapas.
 
 Si en lugar de convertir la anteriormente citada capa de pendientes de radianes a grados como mencionábamos, queremos convertirla en porcentaje, en este caso no es una operación con un escalar lo que debemos llevar a cabo, sino aplicar la función matemática :math:`tan(x)`, también como una función local de álgebra de mapas.
 
@@ -123,7 +123,7 @@ Si en lugar de convertir la anteriormente citada capa de pendientes de radianes 
 representación visual de una capa. a) Capa original, b) capa tras trasformación logarítmica.}
 
 
-.. _Fig:Transformacion_logaritmica: 
+.. _figtransformacion_logaritmica: 
 
 
 Una aplicación común de una función local con una sola capa la encontramos en la normalización de valores. En ocasiones, antes de efectuar un proceso que englobe a varias capas (por ejemplo, otra función de análisis local pero multicapa), es necesario homogeneizar estas de modo que todas se hallen en un mismo rango de valores. Este proceso se denomina *normalización*. Es habitual que el rango común sea el intervalo :math:`(0,1)`, para lo cual se aplica a cada capa la función local definida por la siguiente expresión:
@@ -135,7 +135,7 @@ Una aplicación común de una función local con una sola capa la encontramos en
 
 donde :math:`y_{ij}` es el valor normalizado en la celda :math:`ij`, :math:`x` el valor de esa celda en la capa inicial y :math:`x_{min}` y :math:`x_{max}`, respectivamente, los valores mínimo y máximo de la variable en el conjunto de celdas de la capa.
 
-Si en vez de aplicar una función matemática sobre el valor de cada celda, aplicamos una serie de criterios referidos a dicho valor mediante operadores de comparación, podemos llevar a cabo un proceso de clasificación. De este modo, podemos obtener a partir de una capa continua una capa discreta en la que las celdas serán clasificadas en grupos según el valor de la variable de partida, o bien reconvertir una clasificación ya existente en otra de acuerdo a unas condiciones establecidas. La figura \ref{Fig:Clases_pdte} muestra una clasificación de los valores de pendiente en clases, práctica habitual en muchas disciplinas a la hora de trabajar con este parámetro. Para ello se ha utilizado
+Si en vez de aplicar una función matemática sobre el valor de cada celda, aplicamos una serie de criterios referidos a dicho valor mediante operadores de comparación, podemos llevar a cabo un proceso de clasificación. De este modo, podemos obtener a partir de una capa continua una capa discreta en la que las celdas serán clasificadas en grupos según el valor de la variable de partida, o bien reconvertir una clasificación ya existente en otra de acuerdo a unas condiciones establecidas. La figura :num:`#figclasespdte` muestra una clasificación de los valores de pendiente en clases, práctica habitual en muchas disciplinas a la hora de trabajar con este parámetro. Para ello se ha utilizado
 el siguiente criterio.
 
 \begin{displaymath}
@@ -155,10 +155,10 @@ donde :math:`s'` es la clase de pendiente, y :math:`s` el valor de la pendiente 
 una capa de valores continuos en una capa de clases con información discreta.}
 
 
-.. _Fig:Clases_pdte: 
+.. _figclases_pdte: 
 
 
-Otra forma de convertir una capa continua en una categórica es dividir en clases no según un criterio relativo a los valores, sino a la extensión de las clases. La figura ~\ref{Fig:Clases_igual_area} muestra el mismo mapa de pendientes del ejemplo anterior pero reclasificado en cinco clases de igual área, de tal modo que la superficie cubierta por cada una de ellas en la capa resultante es la
+Otra forma de convertir una capa continua en una categórica es dividir en clases no según un criterio relativo a los valores, sino a la extensión de las clases. La figura ~:num:`#figclasesigualarea` muestra el mismo mapa de pendientes del ejemplo anterior pero reclasificado en cinco clases de igual área, de tal modo que la superficie cubierta por cada una de ellas en la capa resultante es la
 misma.
 
 .. figure:: Clases_igual_area.png
@@ -166,12 +166,12 @@ misma.
 	Clasificación de una capa en clases de igual área.
 
 
-.. _Fig:Clases_igual_area: 
+.. _figclases_igual_area: 
 
 
 También es posible reclasificar capas que ya contienen información categórica, sustituyendo los valores de una clase por un nuevo valor. Puede utilizarse para crear clasificaciones menos detalladas, agrupando clases similares en una única.
 
-Dentro de las funciones locales sobre una única capa, podemos considerar como un caso particular la generación de nuevas capas <<desde cero>>, es decir, sin basarnos en los valores de ninguna capa previa. Por ejemplo, crear una capa de valor constante :math:`k` o una capa con valores aleatorios dentro de un intervalo definido. En este supuesto, se toma de la capa origen solo su extensión y tamaño de celda, pero los valores son generados sin basarse en los existentes en ella.
+Dentro de las funciones locales sobre una única capa, podemos considerar como un caso particular la generación de nuevas capas *desde cero*, es decir, sin basarnos en los valores de ninguna capa previa. Por ejemplo, crear una capa de valor constante :math:`k` o una capa con valores aleatorios dentro de un intervalo definido. En este supuesto, se toma de la capa origen solo su extensión y tamaño de celda, pero los valores son generados sin basarse en los existentes en ella.
 
 Cuando las funciones locales se aplican a varias capas, la forma de combinar estas es muy variable. Junto a las operaciones que ya hemos visto, podemos utilizar algunas otras, y de modos igualmente variados. El conjunto de ellas lo dividimos en los siguientes grupos:
 
@@ -181,7 +181,7 @@ capas tales como la ecuación USLE que ya conocemos.
 	* Operadores lógicos. Pueden tomarse los valores de las capas como
 valores booleanos (1 o 0, verdadero o falso), o aplicar expresiones lógicas de
 tipo *pertenece al conjunto* u operadores de comparación, entre otros.
-	* Parámetros estadísticos. Por ejemplo, el valor mayor de entre las todas las capas. También pueden recogerse otros como el orden del valor de una capa dentro de la serie ordenada de valores en todas las capas, el código de la capa donde aparece ese valor mayor, o el numero de capas con valores iguales a uno dado. La figura ~\ref{Fig:Analisis_local_estadistico} muestra algunos ejemplos simples basados en estas ideas.
+	* Parámetros estadísticos. Por ejemplo, el valor mayor de entre las todas las capas. También pueden recogerse otros como el orden del valor de una capa dentro de la serie ordenada de valores en todas las capas, el código de la capa donde aparece ese valor mayor, o el numero de capas con valores iguales a uno dado. La figura ~:num:`#figanalisislocalestadistico` muestra algunos ejemplos simples basados en estas ideas.
 
 
 .. figure:: Analisis_local_estadistico.pdf
@@ -191,7 +191,7 @@ correspondiente. En la inferior, de izquierda a derecha: valor máximo, valor m�
 frecuente (mayoría), y capa de máximo valor. *ND* indica celdas sin datos en las cuales no puede establecerse un valor resultante por no estar este bien definido.}
 
 
-.. _Fig:Analisis_local_estadistico: 
+.. _figanalisis_local_estadistico: 
 
 
 Comenzando por el supuesto más sencillo de utilizar únicamente  dos capas, podemos aplicar operadores lógicos tales como :math:`<, >, \neq, =, \leq` o :math:`\geq`. Por ejemplo, con dos capas con información categórica de usos de suelo correspondientes a dos fechas distintas, el operador de desigualdad nos servirá para detectar en la nueva capa resultante aquellas celdas donde el uso de suelo haya cambiado.
@@ -209,14 +209,14 @@ La aplicación del OWA puede verse como un uso combinado de una función de aná
 
 Aunque si trabajamos con capas de tipo categórico carece de sentido desde un punto de vista conceptual el operar aritméticamente con valores que identifican una clase, las operaciones aritméticas nos pueden servir de igual modo en este caso para obtener nuevas capas. Una función local aritmética nos sirve como herramienta para realizar algunas tareas, entre ellas una habitual como es combinar en una sola capa dos clasificaciones distintas. 
 
-Partiendo de una capa de usos de suelo y una de tipos de suelo, podemos obtener una nueva clasificación que combine ambas (Figura \ref{Fig:Combinacion_capas_categoricas}). Un proceso similar se realiza, por ejemplo, para el cálculo del Número de Curva \cite{USDA1986TR55}, una variable hidrológica que permite calcular la generación de escorrentía a partir de una precipitación dada. La clase de Número de Curva se asigna, como en este ejemplo, en función del uso y el tipo de suelo. El proceso es, en realidad, una intersección de las zonas definidas por cada capa.
+Partiendo de una capa de usos de suelo y una de tipos de suelo, podemos obtener una nueva clasificación que combine ambas (Figura :num:`#figcombinacioncapascategoricas`). Un proceso similar se realiza, por ejemplo, para el cálculo del Número de Curva \cite{USDA1986TR55}, una variable hidrológica que permite calcular la generación de escorrentía a partir de una precipitación dada. La clase de Número de Curva se asigna, como en este ejemplo, en función del uso y el tipo de suelo. El proceso es, en realidad, una intersección de las zonas definidas por cada capa.
 
 .. figure:: Combinacion_capas_categoricas.png
 \caption{Combinación de dos capas categóricas para crear una nueva
 clasificación que une ambas.}
 
 
-.. _Fig:Combinacion_capas_categoricas: 
+.. _figcombinacion_capas_categoricas: 
 
 
 Para efectuar esta intersección, debemos en primer lugar reclasificar las capas de inicio de tal modo que un valor en la capa resultante defina unívocamente una única combinación de estas. Después, operaremos con las capas reclasificadas, eligiendo un operador que nos permita mantener esa correspondencia biunívoca entre pares de valores de origen y valor resultante.
@@ -237,14 +237,14 @@ donde :math:`c'_i` es el nuevo valor a asignar a la clase i--ésima. Es decir, s
 
 Con las capas anteriores, basta sumarlas para obtener una nueva en la que el valor de cada celda nos define inequívocamente a partir de qué valores originales se ha calculado.
 
-Para ver un ejemplo que sea manejable, en la figura \ref{Fig:Combinacion_capas_categoricas_peq} se muestran dos capas con su valores originales, las capas reclasificadas según el esquema anterior, y la capa resultante. Para interpretar esta última, la tabla ~\ref{Tabla:Combinacion_capas_categoricas} muestra el esquema de reclasificación y la tabla \ref{Tabla:Combinacion_capas_categoricas2} explica el significado de los valores de la capa obtenida.
+Para ver un ejemplo que sea manejable, en la figura :num:`#figcombinacioncapascategoricaspeq` se muestran dos capas con su valores originales, las capas reclasificadas según el esquema anterior, y la capa resultante. Para interpretar esta última, la tabla ~:ref:`Tabla:Combinacion_capas_categoricas` muestra el esquema de reclasificación y la tabla :ref:`Tabla:Combinacion_capas_categoricas2` explica el significado de los valores de la capa obtenida.
 
 .. figure:: Combinacion_capas_categoricas_peq.pdf
 
 	Ejemplo de combinación de dos capas categóricas. a) capas originales, b) capas reclasificadas, c) resultado.
 
 
-.. _Fig:Combinacion_capas_categoricas_peq: 
+.. _figcombinacion_capas_categoricas_peq: 
 
 
 \begin{table}
@@ -294,7 +294,7 @@ Como ya se dijo en el capítulo introductorio de esta parte, la combinación y s
 
 Por ultimo, para concluir esta sección es interesante señalar que la gestión de valores sin datos es un aspecto importante en el empleo de operadores aritméticos en funciones locales. En general, se adopta como práctica habitual el que una operación aritmética entre celdas de varias capas devuelva un valor de sin datos siempre que alguna de las celdas implicadas carezca de datos (es decir, tenga un valor de sin datos). Dicho de otro modo, la presencia de un valor de sin datos en la operación hace que la celda resultante reciba automáticamente también valor de sin datos, particularmente el establecido para la capa resultante.
 
-Esta forma de proceder, además de dar un resultado coherente con los datos de entrada, puede utilizarse como herramienta para, aplicando inteligentemente capas con zonas sin datos, preparar las capas de entrada de cara a su uso en otros análisis. Ese es el caso de la creación de *máscaras*, que nos permiten restringir la información de la capa a una parte concreta de la misma. La figura \ref{Fig:Mascara} muestra cómo un modelo digital del terreno es recortado para contener información únicamente dentro de una zona definida, en este caso todas las celdas situadas a más de 180 metros de elevación.
+Esta forma de proceder, además de dar un resultado coherente con los datos de entrada, puede utilizarse como herramienta para, aplicando inteligentemente capas con zonas sin datos, preparar las capas de entrada de cara a su uso en otros análisis. Ese es el caso de la creación de *máscaras*, que nos permiten restringir la información de la capa a una parte concreta de la misma. La figura :num:`#figmascara` muestra cómo un modelo digital del terreno es recortado para contener información únicamente dentro de una zona definida, en este caso todas las celdas situadas a más de 180 metros de elevación.
 
 Para realizar el recorte, la capa que define la zona de interés contiene valor 1 en las celdas interiores y el valor de sin datos correspondiente en las exteriores. Al multiplicarlo por el modelo digital del terreno, el resultado es la propia elevación en las interiores, y el valor de sin datos en las exteriores, ya que una de las capas no tiene datos suficientes para poder generar otro resultado.
 
@@ -303,7 +303,7 @@ Para realizar el recorte, la capa que define la zona de interés contiene valor 
 	Recorte de una capa empleando una mascara con celdas sin datos. La rampa de colores se ha variado en la capa recortada para ajustarse al nuevo rango de valores de esta.
 
 
-.. _Fig:Mascara: 
+.. _figmascara: 
 
 
 También veremos más adelante que ese uso de mascaras tiene su equivalente vectorial, existiendo una operación de recorte para capas de datos vectoriales. 
@@ -315,7 +315,7 @@ Funciones focales
 .. _Funciones_focales:
 
 
-Las funciones de análisis focal operan sobre una sola capa de datos, asignando a cada celda un valor que deriva de su valor en la capa de partida, así como de los valores de las situadas en un entorno inmediato de esta (Figura \ref{Fig:Funciones_focales}). La función focal queda así definida por las dimensiones y forma del entorno a considerar, así como por la función a aplicar sobre los valores recogidos en este.
+Las funciones de análisis focal operan sobre una sola capa de datos, asignando a cada celda un valor que deriva de su valor en la capa de partida, así como de los valores de las situadas en un entorno inmediato de esta (Figura :num:`#figfuncionesfocales`). La función focal queda así definida por las dimensiones y forma del entorno a considerar, así como por la función a aplicar sobre los valores recogidos en este.
 
 .. figure:: Funciones_focales.pdf
 \caption{Las funciones de análisis focal analizan los valores de una
@@ -323,7 +323,7 @@ celda y las situadas en un entorno de esta para obtener el valor resultante. En
 rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.}
 
 
-.. _Fig:Funciones_focales: 
+.. _figfunciones_focales: 
 
 
 A diferencia de las funciones locales, las focales no se aplican sobre varias capas, ya que la información necesaria se extrae de la vecindad de cada celda, dentro de la propia capa de partida.
@@ -342,14 +342,14 @@ Para definir las operaciones sobre esta ventana, es frecuente introducir una not
 
 siendo :math:`z_5` la celda central, la cual recibirá el valor resultante de la operación efectuada. Puesto que los análisis focales basados en esta ventana tipo son habituales, haremos uso de esta notación en diversos puntos dentro de esta parte del libro.
 
-Aunque menos frecuentes, pueden utilizarse ventanas de tamaño mayor, :math:`n\times n`, siendo :math:`n` un valor impar para que de este modo exista un celda central. De otro modo, la ventana no podría quedar centrada sobre la celda a evaluar, sino desplazada. De igual forma, la ventana no ha de ser necesariamente cuadrada, y otras formas distintas son aplicables. La figura \ref{Fig:Tipos_ventana} muestra algunas de las más comunes, todas ellas también aplicables a distintos tamaños.
+Aunque menos frecuentes, pueden utilizarse ventanas de tamaño mayor, :math:`n\times n`, siendo :math:`n` un valor impar para que de este modo exista un celda central. De otro modo, la ventana no podría quedar centrada sobre la celda a evaluar, sino desplazada. De igual forma, la ventana no ha de ser necesariamente cuadrada, y otras formas distintas son aplicables. La figura :num:`#figtiposventana` muestra algunas de las más comunes, todas ellas también aplicables a distintos tamaños.
 
 .. figure:: Tipos_ventana.pdf
 \caption{Algunos de los tipos de ventana de análisis más comunes en distintos tamaños.
 a) cuadrada, b) circular}
 
 
-.. _Fig:Tipos_ventana: 
+.. _figtipos_ventana: 
 
 
 Con los valores de las celdas contenidas en la ventana de análisis pueden realizarse operaciones muy diversas, entre las que cabe citar las siguientes:
@@ -373,7 +373,7 @@ Este grupo particular de operaciones se conocen como *convoluciones*, y son la b
 
 Este conjunto de valores de :math:`k_i` así expresados se conoce comúnmente como *núcleo* o *kernel* de la convolución. Nótese que el núcleo anterior se corresponde con el cálculo de la media aritmética, pudiendo expresarse este descriptor estadístico como una combinación lineal de los valores de la ventana, a través de un núcleo.
 * Operaciones matemáticas de forma general. No necesariamente combinaciones lineales, aplican operadores más complejos a los valores de la ventana.
-* Clasificaciones. En función de la configuración de los valores dentro de la ventana clasifican la celda en una serie de posibles grupos, de acuerdo con unas reglas definidas. El resultado es una capa de información discreta, frente a las anteriores que producen capas continuas. Un ejemplo de esto lo encontramos la clasificación de formas de terreno, la cual veremos en el apartado \ref{Caracterizacion_terreno}, o en la asignación de direcciones de flujo según el modelo D8 (\ref{Direcciones_flujo}).
+* Clasificaciones. En función de la configuración de los valores dentro de la ventana clasifican la celda en una serie de posibles grupos, de acuerdo con unas reglas definidas. El resultado es una capa de información discreta, frente a las anteriores que producen capas continuas. Un ejemplo de esto lo encontramos la clasificación de formas de terreno, la cual veremos en el apartado :ref:`Caracterizacion_terreno`, o en la asignación de direcciones de flujo según el modelo D8 (:ref:`Direcciones_flujo`).
 
 
 
@@ -381,9 +381,9 @@ Algunas de las funciones anteriores se han de definir de forma específica para 
 
 El resultado de un operador de análisis focal no ha de ser necesariamente un valor que se sitúa en la celda central de la capa resultante una vez ha sido calculado. Por ejemplo, y relacionado con lo comentado en el párrafo anterior, \cite{Caldwell2000GeoComputation} propone un operador que, evaluando los valores dentro de la ventana de análisis, modifique la capa de salida no en la celda central, sino en aquella.que cumpla una condición dada. Por ejemplo, aquella que contenga el valor máximo de entre todas las de la ventana. Lo importante en este caso no es el valor, sino sobre qué celda se sitúa.
 
-Con respecto al tamaño de la ventana de análisis, debe mencionarse que la utilización de uno u otro tiene dos consecuencias directas: por un lado el proceso es más costoso en términos de tiempo a medida que aumentamos la ventana, ya que el número de celdas a analizar es mayor. Por otro, el resultado puede diferir notablemente, y es necesario tener en cuenta el significado del parámetro a calcular para establecer unas dimensiones correctas ---dimensiones en unidades reales, no en número de celdas--- de la ventana. La figura \ref{Fig:Comparacion_tamanos_ventana} muestra cómo el efecto de un  filtro de media, el cual produce un desenfoque de la imagen, se hace más patente a medida que empleamos ventanas de análisis mayores. 
+Con respecto al tamaño de la ventana de análisis, debe mencionarse que la utilización de uno u otro tiene dos consecuencias directas: por un lado el proceso es más costoso en términos de tiempo a medida que aumentamos la ventana, ya que el número de celdas a analizar es mayor. Por otro, el resultado puede diferir notablemente, y es necesario tener en cuenta el significado del parámetro a calcular para establecer unas dimensiones correctas ---dimensiones en unidades reales, no en número de celdas--- de la ventana. La figura :num:`#figcomparaciontamanosventana` muestra cómo el efecto de un  filtro de media, el cual produce un desenfoque de la imagen, se hace más patente a medida que empleamos ventanas de análisis mayores. 
 
-En \cite{Wood1996PhD} puede encontrarse información adicional sobre la noción de escala de análisis ---especialmente para el caso de análisis del terreno--- y otros conceptos íntimamente relacionados con la elección de un tamaño de ventana. En el apartado \ref{Caracterizacion_terreno} veremos un análisis particular en el que la elección del tamaño de ventana es particularmente importante.
+En \cite{Wood1996PhD} puede encontrarse información adicional sobre la noción de escala de análisis ---especialmente para el caso de análisis del terreno--- y otros conceptos íntimamente relacionados con la elección de un tamaño de ventana. En el apartado :ref:`Caracterizacion_terreno` veremos un análisis particular en el que la elección del tamaño de ventana es particularmente importante.
 
 .. figure:: Comparacion_tamanos_ventana.pdf
 \caption{Resultados de un filtro de mediana sobre una imagen para
@@ -391,12 +391,12 @@ distintos tamaños de ventana. a) :math:`5\times5`, b) :math:`10\times10`
 c) :math:`20\times20`}
 
 
-.. _Fig:Comparacion_tamanos_ventana: 
+.. _figcomparacion_tamanos_ventana: 
 
 
 
 
-Con independencia de dicho tamaño de ventana, siempre vamos a tener algunas celdas para las que esta no va a poder ser definida en su totalidad. Estas celdas son las situadas en los bordes de la capa, ya que en su caso siempre habrá algunas celdas de la ventana que caigan fuera y para los cuales no tengamos un valor definido (Figura \ref{Fig:Analisis_focal_bordes}). En este caso, debe o bien definirse una nueva formulación para estas celdas de borde, o trabajar únicamente con las celdas interiores a la capa, o directamente asignar un valor de sin datos a la capa resultante, indicando que no puede evaluarse el parámetro en ausencia de algún dato. El optar por una u otra alternativa sera función, como ya vimos antes, de si el valor resultante depende o no de la posición de los valores de partida. 
+Con independencia de dicho tamaño de ventana, siempre vamos a tener algunas celdas para las que esta no va a poder ser definida en su totalidad. Estas celdas son las situadas en los bordes de la capa, ya que en su caso siempre habrá algunas celdas de la ventana que caigan fuera y para los cuales no tengamos un valor definido (Figura :num:`#figanalisisfocalbordes`). En este caso, debe o bien definirse una nueva formulación para estas celdas de borde, o trabajar únicamente con las celdas interiores a la capa, o directamente asignar un valor de sin datos a la capa resultante, indicando que no puede evaluarse el parámetro en ausencia de algún dato. El optar por una u otra alternativa sera función, como ya vimos antes, de si el valor resultante depende o no de la posición de los valores de partida. 
 
 .. figure:: Analisis_focal_bordes.pdf
 \caption{En las celdas de borde la ventana de análisis no puede definirse
@@ -404,7 +404,7 @@ en su totalidad. Las celdas en rojo representan celdas fuera de la capa para las
 cuales no existe información}
 
 
-.. _Fig:Analisis_focal_bordes: 
+.. _figanalisis_focal_bordes: 
 
 
 Para el caso de una media aritmética, si de los nueve valores de la ventana habitual solo tenemos, por ejemplo, seis, podemos operar con ellos y asumir que el resultado será satisfactorio. En el caso de asignar direcciones de flujo, sin embargo, los valores pueden ser erróneos, ya que tal vez el flujo se desplace hacia las celdas fuera de la capa, pero al faltar la información de estas, no sera posible hacer tal asignación. Una práctica recomendable en cualquier caso es no limitar la extensión de la capa a la mínima que englobe el área del territorio que queramos estudiar, sino tomar una porción adicional alrededor para que estos efectos de borde no tengan influencia sobre nuestro estudio.
@@ -413,7 +413,7 @@ Para el caso de una media aritmética, si de los nueve valores de la ventana hab
 Funciones zonales o regionales
 --------------------------------------------------------------
 
-Las funciones de análisis zonal asocian a cada celda valores relativos no a dicha celda ni a un entorno fijo de esta, sino a la clase a la que dicha celda pertenece (Figura \ref{Fig:Funciones_zonales}). Se necesita, por tanto, una capa de apoyo que contenga la pertenencia de cada celda a una u otra clase, ya que la utilización de una celda en el análisis no se establece por posición, como en los casos anteriores, sino por valor. Esta capa es de tipo discreto y representa una teselación del territorio en un número definido de clases.
+Las funciones de análisis zonal asocian a cada celda valores relativos no a dicha celda ni a un entorno fijo de esta, sino a la clase a la que dicha celda pertenece (Figura :num:`#figfuncioneszonales`). Se necesita, por tanto, una capa de apoyo que contenga la pertenencia de cada celda a una u otra clase, ya que la utilización de una celda en el análisis no se establece por posición, como en los casos anteriores, sino por valor. Esta capa es de tipo discreto y representa una teselación del territorio en un número definido de clases.
 
 
 
@@ -423,12 +423,12 @@ las celdas asociadas a una misma clase cada para obtener el valor resultante. En
 rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.}
 
 
-.. _Fig:Funciones_zonales: 
+.. _figfunciones_zonales: 
 
 
 Lo habitual es emplear esta capa de clases en conjunción con otra, ya sea de valores continuos o discretos, y extraer de esta segunda los valores a utilizar para definir el valor representativo de cada clase. Ese es el caso del ejemplo propuesto al principio del capítulo, donde se utiliza el mapa de pérdidas de suelo para asignar los valores correspondientes a cada subcuenca. En este caso, como resulta evidente, las clases vienen definidas por las subcuencas.
 
-La definición del conjunto de celdas relacionadas con una dada puede realizarse de dos formas distintas (Figura \ref{Fig:Definicion_clases}): 
+La definición del conjunto de celdas relacionadas con una dada puede realizarse de dos formas distintas (Figura :num:`#figdefinicionclases`): 
 
 
 	* Todas las celdas con el mismo valor que la celda problema,
@@ -445,22 +445,22 @@ empleadas en el cálculo. a) asignación por valor con contigüidad, b) asignaci
 únicamente por valor.}
 
 
-.. _Fig:Definicion_clases: 
+.. _figdefinicion_clases: 
 
 
 
 En el caso de las pérdidas por subcuencas, calculábamos con los valores del conjunto de celdas pertenecientes a cada clase su media aritmética, pero pueden aplicarse igualmente diversos descriptores estadísticos o funciones más complejas, al igual que ya vimos en los otros tipos de funciones. 
 
-Los valores a asignar a cada clase pueden extraerse también de la propia capa de clases, no siendo necesaria otra capa. En este caso, estos valores resultantes suelen tener relación no con un parámetro adicional, sino con la geometría de cada clase. Por ejemplo, la superficie o el perímetro de cada tesela pueden recogerse como valores asociados a esta, tal y como puede verse en la figura \ref{Fig:Area_por_subcuencas}. 
+Los valores a asignar a cada clase pueden extraerse también de la propia capa de clases, no siendo necesaria otra capa. En este caso, estos valores resultantes suelen tener relación no con un parámetro adicional, sino con la geometría de cada clase. Por ejemplo, la superficie o el perímetro de cada tesela pueden recogerse como valores asociados a esta, tal y como puede verse en la figura :num:`#figareaporsubcuencas`. 
 
-Este es un tipo análisis muy frecuente en el estudio del paisaje (lo veremos en el capítulo \ref{Ecologia}), y el número de parámetros que pueden obtenerse por análisis zonal a partir de una única capa de clases es muy elevado. Junto a parámetros sencillos como la citada superficie o el perímetro, otros parámetros más complejos pueden servir para recoger la configuración estructural de las teselas, su riqueza y variabilidad, la fragmentación, etc \cite{referenciaFragstats}. 
+Este es un tipo análisis muy frecuente en el estudio del paisaje (lo veremos en el capítulo :ref:`Ecologia`), y el número de parámetros que pueden obtenerse por análisis zonal a partir de una única capa de clases es muy elevado. Junto a parámetros sencillos como la citada superficie o el perímetro, otros parámetros más complejos pueden servir para recoger la configuración estructural de las teselas, su riqueza y variabilidad, la fragmentación, etc \cite{referenciaFragstats}. 
 
 .. figure:: Area_por_subcuencas.png
 \caption{Capa con valores de área total para cada una las distintas
 subcuencas, obtenidas mediante una función de análisis zonal con una sola capa.}
 
 
-.. _Fig:Area_por_subcuencas: 
+.. _figarea_por_subcuencas: 
 
 
 Funciones globales
@@ -477,24 +477,24 @@ Las funciones globales son aquellas que utilizan la totalidad de valores de la c
 	Las funciones de análisis global analizan el conjunto de valores de una capa para obtener un valor resultante, que puede ser tanto un objeto geográfico (capa ráster o vectorial) como un valor escalar sencillo, una tabla u otro tipo de resultado.
 
 
-.. _Fig:Funciones_globales: 
+.. _figfunciones_globales: 
 
 
-Por ejemplo, los valores máximo y mínimo de la capa que son necesarios para normalizar esta se obtienen mediante una función global. Asimismo, el cálculo de un perfil entre dos puntos o el trazado de una ruta óptima sobre una superficie de coste acumulado (que veremos en el apartado \ref{Rutas_optimas}) son ejemplos de funciones globales que generan un resultado distinto de un mero valor numérico.
+Por ejemplo, los valores máximo y mínimo de la capa que son necesarios para normalizar esta se obtienen mediante una función global. Asimismo, el cálculo de un perfil entre dos puntos o el trazado de una ruta óptima sobre una superficie de coste acumulado (que veremos en el apartado :ref:`Rutas_optimas`) son ejemplos de funciones globales que generan un resultado distinto de un mero valor numérico.
 
 .. figure:: Perfil.png
 
 	Dada una ruta y una capa, podemos obtener un perfil de valores a lo largo de la ruta mediante una función global.
 
 
-.. _Fig:Perfil: 
+.. _figperfil: 
 
 
 En el apartado dedicado a las funciones locales veíamos cómo la aplicación del operador *distinto de*  entre dos capas de uso de suelo correspondientes a distintas fechas nos servía para localizar las zonas que habían experimentado cambios en su uso de suelo. Tras esta operación, la capa resultante contendrá un valor *verdadero*, habitualmente representado con un 1, en las zonas donde se da esa variación, y *falso*, codificado con 0, en las restantes. Si queremos cuantificar esa variación, podemos aplicar un operador global que sencillamente sume los valores de todas las celdas de la capa, lo cual dará como resultado el número total de celdas cuyo uso de suelo ha variado en el periodo de tiempo comprendido entre las dos fechas representadas por las capas de entrada.
 
-Puesto que los operadores globales operan sobre la totalidad de la capa, a veces resulta conveniente o incluso necesario <<eliminar>> de esta los valores que no son de interés para el cálculo. No debemos olvidar que una capa ráster tiene una forma rectangular, la cual raramente se va a corresponder con la de la región de análisis, ya sea esta definida por un limite natural o no. El uso de máscaras que vimos en \ref{Funciones_locales} es muy práctico a estos efectos.
+Puesto que los operadores globales operan sobre la totalidad de la capa, a veces resulta conveniente o incluso necesario *eliminar* de esta los valores que no son de interés para el cálculo. No debemos olvidar que una capa ráster tiene una forma rectangular, la cual raramente se va a corresponder con la de la región de análisis, ya sea esta definida por un limite natural o no. El uso de máscaras que vimos en :ref:`Funciones_locales` es muy práctico a estos efectos.
 
-Considérese, por ejemplo, que una curva hipsográfica que representa la distribución de alturas dentro de un área dada (habitualmente una unidad hidrológica), no tiene mucho sentido si se aplica a una región delimitada de forma <<artificial>> por los límites rectangulares de la capa. Resulta más lógico aplicar una máscara sobre la capa a analizar, de modo que la función global ignore las celdas que, aun estando en la capa, no están en la unidad de interés. Estas celdas tendrán asociado un valor de sin datos tras la aplicación de dicha máscara.
+Considérese, por ejemplo, que una curva hipsográfica que representa la distribución de alturas dentro de un área dada (habitualmente una unidad hidrológica), no tiene mucho sentido si se aplica a una región delimitada de forma *artificial* por los límites rectangulares de la capa. Resulta más lógico aplicar una máscara sobre la capa a analizar, de modo que la función global ignore las celdas que, aun estando en la capa, no están en la unidad de interés. Estas celdas tendrán asociado un valor de sin datos tras la aplicación de dicha máscara.
 
 Las variables del álgebra de mapas y su preparación
 =====================================================
@@ -507,7 +507,7 @@ En los ejemplos que hemos visto de combinación de varias capas, hemos dado siem
 
 No obstante, a la hora de combinar capas es muy frecuente que estas tengan procedencias distintas y esta circunstancia no se dé. En tal caso, hay que preparar las capas para adecuarlas a un mismo marco geográfico sobre el que aplicar las funciones del álgebra de mapas de forma adecuada. Si este marco consiste en una malla de celdas de dimensiones :math:`n\times m`, y las coordenadas de cada celda :math:`i,j` son respectivamente :math:`x_{ij}` e :math:`y_{ij}`, deben calcularse los valores de las capas en esas coordenadas a partir de los valores en los marcos de referencia originales. Este proceso se denomina *remuestreo*.
 
-El remuestreo en realidad es una interpolación similar a la que veíamos en el capítulo \ref{Creacion_capas_raster}, con la diferencia de que en este caso los puntos con datos no están distribuidos irregularmente sino de forma regular en una malla, con lo que podemos dar una expresión para la función interpolante en función de las celdas de origen situadas entorno a la coordenada en la que queremos calcular el nuevo valor (la del centro de cada celda en la capa remuestreada). 
+El remuestreo en realidad es una interpolación similar a la que veíamos en el capítulo :ref:`Creacion_capas_raster`, con la diferencia de que en este caso los puntos con datos no están distribuidos irregularmente sino de forma regular en una malla, con lo que podemos dar una expresión para la función interpolante en función de las celdas de origen situadas entorno a la coordenada en la que queremos calcular el nuevo valor (la del centro de cada celda en la capa remuestreada). 
 
 Los métodos más habituales de remuestreo son los siguientes:
 
@@ -554,7 +554,7 @@ x^m & \textrm{ si } x > 0 \\
 
 Los métodos de remuestreo son un área muy desarrollada en el tratamiento de imágenes digitales, aunque, en la práctica, la mayoría de algoritmos existentes no presentan una diferencia notable con los anteriores (excepto con el remuestreo por vecindad) a la hora de aplicarlos sobre capas ráster de variables continuas en lugar de imágenes. Es por ello que su implementación y uso no es habitual en el caso de los SIG. En \cite{Turkowski1990Gems} puede encontrarse una buena introducción a otro tipo de funciones utilizadas para el remuestreo de imágenes.
 
-A la hora de elegir uno u otro de los métodos anteriores, debe tenerse en cuenta, fundamentalmente, el tipo de información que contenga la capa. Una diferencia fundamental que debe tenerse siempre presente es que, de entre los métodos anteriores, el de vecino más cercano es el único que garantiza que los valores resultante existen como tales en la capa origen. Ello hace que este sea el único método que puede utilizarse a la hora de remuestrear capas de información categórica. Podemos ver claramente esto en la figura \ref{Fig:Tipos_remuestreo}. Se aprecia que en la capa remuestreada mediante interpolación bicúbica aparece un valor no entero producto de las operaciones matemáticas aplicadas, frente a los valores enteros que representan las categorías en la capa original. Los valores no enteros carecen de sentido, y hacen así que la capa remuestreada no sea válida. 
+A la hora de elegir uno u otro de los métodos anteriores, debe tenerse en cuenta, fundamentalmente, el tipo de información que contenga la capa. Una diferencia fundamental que debe tenerse siempre presente es que, de entre los métodos anteriores, el de vecino más cercano es el único que garantiza que los valores resultante existen como tales en la capa origen. Ello hace que este sea el único método que puede utilizarse a la hora de remuestrear capas de información categórica. Podemos ver claramente esto en la figura :num:`#figtiposremuestreo`. Se aprecia que en la capa remuestreada mediante interpolación bicúbica aparece un valor no entero producto de las operaciones matemáticas aplicadas, frente a los valores enteros que representan las categorías en la capa original. Los valores no enteros carecen de sentido, y hacen así que la capa remuestreada no sea válida. 
 
 Incluso si no apareciesen valores decimales, el remuestreo de capas categóricas por métodos distintos del vecino más cercano es conceptualmente incorrecto, ya que la realización de operaciones aritméticas con valores arbitrariamente asignados a las distintas categorías carece por completo de sentido.
 
@@ -566,10 +566,10 @@ por vecindad. a)capa original, b)remuestreo por vecindad, b)remuestreo mediante 
 valores incoherentes)}
 
 
-.. _Fig:Tipos_remuestreo: 
+.. _figtipos_remuestreo: 
 
 
-Aun en los casos de variables no categóricas, y aunque la elección del método de remuestreo no conduce de por sí a un resultado necesariamente erróneo, el proceso de remuestreo como tal sí que puede hacerlo si no se razona en función de la información contenida en la capa. Podemos ver esto claramente en el ejemplo de la figura \ref{Fig:Remuestreo_conteo}. 
+Aun en los casos de variables no categóricas, y aunque la elección del método de remuestreo no conduce de por sí a un resultado necesariamente erróneo, el proceso de remuestreo como tal sí que puede hacerlo si no se razona en función de la información contenida en la capa. Podemos ver esto claramente en el ejemplo de la figura :num:`#figremuestreoconteo`. 
 
 La capa original contiene información sobre el número de individuos de una especie que han sido encontrados en cada celda, de tal modo que representa la densidad de dicha especie. Si se modifica el tamaño de celda para hacerlo el doble de grande, la nueva celda tras el remuestreo cubre cuatro celdas de la capa original. Mientras que el remuestreo asignará a esa celda un valor promedio de las cuatro originales que engloba, el numero de individuos en ella será realmente la suma de ellos. Debe aplicarse un factor de reescala que relacione el área de la celda antes del remuestreo con el tamaño después del mismo, para así mantener la coherencia en el significado de la variable.
 
@@ -578,7 +578,7 @@ La capa original contiene información sobre el número de individuos de una esp
 	Dependiendo de la variable recogida en la capa, el proceso de remuestreo puede requerir operaciones adicionales para obtener un resultado correcto. a) capa con valores de conteos (número de individuos) por celda para una especie dada, b) capa tras remuestreo (incorrecta), c) capa tras remuestreo y aplicación de factor de reescala (correcta) 
 
 
-.. _Fig:Remuestreo_conteo: 
+.. _figremuestreo_conteo: 
 
 
 Formalización y extensión del álgebra de mapas
@@ -590,7 +590,7 @@ Aunque en la práctica los conceptos definidos por Tomlin son la base para la im
 
 La propuesta de \cite{Takeyama1997IJGIS} con su *geo--álgebra* es distinta, y se encamina a una formalización matemática completa de las operaciones espaciales. En ella, no solo se contemplan los datos espaciales, sino también los procesos existentes. Así, se extiende no solo el álgebra de operaciones, sino el concepto de mapa a través de los nuevos conceptos de mapa *relacional* y *meta--relacional*. La integración de modelos basados, por ejemplo, en autómatas celulares, es posible dentro del marco de este geo--álgebra
 
-Por último, y aunque no relacionada directamente con la información geográfica, el *álgebra de imágenes* definida por \cite{Ritter1990CompuVision} guarda una gran similitud debida a la parecida naturaleza de los datos ráster y las imágenes como ya hemos comentado. Este álgebra de imágenes pretende establecer una notación algebraica con la cual expresar los algoritmos del procesado de imágenes, muchos de los cuales comparten una base conceptual común con los empleados en el análisis geográfico, y que veremos en el capítulo \ref{Procesado_imagenes}.
+Por último, y aunque no relacionada directamente con la información geográfica, el *álgebra de imágenes* definida por \cite{Ritter1990CompuVision} guarda una gran similitud debida a la parecida naturaleza de los datos ráster y las imágenes como ya hemos comentado. Este álgebra de imágenes pretende establecer una notación algebraica con la cual expresar los algoritmos del procesado de imágenes, muchos de los cuales comparten una base conceptual común con los empleados en el análisis geográfico, y que veremos en el capítulo :ref:`Procesado_imagenes`.
 
 Resumen
 =====================================================

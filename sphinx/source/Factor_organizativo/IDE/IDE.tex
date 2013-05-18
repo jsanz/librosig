@@ -44,7 +44,7 @@ Entre esa información a la que los ciudadanos deben tener un acceso adecuado se 
 
 Como respuesta a la redacción de estos principios, comienzan a surgir las primeras iniciativas de carácter nacional encaminadas a lograr los objetivos anteriores. Previamente a este momento, una coordinación así era algo por completo inexistente. Cada organización, ya fuera una agencia estatal o una empresa, producía la información que pudiera necesitar y no buscaba favorecer la difusión de esta. Como consecuencia de ello, se perdía la oportunidad de aprovechar el esfuerzo realizado, y cualquier otro trabajo que pudiera beneficiarse de esa información geográfica debía desarrollarse sin ella, o bien realizando un nuevo esfuerzo de creación, con el consecuente gasto económico. En resumen, una situación en absoluto óptima.
 
-El hecho de que la situación relativa a la información geográfica no era idónea era ya conocido. Aunque no existieran iniciativas formales para atajar el problema, este estaba ya plenamente identificado. En 1987, el comité Chorley, del Departamento de Medioambiente de Estados Unidos, concluyó que <<las barreras políticas e institucionales que restringen actualmente el uso de los SIG deben ser superadas. Esto incluye problemas de incompatibilidad por diferencias de definición y formatos, así como restricciones al acceso y adquisición de los propios datos.>>
+El hecho de que la situación relativa a la información geográfica no era idónea era ya conocido. Aunque no existieran iniciativas formales para atajar el problema, este estaba ya plenamente identificado. En 1987, el comité Chorley, del Departamento de Medioambiente de Estados Unidos, concluyó que *las barreras políticas e institucionales que restringen actualmente el uso de los SIG deben ser superadas. Esto incluye problemas de incompatibilidad por diferencias de definición y formatos, así como restricciones al acceso y adquisición de los propios datos.*
 
 
 
@@ -87,13 +87,13 @@ Por ejemplo, y como veremos con detalle más adelante, INSPIRE \cite{INSPIRE} es 
 Estructura de una IDE. Niveles.
 --------------------------------------------------------------
 
-Las IDE surgen para coordinar la producción cartográfica a nivel global y su uso por todo tipo de usuarios. No obstante, no resulta práctico ni organizativamente viable gestionar tal cantidad de trabajo e información a un único nivel, siendo necesario delegar en distintos niveles y establecer una estructura organizativa para distribuir las responsabilidades y tareas. Esto da lugar a una estructura en forma de red en la que se distinguen una serie de *nodos* interconectados, cada uno de los cuales lo administra un determinado organismo responsable. Las relaciones existentes dependerán de la posición y nivel del nodo en cuestión, así como el tipo de organismo responsable de este. %Un esquema de los distintos niveles y las relaciones entre ellos se muestra en la figura \ref{Fig:NivelesIDE}.
+Las IDE surgen para coordinar la producción cartográfica a nivel global y su uso por todo tipo de usuarios. No obstante, no resulta práctico ni organizativamente viable gestionar tal cantidad de trabajo e información a un único nivel, siendo necesario delegar en distintos niveles y establecer una estructura organizativa para distribuir las responsabilidades y tareas. Esto da lugar a una estructura en forma de red en la que se distinguen una serie de *nodos* interconectados, cada uno de los cuales lo administra un determinado organismo responsable. Las relaciones existentes dependerán de la posición y nivel del nodo en cuestión, así como el tipo de organismo responsable de este. %Un esquema de los distintos niveles y las relaciones entre ellos se muestra en la figura :num:`#figniveleside`.
 %
 %.. figure:: imagenes/NivelesIDE.png
 %	
 	Niveles de una IDE
 
-.. _Fig:NivelesIDE: 
+.. _figniveleside: 
 %
 
 En primer lugar, se puede clasificar un nodo IDE en función de la posición en la jerarquía administrativa que ocupe el organismo responsable del nodo. Esto divide los nodos en niveles que van desde desde la IDE global en el nivel superior hasta las IDE locales y las IDE corporativas en el nivel inferior. 
@@ -115,9 +115,9 @@ Pueden distinguirse los siguientes componentes en una IDE:
 
 Las IDE evitan estos problemas mediante la aplicación de dos técnicas. En primer lugar, se obliga a capturar y mantener la información geográfica una única vez allí donde puede hacerse de modo más efectivo. De esta forma, la cartografía que se esté utilizando será siempre la mejor para cada caso y el coste de captura y mantenimiento se minimizará. En segundo lugar, las IDE obligan a compartir la información geográfica mediante servicios de datos basados en estándares (ver punto siguiente), lo que permite que el acceso a la información se pueda hacer de forma interoperable utilizando herramientas informáticas de análisis y visualización. 
 
-Otro pilar fundamental de las IDE son los metadatos, que describen a los propios datos espaciales y nos aportan información adicional acerca de ellos. Resultan imprescindibles para conocer siempre qué cartografía estamos usando, y son el único medio del que se dispondrá para poder seleccionar qué cartografía se ajusta mejor a nuestro caso de uso. Los metadatos se describen en el capítulo \ref{Metadatos}.
+Otro pilar fundamental de las IDE son los metadatos, que describen a los propios datos espaciales y nos aportan información adicional acerca de ellos. Resultan imprescindibles para conocer siempre qué cartografía estamos usando, y son el único medio del que se dispondrá para poder seleccionar qué cartografía se ajusta mejor a nuestro caso de uso. Los metadatos se describen en el capítulo :ref:`Metadatos`.
 
-* Estándares. Es indispensable para el buen funcionamiento de una IDE que sea interoperable tanto a nivel técnico como a nivel semántico. La interoperabilidad a nivel técnico consiste que los participantes en el proceso de comunicación utilicen los mismos lenguajes, lo que implica llegar a acuerdos para la utilización de los mismos formatos y servicios de datos basados en estándares aceptados internacionalmente. La interoperabilidad a nivel semántico consiste en que la información compartida sea coherente en cuanto a significado, lo que implica que los organismos lleguen a acuerdos en cuanto a modelos conceptuales de esa información. En el capítulo \ref{Estandares}, veremos qué organizaciones internacionales son las encargadas de dictar los estándares requeridos para el intercambio de información geográfica, así como las principales especificaciones que ya están en uso y disponibles para su utilización.
+* Estándares. Es indispensable para el buen funcionamiento de una IDE que sea interoperable tanto a nivel técnico como a nivel semántico. La interoperabilidad a nivel técnico consiste que los participantes en el proceso de comunicación utilicen los mismos lenguajes, lo que implica llegar a acuerdos para la utilización de los mismos formatos y servicios de datos basados en estándares aceptados internacionalmente. La interoperabilidad a nivel semántico consiste en que la información compartida sea coherente en cuanto a significado, lo que implica que los organismos lleguen a acuerdos en cuanto a modelos conceptuales de esa información. En el capítulo :ref:`Estandares`, veremos qué organizaciones internacionales son las encargadas de dictar los estándares requeridos para el intercambio de información geográfica, así como las principales especificaciones que ya están en uso y disponibles para su utilización.
 
 * Políticas. El apoyo político es fundamental para el correcto desarrollo de las IDE, ya que el mayor esfuerzo de captura y mantenimiento de información geográfica se realiza en el sector público. Por ello, las políticas que el sector público determine con respecto a su mantenimiento, recolección y uso son las que mayor impacto tienen sobre la IDE. No se puede, no obstante, olvidar al sector privado, ya que es uno de los más interesados en el uso de la información proporcionada por una IDE. 
 
@@ -132,7 +132,7 @@ Otro pilar fundamental de las IDE son los metadatos, que describen a los propios
 %	
 	Componentes de una IDE
 
-.. _Fig:ComponentesIDE: 
+.. _figcomponenteside: 
 %
 
 Es fácil identificar en los puntos anterior una buena parte de los elementos que mencionamos en el capítulo dedicado a la implementación de un SIG, ya que, en buena parte, el establecimiento de una IDE y la 	implantación de un SIG comparten aspectos comunes.
@@ -140,13 +140,13 @@ Es fácil identificar en los puntos anterior una buena parte de los elementos que
 Actores de una IDE
 --------------------------------------------------------------
 
-%Los actores involucrados en el funcionamiento de una IDE son varios, tal y como se puede observar en la figura \ref{Fig:ActoresIDE}.
+%Los actores involucrados en el funcionamiento de una IDE son varios, tal y como se puede observar en la figura :num:`#figactoreside`.
 
 %.. figure:: imagenes/ActoresIDE.png
 %	
 	Actores de una IDE
 
-.. _Fig:ActoresIDE: 
+.. _figactoreside: 
 %
 
 Los actores involucrados en el funcionamiento de una IDE son varios. En primer lugar se encuentran los usuarios de la IDE que son los que van a determinar su éxito o su fracaso. Dentro de los usuarios podemos considerar distintos tipos: administraciones públicas que necesitan la información para realizar sus tareas (por ejemplo las áreas de urbanismo de los municipios, o los organismos de gestión de las cuencas hidrográficas), empresas que pueden usar la información para sus negocios (por ejemplo empresas de elaboración de planes urbanísticos), universidades y centros de investigación, o personas individuales. Todos estos tipos de usuarios deben estar contemplados en la IDE ya que el éxito de la misma radica en cubrir las necesidades del mayor número posible de usuarios.
@@ -163,13 +163,13 @@ De forma más detallada, \cite{Rodriguez2005JIDEE} divide los usuarios según su p
 * Administradores. El responsable final de mantener la infraestructura y dar soporte técnico a los restantes usuarios.
 
 
-A medida que descendemos en esta clasificación, aumenta la especialización al tiempo que disminuye el número de usuarios que pertenecen a cada una de las clases definidas, tal y como se recoge esquemáticamente en la figura \ref{Fig:UsuariosIDE}
+A medida que descendemos en esta clasificación, aumenta la especialización al tiempo que disminuye el número de usuarios que pertenecen a cada una de las clases definidas, tal y como se recoge esquemáticamente en la figura :num:`#figusuarioside`
 
 .. figure:: usuariosIDE.pdf
 	
 	Clasificación de usuarios de una IDE (según \cite{Rodriguez2005JIDEE)}
 
-.. _Fig:UsuariosIDE: 
+.. _figusuarioside: 
 
 
 Además de los usuarios, otros actores involucrado en una IDE son los organismos internacionales de creación de estándares, en concreto la organización de estandarización internacional ISO con sus miembros nacionales, el Open Geospatial Consortium (OGC) y el World Wide Web Consortium (W3C). Estos organismos definen las normas y estándares que formarán la base tecnológica de la IDE y que permitirán su interoperabilidad.
@@ -191,32 +191,32 @@ Algo más sobre catálogos
 
 Los catálogos son la parte visible de la IDE, ya que proporcionan la puerta de entrada a los datos de esta y están pensados para simplificar la labor de encontrar y obtener los datos necesarios para cada usuario. Otros elementos de las IDE como metadatos o estándares son tratados en capítulos independientes dentro de esta parte del libro. Sin llegar a requerir un capítulo específico, los catálogos no obstante son piezas imprescindibles sobre las que es necesario profundizar, por lo que en este apartado describiremos con algo más de profundidad su papel y sus características como partes clave de una IDE.
 
-El catálogo permite al usuario navegar de forma eficaz por la información contenida en una IDE, bien sea en uno de sus nodos de forma aislada o bien en el conjunto de la red de nodos que forman la IDE. Los nodos, como ya sabemos, deben estar conectados y relacionados, y es en virtud de esa conexión y gracias al uso de lenguajes comunes (estándares) que pueden comunicarse y compartir su información. De este modo, un catálogo puede ofrecer los datos contenidos en el nodo en el que se encuentra, pero también <<preguntar>> a otros nodos y devolver al usuario una respuesta que tenga también en cuenta los datos de esos otros nodos. Como vimos en el capítulo \ref{Servidores_y_clientes_remotos}, esa respuesta a consultas es uno de los servicios que pueden ofrecerse basados en información geográfica.
+El catálogo permite al usuario navegar de forma eficaz por la información contenida en una IDE, bien sea en uno de sus nodos de forma aislada o bien en el conjunto de la red de nodos que forman la IDE. Los nodos, como ya sabemos, deben estar conectados y relacionados, y es en virtud de esa conexión y gracias al uso de lenguajes comunes (estándares) que pueden comunicarse y compartir su información. De este modo, un catálogo puede ofrecer los datos contenidos en el nodo en el que se encuentra, pero también *preguntar* a otros nodos y devolver al usuario una respuesta que tenga también en cuenta los datos de esos otros nodos. Como vimos en el capítulo :ref:`Servidores_y_clientes_remotos`, esa respuesta a consultas es uno de los servicios que pueden ofrecerse basados en información geográfica.
 
-El catálogo dispone de una interfaz, que es la que el usuario emplea para plantear sus búsquedas y obtener respuestas. Esta interfaz se localiza normalmente en el *portal* de acceso al catálogo, y proveen el acceso más directo a los contenidos de la IDE. Estos contenidos no se limitan exclusivamente a los datos, ya que pueden incluir servicios de distintos tipos (recordemos que, según vimos en el capítulo \ref{Servidores_y_clientes_remotos}, lo datos pueden servirse de varias formas), incluyendo servicios que no se basen directamente en los datos de la IDE, tales como procesos.
+El catálogo dispone de una interfaz, que es la que el usuario emplea para plantear sus búsquedas y obtener respuestas. Esta interfaz se localiza normalmente en el *portal* de acceso al catálogo, y proveen el acceso más directo a los contenidos de la IDE. Estos contenidos no se limitan exclusivamente a los datos, ya que pueden incluir servicios de distintos tipos (recordemos que, según vimos en el capítulo :ref:`Servidores_y_clientes_remotos`, lo datos pueden servirse de varias formas), incluyendo servicios que no se basen directamente en los datos de la IDE, tales como procesos.
 
-En la figura \ref{Fig:Catalogo_UNEX} puede verse un ejemplo de una interfaz de acceso a un catálogo.
+En la figura :num:`#figcatalogounex` puede verse un ejemplo de una interfaz de acceso a un catálogo.
 
 .. figure:: CatalogoUNEX.png
 	
 	Interfaz de acceso al catálogo de la IDE de la Universidad de Extremadura
 
-.. _Fig:Catalogo_UNEX: 
+.. _figcatalogo_unex: 
 
 
-Cuando nos referimos a un usuario del catálogo, este no ha de ser necesariamente una persona, y no ha de <<ver>> la interfaz dispuesta para el acceso. El catálogo puede ser consultado por, por ejemplo, otro ordenador, ya que expone sus capacidades como un servicio más, y eso es lo que permite que desde un nodo de la IDE se puedan realizar consultas sobre nodos distintos. La única condición para que esto suceda es que los nodos puedan entenderse entre sí en un lenguaje común. Para ello existen los estándares, que se han mencionado ya como parte de la IDE y que veremos más extensamente en el capítulo \ref{Estandares}. 
+Cuando nos referimos a un usuario del catálogo, este no ha de ser necesariamente una persona, y no ha de *ver* la interfaz dispuesta para el acceso. El catálogo puede ser consultado por, por ejemplo, otro ordenador, ya que expone sus capacidades como un servicio más, y eso es lo que permite que desde un nodo de la IDE se puedan realizar consultas sobre nodos distintos. La única condición para que esto suceda es que los nodos puedan entenderse entre sí en un lenguaje común. Para ello existen los estándares, que se han mencionado ya como parte de la IDE y que veremos más extensamente en el capítulo :ref:`Estandares`. 
 
 De otro modo, podemos entender al catálogo como el bibliotecario que nos proporciona acceso a los documentos de una biblioteca. Es a él a quién debemos dirigirnos para obtener uno de sus documentos, pero, en caso de que la biblioteca no disponga de lo que buscamos, puede llamar a otras bibliotecas y preguntar en ellas e incluso, si existen acuerdos de prestamo, facilitarnos la obtención del documento sin necesidad de que tengamos que acudir personalmente a la biblioteca donde se encuentra. Puesto esto en el contexto de Internet y con información geográfica digital en lugar de documentos físicos, tenemos una descripción acertada del papel de los catálogos como herramientas para el descubrimiento y obtención de esa información.
 
 Se suele emplear el término *harvesting*\footnote{del inglés *to harvest*: cosechar, recolectar} para indicar la capacidad de un nodo para recoger la información de otros y poder así responder a peticiones teniendo en cuenta esa información ajena. Si los nodos soportan este tipo de operaciones, es posible sincronizar los metadatos entre ellos, de forma que cada nodo del catálogo se enriquece con los restantes sin que ello suponga una carga extra de organización y mantenimiento de metadatos.
 
-La figura \ref{Fig:UsuariosCatalogo} muestra un esquema de lo que la actividad de un usuario sobre un catálogo supone en otros elementos de la IDE, y cómo estos se relacionan a la hora de dar respuesta a su consulta.
+La figura :num:`#figusuarioscatalogo` muestra un esquema de lo que la actividad de un usuario sobre un catálogo supone en otros elementos de la IDE, y cómo estos se relacionan a la hora de dar respuesta a su consulta.
 
 .. figure:: usuariosCatalogo.pdf
 	\caption{Diagrama de interacción que muestra la utilización básica de servicios de catálogo y los
 elementos de IDE relacionados desde un punto de vista de un usuario (adaptado de \cite{RecetarioIDE})}
 
-.. _Fig:UsuariosCatalogo: 
+.. _figusuarioscatalogo: 
 
 
 Viendo que los distintos nodos de una IDE están relacionados y bien comunicados, y que de igual modo lo han de estar sus catálogos, un aspecto importante en relación a estos últimos es, sin duda, la forma en que se relacionan. Cabe pensar que, si bien es necesario dividir todo el trabajo de gestión de datos de una IDE en una serie de nodos para repartir las tareas a distintas escalas y lograr una estructura óptima, esto mismo no es estrictamente necesario en el caso de los catálogos. Es decir, podrían tenerse los datos divididos entre los distintos nodos, cada uno de los cuales permitiera el acceso a suyos datos mediante los correspondientes servicios, y tener un único catálogo que contuviera todos los metadatos y un único portal de acceso a esos metadatos. Sin duda, esto facilitaría el trabajo de buscar cualquier información geográfica, lo cual se haría siempre a través de un único portal. Sin embargo, tal centralización de actividades presenta muchas dificultades. Entre ellas, encontramos las siguientes:
@@ -341,18 +341,18 @@ Este grupo de expertos da forma a unos principios que han de regir el desarrollo
 
 Desde la redacción de estos principios, INSPIRE ha seguido su desarrollo hasta finalmente ser aprobada de modo formal por el Consejo Europeo (29 de enero de 2007) y el Parlamento Europeo (12 de febrero de 2007). Fue publicada como Directiva 2007/2/CE el 14 de marzo de 2007.
 
-La figura \ref{Fig:EvolucionINSPIRE} muestra un esquema de la secuencia temporal que ha seguido INSPIRE, desde su nacimiento hasta la actualidad.
+La figura :num:`#figevolucioninspire` muestra un esquema de la secuencia temporal que ha seguido INSPIRE, desde su nacimiento hasta la actualidad.
 
 .. figure:: EvolucionINSPIRE.pdf
 	
 	Secuencia temporal seguida por INSPIRE (adaptado de \cite{Craglia2009INSPIRE)}
 
-.. _Fig:EvolucionINSPIRE: 
+.. _figevolucioninspire: 
 
 
 INSPIRE contiene 3 anexos en los que se especifica qué datos deben formar parte de la IDE, ya sea con carácter obligatorio o con carácter opcional. De este modo, se establece el contenido deseado para los datos creados y almacenados por los distintos nodos de la IDE, con objeto de obtener un conjunto global de datos coherente y facilitar la realización de la mayor parte de tareas en todos los lugares, así como a todos los niveles de detalle. Es decir, que exista una coherencia tanto horizontal como vertical en lo que a datos existentes respecta.
 
-Las tablas en \ref{Tabla:INSPIREAnexos} muestran los tipos de datos que se recogen en los citados anexos.
+Las tablas en :ref:`Tabla:INSPIREAnexos` muestran los tipos de datos que se recogen en los citados anexos.
 
 \begin{table*}[!hbt]
 \centering 
@@ -435,10 +435,10 @@ La importancia de las IDE regionales no debe subestimarse, ya que sin ellas el f
 	
 	Ejemplo de estructura a distintos niveles para una IDE particular (IDE de Pamplona) (adaptado de \cite{Echeverria2001Boletic)}
 
-.. _Fig:EjemploIDE: 
+.. _figejemploide: 
 
 
-Como cierre de este apartado, en la figura \ref{Fig:EjemploIDE} puede verse un ejemplo de iniciativas a distintos niveles y la jerarquía existente entre ellas. Obsérvese cómo se relacionan algunas de las iniciativas presentadas en los apartados anteriores, y la dependencia existente.
+Como cierre de este apartado, en la figura :num:`#figejemploide` puede verse un ejemplo de iniciativas a distintos niveles y la jerarquía existente entre ellas. Obsérvese cómo se relacionan algunas de las iniciativas presentadas en los apartados anteriores, y la dependencia existente.
 
 
 Resumen

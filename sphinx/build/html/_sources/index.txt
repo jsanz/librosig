@@ -25,7 +25,7 @@ Los nombre de productos o corporaciones que aparecen en el texto pueden constitu
 **Índice:**
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    Intro.rst
    Fundamentos/Fundamentos.rst	   

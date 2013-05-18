@@ -17,9 +17,9 @@ Los datos contienen la información geográfica, y es esta la que empleamos en un 
 
 Por ejemplo, si tenemos las coordenadas de un punto disponemos de un dato, pero para interpretarlo correctamente necesitamos conocer, entre otras cosas, el sistema de coordenadas en que vienen expresadas esas coordenadas. El dato con el que trabajamos (las coordenadas), requiere unos datos adicionales (por ejemplo, el código EPSG del sistema de referencia empleado) para cobrar verdadero sentido.
 
-Surge así el concepto de *metadatos*. Literalmente, los metadatos son <<datos acerca de los datos>> y su misión es *explicar* el significado de los datos. Es decir, ayudan a los usuarios de los datos a entender mejor el significado que estos tienen y la información que guardan. Los metadatos son un documento adicional que acompaña a los datos, y que permite una mejor gestión y una utilización más precisa de ellos.
+Surge así el concepto de *metadatos*. Literalmente, los metadatos son *datos acerca de los datos* y su misión es *explicar* el significado de los datos. Es decir, ayudan a los usuarios de los datos a entender mejor el significado que estos tienen y la información que guardan. Los metadatos son un documento adicional que acompaña a los datos, y que permite una mejor gestión y una utilización más precisa de ellos.
 
-Trabajando en el entorno de un SIG, los datos con los que trabajamos son de tipo espacial, y como ya estudiamos en su momento (véase el apartado \ref{ComponenteInformacionGeografica}), existe una componente espacial y una temática. Los metadatos pueden referirse a ambas componentes, ya que es necesario documentar todas ellas, y podemos encontrar metadatos referidos a una capa de forma global, a su componente espacial o a su componente temática.
+Trabajando en el entorno de un SIG, los datos con los que trabajamos son de tipo espacial, y como ya estudiamos en su momento (véase el apartado :ref:`ComponenteInformacionGeografica`), existe una componente espacial y una temática. Los metadatos pueden referirse a ambas componentes, ya que es necesario documentar todas ellas, y podemos encontrar metadatos referidos a una capa de forma global, a su componente espacial o a su componente temática.
 
 Un ejemplo de metadato global de una capa puede ser el nombre de su autor o la fecha en la que ese dato ha sido creado. El sistema de referencia en el que se expresan las coordenadas de cada entidad recogida es un tipo de metadato relativo a la componente espacial. Y en lo referente a la componente temática, los metadatos pueden recoger las unidades en las que se recoge una variable asociada a cada entidad, o bien almacenar cualquier otro valor que permita una mejor interpretación de esa variable.
 
@@ -65,16 +65,16 @@ Estos tres ejemplos ponen de manifiesto la necesidad que existe de conocer acerc
 
 Los creadores de datos deben procurar acompañar estos de metadatos precisos y suficientes, y los usuarios deben consultar estos antes de utilizar dichos datos. De este modo, se puede garantizar que un dato no es empleado de forma errónea y que los resultados que se obtendrán tendrán validez.
 
-Vimos en el capítulo \ref{Calidad_datos} cómo la calidad se define como el conjunto de propiedades y de características de un producto o servicio que le confieren su aptitud para satisfacer unas necesidades explícitas e implícitas. Los metadatos documentan esas características y las de todas aquellas necesidades a las que pueden responder los datos, y de este modo documentan la propia calidad del dato. Como ya se dijo entonces, los metadatos son un elemento muy importante en relación con la calidad de los datos espaciales
+Vimos en el capítulo :ref:`Calidad_datos` cómo la calidad se define como el conjunto de propiedades y de características de un producto o servicio que le confieren su aptitud para satisfacer unas necesidades explícitas e implícitas. Los metadatos documentan esas características y las de todas aquellas necesidades a las que pueden responder los datos, y de este modo documentan la propia calidad del dato. Como ya se dijo entonces, los metadatos son un elemento muy importante en relación con la calidad de los datos espaciales
 
 Facilitar la gestión los datos
 --------------------------------------------------------------
 
 Las funciones anteriores ponen de manifiesto la utilidad e importancia de los metadatos en un contexto reducido en el que un individuo o un pequeño grupo trabaja con ciertos datos. La importancia de los metadatos se hace patente incluso cuando se dispone de un único dato (una sola capa), pues es en el momento de utilizar este cuando se consultan los metadatos y se emplea la información que contienen para poder conocer la precisión de los datos, su referencia espacial, u otros elementos que permitan que ese uso sea más correcto.
 
-En esta situación, se dispone ya de los datos y de los metadatos, y estos últimos nos permiten conocer más acerca de los primeros. No obstante, en el panorama tecnológico actual un usuario no dispone de todos los datos que necesita, sino que puede acceder a ellos en la medida en que le sea necesario, del mismo modo que no guardamos en nuestro ordenador enciclopedias y libros, pero podemos acceder a ellos a través de Internet. Las tecnologías que vimos en el capítulo \ref{Servidores_y_clientes_remotos} dedicado a servidores y clientes nos permiten acceder a una enorme cantidad de datos espaciales, y los metadatos juegan un papel clave en la gestión de estos.
+En esta situación, se dispone ya de los datos y de los metadatos, y estos últimos nos permiten conocer más acerca de los primeros. No obstante, en el panorama tecnológico actual un usuario no dispone de todos los datos que necesita, sino que puede acceder a ellos en la medida en que le sea necesario, del mismo modo que no guardamos en nuestro ordenador enciclopedias y libros, pero podemos acceder a ellos a través de Internet. Las tecnologías que vimos en el capítulo :ref:`Servidores_y_clientes_remotos` dedicado a servidores y clientes nos permiten acceder a una enorme cantidad de datos espaciales, y los metadatos juegan un papel clave en la gestión de estos.
 
-En el contexto de las Infraestructuras de Datos Espaciales es donde los metadatos cobran una importancia mayor si cabe, ya que informan de las características de los datos a los restantes actores de la IDE. Los metadatos constituyen un <<resumen>> de las características principales de los datos, y pueden ser empleados para labores de búsqueda y localización de datos de un tipo dado. De este modo, compartir los datos es más sencillo, y la difusión de estos se realiza de una forma más fluida. Es decir, la IDE alcanza mejor sus objetivos cuando los datos que contiene se encuentran correctamente documentados mediante buenos metadatos. Los catálogos que veíamos como parte integrante de la IDE necesitan los metadatos para funcionar, ya que responden a las peticiones del usuario del catálogo en función de la información que los metadatos contienen.
+En el contexto de las Infraestructuras de Datos Espaciales es donde los metadatos cobran una importancia mayor si cabe, ya que informan de las características de los datos a los restantes actores de la IDE. Los metadatos constituyen un *resumen* de las características principales de los datos, y pueden ser empleados para labores de búsqueda y localización de datos de un tipo dado. De este modo, compartir los datos es más sencillo, y la difusión de estos se realiza de una forma más fluida. Es decir, la IDE alcanza mejor sus objetivos cuando los datos que contiene se encuentran correctamente documentados mediante buenos metadatos. Los catálogos que veíamos como parte integrante de la IDE necesitan los metadatos para funcionar, ya que responden a las peticiones del usuario del catálogo en función de la información que los metadatos contienen.
 
 En el escenario actual, esta funcionalidad de los datos es preponderante sobre las restantes, y es por ello que tratamos los metadatos dentro de este libro en esta parte dedicada al factor organizativo, ya que son ante todo un elemento básico para la organización de los datos dentro del sistema SIG.
 
@@ -112,13 +112,13 @@ Las características de los metadatos asociados a los datos dependerán directamen
 
 * El tipo de dato y en particular, el modelo de representación empleado. Los datos vectoriales tendrán asociados unos metadatos distintos que los correspondientes a datos ráster.
 
-* El formato en que se almacenan los datos. El tipo de fichero o base de datos condiciona la información que puede almacenarse (vimos esto en detalle en la sección \ref{Formatos_archivo}), y por tanto condiciona los metadatos. 
+* El formato en que se almacenan los datos. El tipo de fichero o base de datos condiciona la información que puede almacenarse (vimos esto en detalle en la sección :ref:`Formatos_archivo`), y por tanto condiciona los metadatos. 
 
 * La organización, entidad o individuo responsable de la creación de los datos y el uso que se pretende dar a estos. Puesto que, como hemos dicho, los datos se crean para un objetivo definido, este objetivo y los intereses de quien ha creado los datos definirán el tipo y cantidad de información que se recoja en los metadatos. Datos pensados para un catálogo público tendrán asociados metadatos distintos que datos privados con acceso restringido, del mismo modo que datos pensados para un uso muy concreto presentarán unos metadatos diferentes a los que acompañarán a unos datos de uso más genérico.
 
 * Elemento al que se asocian los metadatos. Como veremos en el siguiente apartado, podemos asociar metadatos a un juego de capas, una capa o una entidad aislada dentro de una capa. Esto implica diferencias en el contenido de los metadatos, pues esos elementos tienen características de distinta naturaleza.
 
-* El estándar empleado para crear los metadatos. En el capítulo \ref{Estandares} veremos los estándares que existen para los metadatos geográficos y la forma que estos tienen, la cual define directamente su contenido.     
+* El estándar empleado para crear los metadatos. En el capítulo :ref:`Estandares` veremos los estándares que existen para los metadatos geográficos y la forma que estos tienen, la cual define directamente su contenido.     
 
 
  
@@ -129,13 +129,13 @@ Algunos de los elementos comunes que se incorporan a los metadatos geográficos s
 
 * Información sobre la calidad de los datos. La información sobre la calidad de los datos puede incluir, entre otros elementos, aquellos relativos a la completitud de estos, los procesos que se han empleado en su creación y mantenimiento, o las operaciones de validación y verificación a las que se han sometido.
 
-En relación con los procesos empleados, es importante reseñar que muchos de los algoritmos que vimos en la parte \ref{Procesos} toman algún tipo de dato geográfico como entrada y generan algún otro nuevo. Es decir, toman una o varias capas y generan nuevas capas como resultado. Para documentar la calidad de los datos resultantes se debe documentar en los metadatos la procedencia completa de estos, indicando las metodologías empleadas para su creación y todos los metadatos propios de las capas de entrada.
+En relación con los procesos empleados, es importante reseñar que muchos de los algoritmos que vimos en la parte :ref:`Procesos` toman algún tipo de dato geográfico como entrada y generan algún otro nuevo. Es decir, toman una o varias capas y generan nuevas capas como resultado. Para documentar la calidad de los datos resultantes se debe documentar en los metadatos la procedencia completa de estos, indicando las metodologías empleadas para su creación y todos los metadatos propios de las capas de entrada.
 
 Un ejemplo de esto puede ser el proceso de cálculo de una capa de pendientes a partir de un MDE. Este MDE tendrá a su vez unos metadatos asociados (entre ellos algunos relativos a su calidad), y la bondad y calidad de la capa de pendientes está ligada directamente a la del MDE. Por tanto, en los metadatos debe hacerse referencia a ese MDE o bien a las características de este.
 
 Si el MDE no se ha adquirido directamente, sino que se ha elaborado haciendo uso de otros procesos tales como interpolación a partir de curvas de nivel, se ha de añadir también a los metadatos la información correspondiente a esos procesos, especificando por ejemplo el método de interpolación usado, los parámetros de ajuste de este o incluso el software mediante el que se ha aplicado.
 
-Con esto, puede <<rastrearse>> el origen de los datos y se dispone de una base sobre la que evaluar la calidad de estos en función de dicho origen. Tenemos así el concepto de *linaje* de los datos. Esta idea es similar a la de *trazabilidad* empleada en otros sectores como, por ejemplo, el alimentario.
+Con esto, puede *rastrearse* el origen de los datos y se dispone de una base sobre la que evaluar la calidad de estos en función de dicho origen. Tenemos así el concepto de *linaje* de los datos. Esta idea es similar a la de *trazabilidad* empleada en otros sectores como, por ejemplo, el alimentario.
 
 * Información sobre la representación del dato espacial. Se incluyen en este grupo la precisión y exactitud de los datos, la escala de trabajo o la resolución en el caso de capas ráster. Este tipo de metadatos están también íntimamente ligados con la calidad de los datos.
 
@@ -145,14 +145,14 @@ Con esto, puede <<rastrearse>> el origen de los datos y se dispone de una base s
 
 
 
-De entre estos, algunos son considerados como fundamentales y se incluyen de forma genérica, mientras que otros pueden o no incorporarse. Al definir una especificación de metadatos, se pueden establecer niveles de prioridad, estableciéndose un grupo de propiedades básicas que han de documentarse siempre y otro con propiedades de carácter opcional.% (Figura \ref{Fig:Contenido_metadatos}).
+De entre estos, algunos son considerados como fundamentales y se incluyen de forma genérica, mientras que otros pueden o no incorporarse. Al definir una especificación de metadatos, se pueden establecer niveles de prioridad, estableciéndose un grupo de propiedades básicas que han de documentarse siempre y otro con propiedades de carácter opcional.% (Figura :num:`#figcontenidometadatos`).
 
 %.. figure:: Contenido_metadatos.pdf
 %
 	Los metadatos pueden presentar diferentes niveles de prioridad en su contenido.
 %
 
-.. _Fig:Contenido_metadatos: 
+.. _figcontenido_metadatos: 
 %
 
 Granularidad de los metadatos
@@ -188,10 +188,10 @@ Podemos encontrar el caso opuesto, en el que varias capas comparten los mismos m
 	Granularidad de los metadatos. Los metadatos pueden hacer referencia a elementos a distinta escala.
 
 
-.. _Fig:Granularidad_metadatos: 
+.. _figgranularidad_metadatos: 
 
 
-Los metadatos pueden así registrarse a una escala distinta a la de la capa como unidad de datos, aunque esta sigue siendo la referencia más habitual a la hora de crear metadatos (Figura \ref{Fig:Granularidad_metadatos}).
+Los metadatos pueden así registrarse a una escala distinta a la de la capa como unidad de datos, aunque esta sigue siendo la referencia más habitual a la hora de crear metadatos (Figura :num:`#figgranularidadmetadatos`).
 
 Forma de almacenamiento de los metadatos
 --------------------------------------------------------------
@@ -261,7 +261,7 @@ La importancia de este tipo de aplicaciones es grande si se tiene en cuenta que,
 
 
 
-En el anexo \ref{Panorama_actual} veremos ejemplos de algunas de las principales herramientas existentes para el trabajo con metadatos.
+En el anexo :ref:`Panorama_actual` veremos ejemplos de algunas de las principales herramientas existentes para el trabajo con metadatos.
 
 
 Algunos ejemplos
@@ -269,9 +269,9 @@ Algunos ejemplos
 
 La mejor forma de entender el contenido de los metadatos es ver algunos sencillos ejemplos reales. Puesto que estos datos son generalmente voluminosos (siempre que tengan el detalle necesario para ser realmente útiles), en lugar de reproducirlos aquí, puedes consultarlos en las direcciones Web \cite{ejemploMetadatos} y \cite{ejemploMetadatos2}, cada una de las cuales tiene un ejemplo concreto.
 
-En ellas pueden verse verse los metadatos con un formato de página Web sencilla compuesta de una lista de apartados y campos, así como su valores correspondientes. A la hora de utilizar la información que estos metadatos contienen desde una aplicación tal como un servidor Web, es necesario no obstante recogerlos en un formato que dicha aplicación pueda entender y procesar utilizando un esquema dado y una semántica bien definida. Es decir, que el *software* que trabaja con metadatos no lo hace a través de documentos como los de esas páginas Web, cuyo formato tiene como único fin mostrarlos de forma legible para una persona. En el capítulo \ref{Estandares} veremos algunos estándares relacionados con metadatos que definen formas estandarizadas de recoger estos para facilitar el trabajo de las aplicaciones los utilizan.
+En ellas pueden verse verse los metadatos con un formato de página Web sencilla compuesta de una lista de apartados y campos, así como su valores correspondientes. A la hora de utilizar la información que estos metadatos contienen desde una aplicación tal como un servidor Web, es necesario no obstante recogerlos en un formato que dicha aplicación pueda entender y procesar utilizando un esquema dado y una semántica bien definida. Es decir, que el *software* que trabaja con metadatos no lo hace a través de documentos como los de esas páginas Web, cuyo formato tiene como único fin mostrarlos de forma legible para una persona. En el capítulo :ref:`Estandares` veremos algunos estándares relacionados con metadatos que definen formas estandarizadas de recoger estos para facilitar el trabajo de las aplicaciones los utilizan.
 
-Si se comparan los campos y apartados que aparecen en ambas páginas, puede verse que no coinciden completamente. Eso es debido a que esos metadatos han sido generados por distintos organismos, que no utilizan una única metodología. En el mencionado capítulo \ref{Estandares} veremos también que esas formas estandarizadas no solo lo son en lo referente al formato, sino también a los contenidos, con objeto de homogeneizar los metadatos generados por organizaciones distintas, proporcionándoles unos criterios comunes a seguir.
+Si se comparan los campos y apartados que aparecen en ambas páginas, puede verse que no coinciden completamente. Eso es debido a que esos metadatos han sido generados por distintos organismos, que no utilizan una única metodología. En el mencionado capítulo :ref:`Estandares` veremos también que esas formas estandarizadas no solo lo son en lo referente al formato, sino también a los contenidos, con objeto de homogeneizar los metadatos generados por organizaciones distintas, proporcionándoles unos criterios comunes a seguir.
 
 
 Resumen

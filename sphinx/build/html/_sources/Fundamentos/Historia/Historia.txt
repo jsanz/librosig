@@ -20,44 +20,44 @@ Las bases para la futura aparición de los SIG las encontramos algunos años ant
 
 La primera experiencia relevante en esta dirección la encontramos en 1959, cuando Waldo Tobler define los principios de un sistema denominado MIMO (map in--map out) con la finalidad de aplicar los ordenadores al campo de la cartografía. En él, establece los principios básicos para la creación de datos geográficos, su codificación, análisis y representación dentro de un sistema informatizado. Estos son los elementos principales del *software* que integra un SIG, y que habrán de aparecer en todas las aplicaciones desarrolladas desde ese momento.
 
-El primer Sistema de Información Geográfica formalmente desarrollado aparece en Canadá, al auspicio del Departamento Federal de Energía y Recursos. Este sistema, denominado CGIS (Canadian Geographical Information Systems), fue desarrollado a principios de los 60 por Roger Tomlinson, quien dio forma a una herramienta que tenía por objeto el manejo de los datos del inventario geográfico canadiense y su análisis para la gestión del territorio rural. El desarrollo de Tomlinson es pionero en este campo, y se considera oficialmente como el nacimiento del SIG. Es en este momento cuando se acuña el término, y Tomlinson es conocido popularmente desde entonces como <<el padre del SIG>>.
+El primer Sistema de Información Geográfica formalmente desarrollado aparece en Canadá, al auspicio del Departamento Federal de Energía y Recursos. Este sistema, denominado CGIS (Canadian Geographical Information Systems), fue desarrollado a principios de los 60 por Roger Tomlinson, quien dio forma a una herramienta que tenía por objeto el manejo de los datos del inventario geográfico canadiense y su análisis para la gestión del territorio rural. El desarrollo de Tomlinson es pionero en este campo, y se considera oficialmente como el nacimiento del SIG. Es en este momento cuando se acuña el término, y Tomlinson es conocido popularmente desde entonces como *el padre del SIG*.
 
-La aparición de estos programas no solo implica la creación de una herramienta nueva, sino también el desarrollo de técnicas nuevas que hasta entonces no habían sido necesarias. La más importante de ellas es la codificación y almacenamiento de la información geográfica, un problema en absoluto trivial que entonces era clave para lograr una usabilidad adecuada del *software*. El trabajo de Guy Morton con el desarrollo de su *Matriz de Morton*\footnote{Veremos con algo más de detalle este concepto en el capítulo \ref{Tipos_datos}} juega un papel primordial\cite{Foresman1998Prentice}, superando las deficiencias de los equipos de entonces, tales como la carencia de unidades de almacenamiento con capacidad de acceso aleatorio, que dificultaban notablemente el manejo y análisis de las bases de datos.
+La aparición de estos programas no solo implica la creación de una herramienta nueva, sino también el desarrollo de técnicas nuevas que hasta entonces no habían sido necesarias. La más importante de ellas es la codificación y almacenamiento de la información geográfica, un problema en absoluto trivial que entonces era clave para lograr una usabilidad adecuada del *software*. El trabajo de Guy Morton con el desarrollo de su *Matriz de Morton*\footnote{Veremos con algo más de detalle este concepto en el capítulo :ref:`Tipos_datos`} juega un papel primordial\cite{Foresman1998Prentice}, superando las deficiencias de los equipos de entonces, tales como la carencia de unidades de almacenamiento con capacidad de acceso aleatorio, que dificultaban notablemente el manejo y análisis de las bases de datos.
 
 Simultáneamente a los trabajos canadienses, se producen desarrollos en Estados Unidos, en el seno del Harvard Laboratory, y en el Reino Unido dentro de la Experimental Cartography Unit. Ambos centros se erigen también como principales desarrolladores de *software* para la producción, manejo y análisis de información geográfica durante aquellos años.
 
-En el Harvard Laboratory, ve la luz en 1964 SYMAP, un aplicación que permitía la entrada de información en forma de puntos, líneas y áreas, lo cual se corresponde a grandes rasgos con el enfoque que conocemos hoy en día como *vectorial*. En la imagen \ref{Fig:SYMAP} puede verse que los resultados cartográficos de este *software* son aún de poca calidad. No obstante, el interés que despertaron las novedosas capacidades del programa para la generación de cartografía impulsó el desarrollo posterior y la evolución hacia sistemas más avanzados.
+En el Harvard Laboratory, ve la luz en 1964 SYMAP, un aplicación que permitía la entrada de información en forma de puntos, líneas y áreas, lo cual se corresponde a grandes rasgos con el enfoque que conocemos hoy en día como *vectorial*. En la imagen :num:`#figsymap` puede verse que los resultados cartográficos de este *software* son aún de poca calidad. No obstante, el interés que despertaron las novedosas capacidades del programa para la generación de cartografía impulsó el desarrollo posterior y la evolución hacia sistemas más avanzados.
 
-En 1969, utilizando elementos de una versión anterior de SYMAP, David Sinton, también en el Harvard Laboratory, desarrolla GRID, un programa en el que la información es almacenada en forma de cuadrículas. Hasta ese momento, la estructura de cuadrículas regulares era solo utilizada para las salidas de los programas, pero no para la entrada y almacenamiento de datos. Son los inicios de los Sistemas de Información Geográfica *ráster*\footnote{los conceptos de SIG ráster y vectorial se tratan extensamente en el capítulo \ref{Tipos_datos}. No te preocupes si ahora no comprendes completamente qué representa cada uno de ellos y qué los diferencia.}.
+En 1969, utilizando elementos de una versión anterior de SYMAP, David Sinton, también en el Harvard Laboratory, desarrolla GRID, un programa en el que la información es almacenada en forma de cuadrículas. Hasta ese momento, la estructura de cuadrículas regulares era solo utilizada para las salidas de los programas, pero no para la entrada y almacenamiento de datos. Son los inicios de los Sistemas de Información Geográfica *ráster*\footnote{los conceptos de SIG ráster y vectorial se tratan extensamente en el capítulo :ref:`Tipos_datos`. No te preocupes si ahora no comprendes completamente qué representa cada uno de ellos y qué los diferencia.}.
 
 .. figure:: SYMAP.png
 
 	Aspecto de un mapa generado con SYMAP
 
 
-.. _Fig:SYMAP: 
+.. _#figsymap: 
 
 
-SYMAP evoluciona y nuevos programas aparecen, tales como SYMVU (Figura \ref{Fig:SYMVU}), con capacidad de representación tridimensional, o CALFORM, con nuevas capacidades de representación y de generación de resultados impresos. GRID da lugar a IMGRID (Interactive Manipulation GRID), que sentará la base para el trabajo de Dana Tomlin con su paquete MAP, el cual incluye todos los elementos que hoy en día son imprescindibles para el análisis ráster (y que veremos en el capítulo \ref{Algebra_de_mapas})
+SYMAP evoluciona y nuevos programas aparecen, tales como SYMVU (Figura :num:`#figsymvu`), con capacidad de representación tridimensional, o CALFORM, con nuevas capacidades de representación y de generación de resultados impresos. GRID da lugar a IMGRID (Interactive Manipulation GRID), que sentará la base para el trabajo de Dana Tomlin con su paquete MAP, el cual incluye todos los elementos que hoy en día son imprescindibles para el análisis ráster (y que veremos en el capítulo :ref:`Algebra_de_mapas`)
 
 .. figure:: SYMVU.png
 
 	Representación tridimensional creada con SYMVU
 
 
-.. _Fig:SYMVU: 
+.. _#figsymvu: 
 
 
 Si la década de los sesenta es la de los pioneros y las primeras implementaciones, la de los setenta es la de la investigación y el desarrollo. A partir de los SIG primitivos se va dando forma a un área de conocimiento sin duda con gran futuro, y se elabora una base sólida de conocimiento y de herramientas aptas para un uso más genérico. Sin haber entrado aún en la época del uso masivo y generalizado, los primeros paquetes comienzan a distribuirse y pasan a incorporarse a la comunidad cartográfica, lejos ya de ser el producto de unos pocos pioneros.
 
-A partir de este punto, el campo de los SIG recorre sucesivas etapas hasta nuestros días (Figura \ref{Fig:Etapas_evolucion_SIG}), evolucionando muy rápidamente ante la influencia de numerosos factores externos. Desde este punto, vamos a estudiar cómo esos factores han ido a su vez evolucionando y cómo su influencia ha condicionado el rumbo seguido por los SIG. Distinguiremos los siguientes elementos:
+A partir de este punto, el campo de los SIG recorre sucesivas etapas hasta nuestros días (Figura :num:`#figetapas_evolucion_sig`), evolucionando muy rápidamente ante la influencia de numerosos factores externos. Desde este punto, vamos a estudiar cómo esos factores han ido a su vez evolucionando y cómo su influencia ha condicionado el rumbo seguido por los SIG. Distinguiremos los siguientes elementos:
 
 .. figure:: Etapas_historia.pdf
 
 	Esquema temporal de la evolución de los SIG.
 
 
-.. _Fig:Etapas_evolucion_SIG: 
+.. _#figetapas_evolucion_sig: 
 
 
 
@@ -72,7 +72,7 @@ La evolución de los SIG como disciplina
 
 Como hemos visto, los SIG eran en origen una mera combinación de elementos de cartografía cuantitativa, enlazados con los sistemas informáticos de la época. Se trataba de un territorio propio de cartógrafos y geógrafos que intentaban adaptar sus conocimientos y necesidades a las tecnologías que por aquel entonces comenzaban a surgir. No obstante, desde aquellos orígenes los cambios han sido muy grandes, y se han incorporado al ámbito de los SIG un gran número de otras disciplinas cuya aportación e influencia puede ser equivalente o incluso superior a la de la cartografía o la geografía. 
 
-La utilización del término <<geográfico>> para denominar a estos sistemas de manejo de información ha hecho que tradicionalmente, y a falta de una parcela de conocimiento propia bien delimitada, haya recaído en la geografía la tarea docente e investigadora relacionada con los SIG. No obstante, y dada la multidisciplinaridad del ámbito y su uso por grupos muy distintos hoy en día, no es necesariamente este el mejor enfoque \cite{SarriaSIG}. En general, el conjunto de ciencias del medio y ciencias sociales han sabido todas ellas hacer uso de los SIG y aportar a estos los elementos propios de su ámbito.
+La utilización del término *geográfico* para denominar a estos sistemas de manejo de información ha hecho que tradicionalmente, y a falta de una parcela de conocimiento propia bien delimitada, haya recaído en la geografía la tarea docente e investigadora relacionada con los SIG. No obstante, y dada la multidisciplinaridad del ámbito y su uso por grupos muy distintos hoy en día, no es necesariamente este el mejor enfoque \cite{SarriaSIG}. En general, el conjunto de ciencias del medio y ciencias sociales han sabido todas ellas hacer uso de los SIG y aportar a estos los elementos propios de su ámbito.
 
 Si bien los orígenes del SIG están íntimamente ligados a la gestión forestal o la planificación urbanística, son muchas otras las disciplinas que han jugado un papel importante. Un elemento sin duda clave es la sensibilización medioambiental, que obliga a un estudio del medio mucho más detallado. Coincidiendo con la etapa inicial del desarrollo de los SIG, empieza a aparecer una preocupación por el entorno que tiene consecuencias muy favorables para el desarrollo de todas las ciencias relacionadas, la gran mayoría de las cuales son o serán usuarias directas de SIG. El SIG comienza a integrarse paulatinamente en las tareas de gestión del medio, como un apoyo imprescindible a la hora de analizar este.
 
@@ -106,7 +106,7 @@ La tecnología sobre la que se basan los SIG es clave para entender todo lo rela
 Tres son los bloques principales del desarrollo informático con una influencia más marcada en el campo de los Sistemas de Información Geográfica \cite{Heywood1998Longman}:
 
 
-* Salidas gráficas. Sin las capacidades de representación gráficas de hoy en día, puede parecernos imposible el uso de un SIG, ya que, aunque los procesos de análisis son una parte imprescindible y definitoria del mismo y pueden llevarse a cabo sin necesidad de visualización, esta visualización es una herramienta fundamental de un SIG. No obstante, tanto los primeros ordenadores como las primeras impresoras dedicadas a la impresión de mapas  carecían de dichas capacidades. Como puede verse en la figura \ref{Fig:SYMAP}, las representaciones en esos tiempos se basaban en el uso de caracteres y no en gráficos puramente dichos.
+* Salidas gráficas. Sin las capacidades de representación gráficas de hoy en día, puede parecernos imposible el uso de un SIG, ya que, aunque los procesos de análisis son una parte imprescindible y definitoria del mismo y pueden llevarse a cabo sin necesidad de visualización, esta visualización es una herramienta fundamental de un SIG. No obstante, tanto los primeros ordenadores como las primeras impresoras dedicadas a la impresión de mapas  carecían de dichas capacidades. Como puede verse en la figura :num:`#figsymap`, las representaciones en esos tiempos se basaban en el uso de caracteres y no en gráficos puramente dichos.
 
 La evolución de las capacidades gráficas, intensa desde esos inicios hasta nuestros días y aún muy activa, ha sido seguida de cerca por los SIG, que progresivamente van incorporando mejoras tanto en la representación en pantalla como en la generación de mapas impresos.
 
@@ -149,7 +149,7 @@ Un avance primordial en este sentido lo constituye el lanzamiento de los primero
 
 El 1960, el primer satélite de observación meteorológico, el *TIROS I*, es lanzado al espacio. Dos años después, Rusia lanza su satélite *Kosmos*, y en 1974 el primer prototipo del satélite SMS--1 es puesto en órbita.
 
-Otros hitos importantes son los lanzamientos de los satélites LANDSAT 2 y 7 en 1975 y 1999 respectivamente, cuyos productos son ambos de uso muy extendido (como veremos en el capítulo \ref{Fuentes_datos}).
+Otros hitos importantes son los lanzamientos de los satélites LANDSAT 2 y 7 en 1975 y 1999 respectivamente, cuyos productos son ambos de uso muy extendido (como veremos en el capítulo :ref:`Fuentes_datos`).
 
 El 1980 se funda SPOT, la primera compañía mundial en ofrecer con carácter comercial imágenes procedentes de satélite para toda la superficie terrestre. A este hecho le seguiría el lanzamiento de un buen número de nuevos satélites con o sin fines comerciales. Los productos de la teledetección pasan a constituir una fuente de negocio, al tiempo que se incorporan como elementos básicos del análisis geográfico.
 
@@ -159,7 +159,7 @@ Al igual que las aplicaciones, los distintos tipos de datos geográficos digital
 
 La evolución de los datos de elevación  a nivel global llega a un punto histórico en el año 2000 con la *Shuttle Radar Topographic Mission* (SRTM). La SRTM es un proyecto conjunto dirigido entre la NASA y la National Imagery and Mapping Agency (NIMA), cuyo objetivo es ofrecer información altitudinal de un 80\% de la superficie terrestre a una resolucion de un segundo de arco (aproximadamente, 30 metros).
 
-La aparición de nuevas técnicas tales como el LiDAR (ver \ref{Sensores}) abre nuevos caminos en cuanto a la precisión que puede obtenerse en la caracterización del terreno, posibilitando nuevos usos y análisis antes no planteados.
+La aparición de nuevas técnicas tales como el LiDAR (ver :ref:`Sensores`) abre nuevos caminos en cuanto a la precisión que puede obtenerse en la caracterización del terreno, posibilitando nuevos usos y análisis antes no planteados.
 
 La evolución de los datos no es solo una evolución técnica, sino también de carácter social y organizativo. En la denominada *era de la información*, el papel de los datos es tenido cada vez más en cuenta, y los esfuerzos para coordinar la enorme cantidad de datos espaciales y sus numerosas procedencias se hacen cada vez más relevantes. Se empieza a entender que resulta necesario formular estrategias adecuadas para la gestión de los datos espaciales. Estas estrategias pasan por la creación de las denominadas *Infraestructuras de Datos Espaciales* (IDE), a las cuales se dedica una capítulo completo de este libro.
 

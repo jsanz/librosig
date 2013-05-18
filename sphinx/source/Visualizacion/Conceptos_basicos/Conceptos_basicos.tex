@@ -31,7 +31,7 @@ Aunque dos personas conozcan a la perfección el lenguaje musical, no podrán, sin
 
 Puesto que nuestro objetivo a lo largo de los capítulos de esta parte del libro es ser capaces de crear mapas y otros elementos visuales que transmitan la información geográfica, debemos estudiar qué clase de información vamos a transmitir y, sobre todo, qué nos permite transmitir el lenguaje visual. Del mismo modo que sabemos que los símbolos de nuestro lenguaje musical (pentagrama, figuras, etc.) no son capaces de transmitir una formula matemática, debemos ver si los elementos del lenguaje visual van a ser capaces de, por ejemplo, transmitir el patrón de distribución de un fenómeno en el espacio, las diferencias entre dos zonas distintas o la relación entre los valores de una variable en dos puntos. Además, debemos ver cómo emplearlos para que esa información se transmita de la mejor manera posible, ya que existen diversas propiedades de los elementos visuales que podemos emplear, siendo más adecuadas unas u otras según sea la circunstancia.
 
-Estas propiedades conforman lo que se conoce como *variables visuales*, y se aplican a los elementos básicos de la representación, que son aquellos objetos geométricos de que se compone esta. Las variables visuales permiten diferenciar unos de otros y asignarles unas ciertas características, susceptibles a su vez de ser interpretadas junto al propio significado que el objeto pueda tener. Dados dos elementos, estos pueden diferenciarse por las siguientes variables \ref{Fig:VariablesVisuales}.
+Estas propiedades conforman lo que se conoce como *variables visuales*, y se aplican a los elementos básicos de la representación, que son aquellos objetos geométricos de que se compone esta. Las variables visuales permiten diferenciar unos de otros y asignarles unas ciertas características, susceptibles a su vez de ser interpretadas junto al propio significado que el objeto pueda tener. Dados dos elementos, estos pueden diferenciarse por las siguientes variables :num:`#figvariablesvisuales`.
 
 
 	* Posición
@@ -47,7 +47,7 @@ Estas propiedades conforman lo que se conoce como *variables visuales*, y se apl
 	Ejemplo de uso de las distintas variables visuales. De izquierda a derecha: posición, forma, tamaño, tono, valor, textura, y orientación
 
 
-.. _Fig:VariablesVisuales: 
+.. _figvariablesvisuales: 
 
 
 
@@ -73,7 +73,7 @@ La forma se aplica fundamentalmente a los símbolos puntuales, situando un símbol
 Tamaño
 --------------------------------------------------------------
 
-El tamaño se refiere a la dimensión del símbolo. Para el caso de símbolos puntuales, puede aplicarse sin más que hacer más grande o pequeño el símbolo en sí. En el caso de líneas, el grosor de estas constituye la forma de aplicar la variable tamaño. Al igual que sucedía con la forma, en las superficies va a implicar la modificación de estas, por lo que se emplea únicamente en los cartogramas. Otra forma de aplicar el tamaño a los símbolos superficiales es hacerlo sobre la textura con la que estos se rellenan, usando un único patrón con diferentes tamaños en sus tramas (Figura \ref{Fig:TamanoTexturas}).
+El tamaño se refiere a la dimensión del símbolo. Para el caso de símbolos puntuales, puede aplicarse sin más que hacer más grande o pequeño el símbolo en sí. En el caso de líneas, el grosor de estas constituye la forma de aplicar la variable tamaño. Al igual que sucedía con la forma, en las superficies va a implicar la modificación de estas, por lo que se emplea únicamente en los cartogramas. Otra forma de aplicar el tamaño a los símbolos superficiales es hacerlo sobre la textura con la que estos se rellenan, usando un único patrón con diferentes tamaños en sus tramas (Figura :num:`#figtamanotexturas`).
 
 
 .. figure:: Texturas.png
@@ -81,7 +81,7 @@ El tamaño se refiere a la dimensión del símbolo. Para el caso de símbolos puntua
 	Uso del tamaño en símbolos de superficie mediante texturas.
 
 
-.. _Fig:TamanoTexturas: 
+.. _figtamanotexturas: 
 
 
 
@@ -93,14 +93,14 @@ Color
 
 La variable color es la más importante de todas las variables visuales, y la que a su vez requiere un grado mayor de detalle en su exposición, debido a la que complejidad que presenta y a las posibilidades que ofrece\footnote{Si estas leyendo una copia impresa de este libro, es posible adquirir esta tanto en versión a color como en versión en blanco y negro. En caso de usar esta última, no vas a poder apreciar correctamente algunas de las imágenes de este capítulo, por lo que te recomiendo acudir a la versión digital del libro (recuerda, este es un libro libre y puedes obtener esa versión de forma gratuita en el página Web del libro), al menos para este capítulo, o, mejor aún, para toda esta parte dedicada a la visualización. Otros capítulos en otras partes del libro también presentan figuras en color, pero pueden ser interpretadas igualmente en blanco y negro. En las de este, no obstante, el uso del color es más relevante y será mejor utilizar una versión con figuras a todo color, ya sea impresa o digital.}.
 
-Existen muchas formas de representar y crear un color, a través de los denominados *espacios de color*. De cara a su uso como variable visual en el contexto de este capítulo, resulta de especial interés el uso del espacio de color HSV, en el cual un color se define mediante un espacio de coordenadas cilíndrico, según lo mostrado en la figura \ref{Fig:HSV}.  
+Existen muchas formas de representar y crear un color, a través de los denominados *espacios de color*. De cara a su uso como variable visual en el contexto de este capítulo, resulta de especial interés el uso del espacio de color HSV, en el cual un color se define mediante un espacio de coordenadas cilíndrico, según lo mostrado en la figura :num:`#fighsv`.  
 
 .. figure:: HSV.png
 
 	Espacio de color HSV explicando el significado de las componentes tono, valor y saturación (adaptado de Wikipedia).
 
 
-.. _Fig:HSV: 
+.. _fighsv: 
 
 
 Tres son las componentes de un color, las cuales establecen sus coordenadas en el cilindro: tono, valor y saturación.
@@ -119,14 +119,14 @@ En lo que al color como variable visual respecta, cada una de estas componentes 
 
 Si tienes un programa de dibujo o de edición de imágenes, puedes experimentar construyendo colores según sus componentes, usando el habitual selector de colores. Si no, prueba en la siguiente dirección Web, donde encontrarás un selector de colores *on--line*: \url{http://www.dgx.cz/tools/colormixer/stripe.php?hsv=space\%20color}.
 
-La figura \ref{Fig:SelectorColores} muestra el aspecto de un selector de colores, en el que puede verse cómo estos pueden definirse mediante sus componentes tono (H), saturación (S) y luminosidad (L). Aunque no es exactamente el mismo concepto, la luminosidad cumple el papel del valor en este contexto, y este modelo (HSL en lugar de HSV) es el que encontramos con carácter habitual en las herramientas de este tipo para definir un color.
+La figura :num:`#figselectorcolores` muestra el aspecto de un selector de colores, en el que puede verse cómo estos pueden definirse mediante sus componentes tono (H), saturación (S) y luminosidad (L). Aunque no es exactamente el mismo concepto, la luminosidad cumple el papel del valor en este contexto, y este modelo (HSL en lugar de HSV) es el que encontramos con carácter habitual en las herramientas de este tipo para definir un color.
 
 .. figure:: SelectorColores.png
 
 	Selector de colores mediante sus componentes tono (H), saturación (S) y luminosidad (L). La componente de la parte inferior es la denominada *alpha*, que indica la transparencia del color.
 
 
-.. _Fig:SelectorColores: 
+.. _figselectorcolores: 
 
 
 
@@ -137,7 +137,7 @@ La textura hace referencia al relleno de un símbolo mediante algún patrón. Emple
 
 En el caso de los símbolos puntuales, la textura requiere que estos tengan un tamaño suficiente para que pueda apreciarse el patrón que constituye cada una de las texturas. Este tamaño mínimo requerido es mayor que en el caso de emplear el tono o el valor.
 
-En el caso de líneas, entendemos como textura el uso de guiones y espacios en blanco que dan lugar a un patrón de discontinuidad, como se muestra en la figura \ref{Fig:Texturas}.  No obstante, esta discontinuidad es una desventaja a la hora de representar un elemento lineal, ya que implica que una parte de él no va a representarse. Dependiendo del significado de aquello que representemos, el uso de texturas en elementos lineales puede no ser lo más recomendable a la hora de crear un mapa. Puede emplearse otro tipo de texturas para formar líneas, <<rellenando>> estas si tienen un grosor considerable, pero su uso no se recomienda.
+En el caso de líneas, entendemos como textura el uso de guiones y espacios en blanco que dan lugar a un patrón de discontinuidad, como se muestra en la figura :num:`#figtexturas`.  No obstante, esta discontinuidad es una desventaja a la hora de representar un elemento lineal, ya que implica que una parte de él no va a representarse. Dependiendo del significado de aquello que representemos, el uso de texturas en elementos lineales puede no ser lo más recomendable a la hora de crear un mapa. Puede emplearse otro tipo de texturas para formar líneas, *rellenando* estas si tienen un grosor considerable, pero su uso no se recomienda.
 
 Las texturas se aprovechan plenamente sobre los símbolos de superficie, ya que la mayor dimensión de estos permite una percepción completa y una interpretación mucho más sencilla, al igual que ocurría en el caso del valor.
 
@@ -146,7 +146,7 @@ Las texturas se aprovechan plenamente sobre los símbolos de superficie, ya que l
 	Aplicación de la variable visual textura a los símbolos lineales.
 
 
-.. _Fig:Texturas: 
+.. _figtexturas: 
 
 
 
@@ -175,14 +175,14 @@ Se distinguen 4 propiedades básicas que una variable visual puede presentar:
 
 El orden en que se han presentado estas propiedades no es casual, ya que están ordenadas dando lugar a lo que Bertin denomina *niveles de organización*. La propiedad asociativa se sitúa en el nivel más bajo, mientras que la cuantitativa ocupa el más alto. El nivel de organización de las variables visuales tiene importancia a la hora de combinar varias de ellas en un símbolo, como veremos más adelante. Asimismo, y como detallaremos en el capítulo siguiente, el nivel de organización define qué tipo de información podemos transmitir con una variable visual.
 
-Para ver más exactamente el significado de estas propiedades, estudiemos con detalle la figura \ref{Fig:PropiedadesVariablesVisuales}, que muestra diferentes representaciones de un conjunto de símbolos (en este caso, símbolos puntuales) en los que en cada caso se ha utilizado únicamente una variable visual.
+Para ver más exactamente el significado de estas propiedades, estudiemos con detalle la figura :num:`#figpropiedadesvariablesvisuales`, que muestra diferentes representaciones de un conjunto de símbolos (en este caso, símbolos puntuales) en los que en cada caso se ha utilizado únicamente una variable visual.
 
 .. figure:: PropiedadesVariablesVisuales.pdf
 
 	Representación de un conjunto de símbolos aplicando de forma individual las distintas variables visuales.
 
 
-.. _Fig:PropiedadesVariablesVisuales: 
+.. _figpropiedadesvariablesvisuales: 
 
 
 Comenzando con la propiedad asociativa, vemos que a excepción del tamaño y el tono, las demás variables visuales no hacen que los elementos presenten una preponderancia en la imagen. No existen una orientación que podamos definir como más importante, ni tampoco un color. Lo mismo sucede con la textura, la forma y la posición. Podemos emplear una u otra forma, o una u otra textura, y con ello no conseguiremos llamar más la atención sobre un elemento en cuestión. 
@@ -197,7 +197,7 @@ Por último, la propiedad cuantitativa la presentan aquellas variables visuales q
 
 El valor, que ya sabemos que presenta la propiedad ordenada, podría pensarse que también presenta la propiedad cuantitativa, pero no sucede así. Es difícil e impreciso afirmar que un color es el doble de oscuro que otro, y lo más que podemos hacer es situarlo entre dos valores distintos (de ahí que posea la propiedad ordenada), pero no deducir una cifra que exprese una cantidad o proporción. Las restantes variables visuales resulta claro que no poseen esta propiedad.
 
-En el cuadro \ref{Tabla:PropiedadesVariablesVisuales} se muestra un resumen de todo lo anterior.
+En el cuadro :ref:`Tabla:PropiedadesVariablesVisuales` se muestra un resumen de todo lo anterior.
 
 \begin{table}[!hbt]
 \small
@@ -216,21 +216,21 @@ En el cuadro \ref{Tabla:PropiedadesVariablesVisuales} se muestra un resumen de t
 \end{table}
 
 
-Aunque las ideas de Bertin conforman una sólida base teórica de reconocido valor, lo cierto es que debe permitirse cierta laxitud en la aplicación de estas, y no considerar que existe una dicotomía estricta en el caso de las propiedades antes presentadas. Hay muchos factores y circunstancias que pueden alterar la forma en que estas propiedades se presentan, y alterar la intensidad con que aparecen en unas u otras variables visuales. Por ejemplo, aunque el tono no presenta, según la propuesta original de Bertin, la propiedad ordenada, sí que puede emplearse para representar un orden en determinadas circunstancias. Si estamos simbolizando unos valores de temperatura, podemos establecer una transición de colores entre el rojo y el azul, que serán fácilmente identificados y ordenados por el observador del mapa, ya que el primero de estos colores se asocia habitualmente al calor y el segundo al frío. En este contexto particular, el tono sí presenta la propiedad ordenada. En los capítulos \ref{Algebra_de_mapas} o \ref{Creacion_capas_raster} verás muchos ejemplos de representaciones en que se usan gradaciones de tono para simbolizar variables de tipo cuantitativo, ya sean razones o proporciones. Estas guardan, no obstante, cierta lógica, de tal modo que puede entenderse adecuadamente su significado. Como veremos en el próximo capítulo, esto también tiene relación con el tipo de mapa, de tal modo que ciertos tipos de mapas permiten por sus propias características el uso del tono para este tipo de variables.
+Aunque las ideas de Bertin conforman una sólida base teórica de reconocido valor, lo cierto es que debe permitirse cierta laxitud en la aplicación de estas, y no considerar que existe una dicotomía estricta en el caso de las propiedades antes presentadas. Hay muchos factores y circunstancias que pueden alterar la forma en que estas propiedades se presentan, y alterar la intensidad con que aparecen en unas u otras variables visuales. Por ejemplo, aunque el tono no presenta, según la propuesta original de Bertin, la propiedad ordenada, sí que puede emplearse para representar un orden en determinadas circunstancias. Si estamos simbolizando unos valores de temperatura, podemos establecer una transición de colores entre el rojo y el azul, que serán fácilmente identificados y ordenados por el observador del mapa, ya que el primero de estos colores se asocia habitualmente al calor y el segundo al frío. En este contexto particular, el tono sí presenta la propiedad ordenada. En los capítulos :ref:`Algebra_de_mapas` o :ref:`Creacion_capas_raster` verás muchos ejemplos de representaciones en que se usan gradaciones de tono para simbolizar variables de tipo cuantitativo, ya sean razones o proporciones. Estas guardan, no obstante, cierta lógica, de tal modo que puede entenderse adecuadamente su significado. Como veremos en el próximo capítulo, esto también tiene relación con el tipo de mapa, de tal modo que ciertos tipos de mapas permiten por sus propias características el uso del tono para este tipo de variables.
 
 Junto a lo anterior, algunos autores (véase \cite{MacEachren2004Guilidford}) expanden el número de variables visuales y se han desarrollado revisiones a las propiedades enunciadas por Bertin basadas en estudios prácticos, que demuestran cómo pueden existir variaciones sobre la relación entre estas y las distintas variables visuales (por ejemplo, \cite{TreiSman1988PR}).
 
 Uso combinado de las variables visuales
 =====================================================
 
-Para explicar cada una de las variables visuales, hemos visto diversos ejemplos en los que utilizábamos cada una de ellas por separado y de forma única. Sin embargo, las variables visuales pueden combinarse y, si se hace de la manera correcta, esto reforzará la capacidad que estas tienen para transmitir una información dada. La imagen \ref{Fig:CombinacionVariablesVisuales} muestra algunos ejemplos de combinación de variables visuales que nos servirán para detallar la forma adecuada de usas varias de ellas simultáneamente.
+Para explicar cada una de las variables visuales, hemos visto diversos ejemplos en los que utilizábamos cada una de ellas por separado y de forma única. Sin embargo, las variables visuales pueden combinarse y, si se hace de la manera correcta, esto reforzará la capacidad que estas tienen para transmitir una información dada. La imagen :num:`#figcombinacionvariablesvisuales` muestra algunos ejemplos de combinación de variables visuales que nos servirán para detallar la forma adecuada de usas varias de ellas simultáneamente.
 
 .. figure:: CombinacionVariablesVisuales.png
 
 	Combinación de variables visuales.
 
 
-.. _Fig:CombinacionVariablesVisuales: 
+.. _figcombinacionvariablesvisuales: 
 
 
 
@@ -270,7 +270,7 @@ Del mismo modo, un elemento pintado de un color claro se identifica como tal aun
 
 Estos dos ejemplos muestran la constancia perceptiva de la forma y el valor, y podemos buscar otros similares para otras variables visuales.
 
-No todas las variables visuales tienen una constancia perceptiva como la anterior. Todos conocemos múltiples ejemplos de ilusiones ópticas en las que algo no parece lo que realmente es, y esa percepción errónea viene normalmente motivada por las condiciones en las que percibimos el objeto, por ejemplo debido al entorno particular en el que este se encuentra junto a otros objetos. La figura \ref{Fig:Zollner} muestra un ejemplo clásico de ilusión óptica, conocida como *ilusión de Zollner*. Las lineas largas diagonales son paralelas, pero no aparentan serlo, debido al efecto causado por las líneas más cortas. En este caso, no existe una constancia perceptiva de la variable visual orientación.
+No todas las variables visuales tienen una constancia perceptiva como la anterior. Todos conocemos múltiples ejemplos de ilusiones ópticas en las que algo no parece lo que realmente es, y esa percepción errónea viene normalmente motivada por las condiciones en las que percibimos el objeto, por ejemplo debido al entorno particular en el que este se encuentra junto a otros objetos. La figura :num:`#figzollner` muestra un ejemplo clásico de ilusión óptica, conocida como *ilusión de Zollner*. Las lineas largas diagonales son paralelas, pero no aparentan serlo, debido al efecto causado por las líneas más cortas. En este caso, no existe una constancia perceptiva de la variable visual orientación.
 
 
 
@@ -282,13 +282,13 @@ Cuando la percepción de un elemento cambia aunque el estimulo no lo haga, en lug
 	Ilusión de Zollner que demuestra el contraste perceptivo de la orientación.
 
 
-.. _Fig:Zollner: 
+.. _figzollner: 
 
 
 Las siguientes son algunas de las ideas más importantes a tener en cuenta a este respecto a la hora de crear un mapa:
 
 
-	* El tamaño es la variable visual que más afectada se ve, y el tamaño aparente de un objeto puede variar notablemente si se encuentra rodeado de otros de un tamaño distinto. La figura \ref{Fig:ContrasteTamano} muestra un ejemplo de esto. A la hora de emplear simbología de elementos puntuales en un mapa (por ejemplo, en un mapa de símbolos graduados, como veremos en el apartado \ref{MapasSimbolosGraduados}), esto debe tenerse en cuenta, ya que pueden presentarse situaciones como la de la figura.	
+	* El tamaño es la variable visual que más afectada se ve, y el tamaño aparente de un objeto puede variar notablemente si se encuentra rodeado de otros de un tamaño distinto. La figura :num:`#figcontrastetamano` muestra un ejemplo de esto. A la hora de emplear simbología de elementos puntuales en un mapa (por ejemplo, en un mapa de símbolos graduados, como veremos en el apartado :ref:`MapasSimbolosGraduados`), esto debe tenerse en cuenta, ya que pueden presentarse situaciones como la de la figura.	
 	* El valor se ve igualmente alterado al situar alrededor elementos de distinto valor. Si el número de distintos valores es pequeño, es más difícil que aparezca este contraste perceptivo. A medida que se aumenta el número de estos, es más probable que aparezca en mayor o menor medida.
 	* El tono se ve alterado por la presencia de otros tonos distintos. En un mapa, veremos este efecto al enfrentar el color de un elemento sobre el color del fondo. Por ejemplo, si una línea que representa a una carretera y cruza una serie de polígonos de distinto tono, puede parecer que el tono de la línea varia aunque en realidad sea constante.
 	* Tonos complementarios puestos juntos pueden crear sensación de vibración en la frontera que los separa.
@@ -299,7 +299,7 @@ Las siguientes son algunas de las ideas más importantes a tener en cuenta a este
 	Contraste perceptivo del tamaño. Ambos circulos grises tienen el mismo tamaño, pero el de la izquierda aparenta ser mayor.
 
 
-.. _Fig:ContrasteTamano: 
+.. _figcontrastetamano: 
 
 
 Ayudas a la percepción
@@ -309,34 +309,34 @@ Ayudas a la percepción
 
 Con lo que hemos visto anteriormente, queda claro que podemos alterar la forma en que se perciben las variables visuales que caracterizan a un elemento visual. Podemos usar este hecho para nuestro beneficio, de tal modo que el diseño de un mapa incorpore elementos que hagan más patente la información que este contiene, facilitando la correcta percepción del mapa en su conjunto.
 
-Un factor clave en este sentido es la adecuado separación entre el fondo y la figura. Aquello que queremos que resulte visible con carácter principal (en el caso de un mapa, sus distintos elementos) debe separarse de aquello que constituye el fondo de la imagen, y debe atraer la atención del observador de manera prioritaria. En caso de no ser así, puede resultar difícil <<descubrir>> la información que el mapa transmite, al quedar esta al mismo nivel que la de otros elementos de menor importancia. El ejemplo clásico de la figura \ref{Fig:CupOrFaces} ilustra este hecho. Puesto que no existe una diferenciación clara entre el fondo y la figura, no es obvio saber si la imagen pretende representar una copa o dos caras.
+Un factor clave en este sentido es la adecuado separación entre el fondo y la figura. Aquello que queremos que resulte visible con carácter principal (en el caso de un mapa, sus distintos elementos) debe separarse de aquello que constituye el fondo de la imagen, y debe atraer la atención del observador de manera prioritaria. En caso de no ser así, puede resultar difícil *descubrir* la información que el mapa transmite, al quedar esta al mismo nivel que la de otros elementos de menor importancia. El ejemplo clásico de la figura :num:`#figcuporfaces` ilustra este hecho. Puesto que no existe una diferenciación clara entre el fondo y la figura, no es obvio saber si la imagen pretende representar una copa o dos caras.
 
 .. figure:: Cup_or_faces_paradox.pdf
 
 	Sin un adecuado contraste entre fondo y figura la imagen presenta ambigüedad.
 
 
-.. _Fig:CupOrFaces: 
+.. _figcuporfaces: 
 
 
 En un mapa, y como veremos en el próximo capítulo, encontramos dos tipos de cartografía: una con carácter de base que define un contexto geográfico, y una temática que constituye la información principal que se transmite con el mapa. Puesto que esta segunda es la fundamental y de mayor importancia, y la primera se incluye tan solo como apoyo de esta, es importante asegurarse de que esa cartografía base no interfiere y se mantiene en un segundo plano, constituyéndose como fondo y dejando que sea la información temática la que actúe como figura. Para ello podemos emplear las distintas variables visuales aplicadas a la cartografía base, de modo que su importancia relativa no sea mayor que la de los elementos principales de la parte temática.
 
 Otro aspecto a considerar es la adecuada jerarquización entre los elementos del mapa. La división entre fondo y figura ya constituye en sí una jerarquización, pero no es suficiente si conviven varios tipos de elementos en el mapa. Dentro de la parte temática es necesario estructurar estos visualmente para que quede clara su importancia y se vea sin dificultad que existe una división entre ellos.
 
-Esta jerarquía debe aportar una <<profundidad>> a la información, de forma que existan niveles en esta y se perciba que algunos elementos están por encima de otros. Como veremos en el capítulo \ref{Visualizacion_SIG}, la forma de ordenar las distintas capas en un SIG ya establece un orden, aunque este no es en sí suficiente, y deben utilizarse las variables visuales para enfatizar o no unas o otras capas y la información que contienen.
+Esta jerarquía debe aportar una *profundidad* a la información, de forma que existan niveles en esta y se perciba que algunos elementos están por encima de otros. Como veremos en el capítulo :ref:`Visualizacion_SIG`, la forma de ordenar las distintas capas en un SIG ya establece un orden, aunque este no es en sí suficiente, y deben utilizarse las variables visuales para enfatizar o no unas o otras capas y la información que contienen.
 
 Algunas técnicas básicas para esto son las que permiten que exista algún factor diferencial en la información más relevante. Si las propiedades de los elementos destacados difieren notablemente de las del fondo, esto centra la atención sobre ellas y garantiza que no se confundan con este. Emplear unas características más homogéneas para el fondo permite que la diferenciación de la figura sea más patente. En otras palabras, el contraste, aplicado este a todas las variables visuales, es una de las claves para lograr una adecuada transmisión de la información al emplear una representación visual.
 
 El contraste se aplica no solo a las variable visuales, sino en general a las características de la representación. Por ejemplo, el nivel de detalle es una propiedad susceptible de ser utilizada para enfatizar algo. Así, y en el caso particular del documento cartográfico, el lector de un mapa espera que el detalle sea mayor en la cartografía temática que en la de base, ya que esta última es simplemente un elemento complementario de ayuda. Un mayor detalle sobre ciertos elementos llamará más la atención en contrate con un fondo menos detallado, y esto puede utilizarse para enfocar la atención sobre lo más relevante. Ofrecer menos detalle en la cartografía de base no es un inconveniente si esto ayuda a un mejor entendimiento de los elementos principales del mapa.
 
-Como ejemplo de lo anterior, la figura \ref{Fig:JerarquiaMapa} muestra un ejemplo de como una correcta jerarquización es fundamental para crear mapas de calidad.
+Como ejemplo de lo anterior, la figura :num:`#figjerarquiamapa` muestra un ejemplo de como una correcta jerarquización es fundamental para crear mapas de calidad.
 
 .. figure:: JerarquiaMapa.png
 
 	Mapa con jerarquía incorrecta (a) y mapa adecuadamente jerarquizado (b).
 
 
-.. _Fig:JerarquiaMapa: 
+.. _figjerarquiamapa: 
 
 
 Por último, un aspecto clave para la claridad de un mapa es el relativo al poder separador. Este define la capacidad de un individuo para distinguir objetos muy pequeños y separar objetos cercanos. Además de depender del propio individuo, está condicionado por una serie de factores. 

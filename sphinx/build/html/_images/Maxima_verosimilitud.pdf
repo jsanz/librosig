@@ -1869,7 +1869,7 @@ endobj
    /Resources
    <<
       /ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
-      /Shading << /Sh19 19 0 R >>
+      /Shading * /Sh19 19 0 R *
    >>
    /Length 187
 >>
@@ -1962,7 +1962,7 @@ endobj
    /Resources
    <<
       /ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
-      /Shading << /Sh14 14 0 R >>
+      /Shading * /Sh14 14 0 R *
    >>
    /Length 188
 >>
@@ -2055,7 +2055,7 @@ endobj
    /Resources
    <<
       /ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
-      /Shading << /Sh9 9 0 R >>
+      /Shading * /Sh9 9 0 R *
    >>
    /Length 187
 >>

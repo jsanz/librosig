@@ -13,13 +13,13 @@ En otras palabras, resulta necesario definir una *lingua franca* para que todas 
 
 En este capítulo veremos con detalle la importancia de los estándares y el papel exacto que juegan en una IDE, y describiremos una buena parte de los que actualmente existen.
 
-Puesto que estos estándares están relacionados con las tecnologías cliente--servidor y las IDE, los capítulos correspondientes a estos elementos (capítulos \ref{Servidores_y_clientes_remotos} y \ref{IDEs} respectivamente) son un requisito necesario para comprender mejor el contenido de este capítulo.
+Puesto que estos estándares están relacionados con las tecnologías cliente--servidor y las IDE, los capítulos correspondientes a estos elementos (capítulos :ref:`Servidores_y_clientes_remotos` y :ref:`IDEs` respectivamente) son un requisito necesario para comprender mejor el contenido de este capítulo.
 
 
 Introducción
 =====================================================
 
-En el capítulo \ref{Servidores_y_clientes_remotos} vimos los elementos tecnológicos que permiten ofrecer a través de una red de servicios relacionados con la información geográfica. Estos servicios eran muy diversos, y ofrecían posibilidades que iban desde obtener un dato en sí hasta la realización de consultas sobre el conjunto de operaciones que un servicio dado puede ofrecer. En todos ellos aparecen un cliente y un servidor, los cuales se comunican para realizar una tarea concreta.
+En el capítulo :ref:`Servidores_y_clientes_remotos` vimos los elementos tecnológicos que permiten ofrecer a través de una red de servicios relacionados con la información geográfica. Estos servicios eran muy diversos, y ofrecían posibilidades que iban desde obtener un dato en sí hasta la realización de consultas sobre el conjunto de operaciones que un servicio dado puede ofrecer. En todos ellos aparecen un cliente y un servidor, los cuales se comunican para realizar una tarea concreta.
 
 Este modelo de cliente--servidor en términos tecnológicos no es muy diferente de la idea de un cliente y un proveedor de servicios en la vida real. Una persona (el cliente) que quiera adquirir un producto de un distribuidor (el servidor) debe igualmente comunicarse con él para preguntarle si dispone del producto deseado, realizar una petición de este y después recibirlo cuando el distribuidor se lo envíe. En una IDE, un usuario puede consultar el catálogo para localizar un dato concreto y después acceder a él remotamente mediante, por ejemplo, un cliente Web. Ambos esquemas de funcionamiento son muy semejantes.
 
@@ -27,7 +27,7 @@ Imaginemos ahora la situación en la que una persona en España desea adquirir un 
 
 Este pequeño ejemplo nos hace ver que en la relación cliente--servidor pueden surgir problemas derivados de la falta de elementos comunes entre ambos actores. Si todos los elementos que toman parte en el establecimiento de esa relación comercial estuvieran normalizados y fueran únicos, un comprador de cualquier parte del mundo podría de forma inmediata comprar un dispositivo a cualquier vendedor de otro país comunicándose en un único idioma, y tener después la garantía de poder usarlo sin problemas.
 
-En el ámbito de la información geográfica la situación es similar a la anterior. Hay muchos formatos distintos para almacenarla y muchas formas distintas de transmitirla, y ello dificulta el trabajo en el marco de una IDE. Igual que los clientes españoles no hablan el mismo idioma que los vendedores chinos, no todos los clientes SIG hablan el mismo idioma que todos los servidores, y dos cualesquiera de ellos no han de <<entenderse>> necesariamente.
+En el ámbito de la información geográfica la situación es similar a la anterior. Hay muchos formatos distintos para almacenarla y muchas formas distintas de transmitirla, y ello dificulta el trabajo en el marco de una IDE. Igual que los clientes españoles no hablan el mismo idioma que los vendedores chinos, no todos los clientes SIG hablan el mismo idioma que todos los servidores, y dos cualesquiera de ellos no han de *entenderse* necesariamente.
 
 De hecho, históricamente los distintos fabricantes de clientes definían por sí mismos la forma en que sus programas se comunicaban, que no coincidía con la del resto de fabricantes. Un cliente de un fabricante dado no podría acceder a los servicios de un servidor creado por un fabricante distinto. Este paradigma, característico del software privativo, es un problema en el marco de una IDE, pues dificulta el acceso a los datos.
 
@@ -60,14 +60,14 @@ Los principios fundamentales de los estándares abiertos son los siguientes \cite
 	* {\bfseries Prácticas predatorias}. Los estándares abiertos pueden tener licencias que requieran a todo aquel que desarrolle una extensión de dicho estándar la publicación de información acerca de esa extensión, y el establecimiento de una licencia dada para todos aquellos que creen, distribuyan y vendan *software* compatible con ella. Un estándar abierto no puede prohibir de otro modo el desarrollo de extensiones.
 
 
-Para tener una noción de lo que en la práctica realmente significa el uso de estándares abiertos en el campo de los SIG y las IDE, podemos ver la figura \ref{Fig:Esquema_no_interoperable}, donde se representa el esquema de una arquitectura no interoperable. Es decir, una arquitectura que no se basa en este tipo de estándares.
+Para tener una noción de lo que en la práctica realmente significa el uso de estándares abiertos en el campo de los SIG y las IDE, podemos ver la figura :num:`#figesquemanointeroperable`, donde se representa el esquema de una arquitectura no interoperable. Es decir, una arquitectura que no se basa en este tipo de estándares.
 
 .. figure:: Esquema_no_interoperable.pdf
 
 	Esquema de una arquitectura no interoperable.
 
 
-.. _Fig:Esquema_no_interoperable: 
+.. _figesquema_no_interoperable: 
 
 
 Los datos que se encuentran en cada base de datos son accesibles únicamente a través de un único cliente, que es aquel correspondiente al servidor que ofrece servicios basados en esos datos. Los restantes datos quedan fuera del alcance de ese cliente, ya que no es capaz de acceder a ellos. Las diferentes soluciones cliente--servidor crean en esta situación un conjunto de islas tecnológicas, cada una completamente independiente y sin posibilidad alguna de interactuar con las restantes.
@@ -81,14 +81,14 @@ Entre los principales inconvenientes de una arquitectura no interoperable como l
 * {\bfseries Imposibilidad de combinar funcionalidades}. Los datos ofrecidos por un servidor pueden usarse para el desarrollo de muchas tareas. Estas tareas requieren que las correspondientes herramientas estén disponibles en los clientes, y estos se diferencian notablemente, de la misma forma que lo hacen también los SIG de escritorio entre sí. Si acceder a los datos a través de un servidor solo se puede hacer empleando un cliente concreto, no existe la posibilidad de aprovechar las funcionalidades de otro cliente sobre esos mismos datos, y el usuario ve así limitadas sus posibilidades de trabajo.
 
 
-En contraste con lo anterior, tenemos una situación de plena interoperabilidad basada en estándares abiertos como la representada en el esquema de la figura \ref{Fig:Esquema_interoperable}.
+En contraste con lo anterior, tenemos una situación de plena interoperabilidad basada en estándares abiertos como la representada en el esquema de la figura :num:`#figesquemainteroperable`.
 
 .. figure:: Esquema_interoperable.pdf
 
 	Esquema de una arquitectura interoperable.
 
 
-.. _Fig:Esquema_interoperable: 
+.. _figesquema_interoperable: 
 
 
 En este caso, existe un servidor que es el que gestiona y ofrece los servicios para cada base de datos, pero a él pueden acceder todos los clientes, ya que por el hecho de estar basados en estándares abiertos es posible una comunicación plena entre dos cualesquiera de ellos.
@@ -161,7 +161,7 @@ Los siguientes estándares OGC forman parte de este grupo.
 
 .. _SimpleFeatures:
 
-Sabemos del capítulo \ref{Consultas} que el lenguaje SQL en su forma básica no sirve para recoger las geometrías que forman la parte espacial de una entidad, sino únicamente los datos no espaciales de esta. Sin embargo, versiones posteriores de SQL permiten la definición de tipos personalizados, y esto puede emplearse para poder incorporar estos elementos espaciales dentro del lenguaje.
+Sabemos del capítulo :ref:`Consultas` que el lenguaje SQL en su forma básica no sirve para recoger las geometrías que forman la parte espacial de una entidad, sino únicamente los datos no espaciales de esta. Sin embargo, versiones posteriores de SQL permiten la definición de tipos personalizados, y esto puede emplearse para poder incorporar estos elementos espaciales dentro del lenguaje.
 
 El problema surge debido a que la propia flexibilidad de este mecanismo permite que los tipos se implementen de diversas formas, lo cual no favorece la interoperabilidad. Si una consulta se establece sobre unos tipos definidos de forma distinta a como lo están en la base de datos que recibe la consulta, esa consulta no podrán procesarse correctamente. Es necesario definir una forma estandarizada de definir esos tipos, y una pauta a seguir para su implementación.
 
@@ -169,7 +169,7 @@ OGC define la especificación \extr{Simple Features for SQL} (SFS) \cite{webSFS} 
 
 Todas las geometrías que pueden definirse según este esquema son geometrías en un espacio bidimensional, y cada objeto geométrico está asociado a un sistema de referencia en el cual se define.
 
-Existe un objeto fundamental denominado *Geometry* del que heredan los restantes en una jerarquía bien definida (Figura \ref{Fig:Jerarquia_clases_SFS}). Los métodos de este objeto son de tres tipos:
+Existe un objeto fundamental denominado *Geometry* del que heredan los restantes en una jerarquía bien definida (Figura :num:`#figjerarquiaclasessfs`). Los métodos de este objeto son de tres tipos:
 
 
 	* Métodos básicos. Proveen información sobre el objeto (dimensión, tipo de geometría, sistema de referencia, etc.)
@@ -182,7 +182,7 @@ Existe un objeto fundamental denominado *Geometry* del que heredan los restantes
 	Esquema de clases de geometrías en \extr{Simple Features for SQL.}
 
 
-.. _Fig:Jerarquia_clases_SFS: 
+.. _figjerarquia_clases_sfs: 
 
 
 Cada uno de los objetos derivados de la clase raíz *Geometry* tiene además a su vez sus propios métodos específicos, siempre dentro de alguno de los grupos anteriores.
@@ -193,7 +193,7 @@ Con estos objetos y sus métodos se da respuesta a todas las necesidades que apar
 
 El \extr{Geography Markup Language} (GML) \cite{webGML} es un lenguaje basado en XML, diseñado para el almacenamiento de información geográfica. Utilizando este lenguaje, resulta posible el intercambio de información geográfica de forma interoperable.
 
-GML puede utilizarse para transmitir información a través de una red, como parte de un servicio. Este es el caso del servicio WFS que veremos más adelante, que devuelve información geográfica codificada según este lenguaje. No obstante, puede emplearse igualmente para almacenar la información con la que trabajamos de un SIG, del mismo modo que utilizamos cualquiera de los formatos de archivo que vimos en el capítulo \ref{Fuentes_datos}. Es decir, sin que tengan que mediar servicios en ningún momento.
+GML puede utilizarse para transmitir información a través de una red, como parte de un servicio. Este es el caso del servicio WFS que veremos más adelante, que devuelve información geográfica codificada según este lenguaje. No obstante, puede emplearse igualmente para almacenar la información con la que trabajamos de un SIG, del mismo modo que utilizamos cualquiera de los formatos de archivo que vimos en el capítulo :ref:`Fuentes_datos`. Es decir, sin que tengan que mediar servicios en ningún momento.
 
 Algunos SIG permiten este uso, y soportan GML como un formato más de archivo. No obstante, no es una práctica común, ya que, pese a las ventajas de ser un estándar aceptado, GML es un formato de fichero de tipo texto (está basado en XML) y produce archivos de gran tamaño. Para este uso, es más habitual recurrir a algún otro formato.% , en particular aquellos que no constituyen estándares oficiales, pero si estándares *de facto*, como por ejemplo el formato Shapefile (shp).
 
@@ -225,7 +225,7 @@ Para realizar lo anterior, un servicio WFS debe permitir las siguientes operacio
 	
 Estas entidades son devueltas por el servidor en formato GML.
 	
-* \extr{Transaction}. El servidor puede realizar transacciones. Estas se componen de operaciones que modifican las entidades, tales como la creación de una nueva, o la actualización o eliminación de una ya existente\footnote{Recuérdese el concepto de *transacción* visto en el capítulo \ref{Bases_datos} sobre bases de datos}.
+* \extr{Transaction}. El servidor puede realizar transacciones. Estas se componen de operaciones que modifican las entidades, tales como la creación de una nueva, o la actualización o eliminación de una ya existente\footnote{Recuérdese el concepto de *transacción* visto en el capítulo :ref:`Bases_datos` sobre bases de datos}.
 
 
 En función de lo anterior, podemos distinguir dos tipos de servicios WFS:
@@ -242,11 +242,11 @@ Filter Encoding
 
 Cuando un cliente efectúa una petición a un servidor WFS, no es necesario que obtenga de este todas las entidades de una capa. Incluso para una zona geográfica dada, el usuario puede querer obtener a través del cliente solo aquellas entidades que cumplan un criterio dado. 
 
-Ya conocemos elementos que permiten realizar ese tipo de consultas para trabajar con un subgrupo de las entidades de una capa. En el capítulo \ref{Consultas} vimos el lenguaje SQL, mediante el cual podían definirse consultas de esta clase.
+Ya conocemos elementos que permiten realizar ese tipo de consultas para trabajar con un subgrupo de las entidades de una capa. En el capítulo :ref:`Consultas` vimos el lenguaje SQL, mediante el cual podían definirse consultas de esta clase.
 
-El estándar Filter Encoding \cite{FilterEncoding} define un formato basado en XML para el almacenamiento de expresiones de filtrado según otro estándar OGC conocido como \extr{OGC Common Catalog Query Language}. La expresión del filtro expresada según la especificación Filter Encoding puede ser validada y procesada por herramientas adicionales para convertirla en las expresiones correspondientes en otro lenguaje para consulta de bases de datos espaciales. Por ejemplo, en una clausula \texttt{WHERE} de SQL que emplear en una sentencia \texttt{SELECT}.
+El estándar Filter Encoding \cite{FilterEncoding} define un formato basado en XML para el almacenamiento de expresiones de filtrado según otro estándar OGC conocido como \extr{OGC Common Catalog Query Language}. La expresión del filtro expresada según la especificación Filter Encoding puede ser validada y procesada por herramientas adicionales para convertirla en las expresiones correspondientes en otro lenguaje para consulta de bases de datos espaciales. Por ejemplo, en una clausula ``WHERE`` de SQL que emplear en una sentencia ``SELECT``.
 
-Las expresiones que pueden recogerse empleando \extr{Feature Encoding} pueden ser consultas con componente espacial o hacer referencia a la parte temática de la información geográfica. Es decir, que permiten recoger toda la variabilidad de las consultas espaciales que vimos en el capítulo \ref{Consultas}
+Las expresiones que pueden recogerse empleando \extr{Feature Encoding} pueden ser consultas con componente espacial o hacer referencia a la parte temática de la información geográfica. Es decir, que permiten recoger toda la variabilidad de las consultas espaciales que vimos en el capítulo :ref:`Consultas`
 
 Además de emplear estas expresiones para consultar servicios WFS, pueden utilizarse igualmente para otros como los servicios de Nomenclátor (Gazetteer) que veremos más adelante, y en general en todos aquellos en los que tenga sentido especificar algún tipo de restricción a la hora de realizar una petición al servidor.
 
@@ -271,7 +271,7 @@ Estándares para mapas y visualización
 
 De entre todos los estándares que vamos a ver en este capítulo, los más importantes por ser los más extendidos son los que sirven mapas. Entendemos por *mapa* en este contexto a una representación gráfica de una determinada información geográfica, elaborada a partir de una o más capas.
 
-Gran parte de los sitios Web que ofrecen información geográfica lo hacen en forma de mapas, es decir, que permiten simplemente <<ver>> los datos geográficos, y los estándares de esta sección son los encargados de definir ese tipo de servicios.
+Gran parte de los sitios Web que ofrecen información geográfica lo hacen en forma de mapas, es decir, que permiten simplemente *ver* los datos geográficos, y los estándares de esta sección son los encargados de definir ese tipo de servicios.
 
 El estándar WMS, el principal en esta categoría, está ampliamente probado e implementado en gran cantidad de software, y es el soporte fundamental para cientos de aplicaciones basadas en mapas, lo que ratifica su utilidad y validez.
 
@@ -391,7 +391,7 @@ Nomenclátor (Gazetteer)
 
 Un *nomenclátor* o {gazeteer} permite la localización de fenómenos geográficos a partir de un determinado nombre. El catálogo sobre el que se basa es una colección de estos fenómenos, cada uno de ellos asociados a un identificador geográfico. Dicho identificador es una referencia espacial en forma de etiqueta o código que identifica un lugar en el mundo real \cite{iso19112}. Ejemplos de tales identificadores son los nombres de ciudades o pueblos (Burgos, Plasencia), los códigos postales (10600), los accidentes geográficos (Puerto de Navacerrada, Pico de la Miel) o las direcciones (Carretera N--V p.k.35, Calle Mayor 32), entre otros. Así, el servicio de nomenclátor permite establecer un sistema de referencia basado en identificadores geográficos.
 
-El servicio recibe como entrada un nombre y utiliza este para localizar los fenómenos geográficos que cumplen un criterio. Este criterio puede ser variable, pudiendo exigir que el nombre coincida plenamente, que comience por él, o que lo contenga, entre otras opciones. Es habitual además que el catálogo contenga una tipología de los fenómenos recogidos (población, río, puerto, lago, etc.), de forma que esta también puede utilizarse para establecer el criterio de consulta (por ejemplo, para localizar todos los ríos que comiencen con las letra <<b>>).
+El servicio recibe como entrada un nombre y utiliza este para localizar los fenómenos geográficos que cumplen un criterio. Este criterio puede ser variable, pudiendo exigir que el nombre coincida plenamente, que comience por él, o que lo contenga, entre otras opciones. Es habitual además que el catálogo contenga una tipología de los fenómenos recogidos (población, río, puerto, lago, etc.), de forma que esta también puede utilizarse para establecer el criterio de consulta (por ejemplo, para localizar todos los ríos que comiencen con las letra *b*).
 
 En el terreno de los nomenclátor encontramos la Norma ISO 19115:2003 (*Geographic Information -- Spatial referencing by Geographic Identifiers*), y los *OGC Catalog Services*, que permiten estandarizar procesos de consulta como los mencionados.
 
@@ -404,7 +404,7 @@ Además de servir datos, pueden servirse procesos sobre esos datos, de tal forma 
 
 El estándar \extr{Web Processing Service} (WPS) de OGC está enfocado a definir el marco en el que se ha de producir el servicio de procesos remotos. WPS define una interfaz estándar que facilita la publicación de procesos y su uso posterior por parte de clientes. Se entiende por proceso en este contexto a todo aquel algoritmo, cálculo o modelo que opere sobre datos georreferenciados.
 
-Los procesos que pueden definirse son sumamente flexibles, pudiendo tener un número cualquiera de entradas y salidas, y operar con distintos tipos de datos. Es decir, que ofrece un marco para definir cualquier tipo de proceso de análisis geográfico, tanto si este utiliza datos ráster como si utiliza datos vectoriales. Todos los procesos que hemos visto en la parte \ref{Procesos} de este libro pueden ofrecerse como servicios remotos a través de WPS.
+Los procesos que pueden definirse son sumamente flexibles, pudiendo tener un número cualquiera de entradas y salidas, y operar con distintos tipos de datos. Es decir, que ofrece un marco para definir cualquier tipo de proceso de análisis geográfico, tanto si este utiliza datos ráster como si utiliza datos vectoriales. Todos los procesos que hemos visto en la parte :ref:`Procesos` de este libro pueden ofrecerse como servicios remotos a través de WPS.
 
 Los datos empleados para alimentar los procesos pueden encontrarse en el propio servidor o ser transmitidos a través de la red al igual que la propia petición de proceso por parte del cliente. Asimismo, puede relacionarse este estándar con otros que ya hemos visto, como por ejemplo WFS. Los datos necesarios para ejecutar un proceso que requiera una capa vectorial pueden obtenerse llamando a un servicio WFS, en cuyo caso debe indicarse en los parámetros del proceso los propios parámetros que corresponden a la petición a ese servicio WFS.
 
@@ -423,7 +423,7 @@ Los estándares que hemos visto a lo largo de estás páginas guardan una lógica re
 
 Por este motivo, las organizaciones que promueven estándares trabajan conjuntamente y suelen producir estándares muy similares. En algunos casos, como ya hemos mencionado, algunos estándares OGC son también estándares ISO, existiendo no una similitud sino una absoluta coincidencia.
 
-Más importante es la relación que guardan entre sí estándares dedicados a áreas distintas. Las tecnologías para la gestión y transmisión de datos  incluyen diversos elementos que forman un todo interrelacionado como vimos en el capítulo \ref{Servidores_y_clientes_remotos}. Los estándares correspondientes a esos elementos y a cada proceso particular que se desarrolla deben formar también un todo conectado y poder a su vez <<entenderse>> con otros estándares relacionados.
+Más importante es la relación que guardan entre sí estándares dedicados a áreas distintas. Las tecnologías para la gestión y transmisión de datos  incluyen diversos elementos que forman un todo interrelacionado como vimos en el capítulo :ref:`Servidores_y_clientes_remotos`. Los estándares correspondientes a esos elementos y a cada proceso particular que se desarrolla deben formar también un todo conectado y poder a su vez *entenderse* con otros estándares relacionados.
 
 Un caso particular de esto es, por ejemplo, el de los estándares WMS, SLD y WFS. El servicio WMS ofrece un mapa, que no es sino una representación de unos datos según unos criterios dados. Esos datos pueden obtenerse de un servicio WFS y los criterios para representarlos pueden expresarse utilizando el estándar SLD. La ventaja de los estándares abiertos, máxime si estos han sido además creados por una misma organización, es la capacidad de interoperar entre ellos, de forma que WMS puede tomar datos de servicios WFS o WCS, o una consulta conforme a Filter Encoding puede aplicarse para consultar un servicio WFS y también un servicio de nomenclátor.
 
@@ -431,14 +431,14 @@ Otro ejemplo en esta línea es el que hemos descrito para un servicio WPS que tom
 
 En su conjunto deben verse todos los estándares como una gran familia de elementos que armoniza el trabajo con la información geográfica, potenciando así el cumplimiento de los objetivos de la IDE.
 
-%La figura \ref{Fig:Relacion_estandares_OGC} muestra de forma esquemática las relaciones entre algunos de los principales estándares OGC.
+%La figura :num:`#figrelacionestandaresogc` muestra de forma esquemática las relaciones entre algunos de los principales estándares OGC.
 %
 %.. figure:: Relacion_estandares_OGC.png
 %
 	Relación entre algunos de los principales estándares OGC.
 %
 
-.. _Fig:Relacion_estandares_OGC: 
+.. _figrelacion_estandares_ogc: 
 %
 
 Resumen

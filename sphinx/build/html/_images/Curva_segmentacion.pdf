@@ -463,7 +463,37 @@ trailer
 startxref
 19809
 %%EOF
-1 0 obj<< /Title (Curva_segmentacion.pdf)/Author (Victor Olaya)/Creator (www.inkscape.org)/Producer (Inkscape 0.45.1)/CreationDate (D:20071026230556Z)/ModDate (D:20071030003954+01'00')>> endobj3 0 obj<< /Type /Catalog /Pages 2 0 R /Metadata 8 0 R >> endobj4 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [ 0 0 595.27557 841.88977 ] /Resources 5 0 R /Contents 6 0 R /Group << /Type /Group /S /Transparency /CS /DeviceRGB >> /CropBox [ 45.35434 510.23624 243.77951 685.98425 ] >> endobj8 0 obj<< /Type /Metadata /Subtype /XML /Length 1327 >> stream
+1 0 obj
+<< 
+/Title (Curva_segmentacion.pdf)
+/Author (Victor Olaya)
+/Creator (www.inkscape.org)
+/Producer (Inkscape 0.45.1)
+/CreationDate (D:20071026230556Z)
+/ModDate (D:20071030003954+01'00')
+>> 
+endobj
+3 0 obj
+<< 
+/Type /Catalog 
+/Pages 2 0 R 
+/Metadata 8 0 R 
+>> 
+endobj
+4 0 obj
+<< 
+/Type /Page 
+/Parent 2 0 R 
+/MediaBox [ 0 0 595.27557 841.88977 ] 
+/Resources 5 0 R 
+/Contents 6 0 R 
+/Group * /Type /Group /S /Transparency /CS /DeviceRGB * 
+/CropBox [ 45.35434 510.23624 243.77951 685.98425 ] 
+>> 
+endobj
+8 0 obj
+* /Type /Metadata /Subtype /XML /Length 1327 * 
+stream
 <?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d' bytes='1327'?>
 
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
@@ -502,9 +532,26 @@ startxref
  </rdf:Description>
 
 </rdf:RDF>
-<?xpacket end='r'?>endstreamendobjxref0 2 0000000000 65535 f
+<?xpacket end='r'?>
+endstream
+endobj
+xref
+0 2 
+0000000000 65535 f
 0000020052 00000 n
-3 2 0000020255 00000 n
+3 2 
+0000020255 00000 n
 0000020325 00000 n
-8 1 0000020562 00000 n
-trailer<</Size 9/Info 1 0 R /Root 3 0 R /Prev 19809 /ID[<34c939233e6c5d7de8e3cb44153e01bf><34c939233e6c5d7de8e3cb44153e01bf>]>>startxref21973%%EOF
+8 1 
+0000020562 00000 n
+trailer
+<<
+/Size 9
+/Info 1 0 R 
+/Root 3 0 R 
+/Prev 19809 
+/ID[<34c939233e6c5d7de8e3cb44153e01bf><34c939233e6c5d7de8e3cb44153e01bf>]
+>>
+startxref
+21973
+%%EOF

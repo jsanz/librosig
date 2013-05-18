@@ -70,15 +70,15 @@ Partiendo del ejemplo anterior, podemos dar una definición más precisa y forma
 * Análisis de dichos datos. Esto puede incluir desde consultas sencillas a la elaboración de complejos modelos, y puede llevarse a cabo tanto sobre la componente espacial de los datos (la localización de cada valor o elemento) como sobre la componente temática (el valor o el elemento en sí).
 * Generación de resultados tales como mapas, informes, gráficos, etc.
 
-En función de cual de estos aspectos se valore como más importante, encontramos distintas definiciones formales del concepto de un SIG. Una definición clásica es la de \cite{Tomlin1990Prentice}, para quien un SIG es un elemento que permite <<analizar, presentar e interpretar hechos relativos a la superficie terrestre>>. El mismo autor argumenta, no obstante, que <<esta es una definición muy amplia, y habitualmente se emplea otra más concreta. En palabras habituales, un SIG es un conjunto de *software* y *hardware* diseñado específicamente para la adquisición, mantenimiento y uso de datos cartográficos>>.
+En función de cual de estos aspectos se valore como más importante, encontramos distintas definiciones formales del concepto de un SIG. Una definición clásica es la de \cite{Tomlin1990Prentice}, para quien un SIG es un elemento que permite *analizar, presentar e interpretar hechos relativos a la superficie terrestre*. El mismo autor argumenta, no obstante, que *esta es una definición muy amplia, y habitualmente se emplea otra más concreta. En palabras habituales, un SIG es un conjunto de *software* y *hardware* diseñado específicamente para la adquisición, mantenimiento y uso de datos cartográficos*.
 
-En una línea similar, \cite{Star1990Prentice} define un SIG como un <<sistema de información diseñado para trabajar con datos referenciados mediante coordenadas espaciales o geográficas. En otras palabras, un SIG es tanto un sistema de base de datos con capacidades específicas para datos georreferenciados, como un conjunto de operaciones para trabajar con esos datos. En cierto modo, un SIG es un mapa de orden superior>>.
+En una línea similar, \cite{Star1990Prentice} define un SIG como un *sistema de información diseñado para trabajar con datos referenciados mediante coordenadas espaciales o geográficas. En otras palabras, un SIG es tanto un sistema de base de datos con capacidades específicas para datos georreferenciados, como un conjunto de operaciones para trabajar con esos datos. En cierto modo, un SIG es un mapa de orden superior*.
 
 Ambas definiciones recogen el concepto fundamental de los SIG en el momento en que fueron escritas, pero la realidad hoy en día hace necesario recoger otras ideas, y la definición actual de un SIG debe fundamentarse sobre todo en el concepto de *sistema* como elemento integrador que engloba a un conjunto de componentes interrelacionados.
 
 Como apunta \cite{Tomlin1990Prentice}, *software* y *hardware* son dos elementos primordiales del SIG, pero no son sin embargo los únicos. En el contexto actual, otros componentes juegan un papel igual de importante en la ideal global de un SIG.
 
-De igual modo, un SIG puede considerarse como un <<mapa de orden superior>> entendiendo que se trata de una forma más potente y avanzada de hacer todo aquello que, previamente a la aparición de los SIG, se llevaba a cabo mediante el uso de mapas y cartografía en sentido clásico. Es decir, los SIG representan un paso más allá de los mapas. No obstante, esta definición resulta en exceso simplista, pues mapas y SIG no son conceptos equiparables en el contexto actual de estos últimos. 
+De igual modo, un SIG puede considerarse como un *mapa de orden superior* entendiendo que se trata de una forma más potente y avanzada de hacer todo aquello que, previamente a la aparición de los SIG, se llevaba a cabo mediante el uso de mapas y cartografía en sentido clásico. Es decir, los SIG representan un paso más allá de los mapas. No obstante, esta definición resulta en exceso simplista, pues mapas y SIG no son conceptos equiparables en el contexto actual de estos últimos. 
 
 Un mapa es una representación de un conjunto de datos espaciales y, aunque esta representación resulta de enorme importancia, en el entorno de un SIG no es sino un elemento más de una serie de componentes (tales como el *software* y el *hardware* que antes mencionábamos). Más aún, un SIG contiene no solo los datos y la representación, sino también las operaciones que pueden hacerse sobre el mapa, que no son ajenas a este sino partes igualmente de todo el sistema conformado por el SIG.
 
@@ -149,10 +149,10 @@ La distinción entre estas y los SIG es notable, máxime a día de hoy, y es fá
 
 Dos son las principales soluciones que deben conocerse por su relación directa con el ámbito SIG: Diseño Asistido por Ordenador (CAD[#f3]_) y AM/FM.
 
-Las aplicaciones CAD (Figura \ref{Fig:CAD}) permiten el diseño informatizado de elementos muy diversos, que pueden ir desde una pieza industrial o la carrocería de un automóvil (tareas con poca relación con los SIG) a un edificio (con mayor relación con los SIG). El uso de herramientas CAD en disciplinas como la arquitectura para la creación de planos tiene cierta similitud con el uso de un SIG, y ambas herramientas se han nutrido la una de la otra en cuanto a sus funcionalidades. No obstante, siguen existiendo grandes diferencias que hacen que cada aplicación responda a unas necesidades concretas pese a la existencia de características comunes. De entre estas diferencias cabe destacar las siguientes \cite{ESRI2002GISCAD}\cite{Baguena1995Mapping}
+Las aplicaciones CAD (Figura :num:`#figcad`) permiten el diseño informatizado de elementos muy diversos, que pueden ir desde una pieza industrial o la carrocería de un automóvil (tareas con poca relación con los SIG) a un edificio (con mayor relación con los SIG). El uso de herramientas CAD en disciplinas como la arquitectura para la creación de planos tiene cierta similitud con el uso de un SIG, y ambas herramientas se han nutrido la una de la otra en cuanto a sus funcionalidades. No obstante, siguen existiendo grandes diferencias que hacen que cada aplicación responda a unas necesidades concretas pese a la existencia de características comunes. De entre estas diferencias cabe destacar las siguientes \cite{ESRI2002GISCAD}\cite{Baguena1995Mapping}
 
 * SIG y CAD han sido diseñados para propósitos diferentes. El del SIG es reflejar la realidad, mientras que el del CAD es diseñar algo que no existe todavía. La creación es el elemento fundamental en el CAD, mientras que el estudio de una realidad ya creada constituye la base del SIG.
-* El almacenamiento de datos es diferente debido al distinto enfoque. En los SIG se da mayor peso a la gestión de los datos, mientras que en el CAD la parte visual es preponderante, y el almacenamiento así lo refleja. Un dato SIG se almacena como un un dato geográfico complejo, mientras que en un CAD se almacena básicamente como un <<dibujo>>, pues es ese el enfoque fundamental de trabajo.
+* El almacenamiento de datos es diferente debido al distinto enfoque. En los SIG se da mayor peso a la gestión de los datos, mientras que en el CAD la parte visual es preponderante, y el almacenamiento así lo refleja. Un dato SIG se almacena como un un dato geográfico complejo, mientras que en un CAD se almacena básicamente como un *dibujo*, pues es ese el enfoque fundamental de trabajo.
 * El volumen de datos en un SIG es ordenes de magnitud mayor, y ello implica una gestión de datos distinta y unas necesidades más elevadas en ese sentido. La escala de trabajo también alcanza dimensiones mayores, ya que, mientras que con ambas herramientas puede trabajarse en una extensión limitada, un CAD no esta pensado para gestionar datos de una superficie como la de un país, un continente o el planeta entero.
 * No todos los tipos de datos de un SIG se pueden incorporar en un CAD. Los datos procedentes de la teledetección, por ejemplo, no forman parte del abanico de datos que un CAD puede manejar.
 
@@ -162,7 +162,7 @@ Las aplicaciones CAD (Figura \ref{Fig:CAD}) permiten el diseño informatizado de
 	Entorno de trabajo de una aplicación CAD.
 
 
-.. _Fig:CAD: 
+.. _figcad: 
 
 
 El CAD puede resultar suficiente para desarrollar algunas tareas propias de los SIG, en particular las relacionadas con el diseño cartográfico. No obstante, algunas circunstancias ponen de manifiesto las carencias de una herramienta CAD para sustituir completamente a un SIG, al tener requerimientos para los que esta no puede ofrecer una solución. Entre estos requerimientos cabe citar los siguientes:
@@ -175,7 +175,7 @@ El CAD puede resultar suficiente para desarrollar algunas tareas propias de los 
 
 Por su parte, las siglas AM/FM(*Automated Mapping/Facilities Management*)[#f4]_de uso poco habitual en nuestro idioma, hacen referencia a aplicaciones diseñadas para la gestión de infraestructuras generalmente de carácter público, tales como redes de alcantarillado, conducciones de gas o vías de circulación, entre otras. 
 
-Las aplicaciones empleadas para estas tareas tienen dos bloques básicos: un bloque gráfico de visualización y otro de gestión de datos. Este último almacena los atributos asociados a los elementos gráficos, que son principalmente de tipo lineal (tuberías, redes de alumbrado, etc.). Otro tipo de elementos, tales como elementos poligonales, son difíciles de manejar en estos sistemas, ya que su diseño obedece a las necesidades existentes en su ámbito de utilización, y estas se sitúan mayoritariamente alrededor de las infraestructuras lineales. Sin embargo, incluso con este tipo de elementos las capacidades de una aplicación AM/FM no igualan a las de un SIG, ya que no incorporan otro tipo de información como la relativa a la topología (que describiremos con detalle en el capítulo \ref{Tipos_datos}). Esto es así debido a que el subsistema de análisis, fundamental en un SIG, no tiene presencia en estas herramientas, y por tanto sus características no incluyen aquellos componentes que sean necesarios exclusivamente para procesos de tipo analítico.
+Las aplicaciones empleadas para estas tareas tienen dos bloques básicos: un bloque gráfico de visualización y otro de gestión de datos. Este último almacena los atributos asociados a los elementos gráficos, que son principalmente de tipo lineal (tuberías, redes de alumbrado, etc.). Otro tipo de elementos, tales como elementos poligonales, son difíciles de manejar en estos sistemas, ya que su diseño obedece a las necesidades existentes en su ámbito de utilización, y estas se sitúan mayoritariamente alrededor de las infraestructuras lineales. Sin embargo, incluso con este tipo de elementos las capacidades de una aplicación AM/FM no igualan a las de un SIG, ya que no incorporan otro tipo de información como la relativa a la topología (que describiremos con detalle en el capítulo :ref:`Tipos_datos`). Esto es así debido a que el subsistema de análisis, fundamental en un SIG, no tiene presencia en estas herramientas, y por tanto sus características no incluyen aquellos componentes que sean necesarios exclusivamente para procesos de tipo analítico.
 
 Puede decirse, por tanto, que este tipo de aplicaciones representa un subconjunto de los SIG, pues sus funcionalidades principales son más reducidas que las de estos, y su ámbito de aplicación es menos generalista. En cierta medida, las aplicaciones AM/FM se asemejan también a las aplicaciones CAD, poniendo un énfasis especial en la componente gráfica, aunque con una mayor adaptación a la naturaleza geográfica de la información con la que se trabaja.
 
@@ -194,19 +194,19 @@ Una forma de entender el sistema SIG es como formado por una serie de subsistema
 * Subsistema de análisis. Contiene métodos y procesos para el análisis de los datos geográficos.
 
 
-La figura \ref{Fig:Relacion_subsistemas} muestra el esquema de estos tres subsistemas y su relación.
+La figura :num:`#figrelacionsubsistemas` muestra el esquema de estos tres subsistemas y su relación.
 
 .. figure:: Relacion_subsistemas.pdf
 
 	Esquema de un SIG con sus tres subsistemas fundamentales: datos, visualización y análisis
 
 
-.. _Fig:Relacion_subsistemas: 
+.. _figrelacion_subsistemas: 
 
 
 Para que un SIG pueda considerarse una herramienta útil y válida con carácter general, debe incorporar estos tres subsistemas en cierta medida\cite{ESRI2003ESRI}.
 
-Otra forma distinta de ver el sistema SIG es atendiendo a los elementos básicos que lo componen. Cinco son los elementos principales que se contemplan tradicionalmente en este aspecto (Figura \ref{Fig:Elementos_SIG}):
+Otra forma distinta de ver el sistema SIG es atendiendo a los elementos básicos que lo componen. Cinco son los elementos principales que se contemplan tradicionalmente en este aspecto (Figura :num:`#figelementossig`):
 
 
 * Datos. Los datos son la materia prima necesaria para el trabajo en un SIG, y los que contienen la información geográfica vital para la propia existencia de los SIG.
@@ -221,7 +221,7 @@ Otra forma distinta de ver el sistema SIG es atendiendo a los elementos básicos
 	Elementos que forman el sistema SIG
 
 
-.. _Fig:Elementos_SIG: 
+.. _figelementos_sig: 
 
 
 Para el enfoque de esta obra, cada uno de los elementos anteriores tiene unas características propias que deben estudiarse. No obstante, el hardware no es un elemento especialmente particular en el caso de un SIG, y las aplicaciones SIG que encontramos actualmente en el mercado en todas sus variedades (que son las que el lector de este libro va a utilizar habitualmente) se ejecutan en su mayoría sobre ordenadores personales sin requerimientos altamente específicos. Más aún, la expansión de las tecnologías SIG ha alcanzado hoy en día otros ámbitos como las plataformas móviles, haciendo de estas unas tecnologías poco específicas en lo que a *hardware* se refiere. Por esta razón, no es necesario tratar en detalle esta pieza del sistema SIG, siendo más adecuado tratar el resto de elementos, más característicos e importantes para el aprendizaje de los conceptos SIG y la descripción de estos.
@@ -232,14 +232,14 @@ Puede entenderse esto como un nuevo subsistema: el subsistema *de gestión*, que
 
 Las personas a su vez dan forma a los distintos ámbitos de trabajo, definiendo estos en función de sus necesidades. Puede tratarse el conjunto de campos de especialización como un nuevo elemento del sistema SIG, en lugar de incorporarlo dentro de otro. 
 
-Algunos autores proponen modificar el esquema clásico de cinco elementos para reflejar más correctamente la nueva realidad de los SIG. Por ejemplo, \cite{webGISEvolve} propone un esquema como el mostrado en la figura \ref{Fig:Elementos_SIG2}.
+Algunos autores proponen modificar el esquema clásico de cinco elementos para reflejar más correctamente la nueva realidad de los SIG. Por ejemplo, \cite{webGISEvolve} propone un esquema como el mostrado en la figura :num:`#figelementossig2`.
 
 .. figure:: Elementos_SIG2.pdf
 
 	Una división distinta del sistema SIG (según \cite{webGISEvolve)}
 
 
-.. _Fig:Elementos_SIG2: 
+.. _figelementos_sig2: 
 
 
 La incorporación de la visualización es una diferencia notable con respecto al esquema clásico. En realidad, y si volvemos a ese enfoque basado en subsistemas, el subsistema de visualización resulta de enorme importancia en un SIG, siendo pese a ello habitual que no sea tratado con la suficiente profundidad en textos dedicados a los SIG desde un punto de vista genérico. Precisamente por no ser considerado un elemento independiente, no se le concede la necesaria atención como parte que debe estudiarse al tratar la disciplina de los SIG.
@@ -294,7 +294,7 @@ Cualquier tipo de información puede ser representada de forma gráfica, lo cual
 
 En el caso particular de la información geográfica, la visualización no solo es una forma más de trabajar con esa información, sino que resulta la forma principal, no ya por ser la que en general hace más fácil e intuitivo el tratamiento de esa información, sino porque es aquella a la que estamos más acostumbrados. La información geográfica tiene una inherente naturaleza visual, ya que el espacio en sí es entendido de forma gráfica por el ser humano. Junto a esto, no debemos olvidar que la información geográfica se ha almacenado de forma tradicional de modo también visual, a través de mapas. Un mapa es en sí una representación visual de la información geográfica.
 
-Al contrario que un mapa, que de por sí es de naturaleza gráfica, en un SIG trabajamos con datos de tipo puramente numérico, ya que es así como el ordenador puede manejarlos, y la información geográfica debe almacenarse de este modo, como veremos con detalle en el capítulo \ref{Tipos_datos}. Para poder presentar una utilidad similar a la de un mapa en lo que a la presentación de la información respecta, un SIG debe incluir capacidades que generen representaciones visuales a partir de esos datos numéricos, aprovechando en la medida de lo posible las propias capacidades del medio informático en que se trabaja para hacer estas representaciones más potentes como transmisoras de información. 
+Al contrario que un mapa, que de por sí es de naturaleza gráfica, en un SIG trabajamos con datos de tipo puramente numérico, ya que es así como el ordenador puede manejarlos, y la información geográfica debe almacenarse de este modo, como veremos con detalle en el capítulo :ref:`Tipos_datos`. Para poder presentar una utilidad similar a la de un mapa en lo que a la presentación de la información respecta, un SIG debe incluir capacidades que generen representaciones visuales a partir de esos datos numéricos, aprovechando en la medida de lo posible las propias capacidades del medio informático en que se trabaja para hacer estas representaciones más potentes como transmisoras de información. 
 
 Es deseable igualmente que el SIG sea capaz de generar cartografía clásica, y que incorpore métodos para el diseño cartográfico y la creación de mapas impresos, pues estos no pierden su vigencia pese a la existencia de los SIG.
 
@@ -309,7 +309,7 @@ Incluimos en este elemento tanto el *hardware* sobre el que se ejecutan las apli
 
 En lo que a *hardware* respecta, es el elemento físico del sistema SIG, y conforma la plataforma sobre la que tiene lugar el trabajo con un SIG. La utilización de un SIG hoy en día se puede llevar a cabo en ordenadores personales o estaciones de trabajo, y ya sea de forma individual o en una arquitectura cliente--servidor más compleja. Estas últimas han cobrado importancia muy rápidamente en los últimos tiempos, especialmente en lo que al acceso a datos se refiere. Veremos más adelante como esto también ha tenido influencia en otros componentes del sistema SIG, principalmente en el factor organizativo.
 
-Además de la propia plataforma, el *hardware* incluye una serie de periféricos para tareas más concretas. De uso habitual en el trabajo con SIG son los periféricos para entrada de datos geográficos y la creación de cartografía. Las tabletas digitalizadoras son la forma más habitual dentro del primer grupo (las veremos con más detalle en el apartado \ref{heads-down}), mientras que *plotters* e impresoras son empleados para la creación cartográfica, requiriéndose generalmente un mayor formato que para otros usos.
+Además de la propia plataforma, el *hardware* incluye una serie de periféricos para tareas más concretas. De uso habitual en el trabajo con SIG son los periféricos para entrada de datos geográficos y la creación de cartografía. Las tabletas digitalizadoras son la forma más habitual dentro del primer grupo (las veremos con más detalle en el apartado :ref:`heads-down`), mientras que *plotters* e impresoras son empleados para la creación cartográfica, requiriéndose generalmente un mayor formato que para otros usos.
 
 Mas recientemente, la aparición de Sistemas de Navegación Global como el GPS (que pueden a su vez considerarse como otro tipo de periféricos) ha creado una parcela tecnológica con gran relación con los SIG, convirtiendo a estos en herramientas ideales para la gestión de los datos de dichos sistemas. Incluso, la combinación de SIG y GPS sobre un único elemento de hardware ha dado lugar a herramientas como los navegadores GPS, que han supuesto un hito no solo desde el punto de vista técnico, sino también desde un enfoque social, pues acercan las tecnologías SIG a usuarios no expertos.
 
@@ -341,7 +341,7 @@ Todo el conjunto de conocimientos sobre los cuales se asientan los SIG conforman
 
 .. rubric::Footnotes
 
-.. [#f1] Veremos con más detalle las ventajas de los datos digitales frente a los datos analógicos en el capítulo \ref{Fuentes_datos}
+.. [#f1] Veremos con más detalle las ventajas de los datos digitales frente a los datos analógicos en el capítulo :ref:`Fuentes_datos`
 .. [#f2] *Geographic Information Science* en inglés, abreviado como GIScience o simplemente con el propio acrónimo GIS
 .. [#f3] Computer--Aided Design
 .. [#f4] Cartografía Automatizada/Gestión de Servicios

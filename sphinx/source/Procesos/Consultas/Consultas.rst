@@ -5,15 +5,11 @@ Consultas y operaciones con bases de datos
 .. _Consultas:
 
 
-
-
-
 En este capítulo comenzaremos a estudiar las formas de análisis de los datos espaciales, tratando las consultas y operaciones relacionadas. Estas son operaciones sencillas que, sin embargo se encuentran entre las más frecuentes en el uso habitual de los SIG, pues permiten explotar en primera instancia la información de las capas.
 
 Al concluir el capítulo, se conocerán los tipos más comunes de consultas y la forma de llevar estas a cabo, teniéndose así una primera herramienta para empezar a aprovechar los datos espaciales.
 
-Las consultas son un elemento habitual de las bases de datos, por lo que resulta necesario conocer con detalle todo lo relativo a estas, detallado en el capítulo correspondiente en la parte \ref{Datos}. Cuando dichas bases de datos incluyen la componente espacial, hacen uso de las relaciones espaciales para definir relaciones entre elementos. Estas fueron descritas en el capítulo \ref{Analisis_espacial}, cuyo estudio es necesario antes de abordar el del presente capítulo. 
-
+Las consultas son un elemento habitual de las bases de datos, por lo que resulta necesario conocer con detalle todo lo relativo a estas, detallado en el capítulo correspondiente en la parte :ref:`Datos`. Cuando dichas bases de datos incluyen la componente espacial, hacen uso de las relaciones espaciales para definir relaciones entre elementos. Estas fueron descritas en el capítulo :ref:`Analisis_espacial`, cuyo estudio es necesario antes de abordar el del presente capítulo. 
 
  
 Introducción
@@ -25,11 +21,11 @@ En el contexto espacial, una consulta representa un uso similar al que damos a u
 
 Las consultas se entienden en general como relativas a capas vectoriales, pues son dicho modelo de representación y su estructura de datos los que mejor se adaptan a la forma particular de las consultas. En este capítulo veremos cómo trabajar mayoritariamente con datos vectoriales, aunque también se harán referencias a datos ráster, pues estos últimos contienen igualmente datos geográficos y pueden consultarse y responder a preguntas como las formuladas anteriormente.
 
-En las capas vectoriales, y como vimos en los capítulos \ref{Tipos_datos} y \ref{Bases_datos}, la división entre la componente temática y espacial es más patente, existiendo incluso una división a nivel de archivos y de los elementos tecnológicos empleados para el trabajo con cada una de ellas dentro de un SIG. En el caso de las consultas, se mantiene un enfoque similar, y encontramos esa misma separación. Los lenguajes de consulta, que en breve veremos con más detalle y que resultan básicos para elaborar consultas y obtener resultados, han seguido una evolución paralela a la de los propios sistemas gestores de bases de datos en su adaptación al entorno espacial de los SIG.
+En las capas vectoriales, y como vimos en los capítulos :ref:`Tipos_datos` y :ref:`Bases_datos`, la división entre la componente temática y espacial es más patente, existiendo incluso una división a nivel de archivos y de los elementos tecnológicos empleados para el trabajo con cada una de ellas dentro de un SIG. En el caso de las consultas, se mantiene un enfoque similar, y encontramos esa misma separación. Los lenguajes de consulta, que en breve veremos con más detalle y que resultan básicos para elaborar consultas y obtener resultados, han seguido una evolución paralela a la de los propios sistemas gestores de bases de datos en su adaptación al entorno espacial de los SIG.
 
 Antes de que los SIG incorporan las bases de datos como parte integrante, los sistemas gestores de bases de datos ya existían y tenían un cierto grado de desarrollo. Precisamente, y como ya sabemos, la intención original era la de representar la información geográfica de acuerdo con un modelo que permitiera hacer uso de otras aplicaciones ya desarrolladas y de utilidad probada como eran dichos sistemas. 
 
-Siguiendo este mismo enfoque, estudiaremos en primer lugar los conceptos fundamentales relativos a consultas en bases de datos, sin tratar por el momento la componente espacial. Posteriormente extenderemos estos conceptos para ver la verdadera potencia de estas dentro del ámbito SIG, que resulta de añadir la componente espacial y los conceptos sobre relaciones espaciales que vimos en el capítulo \ref{Analisis_espacial}.
+Siguiendo este mismo enfoque, estudiaremos en primer lugar los conceptos fundamentales relativos a consultas en bases de datos, sin tratar por el momento la componente espacial. Posteriormente extenderemos estos conceptos para ver la verdadera potencia de estas dentro del ámbito SIG, que resulta de añadir la componente espacial y los conceptos sobre relaciones espaciales que vimos en el capítulo :ref:`Analisis_espacial`.
 
  Si el lector esta familiarizado con los conceptos relativos a bases de datos no espaciales y las consultas sobre estas, puede prescindir de leer la próxima sección y avanzar hasta la siguiente para ver directamente las particularidades del trabajo con bases de datos espaciales. De cualquier modo, el capítulo no pretende ser un manual sobre el uso de bases de datos o sus fundamentos, ya que este tema es muy amplio y escapa por completo al alcance de este texto.
 
@@ -42,14 +38,14 @@ En este contexto, una consulta no es sino una llamada a dicho sistema gestor, el
 
 El resultado de una consulta en un SIG generalmente es lo que conocemos como *selección*. De todos los registros de la tabla de datos, aquellos que cumplen el criterio indicado se marcan como seleccionados, y posteriormente pueden utilizarse únicamente estos como base de otro análisis, o simplemente el usuario puede ver cuáles han sido los seleccionados para así obtener la respuesta a su consulta.
 
-Como veremos más en detalle en las siguientes secciones, las consultas pueden hacerse solo sobre la componente temática de los datos, sobre la espacial, o sobre ambas. En cualquier caso, sabemos ya que estas en un SIG se hayan vinculadas, con lo que el resultado de la consulta afecta a ambas. La selección se hace patente sobre ambas componentes, con independencia de cuál de ellas haya sido la encargada de aplicar el criterio de selección. En el entorno habitual de un SIG, con su interfaz gráfica, tanto la tabla de atributos como la representación visual de la componente espacial se ven afectadas por la realización de una consulta. La figura \ref{Fig:Seleccion} muestra gráficamente este hecho.
+Como veremos más en detalle en las siguientes secciones, las consultas pueden hacerse solo sobre la componente temática de los datos, sobre la espacial, o sobre ambas. En cualquier caso, sabemos ya que estas en un SIG se hayan vinculadas, con lo que el resultado de la consulta afecta a ambas. La selección se hace patente sobre ambas componentes, con independencia de cuál de ellas haya sido la encargada de aplicar el criterio de selección. En el entorno habitual de un SIG, con su interfaz gráfica, tanto la tabla de atributos como la representación visual de la componente espacial se ven afectadas por la realización de una consulta. La figura :num:`#figseleccion` muestra gráficamente este hecho.
 
 .. figure:: Seleccion.pdf
 
 	El resultado de una consulta temática en un SIG es una selección de entidades, que implica tanto a la componente temática como a la espacial de cada una de ellas. En ambos casos, el color amarillo indica los elementos seleccionados.
 
 
-.. _Fig:Seleccion: 
+.. _figseleccion: 
 
 
 Esta presencia gráfica es importante dentro del entorno de los SIG, tanto para mostrar el resultado de las consultas como para ayudar en la formulación de estas. En contraste con el carácter textual de una base de datos, el empleo de dichas bases de datos y la realización de consultas en un SIG incorpora una representación gráfica que resulta esencial \cite{Guting1994VLDB}
@@ -65,7 +61,7 @@ Consultas temáticas
 La componente temática del dato espacial es de por sí una fuente importante de información, y puede responder a consultas de todo tipo y ofrecernos resultados sumamente interesantes. Comencemos analizando algunas de estas consultas y viendo cómo, aunque se realicen en base a datos espaciales como los que utilizamos en un SIG, en realidad en ellas la componente espacial no se emplea. Sea por ejemplo una capa con los distintos países del mundo y una serie de valores económicos y sociales asociados a cada uno de ellos. Consideremos las siguientes preguntas:
 
 
- * ¿Qué países tienen un Producto Interior Bruto mayor que el de España?
+* ¿Qué países tienen un Producto Interior Bruto mayor que el de España?
 * ¿Qué países han experimentado un crecimiento económico en el último año?
 * ¿Cuántos países tienen más de 200 millones de habitantes? 
 
@@ -76,7 +72,7 @@ Sin embargo, cuando realizamos consultas como las tres anteriores, no acudimos p
 
 Antes de la aparición de los SIG, la componente temática (el anuario estadístico) y la espacial (el mapa político) iban por separado. Hoy en día, y gracias a los SIG, podemos trabajar con ellas de forma conjunta, pues es fácil ver que existe una relación entre ambas. No obstante, en el ámbito informático se han desarrollado tecnologías para trabajar con conjuntos de datos tales como las tablas de un anuario estadístico, pues la componente espacial no siempre existe o bien no se utiliza, y es por estas tecnologías por donde debemos comenzar a desarrollar todo lo relativo a consultas.
 
-Por un momento, dejemos de lado la componente espacial de cada país, y pensemos que solo conocemos de él algunas variables socio--económicas tales como el PIB, la población, el idioma que se habla o el nombre de su moneda, tal y como se recogen en la tabla de la figura \ref{Fig:Seleccion}
+Por un momento, dejemos de lado la componente espacial de cada país, y pensemos que solo conocemos de él algunas variables socio--económicas tales como el PIB, la población, el idioma que se habla o el nombre de su moneda, tal y como se recogen en la tabla de la figura :num:`#figseleccion`
 
 
 Mecanismos de consulta y operaciones básicas
@@ -91,21 +87,21 @@ Dentro de un SIG hay muchas formas de expresar una consulta. Una forma simple es
 Para trabajar desde este punto en adelante, vamos a suponer que disponemos de una tabla con datos de países del mundo, la cual contiene los siguientes campos:
 
 
- * \textsc{NOMBRE}
-* \textsc{CAPITAL}
-* \textsc{MONEDA}
-* \textsc{POBLACION\_ACTUAL}
-* \textsc{POBLACION\_ANTERIOR}
-* \textsc{SUPERFICIE}
+* ``NOMBRE``
+* ``CAPITAL``
+* ``MONEDA``
+* ``POBLACION\_ACTUAL``
+* ``POBLACION\_ANTERIOR``
+* ``SUPERFICIE``
 
 
-Por ejemplo, para saber el número de países con población mayor de 200 millones, podríamos utilizar una expresión como la siguiente: \texttt{'POBLACION\_ACTUAL' :math:`>` 200.000.000.} Para saber en qué países aumentó la población en el ultimo año, y puesto que disponemos además de un campo con la población de año anterior, podemos plantear una expresión de la forma \texttt{POBLACION\_ACTUAL > POBLACION\_ANTERIOR}.
+Por ejemplo, para saber el número de países con población mayor de 200 millones, podríamos utilizar una expresión como la siguiente: ``'POBLACION\_ACTUAL' :math:`>` 200.000.000.`` Para saber en qué países aumentó la población en el ultimo año, y puesto que disponemos además de un campo con la población de año anterior, podemos plantear una expresión de la forma ``POBLACION\_ACTUAL > POBLACION\_ANTERIOR``.
 
 Estas expresiones condicionales se conocen con el nombre de *predicados*.
 
-Los predicados no han de ser necesariamente de carácter numérico. Por ejemplo, para saber qué países pertenecen a la Unión Económica Europea podríamos hacerlo mediante el predicado \texttt{MONEDA = 'Euro'}.
+Los predicados no han de ser necesariamente de carácter numérico. Por ejemplo, para saber qué países pertenecen a la Unión Económica Europea podríamos hacerlo mediante el predicado ``MONEDA = 'Euro'``.
 
-Consultas de esta índole también pueden efectuarse si los datos geográficos se basan en un modelo de datos ráster. En este caso, podemos de igual modo ver qué celdas cumplen una condición dada como, por ejemplo, tener un valor mayor que un valor predefinido. Sin embargo, este tipo de operaciones no se suelen ver habitualmente como consultas, sino como operaciones de lo que se conoce como *álgebra de mapas*, en particular una operación denominada *reclasificación*. Veremos con detalle estas operaciones en el capitulo \ref{Algebra_de_mapas}, enteramente dedicado a ellas.
+Consultas de esta índole también pueden efectuarse si los datos geográficos se basan en un modelo de datos ráster. En este caso, podemos de igual modo ver qué celdas cumplen una condición dada como, por ejemplo, tener un valor mayor que un valor predefinido. Sin embargo, este tipo de operaciones no se suelen ver habitualmente como consultas, sino como operaciones de lo que se conoce como *álgebra de mapas*, en particular una operación denominada *reclasificación*. Veremos con detalle estas operaciones en el capitulo :ref:`Algebra_de_mapas`, enteramente dedicado a ellas.
 
 Las consultas mediante expresiones condicionales pueden ser algo más complejas que lo que hemos visto hasta ahora, ya que pueden hacer referencia a varios campos. Por ejemplo, para responder a cuestiones como las siguientes:
 
@@ -121,31 +117,33 @@ Para expresar esas consultas se han de incluir elementos de la denominada *lógi
 * ¿Que países hablan inglés *y* sufrieron un aumento de población durante el último año?
 
 
-La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición \texttt{Moneda = 'Euro'}, y al mismo tiempo la condición \texttt{POBLACION\_ACTUAL :math:`>` 40.000.000.} La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés \texttt{AND}, de forma que tendríamos la expresión \texttt{MONEDA = 'Euro' AND POBLACION\_ACTUAL :math:`>` 40.000.000}.
+La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición ``Moneda = 'Euro'``, y al mismo tiempo la condición ``POBLACION\_ACTUAL :math:`>` 40.000.000.`` La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés ``AND``, de forma que tendríamos la expresión ``MONEDA = 'Euro' AND POBLACION\_ACTUAL :math:`>` 40.000.000``.
 
-Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (\texttt{OR}) o el operador de negación (\texttt{NOT}). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*\footnote{John Venn (1834, 1923), un matemático inglés, fue el primero en proponer este tipo de diagramas en 1880}, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura \ref{Fig:Venn} pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
+Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (``OR``) o el operador de negación (``NOT``). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*\footnote{John Venn (1834, 1923), un matemático inglés, fue el primero en proponer este tipo de diagramas en 1880}, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura :num:`#figvenn` pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
 
-Más adelante volveremos a encontrar esquemas similares a estos, en particular al estudiar las operaciones de solape entre capas vectoriales, en el capítulo \ref{Operaciones_geometricas}.
+Más adelante volveremos a encontrar esquemas similares a estos, en particular al estudiar las operaciones de solape entre capas vectoriales, en el capítulo :ref:`Operaciones_geometricas`.
+
+.. _FigVenn: 
 
 .. figure:: Venn.pdf
 
 	Diagramas de Venn.
 
 
-.. _Fig:Venn: 
+
 
 
 Una operación muy habitual en el ámbito de las bases de datos es la *unión* de tablas. Si la componente temática en el modelo vectorial se almacena en una tabla de atributos, es posible, mediante esta operación, almacenar dicha componente en un conjunto de ellas interrelacionadas, lo cual en términos generales conlleva una mejor estructuración, como ya vimos en el capítulo dedicado a las bases de datos. En otras palabras, resulta conveniente no poner toda la información en una tabla, sino dividirla en un conjunto adecuadamente estructurado de tablas, que después pueden combinarse y utilizarse de la manera que resulte más apropiada.
 
 Lógicamente, si la información se encuentra disponible en una serie de tablas, pero las entidades geométricas que contienen la componente espacial del dato solo tienen asociada una de ellas, es necesario algún elemento adicional que permita relacionar a todas esas tablas. Este elemento son las operaciones de unión, que pueden efectuarse entre varias capas (cada una aporta su tabla de atributos) o también con tablas aisladas, sin necesidad de que estas tengan asociada una componente espacial.
 
-Veamos un ejemplo de una unión entre tablas para comprender el significado de esta operación. En el cuadro \ref{Tabla:Tablas_base_union} se muestran dos tablas. En la primera de ellas, que supondremos que se encuentra asociada a una capa de polígonos, encontramos un valor numérico que identifica cada entidad (\texttt{ID}) y es distinto para cada una de ellas, y otro valor numérico también entero (\texttt{TIPO\_SUELO}) que nos indica el grupo de tipo de suelo de dicho polígono. Es decir, es la tabla de una capa de usos de suelo. En la segunda tabla, que es una tabla no asociada a ninguna capa, encontramos la equivalencia entre los valores de tipo de suelo y el nombre de dicho tipo de suelo (\texttt{NOMBRE\_SUELO}), así como en el campo denominado \texttt{APTITUD}, que, en una escala de 1 a 10, clasifica la aptitud del suelo para el crecimiento de una determinada especie vegetal.
+Veamos un ejemplo de una unión entre tablas para comprender el significado de esta operación. En el cuadro :ref:`Tabla:Tablas_base_union` se muestran dos tablas. En la primera de ellas, que supondremos que se encuentra asociada a una capa de polígonos, encontramos un valor numérico que identifica cada entidad (``ID``) y es distinto para cada una de ellas, y otro valor numérico también entero (``TIPO\_SUELO``) que nos indica el grupo de tipo de suelo de dicho polígono. Es decir, es la tabla de una capa de usos de suelo. En la segunda tabla, que es una tabla no asociada a ninguna capa, encontramos la equivalencia entre los valores de tipo de suelo y el nombre de dicho tipo de suelo (``NOMBRE\_SUELO``), así como en el campo denominado ``APTITUD``, que, en una escala de 1 a 10, clasifica la aptitud del suelo para el crecimiento de una determinada especie vegetal.
 
 \begin{table}
 \begin{center}
 
 \begin{tabular}{cc}\toprule
-\textsc{ID} & \textsc{TIPO\_SUELO}\\ \midrule
+``ID`` & ``TIPO\_SUELO``\\ \midrule
 1 & 3 \\ 
 2 & 1 \\ 
 3 & 3 \\
@@ -156,7 +154,7 @@ Veamos un ejemplo de una unión entre tablas para comprender el significado de e
 \vspace{0.5cm}
 
 \begin{tabular}{ccc}\toprule
-\textsc{TIPO\_SUELO} & \textsc{NOMBRE\_SUELO} & \textsc{APTITUD} \\ \midrule
+``TIPO\_SUELO`` & ``NOMBRE\_SUELO`` & ``APTITUD`` \\ \midrule
 1 & Fluvisol & 5 \\ 
 2 & Cambisol & 7 \\ 
 3 & Leptosol & 4 \\ \bottomrule
@@ -169,14 +167,14 @@ Veamos un ejemplo de una unión entre tablas para comprender el significado de e
 .. _Tabla:Tablas_base_union:
 \end{table}
 
-En estas tablas existe un campo común, que es el que contiene el código numérico del tipo de suelo (en el ejemplo tiene el mismo nombre en ambas tablas, pero esto no ha de ser necesariamente así, basta con que la variable que contengan ambos campos sea la misma), y que podemos emplear para establecer la relación entre las dos tablas. Si un polígono tiene asociado un suelo de tipo 1, y gracias a la tabla adicional sabemos que el suelo de tipo 1 es un fluvisol y que su aptitud es 5, entonces podemos decir que dentro de ese polígono el suelo es de tipo fluvisol y tiene dicha aptitud, aunque en la tabla asociada no se encuentre directamente esta información. Esta forma de proceder debe ser ya familiar para el lector, pues la unión se basa en el uso de un atributo clave, que ya vimos en el capítulo \ref{Bases_datos} dedicado a las bases de datos.
+En estas tablas existe un campo común, que es el que contiene el código numérico del tipo de suelo (en el ejemplo tiene el mismo nombre en ambas tablas, pero esto no ha de ser necesariamente así, basta con que la variable que contengan ambos campos sea la misma), y que podemos emplear para establecer la relación entre las dos tablas. Si un polígono tiene asociado un suelo de tipo 1, y gracias a la tabla adicional sabemos que el suelo de tipo 1 es un fluvisol y que su aptitud es 5, entonces podemos decir que dentro de ese polígono el suelo es de tipo fluvisol y tiene dicha aptitud, aunque en la tabla asociada no se encuentre directamente esta información. Esta forma de proceder debe ser ya familiar para el lector, pues la unión se basa en el uso de un atributo clave, que ya vimos en el capítulo :ref:`Bases_datos` dedicado a las bases de datos.
 
-Al efectuar una unión, *pasamos* la información de una tabla a la otra, en la medida en que esto sea coherente con las coincidencias existentes entre ellas. El resultado es una nueva tabla que extiende la tabla original, incorporando información de otra tabla adicional. En el cuadro \ref{Tabla:Resultado_union} puede verse la tabla resultante de la anterior unión\footnote{Esta tabla es la resultante de uno de los tipos de unión posibles, la denominada unión *natural*. Otros tipos de unión para las mismas tablas de partida dan como resultado tablas distintas, aunque no se usan con tanta frecuencia. La unión *cartesiana* genera una tabla que contiene todas las combinaciones posibles entre elementos de las dos tablas implicadas. En otros casos, la tabla generada puede contener los dos campos utilizados como enlace, uno por cada tabla de las utilizadas en la unión}.
+Al efectuar una unión, *pasamos* la información de una tabla a la otra, en la medida en que esto sea coherente con las coincidencias existentes entre ellas. El resultado es una nueva tabla que extiende la tabla original, incorporando información de otra tabla adicional. En el cuadro :ref:`Tabla:Resultado_union` puede verse la tabla resultante de la anterior unión\footnote{Esta tabla es la resultante de uno de los tipos de unión posibles, la denominada unión *natural*. Otros tipos de unión para las mismas tablas de partida dan como resultado tablas distintas, aunque no se usan con tanta frecuencia. La unión *cartesiana* genera una tabla que contiene todas las combinaciones posibles entre elementos de las dos tablas implicadas. En otros casos, la tabla generada puede contener los dos campos utilizados como enlace, uno por cada tabla de las utilizadas en la unión}.
 
 \begin{table*}
 \begin{center}
 \begin{tabular}{cccc}\toprule
-\textsc{ID} & \textsc{TIPO\_SUELO} & \textsc{NOMBRE\_SUELO} & \textsc{APTITUD} \\ \midrule
+``ID`` & ``TIPO\_SUELO`` & ``NOMBRE\_SUELO`` & ``APTITUD`` \\ \midrule
 1 & 3 & Leptosol & 4 \\ 
 2 & 1 & Fluvisol & 5 \\ 
 3 & 3 & Leptosol & 4 \\ 
@@ -191,7 +189,7 @@ Al efectuar una unión, *pasamos* la información de una tabla a la otra, en la 
 .. _Tabla:Resultado_union:
 \end{table*}
 
-Mantener la información dividida en varias tablas de la forma anterior tiene muchas ventajas, como ya en su momento comenzamos a ver en el apartado \ref{DisenoBaseDatos} cuando tratamos el diseño de bases de datos, y ahora al estudiar las consultas vemos plasmadas de modo claro una buena parte de ellas. El hecho de codificar cada nombre de tipo de suelo con un valor numérico hace más sencillo el introducir este parámetro, pues evita teclear todo el nombre cada vez que se quiera añadir algún nuevo registro a la tabla principal (en este caso, la que se encuentra asociada a la capa). Esto además disminuye la probabilidad de que se cometan errores al introducir dichos valores y garantiza la homogeneidad de nombre, pues estos solo se encuentran almacenados una única vez en la tabla adicional. Las restantes tablas se *alimentan* de esta.
+Mantener la información dividida en varias tablas de la forma anterior tiene muchas ventajas, como ya en su momento comenzamos a ver en el apartado :ref:`DisenoBaseDatos` cuando tratamos el diseño de bases de datos, y ahora al estudiar las consultas vemos plasmadas de modo claro una buena parte de ellas. El hecho de codificar cada nombre de tipo de suelo con un valor numérico hace más sencillo el introducir este parámetro, pues evita teclear todo el nombre cada vez que se quiera añadir algún nuevo registro a la tabla principal (en este caso, la que se encuentra asociada a la capa). Esto además disminuye la probabilidad de que se cometan errores al introducir dichos valores y garantiza la homogeneidad de nombre, pues estos solo se encuentran almacenados una única vez en la tabla adicional. Las restantes tablas se *alimentan* de esta.
 
 Las ventajas son mayores si se piensa que la tabla que caracteriza cada tipo de suelo puede estar unida no a una sola tabla de atributos, sino a un número mayor de ellas. En tal caso, ampliar o modificar la información de las tablas resulta mucho más sencillo, pues solo se deben efectuar dicha ampliación o modificación sobre la tabla de la que las demás toman sus datos. Si por ejemplo quisiéramos modificar la aptitud del tipo de suelo *leptosol* de 4 a 5, basta realizar esta modificación en la tabla auxiliar. El número de veces que este tipo de suelo aparece en la tabla de atributos de la capa resulta indiferente a la hora de efectuar esta modificación, pues solo ha de cambiarse una vez.
 
@@ -254,12 +252,12 @@ WHERE Moneda = 'Euro' AND
       Poblacion_actual > 40000000 
 \end{verbatim}
 
-Las consultas pueden ser mucho más complejas, y las sentencias \texttt{SELECT} pueden usarse como parámetros dentro de un predicado lógico. Por ejemplo, supongamos que disponemos de una tabla denominada \texttt{Capitales} con datos de todas las capitales del mundo, y que cuenta con los siguientes campos:
+Las consultas pueden ser mucho más complejas, y las sentencias ``SELECT`` pueden usarse como parámetros dentro de un predicado lógico. Por ejemplo, supongamos que disponemos de una tabla denominada ``Capitales`` con datos de todas las capitales del mundo, y que cuenta con los siguientes campos:
 
 
- * \texttt{NOMBRE}
-* \texttt{POBLACION\_HOMBRES}
-* \texttt{POBLACION\_MUJERES}
+ * ``NOMBRE``
+* ``POBLACION\_HOMBRES``
+* ``POBLACION\_MUJERES``
 
 
 La sentencia siguiente recupera en una nueva tabla todos los países cuyas capitales tienen una población de hombres mayor que de mujeres.
@@ -271,9 +269,9 @@ WHERE Capital IN (SELECT Nombre FROM Capitales
 	WHERE Poblacion_hombres > Poblacion_mujeres)
 \end{verbatim}
 
-La subconsulta entre paréntesis crea una tabla con los nombres de las capitales que cumplen la condición relativa a las poblaciones de hombres y mujeres. La otra consulta selecciona los países cuya capital aparece en dicha tabla (esa inclusión la define el comando \texttt{IN}). En conjunto, tenemos una única consulta, pero que se basa en dos tablas con una relación entre sí.
+La subconsulta entre paréntesis crea una tabla con los nombres de las capitales que cumplen la condición relativa a las poblaciones de hombres y mujeres. La otra consulta selecciona los países cuya capital aparece en dicha tabla (esa inclusión la define el comando ``IN``). En conjunto, tenemos una única consulta, pero que se basa en dos tablas con una relación entre sí.
 
-Los campos \texttt{Capital} en la tabla \texttt{Países} y \texttt{Nombre} en la tabla \texttt{Capitales} son los que establecen la relación entre ambas tablas, permitiendo unir la información de estas. No obstante, el resultado de la expresión anterior no es una unión tal y como la hemos visto. Para realizar una unión mediante SQL podemos utilizar una expresión como la siguiente:
+Los campos ``Capital`` en la tabla ``Países`` y ``Nombre`` en la tabla ``Capitales`` son los que establecen la relación entre ambas tablas, permitiendo unir la información de estas. No obstante, el resultado de la expresión anterior no es una unión tal y como la hemos visto. Para realizar una unión mediante SQL podemos utilizar una expresión como la siguiente:
 
 \begin{verbatim}
 SELECT *
@@ -281,7 +279,7 @@ FROM Paises, Capitales
 WHERE Paises.Capital = Capitales.Nombre
 \end{verbatim}
 
-Como se dijo, las uniones no se limitan un tipo particular de unión como el que vimos. SQL incluye el comando \texttt{JOIN}, el cual permite trabajar con todo ese abanico de distintas uniones.
+Como se dijo, las uniones no se limitan un tipo particular de unión como el que vimos. SQL incluye el comando ``JOIN``, el cual permite trabajar con todo ese abanico de distintas uniones.
 
 Además de lo anterior, pueden emplearse operadores para que la tabla que constituye la respuesta a la consulta contenga campos adicionales calculados en función de los existentes en la tabla origen. Por ejemplo:
 
@@ -291,7 +289,7 @@ FROM Paises
 WHERE Moneda = 'Euro'
 \end{verbatim}
 
-Esta consulta recupera todos los países donde la moneda utilizada es el Euro, y para cada uno de ellos define dos atributos: el nombre (directamente obtenido de la propia tabla de países) y la densidad (en un campo denominado \texttt{DENSIDAD}, calculado como el cociente entre la población y el área).
+Esta consulta recupera todos los países donde la moneda utilizada es el Euro, y para cada uno de ellos define dos atributos: el nombre (directamente obtenido de la propia tabla de países) y la densidad (en un campo denominado ``DENSIDAD``, calculado como el cociente entre la población y el área).
 
 En resumen, el lenguaje SQL permite expresar todo tipo de consultas y hacerlo de forma sistemática y relativamente sencilla, de una forma bastante similar a como lo haríamos en un lenguaje natural.
 
@@ -321,22 +319,22 @@ No obstante, no es solo mediante un lenguaje de consulta como podemos plantear d
 
 Este es el mismo mecanismo que emplearíamos a la hora de trabajar con un mapa impreso clásico. Si señalamos sobre nuestro mapamundi y preguntamos ¿qué país es *este*?, estamos estableciendo física y visualmente el criterio de consulta con nuestro propio dedo. Dentro de un SIG, podemos hacer clic con el ratón (nuestro dedo dentro de dicho SIG) en un determinado punto de la representación en pantalla de una capa geográfica, y realmente estamos diciendo: ¿qué entidad de la capa es la que hay *aquí*? o ¿qué entidad es *esta*? 
 
-Al hacer esto, estamos empleando las relaciones espaciales que veíamos en el capítulo \ref{Analisis_espacial}, y en particular en este caso la inclusión de un punto dentro de un polígono. Al efectuar la consulta, el SIG comprueba si el punto definido por nuestro clic de ratón se encuentra dentro de los polígonos que representan cada país. Si eso es así, el país en cuestión queda seleccionado.
+Al hacer esto, estamos empleando las relaciones espaciales que veíamos en el capítulo :ref:`Analisis_espacial`, y en particular en este caso la inclusión de un punto dentro de un polígono. Al efectuar la consulta, el SIG comprueba si el punto definido por nuestro clic de ratón se encuentra dentro de los polígonos que representan cada país. Si eso es así, el país en cuestión queda seleccionado.
 
 Una vez más, no debe pensarse que esta consulta puntual es exclusiva de los datos vectoriales. Podemos igualmente ir a una localización dada y preguntar por lo que hay en dicha localización con independencia del modelo de datos. Una capa ráster nos devolverá sencillamente el valor en la celda que cae en el emplazamiento señalado. Si la capa posee varias bandas, tal como una imagen multiespectral, nos devolverá un vector de valores correspondientes a los valores de todas las bandas en dicho punto.
 
-Como veremos en el capítulo \ref{Servidores_y_clientes_remotos} dedicado a servicios remotos, algunos de estos servicios nos permiten realizar consultas igualmente sobre datos ráster y coberturas. En cada punto de la cobertura tenemos una información compleja, que podemos recuperar del mismo modo que para otro tipo de capas, sin más que preguntar a dicha cobertura acerca los datos correspondientes a un punto dado.
+Como veremos en el capítulo :ref:`Servidores_y_clientes_remotos` dedicado a servicios remotos, algunos de estos servicios nos permiten realizar consultas igualmente sobre datos ráster y coberturas. En cada punto de la cobertura tenemos una información compleja, que podemos recuperar del mismo modo que para otro tipo de capas, sin más que preguntar a dicha cobertura acerca los datos correspondientes a un punto dado.
 
 La consulta sobre capas no vectoriales es, sin embargo, menos interesante, pues el mayor interés aparece cuando consideramos entidades en el modelo geográfico y efectuamos consultas sobre las propiedades espaciales de dichas entidades. El modelo vectorial es el mejor adaptado a las consultas, no solo cuando trabajamos con la componente temática, como ya vimos, sino igualmente cuando se trata de consultas puramente espaciales.
 
-La consulta sobre un punto concreto que hemos descrito la incorporan la gran mayoría de los SIG y es una herramienta de primer orden, sumamente sencilla, que nos permite hacer un uso simple aunque muy práctico de los datos geográficos. No obstante, una consulta espacial de este tipo puede ser más compleja e incorporar en el criterio algo más que un único punto. Por ejemplo, podemos seleccionar todas las entidades dentro de un área rectangular, o bien dentro de un polígono cualquiera que podríamos definir directamente sobre la propia representación en pantalla (Figura \ref{Fig:Seleccion_rectangulo}).
+La consulta sobre un punto concreto que hemos descrito la incorporan la gran mayoría de los SIG y es una herramienta de primer orden, sumamente sencilla, que nos permite hacer un uso simple aunque muy práctico de los datos geográficos. No obstante, una consulta espacial de este tipo puede ser más compleja e incorporar en el criterio algo más que un único punto. Por ejemplo, podemos seleccionar todas las entidades dentro de un área rectangular, o bien dentro de un polígono cualquiera que podríamos definir directamente sobre la propia representación en pantalla (Figura :num:`#figseleccionrectangulo`).
 
 .. figure:: Seleccion_rectangulo.png
 
 	Consulta mediante rectángulo. Los países que intersecan con los limites definidos por dicho rectángulo quedan seleccionados.
 
 
-.. _Fig:Seleccion_rectangulo: 
+.. _figseleccion_rectangulo: 
 
 
 Las relaciones que utilizamos en este caso ya no son entre punto y polígono, sino entre polígonos. La selección puede incluir tanto los países que se encuentran por completo contenidos dentro del polígono, como aquellos que intersecan con este. Es decir, que podemos aplicar varias de las relaciones que en su momento estudiamos entre dos polígonos.
@@ -360,11 +358,11 @@ El lenguaje SQL que ya conocemos no resulta suficiente para expresar algunas de 
 
 Un primera solución aparece con la revisión del lenguaje SQL llevada a cabo en 1999 (conocida como SQL:1999 o SQL3), en la cual se permite la creación de tipos personalizados de datos. Frente a los tipos originales tales como enteros, cadenas o valores booleanos, todos ellos poco adecuados para almacenar objetos espaciales, existe ahora la posibilidad de crear tipos más acordes con la naturaleza espacial de la información almacenada. SQL3 está orientado a objetos, y cada tipo puede tener una serie de métodos asociados, lo cual facilita la realización de consultas complejas.
 
-El problema radica en que la propia flexibilidad de este mecanismo no favorece la unicidad necesaria para la interoperabilidad de los datos. Un mismo tipo puede implementarse como tipo SQL de muchas formas distintas, no siendo estas compatibles entre sí. Es ahí donde hacen su aparición los estándares, los cuales veremos con más detalle en el capítulo \ref{Estandares}.
+El problema radica en que la propia flexibilidad de este mecanismo no favorece la unicidad necesaria para la interoperabilidad de los datos. Un mismo tipo puede implementarse como tipo SQL de muchas formas distintas, no siendo estas compatibles entre sí. Es ahí donde hacen su aparición los estándares, los cuales veremos con más detalle en el capítulo :ref:`Estandares`.
 
-De especial importancia en este sentido es la norma denominada *Simple Features for SQL*, que especifica cómo han de implementarse los tipos SQL correspondientes a los objetos espaciales, con objeto de estandarizar esta implementación. Así, una base de datos incorporará dichos tipos en sus modelos y estos podrán ser posteriormente utilizados para la realización de consultas SQL. En el ya citado capítulo \ref{Estandares} explicaremos en detalle este y otros estándares.
+De especial importancia en este sentido es la norma denominada *Simple Features for SQL*, que especifica cómo han de implementarse los tipos SQL correspondientes a los objetos espaciales, con objeto de estandarizar esta implementación. Así, una base de datos incorporará dichos tipos en sus modelos y estos podrán ser posteriormente utilizados para la realización de consultas SQL. En el ya citado capítulo :ref:`Estandares` explicaremos en detalle este y otros estándares.
 
-El aspecto más importante para el contenido de este apartado no es, no obstante, el modelo de datos u otras características de la base de datos en sí (vimos esto ya con más detalle en el capítulo \ref{Bases_datos}), sino la forma en que esto afecta a la realización de consultas. Por ello, la parte de mayor interés son los métodos que esos tipos implementan, y que pueden emplearse para dar forma a consultas espaciales como las que veíamos en el apartado previo.
+El aspecto más importante para el contenido de este apartado no es, no obstante, el modelo de datos u otras características de la base de datos en sí (vimos esto ya con más detalle en el capítulo :ref:`Bases_datos`), sino la forma en que esto afecta a la realización de consultas. Por ello, la parte de mayor interés son los métodos que esos tipos implementan, y que pueden emplearse para dar forma a consultas espaciales como las que veíamos en el apartado previo.
 
 Estos métodos vienen también especificados por la norma Simple Features, y como ya veremos podemos dividirlos en tres grupos: funciones básicas, operaciones topológicas y de conjunto, y operaciones de análisis espacial. Los resultados que arrojan estos métodos se pueden emplear para dar forma a consultas que realizan operaciones como la selección o la unión. Ya vimos cómo llevar estas a cabo mediante consultas SQL, y los ejemplos con contenido espacial del apartado son también operaciones de este tipo, bien sean consultas o uniones. Veamos, pues, cómo podrían realizarse mediante consultas SQL empleando los métodos que han de presentar los tipos que cumplen la especificación Simple Features.
 
@@ -377,13 +375,13 @@ WHERE Cross(Rios.shape, Paises.Shape)
       AND Rios.Nombre = 'Nilo'
 \end{verbatim}
 
-La expresión \texttt{Cross(Rios.Shape, Paises.Shape)} hace uso del método \texttt{Cross}, que devuelve 1 en caso de que las dos geometrías pasadas como parámetros se intersequen, y 0 en caso contrario. Este se utiliza para realizar la selección solo sobre aquellas que cumplan la condición de ser cortadas por una geometría dada, en este caso la del río Nilo. 
+La expresión ``Cross(Rios.Shape, Paises.Shape)`` hace uso del método ``Cross``, que devuelve 1 en caso de que las dos geometrías pasadas como parámetros se intersequen, y 0 en caso contrario. Este se utiliza para realizar la selección solo sobre aquellas que cumplan la condición de ser cortadas por una geometría dada, en este caso la del río Nilo. 
 
 La relación espacial entre el río y los distintos países no puede evaluarse haciendo uso de SQL sin extensiones espaciales, puesto que la información sobre dicha relación no reside en la tabla de atributos, que es el conjunto de datos con el que trabaja el lenguaje SQL para realizar consultas. La información reside en las geometrías asociadas, y acceder a la información de estas requiere utilizar los métodos correspondientes a los distintos tipos espaciales.
 
-Algunos métodos como el método \texttt{Cross} anterior expresan condiciones, y al ser estas evaluadas devuelven valores 1 o 0 (verdadero/falso). Los métodos existentes, no obstante, permiten también calcular nuevos parámetros, superando así la mera consulta y pudiendo obtenerse resultados con información adicional extraído de las propias geometrías. 
+Algunos métodos como el método ``Cross`` anterior expresan condiciones, y al ser estas evaluadas devuelven valores 1 o 0 (verdadero/falso). Los métodos existentes, no obstante, permiten también calcular nuevos parámetros, superando así la mera consulta y pudiendo obtenerse resultados con información adicional extraído de las propias geometrías. 
 
-Un ejemplo de esto es el método \texttt{Length}, que devuelve un valor numérico correspondiente a la longitud de una línea. Si se combina con el método \texttt{Intersection}, que devuelve una nueva geometría a partir de la intersección de otras dos, podemos resolver la consulta anterior pero añadiendo en la tabla resultado no solo el nombre de los países que son atravesados por el Nilo, sino también la distancia que este río recorre a través de cada uno de ellos.
+Un ejemplo de esto es el método ``Length``, que devuelve un valor numérico correspondiente a la longitud de una línea. Si se combina con el método ``Intersection``, que devuelve una nueva geometría a partir de la intersección de otras dos, podemos resolver la consulta anterior pero añadiendo en la tabla resultado no solo el nombre de los países que son atravesados por el Nilo, sino también la distancia que este río recorre a través de cada uno de ellos.
 
 La consulta tendría en este caso una forma como la siguiente:
 
@@ -424,7 +422,7 @@ Describir los índices empleados en bases de datos no espaciales requiere descri
 
 Más interesantes que estos índices nos resultan aquellos que se utilizan en las bases de datos espaciales, que denominamos *índices espaciales*. El concepto es similar al de índices de bases de datos no espaciales: elementos que permiten optimizar las consultas mediante una correcta estructuración de los datos, en particular en este caso de su componente espacial.
 
-Los índices espaciales no deben resultarnos desconocidos, ya que los vimos en el capítulo \ref{Tipos_datos}, estudiando en su momento los tipos existentes y su proceso de creación. Ahora en este capítulo veremos el verdadero uso práctico de estos, y así podremos comprender mejor la necesidad de su existencia.
+Los índices espaciales no deben resultarnos desconocidos, ya que los vimos en el capítulo :ref:`Tipos_datos`, estudiando en su momento los tipos existentes y su proceso de creación. Ahora en este capítulo veremos el verdadero uso práctico de estos, y así podremos comprender mejor la necesidad de su existencia.
 
 Puede entenderse igualmente la idea de un índice espacial mediante un sencillo ejemplo de cómo empleamos ideas parecidas a los índices espaciales de forma natural cuando tratamos de resolver una consulta espacial sin la ayuda de un SIG. Supongamos que tenemos nuestro mapa de países del mundo y queremos averiguar qué países tienen su frontera a menos de 3000 kilómetros de la frontera de España. ¿Cómo operaríamos de manera natural para dar respuesta a esta consulta?
 
@@ -438,19 +436,19 @@ En el refinamiento, se toman los elementos que han superado la fase de filtrado,
 
 En resumen, se puede decir que los índices espaciales nos permiten obtener resultados en un área concreta sin necesidad de analizar todo el espacio ocupado por el total de los datos. Estos índices espaciales no son exclusivos del trabajo con bases de datos y la realización de consultas espaciales, sino que se encuentran implícitos en muchas operaciones que vamos a ver en los próximos capítulos dentro de esta parte del libro. Estas operaciones en realidad necesitan para su desarrollo efectuar algún tipo de consulta, y dicha consulta depende de los índices espaciales para ejecutarse con un buen rendimiento.
 
-Por ejemplo, las funciones de interpolación, que veremos en el capítulo \ref{Creacion_capas_raster}, para calcular el valor en una coordenada concreta, y a partir de los valores de una capa de puntos, habitualmente utilizan los :math:`n` puntos más cercanos a dicha coordenada. Para saber cuáles son estos :math:`n` puntos, podrían calcularse las distancias desde todos los puntos de la capa hasta la coordenada en cuestión, y después tomar los :math:`n` para los cuales esa distancia es menor. Esta forma de proceder, sin embargo, requiere un número de cálculos demasiado elevado, que haría imposible ejecutar en un tiempo lógico dichos algoritmos de interpolación cuando los puntos de la capa sean numerosos (lo cual es muy frecuente).
+Por ejemplo, las funciones de interpolación, que veremos en el capítulo :ref:`Creacion_capas_raster`, para calcular el valor en una coordenada concreta, y a partir de los valores de una capa de puntos, habitualmente utilizan los :math:`n` puntos más cercanos a dicha coordenada. Para saber cuáles son estos :math:`n` puntos, podrían calcularse las distancias desde todos los puntos de la capa hasta la coordenada en cuestión, y después tomar los :math:`n` para los cuales esa distancia es menor. Esta forma de proceder, sin embargo, requiere un número de cálculos demasiado elevado, que haría imposible ejecutar en un tiempo lógico dichos algoritmos de interpolación cuando los puntos de la capa sean numerosos (lo cual es muy frecuente).
 
-Si vemos la figura \ref{Fig:Ej_indices_espaciales}, para calcular cuales son los diez puntos (en negro) más cercanos a una coordenada dada (en rojo), no mediríamos las distancias de todos ellos. Mirando a simple vista podemos estimar que esos puntos van a estar dentro de un círculo aproximadamente como el representado en la figura, y podemos prescindir de los restantes a la hora de calcular las distancias exactas. Dentro de ese circulo hay más de diez puntos, con lo cual debe *refinarse* ese resultado antes de poder ofrecer una respuesta exacta a la consulta.
+Si vemos la figura :num:`#figejindicesespaciales`, para calcular cuales son los diez puntos (en negro) más cercanos a una coordenada dada (en rojo), no mediríamos las distancias de todos ellos. Mirando a simple vista podemos estimar que esos puntos van a estar dentro de un círculo aproximadamente como el representado en la figura, y podemos prescindir de los restantes a la hora de calcular las distancias exactas. Dentro de ese circulo hay más de diez puntos, con lo cual debe *refinarse* ese resultado antes de poder ofrecer una respuesta exacta a la consulta.
 
 .. figure:: Ej_indices_espaciales.pdf
 
 	Para calcular los diez puntos más cercanos a una coordenada dada (en rojo), nuestra intuición espacial nos ayuda a decidir que estos se han de buscar en un subconjunto reducido tal como el de los situados dentro del circulo azul de la figura. Este proceso de *filtrado* y *refinamiento* ahorra operaciones, y es el fundamento conceptual de los índices espaciales.
 
 
-.. _Fig:Ej_indices_espaciales: 
+.. _figej_indices_espaciales: 
 
 
-Otros procesos en los que son vitales los índices espaciales son las operaciones de solape entre capas de polígonos, que veremos en el capítulo \ref{Operaciones_geometricas}. Sin ellos, el rendimiento de estas operaciones espaciales sería mucho menor o incluso, como en el caso de la interpolación, totalmente insuficiente para que tales operaciones se puedan aplicar en la mayoría de los casos.
+Otros procesos en los que son vitales los índices espaciales son las operaciones de solape entre capas de polígonos, que veremos en el capítulo :ref:`Operaciones_geometricas`. Sin ellos, el rendimiento de estas operaciones espaciales sería mucho menor o incluso, como en el caso de la interpolación, totalmente insuficiente para que tales operaciones se puedan aplicar en la mayoría de los casos.
 
 Resumen
 =====================================================
