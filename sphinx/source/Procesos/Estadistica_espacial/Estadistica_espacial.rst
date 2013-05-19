@@ -70,20 +70,23 @@ El centro medio es el centro de gravedad del conjunto de puntos, tomando como ma
 
 Un uso habitual del centro medio lo encontramos en los estudios demográficos, que pueden analizar la evolución de las poblaciones sobre el territorio estudiando cómo se ha desplazado el centro medio a través del tiempo
 
-El equivalente espacial de la mediana es el *centro mediano*. Al igual que el centro medio, el centro mediano es también un punto. En este caso sus coordenadas son las medianas de las de los puntos analizados en cada eje \cite{Cole1968Wiley}.
+El equivalente espacial de la mediana es el *centro mediano*. Al igual que el centro medio, el centro mediano es también un punto. En este caso sus coordenadas son las medianas de las de los puntos analizados en cada eje  :cite:p:`Cole1968Wiley`.
 
 Puede ser interesante también analizar el centro mediano como una linea en lugar de un punto. Por ejemplo, una linea vertical que pasa por la componente en :math:`x` del centro mediano. Si trabajamos con una serie de puntos que representan poblaciones y estos se ponderan según su número de habitantes, esta línea divide el territorio en dos zonas igualmente pobladas. La mitad de los habitantes viven a un lado de ella, y la otra mitad al otro lado. 
 
 En la figura ~:num:`#figcentromediano` puede verse una representación de lo anterior.
 
-.. figure:: Centro_mediano.png
+.. _figcentromediano:
+
+.. figure:: Centro_mediano.*
+	:width: 650px
 
 	Centro mediano y lineas de división pasando por este, las cuales dividen el conjunto de puntos en dos partes iguales a Este y Oeste, y Norte y Sur, respectivamente.
 
-.. _figcentro_mediano: 
+ 
 
 
-El inconveniente del centro mediano es que depende de los ejes escogidos y no es por tanto invariante ante rotaciones. Para solucionar esto suele emplearse como definición alternativa la de aquel punto del espacio que hace mínima la suma de distancias a todos los puntos de datos\cite{King1962Prentice}. El cálculo de este punto requiere de un proceso iterativo \cite{Rogerson2001Sage} en el cual se tiene que 
+El inconveniente del centro mediano es que depende de los ejes escogidos y no es por tanto invariante ante rotaciones. Para solucionar esto suele emplearse como definición alternativa la de aquel punto del espacio que hace mínima la suma de distancias a todos los puntos de datos :cite:p:`King1962Prentice`. El cálculo de este punto requiere de un proceso iterativo  :cite:p:`Rogerson2001Sage` en el cual se tiene que 
 
 \begin{eqnarray}
 x = \frac{\sum_{i=1}^N \frac{d_i}{a_i}x_i}{\sum_{i=1}^N \frac{d_i}{a_i}}  \\
@@ -92,7 +95,7 @@ y = \frac{\sum_{i=1}^N \frac{d_i}{a_i}y_i}{\sum_{i=1}^N \frac{d_i}{a_i}} \nonumb
 
 donde :math:`d_i` es la distancia del punto i--ésimo a la localización del centro mediano en la iteración actual. Como primera coordenada para iterar, una buena elección es el propio centro medio. El proceso se detiene cuando la distancia entre el nuevo centro mediano y el de la iteración anterior es menor que un determinado umbral establecido de antemano.
 
-Respecto a las medidas de dispersión, el equivalente a la desviación típica es la denominada *distancia típica*, cuya expresión es la siguiente \cite{Bachi1963RSA}
+Respecto a las medidas de dispersión, el equivalente a la desviación típica es la denominada *distancia típica*, cuya expresión es la siguiente  :cite:p:`Bachi1963RSA`
 
 .. math::
 
@@ -112,11 +115,14 @@ Es interesante comentar que la distancia a la media en el concepto habitual de d
 
 Una forma de representar esta distancia típica es mediante un circulo de radio dicha distancia centrado en el centro medio (Figura ~:num:`#figcentromedioydesviacion`)
 
-.. figure:: Centro_medio_y_desviacion.png
+.. _figcentromedioydesviacion:
+
+.. figure:: Centro_medio_y_desviacion.*
+	:width: 650px
 
 	Circulo de radio igual a la distancia típica centrado en el centro medio del conjunto.
 
-.. _figcentro_medio_y_desviacion: 
+ 
 
 
 La distancia típica puede, igualmente, calcularse ponderando los distintos puntos, quedando su expresión como
@@ -146,7 +152,7 @@ Las distancias típicas en cada uno de estos dos semiejes vienen expresadas por
 \delta_{y'} &=& \bigg(\sum_{i=1}^N dx^2_i \sin^2{\alpha} + 2\left(\sum_{i=1}^N dx_i dy_i\right)\sin{\alpha}\cos{\alpha} \nonumber \\ &&{} + \sum_{i=1}^N dy_i^2 \cos^2{\alpha}\bigg)^{\frac{1}{2}}
 \end{eqnarray}
 
-Por último, la medida de desviación relativa que equivale en la estadística espacial al coeficiente de variación es la *distancia relativa* \cite{McGrew1993William}, que se calcula dividiendo la distancia típica por el radio de un círculo con el mismo área que la zona de estudio. Si esta zona es circular, se tiene por tanto
+Por último, la medida de desviación relativa que equivale en la estadística espacial al coeficiente de variación es la *distancia relativa*  :cite:p:`McGrew1993William`, que se calcula dividiendo la distancia típica por el radio de un círculo con el mismo área que la zona de estudio. Si esta zona es circular, se tiene por tanto
 
 .. math::
 
@@ -164,17 +170,22 @@ En caso de que esta zona sea cuadrada y de área :math:`A` , se tiene que
 
 En la figura ~:num:`#figdistanciarelativa` puede verse cómo distribuciones espaciales iguales (con la misma distancia típica) representan dispersiones relativas distintas en relación a la zona de estudio.
 
-.. figure:: Distancia_relativa.pdf
+.. _figdistanciarelativa:
+
+.. figure:: Distancia_relativa.*
+	:width: 650px
 
 	Aunque ambas distribuciones tienen la misma distancia típica, la dispersión en relación al área analizada es distinta, con lo que los valores de distancia relativa serán distintos.
 
-.. _figdistancia_relativa: 
+ 
 
+
+.. _Estadisticas_lineas:
 
 Estadísticas sobre líneas. Variables circulares
 =====================================================
 
-.. _Estadisticas_lineas:
+
 
 Dentro de los objetos geográficos, las líneas merecen algunos comentarios aparte en lo que a su análisis respecta. Tanto las líneas como los polígonos pueden ser reducidos en ultima instancia a puntos (los polígonos bien por sus puntos constituyentes o bien por el centroide, el cual coincide con el centro medio), y analizados estos con algunas de las fórmulas antes vistas o las que se verán más adelante. La particularidad de las lineas estriba en que, además de valores puntuales o de área (como los de los polígonos), definen igualmente direcciones y ángulos de giro entre sus segmentos. El análisis estadístico de variables circulares como estas presenta sus propias particularidades, que deben conocerse para poder extraer resultados correctos a partir de datos de esta índole.
 
@@ -182,7 +193,7 @@ Un ejemplo del uso de variables direccionales lo encontramos, por ejemplo, en el
 
 En el caso que nos ocupa del estudio de líneas, pueden considerarse todos y cada uno de los segmentos de estas como líneas en sí, o bien la linea ficticia que une el inicio del primer segmento con el final del último.
 
-A continuación se mostrarán brevemente los estadísticos más frecuentes para datos circulares, con especial énfasis en su aplicación al análisis de líneas dentro de un SIG. Descripciones más detalladas de estos y otros elementos de estadística circular, junto a sus aplicaciones en áreas donde el empleo de SIG es habitual, pueden consultarse en \cite{Batchelet1981Academic} o \cite{Fisher1993Cambridge}.
+A continuación se mostrarán brevemente los estadísticos más frecuentes para datos circulares, con especial énfasis en su aplicación al análisis de líneas dentro de un SIG. Descripciones más detalladas de estos y otros elementos de estadística circular, junto a sus aplicaciones en áreas donde el empleo de SIG es habitual, pueden consultarse en  :cite:p:`Batchelet1981Academic` o  :cite:p:`Fisher1993Cambridge`.
 
 Para comenzar, el cálculo de la media de dos ángulos ejemplifica bien las particularidades de los datos circulares. Sean tres ángulos de 5\degree, 10\degree y 15\degree respectivamente. El concepto habitual de media aplicado a estos valores resultaría en un ángulo medio de 10\degree, correcto en este caso. Si giramos ese conjunto de ángulos 10 grados en sentido antihorario, dejándolos como 355\degree, 0\degree, 5\degree, la media debería ser 0\degree, pero en su lugar se tiene un valor medio de 120\degree.
 
@@ -212,11 +223,14 @@ siendo :math:`S` y :math:`C` las sumas de senos y cosenos, respectivamente.
 
 El módulo :math:`\overline{R}` se conoce también como *concentración angular* y es una medida inversa de la dispersión angular. No obstante, hay que tener en cuenta que valores próximos a cero, los cuales indicarían gran dispersión, puede proceder de dos agrupaciones de ángulos similares (es decir, con poca dispersión) si estas agrupaciones se diferencian entre sí 180\degree.
 
-.. figure:: Media_vectorial.pdf
+.. _figmediavectorial:
+
+.. figure:: Media_vectorial.*
+	:width: 650px
 
 	Media vectorial (en rojo) de una serie de segmentos.
 
-.. _figmedia_vectorial: 
+ 
 
 
 
@@ -224,7 +238,7 @@ Cuando se trabaja con direcciones en lugar de orientaciones, es frecuente multip
 
 La forma en que las distintas orientaciones se congregan entorno a la media, relacionada directamente con la dispersión, puede servir para inferir la existencia de una dirección predominante o bien que los valores angulares se hallan uniformemente distribuidos. La comprobación de que existe una tendencia direccional es de interés para el estudio de muchos procesos tales como el estudio de movimiento de individuos de una especie, que puede denotar la existencia de una linea migratoria preferida o revelar la presencia de algún factor que causa dicha predominancia en las direcciones.
 
-Existen diversos test que permiten aceptar o rechazar la hipótesis de existencia de uniformidad entre los cuales destacan el test de Rayleigh,  el test V de Kuiper \cite{Kuiper1960Akad} o el test de espaciamiento de Rao \cite{Rao1969PhD}  
+Existen diversos test que permiten aceptar o rechazar la hipótesis de existencia de uniformidad entre los cuales destacan el test de Rayleigh,  el test V de Kuiper  :cite:p:`Kuiper1960Akad` o el test de espaciamiento de Rao  :cite:p:`Rao1969PhD`  
 
 Para este último, se tiene un estadístico :math:`U` según
 
@@ -254,12 +268,14 @@ Puesto que las desviaciones positivas deben ser iguales a las negativas, lo ante
 	 U = \sum_{i=1}^N (T_i - \lambda)
 
 
-Para un numero de puntos dado y un intervalo de confianza establecido, los valores de :math:`U` están tabulados, y pueden así rechazarse o aceptarse la hipótesis nula de uniformidad. Dichas tablas pueden encontrarse, por ejemplo, en \cite{Russell1995CSSC}.
+Para un numero de puntos dado y un intervalo de confianza establecido, los valores de :math:`U` están tabulados, y pueden así rechazarse o aceptarse la hipótesis nula de uniformidad. Dichas tablas pueden encontrarse, por ejemplo, en  :cite:p:`Russell1995CSSC`.
+
+.. _Analisis_patrones_puntos:
 
 Análisis de patrones de puntos
 =====================================================
 
-.. _Analisis_patrones_puntos:
+
 
 Las coordenadas de un conjunto de puntos no solo representan una información individual de cada uno de ellos, sino de igual modo para todo el conjunto a través de las relaciones entre ellas. La disposición de una serie de puntos en el espacio conforma lo que se conoce como un *patrón de puntos*, el cual puede aportar información muy valiosa acerca de las variables y procesos recogidos en dichos puntos. Por ejemplo, si estos representan lugares donde se han observado individuos de una especie, su distribución espacial puede, por ejemplo, servir como indicador de la interacción entre dichos individuos o con el medio.
 
@@ -278,11 +294,14 @@ Como se puede observar en la figura ~:num:`#figpatronespuntos`, existen tres tip
 
 
 
-.. figure:: Patrones_puntos.png
+.. _figpatronespuntos:
+
+.. figure:: Patrones_puntos.*
+	:width: 650px
 
 	De izquierda a derecha, patrones de puntos agregado, aleatorio y regular.
 
-.. _figpatrones_puntos: 
+ 
 
 
 El análisis de patrones de puntos se fundamenta básicamente en la comparación entre las propiedades de una distribución teórica aleatoria (distribución de Poisson) y las de la distribución observada. Esta distribución teórica aleatoria cumple que se da *aleatoriedad espacial completa* (CSR, *Complete Spatial Randomness*, en inglés). De este modo, se puede decidir si esta última es también aleatoria en caso de existir similitud, o bien es de alguno de los dos tipos restantes, según sea la discrepancia existente.
@@ -310,25 +329,28 @@ siendo :math:`N` el número de puntos y :math:`A` el área de la zona de estudio
 
 Suponiendo un área de 1 km:math:`^2`, el lado del cuadrante para analizar los ejemplos de la figura :num:`#figdebilidadcuadrantes` será de 353 metros.
 
-Con la serie de datos que indica el conteo de puntos en cada cuadrante, se procede al análisis estadístico. Este puede hacerse comparando los conteos en los cuadrantes o según la relación entre la media y la varianza de la serie. En este segundo caso, partimos de que en una distribución aleatoria es de esperar una varianza igual a la media \cite{Cressie1991Wiley}. Por tanto, el cociente entre la varianza y la media debe ser cercano a 1. Si en la distribución analizada este cociente está próximo a ese valor, se tratará de una distribución aleatoria. En una distribución uniforme, la varianza (y por tanto el cociente con la media) será cercana a 0. En las distribución agrupadas, la varianza sera mayor, y el cociente por tanto superior a 1.
+Con la serie de datos que indica el conteo de puntos en cada cuadrante, se procede al análisis estadístico. Este puede hacerse comparando los conteos en los cuadrantes o según la relación entre la media y la varianza de la serie. En este segundo caso, partimos de que en una distribución aleatoria es de esperar una varianza igual a la media  :cite:p:`Cressie1991Wiley`. Por tanto, el cociente entre la varianza y la media debe ser cercano a 1. Si en la distribución analizada este cociente está próximo a ese valor, se tratará de una distribución aleatoria. En una distribución uniforme, la varianza (y por tanto el cociente con la media) será cercana a 0. En las distribución agrupadas, la varianza sera mayor, y el cociente por tanto superior a 1.
 
 El análisis de cuadrantes no es en realidad una medida del patrón, sino de la dispersión. Además, debido al uso de una unidad de análisis (el cuadrante) fija, puede no ser capaz de localizar agrupamientos locales en esta. 
 
 Otra debilidad de este método es que no es capaz de diferenciar entre distribuciones tales como las de la figura :num:`#figdebilidadcuadrantes`, claramente distintas pero que arrojan un resultado idéntico al aplicar esta metodología con los cuadrantes mostrados.
 
-.. figure:: Debilidad_cuadrantes.pdf
+.. _figdebilidadcuadrantes:
+
+.. figure:: Debilidad_cuadrantes.*
+	:width: 650px
 
 	Dos disposiciones de puntos distintas que darían un mismo resultado al analizarse por el método de cuadrantes.
 
-.. _figdebilidad_cuadrantes: 
+ 
 
 
-No obstante, la aplicación de este método en campos como la biología es muy habitual, y se han desarrollado numerosas extensiones del mismo tales como el *índice de David--Moore* \cite{David1954AnnalsBotany}, el *índice de frecuencia de agregados* \cite{Douglas1975Sankhya}, o el índice :math:`I_{\delta}` de \cite{Morisita1959Kyushu}, entre otros muchos.
+No obstante, la aplicación de este método en campos como la biología es muy habitual, y se han desarrollado numerosas extensiones del mismo tales como el *índice de David--Moore*  :cite:p:`David1954AnnalsBotany`, el *índice de frecuencia de agregados*  :cite:p:`Douglas1975Sankhya`, o el índice :math:`I_{\delta}` de  :cite:p:`Morisita1959Kyushu`, entre otros muchos.
 
 Análisis de vecino más cercano
 --------------------------------------------------------------
 
-El *método de vecino más cercano* \cite{Evans1954Ecology} permite solventar algunos de los problemas asociados al análisis de cuadrantes. Para ello, se basa en las distancias de cada punto a su vecino más cercano. Comparando estas distancias con el valor que cabe esperar en una distribución aleatoria, puede deducirse el tipo de estructura en la distribución observada.
+El *método de vecino más cercano*  :cite:p:`Evans1954Ecology` permite solventar algunos de los problemas asociados al análisis de cuadrantes. Para ello, se basa en las distancias de cada punto a su vecino más cercano. Comparando estas distancias con el valor que cabe esperar en una distribución aleatoria, puede deducirse el tipo de estructura en la distribución observada.
 
 El valor que define el patrón de puntos a estudiar es el *índice de vecino más cercano*, que se calcula como 
 
@@ -358,7 +380,7 @@ siendo :math:`\lambda` la densidad de puntos por unidad de área, es decir
 	 \lambda = \frac{N}{A}
 
 
-\cite{Donelly1978Cambridge} propone corregir lo anterior para tener en cuenta los efectos de borde, utilizando la siguiente expresión:
+ :cite:p:`Donelly1978Cambridge` propone corregir lo anterior para tener en cuenta los efectos de borde, utilizando la siguiente expresión:
 
 .. math::
 
@@ -426,7 +448,7 @@ Función K de Ripley
 
 El problema de escala vimos que era patente en el método del análisis de cuadrantes, puesto que existía una fuerte dependencia del tamaño del cuadrante. La función K de Ripley trata de incorporar la escala como una variable más del análisis, convirtiendo dicha dependencia en un hecho favorable en lugar de una desventaja.
 
-Para ello, en lugar de fijar una escala de análisis y una serie fija de cuadrantes de análisis, se tiene una serie aleatoria de zonas de análisis, las cuales se estudian a distintas escalas (con distintos tamaños). Para un proceso puntual dado, se trata de obtener una función que indique cuál es el numero de ocurrencias que deben darse a una distancia menor que un umbral dado :math:`h` de cualquier punto generado por dicho proceso. La función que cumple esta definición se denomina función K \cite{Ripley1977JRSS}, y puede expresarse como
+Para ello, en lugar de fijar una escala de análisis y una serie fija de cuadrantes de análisis, se tiene una serie aleatoria de zonas de análisis, las cuales se estudian a distintas escalas (con distintos tamaños). Para un proceso puntual dado, se trata de obtener una función que indique cuál es el numero de ocurrencias que deben darse a una distancia menor que un umbral dado :math:`h` de cualquier punto generado por dicho proceso. La función que cumple esta definición se denomina función K  :cite:p:`Ripley1977JRSS`, y puede expresarse como
 
 .. math::
 
@@ -456,7 +478,7 @@ I_h(d_{ij} = \left \{
 \end{array}\right.
 \end{equation}
 
-En este estimador no se consideran los efectos de borde, y aquellos puntos situados cerca de la frontera de la zona de estudio tendrán estimaciones inferiores a las reales. Un estimador que corrige estos efectos \cite{Ripley1977JRSS} es el siguiente:
+En este estimador no se consideran los efectos de borde, y aquellos puntos situados cerca de la frontera de la zona de estudio tendrán estimaciones inferiores a las reales. Un estimador que corrige estos efectos  :cite:p:`Ripley1977JRSS` es el siguiente:
 
 .. _Eq:Ripley_estimador:
 
@@ -467,11 +489,14 @@ En este estimador no se consideran los efectos de borde, y aquellos puntos situa
 
 El valor :math:`w_ij` pondera los distintos puntos en función de su distancia al borde de la zona de estudio. Para calcularlo se traza una circunferencia por el punto :math:`i` con radio :math:`d_{ij}` (es decir, una circunferencia con centro en el punto :math:`i` y que pasa por el punto :math:`j`), siendo :math:`w_{ij}` la fracción de dicha circunferencia que queda dentro de la zona de estudio (Figura ~:num:`#figcorrecionripley`).
 
-.. figure:: Correccion_Ripley.pdf
+.. _figcorrecionripley:
+
+.. figure:: Correccion_Ripley.*
+	:width: 650px
 
 	Corrección del estimador :math:`\hat{K(h)` en función de los efectos de borde. El parámetro de corrección es el cociente entre la longitud interior (en trazo continuo) y la total de la circunferencia }
 
-.. _figcorrecion_ripley: 
+ 
 
 
 Hay que tener en cuenta que en ocasiones no es conveniente aplicar el efecto de borde, por ejemplo en el caso en que el proceso puntual subyacente no tenga lugar fuera de la zona de estudio.
@@ -494,7 +519,7 @@ Para esta interpretación resulta más habitual utilizar un estimador :math:` \h
 
 de tal modo que valores positivos de la misma indican agregación, mientras que los negativos indican regularidad.
 
-Además de comparar el valor estimado con el valor esperado de la función K en condiciones de aleatoriedad espacial completa, puede compararse con el esperado para un proceso puntual determinado. Los valores de la función K son conocidos para muchos procesos puntuales, y esa información puede utilizarse para establecer comparaciones de igual modo. Distribuciones como las de Cox\cite{Cox1980Chapman} o Gibbs han sido empleadas frecuentemente para el análisis de fenómenos tales como las distribuciones de pies dentro de masas forestales.
+Además de comparar el valor estimado con el valor esperado de la función K en condiciones de aleatoriedad espacial completa, puede compararse con el esperado para un proceso puntual determinado. Los valores de la función K son conocidos para muchos procesos puntuales, y esa información puede utilizarse para establecer comparaciones de igual modo. Distribuciones como las de Cox :cite:p:`Cox1980Chapman` o Gibbs han sido empleadas frecuentemente para el análisis de fenómenos tales como las distribuciones de pies dentro de masas forestales.
 
 Frente a este enfoque, existe también la posibilidad de realizar un número :math:`n` (preferiblemente grande) de simulaciones de un proceso y calcular la media y desviación típica de los valores de la función K obtenidos en ellas. Con ellos puede posteriormente calcularse la probabilidad de que una distribución observada de puntos represente un resultado generado por dicho proceso.
 
@@ -525,7 +550,7 @@ Aunque trabajamos con datos puntuales, este concepto de vecindad puede asociarse
 
 Para el caso de puntos, esta vecindad puede establecerse por distancia, considerando vecinos a todos aquellos puntos a una distancia menor que un umbral establecido. Este umbral puede aplicarse en todas direcciones (isotropía) o ser variable en función de la dirección (anisotropía). 
 
-De forma general, pueden considerarse todos aquellos factores que hagan que una entidad ejerza influencia sobre otra, y en el grado en la que dicha influencia tenga lugar. Esto puede incluir la consideración de otras relaciones existentes, como por ejemplo movimientos migratorios de especies, que *enlazan* unas entidades con otras y causan la existencia de interacción entre ellas más allá de la propia existente por distancia o contigüidad \cite{Anselin1992NCGIA}. 
+De forma general, pueden considerarse todos aquellos factores que hagan que una entidad ejerza influencia sobre otra, y en el grado en la que dicha influencia tenga lugar. Esto puede incluir la consideración de otras relaciones existentes, como por ejemplo movimientos migratorios de especies, que *enlazan* unas entidades con otras y causan la existencia de interacción entre ellas más allá de la propia existente por distancia o contigüidad  :cite:p:`Anselin1992NCGIA`. 
 
 En la función K de Ripley ya vimos en la ecuación :ref:`Eq:Ripley` cómo el uso del indicador :math:`I` definía ese concepto de vecindad *efectiva*, ya que tomaba valor cero para los puntos a una distancia mayor que :math:`h`, haciendo que dichos puntos no tuvieran efecto sobre el resultado final de la función. De forma similar, puede extenderse el concepto de este indicador para construir la denominada *matriz de ponderación espacial*.
 
@@ -536,11 +561,14 @@ Mas allá de los valores que pueda contener, una característica primordial de l
 
 %Tomando como ejemplo una capa de polígonos como la de la figura ~:num:`#figmatrizespacialpesos`, y estableciendo la vecindad por distancia entre los centroides de cada uno o por contigüidad, los resultados son distintos. 
 
-% .. figure:: Nube_variograma.png
+% .. _fignubevariograma:
+
+.. figure:: Nube_variograma.*
+	:width: 650px
 
 	Representación de valores de semivarianza frente a distancia, formando la nube del variograma.
 
-.. _fignube_variograma: 
+ 
 
 
 Esta nube aporta en principio poca información, pero puede resumirse agrupando los pares de puntos por intervalos de distancia, y calculando la media de todas las semivarianzas en cada intervalo. De esta forma se tiene una función que relaciona la semivarianza y la distancia entre puntos, según
@@ -558,22 +586,28 @@ La función :math:`\gamma(h)` es lo que se conoce como *variograma experimental*
 
 La nube de puntos de la figura :num:`#fignubevariograma` se resume en el variograma de la figura :num:`#figvariograma`.
 
-.. figure:: Variograma.png
+.. _figvariograma:
+
+.. figure:: Variograma.*
+	:width: 650px
 
 	Resumen de la nube del variograma en un variograma experimental con sus elementos definitorios.
 
-.. _figvariograma: 
+ 
 
 
 La elección de un tamaño óptimo para los intervalos es importante para obtener un variograma fiable. Si en el variograma aparecen ondulaciones, esto puede ser señal de que existe un comportamiento cíclico de la variable, pero más probablemente de que la distancia del intervalo no ha sido bien escogida.
 
 %
 %(Figura ~:num:`#figvariogramaondulaciones`)
-%.. figure:: Variograma_ondulaciones.pdf
+%.. _figvariogramaondulaciones:
+
+.. figure:: Variograma_ondulaciones.*
+	:width: 650px
 %
 	La presencia de ondulaciones en la forma del variograma indica una elección errónea del intervalo.
 
-.. _figvariograma_ondulaciones: 
+ 
 %
 
 Como puede verse en dicha figura, la curva que los puntos del variograma experimental describen implícitamente da lugar a la definición de unos elementos básicos que lo caracterizan.
@@ -596,22 +630,28 @@ Una forma de visualizar cómo la variación es distinta en función de la direcc
 
 Si se traza un perfil de valores de esta superficie desde el punto central hasta un extremo de esta y en una dirección dada, el conjunto de dichos valores conforma el variograma particular de esa dirección
 
-.. figure:: Superficie_variografica.png
+.. _figsuperficievariografica:
+
+.. figure:: Superficie_variografica.*
+	:width: 650px
 
 	Superficie variográfica
 
-.. _figsuperficie_variografica: 
+ 
 
 
 A partir de los puntos que forman el variograma experimental, puede definirse un modelo que aporta información sobre el proceso subyacente, a partir de su forma y sus parámetros. La definición de este modelo implica el ajuste de una curva a los puntos del variograma experimental, y tiene como resultado la obtención de un *variograma teórico*. En la figura :num:`#figvariograma` puede verse junto a los puntos del variograma experimental una curva ajustada a estos que define el variograma teórico.   Sobre este último se pueden conocer las semivarianzas para cualquier distancia :math:`h`, no solo para las definidas por los intervalos como en el caso del variograma experimental.
 
 %A modo de ejemplo, se muestran en la figura :num:`#figvariogramastiposautocorrelacion` los variogramas correspondientes a las capas recogidas en la figura :num:`#figautocorrelacionespacial` con los distintos tipos de autocorrelación espacial.
 %
-%.. figure:: Variogramas.png
+%.. _figvariogramas:
+
+.. figure:: Variogramas.*
+	:width: 650px
 
 	Distintos modelos de variograma teórico con los mismos parámetros de forma.
 
-.. _figvariogramas: 
+ 
 
 
 Llevar a cabo el ajuste del variograma teórico no es en absoluto un proceso trivial. Lo más sencillo es tratar de minimizar el error cuadrático. No obstante, deben tenerse en cuenta algunas consideraciones adicionales como las siguientes:
@@ -655,12 +695,15 @@ Puede aplicarse este concepto para una única variable dada. Para dos puntos dad
 
 El conjunto de valores de covarianza y distancias entre puntos da lugar a una nube de valores que, al igual que ocurría con las semivarianzas, puede emplearse para crear una curva experimental y a partir de esta una curva teórica. Con dicha curva teórica se tiene conocimiento de la covarianza a cualquier distancia, y recibe el nombre de *correlograma*.
 
-.. figure:: Variograma_correlograma.pdf
+.. _figvariogramacorrelograma:
+
+.. figure:: Variograma_correlograma.*
+	:width: 650px
 
 	Relación entre correlograma (a) y variograma (b)
 
 
-.. _figvariograma_correlograma: 
+ 
 
 
 Existe una relación directa entre el variograma y el correlagrama, como puede verse en la figura :num:`#figvariogramacorrelograma`. Con la notación de la figura, se tiene para el caso del variograma que

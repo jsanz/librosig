@@ -1,8 +1,9 @@
+.. _Procesado_imagenes:
+
 **********************************************************
 Procesado de imágenes
 **********************************************************
 
-.. _Procesado_imagenes:
 
 
 Las imágenes constituyen un tipo particular de dato a partir del cual puede derivarse abundante información. Ya sea como elementos meramente visuales cuyo único fin es la representación junto a otras capas de información, o bien como base para análisis más complejos, las imágenes son uno de los componentes más importantes del uso habitual de un SIG. Sus particularidades las hacen merecedoras de un capítulo propio dentro del cual tratar aquellos análisis desarrollados especialmente para este tipo de datos, que comparten, no obstante, cierto número de sus principios fundamentales con otros de los análisis ya vistos.
@@ -79,10 +80,12 @@ Algunas de las principales diferencias entre el análisis visual y el automátic
 
 Es importante tener en cuenta estas diferencias, ya que las circunstancias en las que va a ser necesaria la interpretación de una imagen pueden ser muy variadas, debiendo en cada caso procederse a ella de la forma más adecuada.
 
+.. _Correccion_imagenes:
+
 Correcciones y preparación de imágenes
 =====================================================
 
-.. _Correccion_imagenes:
+
 
 Del mismo modo que un MDE contiene depresiones irreales (véase capítulo :ref:`Geomorfometria`) que deben ser corregidas antes de proceder a su análisis hidrológico, las imágenes presentan también otros elementos que hacen necesaria una preparación antes de pasar al uso propiamente dicho. Estos elementos están relacionados con la forma en que los sensores capturan la información y las imprecisiones que en este proceso pueden aparecer, y tratan de eliminar estas imprecisiones para que los Niveles Digitales de las distintas celdas reflejen fielmente la realidad presente en el momento de capturar dicha imagen.
 
@@ -99,7 +102,7 @@ Con una base conceptual relacionada con las técnicas de corrección de estas de
 Corrección geométrica
 --------------------------------------------------------------
 
-Por la propia naturaleza del proceso de toma de imágenes, estas presentan habitualmente diversas formas de distorsión geométrica. Entre ellas, cabe mencionar las debidas a los siguientes factores \cite{Richards1986Springer}
+Por la propia naturaleza del proceso de toma de imágenes, estas presentan habitualmente diversas formas de distorsión geométrica. Entre ellas, cabe mencionar las debidas a los siguientes factores  :cite:p:`Richards1986Springer`
 
 
 	* La rotación de la Tierra durante la toma de la imagen.
@@ -109,7 +112,7 @@ Por la propia naturaleza del proceso de toma de imágenes, estas presentan habit
 	* Las variaciones en la velocidad y altura de la plataforma de registro.
 
 
-Para disminuir estos efectos existen una serie de métodos cuya finalidad es corregir y distorsionar la imagen original con objeto de que esta constituya una representación más fiable de la escena original \cite{Lillesand1997Wiley}. Dos son los métodos más utilizados para la corrección geométrica de las imágenes: la *rectificación* y la *ortorectificación*.
+Para disminuir estos efectos existen una serie de métodos cuya finalidad es corregir y distorsionar la imagen original con objeto de que esta constituya una representación más fiable de la escena original  :cite:p:`Lillesand1997Wiley`. Dos son los métodos más utilizados para la corrección geométrica de las imágenes: la *rectificación* y la *ortorectificación*.
 
 Rectificación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,12 +153,15 @@ El proceso se lleva a cabo de igual modo, localizando puntos de control en la im
 
 La imagen :num:`#figrectificacion` muestra un ejemplo gráfico de este proceso. Se dispone de un mapa escaneado sin coordenadas, y una imagen de la que sí se conocen las coordenadas de cada píxel, pues ha sufrido un proceso de georreferenciación y corrección previo. Localizando un número suficiente de puntos singulares en ambas imágenes, puede establecerse la transformación que permite asignar coordenadas a todos los píxeles del mapa escaneado. Una vez el proceso se ha realizado, este mapa escaneado puede ya emplearse dentro de un SIG junto con cualquier otra capa que represente esa misma porción del terreno, pues contienen toda la referencia geográfica necesaria.
 
-.. figure:: Rectificacion.png
+.. _figrectificacion:
+
+.. figure:: Rectificacion.*
+	:width: 650px
 
 	Proceso de referenciación de una imagen (mapa escaneado), empleando para la localización de puntos de control (en amarillo) una fotografía aérea ya georreferenciada.
 
 
-.. _figrectificacion: 
+ 
 
 
 Ortorrectificación
@@ -165,29 +171,35 @@ La ortorrectificación persigue un objetivo similar a la rectificación, pero in
 
 Esta elevación provoca un desplazamiento aparente de los píxeles y, según el caso, puede ser tan necesario corregir este efecto como lo es el hacerlo para las distorsiones del plano. En la figura :num:`#figortorrectificacion` se muestra una fotografía aérea antes y después del proceso de ortorrecificacion. A esta segunda se la denomina *ortofotografía*.
 
-.. figure:: Ortorrectificacion.png
+.. _figortorrectificacion:
+
+.. figure:: Ortorrectificacion.*
+	:width: 650px
 
 	Fotografía aérea antes y después del proceso de ortorrectificación
 
 
-.. _figortorrectificacion: 
+ 
 
 
 La figura :num:`#figempirestate` muestra claramente el efecto de las distorsiones que derivan del relieve del terreno o de la propia altura de los elementos fotografiados, tales como grandes edificios.
 
-.. figure:: Empire_state.png
+.. _figempirestate:
+
+.. figure:: Empire_state.*
+	:width: 650px
 
 	Las distorsiones provocadas por el hecho de que la escena fotografiada no es plana se aprecian con claridad en esta imagen.
 
 
-.. _figempire_state: 
+ 
 
 
 La ortofotografía tiene una escala uniforme, y es como una versión fotográfica de un mapa de esa zona. Por esta razón, pueden medirse áreas y distancias en ella, o utilizarla para superponer sobre ella otras capas. En una imagen sin ortorrectificar, y cuando las distorsiones geométricas derivadas del relieve son notables, la medición daría lugar a valores erróneos y la superposición con otras capas no tendría una coincidencia completa.
 
 Puesto que se emplean las elevaciones, el concurso de un Modelo Digital de Elevación es imprescindible, pudiendo este proceder del mismo origen que la propia imagen a ortorectificar (en caso de que el sensor ofrezca igualmente pares de imágenes estereoscópicas, y procediendo de la forma que vimos en la sección :ref:`Fotogrametria`), o bien de otra fuente distinta.
 
-El proceso de ortorrectificación es complejo y tiene una base matemática extensa. El lector interesado puede encontrar más detalles, por ejemplo, en \cite{Vassilopoulou2002ISPRS}.
+El proceso de ortorrectificación es complejo y tiene una base matemática extensa. El lector interesado puede encontrar más detalles, por ejemplo, en  :cite:p:`Vassilopoulou2002ISPRS`.
 
 Corrección radiométrica
 --------------------------------------------------------------
@@ -217,9 +229,9 @@ En función de la causa que los ha originado, distinguimos los siguientes tipos 
 	* Errores debidos al efecto de la atmósfera en la radiación. Los errores debidos a la atmósfera son de los más importantes dentro de los que provocan alteraciones radiométricas en la imagen, y son estudiados en ocasiones de forma independiente, en lugar de como un subtipo de error radiométrico. 
 	Para comprender la necesidad de esta corrección debe tenerse en cuenta que en algunos casos lo que interesa de la imagen no son los Niveles Digitales, sino una variable con sentido físico como la radiancia correspondiente a cada longitud de onda. Será esta radiancia la que luego se analice para la obtención de otros parámetros físicos derivados, y su obtención se realiza a partir de los Niveles Digitales aplicando ecuaciones lineales con parámetros dependientes del sensor.
 	El problema estriba en que la radiancia que se obtiene al aplicar este proceso es la que ha alcanzado el sensor, que no ha de corresponderse necesariamente con la que se tiene sobre el terreno o la que recibiría el sensor si estuviera a una distancia mínima del objeto. La atmósfera afecta a la radiación en su camino desde el suelo hasta el sensor, y distorsiona la información recogida.
-	Los efectos atmosféricos son principalmente de dos clases: *difusión* y *absorción*. La difusión es causada por las partículas de pequeño tamaño de la atmósfera, que desvían una parte de la energía radiante, alterando su dirección. La modificación que se produce depende del tamaño de las partículas implicadas en relación con la longitud de onda de la radiación \cite{Liou2002Academic}. La absorción, por su parte, se produce cuando los elementos constituyentes de la atmósfera absorben parte de la radiación para emitirla posteriormente en una longitud de onda distinta. La intensidad de la radiación disminuye con el efecto de la difusión.
+	Los efectos atmosféricos son principalmente de dos clases: *difusión* y *absorción*. La difusión es causada por las partículas de pequeño tamaño de la atmósfera, que desvían una parte de la energía radiante, alterando su dirección. La modificación que se produce depende del tamaño de las partículas implicadas en relación con la longitud de onda de la radiación  :cite:p:`Liou2002Academic`. La absorción, por su parte, se produce cuando los elementos constituyentes de la atmósfera absorben parte de la radiación para emitirla posteriormente en una longitud de onda distinta. La intensidad de la radiación disminuye con el efecto de la difusión.
 	Ambos efectos conjuntos producen un efecto de *neblina* en la imagen, restándole contraste. La difusión, asimismo, tiene un efecto adicional de adyacencia, ya que cada píxeles recoge parcialmente la radiación que en realidad debería corresponder a otros píxeles contiguos.
-	La corrección de los efectos atmosféricos es compleja y existen muchas formulaciones distintas que escapan al alcance de este texto. Para saber más, una buena descripción de estos métodos puede encontrarse en \cite{Kaufman1989Wiley}
+	La corrección de los efectos atmosféricos es compleja y existen muchas formulaciones distintas que escapan al alcance de este texto. Para saber más, una buena descripción de estos métodos puede encontrarse en  :cite:p:`Kaufman1989Wiley`
 
 
 
@@ -259,7 +271,7 @@ Segmentación
 
 .. _Segmentacion:
 
-La primera operación que veremos es la *segmentación*, cuyo objetivo es particionar una imagen en diversas regiones en base a criterios de homogeneidad o heterogeneidad \cite{Haralick1992Addison}.
+La primera operación que veremos es la *segmentación*, cuyo objetivo es particionar una imagen en diversas regiones en base a criterios de homogeneidad o heterogeneidad  :cite:p:`Haralick1992Addison`.
 
 Aunque veremos que existen muchas formas de segmentación, en su forma más básica se trata de una operación píxel a píxel cuyo resultado es lo que conocemos como una imagen *binaria*. Esto quiere decir que dicha imagen tiene únicamente dos valores: uno de ellos representa lo que se conocen como *objetos* (que se representan habitualmente en negro), y otros representan el *fondo* de la imagen (habitualmente blanco).
 
@@ -267,20 +279,26 @@ Este procedimiento nos sirve para separar partes de la imagen en función de sus
 
 La figura :num:`#figsegmentacion` nos muestra el resultado de una operación de segmentación aplicada sobre una imagen base (en este caso se trata de una ortofoto en blanco y negro). En los sucesivos apartados se empleará esta misma imagen original para ilustrar cada procedimiento. La curva de transformación asociada, con un umbral aplicado de 173, se muestra en la figura :num:`#figcurvasegmentacion`.
 
-.. figure:: Segmentacion.png
+.. _figsegmentacion:
+
+.. figure:: Segmentacion.*
+	:width: 650px
 
 	Imagen original (a) y resultado de un proceso de segmentación (b)
 
 
-.. _figsegmentacion: 
+ 
 
 
-.. figure:: Curva_segmentacion.pdf
+.. _figcurvasegmentacion:
+
+.. figure:: Curva_segmentacion.*
+	:width: 650px
 
 	Curva de transformación asociada a una segmentación por umbral.
 
 
-.. _figcurva_segmentacion: 
+ 
 
 
 Como vemos, la función de transformación simplemente establece un valor umbral, a partir del cual se asocia el valor 255, mientras que por debajo se asocia el valor 0 (es habitual también emplear los valores 1 y 0 en lugar de los anteriores). Suponemos en este caso que los valores que resultan de interés y queremos aislar son aquellos que presentan valores superiores al umbral, mientras que todos los restantes los consideramos parte del fondo. La operación puede realizarse también al contrario, en caso de que los objetos a separar vengan caracterizados por valores bajos. En este caso, se asignaría 255 a los valores por debajo del umbral y 0 a los restantes.
@@ -289,9 +307,9 @@ La selección del umbral es el elemento clave en esta forma de segmentación, y 
 
 Además de establecerlo de forma directa mediante un valor concreto, existen diversas formulaciones que permiten fijar un umbral de forma automática, siendo formulaciones adaptativas. De igual modo, este umbral puede no ser constante para toda la imagen, y realizarse una segmentación por zonas, de tal modo que no se emplee el mismo umbral en todas ellas. Esto puede mejorar la eficacia del proceso, ya que la relación entre el fondo y los objetos a separar no ha de ser la misma en todas las áreas de la imagen.
 
-En \cite{Kishan2003Tennessee} se describen formulaciones alternativas para esta definición automática de umbrales.
+En  :cite:p:`Kishan2003Tennessee` se describen formulaciones alternativas para esta definición automática de umbrales.
 
-Este tipo de segmentación es, como se ha dicho, la forma más sencilla de esta clase de procesos, ya que la imagen de partida es una imagen en escala de grises (imagen de una banda), y el resultado es una imagen binaria. Se pueden, no obstante, segmentar imágenes multibanda y hacerlo no en dos partes (fondo y elemento), sino en un número mayor de ellos (fondo y distintos elementos, codificados con distintos valores), entrañando las formulaciones correspondientes una complejidad lógicamente mayor. Existen, por tanto, otros métodos de segmentación, muchos de los cuales no implican únicamente operaciones píxel a píxel, sino más complejas. Aunque no entraremos a detallarlas con tanta profundidad, se enumeran y describen brevemente a continuación las principales familias en que podemos dividir dichos métodos \cite{Luong1998DPR}:
+Este tipo de segmentación es, como se ha dicho, la forma más sencilla de esta clase de procesos, ya que la imagen de partida es una imagen en escala de grises (imagen de una banda), y el resultado es una imagen binaria. Se pueden, no obstante, segmentar imágenes multibanda y hacerlo no en dos partes (fondo y elemento), sino en un número mayor de ellos (fondo y distintos elementos, codificados con distintos valores), entrañando las formulaciones correspondientes una complejidad lógicamente mayor. Existen, por tanto, otros métodos de segmentación, muchos de los cuales no implican únicamente operaciones píxel a píxel, sino más complejas. Aunque no entraremos a detallarlas con tanta profundidad, se enumeran y describen brevemente a continuación las principales familias en que podemos dividir dichos métodos  :cite:p:`Luong1998DPR`:
 
 
 	* Segmentación basada en umbral. Del tipo de los que hemos visto hasta el momento. 
@@ -299,7 +317,7 @@ Este tipo de segmentación es, como se ha dicho, la forma más sencilla de esta 
 	* Segmentación basada en agregación. Métodos iterativos que agrupan los píxeles en grupos de forma que estas agrupaciones sean lo más homogéneas posibles. Estos algoritmos no los vamos a tratar en esta sección, pero sí que se describen en otro punto de este texto, dentro de la sección :ref:`Clasificacion_no_supervisada` dedicada a la clasificación no supervisada.
 
 
-Para el lector interesado, en \cite{Gonzales1993Addison} o \cite{Haralick1992Addison} pueden encontrarse tratados en profundidad todos estos distintos grupos de metodologías.
+Para el lector interesado, en  :cite:p:`Gonzales1993Addison` o  :cite:p:`Haralick1992Addison` pueden encontrarse tratados en profundidad todos estos distintos grupos de metodologías.
 
 Desde el punto de vista de las operaciones del álgebra de mapas que conocemos, la segmentación es una reclasificación de valores lo más sencilla posible, ya que únicamente se crean dos clases (la de valores por debajo del umbral y la de valores por encima de él). Un proceso algo más complejo es la definición de varios umbrales, de forma que aparezcan más clases, siendo este también equivalente a la reclasificación según la vimos en su momento. No obstante, en el ámbito del análisis de imágenes esta operación se conoce habitualmente con el nombre de *Density slicing*.
 
@@ -310,12 +328,15 @@ Expansión de contraste
 
 Puesto que muchos de los procedimientos de este apartado están, como se ha dicho, principalmente encaminados a la mejora visual de la imagen y que esta aporte más información a la hora de su visualización, la mejor manera de comprender uno de ellos es ver un ejemplo práctico, igual que hicimos en el caso de la segmentación. Para el caso de la expansión de contraste, la figura :num:`#figexpansioncontraste` muestra el resultado de aplicar este procedimiento sobre la imagen base ya presentada.
 
-.. figure:: Expansion_contraste.png
+.. _figexpansioncontraste:
+
+.. figure:: Expansion_contraste.*
+	:width: 650px
 
 	Imagen tras un proceso de expansión de contraste
 
 
-.. _figexpansion_contraste: 
+ 
 
 
 Como puede apreciarse si se compara con la imagen original, el proceso de expansión de contraste (también conocido como *normalización*) aporta mayor definición a los distintos elementos de la imagen. Esto es así porque la expansión del contraste modifica el histograma de tal forma que todos los valores posibles de los Niveles Digitales sean empleados. Es decir, que de los 255 niveles de intensidad de gris el histograma abarque todos ellos, y al traducirse eso en las tonalidades de gris a la hora de representarse, estas también vayan desde el valor 0 (negro) hasta el 255(blanco). Logrando esto, se obtiene la mayor definición visual que puede apreciarse en la imagen.
@@ -343,19 +364,22 @@ Otra solución frecuente para la selección de :math:`x` y :math:`X` consiste en
 
 Si se aplica la normalización a una imagen multibanda, es importante tener en cuenta que las relaciones entre los Niveles Digitales de estas han de preservarse. Cuando se aplica normalización sobre un conjunto de capas ráster, el objetivo es escalar las distintas variables para que ocupen un rango homogéneo, y esta relación no es relevante. En el caso de imágenes, y trabajando con bandas en lugar de capas, sí lo es, ya que de ella dependen, por ejemplo, los colores obtenidos al componerlas para formar imágenes en falso color según veremos más adelante. 
 
-%Información adicional sobre este tema puede encontrarse en \cite{1999SPIE}.
+%Información adicional sobre este tema puede encontrarse en  :cite:p:`1999SPIE`.
 
 Modificación de brillo y contraste
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Tanto el brillo como el contraste pueden modificarse mediante funciones lineales sencillas, tal como puede verse en la imagen :num:`#figbrillocontraste`.
 
-.. figure:: Brillo_contraste.png
+.. _figbrillocontraste:
+
+.. figure:: Brillo_contraste.*
+	:width: 650px
 
 	Imagen original y modificación del brillo y el contraste, junto con sus curvas de transformación asociadas
 
 
-.. _figbrillo_contraste: 
+ 
 
 
 Suponiendo como es habitual que trabajamos en un rango de valores entre 0 y 255, la modificación del brillo se lleva a cabo con una función de la forma
@@ -385,12 +409,15 @@ Valores altos de la pendiente y puntos de corte negativos dan lugar a imágenes 
 
 El caso de la expansión de contraste es un caso particular de este tipo de transformaciones lineales, que no obstante se ha analizado aparte por sus particularidades y por ser una operación muy frecuente. En concreto, la expansión de contraste es una operación que maximiza el contraste pero sin producir saturación en los tonos extremos (blancos y negros). La función de transformación correspondiente se representa en la figura :num:`#figcurvaexpansioncontraste`.
 
-.. figure:: Curva_expansion_contraste.pdf
+.. _figcurvaexpansioncontraste:
+
+.. figure:: Curva_expansion_contraste.*
+	:width: 650px
 
 	Curva de transformación correspondiente a una expansión de contraste
 
 
-.. _figcurva_expansion_contraste: 
+ 
 
 
 El empleo de funciones no lineales permite mayor flexibilidad a la hora de mejorar el contraste, al tiempo que se evita la aparición de saturación en los extremos del rango de valores. Una de las funciones más habituales en este caso es la siguiente:
@@ -418,7 +445,10 @@ La figura :num:`#figecualizar` muestra la comparación entre la imagen original 
 
 .. _figecualizar: 
 
-.. figure:: Ecualizar.png
+.. math:
+
+.. figure:: Ecualizar.*
+	:width: 650px
 
 	Imagen e histograma acumulado originales (a). Imagen e histograma acumulado tras un proceso de ecualización (b).
 
@@ -428,19 +458,21 @@ La figura :num:`#figecualizar` muestra la comparación entre la imagen original 
 
 La función de trasformación deriva del propio histograma acumulado original, teniendo su misma forma. De este modo, se hace innecesario el elegir valores umbral sobre el propio histograma, tal como sucedía en el caso de la expansión de contraste. Para un píxel con un Nivel Digital :math:`ND` en la imagen original, se tiene un valor en la imagen ecualizada dado por la expresión
 
-.. math::
+:
 
 	ND' = T(ND) \frac{255}{N}
 
 
 siendo :math:`N` el número total de píxeles de la imagen y :math:`T(x)` la función que define el histograma acumulado, es decir, el número de píxeles de la imagen con Nivel Digital menor que :math:`x`.
 
-Al trabajar con imágenes de varias bandas, deben tenerse en cuenta los mismos aspectos ya comentados para la expansión de contraste, en relación a la relación entre las distintas bandas. En \cite{Lucchesse2001ICIP} pueden encontrarse detalles sobre ecualización de imágenes en color.
+Al trabajar con imágenes de varias bandas, deben tenerse en cuenta los mismos aspectos ya comentados para la expansión de contraste, en relación a la relación entre las distintas bandas. En  :cite:p:`Lucchesse2001ICIP` pueden encontrarse detalles sobre ecualización de imágenes en color.
+
+.. _Filtros:
 
 Filtros
 --------------------------------------------------------------
 
-.. _Filtros:
+
 
 Al igual que algunas de las operaciones vistas ya en este capítulo, los filtros son similares en concepto a parte de las operaciones que ya conocemos de capítulos anteriores. En particular, comparten sus fundamentos con las funciones focales del álgebra de mapas, aunque, al igual que en otros de los casos anteriores, la utilización de estas tiene aquí una función principalmente relacionada con la mejora visual.
 
@@ -476,24 +508,30 @@ La media es sensible a los valores extremos de la ventana, por lo que una opció
 
 El filtro de mediana no es una convolución, y no puede por tanto expresarse mediante un núcleo como sucedía con el de media.
 
-.. figure:: Suavizado.png
+.. _figsuavizado:
+
+.. figure:: Suavizado.*
+	:width: 650px
 
 	Imagen tras la aplicación de un filtro de suavizado
 
 
-.. _figsuavizado: 
+ 
 
 
 La aplicación de un filtro de suavizado no solo tiene como efecto el desenfoque de la imagen, sino que también elimina el ruido de la misma. Por ello, estos filtros son una buena herramienta para tratar algunas de las deficiencias de las imágenes, que como vimos pueden presentar píxeles con Niveles Digitales muy distintos de los de su entorno.
 
 En la figura :num:`#figfiltromediana` puede observarse como la presencia de una línea errónea introducida en una imagen se corrige parcialmente con un filtro de mediana.
 
-.. figure:: Filtro_mediana.png
+.. _figfiltromediana:
+
+.. figure:: Filtro_mediana.*
+	:width: 650px
 
 	Eliminación de una línea errónea por aplicación de un filtro de mediana
 
 
-.. _figfiltro_mediana: 
+ 
 
 
 Filtros como el de mayoría o moda, que da como valor resultante de la celda aquel que se repite más entre las celdas circundantes, pueden también aplicarse para estos fines.
@@ -505,12 +543,15 @@ Otro tipo de ruido habitual es el conocido como *sal y pimienta*, que aparece fr
 Para limpiar estas imágenes resultantes, se emplean también filtros como los anteriores. Un filtro de mediana aplicado sobre la imagen de la figura :num:`#figsegmentacion` (resultado de una segmentación) elimina gran parte de los píxeles aislados y genera el resultado mostrado en la figura :num:`#figfiltrosaltpepper`.
 
 
-.. figure:: Filtro_salt_pepper.png
+.. _figfiltrosaltpepper:
+
+.. figure:: Filtro_salt_pepper.*
+	:width: 650px
 
 	Eliminación de ruido de tipo *sal y pimienta* mediante filtro de mediana.
 
 
-.. _figfiltro_salt_pepper: 
+ 
 
 
 Filtros de realce
@@ -518,12 +559,15 @@ Filtros de realce
 
 Los filtros de realce (o *de paso alto*) tienen el efecto justamente contrario al de los anteriores, ya que acentúan las diferencias entre píxeles adyacentes, teniendo un efecto de enfoque. La definición aumenta, como puede verse en la imagen :num:`#figrealce`. Si se compara con la imagen original, se aprecia una separación más clara entre las tonalidades de píxeles contiguos, cuya diferencia se acentúa.
 
-.. figure:: Realce.png
+.. _figrealce:
+
+.. figure:: Realce.*
+	:width: 650px
 
 	Imagen tras la aplicación de un filtro de realce
 
 
-.. _figrealce: 
+ 
 
 
 Para obtener un filtro de realce, puede partirse de uno de suavizado, ya que una forma de realzar las diferencias entre píxeles es emplear un filtro de paso bajo para obtener una imagen suavizada, y después restar esta imagen de la imagen original. Haciendo esto se elimina el valor medio y se deja en cada píxel el valor que refleja la variación local de los Niveles Digitales.
@@ -562,12 +606,15 @@ En la figura :num:`#figdeteccionbordes` puede verse el efecto de un filtro Lapla
 
 Para mostrar más claramente el resultado de estos filtros, se ha escogido una región de la imagen (en la parte superior izquierda) en lugar de la imagen completa, por contener un mayor número de entidades lineales. Como puede apreciarse, es en la detección de estos elementos lineales donde mejor actúan estos filtros.
 
-.. figure:: Deteccion_bordes.png
+.. _figdeteccionbordes:
+
+.. figure:: Deteccion_bordes.*
+	:width: 650px
 
 	Aplicación de un filtro de detección de bordes sobre la imagen original (a) y la imagen ecualizada (b).
 
 
-.. _figdeteccion_bordes: 
+ 
 
 
 El filtro Laplaciano tiene su base en el análisis de las segundas derivadas de la función que los Niveles Digitales definen y la detección de puntos donde esta se anule. Otros filtros se basan en el estudio del gradiente (la primera derivada) de forma que se realcen las zonas en las que existan variaciones notables entre las intensidades de píxeles contiguos.
@@ -580,12 +627,15 @@ Aplicando filtros de esta segunda clase, la detección de bordes puede hacerse r
 
 El resultado de aplicar estos filtros puede verse en la figura :num:`#figsobel`.
 
-.. figure:: Sobel.png
+.. _figsobel:
+
+.. figure:: Sobel.*
+	:width: 650px
 
 	Aplicación de un filtro de Sobel vertical (a) y horizontal (b).
 
 
-.. _figsobel: 
+ 
 
 
 Otros filtros habituales son los siguientes, denominados *filtros de Prewitt*,
@@ -615,10 +665,12 @@ La relación entre los filtros de detección de bordes y los de realce puede ver
 
 Aplicando este filtro se obtiene una imagen que mantiene un aspecto similar a la imagen original, pero con mayor definición. Es decir, el mismo efecto que si se aplicara un filtro de realce.
 
+.. _Fusion_imagenes:
+
 Fusión de imágenes
 --------------------------------------------------------------
 
-.. _Fusion_imagenes:
+
 
 La fusión de imágenes engloba a una serie de procesos que permiten integrar la información procedente de varias fuentes de datos distintas en una única imagen. Esta imagen resultante facilita la interpretación y análisis de la información de partida, englobando las características más destacables de las imágenes originales. 
 
@@ -643,7 +695,7 @@ La imagen que dispone de una mejor información espectral aporta esta de forma h
 
 El modo RGB es solo uno de los muchos existentes para codificar un color, siendo el más frecuente para el registro de imágenes y la representación de estas en una pantalla, pero no el único. A la hora de llevar a cabo una fusión de imágenes, la utilización de otros formatos resulta más ventajosa.
 
-Uno de los modo que pueden emplearse para este fin es el conocido como IHS\footnote{Intensity, Hue, Saturation (Intensidad, Tono, Saturación)}. Este formato es más similar a cómo percibimos los distintos colores, y se basa en los tres siguientes componentes \cite{Mather1999Wiley}:
+Uno de los modo que pueden emplearse para este fin es el conocido como IHS\footnote{Intensity, Hue, Saturation (Intensidad, Tono, Saturación)}. Este formato es más similar a cómo percibimos los distintos colores, y se basa en los tres siguientes componentes  :cite:p:`Mather1999Wiley`:
 
 
 	* Intensidad (I). Expresa el brillo del color. Es la variable que se percibe más sencillamente por parte del ojo humano.
@@ -651,9 +703,9 @@ Uno de los modo que pueden emplearse para este fin es el conocido como IHS\footn
 	* Saturación (S). Expresa la pureza del color. Valores altos indican una alta presencia de blanco.
 
 
-Para saber más acerca del espacio de color IHS y las formas de convertir entre RGB y IHS, y viceversa, puede consultarse \cite{WikipediaHSL}. Veremos algo más sobre estos conceptos, aunque en un contexto distinto, en el capítulo :ref:`Conceptos_basicos_visualizacion`.
+Para saber más acerca del espacio de color IHS y las formas de convertir entre RGB y IHS, y viceversa, puede consultarse  :cite:p:`WikipediaHSL`. Veremos algo más sobre estos conceptos, aunque en un contexto distinto, en el capítulo :ref:`Conceptos_basicos_visualizacion`.
 
-Dadas dos imágenes RGB, una de ellas con mayor información espacial y otra con mayor información espectral, puede realizarse una fusión empleando una transformación IHS siguiendo los pasos descritos a continuación \cite{Carper1990PERS}\cite{Foley1997Addison}:
+Dadas dos imágenes RGB, una de ellas con mayor información espacial y otra con mayor información espectral, puede realizarse una fusión empleando una transformación IHS siguiendo los pasos descritos a continuación  :cite:p:`Carper1990PERS` :cite:p:`Foley1997Addison`:
 
 
 	* Se remuestrea la imagen de menor resolución espacial a las dimensiones de la de mayor resolución, o bien ambas a un tamaño de píxel intermedio entre los de ambas imágenes. Ese será el tamaño de píxel de la imagen resultante, mejorando así el de la imagen que aporta la información espectral.
@@ -664,12 +716,15 @@ Dadas dos imágenes RGB, una de ellas con mayor información espacial y otra con
 
 En la figura :num:`#figihs` puede verse un esquema del proceso de fusión de imágenes según lo descrito anteriormente.
 
-.. figure:: IHS.pdf
+.. _figihs:
+
+.. figure:: IHS.*
+	:width: 650px
 
 	Fusión de imágenes mediante transformación IHS
 
 
-.. _figihs: 
+ 
 
 
 Transformación por componentes principales
@@ -693,7 +748,7 @@ Transformación de Brovey
 
 
 
-La transformación de Brovey \cite{Roller1980SympoRSE} se emplea también para la fusión de imágenes, aunque su procedimiento es bien distinto a los anteriores. En este caso, no se da una modificación previa del conjunto de capas que conforman la componente multiespectral, seguida esta de una sustitución, sino que se opera banda a banda, aumentando la resolución de estas de forma individual. Combinando las bandas resultantes se obtiene la imagen sintética buscada.
+La transformación de Brovey  :cite:p:`Roller1980SympoRSE` se emplea también para la fusión de imágenes, aunque su procedimiento es bien distinto a los anteriores. En este caso, no se da una modificación previa del conjunto de capas que conforman la componente multiespectral, seguida esta de una sustitución, sino que se opera banda a banda, aumentando la resolución de estas de forma individual. Combinando las bandas resultantes se obtiene la imagen sintética buscada.
 
 En particular, se parte de una imagen con tres bandas y una imagen pancromática de mayor resolución espacial. Para transformar la banda i--ésima se utiliza la siguiente expresión:
 
@@ -711,10 +766,12 @@ Análisis y extracción de información
 
 Con las imágenes ya preparadas y tratadas con objeto de *exponer* en la mayor medida posible la información que contienen, puede procederse a su análisis. El fin de este análisis puede ser la delineación e identificación de ciertos elementos (masas de agua, formaciones rocosas, construcciones, etc.), o bien la caracterización de las distintas áreas del terreno (tipo de uso de suelo, condiciones fisico--químicas, etc.), existiendo para cada uno de estos propósitos una serie de algoritmos y formulaciones.
 
+.. _Visualizacion_imagenes:
+
 Visualización
 --------------------------------------------------------------
 
-.. _Visualizacion_imagenes:
+
 
 La obtención de de resultados a partir de imágenes, tales como la clasificación de las distintas zonas o la localización de áreas en en las que aparece algún elemento particular del terreno (por ejemplo, zonas de agua como ríos o embalses), se realiza, como veremos más adelante, a partir de los Niveles Digitales de las distintas bandas de una imagen. Este análisis es de tipo puramente numérico. No obstante, la conversión de esos Niveles Digitales en colores permite extraer los mismos resultados en base a la mera exploración visual, ya que presenta los valores de las bandas de un modo en que el ojo humano puede interpretarlos y analizarlos. Así, el análisis más inmediato que puede realizarse con una imagen es el de tipo visual, siempre que se tenga una representación adecuada de la imagen.
 
@@ -722,12 +779,15 @@ Las imágenes más sencillas contienen una única banda, y su representación en
 
 Las imágenes que tomamos con una cámara digital o una fotografía aérea en color escaneada y almacenada en un fichero, ambas utilizan este modelo de colores. Los periféricos de representación en los cuales las observamos, tales como una pantalla o un cañón de proyección, utilizan un esquema igual para reproducir un color dado. Este esquema se denomina de tipo *aditivo*, ya que forma el color sumando unas intensidades concretas de cada uno de los colores básicos. La figura :num:`#figdescomposicionrgb` muestra un ejemplo de descomposición en canales RGB. 
 
-.. figure:: Descomposicion_RGB.png
+.. _figdescomposicionrgb:
+
+.. figure:: Descomposicion_RGB.*
+	:width: 650px
 
 	Descomposición de una imagen en color en sus componentes RGB.
 
 
-.. _figdescomposicion_rgb: 
+ 
 
 
 
@@ -758,34 +818,42 @@ En general, pueden tomarse cualesquiera bandas para crear una composición en fa
 
 La figura :num:`#figfalsocolor` muestra distintas composiciones a partir de las bandas de una imagen LANDSAT TM.
 
-.. figure:: Falso_color.png
+.. _figfalsocolor:
+
+.. figure:: Falso_color.*
+	:width: 650px
 
 	Distintas composiciones a partir de las bandas de una imagen LANDSAT TM. a) 1, 2, 5; b) 2, 4, 3; c) 2, 5, 3
 
 
-.. _figfalso_color: 
+ 
 
+
+.. _Operaciones_morfologicas:
 
 Operaciones morfológicas
 --------------------------------------------------------------
 
-.. _Operaciones_morfologicas:
+
 
 Las operaciones morfológicas producen modificaciones de las *formas* presentes en la imagen, siendo estas formas las de los distintos *elementos* que encontramos en dicha imagen. En su concepción básica, estas operaciones se aplican sobre imágenes binarias (recordemos que estas pueden generarse en base a otro tipo de imágenes mediante las formulaciones vistas en la sección :ref:`Segmentacion`), las cuales, según vimos, contienen únicamente dos valores: uno de ellos que representa los citados elementos y otro que representa el *fondo* de la imagen. De esta forma, es sencillo entender a qué nos referimos cuando hablamos de las formas que aparecen en la imagen, que son las que se van a ver afectadas por las operaciones de esta sección. Esto puede entenderse recurriendo a la figura :num:`#figimagenbinaria`, que será la que utilicemos como base para estudiar las operaciones morfológicas a lo largo de esta sección.
 
-.. figure:: Imagen_binaria.png
+.. _figimagenbinaria:
+
+.. figure:: Imagen_binaria.*
+	:width: 650px
 
 	Una sencilla imagen binaria. Para más claridad, se han trazado líneas divisorias entre los distintos píxeles.
 
 
-.. _figimagen_binaria: 
+ 
 
 
 Las operaciones morfológicas se aplican originalmente sobre imágenes binarias, pero existen igualmente versiones de los algoritmos correspondientes que pueden aplicarse sobre imágenes en escala de grises o incluso imágenes multibanda. A la hora de emplearlas dentro de un SIG, podemos aplicar este tipo de operaciones sobre cualquier capa ráster que contenga de algún modo *formas* como las que hemos citado y pueden observarse en la anterior imagen. Tales capas pueden obtenerse como resultado de muchas de las operaciones que hemos visto en capítulos anteriores, y pueden también prepararse empleando algunos de los procedimientos presentados dentro de este mismo, tales como la detección de bordes. También, por supuesto, pueden ser imágenes más complejas que contengan este tipo de elementos, tales como las distintas zonas de cultivo de una zona dada, aunque estas requieren preparación o procesos previos. La *Clasificacion*, que veremos en la sección :ref:`Clasificacion`, es uno de tales procesos.
 
 La importancia de estas funciones reside en que sirven para alterar los elementos de la imagen, siendo útiles para que otras operaciones posteriores se desarrollen de una forma más adecuada. Algunos de estos procesos posteriores que se benefician de la aplicación de operaciones morfológicas son la vectorización (que estudiaremos en el apartado :ref:`Vectorizacion`) o la medición de longitudes en caso de elementos lineales.
 
-Las operaciones morfológicas son sencillas de entender, pero pueden resultar complejas en sus planteamientos teóricos, y tienen una fuerte carga matemática, especialmente en el caso de no aplicarse sobre imágenes binarias\footnote{Habitualmente se da un enfoque a este tipo de operaciones basado en teoría de conjuntos.}. En este libro no plantearemos un enfoque tan técnico, y nos centraremos básicamente en las capacidades de estas operaciones y la utilidad que presentan para el usuario de SIG, sin detallar los pormenores de la base matemática subyacente. Las distintas operaciones se explicarán como elementos del álgebra de mapas, más acordes con los conocimientos ya desarrollados. Información más extensa sobre estas operaciones, expresada desde un punto de vista matemático, puede encontrarse en las referencias propuestas o textos al uso sobre tratamiento de imágenes digitales\footnote{Las direcciones Web \cite{MorphologyFip} y \cite{ProcesimVigo} contienen información pormenorizada sobre los fundamentos en que se basan las operaciones morfológicas, así como una descripción de las más habituales.}.
+Las operaciones morfológicas son sencillas de entender, pero pueden resultar complejas en sus planteamientos teóricos, y tienen una fuerte carga matemática, especialmente en el caso de no aplicarse sobre imágenes binarias\footnote{Habitualmente se da un enfoque a este tipo de operaciones basado en teoría de conjuntos.}. En este libro no plantearemos un enfoque tan técnico, y nos centraremos básicamente en las capacidades de estas operaciones y la utilidad que presentan para el usuario de SIG, sin detallar los pormenores de la base matemática subyacente. Las distintas operaciones se explicarán como elementos del álgebra de mapas, más acordes con los conocimientos ya desarrollados. Información más extensa sobre estas operaciones, expresada desde un punto de vista matemático, puede encontrarse en las referencias propuestas o textos al uso sobre tratamiento de imágenes digitales\footnote{Las direcciones Web  :cite:p:`MorphologyFip` y  :cite:p:`ProcesimVigo` contienen información pormenorizada sobre los fundamentos en que se basan las operaciones morfológicas, así como una descripción de las más habituales.}.
 
 De igual modo, veremos las principales operaciones morfológicas aplicadas sobre imágenes binarias, centrándonos en la naturaleza de las operaciones en sí y su efecto más que en los propios algoritmos. 
 
@@ -811,12 +879,15 @@ Erosión y dilatación
 
 Las dos principales operaciones morfológicas son la erosión y la dilatación. Pese a que sus nombres son ya sumamente descriptivos, veamos gráficamente en la figura :num:`#figerosiondilatacion` el efecto de ambas sobre nuestra imagen base. 
 
-.. figure:: Erosion_dilatacion.png
+.. _figerosiondilatacion:
+
+.. figure:: Erosion_dilatacion.*
+	:width: 650px
 
 	Resultado de aplicar operaciones de erosión (a) y dilatación (b) sobre la imagen base.
 
 
-.. _figerosion_dilatacion: 
+ 
 
 
 Como es fácil apreciar, la erosión reduce el tamaño de las formas, mientras que la dilatación tiene el efecto contrario, *engordándolas*\footnote{Este efecto contrario en realidad hace que las operaciones sean una la *dual* de la otra. Esto quiere decir que aplicar una de ellas sobre los elementos de la imagen es equivalente a aplicar la otra sobre el fondo}.
@@ -856,12 +927,15 @@ La aplicación de una operación de cierre rellena los huecos y concavidades de 
 
 Una aplicación práctica de estas operaciones la podemos encontrar en la imagen :num:`#figesqueleto`. En ella la imagen inicial :math:`a)` presenta una estructura lineal tal como una carretera, pero esta, a través de los distintos procesos aplicados para obtener la imagen binaria, ha *perdido* algunos píxeles, de forma que ya no existe una conexión correcta entre los distintos píxeles que la forman. La carretera ha quedado *rota* en fragmentes inconexos, que no representan realmente el objeto, y que van a dificultar el cálculo de parámetros acerca de este.
 
-.. figure:: Esqueletizacion.png
+.. _figesqueleto:
+
+.. figure:: Esqueletizacion.*
+	:width: 650px
 
 	Imagen original con un objeto lineal desconectado (a). Objeto conectado tras la aplicación de una operación de cierre (b). Esqueleto del anterior objeto obtenido mediante la aplicación de operaciones morfológicas (c).
 
 
-.. _figesqueleto: 
+ 
 
 
 La operación de cierre produce, como hemos dicho, un rellenado de los huecos de la imagen. Este efecto es exactamente el que necesitamos en este punto, ya que incorporará a la carretera aquellos píxeles que faltan para establecer la conexión entre los distintos tramos, y convertir dicha carretera en un único objeto.
@@ -886,7 +960,7 @@ El problema estriba en que, aunque tratemos conceptualmente a esa carretera como
 
 El esqueleto de la carretera mantiene así las propiedades que nos interesan, tales como la longitud, pero de una manera más adecuada para el análisis. De hecho, mantiene incluso la topología, la cual habíamos *corregido* aplicando la operación de cierre.
 
-El cálculo del esqueleto puede llevarse a cabo aplicando operaciones similares a las que ya conocemos. Estas operaciones se denominan de *adelgazamiento*\footnote{Habitualmente citadas en su denominación en inglés: *thinning*}, pues su efecto es, en efecto, el de adelgazar el objeto. En esencia, puede entenderse como un proceso de erosión aplicado repetidamente hasta que al final quede un objeto de un único píxel de ancho, y garantizando que no se pierda la topología original (no surjan desconexiones). Un algoritmo habitual de adelgazamiento es el propuesto por \cite{Zhang1984ACM}.}
+El cálculo del esqueleto puede llevarse a cabo aplicando operaciones similares a las que ya conocemos. Estas operaciones se denominan de *adelgazamiento*\footnote{Habitualmente citadas en su denominación en inglés: *thinning*}, pues su efecto es, en efecto, el de adelgazar el objeto. En esencia, puede entenderse como un proceso de erosión aplicado repetidamente hasta que al final quede un objeto de un único píxel de ancho, y garantizando que no se pierda la topología original (no surjan desconexiones). Un algoritmo habitual de adelgazamiento es el propuesto por  :cite:p:`Zhang1984ACM`.}
 
 Otra forma de entender el cálculo del esqueleto de un objeto es a partir de distancias. A cada píxel de dentro del objeto se le puede asignar el valor de la distancia al píxel de fondo más cercano. Los puntos que forman parte del esqueleto cumplen la condición de ser máximos locales de distancia. Es decir, que todos los píxeles circundantes están más cerca del borde que el píxel en cuestión\footnote{Aunque sean formulaciones que hayan surgido en campos distintos, este uso de distancias es similar en su forma a lo que veremos en el capítulo :ref:`Costes` acerca del cálculo de costes. Los puntos de destino que entonces estudiaremos son en este caso los píxeles del fondo} .
 
@@ -904,12 +978,15 @@ Atendiendo a lo anterior surge el concepto de *firma espectral*. La firma espect
 En la figura :num:`#figfirmasespectrales` pueden verse algunas firmas espectrales características, teniéndose así una idea de las diferencias que pueden existir, y también de cómo estas pueden utilizarse para el análisis de imágenes.
 
 
-.. figure:: Firmas_espectrales.pdf
+.. _figfirmasespectrales:
+
+.. figure:: Firmas_espectrales.*
+	:width: 650px
 
 	Firmas espectrales tipo de algunos elementos habituales
 
 
-.. _figfirmas_espectrales: 
+ 
 
 
 Más detalladamente, y para un píxel caracterizado por su firma espectral, dos son los tipos de propiedades que se pueden extraer:
@@ -918,7 +995,7 @@ Más detalladamente, y para un píxel caracterizado por su firma espectral, dos 
 	* ¿Qué hay en ese píxel? Puesto que los distintos objetos van a presentar firmas espectrales particulares, pueden caracterizarse las firmas más habituales de una serie de objetos tipo, y después tratar de identificar a cuál de ellas se asemeja más la presente en un píxel concreto.
 	Los fundamentos teóricos de este proceso, que son de tipo genérico y pueden aplicarse a otras fuentes de datos además de las imágenes, se tratarán en el capitulo :ref:`Estadistica_avanzada`. En este capítulo principalmente veremos los aspectos relacionados con la identificación de factores físicos a partir de imágenes, que podrán emplearse en conjunción con los que se verán entonces.
 	En general, la clasificación de elementos del medio hace uso de las denominadas *bases de datos espaciales*\footnote{No ha de confundirse esto con la tecnología de bases de datos con capacidad de manejo de elementos espaciales, la cual ya hemos visto en otros capítulos. En este caso no nos referimos a la tecnología, sino a un conjunto particular de datos que almacenan esas firmas espectrales de una serie de elementos conocidos.}, que recogen las características de dichos elementos expresadas en función de las energías recibidas en las distintas longitudes de onda.
-	Más información sobre bases de datos de firmas espectrales puede encontrarse en \cite{Ruby2002SPIE}.
+	Más información sobre bases de datos de firmas espectrales puede encontrarse en  :cite:p:`Ruby2002SPIE`.
 	
 	* ¿Cómo es lo que hay en ese píxel? Conociendo qué tipo de elemento encontramos en un píxel (por ejemplo, una superficie de agua como un embalse), pueden estimarse asimismo las cualidades particulares del mismo. Características como la temperatura de ese agua tienen efecto sobre la firma espectral, y pueden deducirse mediante formulaciones desarrolladas a tal efecto. 
 
@@ -957,20 +1034,23 @@ La vegetación es uno de los elementos que mayor atención han recibido en el á
 
 Uno de los parámetros principales son los denominados *índices de vegetación*. Estos índices permiten detectar la presencia de vegetación en una zona y la actividad de esta, ya que sus valores están en relación con dicha actividad. Para ello, utilizan los valores de reflectancia correspondientes a las distintas longitudes de onda, interpretando estas en relación con la actividad fotosintética.
 
-En términos generales, un índice de vegetación puede definirse como un parámetro calculado a partir de los valores de la reflectividad a distintas longitudes de onda y que pretenden extraer de los mismos la información relativa a la vegetación, minimizando las perturbaciones debidas a factores tales como el suelo o la atmósfera \cite{Gilabert1997Revista}.
+En términos generales, un índice de vegetación puede definirse como un parámetro calculado a partir de los valores de la reflectividad a distintas longitudes de onda y que pretenden extraer de los mismos la información relativa a la vegetación, minimizando las perturbaciones debidas a factores tales como el suelo o la atmósfera  :cite:p:`Gilabert1997Revista`.
 
 El conocimiento del proceso de fotosíntesis ayuda a comprender la base de los índices de vegetación. Por regla general, las plantas absorben radiación en las regiones visibles del espectro, en particular en la región del rojo, siendo esta radiación la que emplean para su obtención de energía. Por el contrario, las radiaciones de menor frecuencia tales como las del infrarrojo no son útiles para el desarrollo de la actividad fotosintética, y la absorción de estas provocaría tan solo un aumento de la temperatura de la planta que podría ser perjudicial para la misma. Por ello, estas frecuencias son reflejadas en su mayor parte.
 
 Como resultado de lo anterior, las bandas de imágenes de satélite correspondientes a la zona del infrarrojo van a presentar altos valores de reflectancia, y bajos en la banda del rojo en caso de que exista vegetación, lo cual permite localizar esta mediante la utilización de dichas imágenes. Este es el fundamento de los índices de vegetación.
 
-Sin necesidad de definir aún ningún índice, podemos ver claramente este hecho en la figura :num:`#figgardencity`. En ella, se ha creado una imagen en falso color empleando las bandas del infrarrojo cercano, el rojo y el verde para los canales del rojo, verde y azul respectivamente (los del modelo RGB)\footnote{Este esquema es de uso habitual y se denota como RGB = NRG, siendo N = Near infrared (infrarrojo cercano), R = Red (rojo) y G = Green (verde). Como regla mnemotécnica, la lectura en ingles del acrónimo NRG suena parecida a la del vocablo inglés \extr{energy} (energía), y es también común referirse así a él.}. Debido a lo anterior, las zonas con cultivos con alto vigor vegetativo aparecen con un tono rojo muy marcado, que permite rápidamente identificarlas.
+Sin necesidad de definir aún ningún índice, podemos ver claramente este hecho en la figura :num:`#figgardencity`. En ella, se ha creado una imagen en falso color empleando las bandas del infrarrojo cercano, el rojo y el verde para los canales del rojo, verde y azul respectivamente (los del modelo RGB)\footnote{Este esquema es de uso habitual y se denota como RGB = NRG, siendo N = Near infrared (infrarrojo cercano), R = Red (rojo) y G = Green (verde). Como regla mnemotécnica, la lectura en ingles del acrónimo NRG suena parecida a la del vocablo inglés *energy* (energía), y es también común referirse así a él.}. Debido a lo anterior, las zonas con cultivos con alto vigor vegetativo aparecen con un tono rojo muy marcado, que permite rápidamente identificarlas.
 
-.. figure:: Garden_city.png
+.. _figgardencity:
+
+.. figure:: Garden_city.*
+	:width: 650px
 
 	La creación de una imagen de falso color con un esquema RGB=NRG permite localizar las zonas de vegetación por su coloración roja intensa. Esto es debido a la alta reflectancia en las banda del infrarrojo visible y la baja reflectancia en el rango visible, causadas ambas por la actividad fotosintética.
 
 
-.. _figgarden_city: 
+ 
 
 
 Dependiendo del tipo de sensor del cual provengan las imágenes a analizar, serán unas u otras bandas las que deban emplearse como bandas del rojo e infrarrojo cercano. En el caso particular del sensor LANDSAT, por ejemplo, la banda del rojo es la 3, mientras que la del infrarrojo cercano es la 4.
@@ -984,7 +1064,7 @@ Según cómo se formulen los índices en base a los valores de las anteriores ba
 
 Veremos más adelante qué representa esa *línea de suelo* y cómo calcularla. Por ahora, veamos algunos de los principales índices del primer grupo.
 
-El más importante de los índices de vegetación es el *Índice de Vegetación de Diferencia Normalizada* (NDVI, *Normalized Differential Vegetation Index*) \cite{Rouse1973ERTS}, cuya expresión es la siguiente:
+El más importante de los índices de vegetación es el *Índice de Vegetación de Diferencia Normalizada* (NDVI, *Normalized Differential Vegetation Index*)  :cite:p:`Rouse1973ERTS`, cuya expresión es la siguiente:
 
 .. math::
 
@@ -997,7 +1077,7 @@ Los valores de este índice se encuentran dentro del intervalo (-1,1). Valores a
 
 Además de permitir localizar las zonas con presencia de vegetación, el NDVI puede emplearse para conocer otros parámetros relativos a la vegetación, ya que estos también condicionan la forma en que esta refleja la radiación. Factores tales como el vigor vegetativo, el estado fitosanitario o el contenido en agua de las hojas influyen en la forma en cómo los procesos fotosintéticos se producen. Esto tiene un efecto directo sobre las radiaciones emitidas en las distintas longitudes de onda, y muy particularmente en las empleadas para la definición de los índices de vegetación. Por ello, son una valiosa fuente de información acerca de las variables propias de la vegetación.
 
-Otros parámetros como el *Índice de Área Foliar*\footnote{Leaf Area Index(LAI)} o el factor C de la USLE pueden calcularse en primera aproximación a partir del NDVI, siendo abundante la literatura en este sentido. Por ejemplo, para el factor C, la siguiente expresión genérica puede servir para estimarlo en función exclusivamente del NDVI \cite{Knijff1999ESB},
+Otros parámetros como el *Índice de Área Foliar*\footnote{Leaf Area Index(LAI)} o el factor C de la USLE pueden calcularse en primera aproximación a partir del NDVI, siendo abundante la literatura en este sentido. Por ejemplo, para el factor C, la siguiente expresión genérica puede servir para estimarlo en función exclusivamente del NDVI  :cite:p:`Knijff1999ESB`,
 
 .. math::
 
@@ -1008,12 +1088,15 @@ siendo valores habituales :math:`\alpha = 2` y :math:`\beta = 1`.
 
 En la figura :num:`#figndvi` puede verse el aspecto de una capa de NDVI para la zona de estudio habitual. Si se compara con la composición de color mostrada anteriormente puede observarse cómo las zonas sin vegetación presentan tonos oscuros (valores bajos de NDVI) y las de vegetación tonos claros (valores altos de NDVI).
 
-.. figure:: NDVI.png
+.. _figndvi:
+
+.. figure:: NDVI.*
+	:width: 650px
 
 	(NDVI)
 
 
-.. _figndvi: 
+ 
 
 
 El número de índices de vegetación dentro de este primer grupo es muy elevado, todos ellos con una formulación similar a la del NDVI y tratando de mejorar ciertos aspectos de este. Algunos de los más habituales son los mostrados a continuación.
@@ -1042,18 +1125,21 @@ El número de índices de vegetación dentro de este primer grupo es muy elevado
 
 
 
-Como hemos dicho, las bandas del rojo y el infrarrojo cercano se corresponden en el caso del sensor LANDSAT TM con las bandas 3 y 4 respectivamente. La formulación original del NDVI se basaba en datos de dicho sensor, por lo que es habitual encontrar este bajo la denominación NDVI43. Si se emplea una notación similar, pueden definirse nuevos índices que mantienen la expresión del NDVI, pero utilizan distintas bandas como base de su cálculo. Algunos de estos índices derivados han sido estudiados y documentados en la literatura, y es posible asignárles una interpretación del mismo modo que con el modelo base de NDVI. Así, \cite{Rock1985Symp} define el NDVI54 y lo relaciona con el estrés hídrico de la vegetación y \cite{Lee1997FS} define el NDVI75, el cual presenta una correlación apreciable con la biomasa existente.
+Como hemos dicho, las bandas del rojo y el infrarrojo cercano se corresponden en el caso del sensor LANDSAT TM con las bandas 3 y 4 respectivamente. La formulación original del NDVI se basaba en datos de dicho sensor, por lo que es habitual encontrar este bajo la denominación NDVI43. Si se emplea una notación similar, pueden definirse nuevos índices que mantienen la expresión del NDVI, pero utilizan distintas bandas como base de su cálculo. Algunos de estos índices derivados han sido estudiados y documentados en la literatura, y es posible asignárles una interpretación del mismo modo que con el modelo base de NDVI. Así,  :cite:p:`Rock1985Symp` define el NDVI54 y lo relaciona con el estrés hídrico de la vegetación y  :cite:p:`Lee1997FS` define el NDVI75, el cual presenta una correlación apreciable con la biomasa existente.
 
 Para el cálculo de los índices de vegetación del segundo grupo se requiere, como ya hemos visto,  el cálculo de una recta denominada *línea de suelo*. Esta recta viene definida por su pendiente :math:`b` y el punto :math:`a` en el que corta al eje de ordenadas, siendo estos valores los que se incorporan a las formulaciones de los índices de este grupo.
 
 El fundamento en el que reside el uso de la linea de suelo y su incorporación a los índices de vegetación puede comprenderse con facilidad si se observa la figura :num:`#figlineadelsuelo`. Los puntos de la gráfica representada son los correspondientes a los valores en las bandas del rojo y el infrarrojo para los píxeles sobre zonas de suelo desnudo. A estos se ajusta la recta :math:`r` mostrada, y los puntos sobre la misma tales como el punto :math:`X` se asocian al suelo desnudo. 
 
-.. figure:: Linea_del_suelo.pdf
+.. _figlineadelsuelo:
+
+.. figure:: Linea_del_suelo.*
+	:width: 650px
 
 	Representación gráfica de la línea de suelo, un punto correspondiente a suelo desnudo (:math:`X`) y un punto correspondiente a la presencia de cierta vegetación (:math:`X'`)
 
 
-.. _figlinea_del_suelo: 
+ 
 
 
 Para ese mismo suelo, una cierta cobertura vegetal haría que el valor correspondiente tuviera una menor reflectancia en el rojo y mayor en el infrarrojo cercano, alejándose de la línea de suelo perpendicularmente. Cuanto mayor es la cobertura vegetal y mayor la actividad fotosintética, mayor será esta distancia entre el punto y la linea de suelo, y por lo tanto su medida puede constituir un índice de vegetación válido. Esta es la razón por la que estos índices, como ya se dijo, se conozcan como índices basados en distancia.
@@ -1066,25 +1152,25 @@ El cálculo de la línea de suelo se lleva a cabo siguiendo los pasos enunciados
 * Se calcula una regresión lineal entre los valores del rojo y del infrarrojo, solo con los píxeles de las anteriormente definidas zonas sin vegetación. Se obtendrá una expresión de la forma :math:`y=a+bx`. Según sea el índice de vegetación, deberá tomarse como variable independiente o bien la reflectancia correspondiente al rojo, o bien la del infrarrojo.
 
 
-Una vez realizado el proceso anterior, con los coeficientes :math:`a` y :math:`b` pueden formularse nuevos índices de vegetación para estimar la distancia anteriormente descrita. El índice de vegetación original dentro de este tipo, del cual derivan los restante, es el conocido como *Índice de Vegetación Perpendicular*(PVI, *Perpendicular Vegetation Index*) \cite{Richardson1977PERS}.
+Una vez realizado el proceso anterior, con los coeficientes :math:`a` y :math:`b` pueden formularse nuevos índices de vegetación para estimar la distancia anteriormente descrita. El índice de vegetación original dentro de este tipo, del cual derivan los restante, es el conocido como *Índice de Vegetación Perpendicular*(PVI, *Perpendicular Vegetation Index*)  :cite:p:`Richardson1977PERS`.
 
 Este índice, no obstante, es complejo y además no aporta información sobre si la distancia se da hacia el otro lado de la línea de suelo (agua en lugar de vegetación), por lo que se han propuesto otros más sencillos y eficaces. Entre ellos, cabe destacar los siguientes:
 
 
-* \cite{Perry1984RSE}
+*  :cite:p:`Perry1984RSE`
 
 .. math::
 
 	 \mathrm{PVI} = \frac{b \cdot \mathrm{IR} - \mathrm{R} + a}{\sqrt{b^2 +1}}		
 
 
-* \cite{Banari1996IJRS}
+*  :cite:p:`Banari1996IJRS`
 .. math::
 
 	 \mathrm{PVI} = \frac{(\mathrm{IR} - a) (\mathrm{R} + b)}{\sqrt{a^2 +1}}		
 
 .
-* \cite{Qi1994RSE}
+*  :cite:p:`Qi1994RSE`
 
 .. math::
 
@@ -1093,7 +1179,7 @@ Este índice, no obstante, es complejo y además no aporta información sobre si
 
 
 
-Un último índice de formulación similar al NDVI es el SAVI (*Soil Adjusted Vegetation Index*) \cite{Huete1988RSE}. Su expresión es la siguiente:
+Un último índice de formulación similar al NDVI es el SAVI (*Soil Adjusted Vegetation Index*)  :cite:p:`Huete1988RSE`. Su expresión es la siguiente:
 
 .. math::
 
@@ -1139,7 +1225,7 @@ Por último, mencionar que el estudio del agua en estado solido (nieve, hielo) c
 Transformacion *Tasseled Cap*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-La transformacion Tasseled Cap \cite{Kauth1976Symp} guarda gran similitud operacional con el *análisis de componentes principales*, el cual veremos en el apartado :ref:`Componentes_principales`, siendo un caso particular de este. Se trata de obtener una nueva serie de bandas a partir de las del conjunto original como combinación lineal de estas, cada una de ellas con un significado bien definido. Este significado guarda relación principalmente con la vegetación, aunque se trata aquí por separado y no en la sección anterior correspondiente, por no ser una formulación únicamente dirigida a este tipo de análisis.
+La transformacion Tasseled Cap  :cite:p:`Kauth1976Symp` guarda gran similitud operacional con el *análisis de componentes principales*, el cual veremos en el apartado :ref:`Componentes_principales`, siendo un caso particular de este. Se trata de obtener una nueva serie de bandas a partir de las del conjunto original como combinación lineal de estas, cada una de ellas con un significado bien definido. Este significado guarda relación principalmente con la vegetación, aunque se trata aquí por separado y no en la sección anterior correspondiente, por no ser una formulación únicamente dirigida a este tipo de análisis.
 
 Los coeficientes de las combinaciones lineales que expresan la transformación se encuentran tabulados para los sensores más habituales tales como LANDSAT TM+ o MSS, y en función de estos también puede variar el número y significado de las bandas resultantes.
 
@@ -1191,12 +1277,15 @@ Decíamos al inicio del capítulo que podemos, a partir de imágenes, identifica
 
 Del mismo modo, extraer la localización de cada árbol dentro de una masa arbórea también requiere identificar estos por la forma de sus copas en la imagen, al igual que, por ejemplo, la localización de edificios (Figura :num:`#figidentificacionedificios`).
  
-.. figure:: Identificacion_edificios.png
+.. _figidentificacionedificios:
+
+.. figure:: Identificacion_edificios.*
+	:width: 650px
 
 	Identificación automatizada de edificios a partir de una imagen aérea (cortesía de Visual Learning Systems, Inc)
 
 
-.. _figidentificacion_edificios: 
+ 
 
 
 En cierta medida, el proceso de clasificación se basa de forma global en una concepción ráster de los resultados a obtener, mientras que la extracción de elementos enfoca dichos resultados como entidades vectoriales (que son, precisamente, esos elementos a detectar). Por ello, tiene en realidad mucha relación con todo lo que veremos en el capítulo :ref:`Creacion_capas_vectoriales`. En conjunto con los conceptos que veremos entonces, aplicamos también los que conocemos de este capítulo ---tales como las firmas espectrales---, así como las ya mencionadas ideas sobre clasificación que igualmente se detallarán en breve.

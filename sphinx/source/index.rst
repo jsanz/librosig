@@ -25,12 +25,16 @@ Los nombre de productos o corporaciones que aparecen en el texto pueden constitu
 **Índice:**
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    Intro.rst
    Fundamentos/Fundamentos.rst	   
+   Datos/Datos.rst
+   Tecnologia/Tecnologia.rst
    Procesos/Procesos.rst
-
+   Visualizacion/Visualizacion.rst
+   Factor_organizativo/Factor_organizativo.rst
+   Aplicaciones/Aplicaciones.rst
 
 
 

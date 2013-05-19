@@ -39,7 +39,7 @@ El cliente es responsable de *pedir* ese dato al servidor, tomarlo y trabajar co
 Supongamos la dirección Web \texttt{http://www.sextantegis.com/libro.htm}, en la cual puedes encontrar información relacionada con este libro e incluso descargarlo. Si visitas esa página estás efectuando una petición a través de esa URL, la cual se compone de las siguientes partes:
 
 
-	* \texttt{http:}. El protocolo a usar, que define la forma en que se van a comunicar cliente y servidor. Aunque éste es el más habitual, existen muchos otros tales como \texttt{ftp} o \texttt{mailto}. Puede encontrarse más acerca de estos protocolos en \cite{protocolosWeb}.
+	* \texttt{http:}. El protocolo a usar, que define la forma en que se van a comunicar cliente y servidor. Aunque éste es el más habitual, existen muchos otros tales como \texttt{ftp} o \texttt{mailto}. Puede encontrarse más acerca de estos protocolos en  :cite:p:`protocolosWeb`.
 	* \texttt{www.sextantegis.com}. Esta cadena identifica la máquina donde reside la página que buscamos. Es en realidad una versión más legible para el ojo humano de un código numérico que indica la dirección concreta. El navegador lo convierte en realidad en un algo como 128.118.54.228.
 	* \texttt{libro.htm}. La página que buscamos dentro de todas las que hay en esa máquina. Se expresa como una ruta a partir del directorio raíz del servidor, que no es necesariamente el directorio raíz de la maquina servidora.
 
@@ -56,12 +56,15 @@ El proceso mediante el que podemos ver esa página en un navegador Web comprende 
 
 La figura :num:`#figasifuncionainternet` muestra un esquema de este proceso.
 
-.. figure:: Asi_funciona_internet.pdf
+.. _figasifuncionainternet:
+
+.. figure:: Asi_funciona_internet.*
+	:width: 650px
 
 	Esquema del proceso de consulta de una página web desde un navegador.
 
 
-.. _figasi_funciona_internet: 
+ 
 
 
 El valor de las tecnologías SIG Web
@@ -69,7 +72,7 @@ El valor de las tecnologías SIG Web
 
 Antes de abordar la parte más técnica de las tecnologías Web SIG, veamos el significado de éstas y la función que cumplen. Entederemos en este contexto como tecnologías web SIG a todos aquellos elementos que permiten la representación de cartografía como un contenido más de una página Web. Esto es lo que se engloba bajo la denominación genérica de *Web Mapping*.
 
-Aunque este capítulo está dedicado a las tecnologías Web dentro del ámbito SIG, y éstas incluyen tanto servidores como clientes, las formas en las que se presentan los elementos de \extr{Web Mapping} dependen fundamentalmente del cliente, el cual es en general un simple navegador. 
+Aunque este capítulo está dedicado a las tecnologías Web dentro del ámbito SIG, y éstas incluyen tanto servidores como clientes, las formas en las que se presentan los elementos de *Web Mapping* dependen fundamentalmente del cliente, el cual es en general un simple navegador. 
 
 Como vimos en el capítulo dedicado a los SIG de escritorio, éstos pueden acceder a datos remotos, y para ello necesitan realizar una petición a un servidor siguiendo el esquema que hemos visto en el apartado anterior. Una vez que los datos están en el SIG (es decir, el servidor ha devuelto a éste los datos que había pedido), podemos operar con ellos usando las herramientas que ya conocemos.
 
@@ -77,9 +80,9 @@ En un entorno Web *sensu stricto* tal como el de un navegador, las posibilidades
 
 En resumen, el objetivo básico que pretenden cumplir las tecnologías que vamos a ver, especialmente las del lado del cliente, es llevar las funcionalidades de un SIG a la Web, para así compartir la potencia de ambos componentes.  Las ventajas de llevar el SIG a la Web en lugar de incorporar los elementos de está ultima en un SIG de escritorio tradicional son notables, y existen grandes diferencias entre las soluciones que se obtienen en ambos casos. Estas diferencias tienen que ver sobre todo con los usuarios y su perfil, así como con el diseño mismo de las aplicaciones. 
 
-Mientras que un SIG de escritorio se orienta principalmente a usuarios más especializados, poder dotar a un sencillo navegador Web de capacidades de visualización o edición de información geográfica hace que éstos lleguen a un público distinto y abre nuevas posibilidades. Los usuarios avanzados encuentran igualmente utilidad en el \extr{Web Mapping}, que se complementa en muchos terrenos con los SIG de escritorio. Por su parte, los usuario no especializados, desconocedores de otras tecnologías SIG, pueden incorporarse al ámbito SIG a través de las tecnologías Web.
+Mientras que un SIG de escritorio se orienta principalmente a usuarios más especializados, poder dotar a un sencillo navegador Web de capacidades de visualización o edición de información geográfica hace que éstos lleguen a un público distinto y abre nuevas posibilidades. Los usuarios avanzados encuentran igualmente utilidad en el *Web Mapping*, que se complementa en muchos terrenos con los SIG de escritorio. Por su parte, los usuario no especializados, desconocedores de otras tecnologías SIG, pueden incorporarse al ámbito SIG a través de las tecnologías Web.
 
-Algunas de las ideas fundamentales que caracterizan a las tecnologías de \extr{Web Mapping} y su papel actual son las siguientes:
+Algunas de las ideas fundamentales que caracterizan a las tecnologías de *Web Mapping* y su papel actual son las siguientes:
 
 
 	* No es necesario un software SIG específico. Al menos, no es necesario desde el punto de vista del usuario, que no ha de instalar nada adicional en su ordenador. Acceder a cartografía remota e incluso a funcionalidades avanzadas basadas en esos datos no requieren mas que un simple navegador Web, algo presente en cualquier ordenador hoy en día. La barrera que puede suponer el trabajar con una aplicación específica se diluye cuando incorporamos las capacidades de ésta en algo tan habitual como un navegador.
@@ -87,9 +90,9 @@ Algunas de las ideas fundamentales que caracterizan a las tecnologías de \extr{W
 	* Potenciamiento del trabajo colaborativo. La red es un un punto de encuentro que favorece de forma natural la colaboración. Proyectos como la Wikipedia, posibles gracias a esta capacidad de  Internet para facilitar el trabajo común de múltiples personas, tiene sus equivalentes en el ámbito de la información geográfica. Los SIG dejan de ser algo personal reducido al ámbito de un ordenador o una pequeña red, para ser algo global en una red de muchos SIG interconectados. Y más importante que esto, los datos también se hacen globales, pudiendo ser empleados e incluso editados por todos.
 	* Información más actualizada, incluso en tiempo real. La Web es el canal ideal para transmitir la información de forma inmediata y flexible. A las ventajas de los datos digitales sobre los analógicos en este sentido, que ya vimos en el capítulo :ref:`Introduccion_datos`, hay que sumar que la sencillez de acceso que aporta una interfaz Web hace todavía más accesible la información geográfica más reciente.
 	* Independencia del sistema. Un mapa Web puede verse y usarse del mismo modo en cualquier ordenador, con independencia del sistema operativo, el navegador e incluso el dispositivo empleado (PC, PDA, etc.). Si este mapa se basa en estándares abiertos, la solución es todavía más interoperable, como veremos en el capítulo :ref:`Servicios`.
-	* Personalización de aplicaciones. Una de las tendencias más importante en el ámbito del \extr{Web Mapping} es la creación de aplicaciones que personalizan una base común para un determinado uso. Sobre una base compuesta por una juego de datos genéricos (generalmente imágenes de satélite y mapas de carreteras) y una aplicación SIG, se crean pequeñas aplicaciones de forma sencilla, a las cuales se pueden añadir de modo también simple nuevos datos. Estas aplicaciones se conocen como \extr{mashups}, y una vez creadas puede incorporarse a una pagina Web distinta. Dedicaremos una sección completa de este capítulo a desarrollarlas en detalle.
+	* Personalización de aplicaciones. Una de las tendencias más importante en el ámbito del *Web Mapping* es la creación de aplicaciones que personalizan una base común para un determinado uso. Sobre una base compuesta por una juego de datos genéricos (generalmente imágenes de satélite y mapas de carreteras) y una aplicación SIG, se crean pequeñas aplicaciones de forma sencilla, a las cuales se pueden añadir de modo también simple nuevos datos. Estas aplicaciones se conocen como *mashups*, y una vez creadas puede incorporarse a una pagina Web distinta. Dedicaremos una sección completa de este capítulo a desarrollarlas en detalle.
 	
-	Mediante uno de tales \extr{mashups}, un usuario puede crear, sin excesivos conocimientos sobre SIG, una aplicación particular que ponga sobre ese juego de datos general los emplazamientos de, por ejemplo, todos aquellos que visitan su página Web. Las posibilidades en este sentido son prácticamente infinitas, y proliferan de forma exponencial en Internet.
+	Mediante uno de tales *mashups*, un usuario puede crear, sin excesivos conocimientos sobre SIG, una aplicación particular que ponga sobre ese juego de datos general los emplazamientos de, por ejemplo, todos aquellos que visitan su página Web. Las posibilidades en este sentido son prácticamente infinitas, y proliferan de forma exponencial en Internet.
 	* Combinación de cartografía y otros elementos. Si llevamos las capacidades SIG a un navegador, además de éstas dispondremos en ese navegador de muchas otras posibilidades, tales como la representación de elementos multimedia (vídeos, sonido, etc.) o el uso de hiperenlaces. El navegador es hoy en día la aplicación versátil por excelencia, y ello hace que podamos añadir a las capacidades SIG una larga serie de otras funcionalidades no relacionadas directamente con la información geográfica, y no presentes en su mayoría en los SIG de escritorio.
 
 
@@ -101,7 +104,7 @@ Formas de cartografía en la Web
 
 Las formas en las que pueden presentarse las tecnologías SIG dentro de un entorno Web varían en cuanto a su similitud con los SIG de escritorio, incorporando más o menos elementos de los que son habituales en este tipo de aplicaciones. Como parece lógico pensar, ha existido una evolución progresiva, de tal modo que en la actualidad existen más elementos propios de los SIG de escritorio dentro de las tecnologías Web SIG, y la cartografía Web hoy en día permite realizar un trabajo más similar al que se desarrolla en un SIG clásico.
 
-Una primera y sencilla clasificación de los tipos de cartografía Web es la que divide ésta en mapas *estáticos* y *dinámicos*\cite{Kraak2001Francis}. 
+Una primera y sencilla clasificación de los tipos de cartografía Web es la que divide ésta en mapas *estáticos* y *dinámicos* :cite:p:`Kraak2001Francis`. 
 
 
 Un mapa estático es simplemente una imagen con información cartográfica, la cual no permite ningún tipo adicional de trabajo con ella que no sea la mera observación. En este sentido, se asemeja a un mapa clásico, donde el usuario no puede interactuar directamente con el contenido del mapa. A efectos de trabajo real, las posibilidades son aún menores ya que acciones tales como mediciones tampoco pueden realizarse, ni siquiera con medios mecánicos como el caso de un mapa en papel. Junto a esto, la resolución de una pantalla común es mucho menor que la que presenta un mapa impreso, con lo que la calidad del mapa no es comparable.
@@ -130,14 +133,17 @@ Si no se emplean estas tecnologías, un cambio mínimo en la configuración de la p
 
 En un entorno RIA, sin embargo, se cargan al inicio (en el primer acceso a la página) los elementos que constituyen la aplicación en sí, y posteriormente se transmiten únicamente los datos que vayan siendo necesarios a medida que el usuario opere con la aplicación. Esto mejora notablemente la sensación del usuario, ya que este nunca tiene ante sí una pantalla sin contenido mientras se carga la página, ya que esta ya no ha de cargarse de nuevo, y la carga de datos puede ademas realizarse de mientras el propio usuario opera.
 
-AJAX \footnote{Asynchronous JavaScript And XML} \cite{garrett2005ajax} es una técnica de desarrollo muy popular en este sentido, y de la que los SIG Web hacen uso habitualmente. La figura :num:`#figajax` muestra una comparación entre el esquema de una aplicacion Web tradicional y una basada en AJAX. 
+AJAX \footnote{Asynchronous JavaScript And XML}  :cite:p:`garrett2005ajax` es una técnica de desarrollo muy popular en este sentido, y de la que los SIG Web hacen uso habitualmente. La figura :num:`#figajax` muestra una comparación entre el esquema de una aplicacion Web tradicional y una basada en AJAX. 
 
-.. figure:: ajax.png
+.. _figajax:
 
-	comparación entre el esquema de una aplicacion Web tradicional y una basada en AJAX.(adaptado de \cite{garrett2005ajax.}
+.. figure:: ajax.*
+	:width: 650px
+
+	comparación entre el esquema de una aplicacion Web tradicional y una basada en AJAX.(adaptado de  :cite:p:`garrett2005ajax.`
 
 
-.. _figajax: 
+ 
 
 
 Profundizar más en estos aspectos es, no obstante, demasiado técnico para el enfoque de este libro, no siendo necesario además para la comprensión de las tecnologías Web desde el punto de vista del usuario.
@@ -146,22 +152,25 @@ Además de modificar la zona representada, un usuario debe poder modificar la for
 
 Esto hace que una aplicación SIG dentro de un navegador se convierta en una herramienta completa para el acceso a uno o varios juegos de datos remotos cuyo contenido es abundante (no sólo en extensión sino también en tipo de datos suministrados), ya que permite una gran configurabilidad y deja en manos del cliente (esto es, del usuario), la forma de tomar esos datos y mostrarlos.
 
-Las capacidades de edición también tiene lugar en los SIG Web, ampliando las posibilidades que la interactividad más básica ofrece. Un usuario puede añadir su propia información a un SIG Web o bien modificar una capa existente empleando su navegador. Las tecnologías SIG siguen en este sentido a las tecnologías Web más generales, adoptando los conceptos de la Web 2.0 y ampliando las posibilidades de los usuarios de colaborar directamente en los contenidos de la red. Por ejemplo, *Wikimapia* \cite{webWikimapia} es un sitio equivalente a la bien conocida Wikipedia, en el cual los usuarios pueden añadir sus propias descripciones de elementos geográficos que ellos mismos definen.
+Las capacidades de edición también tiene lugar en los SIG Web, ampliando las posibilidades que la interactividad más básica ofrece. Un usuario puede añadir su propia información a un SIG Web o bien modificar una capa existente empleando su navegador. Las tecnologías SIG siguen en este sentido a las tecnologías Web más generales, adoptando los conceptos de la Web 2.0 y ampliando las posibilidades de los usuarios de colaborar directamente en los contenidos de la red. Por ejemplo, *Wikimapia*  :cite:p:`webWikimapia` es un sitio equivalente a la bien conocida Wikipedia, en el cual los usuarios pueden añadir sus propias descripciones de elementos geográficos que ellos mismos definen.
 
 A estas mismas tecnologías se les puede dar usos más restringidos sin que necesariamente sea dentro de un proyecto colaborativa abierto. Por ejemplo, una administración local puede dar acceso a los propietarios de suelo para que puedan consultar su catastro, mediante un sistema de autenticación conveniente, incluso editar información de sus parcelas. Está información puede ser de tipo no espacial (es decir, los límites de las parcelas serían fijos), ya que las capacidades de edición no han de limitarse a la componente espacial.
 
 Por último, y aunque en la actualidad son pocos los servicios de este tipo que existen, y no pueden compararse las prestaciones con las que ofrecen los SIG de escritorio, la cartografía Web puede ofrecer herramientas de análisis. Además de representar un conjunto de datos geográficos y permitir al usuario navegar en ellos e incluso editarlos, pueden extraerse resultados a partir de esos datos. 
 
-Un tipo de aplicación bastante extendida de este tipo es el cálculo de rutas óptimas. A partir de una capa con vías de comunicación un usuario establece un punto de salida y otro de destino y la aplicación Web calcula la ruta que optimiza el tiempo empleado o la distancia total recorrida, según lo explicado en el capítulo :ref:`Costes`. \cite{webGuiaCampsa} es un ejemplo de este tipo de aplicaciones en el cual la interfaz no es la de un SIG de escritorio habitual, sino que se introducen los lugares de origen y destino tecleando sus nombre y después la ruta calculada se muestra sobre un mapa y también como un conjunto de indicaciones a seguir. Es decir, que sobre una base de cálculo SIG se crea una aplicación más completa que la que es habitual encontrar en un SIG, aprovechando la mayor riqueza de elementos que pueden utilizarse dentro de un navegador Web.
+Un tipo de aplicación bastante extendida de este tipo es el cálculo de rutas óptimas. A partir de una capa con vías de comunicación un usuario establece un punto de salida y otro de destino y la aplicación Web calcula la ruta que optimiza el tiempo empleado o la distancia total recorrida, según lo explicado en el capítulo :ref:`Costes`.  :cite:p:`webGuiaCampsa` es un ejemplo de este tipo de aplicaciones en el cual la interfaz no es la de un SIG de escritorio habitual, sino que se introducen los lugares de origen y destino tecleando sus nombre y después la ruta calculada se muestra sobre un mapa y también como un conjunto de indicaciones a seguir. Es decir, que sobre una base de cálculo SIG se crea una aplicación más completa que la que es habitual encontrar en un SIG, aprovechando la mayor riqueza de elementos que pueden utilizarse dentro de un navegador Web.
 
 La figura :num:`#figtiposcartografiaweb` muestra un esquema de la evolución de la cartografía Web a través de los tipos anteriormente descritos.
 
-.. figure:: Tipos_cartografia_web.pdf
+.. _figtiposcartografiaweb:
+
+.. figure:: Tipos_cartografia_web.*
+	:width: 650px
 
 	Evolución de los tipos de cartografía en la Web.
 
 
-.. _figtipos_cartografia_web: 
+ 
 \end{figure*}
 
 Geoportales
@@ -207,7 +216,7 @@ Limitaciones y problemas de la cartografía Web
 
 Trasladar las ideas de los SIG de escritorio a la Web no es sencillo, por cuanto el entorno en el que nos movemos es muy distinto en uno y otro caso. La Web tiene sus propias limitaciones e inconvenientes, que en muchos casos no existen en el caso de una aplicación de escritorio, y este hecho presenta dificultades complejas de salvar, obligando a desarrollar soluciones alternativas.
 
-Una limitación básica es la impuesta por el propio navegador como marco de trabajo. Las propias ventajas que éste aporta son también responsables de ciertas limitaciones, ya que en el desarrollo de una aplicación SIG Web no se tiene las misma libertad que al desarrollar una aplicación de escritorio. Este no es un problema exclusivo del *Web Mapping*, sino en general de todas las aplicaciones Web. En \cite{***} puede encontrarse información genérica sobre este tipo de cuestiones.
+Una limitación básica es la impuesta por el propio navegador como marco de trabajo. Las propias ventajas que éste aporta son también responsables de ciertas limitaciones, ya que en el desarrollo de una aplicación SIG Web no se tiene las misma libertad que al desarrollar una aplicación de escritorio. Este no es un problema exclusivo del *Web Mapping*, sino en general de todas las aplicaciones Web. En  :cite:p:`***` puede encontrarse información genérica sobre este tipo de cuestiones.
 
 A lo anterior debemos sumar el hecho de que las tecnologías Web en general son recientes y en cierto modo inmaduras, y aunque se emplea gran cantidad de medios y esfuerzo en el ámbito Web debido a su vital importancia en la actualidad, una buena parte de los elementos tecnológicos sobre los que se fundamenta el *Web Mapping* actual no están todavía completamente desarrollados y necesitan aún evolucionar.
 
@@ -232,12 +241,15 @@ El *cacheo*, por su parte, es una técnica no exclusiva del ámbito SIG, sino de l
 
 El uso conjunto de *tiling* y *cacheo* puede disminuir sensiblemente el volumen de datos a transmitir para, por ejemplo, modificar el encuadre de un mapa en una aplicación SIG Web. La figura :num:`#figtiling` muestra un ejemplo sencillo que servirá para comprender el ahorro de datos que puede conseguirse con el uso conjunto de estas técnicas.
 
-.. figure:: Tiling.pdf
+.. _figtiling:
+
+.. figure:: Tiling.*
+	:width: 650px
 
 	Esquema del uso de *tiling* y *cacheo* para optimizar la transmisión de datos en una aplicación SIG Web
 
 
-.. _figtiling: 
+ 
 \end{figure*}
 
 En la parte izquierda de la figura está representado un esquema del dato al que se accede, dividido en nueve unidades. Ello no quiere decir que el dato tenga ese número de divisiones o que existan nueve ficheros. Puede tratarse de un único fichero, o de un número muy elevado de ellos. Las divisiones se realizan a efectos de crear el mosaico de imágenes a la hora de transmitir éstas.

@@ -26,10 +26,12 @@ Muchas de las operaciones geométricas que pueden realizarse con datos vectorial
 
 Esta equiparación entre el álgebra de mapas ráster y estas transformaciones geométricas (también una especie de álgebra de mapas vectorial, en cierta medida) puede plantear una disyuntiva desde el punto de vista del usuario de SIG que pretende analizar sus datos. Utilizar uno u otro modelo a la hora del análisis representa una elección igual que lo es el optar por una u otra forma de almacenamiento, vayamos o no a efectuar análisis sobre los datos almacenados. Sin embargo, no son opciones mutuamente excluyentes, y lo ideal es conocer los puntos fuertes y débiles de cada planteamiento, para así combinar ambos de la mejor forma posible. Como ya sabemos, los SIG hoy en día no son puramente ráster o vectoriales, sino que incluyen herramientas con ambos planteamientos. Utilizarlas conjuntamente es la forma más idónea de aprovechar toda su potencia. 
 
+.. _Zona_influencia_vectorial:
+
 Zonas de influencia
 =====================================================
 
-.. _Zona_influencia_vectorial:
+
 
 Una de las transformaciones más importantes con capas vectoriales es la creación de zonas de influencia, también conocidas como *buffers*}. Esta transformación puede llevarse a cabo con entidades de tipo punto, línea o polígono, y su resultado siempre es una nueva capa de polígonos. Las áreas cubiertas por estos polígonos reflejan las zonas de influencia de cada entidad, influencia que se considera la ejerce hasta una distancia dada. Pueden verse también de forma inversa, como una influencia recibida, de tal modo que todos los elementos dentro de la zona de influencia afectan a la entidad que la genera.
 
@@ -39,11 +41,14 @@ Como se muestra en la figura :num:`#figzonainfluenciacircular`, este análisis s
 
 El hecho de poder plantear este análisis de dos formas distintas es debido a que, según lo visto en :ref:`Calculos_espaciales_basicos`, en un espacio métrico se tiene que, para dos puntos A y B, la distancia entre A y B (:math:`d_{AB}`) es igual a la distancia entre B y A (:math:`d_{BA}`). Pueden calcularse zonas de influencia basadas en otro tipo de medidas que no cumplen la anterior propiedad, aunque las operaciones correspondientes se llevan a cabo sobre capas en formato ráster, y las estudiaremos en el capítulo :ref:`Costes`
 
-.. figure:: Zona_influencia_circular.pdf
+.. _figzonainfluenciacircular:
+
+.. figure:: Zona_influencia_circular.*
+	:width: 650px
 
 	Zona de influencia a partir de puntos. La influencia puede analizarse a partir de los puntos que la ejercen (a) o los que la reciben (b)
 
-.. _figzona_influencia_circular:
+
 
 
 Calcular una zona de influencia de un punto es un procedimiento sumamente sencillo, ya que esta zona es simplemente un circulo centrado en el punto y con radio la distancia máxima de influencia. En el caso de considerar líneas en lugar de puntos, la operación es conceptualmente similar, aunque el algoritmo subyacente es notablemente más complejo. No obstante, la interpretación es idéntica.
@@ -54,22 +59,28 @@ Podemos utilizar este tipo de zonas de influencia para, por ejemplo, estudiar qu
 
 De igual modo que en el ejemplo anterior, el análisis se pueden plantear de forma contraria, calculando las zonas de influencia de cada industria y viendo si estas cortan al trazado del cauce. Aquí podemos ver que, aunque los procedimientos para puntos y líneas sean distintos, su significado es el mismo, y por ello pueden utilizarse las zonas de influencia creadas a partir tanto de unas como de otras geometrías, indistintamente.
 
-.. figure:: Zona_influencia_lineas.png
+.. _figzonainfluencialineas:
+
+.. figure:: Zona_influencia_lineas.*
+	:width: 650px
 
 	Zona de influencia a partir de elementos lineales (cauces).
 
-.. _figzona_influencia_lineas:
+
 
 
 En el caso de polígonos, y puesto que ya conforman regiones, las zonas de influencia pueden establecerse no solo hacia el exterior, sino también hacia el interior de la geometría (Figura :num:`#figzonainfluenciapoligonos`). En el caso de extender el área del polígono, la interpretación es la misma que en los ejemplos anteriores. Por ejemplo, para un polígono que delimita el perímetro de un núcleo urbano, su zona de influencia puede indicar la extensión de territorio al que los habitantes de ese núcleo podrían desplazarse en busca de algún servicio, o bien la de la región de procedencia de quienes pueden acudir a la ciudad en busca del mismo. Una zona de influencia hacia el interior, sin embargo, nos indicaría por ejemplo qué habitantes no es probable que salgan del núcleo urbano en busca de un servicio dado, ya que este desplazamiento es demasiado costoso.
 
 Otro uso habitual de este tipo de zonas de influencia la encontramos en la gestión de costas. Si consideramos una zona de protección costera de una dimensión dada, el polígono de influencia hacia el interior calculado con esa distancia y el contorno de la zona interior representa las zonas a menos de dicha distancia de la costa. Por tanto, son aquellas zonas fuera de la zona de protección sobre las que pueden establecerse actividades tales como la edificación o implantación de infraestructuras.
 
-.. figure:: Zona_influencia_poligonos.pdf
+.. _figzonainfluenciapoligonos:
+
+.. figure:: Zona_influencia_poligonos.*
+	:width: 650px
 
 	Zona de influencia a partir de polígonos. a) Hacia el exterior,b) hacia el interior. 
 
-.. _figzona_influencia_poligonos:
+
 
 
 
@@ -77,11 +88,14 @@ Mientras que la zona de influencia exterior no tiene ningún límite, la trazada
 
 Sobre la base anterior de zonas de influencia delimitadas a partir de las geometrías fundamentales, existen muchas variantes y formas de construirlas. Un proceso habitual es la creación no de una única zona de influencia para cada entidad base, sino de un conjunto de ellas equiespaciadas, de tal forma que puedan considerarse distintos grados de influencia. Este conjunto de zonas de tamaños sucesivos forman una serie de polígonos concéntricos que pueden, además, representarse de forma distinta para reflejar más explícitamente su significado (Figura :num:`#figzonasinfluenciaconcentricas`).
 
-.. figure:: Zonas_influencia_concentricas.png
+.. _figzonasinfluenciaconcentricas:
+
+.. figure:: Zonas_influencia_concentricas.*
+	:width: 650px
 
 	Zonas de influencia concéntricas a partir de una entidad lineal 
 
-.. _figzonas_influencia_concentricas:
+
 
 
 Es fácil ver que si se trazan dos áreas de influencia de tamaño :math:`r` y :math:`2r` a partir de una geometría de un tipo cualquiera, esta última es equivalente al área de influencia creada a partir de la primera, con distancia :math:`r`.
@@ -94,29 +108,38 @@ Tanto el caudal del cauce como la potencia de la antena son atributos de la enti
 
 La figura :num:`#figzonainfluenciavariable` muestra el aspecto de una zona de influencia calculada a partir de una red de drenaje, cuya dimensión se establece en función del orden jerárquico de cada tramo.
 
-.. figure:: Zona_influencia_variable.png
+.. _figzonainfluenciavariable:
+
+.. figure:: Zona_influencia_variable.*
+	:width: 650px
 
 	Zonas de influencia variable establecidas en función de los ordenes de los cauces. 
 
-.. _figzona_influencia_variable:
+
 
 
 Otra de las modificaciones que se pueden plantear a la creación de zonas de influencia es la simplificación de estas cuando existen solapes. En el resultado de la figura :num:`#figzonainfluenciacircular` puede verse cómo las distintas zonas de influencia se solapan en algunos puntos. No obstante la zona global que se ve afectada por la presencia de los puntos (antenas según suponíamos para el ejemplo), puede reflejarse de igual modo con un único polígono, ya que, puesto que existe contacto entre las zonas, puede simplemente considerarse el contorno del conjunto.
 
-.. figure:: Zona_influencia_disolver.pdf
+.. _figzonainfluenciadisolver:
+
+.. figure:: Zona_influencia_disolver.*
+	:width: 650px
 
 	Zona de influencia única a partir de un conjunto de zonas de influencia individuales que se solapan. 
 
-.. _figzona_influencia_disolver:
+
 
 
 En general, todas las entidades geográficas se prestan a la creación de zonas de influencia sin ninguna consideración especial. No obstante, en el caso de curvas o polígonos muy convolucionados pueden en ocasiones darse formas incoherentes.%, tal y como se refleja en la figura :num:`#figzonainfluenciaconvolucionado`.
 
-%.. figure:: Zona_influencia_convolucionado.pdf
+%.. _figzonainfluenciaconvolucionado:
+
+.. figure:: Zona_influencia_convolucionado.*
+	:width: 650px
 %
 	Zona de influencia de un polígono muy convolucionado.
 
-.. _figzona_influencia_convolucionado:
+
 %
 
 %Es necesario en tal caso aplicar una disolución para evitar este tipo de solape.
@@ -143,11 +166,14 @@ Encontramos los siguientes tipos de operaciones de solape:
 
 Estas operaciones pueden entenderse como operaciones de conjuntos y visualizarse mediante sencillos diagramas, de forma similar a lo que veíamos en la sección :ref:`Mecanismos_consulta` al presentar los diagramas de Venn (Figura :num:`#figoperacionessolape`).
 
-.. figure:: Operaciones_solape.pdf
+.. _figoperacionessolape:
+
+.. figure:: Operaciones_solape.*
+	:width: 650px
 
 	Tipos de operaciones de solape entre dos elementos individuales. 
 
-.. _figoperaciones_solape:
+
 
 
 Recorte
@@ -161,11 +187,14 @@ Esta operación se conoce como *clipping* en inglés y es habitual verla así ci
 
 En la figura :num:`#figrecortevectorial` podemos ver cómo la capa de entrada con polígonos, líneas y puntos se restringe a una extensión menor manteniendo dentro de dicha zona la misma información original. Se considera en este ejemplo un único polígono de recorte, pero pueden ser varios, e incluso polígonos con huecos interiores, sin que exista diferencia alguna en la operación.
 
-.. figure:: Recorte_vectorial.png
+.. _figrecortevectorial:
+
+.. figure:: Recorte_vectorial.*
+	:width: 650px
 
 	Recorte vectorial de un conjunto de capas de puntos, líneas y polígonos, con una capa de polígonos. 
 
-.. _figrecorte_vectorial:
+
 
 
 Para los puntos, solo se mantienen aquellos que se sitúan dentro del polígono de recorte. Para las líneas, se mantienen aquellas que entran dentro del polígono o lo cruzan, recortándose para que no salgan de este. Y en el caso de polígonos, estos se recortan para restringir su extensión a la del  polígono de recorte.
@@ -204,11 +233,14 @@ A diferencia del recorte, la información empleada para crear la tabla resultant
 
 Puede verse un sencillo ejemplo en la figura :num:`#figinterseccionvectorial`.
 
-.. figure:: Interseccion_vectorial.pdf
+.. _figinterseccionvectorial:
+
+.. figure:: Interseccion_vectorial.*
+	:width: 650px
 
 	Interseccion entre dos capas de polígonos, mostrando las geometrías y la tabla de atributos resultante.
 
-.. _figinterseccion_vectorial:
+
 
 
 El hecho de que en la tabla aparezcan dos campos con el mismo nombre no implica que deban en modo alguno *mezclarse* los valores de estos. Simplemente existirán en la tabla resultante dos campos distintos con un nombre coincidente.
@@ -234,17 +266,22 @@ La tabla de atributos correspondiente es igual a la de la intersección, con tan
 
 La figura :num:`#figunionvectorial` muestra un ejemplo de unión de capas vectoriales.
 
-.. figure:: Union_vectorial.pdf
+.. _figunionvectorial:
+
+.. figure:: Union_vectorial.*
+	:width: 650px
 
 	Unión de dos capas de polígonos, mostrando las geometrías y la tabla de atributos resultante.
 
-.. _figunion_vectorial:
 
+
+
+.. _Poligonos_espureos:
 
 Polígonos espúreos
 --------------------------------------------------------------
 
-.. _Poligonos_espureos:
+
 
 Las operaciones geométricas de solape cruzan las geometrías de dos capas y calculan los elementos resultantes de la intersección de estas. Al llevar esto a cabo, es probable que en ciertos lugares existan líneas de estas capas que debieran coincidir pero que, debido a imprecisiones en su digitalización o a la precisión particular de cada capa, no lo hagan exactamente. Es decir, una misma realidad queda registrada de formas distintas en las diferentes capas de origen.
 
@@ -264,17 +301,22 @@ Otra solución es la eliminación *a posteriori*, tratando de localizar los pol�
 
 La figura :num:`#figpoligonosespureos` muestra un ejemplo de la aparición de este tipo de polígonos.
 
-.. figure:: Poligonos_espureos.pdf
+.. _figpoligonosespureos:
+
+.. figure:: Poligonos_espureos.*
+	:width: 650px
 
 	Aparición de polígonos espúreos de pequeño tamaño tras el solape entre capas con discrepancias.
 
-.. _figpoligonos_espureos:
 
+
+
+.. _Juntar_capas:
 
 Juntar capas
 =====================================================
 
-.. _Juntar_capas:
+
 
 Juntar capas no es una operación geométrica propiamente dicha, ya que ninguna de las geometrías de las capas de entrada se ve alterada en lo que a sus coordenadas respecta. Es, no obstante, una operación de combinación, ya que, al igual que las anteriores, genera una nueva capa de datos espaciales vectoriales a partir de dos capas de partida. En realidad puede aplicarse sobre un número :math:`n` de capas, aunque por simplicidad suponemos que estas son solo dos.
 
@@ -290,11 +332,14 @@ La tabla de la capa resultante contiene tantos elementos como existan en el conj
 
 Para comprender mejor esta operación, puede verse un ejemplo en la figura:num:`#figejemplojuntarcapas`.
 
-.. figure:: Juntar_capas.pdf
+.. _figejemplojuntarcapas:
+
+.. figure:: Juntar_capas.*
+	:width: 650px
 
 	Ejemplo de las tablas y entidades resultantes tras juntar dos capas. 
 
-.. _figejemplo_juntar_capas:
+
 
 
 Para aplicar esta operación de forma coherente y que la tabla generada según lo anterior tenga pleno sentido, ambas capas de origen tienen que contener no solo el mismo tipo de entidades, sino también información de índole similar. Salvo en contadas ocasiones, no tiene sentido unir, por ejemplo, una capa de polígonos y otra de líneas, y será mejor mantenerlas independientes a todos los efectos. De modo similar, tampoco tiene sentido unir una capa de polígonos con valores de uso de suelo y otra con límites administrativos, ya que las tablas de datos de estas serán bien distintas y el resultado será poco coherente. La similitud en cuanto al tipo de entidad no garantiza que la operación tenga sentido.
@@ -330,11 +375,14 @@ No obstante, pueden disolverse las entidades según distintos grupos, tantos com
 
 En la figura :num:`#figdisolver` se muestra un ejemplo de lo anterior.
 
-.. figure:: Disolver.png
+.. _figdisolver:
+
+.. figure:: Disolver.*
+	:width: 650px
 
 	Obtención de una capa de comunidades autónomas a partir de una de provincias mediante un proceso de disolución. En la capa original se han representado los polígonos en función de la comunidad a la que pertenecen. Aunque aparecen con el mismo color, son polígonos independientes.
 
-.. _figdisolver:
+
 
 
 Al igual que en otras operaciones ya vistas, la tabla de atributos de la capa resultante merece atención aparte. En esta ocasión, existe un comportamiento diferente según si el atributo es numérico o no. Si el campo no es de tipo numérico, la unión de :math:`n` entidades en una única implica *juntar* la información :math:`n` valores no numéricos. Puesto que estos no permiten operaciones de tipo matemático, no es posible utilizar esos valores y obtener un valor para ese campo en la nueva capa. Por ello, estos campos no aparecen en la tabla resultante.
@@ -360,23 +408,28 @@ Existen diversas formas de contornos mínimos, entre las que cabe destacar.
 	* Círculo mínimo
 
 
+.. _Convex_hull:
+
 Envolvente convexa mínima (convex hull)
 --------------------------------------------------------------
 
-.. _Convex_hull:
+
 
 
 
 La envolvente convexa mínima (habitualmente citada como *convex hull*, su denominación en inglés) es la más común de las envolventes. Define el polígono convexo de menor área dentro del cual se contienen todos los puntos del conjunto, y su significado tanto geográfico como geométrico es de gran utilidad en muchos aspectos.
 
-.. figure:: Convex_hull.png
+.. _figconvexhull:
+
+.. figure:: Convex_hull.*
+	:width: 650px
 
 	Contorno convexo mínimo. 
 
-.. _figconvex_hull:
 
 
-Resulta fácil visualizar el concepto de esta envolvente si suponemos que rodeamos los puntos con una banda elástica. La forma que define dicha banda es la envolvente mínima convexa. Como puede verse en la figura :num:`#figconvexhull`, es sencillo trazar este polígono visualmente a partir de los puntos, pero su cálculo numérico es sumamente más complejo de implementar de lo que en apariencia puede pensarse. Los detalles acerca de algoritmos para el cálculo de esta envolvente pueden encontrarse, por ejemplo, en\cite{Rourke1998Cambridge}.
+
+Resulta fácil visualizar el concepto de esta envolvente si suponemos que rodeamos los puntos con una banda elástica. La forma que define dicha banda es la envolvente mínima convexa. Como puede verse en la figura :num:`#figconvexhull`, es sencillo trazar este polígono visualmente a partir de los puntos, pero su cálculo numérico es sumamente más complejo de implementar de lo que en apariencia puede pensarse. Los detalles acerca de algoritmos para el cálculo de esta envolvente pueden encontrarse, por ejemplo, en :cite:p:`Rourke1998Cambridge`.
 
 La envolvente convexa delimita el área dentro de la cual se puede inferir el comportamiento de una variable a partir de una serie de muestras. Por ejemplo, en el caso de interpolar un conjunto de valores tal y como vimos en el capítulo :ref:`Creacion_capas_raster`, los valores estimados dentro de la envolvente convexa mínima son producto de una interpolación, mientras que estimar valores fuera de dicha envolvente constituye en realidad un proceso de extrapolación.
 
@@ -384,11 +437,14 @@ El polígono que define a la envolvente mínima convexa puede ser empleado asimi
 
 Una serie de envolventes convexas sucesivas sobre un conjunto de puntos forma una teselación en capas en forma de cebolla\footnote{*Onion peeling*, en inglés}, de utilidad para la realización de diversos análisis estadísticos sobre dichos puntos (Figura :num:`#figonionpeeling`).}
 
-.. figure:: Onion_peeling.png
+.. _figonionpeeling:
+
+.. figure:: Onion_peeling.*
+	:width: 650px
 
 	Serie de contornos convexos formando una teselacion en capas (*onion peeling*). 
 
-.. _figonion_peeling:
+
 
 
 Círculo mínimo
@@ -398,11 +454,14 @@ Círculo mínimo
 
 El círculo mínimo es aquel circulo que contiene a todos los puntos de un conjunto dado con el menor radio posible (Figura :num:`#figcirculominimo`)
 
-.. figure:: Circulo_minimo.png
+.. _figcirculominimo:
+
+.. figure:: Circulo_minimo.*
+	:width: 650px
 
 	Círculo de radio mínimo que engloba a una serie de puntos.
 
-.. _figcirculo_minimo:
+
 
 
 El significado de este círculo mínimo es variado, ya que tanto el centro como el radio del mismo se prestan a diversas interpretaciones. Por ejemplo, si suponemos un terreno plano y una serie de núcleos de población (cada uno de ellos representado por un punto), y queremos situar una antena para dar cobertura a la región definida por esos puntos, el centro del círculo mínimo es una buena opción. Esto es así porque minimiza la distancia a la que se sitúa el punto más alejado, y por tanto minimizará la fuerza de la señal necesaria para ofrecer esa cobertura completa. La intensidad de la señal se puede calcular en función del radio del círculo.
@@ -415,7 +474,7 @@ Como vemos, el círculo mínimo es una herramienta útil para la localización y
 
 Además de esta interpretación geográfica, el círculo mínimo aporta otro tipo de información. Es habitual, por ejemplo, que los puntos que se sitúan en el borde del mismo sean descartados, ya que constituyen los más alejados y en cierta medida son elementos extremos poco representativos del conjunto.
 
-Existen muchos algoritmos para el cálculo del círculo mínimo, que escapan al ámbito de este texto. Para saber más al respecto, puede consultarse\cite{Megiddo1983SIAM} o \cite{Skyum1991IPL}.
+Existen muchos algoritmos para el cálculo del círculo mínimo, que escapan al ámbito de este texto. Para saber más al respecto, puede consultarse :cite:p:`Megiddo1983SIAM` o  :cite:p:`Skyum1991IPL`.
 
 Es de reseñar que los punto situados en el borde del círculo mínimo siempre pertenecen a su vez a la envolvente mínima convexa. Por ello, el problema del cálculo del circulo mínimo para un conjunto de :math:`n` puntos puede reducirse al cálculo de dicho círculo para el subconjunto de puntos que componen la envolvente mínima convexa.
 
@@ -424,11 +483,14 @@ Rectángulo mínimo
 
 El rectángulo mínimo es el rectángulo de menor área que cubre todos los puntos de un conjunto (Figura :num:`#figrectangulominimo`).
 
-.. figure:: Rectangulo_minimo.png
+.. _figrectangulominimo:
+
+.. figure:: Rectangulo_minimo.*
+	:width: 650px
 
 	Rectángulo mínimo que engloba a un conjunto de puntos.
 
-.. _figrectangulo_minimo:
+
 
 
 
@@ -437,10 +499,12 @@ Pare el cálculo del rectángulo mínimo se aplica el hecho de que al menos un l
 
 Generalmente, el rectángulo de menor área coincide con el de menor perímetro, pero no siempre es así. De cualquier modo, este último también cumple la condición citada con respecto a la envolvente convexa, por lo que su cálculo puede hacerse por un procedimiento idéntico.
 
+.. _Generalizacion_lineas:
+
 Generalización de líneas
 =====================================================
 
-.. _Generalizacion_lineas:
+
 
 
 
@@ -448,7 +512,7 @@ Como ya sabemos, toda la información vectorial la almacenamos en ultima instanc
 
 Este proceso de simplificación es parte de la *generalización* de líneas, y es importante dentro de los Sistemas de Información Geográfica, tanto para la representación de datos como para su análisis o su simple almacenamiento, como ya vimos al inicio de este libro. 
 
-Las razones que por las cuales puede resultar de interés llevar a cabo un proceso de generalización de líneas son diversas, y entre ellas cabe destacar las dos siguientes \cite{McMaster1992AAG}.
+Las razones que por las cuales puede resultar de interés llevar a cabo un proceso de generalización de líneas son diversas, y entre ellas cabe destacar las dos siguientes  :cite:p:`McMaster1992AAG`.
 
 
 	* Reducción del tamaño de los datos. Una reducción del número de puntos elimina puntos en muchos casos superfluos, de tal forma que la capa simplificada presenta la misma utilidad pero ocupa un espacio menor.
@@ -464,12 +528,15 @@ El suavizado de líneas es también útil como preparación de datos de líneas 
 
 Algo similar sucede cuando las operaciones de vectorización se realizan de forma automática, tales como las que vimos en en capítulo :ref:`Creacion_capas_vectoriales`. El suavizado de las líneas mejora en tal caso la calidad de estas, no solo en su aspecto estético, sino también en muchos casos su similitud con el objeto modelizado, pues se trata de formas más naturales(Figura :num:`#figsuavizardigitalizado`).
 
-.. figure:: Suavizar_digitalizado.pdf
+.. _figsuavizardigitalizado:
+
+.. figure:: Suavizar_digitalizado.*
+	:width: 650px
 
 	Suavizado de una línea procedente de vectorización a partir de una capa ráster. En negro, línea original con esquinas angulosas. En rojo, línea suavizada. 
 
 
-.. _figsuavizar_digitalizado:
+
 
 
 Métodos
@@ -479,17 +546,20 @@ Los algoritmos para la generalización de líneas son muy diversos y tienen cada
 
 No obstante, no todos los puntos de un línea tienen la misma importancia y aportan la misma cantidad de información. Algunos puntos pueden resultar redundantes, mientras que otros pueden ser cruciales para la forma del trazado. Como puede verse en la figura :num:`#figsimplificacionimportanciaptos`, eliminar algunos puntos puede no tener apenas efectos sobre la línea original o bien resultar en una variación drástica de su forma. Un mismo número de puntos eliminados puede dar lugar a lineas muy similares o muy distintas a la original, según sea el caso, por lo que esta medida de la simplificación no es una medida de cuan fidedigna es la linea resultante.
 
-.. figure:: Simplificacion_importancia_ptos.pdf
+.. _figsimplificacionimportanciaptos:
+
+.. figure:: Simplificacion_importancia_ptos.*
+	:width: 650px
 
 	La eliminación de puntos de la linea original (a) puede dar lugar a líneas muy similares (b) o muy distintas (c), ya que no todos los puntos tienen la misma importancia.
 
 
-.. _figsimplificacion_importancia_ptos:
+
 
 
 Puesto que no todos los puntos deben ser considerados de igual modo, existen métodos de simplificación que consideran la naturaleza propia del punto dentro de la línea y estudian esta como entidad en su conjunto. Esto garantiza resultados mejores que con la mera eliminación sistemática de puntos intermedios.
 
-Podemos clasificar las rutinas de generalización de líneas en los siguientes bloques \cite{McMaster1987Cartographica}.
+Podemos clasificar las rutinas de generalización de líneas en los siguientes bloques  :cite:p:`McMaster1987Cartographica`.
 
 
 	* Rutinas de vecindad inmediata. Analizan cada punto y los inmediatamente anteriores y posteriores, estudiando los ángulos formados o las distancias.
@@ -499,19 +569,22 @@ Podemos clasificar las rutinas de generalización de líneas en los siguientes b
 	* Rutinas que preservan la topología. Además de las propiedades geométricas ya sea a nivel global o local, estudian la conectividad y topología del conjunto de líneas para garantizar que la línea simplificada preserva dichas propiedades.
 
 
-Uno de los algoritmos más habitualmente utilizados es el propuesto por\cite{Douglas1973TAC}, que pertenece al grupo de los globales. La intensidad del proceso de generalización se establece mediante un valor de tolerancia que indica la máxima desviación que se permite entre la línea original y la simplificada.
+Uno de los algoritmos más habitualmente utilizados es el propuesto por :cite:p:`Douglas1973TAC`, que pertenece al grupo de los globales. La intensidad del proceso de generalización se establece mediante un valor de tolerancia que indica la máxima desviación que se permite entre la línea original y la simplificada.
 
 En la figura :num:`#figgeneralizacion` puede verse cómo una línea original se simplifica de diversas formas al aplicar tolerancias crecientes con este algoritmo.
 
-.. figure:: Simplificacion_lineas.png
-
-	Generalización de un conjunto de líneas (en trazo punteado) mediante el algoritmo de \cite{Douglas1973TAC para valores de tolerancia de 10 (a), 20 (b) y 50 metros (c).} 
-
-
 .. _figgeneralizacion:
 
+.. figure:: Simplificacion_lineas.*
+	:width: 650px
 
-Respecto a los algoritmos de suavizado, estos pueden dividirse en tres grupos principales \cite{McMaster1987Cartographica}:
+	Generalización de un conjunto de líneas (en trazo punteado) mediante el algoritmo de  :cite:p:`Douglas1973TAC para valores de tolerancia de 10 (a), 20 (b) y 50 metros (c).` 
+
+
+
+
+
+Respecto a los algoritmos de suavizado, estos pueden dividirse en tres grupos principales  :cite:p:`McMaster1987Cartographica`:
 
 
 	* Media entre puntos. Se consideran un número :math:`n` de puntos vecinos, y en base a ellos se calcula la nueva posición. 
@@ -519,7 +592,7 @@ Respecto a los algoritmos de suavizado, estos pueden dividirse en tres grupos pr
 	* Tolerancias. Se establece una tolerancia y un umbral de precisión, y se ignoran los detalles a lo largo de la línea que salen de ese umbral.
 
 
-En \cite{McMaster1989Cartographica} pueden encontrarse detallados métodos de todas las familias anteriores.
+En  :cite:p:`McMaster1989Cartographica` pueden encontrarse detallados métodos de todas las familias anteriores.
 
 Resumen
 =====================================================

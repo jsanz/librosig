@@ -22,7 +22,7 @@ La primera experiencia relevante en esta dirección la encontramos en 1959, cuan
 
 El primer Sistema de Información Geográfica formalmente desarrollado aparece en Canadá, al auspicio del Departamento Federal de Energía y Recursos. Este sistema, denominado CGIS (Canadian Geographical Information Systems), fue desarrollado a principios de los 60 por Roger Tomlinson, quien dio forma a una herramienta que tenía por objeto el manejo de los datos del inventario geográfico canadiense y su análisis para la gestión del territorio rural. El desarrollo de Tomlinson es pionero en este campo, y se considera oficialmente como el nacimiento del SIG. Es en este momento cuando se acuña el término, y Tomlinson es conocido popularmente desde entonces como *el padre del SIG*.
 
-La aparición de estos programas no solo implica la creación de una herramienta nueva, sino también el desarrollo de técnicas nuevas que hasta entonces no habían sido necesarias. La más importante de ellas es la codificación y almacenamiento de la información geográfica, un problema en absoluto trivial que entonces era clave para lograr una usabilidad adecuada del *software*. El trabajo de Guy Morton con el desarrollo de su *Matriz de Morton*\footnote{Veremos con algo más de detalle este concepto en el capítulo :ref:`Tipos_datos`} juega un papel primordial\cite{Foresman1998Prentice}, superando las deficiencias de los equipos de entonces, tales como la carencia de unidades de almacenamiento con capacidad de acceso aleatorio, que dificultaban notablemente el manejo y análisis de las bases de datos.
+La aparición de estos programas no solo implica la creación de una herramienta nueva, sino también el desarrollo de técnicas nuevas que hasta entonces no habían sido necesarias. La más importante de ellas es la codificación y almacenamiento de la información geográfica, un problema en absoluto trivial que entonces era clave para lograr una usabilidad adecuada del *software*. El trabajo de Guy Morton con el desarrollo de su *Matriz de Morton* [#f1] juega un papel primordial :cite:p:`Foresman1998Prentice`, superando las deficiencias de los equipos de entonces, tales como la carencia de unidades de almacenamiento con capacidad de acceso aleatorio, que dificultaban notablemente el manejo y análisis de las bases de datos.
 
 Simultáneamente a los trabajos canadienses, se producen desarrollos en Estados Unidos, en el seno del Harvard Laboratory, y en el Reino Unido dentro de la Experimental Cartography Unit. Ambos centros se erigen también como principales desarrolladores de *software* para la producción, manejo y análisis de información geográfica durante aquellos años.
 
@@ -30,36 +30,40 @@ En el Harvard Laboratory, ve la luz en 1964 SYMAP, un aplicación que permitía 
 
 En 1969, utilizando elementos de una versión anterior de SYMAP, David Sinton, también en el Harvard Laboratory, desarrolla GRID, un programa en el que la información es almacenada en forma de cuadrículas. Hasta ese momento, la estructura de cuadrículas regulares era solo utilizada para las salidas de los programas, pero no para la entrada y almacenamiento de datos. Son los inicios de los Sistemas de Información Geográfica *ráster*\footnote{los conceptos de SIG ráster y vectorial se tratan extensamente en el capítulo :ref:`Tipos_datos`. No te preocupes si ahora no comprendes completamente qué representa cada uno de ellos y qué los diferencia.}.
 
-.. figure:: SYMAP.png
+.. _figsymap:
+
+.. figure:: SYMAP.*
+	:width: 450px
 
 	Aspecto de un mapa generado con SYMAP
 
 
-.. _figsymap: 
+ 
 
 
 SYMAP evoluciona y nuevos programas aparecen, tales como SYMVU (Figura :num:`#figsymvu`), con capacidad de representación tridimensional, o CALFORM, con nuevas capacidades de representación y de generación de resultados impresos. GRID da lugar a IMGRID (Interactive Manipulation GRID), que sentará la base para el trabajo de Dana Tomlin con su paquete MAP, el cual incluye todos los elementos que hoy en día son imprescindibles para el análisis ráster (y que veremos en el capítulo :ref:`Algebrademapas`)
 
-.. figure:: SYMVU.png
+.. _figsymvu:
+
+.. figure:: SYMVU.*
+	:width: 450px
 
 	Representación tridimensional creada con SYMVU
 
 
-.. _figsymvu: 
+ 
 
 
 Si la década de los sesenta es la de los pioneros y las primeras implementaciones, la de los setenta es la de la investigación y el desarrollo. A partir de los SIG primitivos se va dando forma a un área de conocimiento sin duda con gran futuro, y se elabora una base sólida de conocimiento y de herramientas aptas para un uso más genérico. Sin haber entrado aún en la época del uso masivo y generalizado, los primeros paquetes comienzan a distribuirse y pasan a incorporarse a la comunidad cartográfica, lejos ya de ser el producto de unos pocos pioneros.
 
 A partir de este punto, el campo de los SIG recorre sucesivas etapas hasta nuestros días (Figura :num:`#figetapasevolucionsig`), evolucionando muy rápidamente ante la influencia de numerosos factores externos. Desde este punto, vamos a estudiar cómo esos factores han ido a su vez evolucionando y cómo su influencia ha condicionado el rumbo seguido por los SIG. Distinguiremos los siguientes elementos:
 
-.. figure:: Etapas_historia.pdf
+.. _figetapasevolucionsig:
+
+.. figure:: Etapas_historia.*
+	:width: 800px
 
 	Esquema temporal de la evolución de los SIG.
-
-
-.. _figetapas_evolucion_sig: 
-
-
 
 * La evolución del SIG como disciplina. Cómo ha cambiado la presencia social de los SIG y su relación con otras disciplinas científicas, tanto influenciándolas como siendo influenciado por ellas.
 * La evolución de la tecnología. Cómo ha variado el *software* SIG, así como los ordenadores, periféricos y elementos informáticos de los que depende para su funcionamiento.
@@ -72,7 +76,7 @@ La evolución de los SIG como disciplina
 
 Como hemos visto, los SIG eran en origen una mera combinación de elementos de cartografía cuantitativa, enlazados con los sistemas informáticos de la época. Se trataba de un territorio propio de cartógrafos y geógrafos que intentaban adaptar sus conocimientos y necesidades a las tecnologías que por aquel entonces comenzaban a surgir. No obstante, desde aquellos orígenes los cambios han sido muy grandes, y se han incorporado al ámbito de los SIG un gran número de otras disciplinas cuya aportación e influencia puede ser equivalente o incluso superior a la de la cartografía o la geografía. 
 
-La utilización del término *geográfico* para denominar a estos sistemas de manejo de información ha hecho que tradicionalmente, y a falta de una parcela de conocimiento propia bien delimitada, haya recaído en la geografía la tarea docente e investigadora relacionada con los SIG. No obstante, y dada la multidisciplinaridad del ámbito y su uso por grupos muy distintos hoy en día, no es necesariamente este el mejor enfoque \cite{SarriaSIG}. En general, el conjunto de ciencias del medio y ciencias sociales han sabido todas ellas hacer uso de los SIG y aportar a estos los elementos propios de su ámbito.
+La utilización del término *geográfico* para denominar a estos sistemas de manejo de información ha hecho que tradicionalmente, y a falta de una parcela de conocimiento propia bien delimitada, haya recaído en la geografía la tarea docente e investigadora relacionada con los SIG. No obstante, y dada la multidisciplinaridad del ámbito y su uso por grupos muy distintos hoy en día, no es necesariamente este el mejor enfoque  :cite:p:`SarriaSIG`. En general, el conjunto de ciencias del medio y ciencias sociales han sabido todas ellas hacer uso de los SIG y aportar a estos los elementos propios de su ámbito.
 
 Si bien los orígenes del SIG están íntimamente ligados a la gestión forestal o la planificación urbanística, son muchas otras las disciplinas que han jugado un papel importante. Un elemento sin duda clave es la sensibilización medioambiental, que obliga a un estudio del medio mucho más detallado. Coincidiendo con la etapa inicial del desarrollo de los SIG, empieza a aparecer una preocupación por el entorno que tiene consecuencias muy favorables para el desarrollo de todas las ciencias relacionadas, la gran mayoría de las cuales son o serán usuarias directas de SIG. El SIG comienza a integrarse paulatinamente en las tareas de gestión del medio, como un apoyo imprescindible a la hora de analizar este.
 
@@ -94,7 +98,7 @@ En este sentido, es reseñable el hecho de que los SIG dejan de ser sistemas com
 
 Con el paso del tiempo, los SIG van confluyendo y los diversos enfoques se unen para constituir una base útil sobre la que construir nuevos desarrollos. Los SIG ráster incluyen cada vez más elementos vectoriales, los SIG vectoriales cada vez más elementos ráster, y en ambos se van implementando formulaciones que trabajan con ambos formatos de almacenamiento y los combinan. De forma similar, los procesos para análisis de imágenes van ganando su espacio dentro de los SIG generales, aunque no dejan de existir aplicaciones específicas en este terreno.
 
-Por último, respecto a su presencia social, en nuestros días los SIG han pasado de elementos restringidos para un uso profesional a ser elementos de consumo y estar presentes en nuestra vida diaria. Un ejemplo de ello es la aparición de servicios como *Google Maps*\cite{webGoogleMaps} y la multitud de aplicaciones con interfaces Web basadas en él que permiten acceder a información geográfica de toda clase. De la mano también de *Google*, *Google Earth*\cite{webGoogleEarth} es otra aplicación popular que no está restringida al uso profesional.  Estas aplicaciones acercan los SIG a usuarios no especializados, dándoles la posibilidad de utilizarlos y aprovechar parte de sus capacidades. 
+Por último, respecto a su presencia social, en nuestros días los SIG han pasado de elementos restringidos para un uso profesional a ser elementos de consumo y estar presentes en nuestra vida diaria. Un ejemplo de ello es la aparición de servicios como *Google Maps* :cite:p:`webGoogleMaps` y la multitud de aplicaciones con interfaces Web basadas en él que permiten acceder a información geográfica de toda clase. De la mano también de *Google*, *Google Earth* :cite:p:`webGoogleEarth` es otra aplicación popular que no está restringida al uso profesional.  Estas aplicaciones acercan los SIG a usuarios no especializados, dándoles la posibilidad de utilizarlos y aprovechar parte de sus capacidades. 
 
 La popularización de los navegadores GPS, que incorporan tanto elementos de representación como de análisis propios de los SIG, son otro buen ejemplo.
 
@@ -103,12 +107,11 @@ La evolución de la tecnología
 
 La tecnología sobre la que se basan los SIG es clave para entender todo lo relacionado con ellos, especialmente su evolución a lo largo del tiempo. Desde los primeros SIG muy lejos del alcance de un usuario medio, hasta las aplicaciones de escritorio o los elementos derivados de los SIG que son de uso habitual hoy en día, se ha producido un cambio enorme que, como cabe esperar, es paralelo al que la propia tecnología ha sufrido.
 
-Tres son los bloques principales del desarrollo informático con una influencia más marcada en el campo de los Sistemas de Información Geográfica \cite{Heywood1998Longman}:
+Tres son los bloques principales del desarrollo informático con una influencia más marcada en el campo de los Sistemas de Información Geográfica  :cite:p:`Heywood1998Longman`:
 
 
 * Salidas gráficas. Sin las capacidades de representación gráficas de hoy en día, puede parecernos imposible el uso de un SIG, ya que, aunque los procesos de análisis son una parte imprescindible y definitoria del mismo y pueden llevarse a cabo sin necesidad de visualización, esta visualización es una herramienta fundamental de un SIG. No obstante, tanto los primeros ordenadores como las primeras impresoras dedicadas a la impresión de mapas  carecían de dichas capacidades. Como puede verse en la figura :num:`#figsymap`, las representaciones en esos tiempos se basaban en el uso de caracteres y no en gráficos puramente dichos.
-
-La evolución de las capacidades gráficas, intensa desde esos inicios hasta nuestros días y aún muy activa, ha sido seguida de cerca por los SIG, que progresivamente van incorporando mejoras tanto en la representación en pantalla como en la generación de mapas impresos.
+ La evolución de las capacidades gráficas, intensa desde esos inicios hasta nuestros días y aún muy activa, ha sido seguida de cerca por los SIG, que progresivamente van incorporando mejoras tanto en la representación en pantalla como en la generación de mapas impresos.
 
 * Almacenamiento y acceso de datos. Desde el inicio, el almacenamiento y acceso de datos ha sido un problema clave en el cual se han producido grandes avances. Por una parte, los problemas asociados a los grandes volúmenes de información. Por otra, los relacionados con la lectura de estos, que ha de realizarse de forma fluida pese a dicho volumen. A medida que han ido aumentando las capacidades de almacenamiento y lectura, ha ido aumentando paralelamente el tamaño de los datos manejados, así como los soportes utilizados para ellos, y esta evolución paralela ha de continuar y condicionar la forma que adopten los SIG.
 
@@ -134,7 +137,7 @@ El nacimiento de la World Wide Web (WWW) puede establecerse a finales de 1989, p
 
 El primer atlas digital en linea es el Atlas Nacional de Canadá, que se encuentra disponible desde 1994. Otros como MultiMap o MapQuest, que alcanzan gran popularidad, aparecen en 1996 y establecen la línea a seguir por otros servicios de Internet relacionados con la información geográfica.
 
-En 2005 aparece Google Maps\cite{webGoogleMaps}, que además de ofrecer servicios de cartografía permite desarrollar nuevas aplicaciones sobre dichos servicios a través de una interfaz de programación abierta y documentada. Los conceptos de la Web 2.0 se adaptan así al ámbito de los SIG. El número de ideas y funcionalidades basados en Google Maps crece exponencialmente desde prácticamente su nacimiento, extendiendo la tecnología SIG a campos casi insospechados y muy distintos de los que originalmente constituían el ámbito de uso de los SIG.
+En 2005 aparece Google Maps :cite:p:`webGoogleMaps`, que además de ofrecer servicios de cartografía permite desarrollar nuevas aplicaciones sobre dichos servicios a través de una interfaz de programación abierta y documentada. Los conceptos de la Web 2.0 se adaptan así al ámbito de los SIG. El número de ideas y funcionalidades basados en Google Maps crece exponencialmente desde prácticamente su nacimiento, extendiendo la tecnología SIG a campos casi insospechados y muy distintos de los que originalmente constituían el ámbito de uso de los SIG.
 
 La evolución de los datos
 =================================
@@ -163,7 +166,7 @@ La aparición de nuevas técnicas tales como el LiDAR (ver :ref:`Sensores`) abre
 
 La evolución de los datos no es solo una evolución técnica, sino también de carácter social y organizativo. En la denominada *era de la información*, el papel de los datos es tenido cada vez más en cuenta, y los esfuerzos para coordinar la enorme cantidad de datos espaciales y sus numerosas procedencias se hacen cada vez más relevantes. Se empieza a entender que resulta necesario formular estrategias adecuadas para la gestión de los datos espaciales. Estas estrategias pasan por la creación de las denominadas *Infraestructuras de Datos Espaciales* (IDE), a las cuales se dedica una capítulo completo de este libro.
 
-El ejemplo más destacado de estas es la IDE Nacional de los Estados Unidos (NSDI)\cite{Clinton1994FR}, surgida a raíz de la Orden Ejecutiva 12096, que fue promulgada en 1994 y tuvo una vital importancia en este ámbito. En Europa, la directiva INSPIRE\cite{Craglia2009INSPIRE}, con fecha 14 de marzo de 2007, pretende la creación de una infraestructura similar.
+El ejemplo más destacado de estas es la IDE Nacional de los Estados Unidos (NSDI) :cite:p:`Clinton1994FR`, surgida a raíz de la Orden Ejecutiva 12096, que fue promulgada en 1994 y tuvo una vital importancia en este ámbito. En Europa, la directiva INSPIRE :cite:p:`Craglia2009INSPIRE`, con fecha 14 de marzo de 2007, pretende la creación de una infraestructura similar.
 
 Muchos de estos desarrollos y actividades se adhieren a las especificaciones establecidas por el *Open GIS Consortium* (OGC), un consorcio internacional fundado en 1994 para homogeneizar el empleo y difusión de los datos geográficos.
 
@@ -174,7 +177,7 @@ Los problemas iniciales de los pioneros del SIG eran el desarrollo de los primer
 
 La cartografía cuantitativa sufre desde entonces un avance muy notable, arrastrada por las necesidades de los SIG en su propia evolución, y muchas disciplinas científicas desarrollan nuevas formulaciones que comienzan a tener como base los Sistemas de Información Geográfica. Algunas de ellas resultan especialmente relevantes y pasan a formar parte del conjunto habitual de herramientas y elementos de un SIG genérico.
 
-Como indica \cite{Martin1991Routledge} la mayoría de los avances de cierta importancia dentro del mundo de los SIG han venido motivadas por las necesidad de una utilización concreta o por la tecnología en sí, y pocas veces por el desarrollo puro de una teoría. No obstante, e independientemente de las razones que lo motiven, los SIG han servido como contexto ideal para dar cuerpo a estas teorías, y su historia debe considerarse de forma pareja.
+Como indica  :cite:p:`Martin1991Routledge` la mayoría de los avances de cierta importancia dentro del mundo de los SIG han venido motivadas por las necesidad de una utilización concreta o por la tecnología en sí, y pocas veces por el desarrollo puro de una teoría. No obstante, e independientemente de las razones que lo motiven, los SIG han servido como contexto ideal para dar cuerpo a estas teorías, y su historia debe considerarse de forma pareja.
 
 Antes de que aparecieran los primeros SIG, los trabajos de algunos pioneros establecen bases que más tarde serán de gran importancia para otros avances. Junto con el ya citado *Elements of Cartography* de John K.Wright, los trabajos de Ian McHarg anticipan una forma de operar con los datos geográficos que más adelante va a convertirse en una constante del trabajo con estos dentro de un SIG. En su libro *Design with Nature* (1969), McHarg define los elementos básicos de la superposición y combinación de mapas, que, como veremos más adelante, son los que se aplican tanto en el análisis como en la visualización de las distintas *capas* de datos geográficos en un SIG.
 
@@ -186,17 +189,17 @@ Antes de McHarg, ya se habían empezado a realizar análisis cartográficos, arr
 
 Junto con la componente analítica, otros elementos de la práctica cartográfica evolucionan similarmente. En 1819, Pierre Charles Dupin crea el primer mapa de coropletas para mostrar la distribución del analfabetismo en Francia, dando un gran salto cualitativo en el diseño cartográfico, particularmente en un tipo de mapas de muy habitual creación dentro de un SIG.
 
-Una vez que los SIG ya han hecho su aparición, entre los elementos que más han impulsado el desarrollo de estos cabe destacar el gran avance en el estudio del relieve, de notable importancia por ser un elemento base para muchos otros análisis en un amplio abanico de ciencias afines. La orografía clásica, con un enfoque tradicionalmente sustentado en la geología y el análisis geomorfológico, va dando lugar a una ciencia cada vez más cuantitativa centrada en el análisis morfométrico del relieve. Trabajos como los de \cite{Evans1972Harper} sientan las bases para este tipo de análisis, que necesitan de un SIG para ser aplicados de forma efectiva.
+Una vez que los SIG ya han hecho su aparición, entre los elementos que más han impulsado el desarrollo de estos cabe destacar el gran avance en el estudio del relieve, de notable importancia por ser un elemento base para muchos otros análisis en un amplio abanico de ciencias afines. La orografía clásica, con un enfoque tradicionalmente sustentado en la geología y el análisis geomorfológico, va dando lugar a una ciencia cada vez más cuantitativa centrada en el análisis morfométrico del relieve. Trabajos como los de  :cite:p:`Evans1972Harper` sientan las bases para este tipo de análisis, que necesitan de un SIG para ser aplicados de forma efectiva.
 
 De igual modo sucede con la geoestadística, una rama de la estadística que aparece de la mano del francés Georges Matheron a principio de los años sesenta. Las formulaciones geoestadísticas, hoy parte característica de los SIG, son desarrolladas en esa época desde el punto de vista teórico, aunque no son aplicables para un uso real si no es con el uso de ordenadores, y pierden gran parte de su valor práctico si no se realiza esta tarea con el concurso de Sistemas de Información Geográfica.
 
-En general, el desarrollo de la estadística encaminado a la adaptación de teorías y metodologías al ámbito espacial ha tenido un fuerte crecimiento en las últimas décadas, un hecho muy ligado a la aparición y evolución de los SIG. Uno de los hitos de este proceso es el desarrollo de \cite{Whittle1954Biometrika}, que extiende los modelos autoregresivos, de importancia clave para el análisis de la variación de series temporales, a los datos espaciales \cite{Goodchild2003JoE}.
+En general, el desarrollo de la estadística encaminado a la adaptación de teorías y metodologías al ámbito espacial ha tenido un fuerte crecimiento en las últimas décadas, un hecho muy ligado a la aparición y evolución de los SIG. Uno de los hitos de este proceso es el desarrollo de  :cite:p:`Whittle1954Biometrika`, que extiende los modelos autoregresivos, de importancia clave para el análisis de la variación de series temporales, a los datos espaciales  :cite:p:`Goodchild2003JoE`.
 
 El desarrollo de otras ramas de conocimiento ha sido igualmente clave para el enriquecimiento de la ciencia del análisis geográfico. Muchas de ellas, por depender también en gran medida de la componente informática, ha evolucionado paralelamente a los SIG, pues el desarrollo de las tecnologías ha jugado un papel similar en ellas.
 
 Otro hecho importante es la aparición de los primeros programa de diseño asistido por ordenador (CAD) }, que coincide con la de los SIG, allá por el final de los años sesenta. Originalmente pensados para el diseño industrial, pronto pasan a ser utilizados para el diseño arquitectónico y la delineación de elementos geográficos, y sus conceptos son incorporados paulatinamente a los SIG. Hoy en día, y cada vez con más frecuencia, los SIG  incorporan capacidades similares a los sistemas CAD, que permiten tanto la digitalización de cartografía con las herramientas propias del CAD como la creación de nuevos elementos geográficos. Asimismo, los formatos habituales de las aplicaciones CAD son soportados por gran número de SIG, existiendo una cierta interoperabilidad, no obstante muy mejorable. Firmas como Autodesk tienen presencia en el mercado tanto del SIG como del CAD, compaginando ambas y compartiendo parcialmente soluciones y elementos.
 
-El avance en el desarrollo de las aplicaciones CAD, y en general de las representaciones gráficas por ordenador, impulsó igualmente la aparición y evolución posterior de una nueva disciplina: la geometría computacional. Esta denominación se emplea por primera vez en 1975 \cite{Preparata1985Springer}, siendo hoy el nombre de una rama de la ciencia consolidada y en constante avance. Los algoritmos que componen la geometría computacional son la base sobre la que se fundamenta el análisis vectorial dentro de un SIG.
+El avance en el desarrollo de las aplicaciones CAD, y en general de las representaciones gráficas por ordenador, impulsó igualmente la aparición y evolución posterior de una nueva disciplina: la geometría computacional. Esta denominación se emplea por primera vez en 1975  :cite:p:`Preparata1985Springer`, siendo hoy el nombre de una rama de la ciencia consolidada y en constante avance. Los algoritmos que componen la geometría computacional son la base sobre la que se fundamenta el análisis vectorial dentro de un SIG.
 
 Resumen
 =================================
@@ -207,6 +210,6 @@ Desde ese punto hasta nuestros días, los SIG han ido definiéndose en base a la
 
 Siendo en su origen aplicaciones muy específicas, en nuestros días los SIG son aplicaciones genéricas formadas por diversos elementos, cuya tendencia actual es a la convergencia en productos más versátiles y amplios.
 
-%\bibliographystyle{unsrt}
-%\bibliography{../../Libro_SIG}
+.. rubric::Footnotes
 
+.. [#f1] Veremos con algo más de detalle este concepto en el capítulo :ref:`Tipos_datos`

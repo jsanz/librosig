@@ -70,13 +70,13 @@ Partiendo del ejemplo anterior, podemos dar una definición más precisa y forma
 * Análisis de dichos datos. Esto puede incluir desde consultas sencillas a la elaboración de complejos modelos, y puede llevarse a cabo tanto sobre la componente espacial de los datos (la localización de cada valor o elemento) como sobre la componente temática (el valor o el elemento en sí).
 * Generación de resultados tales como mapas, informes, gráficos, etc.
 
-En función de cual de estos aspectos se valore como más importante, encontramos distintas definiciones formales del concepto de un SIG. Una definición clásica es la de \cite{Tomlin1990Prentice}, para quien un SIG es un elemento que permite *analizar, presentar e interpretar hechos relativos a la superficie terrestre*. El mismo autor argumenta, no obstante, que *esta es una definición muy amplia, y habitualmente se emplea otra más concreta. En palabras habituales, un SIG es un conjunto de *software* y *hardware* diseñado específicamente para la adquisición, mantenimiento y uso de datos cartográficos*.
+En función de cual de estos aspectos se valore como más importante, encontramos distintas definiciones formales del concepto de un SIG. Una definición clásica es la de  :cite:p:`Tomlin1990Prentice`, para quien un SIG es un elemento que permite *analizar, presentar e interpretar hechos relativos a la superficie terrestre*. El mismo autor argumenta, no obstante, que *esta es una definición muy amplia, y habitualmente se emplea otra más concreta. En palabras habituales, un SIG es un conjunto de *software* y *hardware* diseñado específicamente para la adquisición, mantenimiento y uso de datos cartográficos*.
 
-En una línea similar, \cite{Star1990Prentice} define un SIG como un *sistema de información diseñado para trabajar con datos referenciados mediante coordenadas espaciales o geográficas. En otras palabras, un SIG es tanto un sistema de base de datos con capacidades específicas para datos georreferenciados, como un conjunto de operaciones para trabajar con esos datos. En cierto modo, un SIG es un mapa de orden superior*.
+En una línea similar,  :cite:p:`Star1990Prentice` define un SIG como un *sistema de información diseñado para trabajar con datos referenciados mediante coordenadas espaciales o geográficas. En otras palabras, un SIG es tanto un sistema de base de datos con capacidades específicas para datos georreferenciados, como un conjunto de operaciones para trabajar con esos datos. En cierto modo, un SIG es un mapa de orden superior*.
 
 Ambas definiciones recogen el concepto fundamental de los SIG en el momento en que fueron escritas, pero la realidad hoy en día hace necesario recoger otras ideas, y la definición actual de un SIG debe fundamentarse sobre todo en el concepto de *sistema* como elemento integrador que engloba a un conjunto de componentes interrelacionados.
 
-Como apunta \cite{Tomlin1990Prentice}, *software* y *hardware* son dos elementos primordiales del SIG, pero no son sin embargo los únicos. En el contexto actual, otros componentes juegan un papel igual de importante en la ideal global de un SIG.
+Como apunta  :cite:p:`Tomlin1990Prentice`, *software* y *hardware* son dos elementos primordiales del SIG, pero no son sin embargo los únicos. En el contexto actual, otros componentes juegan un papel igual de importante en la ideal global de un SIG.
 
 De igual modo, un SIG puede considerarse como un *mapa de orden superior* entendiendo que se trata de una forma más potente y avanzada de hacer todo aquello que, previamente a la aparición de los SIG, se llevaba a cabo mediante el uso de mapas y cartografía en sentido clásico. Es decir, los SIG representan un paso más allá de los mapas. No obstante, esta definición resulta en exceso simplista, pues mapas y SIG no son conceptos equiparables en el contexto actual de estos últimos. 
 
@@ -86,7 +86,7 @@ De la misma forma que los textos han pasado del papel al ordenador (antes leíam
 
 Debe entenderse, pues, un SIG, como un elemento complejo que engloba una serie de otros elementos conectados, cada uno de los cuales desempeña una función particular. Estos elementos son, como iremos viendo más adelante, los datos, los procesos, la visualización, la tecnología y el factor organizativo. Baste por el momento citarlos, ya que más adelante, y a lo largo de todo el libro, se irán describiendo pormenorizadamente todos ellos.
 
-Con lo anterior, una definición más precisa es decir que un SIG es un sistema que integra tecnología informática, personas e información 			geográfica\cite{webGISCOM}, y cuya principal función es capturar, analizar, almacenar, editar y representar datos georreferenciados \cite{Korte2001Autodesk}.
+Con lo anterior, una definición más precisa es decir que un SIG es un sistema que integra tecnología informática, personas e información 			geográfica :cite:p:`webGISCOM`, y cuya principal función es capturar, analizar, almacenar, editar y representar datos georreferenciados  :cite:p:`Korte2001Autodesk`.
 
 En las siguientes secciones veremos por separado la forma en que un SIG integra la tecnología informática, las personas y la información geográfica, así como la forma en que los conceptos fundamentales en los que el propio SIG se sustenta suponen una integración de distintas disciplinas.
 
@@ -124,7 +124,7 @@ SIG como integrador de teorías y fundamentos. La Ciencia de la Información Geo
 
 La evolución conceptual que se ha producido en el ámbito de los SIG, pasando como ya hemos visto de ser considerados simples programas informáticos a sistemas completos con múltiples componentes, ha tenido lugar también en la ciencia que los rodea. Los SIG no solo han contribuido al desarrollo de las ciencias afines, sino que en muchos casos han modificado estas o han contribuido a la formación de nuevas ramas. Conceptos básicos y hasta ese momento sólidos,  como por ejemplo la idea de lo que es y lo que significa un mapa (una idea fundamental para el trabajo en muchas disciplinas), han sido literalmente redefinidas desde la aparición de los SIG.
 
-Desde un punto de vista muy simple, podemos entender un SIG como la unión de dos ciencias: la geografía y la informática. Visto así, un SIG es una herramienta informática para ayudar al trabajo en el ámbito geográfico. Esta concepción tan simple dista, no obstante, mucho del concepto real de un SIG, pues este incorpora elementos de muchas ciencias distintas como pueden ser las siguientes\cite{webGoodchildNCGIA}:
+Desde un punto de vista muy simple, podemos entender un SIG como la unión de dos ciencias: la geografía y la informática. Visto así, un SIG es una herramienta informática para ayudar al trabajo en el ámbito geográfico. Esta concepción tan simple dista, no obstante, mucho del concepto real de un SIG, pues este incorpora elementos de muchas ciencias distintas como pueden ser las siguientes :cite:p:`webGoodchildNCGIA`:
 
 * Disciplinas relacionadas con la tecnología y el manejo de información. Se incluyen aquí las ciencias de la información, la informática, el diseño de bases de datos o el tratamiento digital de imágenes, entre otras. Muchas de estas, a su vez, derivan de otras o toman importantes elementos de ellas. La estadística o la matemática son algunas de esas ciencias fundamentales.
 * Disciplinas dedicadas al estudio de la Tierra desde un punto de vista físico. La geología, la geología, la oceanografía, la ecología, así como todo el conjunto de ciencias medioambientales, forman parte de este grupo.
@@ -147,9 +147,9 @@ Es obvio que, pese a que su propia denominación indica específicamente que los
 
 La distinción entre estas y los SIG es notable, máxime a día de hoy, y es fácil localizar sin confusión las parcelas conceptuales y prácticas que cada una ocupa o las áreas en las que existe un cierto solape. Por esta razón, igual que es necesario definir qué es un SIG, resulta obligado presentar aquellas tecnologías que comparten caracteres comunes con el SIG (siendo el principal de ellos la utilización de información georreferenciada), y que han seguido una evolución paralela hasta el punto de diferenciación actual. Ahora que ya sabemos lo que es un SIG, veamos qué otras herramientas similares, pese a compartir elementos comunes, no entran en la definición de SIG que hemos dado.
 
-Dos son las principales soluciones que deben conocerse por su relación directa con el ámbito SIG: Diseño Asistido por Ordenador (CAD[#f3]_) y AM/FM.
+Dos son las principales soluciones que deben conocerse por su relación directa con el ámbito SIG: Diseño Asistido por Ordenador (CAD [#f3]_) y AM/FM.
 
-Las aplicaciones CAD (Figura :num:`#figcad`) permiten el diseño informatizado de elementos muy diversos, que pueden ir desde una pieza industrial o la carrocería de un automóvil (tareas con poca relación con los SIG) a un edificio (con mayor relación con los SIG). El uso de herramientas CAD en disciplinas como la arquitectura para la creación de planos tiene cierta similitud con el uso de un SIG, y ambas herramientas se han nutrido la una de la otra en cuanto a sus funcionalidades. No obstante, siguen existiendo grandes diferencias que hacen que cada aplicación responda a unas necesidades concretas pese a la existencia de características comunes. De entre estas diferencias cabe destacar las siguientes \cite{ESRI2002GISCAD}\cite{Baguena1995Mapping}
+Las aplicaciones CAD (Figura :num:`#figcad`) permiten el diseño informatizado de elementos muy diversos, que pueden ir desde una pieza industrial o la carrocería de un automóvil (tareas con poca relación con los SIG) a un edificio (con mayor relación con los SIG). El uso de herramientas CAD en disciplinas como la arquitectura para la creación de planos tiene cierta similitud con el uso de un SIG, y ambas herramientas se han nutrido la una de la otra en cuanto a sus funcionalidades. No obstante, siguen existiendo grandes diferencias que hacen que cada aplicación responda a unas necesidades concretas pese a la existencia de características comunes. De entre estas diferencias cabe destacar las siguientes  :cite:p:`ESRI2002GISCAD` :cite:p:`Baguena1995Mapping`
 
 * SIG y CAD han sido diseñados para propósitos diferentes. El del SIG es reflejar la realidad, mientras que el del CAD es diseñar algo que no existe todavía. La creación es el elemento fundamental en el CAD, mientras que el estudio de una realidad ya creada constituye la base del SIG.
 * El almacenamiento de datos es diferente debido al distinto enfoque. En los SIG se da mayor peso a la gestión de los datos, mientras que en el CAD la parte visual es preponderante, y el almacenamiento así lo refleja. Un dato SIG se almacena como un un dato geográfico complejo, mientras que en un CAD se almacena básicamente como un *dibujo*, pues es ese el enfoque fundamental de trabajo.
@@ -157,12 +157,15 @@ Las aplicaciones CAD (Figura :num:`#figcad`) permiten el diseño informatizado d
 * No todos los tipos de datos de un SIG se pueden incorporar en un CAD. Los datos procedentes de la teledetección, por ejemplo, no forman parte del abanico de datos que un CAD puede manejar.
 
 
-.. figure:: CAD.png
+.. _figcad:
+
+.. figure:: CAD.*
+	:width: 650px
 
 	Entorno de trabajo de una aplicación CAD.
 
 
-.. _figcad: 
+ 
 
 
 El CAD puede resultar suficiente para desarrollar algunas tareas propias de los SIG, en particular las relacionadas con el diseño cartográfico. No obstante, algunas circunstancias ponen de manifiesto las carencias de una herramienta CAD para sustituir completamente a un SIG, al tener requerimientos para los que esta no puede ofrecer una solución. Entre estos requerimientos cabe citar los siguientes:
@@ -173,7 +176,7 @@ El CAD puede resultar suficiente para desarrollar algunas tareas propias de los 
 * Edición de datos por usuarios de distinto perfil y de modo concurrente.
 
 
-Por su parte, las siglas AM/FM(*Automated Mapping/Facilities Management*)[#f4]_de uso poco habitual en nuestro idioma, hacen referencia a aplicaciones diseñadas para la gestión de infraestructuras generalmente de carácter público, tales como redes de alcantarillado, conducciones de gas o vías de circulación, entre otras. 
+Por su parte, las siglas AM/FM(*Automated Mapping/Facilities Management*) [#f4]_ de uso poco habitual en nuestro idioma, hacen referencia a aplicaciones diseñadas para la gestión de infraestructuras generalmente de carácter público, tales como redes de alcantarillado, conducciones de gas o vías de circulación, entre otras. 
 
 Las aplicaciones empleadas para estas tareas tienen dos bloques básicos: un bloque gráfico de visualización y otro de gestión de datos. Este último almacena los atributos asociados a los elementos gráficos, que son principalmente de tipo lineal (tuberías, redes de alumbrado, etc.). Otro tipo de elementos, tales como elementos poligonales, son difíciles de manejar en estos sistemas, ya que su diseño obedece a las necesidades existentes en su ámbito de utilización, y estas se sitúan mayoritariamente alrededor de las infraestructuras lineales. Sin embargo, incluso con este tipo de elementos las capacidades de una aplicación AM/FM no igualan a las de un SIG, ya que no incorporan otro tipo de información como la relativa a la topología (que describiremos con detalle en el capítulo :ref:`Tipos_datos`). Esto es así debido a que el subsistema de análisis, fundamental en un SIG, no tiene presencia en estas herramientas, y por tanto sus características no incluyen aquellos componentes que sean necesarios exclusivamente para procesos de tipo analítico.
 
@@ -196,15 +199,18 @@ Una forma de entender el sistema SIG es como formado por una serie de subsistema
 
 La figura :num:`#figrelacionsubsistemas` muestra el esquema de estos tres subsistemas y su relación.
 
-.. figure:: Relacion_subsistemas.pdf
+.. _figrelacionsubsistemas:
+
+.. figure:: Relacion_subsistemas.*
+	:width: 450px
 
 	Esquema de un SIG con sus tres subsistemas fundamentales: datos, visualización y análisis
 
 
-.. _figrelacion_subsistemas: 
+ 
 
 
-Para que un SIG pueda considerarse una herramienta útil y válida con carácter general, debe incorporar estos tres subsistemas en cierta medida\cite{ESRI2003ESRI}.
+Para que un SIG pueda considerarse una herramienta útil y válida con carácter general, debe incorporar estos tres subsistemas en cierta medida :cite:p:`ESRI2003ESRI`.
 
 Otra forma distinta de ver el sistema SIG es atendiendo a los elementos básicos que lo componen. Cinco son los elementos principales que se contemplan tradicionalmente en este aspecto (Figura :num:`#figelementossig`):
 
@@ -216,12 +222,15 @@ Otra forma distinta de ver el sistema SIG es atendiendo a los elementos básicos
 * Personas. Las personas son las encargadas de diseñar y utilizar el software, siendo el motor del sistema SIG.
 
 
-.. figure:: Elementos_SIG.pdf
+.. _figelementossig:
+
+.. figure:: Elementos_SIG.*
+	:width: 600px
 
 	Elementos que forman el sistema SIG
 
 
-.. _figelementos_sig: 
+ 
 
 
 Para el enfoque de esta obra, cada uno de los elementos anteriores tiene unas características propias que deben estudiarse. No obstante, el hardware no es un elemento especialmente particular en el caso de un SIG, y las aplicaciones SIG que encontramos actualmente en el mercado en todas sus variedades (que son las que el lector de este libro va a utilizar habitualmente) se ejecutan en su mayoría sobre ordenadores personales sin requerimientos altamente específicos. Más aún, la expansión de las tecnologías SIG ha alcanzado hoy en día otros ámbitos como las plataformas móviles, haciendo de estas unas tecnologías poco específicas en lo que a *hardware* se refiere. Por esta razón, no es necesario tratar en detalle esta pieza del sistema SIG, siendo más adecuado tratar el resto de elementos, más característicos e importantes para el aprendizaje de los conceptos SIG y la descripción de estos.
@@ -232,14 +241,17 @@ Puede entenderse esto como un nuevo subsistema: el subsistema *de gestión*, que
 
 Las personas a su vez dan forma a los distintos ámbitos de trabajo, definiendo estos en función de sus necesidades. Puede tratarse el conjunto de campos de especialización como un nuevo elemento del sistema SIG, en lugar de incorporarlo dentro de otro. 
 
-Algunos autores proponen modificar el esquema clásico de cinco elementos para reflejar más correctamente la nueva realidad de los SIG. Por ejemplo, \cite{webGISEvolve} propone un esquema como el mostrado en la figura :num:`#figelementossig2`.
+Algunos autores proponen modificar el esquema clásico de cinco elementos para reflejar más correctamente la nueva realidad de los SIG. Por ejemplo,  :cite:p:`webGISEvolve` propone un esquema como el mostrado en la figura :num:`#figelementossig2`.
 
-.. figure:: Elementos_SIG2.pdf
+.. _figelementossig2:
 
-	Una división distinta del sistema SIG (según \cite{webGISEvolve)}
+.. figure:: Elementos_SIG2.*
+	:width: 600px
+
+	Una división distinta del sistema SIG (según  :cite:p:`webGISEvolve)`
 
 
-.. _figelementos_sig2: 
+ 
 
 
 La incorporación de la visualización es una diferencia notable con respecto al esquema clásico. En realidad, y si volvemos a ese enfoque basado en subsistemas, el subsistema de visualización resulta de enorme importancia en un SIG, siendo pese a ello habitual que no sea tratado con la suficiente profundidad en textos dedicados a los SIG desde un punto de vista genérico. Precisamente por no ser considerado un elemento independiente, no se le concede la necesaria atención como parte que debe estudiarse al tratar la disciplina de los SIG.
@@ -326,7 +338,7 @@ Cuando los SIG se encontraban en sus etapas de desarrollo iniciales y eran meras
 
 Asimismo, las necesidad de gestión de los datos y la propia complejidad de un SIG, provocan ambas que no exista un perfil único de persona involucrada en el sistema SIG, sino varias en función de la actividad que desarrollen. Al usuario clásico de SIG se unen las personas responsables de gestionar las bases de datos, las encargadas de diseñar la arquitectura de un SIG cuando este se establece para un uso conjunto por parte de toda una organización o grupo de mayor entidad. Dentro de las personas que participan en un SIG, el usuario directo es el eslabón último de una cadena que incluye igualmente a otros profesionales con roles bien distintos.
 
-Incluso atendiendo únicamente a los usuarios, también entre estos existen diferentes perfiles, y las comunidades de usuarios no expertos juegan en la actualidad un importante papel en el mundo del SIG. Esta situación, a su vez, requiere elementos organizativos importantes. Con la popularización y bajo coste de las unidades GPS y la aparición de la denominada Web 2.0, el SIG ha llegado a usuarios no especializados, los cuales utilizan estas herramientas para la creación y uso de su propia cartografía, dentro de lo que se conoce como VGI (*Volunteered Geographic Information* [#f5]_) \cite{goodchildVGI}. El término *Neogeografía*, de reciente creación, hace referencia a este uso de los SIG y otras herramientas asociadas por parte de grupos de usuarios no especializados.
+Incluso atendiendo únicamente a los usuarios, también entre estos existen diferentes perfiles, y las comunidades de usuarios no expertos juegan en la actualidad un importante papel en el mundo del SIG. Esta situación, a su vez, requiere elementos organizativos importantes. Con la popularización y bajo coste de las unidades GPS y la aparición de la denominada Web 2.0, el SIG ha llegado a usuarios no especializados, los cuales utilizan estas herramientas para la creación y uso de su propia cartografía, dentro de lo que se conoce como VGI (*Volunteered Geographic Information* [#f5]_)  :cite:p:`goodchildVGI`. El término *Neogeografía*, de reciente creación, hace referencia a este uso de los SIG y otras herramientas asociadas por parte de grupos de usuarios no especializados.
 
 En definitiva, resulta necesario gestionar correctamente la complejidad del sistema SIG, y esta gestión se ha convertido ya en un elemento fundamental dentro del entorno SIG actual, por lo que debe ser estudiada igualmente.
 

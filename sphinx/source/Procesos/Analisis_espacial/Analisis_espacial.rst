@@ -1,10 +1,9 @@
 
+.. _Analisis_espacial:
+
 **********************************************************
 Conceptos básicos para el análisis espacial
 ********************************************************** 
-
-.. _Analisis_espacial:
-
 
 Para proceder al análisis de los datos espaciales, deben conocerse antes las particularidades de estos. Algunas características propias de los datos espaciales hacen que, entre otras cosas, no sean aplicables algunos elementos de la estadística no espacial. Otras condicionan buena parte de las formulaciones que operan sobre ellos, y que iremos viendo en los sucesivos capítulos. Por tanto, abordar el estudio de estas formulaciones no se ha de hacer sin antes tratar con algo más de detalle las propiedades inherentes al dato espacial en lo que a su disposición para el análisis respecta.
 
@@ -16,7 +15,7 @@ Introducción
 
 Trabajar con datos espaciales tiene una serie de implicaciones que han de considerarse con detenimiento antes de llevar a cabo cualquier análisis. A lo largo de esta parte del libro veremos formas muy distintas de analizar los datos espaciales para obtener resultados de índole variada, y todas ellas tienen en común el hecho de trabajar sobre este tipo particular de datos. Conocer en profundidad el dato espacial es, por tanto, imprescindible, no solo en lo relativo a su forma, su manejo y su almacenamiento ---que ya fue visto en la parte correspondiente--- sino también en lo referente a su análisis y cómo ha de tratarse e interpretarse la información que contiene ---que lo veremos en el presente capítulo---.
 
-Entendemos por dato espacial todo aquel que tiene asociada una referencia geográfica, de tal modo que podemos localizar exactamente *dónde* sucede dentro de un mapa \cite{Haining2003Cambridge}. Dentro de esta definición se incluyen datos de campos (superficies) o datos asociados a objetos como puntos, líneas o polígonos. Es decir, todo cuanto puede recogerse según los distintos modelos de representación que ya hemos visto con anterioridad.
+Entendemos por dato espacial todo aquel que tiene asociada una referencia geográfica, de tal modo que podemos localizar exactamente *dónde* sucede dentro de un mapa  :cite:p:`Haining2003Cambridge`. Dentro de esta definición se incluyen datos de campos (superficies) o datos asociados a objetos como puntos, líneas o polígonos. Es decir, todo cuanto puede recogerse según los distintos modelos de representación que ya hemos visto con anterioridad.
 
 El objetivo de este capítulo es múltiple. Por una parte, presentar las principales particularidades de los datos espaciales, así como la formas de tener estas en cuenta a la hora del análisis. Por otra, estimular un correcto razonamiento espacial y un entendimiento adecuado tanto de las limitaciones como de la potencialidad de los datos espaciales como fuente del análisis geográfico. Y por último, presentar algunos de los fundamentos teóricos sobre los cuales se crean después todas las metodologías de análisis, las estadísticas espaciales, y los algoritmos que se detallarán en los capítulos sucesivos. 
 
@@ -31,10 +30,12 @@ El carácter especial del dato espacial deriva de la existencia de posición. Es
 
 Algunos de estos puntos representan problemas que han de tenerse presentes en el análisis. Otros son simplemente conceptos básicos que deben conocerse pero no han de implicar necesariamente una dificultad asociada.
 
+.. _Escala_analisis:
+
 Escala
 --------------------------------------------------------------
 
-.. _Escala_analisis:
+
 
 En el apartado :ref:`Escala` vimos con detalle el concepto de escala cartográfica, y cómo este se aplica de igual modo a la representación y gestión dentro de un SIG. Existe, además, otra forma de considerar la escala, y que resulta de especial interés para los contenidos de esta parte: la escala de análisis. 
 
@@ -44,43 +45,52 @@ Por ejemplo, sea el conjunto de puntos de la figura :num:`#figestructuraescalas`
 
 
 
-.. figure:: Estructura_escalas.pdf
+.. _figestructuraescalas:
+
+.. figure:: Estructura_escalas.*
+	:width: 500px
 
 	Dependiendo de la escala de análisis, la estructura de un conjunto de puntos puede ser distinta.
 
 
-.. _figestructura_escalas: 
+ 
 
 
 La escala de análisis debe ir inseparablemente relacionada con el fenómeno que pretendemos analizar, ya que es esta la que le da sentido. Supongamos el caso de llevar a cabo un análisis del relieve. Dependiendo de a qué escala observemos dicho relieve, la imagen que obtenemos es muy distinta. A un nivel global, distinguimos las grandes cadenas montañosas, y el resto del relieve aparece más o menos llano. Si nos acercamos a alguna de esas zonas llanas, se aprecia un relieve que antes no percibíamos, con ondulaciones y accidentes orográficos de menor entidad, que son suficientes para apreciarse a esta escala, pero no a la escala global anterior. Siguiendo este proceso, podemos ir acercándonos progresivamente hasta que incluso un pequeño grano de arena constituya un relieve notable.
 
 Si vamos a llevar a cabo un estudio de cómo el relieve influye en los movimientos de las masas de aire a nivel de todo el planeta, no tiene sentido estudiar las formas del relieve a este último nivel de máximo detalle. Como se muestra en la figura :num:`#figescalasformasterreno`, si para definir las formas de relieve en un punto dado lo hacemos considerando dicho punto y los valores de elevación a su alrededor, la caracterización que hagamos varía en función de la dimensión de esa zona alrededor (que es la que define la escala de análisis). Para valores pequeños de dicha zona de análisis, el punto analizado puede definirse como una cima, mientras que aumentando la escala de análisis se advierte que el punto se sitúa en el fondo de un valle.
 
-.. figure:: Escalas_formas_terreno.pdf
+.. _figescalasformasterreno:
+
+.. figure:: Escalas_formas_terreno.*
+	:width: 550px
 
 	Dependiendo de la escala de análisis, un mismo relieve puede ser caracterizado como cima (a) o fondo de valle (b)
 
 
-.. _figescalas_formas_terreno: 
+ 
 
 
 Por tanto, debemos observar el relieve desde la distancia correcta a la cual la información que nos proporciona es la más adecuada para un análisis dado. Además de existir una escala de mayor relevancia para un análisis concreto, lo cierto es que el conjunto de todas las escalas de análisis contiene en su totalidad una información más amplia que la correspondiente a una única escala, y por tanto resulta de interés el trabajar a múltiples escalas y combinar los resultados.
 
-Este enfoque de escalas múltiples es relevante también en relación con los propios datos, independientemente de lo que representan. Es decir, independientemente de la escala y la dimensión *real*, y en relación solo con la escala definida por el formato de los mismos. Por ejemplo, en el caso de imágenes, el uso de operadores a diferentes escalas (referida aquí la escala al número de píxeles utilizados en el operador) es ventajoso para realizar ciertas operaciones tales como la detección de bordes \cite{Rossenfeld1971IEEE}(véase :ref:`DeteccionBordes`). Combinado esto con lo anterior, la importancia de la escala en el análisis espacial es de primer orden, y resulta necesaria su consideración en todo momento.
+Este enfoque de escalas múltiples es relevante también en relación con los propios datos, independientemente de lo que representan. Es decir, independientemente de la escala y la dimensión *real*, y en relación solo con la escala definida por el formato de los mismos. Por ejemplo, en el caso de imágenes, el uso de operadores a diferentes escalas (referida aquí la escala al número de píxeles utilizados en el operador) es ventajoso para realizar ciertas operaciones tales como la detección de bordes  :cite:p:`Rossenfeld1971IEEE`(véase :ref:`DeteccionBordes`). Combinado esto con lo anterior, la importancia de la escala en el análisis espacial es de primer orden, y resulta necesaria su consideración en todo momento.
 
 Podemos ver más ejemplos de cómo la escala de análisis condiciona los resultados obtenidos. Supóngase un elemento lineal tal como un camino o el contorno de una finca cuyo perímetro quiere medirse. Como puede verse en la figura :num:`#figmedidalineafractal`, la unidad de medida empleada provoca que se obtengan resultados distintos. Para medir la longitud de la línea utilizamos una unidad mínima, que podemos asimilar a una especie de *vara de medir*. Todos los elementos de la línea que son menores que esa unidad mínima no se recogen. En el caso a) se obtiene un resultado de siete unidades. Si reducimos a la mitad la unidad, cabe esperar que la longitud sea el doble. Sin embargo, obtenemos un total de 17 unidades, de forma que la proporción entre el tamaño de nuestra vara de medida y el número de unidades resultante no se mantiene.
 
-.. figure:: Medida_linea_fractal.pdf
+.. _figmedidalineafractal:
+
+.. figure:: Medida_linea_fractal.*
+	:width: 550px
 
 	La unidad de medida empleada modifica el resultado obtenido.
 
 
-.. _figmedida_linea_fractal: 
+ 
 
 
 Cuando esto sucede, podemos afirmar que carece de fundamento trabajar con una medida *absoluta* de longitud (u otro parámetro estudiado que se comporte de igual manera, tal como el perímetro de un área de estudio), y que esto solo tiene sentido dentro de un contexto dado que defina la forma en que los resultados son medidos y operados. La unión de un valor resultante con la escala a la que se ha obtenido tiene en conjunto pleno significado, pero en casos como el anterior el valor resultante por sí mismo carece de dicho significado. Otra solución es la definición de parámetros invariantes a la escala, que no se ven afectados por esta.
 
-El concepto de *fractal* tiene una implicación directa en este hecho. Para saber más sobre fractales, la referencia clásica es \cite{Mandelbrot1982Freeman}. 
+El concepto de *fractal* tiene una implicación directa en este hecho. Para saber más sobre fractales, la referencia clásica es  :cite:p:`Mandelbrot1982Freeman`. 
 
 Por último, y para concluir este apartado,  señalar que las implicaciones de la escala para el análisis se incorporan incluso en la representación y almacenamiento de los datos espaciales. Así, una ciudad puede definirse como un punto a una escala dada, y como un polígono si nos acercamos lo suficiente y estudiamos una porción concreta con más detalle. En función de su uso, puede ser más conveniente tratar el elemento *ciudad* de una u otra manera, lo cual también afecta al análisis del mismo.
 
@@ -90,33 +100,34 @@ También el propio formato de almacenamiento condiciona el efecto de la escala. 
 
 Una situación distinta es la que sucede con los datos ráster, donde el tamaño de celda está indirectamente condicionando una escala. La medición de áreas y distancias se encuentra influida por el tamaño elegido. Del mismo modo que no podemos recoger los detalles mínimos de una curva al utilizar una vara de medir de mayor tamaño, en el caso de una capa ráster, todo aquello que suceda en una escala inferior a la definida por el tamaño de celda queda ignorado. La espacial resolución es, por tanto, un elemento directamente relacionado con los resultados del análisis cuando se utilizan datos ráster.
 
+.. _MAUP:
+
 El *Problema de la Unidad de Área Modificable*
 --------------------------------------------------------------
 
-.. _MAUP:
+
 
 Uno de los problemas principales asociados al análisis de datos espaciales es el relacionado con la definición de unidades de análisis. Muchas de las variables con las que trabajamos dentro de un SIG no pueden medirse de forma puntual, y por ello han de estudiarse para un área dada. Ejemplos de este tipo de variables son el porcentaje de población en un rango de edad determinado o la densidad media de población.
 
 Las áreas que se definen para poder trabajar con las variables de esta índole son esencialmente arbitrarias. Por ejemplo, podemos estudiar el porcentaje de la población dentro de un intervalo de edad a nivel de país. La unidad *país* se establece sin ningún criterio propio del análisis espacial, de igual modo que podría haberse realizado el mismo análisis a nivel de continente o de comarca, todas ellas divisiones por completo arbitrarias. No obstante, la utilización de una u otra unidad es problemática, ya que altera los resultados extraídos de las variables estudiadas.
 
-Este problema, por tener relación con la elección de la unidad de agregación de la información, se conoce como *Problema de la Unidad de Área Modificable*(PUAM) \cite{Openshaw1983Geobooks} \footnote{*Modifiable Areal Unit Problem, MAUP*}, y ha sido ampliamente estudiado en la literatura. Formalmente, puede definirse como *un problema causado por la imposición de unidades artificiales de definición espacial en fenómenos geográficos continuos, teniendo ésto como consecuencia la generación de patrones artificiales* \cite{Heywood1998Wesley}. Aunque no se trata de una cuestión de reciente descubrimiento, la aparición de los SIG y las mayores capacidades de análisis que estos han propiciado ha atraído de nuevo el interés sobre el Problema de la Unidad de Área Modificable. 
+Este problema, por tener relación con la elección de la unidad de agregación de la información, se conoce como *Problema de la Unidad de Área Modificable*(PUAM)  :cite:p:`Openshaw1983Geobooks` (*Modifiable Areal Unit Problem, MAUP*), y ha sido ampliamente estudiado en la literatura. Formalmente, puede definirse como *un problema causado por la imposición de unidades artificiales de definición espacial en fenómenos geográficos continuos, teniendo ésto como consecuencia la generación de patrones artificiales*  :cite:p:`Heywood1998Wesley`. Aunque no se trata de una cuestión de reciente descubrimiento, la aparición de los SIG y las mayores capacidades de análisis que estos han propiciado ha atraído de nuevo el interés sobre el Problema de la Unidad de Área Modificable. 
 
 Los efectos del PAUM se pueden dividir en dos componentes: uno relacionado con la escala y otro relacionado con la agregación. El *efecto de escala* describe la variación de los resultados obtenidos en relación con el número de zonas en que se divide el total de la zona de estudio. Es decir, el tamaño de las unidades. Este efecto esta claramente relacionado con lo visto en el punto anterior.
 
 Por su parte, el *efecto de zonificación* hace referencia a las diferencias que se producen cuando la información se agrega a una escala distinta. Por ejemplo, si se miden los datos de densidad de población por términos municipales, y posteriormente estos se agregan para presentarse por comunidades autónomas, ese cambio en la unidad de definición da lugar a diferencias en los valores resultantes. 
 
-%Podemos ver un claro ejemplo de lo anterior en la figura :num:`#figmaupzonificacion`. De las nueve unidades medidas,y según estas se agrupen, los resultados finales son diferentes. ****mencionar el efecto de la estructura****
 
 Para darse cuenta de la importancia de este hecho, debe considerarse que una buena parte de la información geográfica que utilizamos en un SIG ha sido recogida originalmente a una escala distinta, y en ocasiones ha sufrido una agrupación en unidades mayores por motivos de mera facilidad de manejo.
 
 Ambos efectos, el de zonificación y el de escala, no son independientes, sino que están íntimamente relacionados.
-La intensidad con que estos dos efectos afectan al análisis es variable, y existe asimismo una componente aleatoria. En líneas generales, el uso de unidades pequeñas implica que el número de elementos contenidos en las mismas es menor y por lo tanto estadísticamente menos fiable. En el extremo contrario, el uso de unidades grandes da valores estadísticamente más fiables pero oculta la variación que se produce dentro de las propias unidades.\cite{Nakaya2000EP}.
+La intensidad con que estos dos efectos afectan al análisis es variable, y existe asimismo una componente aleatoria. En líneas generales, el uso de unidades pequeñas implica que el número de elementos contenidos en las mismas es menor y por lo tanto estadísticamente menos fiable. En el extremo contrario, el uso de unidades grandes da valores estadísticamente más fiables pero oculta la variación que se produce dentro de las propias unidades. :cite:p:`Nakaya2000EP`.
 
-A pesar de tener una clara importancia en el análisis geográfico, las soluciones a la problemática que la definición de un área unitaria conlleva no son claras. Tradicionalmente se considera que se trata de un problema intratable. No obstante, algunos estudios \cite{Reynolds1998PhD} indican que existe un cierto grado de regularidad en los valores estadísticos agregados, dependiente de la autocorrelación espacial (ver siguiente punto) y la configuración de la variable. 
+A pesar de tener una clara importancia en el análisis geográfico, las soluciones a la problemática que la definición de un área unitaria conlleva no son claras. Tradicionalmente se considera que se trata de un problema intratable. No obstante, algunos estudios  :cite:p:`Reynolds1998PhD` indican que existe un cierto grado de regularidad en los valores estadísticos agregados, dependiente de la autocorrelación espacial (ver siguiente punto) y la configuración de la variable. 
 
 Puede afirmarse que el Problema de la Unidad de Área Modificable es aún materia de amplio estudio, y el objeto de este estudio, que no es otro que el poder calcular los valores de los datos a la resolución espacial original (es decir, sin que los efectos de zonificación tengan relevancia), en caso de poder alcanzarse, requerirá un análisis sin duda complejo.
 
-Un problema particular relacionado con el PUAM es la denominada *falacia ecológica*\cite{Openshaw1983Geobooks}, que consiste en asumir que los valores calculados para una unidad de área pueden aplicarse a los individuos de la población existente en dicha área. Sólo en el caso de que exista una completa homogeneidad para la variable analizada, lo cual muy raramente sucede, la anterior suposición sería cierta.
+Un problema particular relacionado con el PUAM es la denominada *falacia ecológica* :cite:p:`Openshaw1983Geobooks`, que consiste en asumir que los valores calculados para una unidad de área pueden aplicarse a los individuos de la población existente en dicha área. Sólo en el caso de que exista una completa homogeneidad para la variable analizada, lo cual muy raramente sucede, la anterior suposición sería cierta.
 
 Autocorrelación espacial
 -------------------------------------------------------------- 
@@ -128,7 +139,7 @@ Supóngase que se estudian una serie de poblaciones cercanas en las cuales se mi
 
 Por lo anterior, es probable que alrededor de una población con muchos casos de la enfermedad haya otras también con un elevado número de afectados, mientras que una población con pocos casos esté rodeada de otras también con escasa afección. Un comportamiento similar lo encontraríamos si midiéramos la concentración de un tóxico en distintos puntos de un embalse, ya que alrededor de un punto de alta concentración no parece lógico esperar concentraciones bajas.
 
-Ejemplos como los anteriores cumplen lo que se conoce como *Primera Ley Geográfica de Tobler* \cite{Tobler1970EcoGeo}, que establece que *todo está relacionado con todo, pero las cosas próximas entre sí están más relacionadas que las distantes*.
+Ejemplos como los anteriores cumplen lo que se conoce como *Primera Ley Geográfica de Tobler*  :cite:p:`Tobler1970EcoGeo`, que establece que *todo está relacionado con todo, pero las cosas próximas entre sí están más relacionadas que las distantes*.
 
 De modo más formal, el termino *autocorrelación espacial* hace referencia a lo reflejado en los ejemplos anteriores, es decir, a la existencia de una correlación de la variable consigo misma, de tal modo que los valores de esta variable en un punto guardan relación directa con los de esa misma variable en otros puntos cercanos.
 
@@ -138,12 +149,12 @@ En caso de no existir ningún tipo de autocorrelación espacial, se tiene que lo
 
 La figura :num:`#figautocorrelacionespacial` muestra unas sencillas capas ráster en las que se presentan los tres tipos de autocorrelación espacial anteriores.
 
-.. figure:: Autocorrelacion_espacial.png
+.. _figautocorrelacionespacial:
 
-	a) Autocorrelación espacial positiva. b) Autocorrelación espacial negativa. c) Ausencia de autocorrelación espacial (independencia)
+.. figure:: Autocorrelacion_espacial.*
+	:width: 750px
 
-
-.. _figautocorrelacion_espacial: 
+	Autocorrelación espacial positiva (a). Autocorrelación espacial negativa (b). Ausencia de autocorrelación espacial (independencia) (c)
 
 
 Las consecuencias de la existencia de autocorrelación espacial son numerosas y de gran importancia.
@@ -156,17 +167,11 @@ Puede, no obstante, sacarse también provecho de la existencia de una dependenci
 
 En lugar de incorporar la autocorrelación espacial como un elemento más, otra forma de proceder es analizar la intensidad de esta para ver en qué medida lo anterior es cierto o no. Así, el estudio de la autocorrelación espacial puede servir para juzgar si procede la aplicación de métodos estadísticos que no consideren la dependencia espacial. Como veremos en el capítulo :ref:`Estadistica_espacial`, si a través de los valores de los indicadores correspondientes podemos aceptar la hipótesis nula de ausencia de dependencia espacial, entonces los inconvenientes anteriormente citados pueden no existir.
 
-Como ya venimos observando, el conjunto de conceptos básicos sobre datos espaciales que estamos viendo en esta sección no es un conjunto de elementos independientes. Por ejemplo, la autocorrelación espacial se halla directamente ligada con el concepto de escala, y un cambio de escala puede hacer que la autocorrelación cambie de signo \cite{Openshaw1979Pion}. Veamos un ejemplo.
+Como ya venimos observando, el conjunto de conceptos básicos sobre datos espaciales que estamos viendo en esta sección no es un conjunto de elementos independientes. Por ejemplo, la autocorrelación espacial se halla directamente ligada con el concepto de escala, y un cambio de escala puede hacer que la autocorrelación cambie de signo  :cite:p:`Openshaw1979Pion`. Veamos un ejemplo.
 
-Sea un monte en el que los árboles grandes están separados una distancia dada por el efecto de la competencia, y entre los cuales crecen los árboles más pequeños. Supongamos que la distancia media entre árboles grandes es de unos 20 metros. Si hacemos un muestreo en el que medimos la altura media de los árboles en parcelas separadas aproximadamente cada 10 metros, es probable que midamos alternamente una parcela con un árbol grande y una con algunos pequeños, de forma que tendremos una marcada autocorrelación espacial negativa. Si por el contrario medimos parcelas de un metro de radio separadas a su vez un metro, mediremos muchas parcelas cercanas en las que solo entrarán árboles pequeños que se agrupan bajo los grandes, de tal forma que la autocorrelación espacial que obtendremos será positiva. %(Figura :num:`#figautocorrelacionescala` 
+Sea un monte en el que los árboles grandes están separados una distancia dada por el efecto de la competencia, y entre los cuales crecen los árboles más pequeños. Supongamos que la distancia media entre árboles grandes es de unos 20 metros. Si hacemos un muestreo en el que medimos la altura media de los árboles en parcelas separadas aproximadamente cada 10 metros, es probable que midamos alternamente una parcela con un árbol grande y una con algunos pequeños, de forma que tendremos una marcada autocorrelación espacial negativa. Si por el contrario medimos parcelas de un metro de radio separadas a su vez un metro, mediremos muchas parcelas cercanas en las que solo entrarán árboles pequeños que se agrupan bajo los grandes, de tal forma que la autocorrelación espacial que obtendremos será positiva.
 
-% .. figure:: Autocorrelacion_escala.png
-% 
-	El signo de la autocorrelación puede variar con la escala. Según el tamaño de la unidad de análisis se obtendran las mallas ráster de altura media representadas en la parte derecha, cada una de ellas con un tipo de autocorrelación espacial distinto.
-% 
 
-.. _figautocorrelacion_escala: 
-% 
 
 Es importante considerar todos estos factores de forma global, pues todos ellos tienen importancia y afectan al trabajo con datos geográficos.
 
@@ -175,12 +180,15 @@ Existencia de estructura
 
 Tanto la disposición de los datos como las propiedades de la variable estudiada (por ejemplo, la propia autocorrelación espacial como propiedad intrínseca), exhiben una estructura determinada. En la figura :num:`#figestructuraespacial` pueden verse dos conjuntos de puntos distintos, sobre los cuales cabe plantearse si los resultados obtenidos de su análisis pueden darse como igual de fiables. Puesto que la estructura espacial de ambos es distinta y la componente espacial juega un papel importante, esta estructura puede condicionar los resultados y tener influencia sobre estos.
 
-.. figure:: Estructura_espacial.pdf
+.. _figestructuraespacial:
+
+.. figure:: Estructura_espacial.*
+	:width: 550px
 
 	Dos estructuras distintas con diferentes implicaciones a la hora del análisis de los datos que representan
 
 
-.. _figestructura_espacial: 
+ 
 
 
 Por ejemplo, vemos que en el patrón b) los puntos se hallan más agrupados, mientras que en el a) los puntos están distribuidos uniformemente a lo largo de la extensión de la zona de análisis. Si existe autocorrelación espacial positiva, la información recogida en el patrón b) es mucho menos representativa, ya que los puntos cercanos recogen información en cierta medida redundante. A pesar de disponer de un numero :math:`n` de valores recogidos en otros tantos puntos, el análisis estadístico de estos no es tan preciso como si se dispusiera de :math:`n` observaciones independientes. En realidad, los resultados que obtendremos serán como si hubiéramos muestreado un número menor de puntos que los que realmente tenemos.
@@ -202,10 +210,12 @@ Conocer las tendencias existentes para una variable nos ayuda a comprender mejor
 
 Las consecuencias de la existencia de tendencias son similares a las que se derivan de la presencia de autocorrelación espacial, ya que invalidan el supuesto de independencia de los datos.
 
+.. _EfectoBorde:
+
 Efectos de borde
 --------------------------------------------------------------
 
-.. _EfectoBorde:
+
 
 
 
@@ -217,12 +227,15 @@ El efecto de borde no es independiente de otros elementos como la escala, ya que
 
 Otros análisis que en breve veremos hacen uso de un mecanismo similar. Por ejemplo, analizando el número de puntos situados a una distancia menor que un umbral dado. En los puntos cerca del borde, la presencia de dicho borde va a distorsionar los valores calculados. Como también veremos, las distintas formulaciones tienen en muchos casos expresiones corregidas que modifican los valores obtenidos en función de la distancia al borde.
 
-.. figure:: Efecto_borde.pdf
+.. _figefectoborde:
+
+.. figure:: Efecto_borde.*
+	:width: 450px
 
 	Representación del efecto borde y cómo este afecta en mayor o menor medida en función de la escala de análisis. Las zonas en trazo continuo no se ven afectadas. Las zonas en trazo punteado están afectadas de efecto de borde en diferente grado.
 
 
-.. _figefecto_borde: 
+ 
 
 
 En general, es importante considerar los efectos de borde para saber si los valores calculados dentro de cualquier análisis estadístico son válidos o no. Cuando nos encontramos lo suficientemente cerca de un borde (sea este uno artificial como el borde de la capa o uno natural dentro de la propia capa tal como el mencionado límite de un bosque), la información que derivamos de los datos espaciales puede ser incoherente con la realidad.
@@ -238,21 +251,26 @@ Como veíamos al tratar el Problema del de Unidad de Área Modificable, algunas 
 
 Para cada una de estas unidades, se tiene un valor de la variable estudiada, pero lo que dicho valor representa en el territorio puede variar en función del criterio establecido. Como se recoge en la figura :num:`#figsupportsize`, en la cual la variable recogida es la elevación, el valor de cada celda puede ser la elevación en el centro de la celda o bien el valor medio de toda ella, entre otras opciones posibles.
 
-.. figure:: Support_size.pdf
+.. _figsupportsize:
+
+.. figure:: Support_size.*
+	:width: 550px
 
 	El valor recogido en una unidad puede interpretarse con distintos criterios. a) Media de la celda. b) Valor en el punto medio.
 
 
-.. _figsupport_size: 
+ 
 
 
 Este tipo de cuestiones deben considerarse al trabajar con los datos espaciales, y homogeneizar los criterios en la medida de lo posible, siempre considerando la naturaleza de la variable recogida.
 
 	
+.. _Calculos_espaciales_basicos:
+
 Algunos cálculos espaciales básicos
 =====================================================
 
-.. _Calculos_espaciales_basicos:
+
 
 La mayor parte de los análisis espaciales hacen uso de cálculos geométricos sencillos, a partir de los cuales se construyen algoritmos más complejos. Veremos en esta sección esos cálculos básicos, que constituyen los fundamentos del análisis geométrico tanto en el plano como en el espacio.
 
@@ -279,20 +297,23 @@ Tanto la distancia euclídea como la de Manhattan son casos particulares de las 
 
 En el caso de ser :math:`p=1` se tiene la distancia de Manhattan, y para :math:`p=2` la distancia euclídea.
 
-Cuando se utilizan capas ráster, el concepto de distancia puede entenderse de un modo distinto. Como resulta lógico, puede aplicarse la distancia euclídea entre los centros de las celdas, pero en ciertos casos puede ser conveniente trabajar no en coordenadas geográficas, sino de celdas, ya que, como sabemos, el espacio se divide en un número finito de estas en una capa ráster. Por esta razón, y puesto que las coordenadas de celda son expresadas en números enteros de la forma (fila, columna), resulta además conveniente que esa distancia sea también un valor entero\cite{Chen2001IJGIS}.
+Cuando se utilizan capas ráster, el concepto de distancia puede entenderse de un modo distinto. Como resulta lógico, puede aplicarse la distancia euclídea entre los centros de las celdas, pero en ciertos casos puede ser conveniente trabajar no en coordenadas geográficas, sino de celdas, ya que, como sabemos, el espacio se divide en un número finito de estas en una capa ráster. Por esta razón, y puesto que las coordenadas de celda son expresadas en números enteros de la forma (fila, columna), resulta además conveniente que esa distancia sea también un valor entero :cite:p:`Chen2001IJGIS`.
 
 Sobre este planteamiento pueden definirse distintos tipos de distancia ráster considerando principalmente el número de celdas por las que debe pasarse para ir de una celda a otra. Por ejemplo, si se permite el movimiento en todas direcciones, la distancia desde una celda a las ocho que la rodean es igual a 1 en todos casos, pues se realiza en un único paso. Por similitud a la forma en que uno puede moverse en un tablero de ajedrez, este tipo de distancia se conoce como distancia *de tablero de ajedrez*\footnote{Chessboard distance}.
 
 Si, por el contrario, se permite tan solo el movimiento en dirección vertical y horizontal, la distancia a las celdas diagonales ---por ejemplo, desde la celda :math:`(x, y)` hasta la :math:`(x + 1, y + 1)`--- es igual a 2. En este caso tenemos la anteriormente mencionada distancia de Manhattan.
 
-En la figura :num:`#figdistanciaraster` pueden verse los valores de distancia entre una celda central y sus circundantes según las definiciones de distancia anteriores, junto con otras como la distancia *ortogonal* o la distancia *Chamfer 3--4*\cite{Borgefors1986CompuVision}. El objetivo de estas distancias es mitigar en cierta medida la distorsión que se produce con las otras distancias ráster a medida que aumenta el alejamiento.
+En la figura :num:`#figdistanciaraster` pueden verse los valores de distancia entre una celda central y sus circundantes según las definiciones de distancia anteriores, junto con otras como la distancia *ortogonal* o la distancia *Chamfer 3--4* :cite:p:`Borgefors1986CompuVision`. El objetivo de estas distancias es mitigar en cierta medida la distorsión que se produce con las otras distancias ráster a medida que aumenta el alejamiento.
 
-.. figure:: Distancia_raster.pdf
+.. _figdistanciaraster:
+
+.. figure:: Distancia_raster.*
+	:width: 650px
 
 	Distintos tipos de distancia ráster: a) tablero de ajedrez, b) Manhattan, c) ortogonal, d) Chamfer 3--4
 
 
-.. _figdistancia_raster: 
+ 
 
 
 El análisis de costes se lleva a cabo en un SIG esencialmente en formato ráster, por lo que lo anterior es de importancia al respecto, y será extendido en el capítulo :ref:`Costes`.
@@ -301,10 +322,11 @@ Además de hallarse las distancias entre puntos concretos, pueden calcularse ent
 
 La distancia de un segmento definido por sus extremos :math:`(x_1, y_1)` y :math:`(x_2, y_2)`  a un punto de coordenadas :math:`(x_3,y_3)` se calcula como la distancia de este último hasta la intersección de la recta que pasa por el mismo y es perpendicular al segmento. Dicho punto de intersección tiene por coordenadas
 
-\begin{equation}
-x = x_1 + u (x_2 - x_1)
-y = y_1 + u (y_2 - y_1)
-\end{equation}
+.. math::
+
+	x = x_1 + u (x_2 - x_1)
+	y = y_1 + u (y_2 - y_1)
+
 
 donde :math:`u` se calcula según
 
@@ -343,16 +365,18 @@ El perímetro de un polígono es la suma de las distancias entre vértices conse
 
 Además de los anteriores, un parámetro de interés también para polígonos es el centro de gravedad, cuyas coordenadas se calculan según
 
-\begin{eqnarray}
-C_x=\frac{1}{6A}\sum_{i=1}^n (x_ix_{i+1})(x_iy_{i+1}-x_{i+1}y_i)\nonumber\\
-C_y=\frac{1}{6A}\sum_{i=1}^n (y_iy_{i+1})(x_iy_{i+1}-x_{i+1}y_i)
-\end{eqnarray}
+.. math::
+
+	C_x=\frac{1}{6A}\sum_{i=1}^n (x_ix_{i+1})(x_iy_{i+1}-x_{i+1}y_i)
+
+	C_y=\frac{1}{6A}\sum_{i=1}^n (y_iy_{i+1})(x_iy_{i+1}-x_{i+1}y_i)
+
 
 
 
 La medida del área y de la longitud de un elemento lineal como el perímetro de un polígono o una recta, pueden llevarse a cabo para datos en formato ráster de una forma distinta. Para el caso del área basta contar el número de celdas del polígono y multiplicarlo por el área de una única celda. En el caso de la longitud, basta sumar la longitud total de todos los lados exteriores, esto es, de aquellos que no son contiguos a otra celda del polígono. Todos estos cálculos se establecen en función del tamaño de celda como magnitud base. Para el cálculo del centroide, este es el centro de masas calculado como si cada celda perteneciente al polígono fuese una masa puntual unitaria.
 
-Para concluir, un sencillo análisis entre un punto y un polígono, el cual utilizaremos frecuentemente, es la comprobación de si este punto se encuentra dentro o fuera del polígono. Para ello existen diversas metodologías, pero la más habitual es la basada en el número de veces que una semirecta con origen en el punto cruza el borde del polígono. El algoritmo es como sigue \cite{Haines1994Academic}:
+Para concluir, un sencillo análisis entre un punto y un polígono, el cual utilizaremos frecuentemente, es la comprobación de si este punto se encuentra dentro o fuera del polígono. Para ello existen diversas metodologías, pero la más habitual es la basada en el número de veces que una semirecta con origen en el punto cruza el borde del polígono. El algoritmo es como sigue  :cite:p:`Haines1994Academic`:
 
 
  * Se traza una recta desde el punto en cuestión hasta un punto fuera del polígono. Lo habitual es considerar la semirecta horizontal desde el punto dado y bien en la dirección positiva o bien en la negativa.
@@ -364,28 +388,36 @@ Para concluir, un sencillo análisis entre un punto y un polígono, el cual util
 
 En la figura :num:`#figpuntoenpoligono` se muestra un ejemplo de lo anterior.
 
-.. figure:: Punto_en_poligono.pdf
+.. _figpuntoenpoligono:
+
+.. figure:: Punto_en_poligono.*
+	:width: 650px
 
 	Pertenencia de un punto al interior de un polígono en función del numero de cortes entre la frontera de dicho polígono y una semirecta con extremo en dicho punto.
 
 
-.. _figpunto_en_poligono: 
+ 
 
 
 La pertenencia o no del punto al polígono queda definida así en todos los casos, salvo cuando el punto está en la propia frontera o bien la semirecta coincide en algún tramo con el contorno, en cuyo caso resulta imposible el cálculo del número de cortes (Figura :num:`#figproblemapuntoenpoligono`).
 
-.. figure:: Problema_punto_en_poligono.pdf
+.. _figproblemapuntoenpoligono:
+
+.. figure:: Problema_punto_en_poligono.*
+	:width: 650px
 
 	Problemas de la metodología para determinar si un punto se encuentra en el interior de un polígono cuando la semirecta coincide parcialmente con la frontera.
 
 
-.. _figproblema_punto_en_poligono: 
+ 
 
+
+.. _Relaciones_espaciales:
 
 Relaciones espaciales
 =====================================================
 
-.. _Relaciones_espaciales:
+
 
 Como ya sabemos, conceptos tales como la posición o el tamaño, son básicos para el análisis geográfico, pues derivan de la propia georreferenciación inherente a todo dato espacial. El hecho de que exista dicha referencia en el espacio es responsable de que los mismos valores de una variable no tengan igual significación en unos lugares que en otros, y que estos lugares no solo se consideren en términos absolutos, sino también relativos entre los distintos datos espaciales.
 
@@ -399,10 +431,10 @@ De entre dichas relaciones, algunas son de tipo topológico y otras se fundament
 
 En esta sección daremos una definición formal de los principales tipos de relaciones y, especialmente, de los razonamientos que dan lugar a estos criterios y son claves para comenzar a entender el análisis espacial tal y como este se presenta en un SIG. De esta forma, posteriormente podremos aplicar estas relaciones con claridad a los distintos datos geográficos.
 
-\cite{Pullar1988Sydney} propone los siguientes tipos de relaciones espaciales:
+:cite:p:`Pullar1988Sydney` propone los siguientes tipos de relaciones espaciales:
 
 
- * Relaciones direccionales, que describen el orden en el espacio. Por ejemplo, *al norte de*, *al sur de*, etc.
+* Relaciones direccionales, que describen el orden en el espacio. Por ejemplo, *al norte de*, *al sur de*, etc.
 * Relaciones topológicas, las cuales describen la vecindad e incidencia. Por ejemplo, *son disjuntos* o *son adyacentes*.
 * Relaciones comparativas, que describen la inclusión. Por ejemplo *está en*.
 * Relaciones de distancia, tales como *lejos de* o *cerca de*.
@@ -426,11 +458,11 @@ Dentro de un SIG, las relaciones topológicas tienen utilidad en los procesos de
 
 A la hora de clasificar y definir las relaciones espaciales deben considerarse tres enfoques principales: un enfoque netamente matemático, un enfoque psicológico y un enfoque geográfico. El enfoque matemático pretende formalizar con un lenguaje matemático las distintas relaciones, de forma que puedan estudiarse y analizarse a través de las herramientas matemáticas habituales, tanto topológicas como espaciales. Por su parte, el enfoque geográfico surge según se desarrollan los Sistemas de Información Geográfica y aparece la necesidad de expresar las relaciones espaciales de un modo adecuado para implementar estas, así como los distintos algoritmos que se sustentan en ellas. Puede entenderse en cierta forma como una versión práctica del enfoque matemático. 
 
-Tanto el enfoque matemático como el geográfico son netamente cuantitativos pero a la hora de comunicar algún tipo de conocimiento espacial que lleve implícita una relación espacial, lo hacemos principalmente de forma cualitativa  \cite{Hernandez1994Springer} \cite{Xu2007IJGIS}. 
+Tanto el enfoque matemático como el geográfico son netamente cuantitativos pero a la hora de comunicar algún tipo de conocimiento espacial que lleve implícita una relación espacial, lo hacemos principalmente de forma cualitativa   :cite:p:`Hernandez1994Springer`  :cite:p:`Xu2007IJGIS`. 
 
-Así, al indicar  a otra persona si se puede llegar rápidamente a una dirección dada dentro de la ciudad, no decimos *el parque al que quieres ir está contenido dentro de un radio de 1,2 km* sino que diremos algo como *sí, está cerca, se puede llegar andando*. En nuestro pensamiento espacial y en el lenguaje que utilizamos para expresarlo, no es necesaria la precisión cuantitativa, que sin embargo sí se requiere para plantear otros modelos de relaciones. Entender las relaciones espaciales cualitativas para poder implementarlas en una herramienta lógica como un SIG es en esencia un problema de traducción entre un lenguaje natural y uno formal \cite{Frank1991Longmans}.
+Así, al indicar  a otra persona si se puede llegar rápidamente a una dirección dada dentro de la ciudad, no decimos *el parque al que quieres ir está contenido dentro de un radio de 1,2 km* sino que diremos algo como *sí, está cerca, se puede llegar andando*. En nuestro pensamiento espacial y en el lenguaje que utilizamos para expresarlo, no es necesaria la precisión cuantitativa, que sin embargo sí se requiere para plantear otros modelos de relaciones. Entender las relaciones espaciales cualitativas para poder implementarlas en una herramienta lógica como un SIG es en esencia un problema de traducción entre un lenguaje natural y uno formal  :cite:p:`Frank1991Longmans`.
 
-La forma en que los SIG incluyen las relaciones espaciales para sus propósitos debe combinar todos estos enfoques con objeto de conseguir que el razonamiento espacial pueda transmitirse de forma sencilla y lo más efectiva posible. Teniendo en cuenta esto, autores como \cite{Boyle1983NASA} argumentan que, en la actualidad, la falta de un sistema de relaciones espaciales completo que dé respuesta a todas las necesidades que se plantean, es uno de los principales escollos para un mayor desarrollo de la disciplina de los SIG. El problema, no obstante, no presenta una solución sencilla, ya que, como hemos visto, los criterios a aplicar pueden ser muy variados y las ideas matemáticas han de combinarse igualmente con los elementos perceptivos acerca de cómo estas relaciones se entienden y se interpretan \cite{Mark1994CartoAndGIS}. 
+La forma en que los SIG incluyen las relaciones espaciales para sus propósitos debe combinar todos estos enfoques con objeto de conseguir que el razonamiento espacial pueda transmitirse de forma sencilla y lo más efectiva posible. Teniendo en cuenta esto, autores como  :cite:p:`Boyle1983NASA` argumentan que, en la actualidad, la falta de un sistema de relaciones espaciales completo que dé respuesta a todas las necesidades que se plantean, es uno de los principales escollos para un mayor desarrollo de la disciplina de los SIG. El problema, no obstante, no presenta una solución sencilla, ya que, como hemos visto, los criterios a aplicar pueden ser muy variados y las ideas matemáticas han de combinarse igualmente con los elementos perceptivos acerca de cómo estas relaciones se entienden y se interpretan  :cite:p:`Mark1994CartoAndGIS`. 
 
 Lo habitual dentro de un SIG es la conversión de los conceptos del lenguaje natural (cualitativos) en elementos cuantitativos, de forma que estos pueden después tratarse con las herramientas de algún sistema formal de relaciones. Este planteamiento, aunque potente, puede no ser adecuado para según qué casos. El futuro de los SIG pasa por ser capaz de manejar de forma integrada las relaciones cualitativas, de forma que se aumente la usabilidad para aquellos usuarios que no disponen de un conocimiento de los sistemas formales, pero pueden sin embargo plantear cuestiones espaciales en el lenguaje habitual.
 
@@ -443,50 +475,51 @@ Entrando en la propia definición de relaciones, el conjunto principal de estas 
 
 La definición formal de estos predicados ha sido motivo de abundante estudio desde la aparición de los SIG, en parte motivado por la mayor necesidad que de tal formalismo se tiene si se pretende estructurar adecuadamente todas las operaciones de análisis que un SIG puede contener.
 
- Uno de los sistemas iniciales de predicados es el conocido como *4--Intersection* \cite{Egenhofer1989Springer}. Según este modelo, la relación entre dos objetos A y B queda definida por las intersecciones entre las fronteras (:math:`\delta A` y :math:`\delta B`) y los interiores (:math:`A` y :math:`B`) de estos. Se tienen así cuatro intersecciones con las que se conforma una matriz que caracteriza la relación existente. 
+Uno de los sistemas iniciales de predicados es el conocido como *4--Intersection*  :cite:p:`Egenhofer1989Springer`. Según este modelo, la relación entre dos objetos A y B queda definida por las intersecciones entre las fronteras (:math:`\delta A` y :math:`\delta B`) y los interiores (:math:`A` y :math:`B`) de estos. Se tienen así cuatro intersecciones con las que se conforma una matriz que caracteriza la relación existente. 
 
-\begin{equation}
-\Im_4(A,B) = \left( \begin{array}{cc}
-A  \cap  B & A \cap \delta B \\
-\delta A \cap B &\delta A \cap \delta B \\
-\end{array} \right)
-\end{equation}
+.. math::
+
+	\Im_4(A,B) = \left( \begin{array}{cc} A  \cap  B & A \cap \delta B \delta A \cap B &\delta A \cap \delta B 
 
 Para cada una de las cuatro intersecciones se estudia algún invariante topológico, es decir, alguna propiedad que sea invariante a las transformaciones topológicas. De entre ellas, lo más habitual es emplear el contenido, esto es, si la región delimitada por la intersección esta vacía (:math:`\varnothing`) o no (:math:`\neg \varnothing`).
 
 Teniendo cuatro elementos y dos posibles valores para cada uno, existen un total de :math:`2^4 = 16` diferentes matrices con la forma anterior. De estas, ocho pueden darse en un plano entre objetos bidimensionales con fronteras cerradas, cada uno de los cuales define una *región*. Estas ocho relaciones son las mostradas en la figura :num:`#fig4intersection`, con sus matrices características correspondientes.
 
-.. figure:: 4Intersection.png
+.. _fig4intersection:
+
+.. figure:: 4Intersection.*
+	:width: 650px
 
 	Conjunto de relaciones posibles entre regiones según el modelo *4--Intersection*.
 
 
-.. _fig4intersection: 
+ 
 
 
 Un razonamiento similar puede aplicarse al caso de líneas, cuya principal diferencia radica en que conforman elementos con fronteras no cerradas. No obstante, la forma de proceder y las relaciones definidas son análogas en gran medida.
 
-A partir del modelo *4--Intersection*, Egenhofer \cite{Egenhofer1989Springer} desarrolla el modelo *9--Intersection*, en el cuál se amplia el anterior a la consideración de tres elementos en lugar de dos. Además de considerar las fronteras e interiores de los objetos A y B, se consideran asimismo los exteriores de los mismos (:math:`A^-` y :math:`B^-`). La matriz característica queda entonces de la forma
+A partir del modelo *4--Intersection*, Egenhofer  :cite:p:`Egenhofer1989Springer` desarrolla el modelo *9--Intersection*, en el cuál se amplia el anterior a la consideración de tres elementos en lugar de dos. Además de considerar las fronteras e interiores de los objetos A y B, se consideran asimismo los exteriores de los mismos (:math:`A^-` y :math:`B^-`). La matriz característica queda entonces de la forma
 
-\begin{equation}
-\Im_9(A,B) = \left( \begin{array}{ccc}
-A  \cap  B & A \cap \delta B & A \cap B^- \\
-\delta A \cap B &\delta A \cap \delta B & \delta A \cap B^- \\
-A^- \cap B &A^- \cap \delta B & A^- \cap B^- \\
-\end{array} \right)
-\end{equation}
+
+.. math::
+
+	\Im_9(A,B) = \left( \begin{array}{ccc}
+	A  \cap  B & A \cap \delta B & A \cap B^- \\
+	\delta A \cap B &\delta A \cap \delta B & \delta A \cap B^- \\
+	A^- \cap B &A^- \cap \delta B & A^- \cap B^- \\
+
 
 El numero total de matrices posibles es en este caso de :math:`2^9 = 512`. De todas ellas, solo un pequeño subconjunto representan relaciones posibles en :math:`\mathbb{R}^2` a las cuales pueda asignarse una interpretación geométrica. 
 
 Por ejemplo, la matriz siguiente, en la que todos los elementos son el conjunto vacío, resulta imposible de obtener con ningún tipo de relación.
 
-\begin{equation}
-\Im_9(A,B) = \left( \begin{array}{ccc}
-\emptyset & \emptyset & \emptyset \\
-\emptyset & \emptyset & \emptyset \\
-\emptyset & \emptyset & \emptyset \\
-\end{array} \right)
-\end{equation}
+.. math::
+
+	\Im_9(A,B) = \left( \begin{array}{ccc}
+	\emptyset & \emptyset & \emptyset \\
+	\emptyset & \emptyset & \emptyset \\
+	\emptyset & \emptyset & \emptyset \\
+	\end{array} \right)
 
 Dependiendo del tipo de objetos sobre el que se den las relaciones, el modelo *9--Intersection* amplía al *4--Intersection* de una u otra forma.
 
@@ -504,12 +537,12 @@ Pese a su aparente complejidad y completitud, el modelo *9--Intersection* deja d
 
 Por ejemplo, si dos regiones de una hectárea se intersecan, no es lo mismo que lo hagan dando lugar a una intersección de media hectárea que a una de 100 metros cuadrados. Topológicamente, se trata de la misma relación, pero está claro que, en la práctica, las implicaciones de una u otra intersección son bien distintas.
 
-Dependiendo de los tipos de entidades que se consideren, existen distintos índices que cuantifican la relación existente. \cite{egenhofer98metric} propone para el caso de una región y una línea el análisis en términos métricos de las siguiente propiedades:
+Dependiendo de los tipos de entidades que se consideren, existen distintos índices que cuantifican la relación existente.  :cite:p:`egenhofer98metric` propone para el caso de una región y una línea el análisis en términos métricos de las siguiente propiedades:
 
 
  * Subdivisión. Se definen índices que describen la forma en que la frontera, interior y exterior de la región subdivide a la frontera y el interior de la línea. Estos índices tratan, entre otros aspectos, la forma en que la línea divide el interior de la región, el exterior de esta (pudiendo generar áreas delimitadas por la línea y la región en el exterior de esta última), la relación entre la frontera de la región y la línea, o cómo el perímetro de la región puede quedar dividido en distintos tramos por las intersecciones con la línea.
 
-Por ejemplo, la *relación de subdivisión del área interior* (*internal areasplitting ratio(IAR)*), (Figura :num:`#figinternalareasplitting`), se define cómo el mínimo área de las dos que quedan a cada uno de los lados de la línea dentro de la región, dividido por el área total de región.
+ Por ejemplo, la *relación de subdivisión del área interior* (*internal areasplitting ratio(IAR)*), (Figura :num:`#figinternalareasplitting`), se define cómo el mínimo área de las dos que quedan a cada uno de los lados de la línea dentro de la región, dividido por el área total de región.
 
 .. math::
 
@@ -517,15 +550,18 @@ Por ejemplo, la *relación de subdivisión del área interior* (*internal areasp
 
 
 
-.. figure:: Internal_area_splitting.pdf
+.. _figinternalareasplitting:
+
+.. figure:: Internal_area_splitting.*
+	:width: 350px
 
 	Esquema de la forma en que una línea divide a una región. La menor de las dos (en oscuro), dividida por el área total, define la *relación de subdivisión del área interior*. 
 
 
-.. _figinternal_area_splitting: 
+ 
 
 
-Para una descripción más detallada de otros índices puede consultarse la referencia original.
+ Para una descripción más detallada de otros índices puede consultarse la referencia original.
 
 * Cercanía. Los índices de cercanía cuantifican el alejamiento entre partes disjuntas de los objetos relacionados. Para su cálculo, se utilizan medidas de distancia como las descritas en :ref:`Calculos_espaciales_basicos`. Cuatro son los índices definidos, que miden
 
@@ -538,14 +574,14 @@ Para una descripción más detallada de otros índices puede consultarse la refe
 
 
 
-Para el caso de dos líneas, \cite{Nedas2007IJGIS} propone estudiar también las mismas propiedades --- subdivisión y cercanía ---, desarrollando un planteamiento similar. \cite{Xu2007IJGIS}, por su parte, añade elementos direccionales a las relaciones entre líneas, definiendo un ángulo local (el ángulo puntual en el punto de corte) y uno global (el definido por las direcciones globales de las líneas). Asimismo, incluye relaciones entre los rectángulos mínimos que engloban a las líneas, teniendo de este modo relaciones de área que complementan a las anteriores.
+Para el caso de dos líneas,  :cite:p:`Nedas2007IJGIS` propone estudiar también las mismas propiedades --- subdivisión y cercanía ---, desarrollando un planteamiento similar.  :cite:p:`Xu2007IJGIS`, por su parte, añade elementos direccionales a las relaciones entre líneas, definiendo un ángulo local (el ángulo puntual en el punto de corte) y uno global (el definido por las direcciones globales de las líneas). Asimismo, incluye relaciones entre los rectángulos mínimos que engloban a las líneas, teniendo de este modo relaciones de área que complementan a las anteriores.
 
 Otras relaciones
 --------------------------------------------------------------
 
 Muchas otras relaciones se pueden establecer entre elementos espaciales, si bien las anteriores son las principales y las que se presentan como más adecuadas para formalizar los análisis que dependen de ellas. No obstante, otros análisis que veremos más adelante implican relaciones espaciales basadas en otra serie de conceptos.
 
-Por ejemplo, el análisis hidrológico implica el estudio de la conectividad hidrológica entre sus elementos. Estos pueden ser celdas en una capa ráster o triángulos en un TIN, entre otros, y en función de los valores asociados a ellos, en particular la elevación, se establecen las relaciones de conectividad. Junto a las expresiones *cerca, lejos, junto a, a la derecha* u otras tantas que ya hemos visto para las relaciones métricas o topológicas, podemos emplear otras asociadas a estas relaciones de conectividad y decir, por ejemplo, que *el pueblo se encuentra *aguas arriba* de la presa*.
+Por ejemplo, el análisis hidrológico implica el estudio de la conectividad hidrológica entre sus elementos. Estos pueden ser celdas en una capa ráster o triángulos en un TIN, entre otros, y en función de los valores asociados a ellos, en particular la elevación, se establecen las relaciones de conectividad. Junto a las expresiones *cerca, lejos, junto a, a la derecha* u otras tantas que ya hemos visto para las relaciones métricas o topológicas, podemos emplear otras asociadas a estas relaciones de conectividad y decir, por ejemplo, que *el pueblo se encuentra aguas arriba de la presa*.
 
 De un modo similar, los análisis de visibilidad establecen una relación entre los elementos, según estos puedan verse entre ellos o no, y el análisis de una serie de puntos situados sobre una red también implica una conectividad. 
 

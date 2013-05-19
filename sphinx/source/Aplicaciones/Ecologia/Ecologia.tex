@@ -32,7 +32,7 @@ El resultado de todas esas acciones es un conjunto heterogéneo de unidades que p
 
 El estudio del paisaje definido según lo anterior conforma la denominada *ecología del paisaje*, una disciplina que analiza tanto la estructura como el funcionamiento del paisaje como entidad. SIG y ecología del paisaje van íntimamente unidas desde los inicios de ambas disciplinas, y del conjunto de técnicas que se utilizan para el estudio del paisaje, una buena parte han sido desarrolladas sobre la base del SIG como herramienta a emplear para su aplicación.
 
-Según \cite{Forman1983Bioscience}, la ecología del paisaje es el *estudio de las interacciones entre los aspectos temporales y espaciales del paisaje y sus componentes de flora, fauna y culturales*. Este estudio se puede entender como suma de tres tipos distintos de análisis:
+Según  :cite:p:`Forman1983Bioscience`, la ecología del paisaje es el *estudio de las interacciones entre los aspectos temporales y espaciales del paisaje y sus componentes de flora, fauna y culturales*. Este estudio se puede entender como suma de tres tipos distintos de análisis:
 
 
 
@@ -50,13 +50,13 @@ Toda la información que se maneja en el estudio espacial de las unidades del pai
 En esencia, y de un modo muy simplista, podemos decir que la labor que vamos a realizar con un SIG para el estudio del paisaje consiste en el análisis de los patrones que aparecen en un mapa con información categórica, y la definición de las características de cada unidad y de cada categoría de las presentes. Este análisis puede enfocarse desde dos concepciones teóricas distintas:
 
 
-	* La Biogeografía de Islas \cite{MacArthur1967Princeton}. Considera cada unidad como una isla, en el sentido de que en su interior puede darse algún tipo de proceso ecológico, mientras que en las áreas que la rodean el terreno es *hostil* para este. Este modelo supone por tanto una concepción dicotómica del paisaje al analizar una unidad o una clase dada. Esto permite un análisis sencillo, centrado en las características propias de cada una de esas unidades (las islas) frente al fondo formado por el resto de estas (el *mar*). No obstante, es un enfoque que implica una simplificación excesiva, y que no tiene en cuenta la interacción entre las unidades ni las características del fondo.
+	* La Biogeografía de Islas  :cite:p:`MacArthur1967Princeton`. Considera cada unidad como una isla, en el sentido de que en su interior puede darse algún tipo de proceso ecológico, mientras que en las áreas que la rodean el terreno es *hostil* para este. Este modelo supone por tanto una concepción dicotómica del paisaje al analizar una unidad o una clase dada. Esto permite un análisis sencillo, centrado en las características propias de cada una de esas unidades (las islas) frente al fondo formado por el resto de estas (el *mar*). No obstante, es un enfoque que implica una simplificación excesiva, y que no tiene en cuenta la interacción entre las unidades ni las características del fondo.
 	* El modelo del mosaico paisajístico. Se considera el paisaje como un conjunto de unidades interconectadas y se tiene en cuenta la heterogeneidad de estas. En lugar de enfocar el estudio sobre las unidades en sí, lo hace sobre un proceso dado y sobre cómo este tiene lugar para un paisaje con una configuración y unas propiedades dadas. Es un modelo más real que el anterior, ya que la respuesta de los organismos sobre un tipo de unidad de paisaje no es en realidad únicamente de dos tipos posibles (isla o mar), sino que pueden existir términos intermedios.
 
 
 
 
-El número de parámetros que se han definido para el análisis cuantitativo del paisaje (conocidos como *métricas* del paisaje) es muy elevado, y veremos a continuación solo algunos. El lector interesado en profundizar en el tema puede consultar \cite{fragstatsMetrics}. Para una definición completa de todas estas métricas, la referencia a consultar es \cite{fragstatsMetricsDefinition}.
+El número de parámetros que se han definido para el análisis cuantitativo del paisaje (conocidos como *métricas* del paisaje) es muy elevado, y veremos a continuación solo algunos. El lector interesado en profundizar en el tema puede consultar  :cite:p:`fragstatsMetrics`. Para una definición completa de todas estas métricas, la referencia a consultar es  :cite:p:`fragstatsMetricsDefinition`.
 
 Las métricas del paisaje pueden clasificarse según dos criterios: la escala a la que se aplican y el tipo de propiedades que describen. Según la escala encontramos tres tipos:
 
@@ -151,12 +151,15 @@ Como es lógico pensar, este cálculo de las distancias entre unidades no se lleva
 	
 	El conjunto de unidades y sus conexiones funcionales constituye una red que puede analizarse con algunas de las ideas que ya conocemos a este respecto, así como definirse con parámetros derivados de la teoría de grafos (Figura :num:`#figconectividad`).
 	
-.. figure:: Conectividad.pdf
+.. _figconectividad:
+
+.. figure:: Conectividad.*
+	:width: 650px
 
 	Para el análisis de conectividad, el conjunto de unidades de una clase se convierten en una red que define la conectividad funcional entre ellas.
 
 
-.. _figconectividad:
+
 
 
 	* Contraste. El contraste cuantifica la diferencia relativa entre cada unidad y las contiguas. Una zona de bosque rodeada de una zona de pasto no constituye el mismo tipo de paisaje que esa misma zona rodeada de áreas urbanas o de agua. Una forma de calcular métricas de contraste es aplicar las ideas de las métricas de borde, pero asignando pesos a estos en función de la diferencia que exista entre las dos unidades que cada borde delimita.
@@ -166,16 +169,19 @@ Como es lógico pensar, este cálculo de las distancias entre unidades no se lleva
 *Software*
 --------------------------------------------------------------
 
-Sin duda alguna, el software más extendido para el análisis del paisaje es FRAGSTATS \cite{referenciaFragstats}, referencia en su campo y del que derivan la mayor parte de parámetros que acabamos de ver. Existen otras aplicaciones que toman elementos de FRAGSTATS e implementan parte de las métricas que este calcula (muchas de ellas son sumamente sencillas y su implementación no es costosa), y algunos SIG incluyen funcionalidades de análisis basadas en esas ideas. No obstante, es habitual encontrar componentes en algunos de los SIG más habituales que permiten usar FRAGSTATS directamente desde esos SIG.
+Sin duda alguna, el software más extendido para el análisis del paisaje es FRAGSTATS  :cite:p:`referenciaFragstats`, referencia en su campo y del que derivan la mayor parte de parámetros que acabamos de ver. Existen otras aplicaciones que toman elementos de FRAGSTATS e implementan parte de las métricas que este calcula (muchas de ellas son sumamente sencillas y su implementación no es costosa), y algunos SIG incluyen funcionalidades de análisis basadas en esas ideas. No obstante, es habitual encontrar componentes en algunos de los SIG más habituales que permiten usar FRAGSTATS directamente desde esos SIG.
 
 Como aplicación, FRAGSTATS no es un SIG, aunque dispone de capacidades para leer capas de entrada tanto ráster como vectoriales en formatos que también pueden leerse en buena parte de los SIG de escritorio más populares. La interfaz es sencilla de emplear, pero no existen elementos como los que encontramos en uno de esos SIG para el manejo de capas. La figura :num:`#figfragstats` muestra la interfaz de ajuste de parámetros de FRAGSTATS como aplicación independiente.
 
-.. figure:: Fragstats.png
+.. _figfragstats:
+
+.. figure:: Fragstats.*
+	:width: 650px
 
 	Interfaz de FRAGSTATS
 
 
-.. _figfragstats:
+
 
 
 Las soluciones que enlazan FRAGSTAT con algún SIG permiten que pueda ejecutarse el programa directamente desde el SIG, alimentándolo con las capas abiertas en este en un momento dado, y completando esta información con los parámetros que se requieran para la ejecución, introducidos en interfaces diseñadas a tal efecto.
@@ -184,12 +190,14 @@ Los resultados generados por FRAGSTATS son en su gran mayoría en forma de tablas
 
 Esta integración dentro de un SIG permite combinar las métricas del paisaje con algunas de las posibilidades adicionales que ofrece un SIG. De especial relevancia resultan las capacidades de modelización, ya que puede modelizarse la evolución del paisaje y caracterizar cada una de las etapas mediante las correspondientes métricas. Veremos en el apartado :ref:`Cambio_usos_suelo` algo más acerca de este tipo de modelización.
 
-Algunas aplicaciones más particulares para el análisis del paisaje se centran en determinados aspectos de la caracterización de este. Por ejemplo, *Conefor Sensinode* \cite{Saura2009EMS} es una aplicación para el análisis de la conectividad basada en un uso avanzado de elementos de la teoría de grafos, así como para el estudio de la disponibilidad de hábitats.
+Algunas aplicaciones más particulares para el análisis del paisaje se centran en determinados aspectos de la caracterización de este. Por ejemplo, *Conefor Sensinode*  :cite:p:`Saura2009EMS` es una aplicación para el análisis de la conectividad basada en un uso avanzado de elementos de la teoría de grafos, así como para el estudio de la disponibilidad de hábitats.
+
+.. _Modelos_predictivos:
 
 Modelización de hábitats. Modelos predictivos
 =====================================================
 
-.. _Modelos_predictivos:
+
 
 Uno de los análisis más interesantes en el campo de la ecología, y en el que los SIG aportan mayores posibilidades, es la modelización de hábitats. Este tipo de análisis pretende establecer qué tipo de condiciones son las más adecuadas para una determinada especie animal o vegetal, y con ello poder establecer en qué zonas puede estar presente dicha especie y estimar la probabilidad de encontrarla en ellas teniendo en consideración las condiciones allí presentes. 
 
@@ -198,7 +206,7 @@ Este tipo de información puede ser utilizada para predecir la presencia o ausenc
 
 Es fácil ver que existen similitudes entre el estudio del paisaje y la modelización de hábitats, ya que el paisaje condiciona que una especie pueda o no ocupar una determinada zona, y el éxito con que esto sucede, como de hecho hemos mencionado en el apartado anterior de este capítulo. No obstante, el tipo de modelización que tratamos ahora es muy distinto en su enfoque y metodología, y veremos que se trata de técnicas distintas con un objetivo también diferente en lo que a los resultados buscados respecta.
 
-En general, los modelos de hábitat que vamos a ver toman una serie de variables que se supone tiene influencia en el comportamiento de la especie, estudian los valores de esas variables en los puntos donde se sabe con certeza que la variable está presente, y posteriormente intentan en base a esos datos valorar la idoneidad de una serie de zonas para acoger igualmente a dicha especie. Además de usar información sobre la presencia de una especie en una determinada localización, pueden emplearse datos de ausencia para indicar aquellos lugares en que la especie no aparezca. No obstante, y mientras que una zona de presencia se puede caracterizar sin ninguna duda como tal, la ausencia puede deberse a que, simplemente, no se ha observado, o bien a algún hecho particular ajeno a las variables que se consideran para el análisis. Crear registros de ausencia es, en general, una labor difícil \cite{Jarvis2005ME}.
+En general, los modelos de hábitat que vamos a ver toman una serie de variables que se supone tiene influencia en el comportamiento de la especie, estudian los valores de esas variables en los puntos donde se sabe con certeza que la variable está presente, y posteriormente intentan en base a esos datos valorar la idoneidad de una serie de zonas para acoger igualmente a dicha especie. Además de usar información sobre la presencia de una especie en una determinada localización, pueden emplearse datos de ausencia para indicar aquellos lugares en que la especie no aparezca. No obstante, y mientras que una zona de presencia se puede caracterizar sin ninguna duda como tal, la ausencia puede deberse a que, simplemente, no se ha observado, o bien a algún hecho particular ajeno a las variables que se consideran para el análisis. Crear registros de ausencia es, en general, una labor difícil  :cite:p:`Jarvis2005ME`.
 
 El resultado de esta modelización es una cartografía de distribución potencial de la especie estudiada, que nos dice la probabilidad de que esa especie esté presente en los distintos puntos de un área analizada, a partir de los datos conocidos para unos emplazamientos concretos (aquellos definidos como puntos de presencia o ausencia, y empleados como entrada del modelo). Estos modelos se conocen como *modelos predictivos* o también *modelos de idoneidad*.
 
@@ -221,12 +229,12 @@ Las similitudes entre la aplicación de modelos predictivos y técnicas de clasifi
 
 A la hora de su operativa dentro de un SIG, usaremos un conjunto de capas ráster y una capa vectorial de puntos que debe contener un campo que especifique si el punto es de presencia o ausencia. Las capas con las variables independientes pueden ser de todo tipo, y vendrán condicionadas a las entradas que el modelo requiera. Algunos modelos trabajan con capas cualesquiera y las estudian todas por igual como condicionantes del comportamiento de la especie. Otros exigen una cierta serie de capas concretas, ya que no emplean estas directamente como variables para los análisis correspondientes, sino otras intermedias que son calculadas a partir de ellas.
 
-Lógicamente, el uso de unas u otras variables esta condicionado a la escala del estudio a realizar. Un modelo de distribución para una extensión grande de territorio puede asumir que el clima es el factor principal a considerar. Para un estudio local, sin embargo, el clima sigue teniendo importancia, pero otras circunstancias han de considerarse igualmente, en especial el relieve \cite{Guisan2000EM}.
+Lógicamente, el uso de unas u otras variables esta condicionado a la escala del estudio a realizar. Un modelo de distribución para una extensión grande de territorio puede asumir que el clima es el factor principal a considerar. Para un estudio local, sin embargo, el clima sigue teniendo importancia, pero otras circunstancias han de considerarse igualmente, en especial el relieve  :cite:p:`Guisan2000EM`.
 
 Algunos modelos de uso frecuente
 --------------------------------------------------------------
 
-Un modelo sencillo es el denominado BIOCLIM \cite{BIOCLIM}, que parte de una serie de parámetros climatológicos, asumiendo por tanto que el clima es el único factor que condiciona el comportamiento de la especie. Estos parámetros, no obstante, son utilizados para el cálculo de otras variables biológicamente  más significativas, y es sobre estas sobre las que se opera. La técnica de clasificación de BIOCLIM es en realidad un método de paralelepípedos como el que vimos en :ref:`Paralelepipedos`, ya que calcula el hipercubo delimitado por un umbral :math:`x`, de tal forma que la dimensión de ese hipercubo en cada eje es el rango de los valores de la variable correspondiente a dicho eje, recortado en un tanto por ciento :math:`x`. Un valor habitual del umbral es 5\%, de tal modo que la dimension de cada eje se sitúe entre los valores del 5\% y el 95\% del rango para la variable correspondiente.
+Un modelo sencillo es el denominado BIOCLIM  :cite:p:`BIOCLIM`, que parte de una serie de parámetros climatológicos, asumiendo por tanto que el clima es el único factor que condiciona el comportamiento de la especie. Estos parámetros, no obstante, son utilizados para el cálculo de otras variables biológicamente  más significativas, y es sobre estas sobre las que se opera. La técnica de clasificación de BIOCLIM es en realidad un método de paralelepípedos como el que vimos en :ref:`Paralelepipedos`, ya que calcula el hipercubo delimitado por un umbral :math:`x`, de tal forma que la dimensión de ese hipercubo en cada eje es el rango de los valores de la variable correspondiente a dicho eje, recortado en un tanto por ciento :math:`x`. Un valor habitual del umbral es 5\%, de tal modo que la dimension de cada eje se sitúe entre los valores del 5\% y el 95\% del rango para la variable correspondiente.
 
 
 Se trata de un modelo simple, que sin embargo tiene muchas desventajas debido a las condiciones que asume y a que no permite el uso de variables distintas de las climatológicas.
@@ -240,7 +248,7 @@ Algo más elaborado, aunque también dentro de la misma familia (ambos modelos sol
 
 donde :math:`n` es el número total de variables, :math:`A_k` el valor de la variable :math:`k` en el punto de presencia :math:`A`, :math:`B_k` el valor de la variable :math:`k` en la celda :math:`B` y :math:`\mathrm{rango}(k)` el rango de la variable :math:`k` en los puntos de presencia. La media de distancias de Grover entre una celda y todos los puntos de presencia nos da una idea de la diferencia entre estos últimos y la celda en cuestión. Como estadístico de similitud puede emplearse el valor :math:`1-G`.
 
-Algunos modelos más complejos soportan el uso de datos de ausencia. Entre estos encontramos el modelo Maxent \cite{Phillips2006EM}, que crea él mismo puntos de pseudo-ausencia. Este modelo se basa en el principio estadístico de máxima entropía. Otro modelo habitual es GARP (*Genetic Algorithm for Rule set Production*), basado en algoritmos genéticos y con un funcionamiento mucho más complejo.  Los árboles de clasificación y regresión (*classification and regression trees*, CART)\cite{Breiman1984WB} son otra técnica estadística que puede aplicarse para desarrollar modelos predictivos. Su uso en un SIG es, sin embargo, complejo \cite{Felicisimo2005Dehesa}, por lo que tienen menos valor a la hora de crear cartografía de distribución potencial.
+Algunos modelos más complejos soportan el uso de datos de ausencia. Entre estos encontramos el modelo Maxent  :cite:p:`Phillips2006EM`, que crea él mismo puntos de pseudo-ausencia. Este modelo se basa en el principio estadístico de máxima entropía. Otro modelo habitual es GARP (*Genetic Algorithm for Rule set Production*), basado en algoritmos genéticos y con un funcionamiento mucho más complejo.  Los árboles de clasificación y regresión (*classification and regression trees*, CART) :cite:p:`Breiman1984WB` son otra técnica estadística que puede aplicarse para desarrollar modelos predictivos. Su uso en un SIG es, sin embargo, complejo  :cite:p:`Felicisimo2005Dehesa`, por lo que tienen menos valor a la hora de crear cartografía de distribución potencial.
 
 Citar, por último, el uso de regresión logística múltiple como una alternativa habitual para plantear este tipo de modelos. La probabilidad en este caso viene dada por una fórmula del tipo
 
@@ -251,7 +259,7 @@ Citar, por último, el uso de regresión logística múltiple como una alternativa h
 
 donde :math:`x_1\ldots x_n` son los valores de las variables y  :math:`b_1 \ldots b_n` son constantes.
 
-Para saber más sobre estos y otros modelos, puede consultarse \cite{GarciaMateo2008phd}.
+Para saber más sobre estos y otros modelos, puede consultarse  :cite:p:`GarciaMateo2008phd`.
 
 
 Validación
@@ -276,12 +284,15 @@ El aspecto típico de una curva ROC puede verse en la figura :num:`#figroc`.
 
 El área bajo la curva así definida sirve como estadístico de comprobación, y sus valores están comprendidos entre 0,5 y 1. Un valor de 0,5 equivale a un modelo que clasificara al azar, mientras que 1 indica un ajuste perfecto del modelo.
 
-.. figure:: CurvaROC.pdf
+.. _figroc:
+
+.. figure:: CurvaROC.*
+	:width: 650px
 
 	Curva ROC.
 
 
-.. _figroc:
+
 
 
 *Software*
@@ -291,16 +302,19 @@ En lo que al *software* respecta, los modelos anteriores, así como otros que no 
 
 La forma de introducir las capas es variable, usándose en algunos casos formatos SIG habituales, aunque en otros existen formas menos estandarizadas de aportar datos de entrada, en particular en lo referente a los puntos de ausencia/presencia, que incluso pueden tener que introducirse manualmente.
 
-Algunas metodologías, como por ejemplo la regresión logística múltiple, no requieren para su aplicación más capacidades que las funciones del álgebra de mapas que ya conocemos, y es sencillo incorporarlas en un SIG. Otras, por el contrario, necesitan elementos más complejos. Esto suele suceder con los modelos más específicos, los cuales suelen tener algún tipo de *software* asociado que es el que se utiliza para aplicarlos. Maxent dispone de una aplicación del mismo nombre \cite{webMaxent}, y GARP Desktop \cite{webGARPDesktop} es una aplicación que permite aplicar el modelo GARP, desarrollada por los creadores mismos de este. Un SIG sencillo enfocado a este tipo de análisis, y que incorpora modelos como BIOCLIM o DOMAIN, es Diva--GIS\cite{webDivaGIS}. Las referencias anteriores llevan a paginas Web de donde pueden descargarse los programas.
+Algunas metodologías, como por ejemplo la regresión logística múltiple, no requieren para su aplicación más capacidades que las funciones del álgebra de mapas que ya conocemos, y es sencillo incorporarlas en un SIG. Otras, por el contrario, necesitan elementos más complejos. Esto suele suceder con los modelos más específicos, los cuales suelen tener algún tipo de *software* asociado que es el que se utiliza para aplicarlos. Maxent dispone de una aplicación del mismo nombre  :cite:p:`webMaxent`, y GARP Desktop  :cite:p:`webGARPDesktop` es una aplicación que permite aplicar el modelo GARP, desarrollada por los creadores mismos de este. Un SIG sencillo enfocado a este tipo de análisis, y que incorpora modelos como BIOCLIM o DOMAIN, es Diva--GIS :cite:p:`webDivaGIS`. Las referencias anteriores llevan a paginas Web de donde pueden descargarse los programas.
 
 La figura :num:`#figcapturamodelospredictivos` muestra capturas de pantalla de dos de los programas anteriores.
 
-.. figure:: CapturaModelosPredictivos.png
+.. _figcapturamodelospredictivos:
+
+.. figure:: CapturaModelosPredictivos.*
+	:width: 650px
 
 	Ventanas de introducción de datos de dos *software* para aplicación de modelos predictivos: Maxent(derecha) y GARP Desktop (izquierda). Como puede verse, estos programas no incluyen capacidades de manejo de capas de la forma habitual en la que estas se presentan en un SIG de escritorio.
 
 
-.. _figcapturamodelospredictivos:
+
 
 
 
@@ -313,7 +327,7 @@ Hay muchas otras situaciones en las que, conociendo dónde se da un determinado f
 
 Una de las disciplinas que se apoya en este tipo de modelos con más intensidad es la arqueología, dentro de la cual constituyen un campo de gran desarrollo recientemente, y en la que la principal labor del SIG en muchos casos es precisamente esta. La popularización de este tipo de modelos, unida a la facilidad con la que gracias a los SIG pueden aplicarse sobre juegos de datos antes difíciles de manejar por su volumen, ha supuesto un cambio en el campo de la arqueología, incorporando una herramienta ventajosa para el trabajo del arqueólogo, tanto el teórico como el desarrollado en campo.
 
-Pueden distinguirse dos áreas distintas de aprovechamiento de los modelos predictivos dentro de la arqueología: la gestión del patrimonio arqueológico y la investigación \cite{Leusen2002}. En ambas, no obstante, la forma de operar es la misma, y aunque el objetivo perseguido sea distinto, tanto los modelos aplicados como la manera en que se aplican es la misma.
+Pueden distinguirse dos áreas distintas de aprovechamiento de los modelos predictivos dentro de la arqueología: la gestión del patrimonio arqueológico y la investigación  :cite:p:`Leusen2002`. En ambas, no obstante, la forma de operar es la misma, y aunque el objetivo perseguido sea distinto, tanto los modelos aplicados como la manera en que se aplican es la misma.
 
 En lo que a la gestión del patrimonio respecta, una de las labores del arqueólogo es la búsqueda de nuevo patrimonio, desarrollada a través de yacimientos que han de localizarse en función de unos determinados factores. Conociendo variables del medio, así como la localización de otros yacimientos o de elementos que puedan relacionarse con la presencia o no de restos arqueológicos, un modelo predictivo ayudar a acotar las zonas candidatas donde cabe esperar nuevos hallazgos.
 
@@ -321,7 +335,7 @@ En el caso del arqueólogo que desarrolla un trabajo más científico, un modelo pr
 
 Aunque común, este tipo de análisis no cuenta con el favor de todos los arqueólogos. Algunos argumentan que se trata de un análisis inductivo en lugar de uno deductivo, es decir, que el hallazgo de nuevos yacimientos no se fundamenta en la comprensión del hecho que los origina, sino simplemente como resultado de un análisis estadístico.
 
-Puede encontrarse más acerca de modelos predictivos en arqueología en \cite{Leusen2002}.
+Puede encontrarse más acerca de modelos predictivos en arqueología en  :cite:p:`Leusen2002`.
 
 Por último, otro uso de los modelos predictivos es en la planificación territorial, para la selección de emplazamientos óptimos. Ya vimos algo en este sentido en el capítulo :ref:`Estadistica_avanzada`, al presentar las formas de combinar capas en modelos multicriterio. El uso de modelos como los vistos en este apartado también es una opción para aplicar una serie de factores a la elección de una localización. La cartografía que se obtiene, del mismo modo que nos informa de la idoneidad de las distintas zonas para el crecimiento de una especie, también lo puede hacer para la idoneidad de estas a la hora de establecer algún tipo de infraestructura. Al igual que en el caso de la arqueología, los factores implicados van a ser distintos, pero la metodología en la que se sustenta el análisis es la misma.
 

@@ -40,15 +40,18 @@ El resultado de una consulta en un SIG generalmente es lo que conocemos como *se
 
 Como veremos más en detalle en las siguientes secciones, las consultas pueden hacerse solo sobre la componente temática de los datos, sobre la espacial, o sobre ambas. En cualquier caso, sabemos ya que estas en un SIG se hayan vinculadas, con lo que el resultado de la consulta afecta a ambas. La selección se hace patente sobre ambas componentes, con independencia de cuál de ellas haya sido la encargada de aplicar el criterio de selección. En el entorno habitual de un SIG, con su interfaz gráfica, tanto la tabla de atributos como la representación visual de la componente espacial se ven afectadas por la realización de una consulta. La figura :num:`#figseleccion` muestra gráficamente este hecho.
 
-.. figure:: Seleccion.pdf
+.. _figseleccion:
+
+.. figure:: Seleccion.*
+	:width: 800px
 
 	El resultado de una consulta temática en un SIG es una selección de entidades, que implica tanto a la componente temática como a la espacial de cada una de ellas. En ambos casos, el color amarillo indica los elementos seleccionados.
 
 
-.. _figseleccion: 
+ 
 
 
-Esta presencia gráfica es importante dentro del entorno de los SIG, tanto para mostrar el resultado de las consultas como para ayudar en la formulación de estas. En contraste con el carácter textual de una base de datos, el empleo de dichas bases de datos y la realización de consultas en un SIG incorpora una representación gráfica que resulta esencial \cite{Guting1994VLDB}
+Esta presencia gráfica es importante dentro del entorno de los SIG, tanto para mostrar el resultado de las consultas como para ayudar en la formulación de estas. En contraste con el carácter textual de una base de datos, el empleo de dichas bases de datos y la realización de consultas en un SIG incorpora una representación gráfica que resulta esencial  :cite:p:`Guting1994VLDB`
 
 Junto con la selección de entidades dentro de una capa existente, una consulta nos vale también para extraer información de una base de datos de acuerdo a nuestras necesidades, y para crear posteriormente y a partir de dicha información una nueva capa. Esta operación es útil cuando la base de datos de la que disponemos es muy voluminosa y solo resulta de interés para nuestro trabajo una parte de ella. Puede tratarse de una parte en el sentido espacial (la base de datos contiene datos a nivel mundial y se quiere trabajar a nivel estatal), en el sentido temático (la base de datos contiene mucha información de cada entidad y solo interesan algunos campos), o en una combinación de ambas. Para extraer dicha parte y trabajar únicamente con ella, utilizaremos una consulta.
 
@@ -75,10 +78,12 @@ Antes de la aparición de los SIG, la componente temática (el anuario estadíst
 Por un momento, dejemos de lado la componente espacial de cada país, y pensemos que solo conocemos de él algunas variables socio--económicas tales como el PIB, la población, el idioma que se habla o el nombre de su moneda, tal y como se recogen en la tabla de la figura :num:`#figseleccion`
 
 
+.. _Mecanismos_consulta:
+
 Mecanismos de consulta y operaciones básicas
 --------------------------------------------------------------
 
-.. _Mecanismos_consulta:
+
 
 Consultas como las anteriores pueden expresarse fácilmente en un idioma tal como el español y son de igual modo fácilmente entendibles por cualquiera que conozca el idioma. El problema es que el ordenador, y por tanto el Sistema de Información Geográfica, no entiende estas expresiones, siendo necesario formular las consultas de alguna forma que pueda ser interpretada correctamente por el SIG o el gestor de bases de datos correspondiente. 
 
@@ -90,12 +95,12 @@ Para trabajar desde este punto en adelante, vamos a suponer que disponemos de un
 * ``NOMBRE``
 * ``CAPITAL``
 * ``MONEDA``
-* ``POBLACION\_ACTUAL``
-* ``POBLACION\_ANTERIOR``
+* ``POBLACION_ACTUAL``
+* ``POBLACION_ANTERIOR``
 * ``SUPERFICIE``
 
 
-Por ejemplo, para saber el número de países con población mayor de 200 millones, podríamos utilizar una expresión como la siguiente: ``'POBLACION\_ACTUAL' :math:`>` 200.000.000.`` Para saber en qué países aumentó la población en el ultimo año, y puesto que disponemos además de un campo con la población de año anterior, podemos plantear una expresión de la forma ``POBLACION\_ACTUAL > POBLACION\_ANTERIOR``.
+Por ejemplo, para saber el número de países con población mayor de 200 millones, podríamos utilizar una expresión como la siguiente: ``POBLACION_ACTUAL > 200000000.`` Para saber en qué países aumentó la población en el ultimo año, y puesto que disponemos además de un campo con la población de año anterior, podemos plantear una expresión de la forma ``POBLACION_ACTUAL > POBLACION_ANTERIOR``.
 
 Estas expresiones condicionales se conocen con el nombre de *predicados*.
 
@@ -106,26 +111,28 @@ Consultas de esta índole también pueden efectuarse si los datos geográficos s
 Las consultas mediante expresiones condicionales pueden ser algo más complejas que lo que hemos visto hasta ahora, ya que pueden hacer referencia a varios campos. Por ejemplo, para responder a cuestiones como las siguientes:
 
 
- * ¿Qué países de la zona euro tienen más de 40 millones de habitantes?
+* ¿Qué países de la zona euro tienen más de 40 millones de habitantes?
 * ¿En qué países de habla inglesa aumentó la población durante el último año?
 
 
 Para expresar esas consultas se han de incluir elementos de la denominada *lógica booleana*\footnote{Denominada así por el matemático irlandés George Boole(1815, 1864)}. Para entender de forma sencilla este concepto, podemos reescribir las consultas anteriores de la siguiente manera:
 
 
- * ¿Qué países tienen como moneda el euro *y* a la vez tienen más de 40 millones de habitantes?
+* ¿Qué países tienen como moneda el euro *y* a la vez tienen más de 40 millones de habitantes?
 * ¿Que países hablan inglés *y* sufrieron un aumento de población durante el último año?
 
 
-La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición ``Moneda = 'Euro'``, y al mismo tiempo la condición ``POBLACION\_ACTUAL :math:`>` 40.000.000.`` La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés ``AND``, de forma que tendríamos la expresión ``MONEDA = 'Euro' AND POBLACION\_ACTUAL :math:`>` 40.000.000``.
+La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición ``Moneda = 'Euro'``, y al mismo tiempo la condición ``POBLACION_ACTUAL :math:`>` 40.000.000.`` La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés ``AND``, de forma que tendríamos la expresión ``MONEDA = 'Euro' AND POBLACIONACTUAL > 40000000``.
 
-Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (``OR``) o el operador de negación (``NOT``). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*\footnote{John Venn (1834, 1923), un matemático inglés, fue el primero en proponer este tipo de diagramas en 1880}, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura :num:`#figvenn` pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
+Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (``OR``) o el operador de negación (``NOT``). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*\, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura :num:`#figvenn` pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
 
 Más adelante volveremos a encontrar esquemas similares a estos, en particular al estudiar las operaciones de solape entre capas vectoriales, en el capítulo :ref:`Operaciones_geometricas`.
 
-.. _FigVenn: 
+.. _figvenn: 
 
-.. figure:: Venn.pdf
+
+.. figure:: Venn.*
+	:width: 650px
 
 	Diagramas de Venn.
 
@@ -137,57 +144,51 @@ Una operación muy habitual en el ámbito de las bases de datos es la *unión* d
 
 Lógicamente, si la información se encuentra disponible en una serie de tablas, pero las entidades geométricas que contienen la componente espacial del dato solo tienen asociada una de ellas, es necesario algún elemento adicional que permita relacionar a todas esas tablas. Este elemento son las operaciones de unión, que pueden efectuarse entre varias capas (cada una aporta su tabla de atributos) o también con tablas aisladas, sin necesidad de que estas tengan asociada una componente espacial.
 
-Veamos un ejemplo de una unión entre tablas para comprender el significado de esta operación. En el cuadro :ref:`Tabla:Tablas_base_union` se muestran dos tablas. En la primera de ellas, que supondremos que se encuentra asociada a una capa de polígonos, encontramos un valor numérico que identifica cada entidad (``ID``) y es distinto para cada una de ellas, y otro valor numérico también entero (``TIPO\_SUELO``) que nos indica el grupo de tipo de suelo de dicho polígono. Es decir, es la tabla de una capa de usos de suelo. En la segunda tabla, que es una tabla no asociada a ninguna capa, encontramos la equivalencia entre los valores de tipo de suelo y el nombre de dicho tipo de suelo (``NOMBRE\_SUELO``), así como en el campo denominado ``APTITUD``, que, en una escala de 1 a 10, clasifica la aptitud del suelo para el crecimiento de una determinada especie vegetal.
+Veamos un ejemplo de una unión entre tablas para comprender el significado de esta operación. Se muestran a continuación dos tablas.
 
-\begin{table}
-\begin{center}
-
-\begin{tabular}{cc}\toprule
-``ID`` & ``TIPO\_SUELO``\\ \midrule
-1 & 3 \\ 
-2 & 1 \\ 
-3 & 3 \\
-4 & 3 \\
-5 & 2 \\ \bottomrule
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{ccc}\toprule
-``TIPO\_SUELO`` & ``NOMBRE\_SUELO`` & ``APTITUD`` \\ \midrule
-1 & Fluvisol & 5 \\ 
-2 & Cambisol & 7 \\ 
-3 & Leptosol & 4 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-	Unas sencillas tablas para efectuar una unión en función de su campo común \textsf{TIPO\_SUELO.}
+=======  ===============
+``ID``   ``TIPO_SUELO``
+=======  ===============
+1         3  
+2         1  
+3         3 
+4         3 
+5         2  
+=======  ===============
 
 
-.. _Tabla:Tablas_base_union:
-\end{table}
+===============   =================   ============
+``TIPO\_SUELO``   ``NOMBRE\_SUELO``   ``APTITUD``
+===============   =================   ============
+1                 Fluvisol            5  
+2                 Cambisol            7  
+3                 Leptosol            4
+===============   =================   ============
+
+
+En la primera de ellas, que supondremos que se encuentra asociada a una capa de polígonos, encontramos un valor numérico que identifica cada entidad (``ID``) y es distinto para cada una de ellas, y otro valor numérico también entero (``TIPO_SUELO``) que nos indica el grupo de tipo de suelo de dicho polígono. Es decir, es la tabla de una capa de usos de suelo. En la segunda tabla, que es una tabla no asociada a ninguna capa, encontramos la equivalencia entre los valores de tipo de suelo y el nombre de dicho tipo de suelo (``NOMBRE_SUELO``), así como en el campo denominado ``APTITUD``, que, en una escala de 1 a 10, clasifica la aptitud del suelo para el crecimiento de una determinada especie vegetal.
+
+
 
 En estas tablas existe un campo común, que es el que contiene el código numérico del tipo de suelo (en el ejemplo tiene el mismo nombre en ambas tablas, pero esto no ha de ser necesariamente así, basta con que la variable que contengan ambos campos sea la misma), y que podemos emplear para establecer la relación entre las dos tablas. Si un polígono tiene asociado un suelo de tipo 1, y gracias a la tabla adicional sabemos que el suelo de tipo 1 es un fluvisol y que su aptitud es 5, entonces podemos decir que dentro de ese polígono el suelo es de tipo fluvisol y tiene dicha aptitud, aunque en la tabla asociada no se encuentre directamente esta información. Esta forma de proceder debe ser ya familiar para el lector, pues la unión se basa en el uso de un atributo clave, que ya vimos en el capítulo :ref:`Bases_datos` dedicado a las bases de datos.
 
-Al efectuar una unión, *pasamos* la información de una tabla a la otra, en la medida en que esto sea coherente con las coincidencias existentes entre ellas. El resultado es una nueva tabla que extiende la tabla original, incorporando información de otra tabla adicional. En el cuadro :ref:`Tabla:Resultado_union` puede verse la tabla resultante de la anterior unión\footnote{Esta tabla es la resultante de uno de los tipos de unión posibles, la denominada unión *natural*. Otros tipos de unión para las mismas tablas de partida dan como resultado tablas distintas, aunque no se usan con tanta frecuencia. La unión *cartesiana* genera una tabla que contiene todas las combinaciones posibles entre elementos de las dos tablas implicadas. En otros casos, la tabla generada puede contener los dos campos utilizados como enlace, uno por cada tabla de las utilizadas en la unión}.
-
-\begin{table*}
-\begin{center}
-\begin{tabular}{cccc}\toprule
-``ID`` & ``TIPO\_SUELO`` & ``NOMBRE\_SUELO`` & ``APTITUD`` \\ \midrule
-1 & 3 & Leptosol & 4 \\ 
-2 & 1 & Fluvisol & 5 \\ 
-3 & 3 & Leptosol & 4 \\ 
-4 & 3 & Leptosol & 4 \\ 
-5 & 2 & Cambisol & 7 \\ \bottomrule
-\end{tabular}
-\end{center}
-
-	Resultado de la unión de tablas en base a su campo común \textsf{TIPO\_SUELO.}
+Al efectuar una unión, *pasamos* la información de una tabla a la otra, en la medida en que esto sea coherente con las coincidencias existentes entre ellas. El resultado es una nueva tabla que extiende la tabla original, incorporando información de otra tabla adicional. A continuación puede verse la tabla resultante de la anterior unión.
 
 
-.. _Tabla:Resultado_union:
-\end{table*}
+==========     ================     =================   ============
+``ID``          ``TIPO_SUELO``      ``NOMBRE_SUELO``    ``APTITUD``
+==========     ================     =================   ============
+1               3                   Leptosol            4  
+2               1                   Fluvisol            5  
+3               3                   Leptosol            4  
+4               3                   Leptosol            4                   
+5               2                   Cambisol            7  
+==========     ================     =================   ============
+
+
+
+Esta tabla es la resultante de uno de los tipos de unión posibles, la denominada unión *natural*. Otros tipos de unión para las mismas tablas de partida dan como resultado tablas distintas, aunque no se usan con tanta frecuencia. La unión *cartesiana* genera una tabla que contiene todas las combinaciones posibles entre elementos de las dos tablas implicadas. En otros casos, la tabla generada puede contener los dos campos utilizados como enlace, uno por cada tabla de las utilizadas en la unión.
+	
 
 Mantener la información dividida en varias tablas de la forma anterior tiene muchas ventajas, como ya en su momento comenzamos a ver en el apartado :ref:`DisenoBaseDatos` cuando tratamos el diseño de bases de datos, y ahora al estudiar las consultas vemos plasmadas de modo claro una buena parte de ellas. El hecho de codificar cada nombre de tipo de suelo con un valor numérico hace más sencillo el introducir este parámetro, pues evita teclear todo el nombre cada vez que se quiera añadir algún nuevo registro a la tabla principal (en este caso, la que se encuentra asociada a la capa). Esto además disminuye la probabilidad de que se cometan errores al introducir dichos valores y garantiza la homogeneidad de nombre, pues estos solo se encuentran almacenados una única vez en la tabla adicional. Las restantes tablas se *alimentan* de esta.
 
@@ -208,14 +209,14 @@ El siguiente paso es, pues, estudiar cómo los lenguajes de consulta se incorpor
 El lenguaje SQL
 --------------------------------------------------------------
 
-El lenguaje SQL es un lenguaje de consulta pensado para el manejo de datos, e incluye elementos para realizar todas aquellas operaciones habituales que se presentan en el uso de una base de datos. Su utilización es habitual dentro de cualquier sistema que implique el manejo de datos mediante un gestor de bases de datos, y un cierto conocimiento de sus fundamentos es de indudable interés para el usuario de SIG. El objetivo de esta parte no es constituir una referencia de este lenguaje, sino tan solo presentar sus principales elementos para mostrar la forma en que un lenguaje de consulta soluciona las necesidades que operaciones como las vistas hasta este punto plantean dentro de un SIG. Las referencias sobre SQL son muy abundantes y el lector interesado no tendrá dificultad en encontrar docenas de libros sobre este tema. Una referencia completa es \cite{Beaulieu2003Anaya}. Más fácilmente accesible, en la dirección Web \cite{SQLBasico} puede encontrarse una breve introducción en español al lenguaje SQL, disponible además bajo licencia libre.
+El lenguaje SQL es un lenguaje de consulta pensado para el manejo de datos, e incluye elementos para realizar todas aquellas operaciones habituales que se presentan en el uso de una base de datos. Su utilización es habitual dentro de cualquier sistema que implique el manejo de datos mediante un gestor de bases de datos, y un cierto conocimiento de sus fundamentos es de indudable interés para el usuario de SIG. El objetivo de esta parte no es constituir una referencia de este lenguaje, sino tan solo presentar sus principales elementos para mostrar la forma en que un lenguaje de consulta soluciona las necesidades que operaciones como las vistas hasta este punto plantean dentro de un SIG. Las referencias sobre SQL son muy abundantes y el lector interesado no tendrá dificultad en encontrar docenas de libros sobre este tema. Una referencia completa es  :cite:p:`Beaulieu2003Anaya`. Más fácilmente accesible, en la dirección Web  :cite:p:`SQLBasico` puede encontrarse una breve introducción en español al lenguaje SQL, disponible además bajo licencia libre.
 
 
 
 Podemos distinguir tres componente principales dentro del SQL:
 
 
- * Un lenguaje de definición de datos. Mediante él podemos definir las características fundamentales de los datos y sus relaciones.
+* Un lenguaje de definición de datos. Mediante él podemos definir las características fundamentales de los datos y sus relaciones.
 * Un lenguaje de manipulación de datos. Permite añadir o modificar registros a las tablas de la base de datos. Las funciones de consulta también se incluyen dentro de este lenguaje
 * Un lenguaje de control de datos. Sus comandos permiten controlar aspectos como el acceso a los datos por parte de los distintos usuarios, así como otras tareas administrativas
 
@@ -224,70 +225,71 @@ En principio, es la segunda componente ---el lenguaje de manipulación de datos-
 
 La forma en que se realizan consultas a una base de datos empleando el lenguaje SQL es a través de *sentencias* en dicho lenguaje. Una sentencia SQL de consulta tendrá habitualmente una forma como la siguiente:
 
-\begin{verbatim}
-SELECT lista_de_columnas
-FROM nombre_de_tabla
-WHERE expresión_condicional
-\end{verbatim}
+::
 
-*Lista\_de\_columnas* es una lista con los nombres de los campos que nos interesa incluir en la tabla resultante de la consulta, *nombre\_de\_tabla* es el nombre que identifica la tabla de la que queremos tomar los datos, y *expresión\_condicional* un predicado que establece la condición que han de cumplir los registros a tomar.
+	SELECT lista_de_columnas
+	FROM nombre_de_tabla
+	WHERE expresión_condicional
+
+
+``Lista_de_columnas`` es una lista con los nombres de los campos que nos interesa incluir en la tabla resultante de la consulta, ``nombre_de_tabla`` es el nombre que identifica la tabla de la que queremos tomar los datos, y ``expresión_condicional`` un predicado que establece la condición que han de cumplir los registros a tomar.
 
 Como vemos, no es muy distinto de lo que hemos visto hasta ahora, y simplemente es otra forma de plantear consultas, de modo similar a lo que conocemos. La flexibilidad del lenguaje y la adición de funciones y nuevas ordenes permiten, no obstante, expresar prácticamente cualquier consulta, por compleja que esta sea, y extraer todo el potencial de la base de datos.
 
 Sin animo de resultar un repaso exhaustivo a todos los elementos del lenguaje (ello requeriría mucha más extensión que todo este capítulo), a continuación se muestran algunos ejemplos de expresiones SQL explicados después en lenguaje natural, para dar una idea de la forma y capacidades del lenguaje. Una vez más, se anima al lector interesado a consultar las referencias propuestas para mayores detalles. Para estos ejemplos utilizaremos la tabla de países cuya estructura ya hemos introducido al comienzo de este capítulo.
 
-\begin{verbatim}
-SELECT *
-FROM Paises
-WHERE Moneda = 'Euro' AND 
-      Poblacion_actual > 40000000 
-\end{verbatim}
+::
+	SELECT *
+	FROM Paises
+	WHERE Moneda = 'Euro' AND 
+	      Poblacion_actual > 40000000 
 
 Esta consulta recupera todos aquellos registros en los que la población actual supera los 40 millones y la moneda es el euro. El asterisco indica que, para cada uno de estos registros, deben recuperarse todos los campos existentes. Se podría formar una nueva tabla solo con los nombres de los países que cumplen la condición establecida, mediante la siguiente sentencia:
 
-\begin{verbatim}
-SELECT Nombre
-FROM Paises
-WHERE Moneda = 'Euro' AND 
-      Poblacion_actual > 40000000 
-\end{verbatim}
+::
+	SELECT Nombre
+	FROM Paises
+	WHERE Moneda = 'Euro' AND 
+	      Poblacion_actual > 40000000 
 
 Las consultas pueden ser mucho más complejas, y las sentencias ``SELECT`` pueden usarse como parámetros dentro de un predicado lógico. Por ejemplo, supongamos que disponemos de una tabla denominada ``Capitales`` con datos de todas las capitales del mundo, y que cuenta con los siguientes campos:
 
 
- * ``NOMBRE``
+* ``NOMBRE``
 * ``POBLACION\_HOMBRES``
 * ``POBLACION\_MUJERES``
 
 
 La sentencia siguiente recupera en una nueva tabla todos los países cuyas capitales tienen una población de hombres mayor que de mujeres.
 
-\begin{verbatim}
-SELECT Nombre
-FROM Paises
-WHERE Capital IN (SELECT Nombre FROM Capitales 
-	WHERE Poblacion_hombres > Poblacion_mujeres)
-\end{verbatim}
+::
+	SELECT Nombre
+	FROM Paises
+	WHERE Capital IN (SELECT Nombre FROM Capitales 
+		WHERE Poblacion_hombres > Poblacion_mujeres)
+
 
 La subconsulta entre paréntesis crea una tabla con los nombres de las capitales que cumplen la condición relativa a las poblaciones de hombres y mujeres. La otra consulta selecciona los países cuya capital aparece en dicha tabla (esa inclusión la define el comando ``IN``). En conjunto, tenemos una única consulta, pero que se basa en dos tablas con una relación entre sí.
 
 Los campos ``Capital`` en la tabla ``Países`` y ``Nombre`` en la tabla ``Capitales`` son los que establecen la relación entre ambas tablas, permitiendo unir la información de estas. No obstante, el resultado de la expresión anterior no es una unión tal y como la hemos visto. Para realizar una unión mediante SQL podemos utilizar una expresión como la siguiente:
 
-\begin{verbatim}
-SELECT *
-FROM Paises, Capitales
-WHERE Paises.Capital = Capitales.Nombre
-\end{verbatim}
+::
+
+	SELECT *
+	FROM Paises, Capitales
+	WHERE Paises.Capital = Capitales.Nombre
+
 
 Como se dijo, las uniones no se limitan un tipo particular de unión como el que vimos. SQL incluye el comando ``JOIN``, el cual permite trabajar con todo ese abanico de distintas uniones.
 
 Además de lo anterior, pueden emplearse operadores para que la tabla que constituye la respuesta a la consulta contenga campos adicionales calculados en función de los existentes en la tabla origen. Por ejemplo:
 
-\begin{verbatim}
-SELECT Nombre, Poblacion / Area AS Densidad
-FROM Paises
-WHERE Moneda = 'Euro'
-\end{verbatim}
+::
+
+	SELECT Nombre, Poblacion / Area AS Densidad
+	FROM Paises
+	WHERE Moneda = 'Euro'
+
 
 Esta consulta recupera todos los países donde la moneda utilizada es el Euro, y para cada uno de ellos define dos atributos: el nombre (directamente obtenido de la propia tabla de países) y la densidad (en un campo denominado ``DENSIDAD``, calculado como el cociente entre la población y el área).
 
@@ -307,7 +309,7 @@ Ahora que ya sabemos cómo sacar partido de los atributos (es decir, la componen
 Para dar respuesta a esas cuestiones, basta analizar la componente espacial y no necesitamos para nada los datos con los que hemos trabajado anteriormente. Son consultas puramente espaciales. Aunque estas consultas amplían lo que ya conocemos, en realidad no abren ninguna nueva vía de estudio de los datos geográficos. Son consultas a las que podríamos responder utilizando un mero mapa impreso, sin aprovechar el hecho de que, como hemos visto, dentro de un SIG las componentes espacial y temática se hallan íntimamente vinculadas. La verdadera potencia de las consultas espaciales la encontramos en la combinación de estas consultas sobre la componente espacial y las que vimos anteriormente sobre la componente temática. Así, se pueden plantear, por ejemplo, cuestiones como:
 
 
- * ¿Qué países del hemisferio norte tiene una densidad de población mayor que la de Perú?
+* ¿Qué países del hemisferio norte tiene una densidad de población mayor que la de Perú?
 * ¿Cuántos países con más de 10 millones de habitantes se encuentran a menos de 1000 km de la frontera de Rusia?
 
 
@@ -329,12 +331,15 @@ La consulta sobre capas no vectoriales es, sin embargo, menos interesante, pues 
 
 La consulta sobre un punto concreto que hemos descrito la incorporan la gran mayoría de los SIG y es una herramienta de primer orden, sumamente sencilla, que nos permite hacer un uso simple aunque muy práctico de los datos geográficos. No obstante, una consulta espacial de este tipo puede ser más compleja e incorporar en el criterio algo más que un único punto. Por ejemplo, podemos seleccionar todas las entidades dentro de un área rectangular, o bien dentro de un polígono cualquiera que podríamos definir directamente sobre la propia representación en pantalla (Figura :num:`#figseleccionrectangulo`).
 
-.. figure:: Seleccion_rectangulo.png
+.. _figseleccionrectangulo:
+
+.. figure:: Seleccion_rectangulo.*
+	:width: 650px
 
 	Consulta mediante rectángulo. Los países que intersecan con los limites definidos por dicho rectángulo quedan seleccionados.
 
 
-.. _figseleccion_rectangulo: 
+ 
 
 
 Las relaciones que utilizamos en este caso ya no son entre punto y polígono, sino entre polígonos. La selección puede incluir tanto los países que se encuentran por completo contenidos dentro del polígono, como aquellos que intersecan con este. Es decir, que podemos aplicar varias de las relaciones que en su momento estudiamos entre dos polígonos.
@@ -368,12 +373,12 @@ Estos métodos vienen también especificados por la norma Simple Features, y com
 
 Por ejemplo, para ver que países son atravesados por el río Nilo, podemos emplear una consulta como la siguiente:
 
-\begin{verbatim}
-SELECT Paises.Nombre,
-FROM Rios, Paises
-WHERE Cross(Rios.shape, Paises.Shape)
-      AND Rios.Nombre = 'Nilo'
-\end{verbatim}
+::
+
+	SELECT Paises.Nombre,
+	FROM Rios, Paises
+	WHERE Cross(Rios.shape, Paises.Shape)
+	      AND Rios.Nombre = 'Nilo'
 
 La expresión ``Cross(Rios.Shape, Paises.Shape)`` hace uso del método ``Cross``, que devuelve 1 en caso de que las dos geometrías pasadas como parámetros se intersequen, y 0 en caso contrario. Este se utiliza para realizar la selección solo sobre aquellas que cumplan la condición de ser cortadas por una geometría dada, en este caso la del río Nilo. 
 
@@ -385,26 +390,28 @@ Un ejemplo de esto es el método ``Length``, que devuelve un valor numérico cor
 
 La consulta tendría en este caso una forma como la siguiente:
 
-\begin{verbatim}
-SELECT Paises.Nombre,
-      Length(Intersection(
-             Rios.Shape, Paises.Shape))
-       AS 'Longitud'
-FROM Rios, Paises
-WHERE Cross(Rios.Shape, Paises.Shape)
-      AND Rios.Nombre = 'Nilo'
-\end{verbatim}
+::
+
+	SELECT Paises.Nombre,
+	      Length(Intersection(
+	             Rios.Shape, Paises.Shape))
+	       AS 'Longitud'
+	FROM Rios, Paises
+	WHERE Cross(Rios.Shape, Paises.Shape)
+	      AND Rios.Nombre = 'Nilo'
 
 
-Al igual que en el apartado anterior, el objetivo de este apartado no es mostrar con detalle la sintaxis del lenguaje SQL cuando este se emplea para la realización de consultas espaciales. Los anteriores son únicamente algunos ejemplos para poner de manifiesto la potencia de este planteamiento y mostrar cómo los elementos espaciales se integran en el lenguaje SQL. Puede encontrarse más información en \cite{Egenhofer1994IEEE}.
+Al igual que en el apartado anterior, el objetivo de este apartado no es mostrar con detalle la sintaxis del lenguaje SQL cuando este se emplea para la realización de consultas espaciales. Los anteriores son únicamente algunos ejemplos para poner de manifiesto la potencia de este planteamiento y mostrar cómo los elementos espaciales se integran en el lenguaje SQL. Puede encontrarse más información en  :cite:p:`Egenhofer1994IEEE`.
 
-Además de esta extensión a SQL, existen otras propuestas propuestas alternativas tales como Geo--SQL\cite{geoSQL}, SSQL (Spatial SQL)\cite{SSQL}o SQL-MM.
+Además de esta extensión a SQL, existen otras propuestas propuestas alternativas tales como Geo--SQL :cite:p:`geoSQL`, SSQL (Spatial SQL) :cite:p:`SSQL`o SQL-MM.
                                                           
+
+.. _Indices_espaciales:
 
 Índices espaciales
 --------------------------------------------------------------
 
-.. _Indices_espaciales:
+
 
 
 
@@ -418,7 +425,7 @@ Al utilizar una base de datos, si no disponemos de un índice deberemos recorrer
 
 Los índices nos permiten *alcanzar* los elementos que constituyen la respuesta a nuestra consulta, haciéndolo de la forma más rápida y llegando hasta ellos sin tener que pasar por todos los restantes.
 
-Describir los índices empleados en bases de datos no espaciales requiere describir asimismo estructuras de datos complejas que escapan del alcance de este texto (los denominados *árboles B+* son las estructuras utilizadas con más frecuencia para esta tarea)\footnote{Para el lector interesado, puede encontrarse este tema tratado con mayor profundidad en, por ejemplo, \cite{BTrees}. La descripción original de los árboles B+ aparece en \cite{Bayer1972Acta}}. Por esta razón, no se detallarán en este capítulo más allá de la anterior descripción básica, pudiéndose encontrar más información en las referencias proporcionadas a lo largo del capítulo.
+Describir los índices empleados en bases de datos no espaciales requiere describir asimismo estructuras de datos complejas que escapan del alcance de este texto (los denominados *árboles B+* son las estructuras utilizadas con más frecuencia para esta tarea)\footnote{Para el lector interesado, puede encontrarse este tema tratado con mayor profundidad en, por ejemplo,  :cite:p:`BTrees`. La descripción original de los árboles B+ aparece en  :cite:p:`Bayer1972Acta`}. Por esta razón, no se detallarán en este capítulo más allá de la anterior descripción básica, pudiéndose encontrar más información en las referencias proporcionadas a lo largo del capítulo.
 
 Más interesantes que estos índices nos resultan aquellos que se utilizan en las bases de datos espaciales, que denominamos *índices espaciales*. El concepto es similar al de índices de bases de datos no espaciales: elementos que permiten optimizar las consultas mediante una correcta estructuración de los datos, en particular en este caso de su componente espacial.
 
@@ -430,7 +437,7 @@ La solución más inmediata es medir la distancia entre España y todos los paí
 
 Ese conocimiento básico de geografía que tenemos es en realidad una especie de índice espacial. No sirve para saber las distancias exactas ni resolver la consulta por completo, pero sirve para dar una aproximación y facilitar el trabajo. Descartamos un buen numero de países de forma casi inmediata, y luego solo realizamos las operaciones costosas (la medición) con un subconjunto del total. En nuestra mente, tenemos el conocimiento estructurado a distintos niveles. Incluso si memorizamos todas esa distancias, existe otro nivel más general de conocimiento, a otra escala, siendo este el que nos indica de forma rápida que toda América está fuera de la distancia establecida en la consulta y no merece la pena efectuar mediciones referidas a países de ese continente
 
-Con la utilización un índice espacial, el proceso de consulta espacial se compone de dos subprocesos: *filtrado* y *refinamiento* \cite{Freksa1991Kluwer}. En el proceso de filtrado se hace una primera selección aproximada de entidades, las cuales son candidatas a cumplir los criterios de la consulta. Se reduce de este modo el número de elementos sobre los que se ha de trabajar, y esta reducción, apoyada en los índices espaciales, tiene un coste operacional menor que aplicar la consulta en sí a todos los elementos.
+Con la utilización un índice espacial, el proceso de consulta espacial se compone de dos subprocesos: *filtrado* y *refinamiento*  :cite:p:`Freksa1991Kluwer`. En el proceso de filtrado se hace una primera selección aproximada de entidades, las cuales son candidatas a cumplir los criterios de la consulta. Se reduce de este modo el número de elementos sobre los que se ha de trabajar, y esta reducción, apoyada en los índices espaciales, tiene un coste operacional menor que aplicar la consulta en sí a todos los elementos.
 
 En el refinamiento, se toman los elementos que han superado la fase de filtrado, y sobre ellos se aplica la consulta como tal. Esto tendrá como consecuencia que algunos de estos elementos, pese a haber pasado la primera fase de filtrado, no cumplan el criterio de la consulta, ya que este filtrado era una aproximación al resultado final. De esta forma refinamos este resultado previo y obtenemos ya la respuesta exacta a la consulta formulada.
 
@@ -440,12 +447,15 @@ Por ejemplo, las funciones de interpolación, que veremos en el capítulo :ref:`
 
 Si vemos la figura :num:`#figejindicesespaciales`, para calcular cuales son los diez puntos (en negro) más cercanos a una coordenada dada (en rojo), no mediríamos las distancias de todos ellos. Mirando a simple vista podemos estimar que esos puntos van a estar dentro de un círculo aproximadamente como el representado en la figura, y podemos prescindir de los restantes a la hora de calcular las distancias exactas. Dentro de ese circulo hay más de diez puntos, con lo cual debe *refinarse* ese resultado antes de poder ofrecer una respuesta exacta a la consulta.
 
-.. figure:: Ej_indices_espaciales.pdf
+.. _figejindicesespaciales:
+
+.. figure:: Ej_indices_espaciales.*
+	:width: 650px
 
 	Para calcular los diez puntos más cercanos a una coordenada dada (en rojo), nuestra intuición espacial nos ayuda a decidir que estos se han de buscar en un subconjunto reducido tal como el de los situados dentro del circulo azul de la figura. Este proceso de *filtrado* y *refinamiento* ahorra operaciones, y es el fundamento conceptual de los índices espaciales.
 
 
-.. _figej_indices_espaciales: 
+ 
 
 
 Otros procesos en los que son vitales los índices espaciales son las operaciones de solape entre capas de polígonos, que veremos en el capítulo :ref:`Operaciones_geometricas`. Sin ellos, el rendimiento de estas operaciones espaciales sería mucho menor o incluso, como en el caso de la interpolación, totalmente insuficiente para que tales operaciones se puedan aplicar en la mayoría de los casos.
