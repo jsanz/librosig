@@ -26,13 +26,11 @@ Por su especial relevancia, dedicaremos la primera parte del capítulo a tratar 
 
 Resumiendo el conjunto de análisis geomorfométricos, la aplicación de estos puede estructurarse en las siguientes etapas  :cite:p:`Hengl2008Elsevier`:
 
-\begin{enumerate}
-  * Toma de datos de elevación en puntos establecidos (muestreo).
-  * Generación de un modelo de la superficie a partir de los anteriores.
-  * Corrección de errores y eliminación de elementos erróneos.
-  * Cálculo de parámetros y elementos derivados.
-  * Empleo de los parámetros y elementos anteriores.
-\end{enumerate}
+* Toma de datos de elevación en puntos establecidos (muestreo).
+* Generación de un modelo de la superficie a partir de los anteriores.
+* Corrección de errores y eliminación de elementos erróneos.
+* Cálculo de parámetros y elementos derivados.
+* Empleo de los parámetros y elementos anteriores.
 
 Los dos primeros puntos no son estrictamente necesarios, puesto que ya hemos visto que puede obtenerse directamente un MDE a partir de tecnologías como el LiDAR, que hace innecesario tanto la toma de datos puntuales como la interpolación en base a estos. En caso de que esta última se lleve a cabo, ya vimos en el capítulo :ref:`Creacion_capas_raster` las distintas técnicas existentes, aunque en este ampliaremos esa información para tratar las consideraciones específicas que deben tenerse en cuenta cuando la variable interpolada es la elevación.
 
@@ -86,10 +84,11 @@ La creación del MDE implica en la mayoría de casos la utilización de métodos
 La naturaleza de la información que se recoge en el MDE y el análisis a efectuar posteriormente con él hacen interesantes los siguientes comentarios sobre los distintos métodos de interpolación.
 
 
- * Distancia inversa. El método de distancia inversa no es adecuado para la interpolación de MDE, pues genera abundantes depresiones de carácter artificial (ver :ref:`Depresiones`) y elementos no naturales en el relieve.
+* Distancia inversa. El método de distancia inversa no es adecuado para la interpolación de MDE, pues genera abundantes depresiones de carácter artificial (ver :ref:`Depresiones`) y elementos no naturales en el relieve.
 * Kriging. Pese a ser un interpolador de calidad para el caso de datos de elevación, las superficies generadas son excesivamente suaves.  Aunque la precisión del método es alta en términos cuantitativos, no refleja con precisión la configuración del relieve y sus accidentes, lo cual se hará notar en los análisis posteriores sobre dicho MDE.
 
-Otro problema del kriging es su excesiva sensibilidad a valores extremos estadísticamente diferentes del resto, ya que producen un número elevado de elementos morfológicos erróneos  :cite:p:`Hengl2008Elsevier`, dificultando la aplicación posterior de ciertos algoritmos.
+ Otro problema del kriging es su excesiva sensibilidad a valores extremos estadísticamente diferentes del resto, ya que producen un número elevado de elementos morfológicos erróneos  :cite:p:`Hengl2008Elsevier`, dificultando la aplicación posterior de ciertos algoritmos.
+
 * Splines. Los splines representan una de las mejores alternativas para la creación de MDE. Frente a las restantes metodologías, autores como  :cite:p:`Mitasova1993MathGeo` recomiendan el uso de splines para la obtención de MDE idóneos para el análisis.
 * Ajuste de funciones. Como métodos globales, ajustar una función de tipo polinómico a los puntos de datos y asemejar el relieve a esta no es adecuado, ya que el relieve es altamente más complejo . El uso de funciones de grado superior y mayor complejidad, por otra parte, hace que puedan aparecer valores extremos irreales que desvirtúen por completo la superficie interpolada (ver :ref:`Ajuste_de_polinomios`). Aplicados como métodos locales, no obstante, veremos más adelante que este tipo de ajustes se utilizan no para la creación del MDE sino para el análisis de las propiedades de este, ajustando localmente funciones con los valores de un entorno definido de celdas.
 
@@ -108,7 +107,7 @@ La preparación del MDE hace referencia al filtrado de este para eliminar las po
 En términos generales, los objetivos que se persiguen con la preparación del MDE son:
 
 
- * Eliminación de errores groseros
+* Eliminación de errores groseros
 * Descripción más precisa del relieve
 * Descripción más precisa de los procesos hidrológicos y ecológicos que tienen lugar.
 
@@ -116,7 +115,7 @@ En términos generales, los objetivos que se persiguen con la preparación del M
 La corrección de los valores del MDE enfocada a estos dos primeros objetivos incluye muchos factores distintos que han de tenerse en cuenta. Entre ellos, cabe mencionar.
 
 
- * Errores incorporados por las distintas fuentes de datos o el instrumental empleado para la recogida de los mismos, así como por las metodologías empleadas en el proceso de estos (por ejemplo, las distintas técnicas de interpolación). Pueden corregirse conociendo las deficiencias de cada una de ellas, que dan información sobre el tipo de errores que pueden aparecer
+* Errores incorporados por las distintas fuentes de datos o el instrumental empleado para la recogida de los mismos, así como por las metodologías empleadas en el proceso de estos (por ejemplo, las distintas técnicas de interpolación). Pueden corregirse conociendo las deficiencias de cada una de ellas, que dan información sobre el tipo de errores que pueden aparecer
 * Presencia de valores discrepantes muy improbables (*outliers*). Estos pueden eliminarse mediante técnicas estadísticas, en función de los valores de las celdas vecinas  :cite:p:`Felicisimo1994ISPRS`. La aplicación de métodos geoestadísticos como el kriging permite igualmente la estimación del valor esperado en una celda a partir de los valores de las circundantes.
 * Presencia de zonas sin datos. Especialmente relevante en el caso de MDE procedentes de teledetección, ya que pueden existir zonas vacías por errores de captura, o bien por ser combinación de varias imágenes entre las que existen áreas no cubiertas. Estas zonas vacías pueden rellenarse mediante métodos de interpolación, siempre que estas no impliquen extrapolación y excedan de un tamaño máximo lógico.
 
@@ -140,11 +139,10 @@ Gran parte de los análisis que vamos a realizar a partir del MDE tienen una bas
 
 Sea una función que represente a nuestro Modelo Digital de Elevaciones, de la forma.
 
-\begin{equation} 
+.. math::
+	
+	z=f(x,y)
 
-.. _Eq:Caracterizacion_MDE:
-z=f(x,y)
-\end{equation}
 
 donde :math:`x` e :math:`y` representan las coordenadas respectivas en los ejes :math:`x` e :math:`y` del plano horizontal, y :math:`z` la elevación en el punto definido por dichas coordenadas. De existir una función como esta y poder disponerse de una expresión explícita de ella, contendría en sí toda información del MDE. Sin embargo, parece lógico pensar que, como ya se menciono al tratar el ajuste de funciones como método de interpolación, las formas naturales del relieve no son definibles con dicha sencillez dada la complejidad de este. 
 
@@ -152,65 +150,56 @@ Para poder dar una caracterización matemática al MDE debemos hacerlo localment
 
 Las funciones más habituales son las de tipo cuadrático, que garantizan en mayor medida la corrección de los resultados derivados, tales como pendientes  :cite:p:`Jones1996GISUK` o curvaturas  :cite:p:`Schmidt2003IJGIS` (veremos en breve qué significan estos parámetros y cómo se calculan). 
 
-.. _Eq:Cuadratica:
 
 .. math::
 
 	f(x,y)=a x^2  y^2+b  x^2  y+c  x  y^2+d  x^2+e  y^2+f  x  y+g  x+h  y+k
 
 
- :cite:p:`Evans1972Harper` propone el caso particular
+:cite:p:`Evans1972Harper` propone el caso particular
 
-\begin{equation} 
-
-.. _Eq:Evans:
-z = \frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2
-}}{2} + p  x + q  y + z_0 \end{equation}
+.. math::
+	
+	z = \frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2}}{2} + p  x + q  y + z_0 
 
 Con seis parámetros que calcular, la ventana habitual :math:`3\times3`, con nueve valores, es suficiente para llevar a cabo un ajuste por mínimos cuadrados. Empleando la notación introducida en :ref:`Funciones_focales` para dicha ventana, los valores de los parámetros quedan determinados de la siguiente forma:
 
-\begin{eqnarray}
+.. math::
 
-.. _Eq:Parametros_Evans:
-  p &=& \frac{{z_3  + z_6  + z_9  - z_1  - z_4  - z_7 }}{{6  \Delta s}}  \\
-  q &=& \frac{{z_1  + z_2  + z_3  - z_7  - z_8  - z_9 }}{{6  \Delta s}} \nonumber \\
-  r &=& \frac{{z_1  + z_3  + z_4  + z_6  + z_7  + z_9  - 2(z_2  + z_5  + z_8 )}}{{3 
-{\Delta s}^2 }} \nonumber  \\
-  s &=& \frac{{ - z_1  + z_3  + z_7  - z_9 }}{{4  {\Delta s}^2 }} \nonumber \\
-  t &=& \frac{{z_1  + z_2  + z_3  + z_7  + z_8  + z_9  - 2(z_4  + z_5  + z_6 )}}{{3 
-{\Delta s}^2 }} \nonumber \\
-  z_0 &=& \frac{{5  z_5  + 2  (z_2  + z_4  + z_6  + z_8 ) - (z_1  + z_3  + z_7
-+ z_9 )}}{9} \nonumber 
-\end{eqnarray}
+	  p &=& \frac{{z_3  + z_6  + z_9  - z_1  - z_4  - z_7 }}{{6  \Delta s}}  \\
+	  q &=& \frac{{z_1  + z_2  + z_3  - z_7  - z_8  - z_9 }}{{6  \Delta s}} \nonumber \\
+	  r &=& \frac{{z_1  + z_3  + z_4  + z_6  + z_7  + z_9  - 2(z_2  + z_5  + z_8 )}}{{3 
+	{\Delta s}^2 }} \nonumber  \\
+	  s &=& \frac{{ - z_1  + z_3  + z_7  - z_9 }}{{4  {\Delta s}^2 }} \nonumber \\
+	  t &=& \frac{{z_1  + z_2  + z_3  + z_7  + z_8  + z_9  - 2(z_4  + z_5  + z_6 )}}{{3 
+	{\Delta s}^2 }} \nonumber \\
+	  z_0 &=& \frac{{5  z_5  + 2  (z_2  + z_4  + z_6  + z_8 ) - (z_1  + z_3  + z_7
+	+ z_9 )}}{9} \nonumber 
 
 siendo :math:`{\Delta s}` el tamaño de celda.
 
-Mientras que la superficie definida por esta función no ha de pasar necesariamente por ninguna de las celdas,  :cite:p:`Zevenbergen1987ESPL` propone utilizar la expresión completa de :ref:`Eq:Cuadratica`, que expresaremos como sigue para que los cálculos posteriores resulten más sencillos:
+Mientras que la superficie definida por esta función no ha de pasar necesariamente por ninguna de las celdas,  :cite:p:`Zevenbergen1987ESPL` propone utilizar la expresión completa de la ecuación, que expresaremos como sigue para que los cálculos posteriores resulten más sencillos:
 
-\begin{equation}
+.. math::
 
-.. _Eq:Zevenbergen: 
-z = A  x^2   y^2  + B  x^2   y + C x  y^2 + \frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2
-}}{2} + p  x + q  y + D \end{equation}
+	z = A  x^2   y^2  + B  x^2   y + C x  y^2 + \frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2}}{2} + p  x + q  y + D 
 
 Esta función, ajustada mediante polinomios de Lagrange, sí garantiza que la superficie pase exactamente por los puntos de la ventana de análisis.
 
 En este caso, los valores de los coeficientes son los siguientes:
 
-\begin{eqnarray}
+.. math::
 
-.. _Eq:Parametros_Zevenbergen:
-  p &=& \frac{{z_6  - z_4 }}{{2  \Delta s}} \\
-  q &=& \frac{{z_2  - z_8 }}{{2  \Delta s}} \nonumber \\
-  r &=& \frac{{z_4  + z_6  - 2 \cdot z_5 }}{{{\Delta s}^2 }} \nonumber \\
-  s &=& \frac{{ - z_1  + z_3  + z_7  - z_9 }}{{4  {\Delta s}^2 }} \nonumber \\
-  t &=& \frac{{z_2  + z_8  - 2  z_5 }}{{{\Delta s}^2 }} \nonumber \\
-  A &=& \frac{{(z_1  + z_3  + z_7  + z_9 ) - 2  (z_2  + z_4  + z_6  + z_8 ) + 4 \cdot
-z_5 }}{{4  {\Delta s}^4 }} \nonumber \\
-  B &=& \frac{{(z_1  + z_3  - z_7  - z_9 ) - 2  (z_2  - z_8 )}}{{4  {\Delta s}^3 }} \nonumber \\
-  C &=& \frac{{( - z_1  + z_3  - z_7  + z_9 ) - 2  (z_6  - z_4 )}}{{4  {\Delta s}^3 }} \nonumber \\
-  D &=& z_5 \nonumber 
-\end{eqnarray}
+	p &=& \frac{{z_6  - z_4 }}{{2  \Delta s}} \\
+	q &=& \frac{{z_2  - z_8 }}{{2  \Delta s}} \nonumber \\
+	r &=& \frac{{z_4  + z_6  - 2 \cdot z_5 }}{{{\Delta s}^2 }} \nonumber \\
+	s &=& \frac{{ - z_1  + z_3  + z_7  - z_9 }}{{4  {\Delta s}^2 }} \nonumber \\
+	t &=& \frac{{z_2  + z_8  - 2  z_5 }}{{{\Delta s}^2 }} \nonumber \\
+	A &=& \frac{{(z_1  + z_3  + z_7  + z_9 ) - 2  (z_2  + z_4  + z_6  + z_8 ) + 4 \cdot
+	z_5 }}{{4  {\Delta s}^4 }} \nonumber \\
+	B &=& \frac{{(z_1  + z_3  - z_7  - z_9 ) - 2  (z_2  - z_8 )}}{{4  {\Delta s}^3 }} \nonumber \\
+	C &=& \frac{{( - z_1  + z_3  - z_7  + z_9 ) - 2  (z_6  - z_4 )}}{{4  {\Delta s}^3 }} \nonumber \\
+	D &=& z_5 \nonumber 
 
 Junto a las anteriores, probablemente las más habituales, encontramos otras como   :cite:p:`Shary1995MG`, idéntica a la de  :cite:p:`Evans1972Harper` salvo por el hecho de que obliga a la función a pasar por la celda central, o  :cite:p:`Horn1981IEEE`, así como funciones de orden superior o bien ajustes de planos en lugar de superficies cuadráticas  :cite:p:`Beasley1982EPA`. Igualmente, puede generalizarse lo anterior al empleo de polinomios de grado :math:`n`  :cite:p:`Wood1996PhD`.
 
@@ -222,7 +211,7 @@ Análisis morfométrico
 El análisis morfométrico del MDE estudia el relieve y la orografía de la superficie por este definida, caracterizándolo a través de parámetros adicionales. Recurriendo una vez más a los conceptos del álgebra de mapas, estos parámetros se basan en su gran mayoría en un análisis focal. Este análisis emplea la caracterización matemática que vimos en el punto anterior, así como formulaciones estadísticas sencillas.  En función de ello distinguimos dos grupos principales:
 
 
- * Medidas geométricas
+* Medidas geométricas
 * Medidas estadísticas
 
 
@@ -249,12 +238,10 @@ Medidas basadas en derivadas de primer grado
 
 Los parámetros geométricos más básicos parten del estudio de las derivadas parciales de primer orden de la superficie, y se obtienen a partir del *gradiente* de la superficie. El gradiente es un concepto básico del cálculo vectorial y se expresa en función de las antedichas primeras derivadas parciales, según
 
-\begin{equation}
+.. math::
 
-.. _Eq:Gradiente:
-\nabla \overline{\mathbf{Z}}=\left(\frac{\partial z}{\partial x},\frac{\partial
-z}{\partial y}\right)
-\end{equation}
+	\nabla \overline{\mathbf{Z}}=\left(\frac{\partial z}{\partial x},\frac{\partial	z}{\partial y}\right)
+
 
 Dado un campo escalar tal como el representado por el MDE, el gradiente es un campo vectorial orientado en la dirección en la que el campo escalar experimenta una mayor variación.
 
@@ -262,7 +249,6 @@ Las dos propiedades principales que podemos obtener del gradiente son dos: su lo
 
 La pendiente refleja la variación máxima de la elevación y se define en función del gradiente como
 
-.. _Eq:Pendiente:
 
 .. math::
 
@@ -282,63 +268,50 @@ La pendiente obtenida de la expresión anterior viene expresada en unidades angu
 
 Si utilizamos el modelo matemático de  :cite:p:`Evans1972Harper`, derivando la expresión dada obtenemos:
 
-\begin{equation}
+.. math::
 
-.. _Eq:GradienteEvansP:
-\frac{\partial z}{\partial x} \approx\frac{\partial (\frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2
-}}{2} + p  x + q  y + z_0)}{\partial x} =rx + sy + p 
-\end{equation}
-\begin{equation}
+	\frac{\partial z}{\partial x} \approx\frac{\partial (\frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2}}{2} + p  x + q  y + z_0)}{\partial x} =rx + sy + p 
 
-.. _Eq:GradienteEvansQ:
-\frac{\partial z}{\partial y} \approx\frac{\partial (\frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2
-}}{2} + p  x + q  y + z_0)}{\partial y} = ty + sx + q
-\end{equation}
 
-El valor que buscamos es el de la celda central, que representa el origen de coordenadas. Por tanto, :math:`x=y=0`, y según 
+.. math::
 
-.. _Eq:Parametros_Evans: tenemos que
+	\frac{\partial z}{\partial y} \approx\frac{\partial (\frac{{r  x^2 }}{2} + s  x  y + \frac{{t  y^2}}{2} + p  x + q  y + z_0)}{\partial y} = ty + sx + q
 
-\begin{equation}
 
-.. _Eq:GradienteEvansP00:
-p=\frac{\partial z}{\partial x}=\frac{z_3+z_6+z_9-z_1-z_4-z_7}{6
-\cdot \Delta s}
-\end{equation}
-\begin{equation}
+El valor que buscamos es el de la celda central, que representa el origen de coordenadas. Por tanto, :math:`x=y=0`, y se tiene entonces que
 
-.. _Eq:GradienteEvansQ00:
-q=\frac{\partial z}{\partial y}=\frac{z_1+z_2+z_3-z_7-z_8-z_9}{6
-\cdot \Delta s}
-\end{equation}
+.. math::
 
-Con estos valores ya tenemos el vector gradiente, y aplicando la ecuación :ref:`Eq:Pendiente` obtenemos el valor de la pendiente en la celda.
+	p=\frac{\partial z}{\partial x}=\frac{z_3+z_6+z_9-z_1-z_4-z_7}{6\cdot \Delta s}
 
-.. _Eq:PendienteEvans:
+	q=\frac{\partial z}{\partial y}=\frac{z_1+z_2+z_3-z_7-z_8-z_9}{6\cdot \Delta s}
+
+
+Con estos valores ya tenemos el vector gradiente, y aplicando la ecuación de la pendiente obtenemos el valor de la pendiente en la celda.
+
 
 .. math::
 
 	s=\arctan(\sqrt{p^2+q^2})
 
 
-Si empeamos en su lugar el modelo introducido en :ref:`Eq:Zevenbergen`, derivando y haciendo :math:`x=y=0`, se obtiene también que 
+Si empeamos en su lugar el modelo introducido propuesto por :cite:p:`Zevenbergen1987ESPL`, derivando y haciendo :math:`x=y=0`, se obtiene también que 
 
-.. _Eq:Notacion_derivadas:
 
 .. math::
 
 	p=\frac{\partial z}{\partial x} \ ; \ q=\frac{\partial z}{\partial y}
 
 
-Y según :ref:`Eq:Parametros_Zevenbergen`
+Y según lo visto anteriormente
 
 .. math::
 
-	\frac{\partial z}{\partial x} = \frac{{z_6  - z_4 }}{{2  \Delta s}} \\
+	\frac{\partial z}{\partial x} = \frac{{z_6  - z_4 }}{{2  \Delta s}} 
 
 .. math::
 
-	\frac{\partial z}{\partial y} = \frac{{z_2 - z_8 }}{{2  \Delta s}} \\
+	\frac{\partial z}{\partial y} = \frac{{z_2 - z_8 }}{{2  \Delta s}} 
 
 
 Como ejemplo, el mapa de pendientes resultante de utilizar esta última formulación puede verse en la figura :num:`#figmapapendiente`.
@@ -346,7 +319,7 @@ Como ejemplo, el mapa de pendientes resultante de utilizar esta última formulac
 .. _figmapapendiente:
 
 .. figure:: Pendiente.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de pendientes obtenido a partir del MDE
 
@@ -356,16 +329,14 @@ Como ejemplo, el mapa de pendientes resultante de utilizar esta última formulac
 
 Podemos expresar ambas formulaciones como el resultado de convoluciones (ver :ref:`Funciones_focales`), mediante un núcleo. Por ejemplo, las parciales según la metodología de  :cite:p:`Evans1972Harper` se corresponden con los núcleos siguientes:
 
-\par
-\includegraphics[width=.5\mycolumnwidth]{Geomorfometria/Kernel_Evans.pdf}
-\par
+
+.. image:: Kernel_Evans.*
 
 Como ya sabemos, la estructura ráster del MDE es similar a la de una imagen digital. Esto hace que no solo sea sencillo combinar el MDE con imágenes aéreas o satelitales, sino que también en las técnicas y algoritmos existe una notable similitud. En particular, veremos más adelante en el capítulo dedicado al análisis de imágenes que los núcleos anteriores se conocen como *núcleos de Prewitt* y son frecuentemente utilizado para la detección de bordes.
 
 Muy relacionado con la pendiente, encontramos otro parámetro muy sencillo: la superficie real de una celda. Si tenemos una capa con un tamaño de celda  :math:`\Delta s`, el área ocupada por la misma será :math:`A=(\Delta s)^2`. No obstante, se trata de un área planimétrica, ya que en ningún momento consideramos que la celda tiene inclinación. Este área no se corresponde con, por ejemplo, el área real que se encuentra disponible para los seres vivos que habitan en esa celda, pues esta debería considerar la influencia de la pendiente. 
 
-La manera más sencilla de calcular el área real de una celda es empleando la siguiente fórmula
- :cite:p:`Berry1996Wiley`:
+La manera más sencilla de calcular el área real de una celda es empleando la siguiente fórmula :cite:p:`Berry1996Wiley`:
 
 .. math::
 
@@ -376,7 +347,6 @@ La simplicidad de la fórmula, sin embargo, hace que, por regla general, el áre
 
 Junto con la pendiente, la orientación es el otro parámetro básico que calculamos a partir del gradiente. Esta queda definido como  :cite:p:`Gallant1996CG`:
 
-.. _Eq:Orientacion:
 
 .. math::
 
@@ -389,27 +359,28 @@ El resultado viene expresado en grados sexagesimales. Se considera por convenci�
 
 La formula anterior no se encuentra definida en aquellas celdas para las cuales :math:`\partial z/\partial y=0`.  :cite:p:`Shary2002Geoderma` propone utilizar en su lugar la siguiente fórmula:
 
-\begin{equation}
+.. math::
 
-.. _Eq:Orientacion2:
-\begin{split}
-a = &- 90 \cdot \left[1- \mathrm{sign }(q)\right] \cdot
-\left[1 -|\mathrm{sign }(p)|\right] \\ &+ 180 \cdot \left[1+\mathrm{sign
-}(p)\right] - \frac{180}{\pi} \cdot \mathrm{sign }(p) \\ & \cdot
-\arccos \frac{-q}{\sqrt{p^2+q^2}}
-\end{split}
-\end{equation}
+
+	\begin{split}
+	a = &- 90 \cdot \left[1- \mathrm{sign }(q)\right] \cdot
+	\left[1 -|\mathrm{sign }(p)|\right] \\ &+ 180 \cdot \left[1+\mathrm{sign
+	}(p)\right] - \frac{180}{\pi} \cdot \mathrm{sign }(p) \\ & \cdot
+	\arccos \frac{-q}{\sqrt{p^2+q^2}}
+	\end{split}
+	\end{equation}
 
 siendo :math:`\mathrm{sign}(x)` la función definida por
 
-\begin{equation}
-\mathrm{sign}(x) = \left \{
-\begin{array}{ll}
-1 & \textrm{ si } x > 0 \\
-0 & \textrm{ si } x = 0 \\
--1 & \textrm{ si } x < 0 \\
-\end{array}\right.
-\end{equation}
+.. math::
+
+	\mathrm{sign}(x) = \left \{
+	\begin{array}{ll}
+	1 & \textrm{ si } x > 0 \\
+	0 & \textrm{ si } x = 0 \\
+	-1 & \textrm{ si } x < 0 \\
+	\end{array}\right.
+
 
 En este caso, la orientación no esta definida cuando la pendiente es nula. 
 
@@ -466,18 +437,12 @@ Una primera aproximación mediante un modelo sencillo se obtiene combinando los 
 	Utilización de una capa de relieve sombreado para mejorar la visualización de una imagen aérea 
 
 
- 
-
-
-
 Para una posición dada del Sol definida por su azimut :math:`\phi` y su elevación sobre el horizonte :math:`\theta`, la insolación sobre una celda de pendiente :math:`s` y orientación :math:`a` viene expresada por la ecuación  :cite:p:`Shary2005GFDQ`:
 
-\begin{equation}
+.. math::
 
-.. _Eq:Insolacion:
-F = \frac{100\tan(s)}{\sqrt{1+\tan^2(s)}}  \left [
-\frac{\sin(\theta)}{\tan(s)}-\cos(\theta) \sin(\phi-a) \right ]
-\end{equation}
+	F = \frac{100\tan(s)}{\sqrt{1+\tan^2(s)}}  \left [\frac{\sin(\theta)}{\tan(s)}-\cos(\theta) \sin(\phi-a) \right ]
+
 
 Los valores se sitúan en el rango 0--100. La capa resultante puede emplearse no solo para mejorar visualmente otras, sino, por ejemplo, para corregir el efecto del relieve en imágenes de satélite.  :cite:p:`Riano2003IEEE`  :cite:p:`Felicisimo1994Pentalfa`.
 
@@ -529,16 +494,18 @@ donde :math:`\tau` es la transmisividad del aire, generalmente de valor :math:`\
 
 siendo
 
-\begin{eqnarray}
-M_0=\sqrt{1229+(614\sin\alpha^2)-614 \sin\alpha}\\
-C_p=\left(\frac{228-0,0065h}{288}\right)^{5,256}
-\end{eqnarray}
+.. math::
+
+	M_0=\sqrt{1229+(614\sin\alpha^2)-614 \sin\alpha}\\
+	C_p=\left(\frac{228-0,0065h}{288}\right)^{5,256}
+
 
 Por último, el relieve de la celda modifica la energía recibida según
 
-\begin{equation}
-E''=E' \cos\alpha
-\end {equation}
+.. math::
+
+	E''=E' \cos\alpha
+
 
 El valor de :math:`\cos\alpha` se calcula a partir de las orientaciones y pendientes tanto del Sol como de la celda, haciendo uso de la expresión
 
@@ -592,7 +559,7 @@ Al contrario que sucedía con la pendiente o la orientación, no existe una úni
 .. _figseccionnormal:
 
 .. figure:: Seccion_normal.*
-	:width: 650px
+	:width: 500px
 
 	Una sección normal es la resultante de la intersección de la superficie con un plano que contiene al vector normal a esta en un punto.
 
@@ -602,19 +569,17 @@ Al contrario que sucedía con la pendiente o la orientación, no existe una úni
 
 Matemáticamente, la curvatura :math:`k` de la curva :math:`z(x)` viene dada por:
 
-\begin{equation}
+.. math::
 
-.. _Eq:Curvatura_curva:
-k=\frac{\frac{\mathrm{d}^2 z}{\mathrm{d}z^2}}{\left [ 1 + \left (
-\frac{\mathrm{d}y}{\mathrm{d}x} \right )^2 \right ]^{1.5}}
-\end{equation}
+	k=\frac{\frac{\mathrm{d}^2 z}{\mathrm{d}z^2}}{\left [ 1 + \left (\frac{\mathrm{d}y}{\mathrm{d}x} \right )^2 \right ]^{1.5}}
+
 
 De entre los planos que pueden tomarse, algunos aportan más información que otros. Los planos normales a la superficie que son paralelo y normal a la curva de nivel (mutuamente ortogonales) resultan de especial interés. Estos definen, respectivamente, las curvaturas denominadas horizontal y vertical.
 
 .. _figconceptocurvatura:
 
 .. figure:: Concepto_curvatura.*
-	:width: 650px
+	:width: 450px
 
 	La curvatura es el inverso del radio (:math:`1/R`)  del círculo que ajusta a la curva en un punto dado. Por convención, es positiva en el caso convexo (:math:`R_2 > 0`) y negativa en el concavo (:math:`R_1 < 0`).
 
@@ -622,26 +587,20 @@ De entre los planos que pueden tomarse, algunos aportan más información que ot
 
 
 
-Junto con la notación introducida en :ref:`Eq:Notacion_derivadas`, utilizaremos la siguiente para simplificar las expresiones:
+Junto con la notación introducida anteriormente, utilizaremos la siguiente para simplificar las expresiones:
 
-\begin{eqnarray}
+.. math::
 
-.. _Eq:Notacion_derivadas2:
-r=\frac{\partial^2 z}{\partial x^2}; \qquad s=\frac{\partial^2
-z}{\partial x \partial y}; \qquad t=\frac{\partial^2 z}{\partial
-y^2};
-\end{eqnarray}
+	r=\frac{\partial^2 z}{\partial x^2}; \qquad s=\frac{\partial^2z}{\partial x \partial y}; \qquad t=\frac{\partial^2 z}{\partialy^2};
 
 Derivando tanto la fórmula de  :cite:p:`Evans1972Harper` como la de  :cite:p:`Zevenbergen1987ESPL`, y dadas la expresiones escogidas para estas, se tiene que las derivadas parciales :math:`r`, :math:`s` y :math:`t` coinciden respectivamente con los coeficiente :math:`r`, :math:`s` y :math:`t` de aquellas, calculados en la sección :ref:`Modelos_MDE`.
 
-Empleando la notación de :ref:`Eq:Notacion_derivadas2`, la fórmula de la curvatura vertical es la siguiente  :cite:p:`Evans1972Harper,Krcho1973ActaGeo`:
+Empleando la notación anterior, la fórmula de la curvatura vertical es la siguiente  :cite:p:`Evans1972Harper,Krcho1973ActaGeo`:
 
-\begin{equation}
+.. math::
 
-.. _Eq:Curvatura_vertical:
-{kv}=\frac{-p^2 \cdot r+2  p  q  r  s+q^2 
-t}{(p^2+q^2)  \sqrt{(1+p^2+q^2)^3}}
-\end{equation}
+	{kv}=\frac{-p^2 \cdot r+2  p  q  r  s+q^2 t}{(p^2+q^2)  \sqrt{(1+p^2+q^2)^3}}
+
 
 Por convenio, las zonas convexas tienen curvatura negativa y las cóncavas curvatura positiva.
 
@@ -649,7 +608,6 @@ En el caso de valores convexos de curvatura vertical, estos indican un aumento e
 
 Para la curvatura horizontal, se tiene  :cite:p:`Krcho1983Geo`:
 
-.. _Eq:Curvatura_horizontal:
 
 .. math::
 
@@ -658,20 +616,117 @@ Para la curvatura horizontal, se tiene  :cite:p:`Krcho1983Geo`:
 
 La interpretación del significado de esta curvatura podemos realizarla de modo similar al caso anterior, en esta ocasión considerando que la sección normal es perpendicular a la linea de máxima pendiente. Una curvatura horizontal convexa representa una zona en la que el flujo tiende a dispersarse, mientras que si es cóncava el flujo tiende a concentrarse, ya que las lineas de flujo convergen.
 
-%En la figura :num:`#figcurvaturas` pueden verse los mapas respectivos de las curvaturas horizontal y vertical. Para mayor claridad, se presentan reducidos a una pequeña extensión del MDE de partida, y con curvas de nivel adicionales.
 
-% .. _figacumulacionerrord8:
+
+
+Junto a estas dos curvaturas más habituales y utilizadas, existen otras también estudiadas en la literatura, si bien con menos aplicación directa por el momento. :cite:p:`Shary2005GFDQ` propone un sistema de 12 curvaturas básicas, incluyendo las anteriores:
+
+* Curvatura horizontal
+* Curvatura vertical
+* Curvatura media
+* Curvatura máxima
+* Curvatura mínima
+* Curvatura de anesfericidad
+* Diferencia de curvatura
+* Exceso de curvatura vertical
+* Exceso de curvatura horizontal
+* Curvatura de acumulación
+* Curvatura total acumulada
+* Curvatura total anular
+* Rotor (curvatura de las lineas de flujo)
+
+A cada uno de estos parámetros puede asignársele una interpretación geomorfométrica, aunque el uso práctico no es frecuente, salvo en el caso de las curvaturas horizontal y vertical. 
+
+De igual modo, el estudio de los parámetros geométricos podría continuarse con las derivadas de tercer grado, aunque su aplicación práctica aún no se encuentra bien definida. Es interesante hacer ver, no obstante, que las derivadas sucesivas son más sensibles a los errores del MDE y propagan esta sensibilidad a los resultados obtenidos en base a ellas :cite:p:`Schmidt2003IJGIS`.
+
+Aunque hemos visto una interpretación de las curvaturas relacionada con los flujos de superficie, estas aportan información útil sobre otros aspectos, tales como la evolución del suelo, pues esta se encuentra directamente relacionada con el comportamiento del agua. También pueden ser útiles, entre otros, para el estudio de las comunidades animales, ya que pueden entenderse las zonas cóncavas como zonas protegidas y las convexas como zonas expuestas, lo cual tiene una indudable repercusión en el desarrollo de dichas comunidades.
+
+Medidas estadísticas
+---------------------
+
+Las medidas estadísticas se basan en la aplicación tanto de conceptos estadísticos básicos como otros más específicos definidos específicamente para su aplicación sobre un MDE. Son también en su mayoría elementos derivados de un análisis focal, pudiendo en este caso emplear ventanas de análisis de formas y tamaños diversos, al no estar condicionados por el uso de ningún modelo matemático del relieve.
+
+Los parámetros más inmediatos a calcular son los cuatro primeros momentos de la distribución de valores en la ventana de análisis, es decir, la media, la desviación típica, el coeficiente de asimetría y el de kurtosis.
+
+La media es un parámetro genérico que se puede utilizar como un operador focal sobre cualquier capa de datos, y ya la hemos visto en otros apartados anteriores. Tiene, como ya hemos mencionado (:ref:`Funciones_focales`) un efecto de suavizar la transición entre los valores de las celdas, produciendo un desenfoque en el caso de aplicarlo sobre imágenes. En el caso del MDT, este suavizado elimina la depresiones compuestas por una única celda, aunque ya hemos visto anteriormente que existen métodos más elaborados, más idóneos para esta tarea.
+
+En algunos casos existe una marcada correlación entre un parámetro estadístico y uno geométrico de los vistos en el punto anterior. Por ejemplo, la desviación típica esta fuertemente correlacionada con la pendiente.
+
+Otra medida de interés es el rango de valores, esto es, la diferencia entre la elevación máxima y la mínima dentro de la ventana de análisis.
+
+La combinación de parámetros estadísticos con parámetros geométricos puede aportar igualmente información de interés. El calculo de la media aplicada no a la elevación sino a parámetros tales como pendiente o curvatura son ejemplos de lo anterior.
+
+Un parámetro más especifico es la *rugosidad*. Como indica :cite:p:`Felicisimo1994Pentalfa`, no existe un forma unánimemente aceptada de calcular la rugosidad, ya que los distintos autores aportan soluciones muy diversas. El concepto de rugosidad, no obstante, es sencillo: expresa lo escarpado del relieve, caracterizando la complejidad de este. Terrenos más ondulados o escarpados llevan asociados valores mayores de rugosidad.
+
+
+La forma más simple de calcular la rugosidad es empleando la desviación típica de las celdas dentro de la ventana de análisis, un parámetro ya comentado. Valores altos de este denotan una superficie irregular, mientras que valores bajos indican un relieve suave. Este método, no obstante, no se comporta correctamente en todas las situaciones, ya que, por ejemplo, asigna un valor alto a una ventana de análisis que engloba una superficie suave ---lisa--- pero en pendiente. Una solución para solventar esto es ajustar un plano a los valores de la ventana de análisis y calcular la desviación típica de los valores ajustados. %\cite{Milton1998SPIE}.
+
+Un enfoque distinto es el propuesto por \cite{Hobson1972Harper}, incluyendo elementos de cálculo vectorial con su *factor de rugosidad*:
+
+.. math::
+
+	R = \frac{{\sqrt {\left( {\sum\limits_{i = 1}^n {{\rm X}_i } } \right)^2  + \left( {\sum\limits_{i = 1}^n {{\rm Y}_i } } \right)^2  + \left( {\sum\limits_{i = 1}^n {{\rm Z}_i } } \right)^2 } }}{n}
+
+
+siendo :math:`n` el número de celdas en la ventana de análisis y :math:`{\rm X}_i, {\rm Y}_i$ y ${\rm Z}_i` las componentes del vector unitario normal a la superficie en cada una de dichas celdas. Estas pueden calcularse a partir de la pendiente y la orientación según las expresiones:
+
+.. math::
+
+	{\rm X}_i=\sin (s) \cdot \cos (a)
+
+
+.. math::
+
+	{\rm Y}_i=\sin (s) \cdot \sin (a)
+
+
+.. math::
+
+	{\rm Z}_i=\cos (s)
+
+
+Acerca de la rugosidad, y puesto que representa la complejidad del relieve, debe mencionarse la influencia que tiene en la creación del MDE. Relieves rugosos implican una mayor complejidad y son más difíciles de registrar de forma precisa, con lo que las exactitud de las técnicas de interpolación al generar un MDE depende directamente de la rugosidad del relieve a interpolar.
+
+Análisis hidrológico
+=======================
+
+Uno de los fenómenos principales que tiene lugar sobre la superficie terrestre es el movimiento de flujos, tanto líquidos como sólidos. El MDE es una herramienta de primer orden para un análisis exhaustivo de estos fenómenos hidrológicos.
+
+Veíamos en el apartado :ref:`Preparacion_MDE` cómo resultaba necesario corregir el MDE para eliminar las depresiones de origen artificial y así poder asignar direcciones de flujo en todas las celdas. Trabajando sobre la base de ese MDE corregido estudiaremos a continuación las diversas formas de asignar dichas direcciones y, posteriormente, cómo emplearlas para el cálculo de nuevos parámetros.
+
+La asignación de direcciones de flujo se lleva a cabo mediante un análisis de tipo focal, al igual que los parámetros morfométricos que hemos visto hasta el momento. Esas direcciones, no obstante, implican una conectividad entre las celdas del MDE, y esta conectividad la emplearemos para definir regiones de celdas hidrológicamente relacionadas entre sí y realizar un análisis regional.
+
+Direcciones de flujo
+----------------------
+
+
+Las direcciones de flujo definen el comportamiento hidrológico de cada celda como unidad aislada. Este comportamiento viene condicionado directamente por las celdas circundantes, ya que es la relación entre las alturas de cada una ellas con la celda central la que indica la dirección de flujo. Dicha dirección está fundamentada en el principio básico y evidente de que el agua en su recorrido se mueve siempre hacia el menor potencial posible, esto es, hacia la dirección de máxima pendiente.
+
+El modelo más sencillo de asignación de direcciones de flujo es el denominado \emph{D8} \cite{Callaghan1984CVGIP}, acrónimo derivado de su denominación en lengua inglesa \emph{Deterministic 8}. Esta formulación es la implementada en la gran mayoría de SIG con capacidades de análisis hidrológico, debido principalmente a su sencillez operativa y facilidad de comprensión. 
+
+Los fundamentos teóricos de esta metodología son intuitivos e inmediatos. Dada una celda problema, el flujo puede abandonar esta únicamente en ocho direcciones posibles, esto es, las ocho que resultan de unir el centro de la celda inicial con los de las las ocho circundantes en la ventana de análisis $3 \times 3$. El ángulo de desplazamiento del flujo queda así discretizado en intervalos de $45\degree (360\degree/8)$, circunstancia que se erige como principal inconveniente del método al restringir la variedad de situaciones reales a tan solo $8$ posibles. 
+
+El proceso de cálculo de la dirección de flujo es sencillo, y requiere únicamente el cálculo de una pendiente media entre la celda central y las 8 circundantes, la cual se evalúa mediante la expresión
+
+.. math::
+
+	\gamma=\frac{z_5-z_i}{l}; \qquad z = 1, \ldots , 9 ; \qquad i \neq 5
+
+
+donde :math:`l` representa la distancia entre los centros de las celdas entre las que se calcula la pendiente. No se emplea aquí directamente la variable :math:`\Delta s` de tamaño de celda, ya que la distancia a aplicar no es igual en las celdas situadas en la vertical o en la horizontal de la celda central (:math:`l = \Delta s`), que en las celdas situadas en diagonal a la misma (:math:`l = \sqrt{2}\Delta s`). La dirección de flujo viene definida por la celda que marca la mayor de las pendientes. 
+
+%La figura \ref{Fig:Ejemplo_D8} muestra un pequeño ejemplo aplicado de esta metodología.
+
+La principal ventaja del método, su simplicidad, es también su principal defecto. La discretización de las direcciones en múltiplos de 45\degree\; hace que flujos que presenten rutas ciertamente distintas (con diferencias en orientación tan importantes como esos mismos 45\degree) pueden quedar englobadas dentro de un misma dirección, ya que la dirección real resulta truncada para encajar dentro de uno de los intervalos. 
+
+La aparición de segmentos rectilíneos paralelos en zonas llanas (Figura :num:`figlineasparalelasd8`) o la acumulación de errores en pendientes monótonas (:num:`#figacumulacionerrord8`), son, entre otras, algunas de las consecuencias indeseadas de lo anterior.
+
+.. _figacumulacionerrord8:
 
 .. figure:: Acumulacion_error_D8.*
 	:width: 650px
 
 	Propagación de errores de dirección en el modelo D8.La flecha señala la dirección real de la pendiente y las celdas sombreadas la dirección de flujo calculada
-
-
- 
-
-
-
 
 
 .. _figlineasparalelasd8:
@@ -680,11 +735,6 @@ La interpretación del significado de esta curvatura podemos realizarla de modo 
 	:width: 650px
 
 	Líneas paralelas de flujo como resultado de la aplicación del modelo D8
-
-
-
-
-
 
 
 Asimismo, existe una imposibilidad para modelizar los procesos de divergencia del flujo, al contemplarse tan solo el caso en que este vierte sobre una única de sus celdas circundantes. Es decir, que el flujo queda modelizado de forma unidimensional, no bidimensional.
@@ -709,8 +759,6 @@ Aunque mejora al D8, este método presenta el inconveniente de su aleatoriedad, 
 
 Un modelo más elaborado que tiene en cuenta la divergencia de flujo es el FD8  :cite:p:`Quinn1991HP`, en el cual el flujo en lugar de verter hacia una única celda, se reparte entre las circundantes. La proporción de flujo asignada a cada una de las 8 celdas vecinas viene dada por
 
-.. _Eq:FD8:
-
 .. math::
 
 	f_m=\frac{(\tan s_m)^x}{\sum_{i=1}^{8}(\tan s_i)^x}
@@ -720,7 +768,7 @@ donde :math:`f_m` es el flujo asignado a la celda :math:`m` de la ventana de an�
 
 Por otra parte los valores de las tangentes pueden obtenerse sencillamente según lo expresado en :ref:`Eq:Pendiente_D8`. Sólo deben emplearse aquellas tangentes que sean positivas, esto es, que representen ángulos entre la celda central y celdas de inferior elevación, pues es exclusivamente hacia estas hacia donde va a desplazarse el flujo. 
 
- :cite:p:`Tarboton1997WRR` propone otra solución similar que pretende por un lado modelizar de forma más realista la difusión del flujo, y por otro aportar una formulación más robusta. El modelo propuesto sigue basándose en el D8, solventando el problema de la discretización de flujo en 8 direcciones únicas, y para indicarlo es bautizado como D:math:`\infty`.
+:cite:p:`Tarboton1997WRR` propone otra solución similar que pretende por un lado modelizar de forma más realista la difusión del flujo, y por otro aportar una formulación más robusta. El modelo propuesto sigue basándose en el D8, solventando el problema de la discretización de flujo en 8 direcciones únicas, y para indicarlo es bautizado como D:math:`\infty`.
 
 Se considera la submalla :math:`3\times3` como una superficie representada por caras triangulares , cada uno de los cuales está definido por la celda central y dos celdas consecutivas de su entorno. Se tienen así un total de 8 de estos triángulos, cada uno de los cuales define un plano que permite el cálculo de una pendiente asociada.
 
@@ -728,10 +776,10 @@ Con las pendientes de todos y cada uno de los ocho triángulos, simplemente se t
 
 Resta, por último, establecer la difusión entre las dos celdas sobre las que se sitúa el triángulo, para lo cual se aplica una sencilla proporción como la siguiente.
 
-\begin{eqnarray}
-f_a=\frac{\phi_b}{\phi_a+\phi_b} \nonumber \\
-f_b=\frac{\phi_a}{\phi_a+\phi_b}
-\end{eqnarray}
+.. math::
+
+	f_a=\frac{\phi_b}{\phi_a+\phi_b} \nonumber \\
+	f_b=\frac{\phi_a}{\phi_a+\phi_b}
 
 siendo :math:`f_a` y :math:`f_b` las proporciones de flujo que deben asignarse a cada celda de las anteriores, y :math:`\phi_a` y :math:`\phi_b` las diferencias angulares entre la orientación y las direcciones marcadas por dichas celdas.
 

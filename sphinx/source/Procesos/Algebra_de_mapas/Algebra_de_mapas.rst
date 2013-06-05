@@ -7,7 +7,7 @@
 
 
 
- En este capítulo veremos en qué consiste el álgebra de mapas, el cual contiene el conjunto de procedimientos que nos permiten analizar capas ráster y extraer información a partir de ellas. Es importante, por lo tanto, que conozcas bien las particularidades del formato ráster y estés familiarizado con los conceptos propios de este modelo de representación espacial. 
+En este capítulo veremos en qué consiste el álgebra de mapas, el cual contiene el conjunto de procedimientos que nos permiten analizar capas ráster y extraer información a partir de ellas. Es importante, por lo tanto, que conozcas bien las particularidades del formato ráster y estés familiarizado con los conceptos propios de este modelo de representación espacial. 
 
 Además del álgebra de mapas como tal, veremos algunos ejemplos de análisis para mostrar el aspecto práctico de cuanto se detalla a lo largo del capítulo. Estos ejemplos no son estudiados aquí en profundidad, ya que serán descritos de forma más extensa en sucesivos capítulos. Por ello, no debes preocuparte si no comprendes completamente los procesos descritos, sino tan solo la base conceptual del álgebra de mapas sobre la que se sustentan.
 
@@ -24,7 +24,7 @@ Introducción
 
 La información contenida en las capas es susceptible de ser analizada para la obtención de otras capas referentes al mismo espacio geográfico, pero que contengan distinta información derivada de aquella. El álgebra de mapas es el conjunto de procedimientos y métodos que permiten llevar a cabo dicho análisis y extraer nuevos valores a partir de los contenidos en una o varias capas. En este capítulo revisaremos las bases e ideas fundamentales del álgebra de mapas, que nos ayudaran a comprender todos los restantes procesos que se construyen sobre sus conceptos.
 
-Se entiende por *álgebra de mapas*\footnote{Aunque esta denominación es la original y más extendida, puede dar lugar a malentendidos. No debe confundirse aquí la idea de *mapa* y pensar que hablamos de un documento cartográfico en su sentido clásico, sino que hablamos de capas, y en particular de capas ráster. Sería más correcto hablar de un *álgebra de capas ráster*, pero se mantiene por costumbre el uso de *álgebra de mapas* para definir al conjunto de técnicas que veremos a lo largo de este capítulo.} el conjunto de técnicas y procedimientos que, operando sobre una o varias capas en formato ráster, nos permite obtener información derivada, generalmente en forma de nuevas capas de datos. Aunque nada impide que este proceso se lleve a cabo sobre capas vectoriales, se entiende que el álgebra de mapas hace referencia al análisis desarrollado sobre capas ráster, pues estas, por su estructura regular y sus características inherentes, son mucho más adecuadas para plantear los algoritmos y formulaciones correspondientes. Los procedimientos que se aplican sobre información geográfica en formato vectorial son por regla general clasificados dentro de otros bloques de conocimiento, como es por ejemplo el caso de la operaciones geométricas sobre datos vectoriales (incluidos dentro de la geometría computacional), cuyos procesos se tratarán en el capítulo ~:ref:`Operaciones_geometricas`.
+Se entiende por *álgebra de mapas*\footnote{Aunque esta denominación es la original y más extendida, puede dar lugar a malentendidos. No debe confundirse aquí la idea de *mapa* y pensar que hablamos de un documento cartográfico en su sentido clásico, sino que hablamos de capas, y en particular de capas ráster. Sería más correcto hablar de un *álgebra de capas ráster*, pero se mantiene por costumbre el uso de *álgebra de mapas* para definir al conjunto de técnicas que veremos a lo largo de este capítulo.} el conjunto de técnicas y procedimientos que, operando sobre una o varias capas en formato ráster, nos permite obtener información derivada, generalmente en forma de nuevas capas de datos. Aunque nada impide que este proceso se lleve a cabo sobre capas vectoriales, se entiende que el álgebra de mapas hace referencia al análisis desarrollado sobre capas ráster, pues estas, por su estructura regular y sus características inherentes, son mucho más adecuadas para plantear los algoritmos y formulaciones correspondientes. Los procedimientos que se aplican sobre información geográfica en formato vectorial son por regla general clasificados dentro de otros bloques de conocimiento, como es por ejemplo el caso de la operaciones geométricas sobre datos vectoriales (incluidos dentro de la geometría computacional), cuyos procesos se tratarán en el capítulo :ref:`Operaciones_geometricas`.
 
 Conviene aclarar que, en la práctica y el uso diario de los SIG, el término *álgebra de mapas* es habitualmente usado de forma errónea. Ello es debido a que la gran mayoría de las aplicaciones SIG implementan algún tipo de funcionalidad para la combinación de un número dado de capas ráster, de forma que pueden relacionarse mediante expresiones matemáticas para la obtención de una nueva capa, y esta funcionalidad se designa normalmente como *álgebra de mapas* o en ocasiones *calculadora de mapas*. 
 
@@ -40,7 +40,6 @@ Más allá de lo que se desarrolla en este capítulo, las ideas que veremos a co
 
 Para comenzar el estudio del álgebra de mapas, veamos unos casos prácticos que nos servirán para introducir con posterioridad los elementos básicos. En primer lugar, consideremos la siguiente expresión, que define la bien conocida Ecuación Universal de Pérdidas de Suelo (USLE)  :cite:p:`Wischmeier78USDA`
 
-.. _Eq:USLE:
 
 .. math::
 
@@ -53,6 +52,7 @@ donde :math:`A` representa las pérdidas totales en toneladas por hectárea y a�
 
 .. figure:: USLE.*
 	:width: 650px
+
 	Puede extenderse una formula algebraica tal como la de la Ecuación Universal de Pérdidas de Suelo (USLE) a un conjunto de capas. Basta operar celda a celda con las capas que contienen las variables implicadas, para obtener una nueva capa resultante con el conjunto de valores calculados.
 
 
@@ -110,22 +110,15 @@ Las funciones locales asignan valores a una celda en base a los valores que esa 
 .. _figfuncioneslocales:
 
 .. figure:: Funciones_locales.*
-	:width: 650px
-\caption{Las funciones de análisis local analizan los valores de una
-celda concreta en una serie de capas para obtener el valor resultante. En rojo,
-celdas de partida analizadas. En verde, celda que recoge el resultado.}
+	:width: 450px
 
+	Las funciones de análisis local analizan los valores de una celda concreta en una serie de capas para obtener el valor resultante. En rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.
 
- 
-
-
-Las funciones locales son las que utilizamos cuando empleamos esa anteriormente
-citada *aritmética de mapas*, tal y como veíamos por ejemplo en el caso de la USLE. Aunque otro tipo de funciones también operan con varias capas, la combinación de una serie de ellas suele llevarse a cabo con funciones locales, que calculan los valores para cada punto de acuerdo con los valores de dichas capas en ese punto. El ejemplo de la USLE es una función sumamente sencilla, que tan solo multiplica las capas de partida, pero pueden elaborarse funciones más complejas utilizando todos los operadores disponibles, que estudiaremos más adelante.
+Las funciones locales son las que utilizamos cuando empleamos esa anteriormente citada *aritmética de mapas*, tal y como veíamos por ejemplo en el caso de la USLE. Aunque otro tipo de funciones también operan con varias capas, la combinación de una serie de ellas suele llevarse a cabo con funciones locales, que calculan los valores para cada punto de acuerdo con los valores de dichas capas en ese punto. El ejemplo de la USLE es una función sumamente sencilla, que tan solo multiplica las capas de partida, pero pueden elaborarse funciones más complejas utilizando todos los operadores disponibles, que estudiaremos más adelante.
 
 Una función de tipo local puede ser también aplicada sin necesidad de tener una serie de capas, sino con una única capa de partida. Por ejemplo, un cambio de unidades es una función local, ya que cada uno de los valores expresados en las unidades de destino solo depende del valor expresado en las unidades de origen en cada propia celda. Si una capa conteniendo elevaciones expresadas en metros la multiplicamos por 100, obtenemos una nueva capa con valores de elevación en centímetros, habiendo aplicado una función local para realizar la conversión.
 
-De igual modo, convertir los valores de una capa de pendientes de radianes a
-grados requiere multiplicar sus valores por :math:`180/\pi`.
+De igual modo, convertir los valores de una capa de pendientes de radianes a grados requiere multiplicar sus valores por :math:`180/\pi`.
 
 Además de operar con escalares, podemos aplicar también funciones matemáticas. Por ejemplo, las capas que presentan un gran coeficiente de variación (elevada varianza en relación a la media de los valores de la capa) muestran mucha más información si aplicamos una transformación logarítmica. En la figura :num:`#figtransformacionlogaritmica` vemos una capa de área acumulada :math:`a` (este concepto hidrológico se explicará en el apartado :ref:`Areaacumulada`) junto a otra que representa el parámetro :math:`\log(a)`, apreciándose claramente la diferencia entre ambas en cuanto a la riqueza de información visual que aportan. Esta transformación logarítmica es, claramente, una función local dentro del álgebra de mapas.
 
@@ -135,11 +128,8 @@ Si en lugar de convertir la anteriormente citada capa de pendientes de radianes 
 
 .. figure:: Transformacion_logaritmica.*
 	:width: 650px
-\caption{La aplicación de una transformación logarítmica modifica la
-representación visual de una capa. a) Capa original, b) capa tras trasformación logarítmica.}
 
-
- 
+	La aplicación de una transformación logarítmica modifica la representación visual de una capa. a) Capa original, b) capa tras trasformación logarítmica.
 
 
 Una aplicación común de una función local con una sola capa la encontramos en la normalización de valores. En ocasiones, antes de efectuar un proceso que englobe a varias capas (por ejemplo, otra función de análisis local pero multicapa), es necesario homogeneizar estas de modo que todas se hallen en un mismo rango de valores. Este proceso se denomina *normalización*. Es habitual que el rango común sea el intervalo :math:`(0,1)`, para lo cual se aplica a cada capa la función local definida por la siguiente expresión:
@@ -155,12 +145,13 @@ Si en vez de aplicar una función matemática sobre el valor de cada celda, apli
 el siguiente criterio.
 
 .. math::
+
 	s' = \left\{ \begin{array}{ll}
-	 1 & \textrm{si :math:`s \leq 5`}\\
-	 2 & \textrm{si :math:`5<s\leq 10`}\\
-	 3 & \textrm{si :math:`10<s\leq 20`}\\
-	 4 & \textrm{si :math:`s>20`}
-  \end{array} \right.
+	 1 & \textrm{si} s \leq 5\\
+	 2 & \textrm{si} 5<s\leq 10\\
+	 3 & \textrm{si} 10<s\leq 20\\
+	 4 & \textrm{si} s>20
+  	\end{array} \right.
 
 
 donde :math:`s'` es la clase de pendiente, y :math:`s` el valor de la pendiente en porcentaje.
@@ -176,13 +167,13 @@ donde :math:`s'` es la clase de pendiente, y :math:`s` el valor de la pendiente 
  
 
 
-Otra forma de convertir una capa continua en una categórica es dividir en clases no según un criterio relativo a los valores, sino a la extensión de las clases. La figura ~:num:`#figclasesigualarea` muestra el mismo mapa de pendientes del ejemplo anterior pero reclasificado en cinco clases de igual área, de tal modo que la superficie cubierta por cada una de ellas en la capa resultante es la
+Otra forma de convertir una capa continua en una categórica es dividir en clases no según un criterio relativo a los valores, sino a la extensión de las clases. La figura :num:`#figclasesigualarea` muestra el mismo mapa de pendientes del ejemplo anterior pero reclasificado en cinco clases de igual área, de tal modo que la superficie cubierta por cada una de ellas en la capa resultante es la
 misma.
 
 .. _figclasesigualarea:
 
 .. figure:: Clases_igual_area.*
-	:width: 650px
+	:width: 400px
 
 	Clasificación de una capa en clases de igual área.
 
@@ -233,7 +224,7 @@ Partiendo de una capa de usos de suelo y una de tipos de suelo, podemos obtener 
 .. _figcombinacioncapascategoricas:
 
 .. figure:: Combinacion_capas_categoricas.*
-	:width: 650px
+	:width: 750px
 
 Combinación de dos capas categóricas para crear una nueva clasificación que une ambas.
 
@@ -255,7 +246,8 @@ donde :math:`c'_i` es el nuevo valor a asignar a la clase i--ésima. Es decir, s
 
 Con las capas anteriores, basta sumarlas para obtener una nueva en la que el valor de cada celda nos define inequívocamente a partir de qué valores originales se ha calculado.
 
-Para ver un ejemplo que sea manejable, en la figura :num:`#figcombinacioncapascategoricaspeq` se muestran dos capas con su valores originales, las capas reclasificadas según el esquema anterior, y la capa resultante. Para interpretar esta última, la tabla ~:ref:`Tabla:Combinacion_capas_categoricas` muestra el esquema de reclasificación y la tabla :ref:`Tabla:Combinacion_capas_categoricas2` explica el significado de los valores de la capa obtenida.
+Para ver un ejemplo que sea manejable, en la figura :num:`#figcombinacioncapascategoricaspeq` se muestran dos capas con su valores originales, las capas reclasificadas según el esquema anterior, y la capa resultante. 
+
 
 .. _figcombinacioncapascategoricaspeq:
 
@@ -265,49 +257,34 @@ Para ver un ejemplo que sea manejable, en la figura :num:`#figcombinacioncapasca
 	Ejemplo de combinación de dos capas categóricas. a) capas originales, b) capas reclasificadas, c) resultado.
 
 
- 
+Para interpretar esta última, las tablas siguientes muestran el esquema de reclasificación y el significado de los valores de la capa obtenida.
 
 
-\begin{table}
-\begin{center}
-\begin{tabular}{ccc}\toprule
-Tipo & Valor original & Valor reclasificado \\ \midrule
-Suelo A & 1 & 1 \\ 
-Suelo B & 2 & 2 \\ 
-Suelo C & 3 & 4 \\ 
-Uso suelo A & 1 & 8 \\ 
-Uso suelo B & 2 & 16 \\ 
-Uso suelo C & 3 & 32 \\ \bottomrule
-\end{tabular}
-\end{center}
 
-	Esquema de reclasificación para combinar dos capas categóricas.
+===========  ==============  =====================
+Tipo         Valor original  Valor reclasificado 
+===========  ==============  =====================
+Suelo A      1               1 
+Suelo B      2               2
+Suelo C      3               4  
+Uso suelo A  1               8 
+Uso suelo B  2               16 
+Uso suelo C  3               32 
+===========  ==============  =====================
 
-
-.. _Tabla:Combinacion_capas_categoricas:
-\end{table} 
-
-\begin{table}
-\begin{center}
-\begin{tabular}{cll}\toprule
-Valor resultante & Tipo suelo & Tipo uso suelo \\ \midrule
-9 & Suelo A (1) & Uso suelo A (8) \\ 
-10 & Suelo B (2) & Uso suelo A (8) \\ 
-12 & Suelo C (4) & Uso suelo A (8) \\ 
-17 & Suelo A (1) & Uso suelo B (16) \\ 
-18 & Suelo B (2) & Uso suelo B (16) \\ 
-19 & Suelo C (4) & Uso suelo B (16) \\ 
-33 & Suelo A (1) & Uso suelo C (32) \\ 
-34 & Suelo B (2) & Uso suelo C (32) \\ 
-36 & Suelo C (4) & Uso suelo C (32) \\ \bottomrule
-\end{tabular}
-\end{center}
-
-	Explicación de valores resultantes de la combinación de dos capas categóricas.
-
-
-.. _Tabla:Combinacion_capas_categoricas2:
-\end{table}
+================  ============  ================
+Valor resultante  Tipo suelo    Tipo uso suelo 
+================  ============  ================
+9                 Suelo A (1)   Uso suelo A (8)
+10                Suelo B (2)   Uso suelo A (8)
+12                Suelo C (4)   Uso suelo A (8) 
+17                Suelo A (1)   Uso suelo B (16)
+18                Suelo B (2)   Uso suelo B (16)
+19                Suelo C (4)   Uso suelo B (16)
+33                Suelo A (1)   Uso suelo C (32)
+34                Suelo B (2)   Uso suelo C (32)
+36                Suelo C (4)   Uso suelo C (32)
+================  ============  ================
 
 Los SIG más comunes incorporan entre sus elementos funciones que simplifican este proceso y hacen innecesario operar de este modo, por lo que no es probable que apliques estos razonamientos manualmente. No obstante, resulta de interés el mostrar estas técnicas para estimular y desarrollar la capacidad de razonar espacial y numéricamente en base a los conceptos del álgebra de mapas, conociendo estos con detalle. 
 
@@ -327,9 +304,6 @@ Para realizar el recorte, la capa que define la zona de interés contiene valor 
 	Recorte de una capa empleando una mascara con celdas sin datos. La rampa de colores se ha variado en la capa recortada para ajustarse al nuevo rango de valores de esta.
 
 
- 
-
-
 También veremos más adelante que ese uso de mascaras tiene su equivalente vectorial, existiendo una operación de recorte para capas de datos vectoriales. 
 
 .. _Funciones_focales:
@@ -343,7 +317,7 @@ Las funciones de análisis focal operan sobre una sola capa de datos, asignando 
 .. _figfuncionesfocales:
 
 .. figure:: Funciones_focales.*
-	:width: 650px
+	:width: 500px
 
 	Las funciones de análisis focal analizan los valores de una celda y las situadas en un entorno de esta para obtener el valor resultante. En rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.
 
@@ -357,13 +331,12 @@ Las funciones focales más habituales emplean un entorno cuadrado :math:`3 \time
 
 Para definir las operaciones sobre esta ventana, es frecuente introducir una notación como la siguiente con el fin de simplificar las expresiones.
 
-\[
-\begin{tabular}{|c|c|c|} \hline
-:math:`z_1` & :math:`z_2` & :math:`z_3` \\ \hline
-:math:`z_4` & :math:`z_5` & :math:`z_6` \\ \hline
-:math:`z_7` & :math:`z_8` & :math:`z_9` \\ \hline
-\end{tabular}
-\]
+
+============  ============= ============
+:math:`z_1`   :math:`z_2`   :math:`z_3` 
+:math:`z_4`   :math:`z_5`   :math:`z_6` 
+:math:`z_7`   :math:`z_8`   :math:`z_9` 
+============  ============= ============
 
 siendo :math:`z_5` la celda central, la cual recibirá el valor resultante de la operación efectuada. Puesto que los análisis focales basados en esta ventana tipo son habituales, haremos uso de esta notación en diversos puntos dentro de esta parte del libro.
 
@@ -386,9 +359,7 @@ Con los valores de las celdas contenidas en la ventana de análisis pueden reali
 * Cálculo de descriptores estadísticos. Los más comunes son la media, la mediana, los valores extremos o el rango de valores. Para el caso de valores discretos, son comunes parámetros como el número de clases (número de celdas con distinto valor) dentro de la ventana de análisis.
 * Combinaciones lineales de la forma 
 
-.. _Eq:Convolucion:
-
-.. math::
+ .. math::
 
 	y=\frac{\sum_{i=1}^n z_i k_i}{\sum_{i=1}^n k_i} \ ; \ k_i \in \mathbb{R}
 
@@ -425,7 +396,7 @@ Con independencia de dicho tamaño de ventana, siempre vamos a tener algunas cel
 .. _figanalisisfocalbordes:
 
 .. figure:: Analisis_focal_bordes.*
-	:width: 650px
+	:width: 500px
 
 	En las celdas de borde la ventana de análisis no puede definirse en su totalidad. Las celdas en rojo representan celdas fuera de la capa para las cuales no existe información.
 
@@ -442,7 +413,7 @@ Las funciones de análisis zonal asocian a cada celda valores relativos no a dic
 .. _figfuncioneszonales:
 
 .. figure:: Funciones_zonales.*
-	:width: 650px
+	:width: 550px
 
 	Las funciones de análisis zonal analizan los valores de todas las celdas asociadas a una misma clase cada para obtener el valor resultante. En rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.
 
@@ -466,16 +437,10 @@ La definición del conjunto de celdas relacionadas con una dada puede realizarse
 
 En el caso de las pérdidas por subcuencas, calculábamos con los valores del conjunto de celdas pertenecientes a cada clase su media aritmética, pero pueden aplicarse igualmente diversos descriptores estadísticos o funciones más complejas, al igual que ya vimos en los otros tipos de funciones. 
 
-Los valores a asignar a cada clase pueden extraerse también de la propia capa de clases, no siendo necesaria otra capa. En este caso, estos valores resultantes suelen tener relación no con un parámetro adicional, sino con la geometría de cada clase. Por ejemplo, la superficie o el perímetro de cada tesela pueden recogerse como valores asociados a esta, tal y como puede verse en la figura :num:`#figareaporsubcuencas`. 
+Los valores a asignar a cada clase pueden extraerse también de la propia capa de clases, no siendo necesaria otra capa. En este caso, estos valores resultantes suelen tener relación no con un parámetro adicional, sino con la geometría de cada clase. Por ejemplo, la superficie o el perímetro de cada tesela pueden recogerse como valores asociados a esta. 
 
 Este es un tipo análisis muy frecuente en el estudio del paisaje (lo veremos en el capítulo :ref:`Ecologia`), y el número de parámetros que pueden obtenerse por análisis zonal a partir de una única capa de clases es muy elevado. Junto a parámetros sencillos como la citada superficie o el perímetro, otros parámetros más complejos pueden servir para recoger la configuración estructural de las teselas, su riqueza y variabilidad, la fragmentación, etc  :cite:p:`referenciaFragstats`. 
 
-.. _figareaporsubcuencas:
-
-.. figure:: Area_por_subcuencas.*
-	:width: 650px
-
-	Capa con valores de área total para cada una las distintas subcuencas, obtenidas mediante una función de análisis zonal con una sola capa.
 
 
 .. _Funciones_globales:
@@ -488,7 +453,7 @@ Las funciones globales son aquellas que utilizan la totalidad de valores de la c
 .. _figfuncionesglobales:
 
 .. figure:: Funciones_globales.*
-	:width: 650px
+	:width: 750px
 
 	Las funciones de análisis global analizan el conjunto de valores de una capa para obtener un valor resultante, que puede ser tanto un objeto geográfico (capa ráster o vectorial) como un valor escalar sencillo, una tabla u otro tipo de resultado.
 
@@ -501,7 +466,7 @@ Por ejemplo, los valores máximo y mínimo de la capa que son necesarios para no
 .. _figperfil:
 
 .. figure:: Perfil.*
-	:width: 650px
+	:width: 750px
 
 	Dada una ruta y una capa, podemos obtener un perfil de valores a lo largo de la ruta mediante una función global.
 
@@ -538,16 +503,17 @@ Los métodos más habituales de remuestreo son los siguientes:
 
 
 
-.. math::
+ .. math::
 
 	z_{(i',j')}&=&z_{(i,j)}R(-a)R(b)+z_{(i,j+1)}R(a)R(-(1-b))+{} \nonumber \\ 
 	& & {}+z_{(i+1,j)}R(1-a)R(b)+ \nonumber \\ 
 	& & {}+z_{(i+1,j+1)}R(1-a)R(-(1-b))
 
 
-donde :math:`R(x)` es una función triangular de la forma 
 
-.. math::
+ donde :math:`R(x)` es una función triangular de la forma 
+
+ .. math::
 
 	R(x) = \left \{ 
 	\begin{array}{ll}
@@ -558,17 +524,17 @@ donde :math:`R(x)` es una función triangular de la forma
 * Interpolación bicúbica. La interpolación bicúbica es un método de interpolación multivariante bidimensional que emplea un polinomio de tercer grado para cada una de las direcciones. Son necesarias :math:`16` celdas en lugar de las :math:`4` de la bilineal, lo que hace que el método sea más exigente en términos de proceso.
 Para el caso habitual de emplear como función interpolante un spline cúbico, se tiene
 
-.. math::
+ .. math::
 
 	z_{(i',j')}=\sum^2_{m=-1}\sum^2_{n=-1}z_{(i+m,j+n)}R(m-a)R(-(m-b))
 
-.. math::
+ .. math::
 
 	R(x)=\frac{1}{6}((x+2)^3_+-4(x+1)^3_++6(x)^3_+-4(x-1)^3_+)
 
-siendo 
+ siendo 
 
-.. math::
+ .. math::
 
 	(x)^m_+ = \left \{ 
 	\begin{array}{ll}
@@ -614,7 +580,7 @@ Formalización y extensión del álgebra de mapas
 
 Aunque en la práctica los conceptos definidos por Tomlin son la base para la implementación genérica de algoritmos, diversos autores han intentado extender estos conceptos y formalizarlos de una forma más general. Aunque tratar estos sistemas escapa al alcance de este texto, resulta de interés mencionar algunas de las propuestas.
 
- :cite:p:`Camara2005SimpoBras` propone un nuevo álgebra de mapas al que se incorporan predicados topológicos y direccionales. Esta definición permite la realización de operaciones que el álgebra de Tomlin no contempla, ya que, como demuestran, es un caso particular del anterior.
+:cite:p:`Camara2005SimpoBras` propone un nuevo álgebra de mapas al que se incorporan predicados topológicos y direccionales. Esta definición permite la realización de operaciones que el álgebra de Tomlin no contempla, ya que, como demuestran, es un caso particular del anterior.
 
 La propuesta de  :cite:p:`Takeyama1997IJGIS` con su *geo--álgebra* es distinta, y se encamina a una formalización matemática completa de las operaciones espaciales. En ella, no solo se contemplan los datos espaciales, sino también los procesos existentes. Así, se extiende no solo el álgebra de operaciones, sino el concepto de mapa a través de los nuevos conceptos de mapa *relacional* y *meta--relacional*. La integración de modelos basados, por ejemplo, en autómatas celulares, es posible dentro del marco de este geo--álgebra
 
