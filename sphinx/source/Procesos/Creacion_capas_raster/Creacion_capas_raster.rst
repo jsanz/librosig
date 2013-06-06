@@ -472,7 +472,7 @@ No existe un método universalmente establecido como más adecuado en todas situ
 .. figure:: Kriging_resultados.*	
 	:width: 650px
 
-	Distintos resutlados obtenidos por kriging a partir de un mismo juego de puntos, utilizando diferentes ajustes. 
+	Distintos resultados obtenidos por kriging a partir de un mismo juego de puntos, utilizando diferentes ajustes. 
 
  
 

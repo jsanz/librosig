@@ -295,7 +295,7 @@ Con estos valores ya tenemos el vector gradiente, y aplicando la ecuación de la
 	s=\arctan(\sqrt{p^2+q^2})
 
 
-Si empeamos en su lugar el modelo introducido propuesto por :cite:p:`Zevenbergen1987ESPL`, derivando y haciendo :math:`x=y=0`, se obtiene también que 
+Si empleamos en su lugar el modelo introducido propuesto por :cite:p:`Zevenbergen1987ESPL`, derivando y haciendo :math:`x=y=0`, se obtiene también que 
 
 
 .. math::
@@ -368,7 +368,6 @@ La formula anterior no se encuentra definida en aquellas celdas para las cuales 
 	}(p)\right] - \frac{180}{\pi} \cdot \mathrm{sign }(p) \\ & \cdot
 	\arccos \frac{-q}{\sqrt{p^2+q^2}}
 	\end{split}
-	\end{equation}
 
 siendo :math:`\mathrm{sign}(x)` la función definida por
 
@@ -547,10 +546,12 @@ Aplicando este concepto al cálculo de la energía en una celda dada, esta puede
 
 Esta aproximación es sumamente útil si se dispone de datos puntuales procedentes de piranómetro, ya que, tomando dichos datos como referencia ---esto es, conociendo el valor exacto de :math:`E_0`---, se podrían calcular las restantes celdas de la malla aplicando la anterior relación. 
 
+.. _Curvaturas:
+
 Medidas basadas en derivadas de segundo grado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _Curvaturas:
+
 
 Las medidas geométricas basadas en derivadas de segundo grado aportan información sobre la concavidad o convexidad de la superficie en un punto dado. El parámetro que expresa esa información se denomina *curvatura*.
 
@@ -810,9 +811,9 @@ Zonas llanas
 
 Sea la siguiente ventana de análisis:
 
-\begin{center}
-\includegraphics[width=.3\mycolumnwidth]{Geomorfometria/EjZonas_planas.pdf} 
-\end{center}
+
+.. image:: EjZonas_planas.*
+
 
 Puesto que no existe pendiente entre la celda central y las circundantes, no es posible asignar una dirección de flujo a la celda central. Incluso en el caso de no utilizar el D8, tampoco sería posible, ya que otros algoritmo utilizan principios similares o se basan en la orientación, la cual no se encuentra definida para celdas sin pendiente, como vimos en :ref:`Eq:Orientacion2`. La intuición y la mera observación nos dicen, no obstante, que el agua se desplazará a través del relieve definido por la anterior ventana.
 
@@ -820,16 +821,14 @@ En realidad, puede considerarse que las zonas planas son un artificio dentro de 
 
 Supongamos que la anterior ventana se encuentra dentro de un área más amplia con los siguiente valores:
 
-\begin{center}
-\includegraphics[width=.3\mycolumnwidth]{Geomorfometria/EjZonas_planas2.pdf} 
-\end{center}
+.. image:: EjZonas_planas2.*
 
 En este caso, resulta fácil intuir que el flujo se desplazará de Este a Oeste, de las zonas de mayor elevación a las de menor. El relieve circundante contiene, pues, información que puede utilizarse para asignar los valores dentro de la zona llana.
 
 Existen dos formas de aplicar estas ideas para dar solución al problema:
 
 
- * Asignar la dirección de flujo en la zona llana en función de las direcciones en las zonas circundantes donde los algoritmos correspondientes puedan ser aplicados.
+* Asignar la dirección de flujo en la zona llana en función de las direcciones en las zonas circundantes donde los algoritmos correspondientes puedan ser aplicados.
 * Modificar las elevaciones de la zona llana, añadiéndoles una pendiente que refleje la tendencia del relieve y la transición entre las zonas circundantes de mayor y menor elevación.
 
 
@@ -878,25 +877,22 @@ Para ello, define dos capas de elevaciones modificadas, una reflejando cada uno 
 
 
 
+.. _Depresiones:
 
 Depresiones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _Depresiones:
 
 Sea la siguiente ventana de análisis:
 
-\begin{center}
-\includegraphics[width=.3\textwidth]{Geomorfometria/EjDepresion.pdf} 
-\end{center}
+
+.. image:: EjDepresion.*
 
 Nos encontramos con un problema similar al anterior, ya que todas las pendientes desde la celda central son positivas, y no existe ninguna dirección de flujo que represente un movimiento hacia aguas abajo. En la realidad, no obstante, una depresión como la anterior no hace que el agua detenga su movimiento. El flujo rellenará la depresión y verterá por la celda de menor elevación, continuando su camino.
 
 Una depresión no siempre lleva implícita la imposibilidad de asignar una dirección de flujo a todas sus celdas. Sea el siguiente fragmento de un MDE.
 
-\begin{center}
-\includegraphics[width=.3\textwidth]{Geomorfometria/EjDepresion2.pdf} 
-\end{center}
+.. image:: EjDepresion2.*
 
 
 En este caso, de las dos celdas de la depresión, solo una de ellas no tiene dirección de flujo (de elevación 57), pero en la otra (de elevación 58) esta es incorrecta, puesto que vierte sobre la primera y la tendencia natural del terreno es la contraria. El proceso que tiene lugar será bien distinto, ya que el flujo rellenará la depresión y saldrá de esta desde la celda de elevación 58 y hacia la de menor elevación de su entorno, en este caso 59.
@@ -904,7 +900,7 @@ En este caso, de las dos celdas de la depresión, solo una de ellas no tiene dir
 Las depresiones, especialmente las que están formadas por un número pequeño de celdas o incluso una sola celda, son en general producto de los procesos de interpolación que tienen lugar para la creación del MDE. No obstante, puede deberse a otras razones. Distinguimos según esto los siguientes tipos de depresiones  :cite:p:`Hengl2008Elsevier`.
 
 
- * Depresiones artificiales debidas a los procesos de creación del MDT
+* Depresiones artificiales debidas a los procesos de creación del MDT
 * Depresiones naturales que deben ser eliminadas, tales como lagos o embalses, ya que en realidad estas depresiones se encuentran llenas y se produce un flujo sobre ellas.
 * Depresiones naturales que no deben ser eliminadas, tales como las las existentes en zonas kársticas, que suponen efectivamente un impedimento para el flujo.
 
@@ -933,9 +929,9 @@ La figura :num:`#figllenadodepresiones` presenta un esquema comparativo de los d
 
 
 
- :cite:p:`Planchon2001Catena` propone una solución con un planteamiento radicalmente opuesto. En este caso el algoritmo trabaja *inundando* la totalidad el MDT ---elevando la cota de todo él como si hubiera un exceso de agua a lo largo de toda su extensión--- y posteriormente retirando dicha capa de agua a excepción de en las depresiones, donde esta se queda y las llena, eliminándolas así.
+:cite:p:`Planchon2001Catena` propone una solución con un planteamiento radicalmente opuesto. En este caso el algoritmo trabaja *inundando* la totalidad el MDT ---elevando la cota de todo él como si hubiera un exceso de agua a lo largo de toda su extensión--- y posteriormente retirando dicha capa de agua a excepción de en las depresiones, donde esta se queda y las llena, eliminándolas así.
 
-La figura (:num:`#figplanchon`) muestra un sencillo esquema del funcionamiento de esta formulación.
+La figura :num:`#figplanchon` muestra un sencillo esquema del funcionamiento de esta formulación.
 
 .. _figplanchon:
 
@@ -964,7 +960,7 @@ El D8 es, por su simplicidad, el más didáctico de los métodos, y permite comp
 .. _figareaacumuladad8:
 
 .. figure:: Area_acumulada_D8.*
-	:width: 650px
+	:width: 500px
 
 	El área acumulada de una celda dada (en rojo) es la suma de las áreas de las celdas conectadas con esta y situadas aguas arriba (en azul). Los trazos indican la conectividad entre celdas según el modelo D8
 
@@ -990,7 +986,7 @@ En la figura :num:`#figareaacumulada` puede verse el mapa de área acumulada par
 .. _figareaacumulada:
 
 .. figure:: Area_acumulada.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de área acumulada. Se ha utilizado una representación logarítmica para aumentar la información visual proporcionada la imagen)
 
@@ -1005,7 +1001,7 @@ De igual modo, pueden emplearse algunos de los parámetros que hemos desarrollad
 .. _figpendienteacumulada:
 
 .. figure:: Pendiente_acumulada.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de pendiente media aguas arriba
 
@@ -1019,7 +1015,7 @@ Empleando un enfoque similar basado en el estudio de direcciones de flujo y cone
 .. _figlongitudflujo:
 
 .. figure:: Longitud_flujo.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de longitud de flujo desde aguas arriba
 
@@ -1030,7 +1026,7 @@ Empleando un enfoque similar basado en el estudio de direcciones de flujo y cone
 .. _figordenstrahler:
 
 .. figure:: Orden_strahler.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de órdenes de Strahler.
 
@@ -1048,7 +1044,7 @@ La figura :num:`#figcontaminacionborde` muestra la porción del MDE de ejemplo q
 .. _figcontaminacionborde:
 
 .. figure:: Contaminacion_borde.*
-	:width: 650px
+	:width: 450px
 
 	MDE tras aplicar una máscara basada en contaminación de borde. Las celdas con valores son las únicas para las que puede calcularse el área acumulada de forma fiable.
 
@@ -1123,7 +1119,7 @@ La figura :num:`#figceldasconcavaspeucker` muestra gráficamente la aplicación 
 .. _figceldasconcavaspeucker:
 
 .. figure:: Celdas_concavas_peucker.*
-	:width: 650px
+	:width: 550px
 
 	Identificación de celdas de valle según  :cite:p:`Peuker1975CGIP. En cada pasada se señala la celda más elevada de cada cuatro. Las celdas no señaladas al final del proceso constituyen las celdas de valle.`
 
@@ -1135,14 +1131,16 @@ Con respecto a la extracción de redes de drenaje, existe una preparación del M
 
 Si se dispone de una red de drenaje (por ejemplo, obtenida por digitalización de cartografía clásica de la red fluvial), podemos modificar el MDE para que la red de drenaje que posteriormente extraigamos de él coincida con esa red que conocemos a priori. Este encauzamiento forzado se efectúa a través de la modificación de las cotas de las celdas implicadas.
 
-Las celdas a modificar son, en el caso más habitual, aquellas sobre las que se sitúan los cauces que conocemos de antemano. La elevación de estas debe reducirse en un valor fijo :math:`h` que haga que las celdas adyacentes viertan obligatoriamente sobre ellas.Este proceso se conoce habitualmente como *river burning*\footnote{Literalmente, *quemar los rios* sobre el MDE, ya que es como si su forma fuera marcada a fuego sobre este.}
+Las celdas a modificar son, en el caso más habitual, aquellas sobre las que se sitúan los cauces que conocemos de antemano. La elevación de estas debe reducirse en un valor fijo :math:`h` que haga que las celdas adyacentes viertan obligatoriamente sobre ellas.Este proceso se conoce habitualmente como *river burning*, en su denominación en inglés.
 
- :cite:p:`Turcotte2001JH` propone una solución más compleja en la que las celdas de cauce se modifican todas ellas en un valor fijo, y aquellas situadas de las celdas de cauce a una distancia menor que un determinado umbral establecido se modifican igualmente, pero este caso en función de dicha distancia. De esta forma, la transición entre las celdas de cauce forzadas y las circundantes se produce de forma suave.
+:cite:p:`Turcotte2001JH` propone una solución más compleja en la que las celdas de cauce se modifican todas ellas en un valor fijo, y aquellas situadas de las celdas de cauce a una distancia menor que un determinado umbral establecido se modifican igualmente, pero este caso en función de dicha distancia. De esta forma, la transición entre las celdas de cauce forzadas y las circundantes se produce de forma suave.
+
+.. _Delimitacion_cuencas:
 
 Delimitación y caracterización de cuencas vertientes
 -------------------------------------------------------------- 
 
-.. _Delimitacion_cuencas:
+
 
 Juntos a los cauces, las cuencas vertientes son los otros objetos geográficos con significado hidrológico que pueden extraerse del análisis del MDE. Dada una celda de salida, su cuenca vertiente estará compuesta por todas las celdas aguas arriba de la misma. Estas celdas son las que, sumando su superficie total, nos daban el valor de área acumulada. En este caso, no obstante, el resultado del análisis no es el valor de dicho área, sino el espacio geográfico concreto que ocupa.  Además de ésto, para las celdas interiores a la cuenca pueden calcularse valores relacionados con la propia estructura de la cuenca, así como otros que pueden utilizarse para caracterizar esta y realizar un análisis hidrológico más exhaustivo.
 
@@ -1158,18 +1156,13 @@ Con el conocimiento de las direcciones de flujo y las conexiones entre celdas, e
 
 	Comparación entre una cuenca calculada mediante el método FD8 (a) y otra aplicando el método D8 (b). Las celdas en color gris solo aportan parte de su flujo a la unidad hidrológica. El punto rojo señala el punto de cierre.
 
-
- 
-
-
 Nótese que, aunque ambas cuencas sufren el efecto de la contaminación de borde, la calculada por el método FD8 lo hace en mayor medida. Es decir, el algoritmo de flujo puede condicionar la extensión de la cuenca vertiente y con ello efectos tales como el de contaminación de borde.
 
 Por medio de un análisis similar al anterior podemos no solo calcular la cuenca a un punto dado, sino subdividir esta en subunidades hidrológicas menores. El conjunto de estas subunidades conforma una teselación del espacio ocupado por la cuenca en subcuencas independientes.
 
 Existen dos formas principales de subdividir una cuenca, requiriéndose información adicional además de la localización de la celda de salida:
 
-
- * Mediante celdas de salida adicionales correspondientes a cada subcuenca
+* Mediante celdas de salida adicionales correspondientes a cada subcuenca
 * Mediante un umbral de tamaño máximo de las subcuencas.
 
 
@@ -1186,63 +1179,133 @@ Si asignamos ordenes jerárquicos de Shreve  :cite:p:`Shreve1966JGeol`, tendremo
 	División de una cuenca en subcuencas con puntos de salida en confluencias con variación de órdenes de a)
 
 
- 
-
-
 El otro método de subdivisión no requiere el empleo de otras celdas de salida además de la correspondiente a la cuenca global. Las subcuencas se establecen de tal modo que todas ellas tienen un superficie similar, la cual condiciona el número de estas que aparecen. 
 
-%Un ejemplo de este tipo de subdivisión lo encontramos en la figura :num:`#figsubcuencasmismoarea`.
 
 
-%.. _figtiempossalida:
+
+
+
+
+
+Caracterización
+~~~~~~~~~~~~~~~~
+
+La información sobre la superficie y forma de la cuenca, así como la de los valores interiores de la misma y las relaciones hidrológicas entre sus celdas, son la base para elementos de caracterización de la cuenca vertiente.
+
+En primer lugar, tenemos el área y perímetro de la cuenca, parámetros clásicos sencillos de calcular sobre la capa que define la cuenca, bien contando las celdas o las celdas de borde. El centro de masas del conjunto de celdas es el centro de masas de la cuenca, de interés para el cálculo de parámetros accesorios con significado hidrológico.
+
+Como ya vimos en \ref{Funciones_globales}, la capa con la cuenca puede usarse como máscara para limitar las celdas con valores válidos de una determinada variable a aquellas dentro de la cuenca. Haciendo esto, el histograma de frecuencia de estos valores o una curva hipsográfica calculada con ellos sirve como descriptor de la cuenca.\index{Curva!hipsográfica}
+
+Un parámetro de interés es la distancia de flujo desde cada celda hasta el punto de salida. Suponiendo una velocidad media en las celdas de la cuenca, estas distancias pueden convertirse en tiempos de salida. La estimación de la velocidad constante puede hacerse, por ejemplo, utilizando el tiempo de concentración de la cuenca. El histograma de frecuencias de estos puede emplearse para obtener un hidrograma unitario de la cuenca (Figura \ref{Fig:Tiempos_salida}).\index{Hidrogama unitario}\index{Tiempo de concentración}
 
 .. figure:: Tiempo_salida.*
-	:width: 650px
 
-	a) Mapa de tiempos de salida suponiendo velocidad constante. b) Histograma de frecuencias asociado.
+	Mapa de tiempos de salida suponiendo velocidad constante (a). Histograma de frecuencias asociado (b)
+
+El cálculo puede hacerse de forma más precisa si se suponen distintas velocidades en los cauces y fuera de ellos. \cite{Garrote1995JH} propone una relación de la forma
+
+.. math::
+	
+	V_{\mathit{ladera}}=\frac{V_{\mathit{cauce}}}{k}
+
+donde :math:`k` se sitúa según el autor en el intervalo de valores 10-15. 
+
+Se puede plantear un modelo más detallado si se consideran las condiciones particulares de cada celda (pendiente, área acumulada, rugosidad hidráulica, etc.), y se asigna una velocidad individual a cada uno en función de ellos. En \cite{AlSmadi1998PhD} puede encontrarse un modelo de estas características en el cual las celdas se dividen en tres grupos en función de su área acumulada, aplicándose formulaciones distintas para cada uno de ellos.
 
 
- 
+Índices hidrológicos
+----------------------
+
+Con todos los parámetros, tanto hidrológicos como morfométricos, que hemos visto hasta el momento, disponemos de una gran cantidad de información acerca del relieve. Combinando estos se pueden crear nuevos índices hidrológicos que caractericen de forma más precisa el comportamiento hidrológico de cada celda. Tres son los principales índices.
 
 
-El cálculo puede hacerse de forma más precisa si se suponen distintas velocidades en los cauces y fuera de ellos.  :cite:p:`Garrote1995JH` propone una relación de la forma
+* Índice topográfico de humedad
+* Índice de potencia de cauce
+* Factor topográfico LS
+
+
+Todos ellos se basan en la pendiente y en el área acumulada específica como parámetros básicos\index{Pendiente}
+
+El *índice topográfico de humedad :cite:p:`Beven1979HS` se define como
 
 .. math::
 
-	V_{\mathit{ladera}}=\frac{V_{\mathit{cauce}}}{k}
+	I=\ln \frac{a'}{\tan s}
 
+donde :math:`a'` es el área acumulada específica y :math:`s` la pendiente.
 
-donde :math:`k` se sitúa según el autor en el intervalo de valores 10--15. 
+Es habitual sustituir la pendiente nula por una de valor muy pequeño, del orden de 0,0001\% por ejemplo, para evitar que el índice no quede definido en celdas planas.
 
-Se puede plantear un modelo más detallado si se consideran las condiciones particulares de cada celda (pendiente, área acumulada, rugosidad hidráulica, etc.), y se asigna una velocidad individual a cada uno en función de ellos. En  :cite:p:`AlSmadi1998PhD` puede encontrarse un modelo de estas características en el cual las celdas se dividen en tres grupos en función de su área acumulada, aplicándose formulaciones distintas para cada uno de ellos.
+Detrás de su aspecto sencillo, este índice esconde una gran cantidad de información. Originalmente fue definido con objeto de expresar la relación entre la morfología del relieve y la acumulación de agua en el suelo, responsable esta a su vez de la escorrentía generada, velocidad de flujo, etc. En particular, un uso principal de este índice es el relacionado con la producción de escorrentía bajo el supuesto de que esta se produce en presencia de una saturación de agua en el suelo, momento en el que nivel freático alcanza la superficie.\index{Escorrentía}
 
-% .. _figindicetopografico:
+Valores altos del índice implican zonas con baja pendiente o con gran cantidad de área acumulada. Por tanto, se trata de celdas a las que llegarán flujos abundantes y que no evacuan bien dicho flujo, teniendo tendencia a acumular humedad. Por el contrario, las celdas con valores bajos, con elevada pendiente y baja área acumulada, serán celdas en las que no se encontrará humedad edáfica.
+
+La figura :num:`#figindicetopografico` muestra el mapa de este parámetro.
+
+.. _figindicetopografico:
 
 .. figure:: Indice_humedad.*
-	:width: 650px
 
 	Mapa de índice topográfico de humedad.
 
+De formulación similar el anterior, el \emph{índice de potencia de cauce} caracteriza la energía de los flujos a través de cada celda. Su expresión es la siguiente:
 
+.. math::
+	
+	P=a's
 
+Valores altos tanto de área acumulada como de pendiente, ambos implican una mayor energía del flujo. En un caso, porque este flujo sera abundante, y en otro porque llevará una mayor velocidad.
 
+Por último, el factor LS de la Ecuación Universal de Pérdidas de Suelo, originalmente basado en la longitud de la pendiente y su magnitud, se sustituye por la siguiente expresión :cite:p:`Moore1992JSWC`, empleando el área acumulada específica:
 
-De formulación similar el anterior, el *índice de potencia de cauce* caracteriza la energía de los flujos a través de cada celda. Su expresión es la siguiente:
+.. math::
+	
+	LS=\left(\frac{a'}{22,13}\right)^m\left(\frac{\sin \beta}{0,0896}\right)^n
+
+donde :math:`m` y :math:`n` son parámetros a establecer empíricamente, para los cuales :cite:p:`Moore1992JSWC` demuestran que, con laderas menores de 100 metros de longitud y pendientes hasta 14 :math:`^\circ` los valores :math:`m=0.6` y :math:`n=1.4` dan resultados ajustados a las formulaciones originales. Por su parte, :cite:p:`Foster1990Wiley` propone unos valores de $m=n=1$ para el caso en que la erosión predominante sea de tipo laminar, o bien :math:`m=1.6` y :math:`n=1.3` en caso de que exista predominio de erosión en regueros. 
+
+El hecho de emplear área acumulada en lugar de la longitud de pendiente hace que se tengan en cuenta factores como la convergencia de flujo, no contemplados en la formulación original.
+
+Visibilidad
+------------
+
+Las formas del relieve condicionan la visibilidad entre puntos del MDE, pudiendo bloquear la línea de visión entre ellos. Un análisis de visibilidad permite saber si dos celdas tienen conexión visual o conocer qué otras celdas son visibles desde una celda dada. Puesto que el concepto de visibilidad es recíproco, esto es equivalente a calcular qué otras celdas ven a una celda dada.
+
+El conjunto de celdas relacionadas visualmente con una concreta conforman la *cuenca visual* asociada a esta. El cálculo de la cuenca visual implica el estudio de todas las direcciones en las que la luz llega a (o parte de) la celda, analizando para cada una de ellas una *linea de visión*.
+
+Cada línea de visión pasa por una serie de celdas, las cuales serán visibles o no en función de las formas del relieve que se interpongan entre estas y la celda central que define la cuenca visual. Para calcular si cada una de estas celdas A es visible desde la central B, calculamos el ángulo de la línea que las une, según
 
 .. math::
 
-	P=a's
+	\alpha = arctan \left(\frac{z_b - z_a}{d_{AB}}\right)
 
 
-Valores altos tanto de área acumulada como de pendiente, ambos implican una mayor energía del flujo. En un caso, porque este flujo sera abundante, y en otro porque llevará una mayor velocidad.
-% 
-% .. _figcuencavisual:
+siendo :math:`d_{AB}` la distancia entre :math:`A` y :math:`B`. Si el ángulo formado por cualquier otra celda, $B'$, más próxima a :math:`A` que :math:`B` es mayor, entonces :math:`B` no es visible desde :math:`A`. El procedimiento puede ilustrarse con un pequeño ejemplo numérico como el siguiente.
+
+Sobre la capa ráster de la figura \ref{Fig:Raster_peque}, definimos una linea de visión entre las celdas superior e inferior de la columna izquierda. Si suponemos un tamaño de celda igual a 1, los valores de los ángulos y si son visibles o no desde la primera celda (la de la esquina superior izquierda) se presentan en la tabla siguiente.
+
+
+==========  ========= ================ ======================= ===============
+Fila, col.  :math:`H` :math:`\Delta H` :math:`\Delta H/ Dist.`  Visible sí/no 
+==========  ========= ================ ======================= ===============
+1,2         14         4                4                       Visible 
+1,3         19         9                4.5                     Visible 
+1,4         22         12               4                       No visible 
+1,5         24         14               3.5                     No visible 
+1,6         23         13               2.6                     No visible 
+==========  ========= ================ ======================= ===============
+
+Aunque existen similitudes entre el concepto de una cuenca hidrológica y una cuenca visual, esta última no ha de estar necesariamente formada por un único polígono, sino que puede componerse de varios polígonos aislados entre sí. Igualmente, no existe una relación entre las celdas de la cuenca (no han de verse entre sí), al contrario de lo que ocurre en la cuenca hidrológica donde sí se da esta relación.
+
+En el cálculo de visibilidades, ha de incorporarse asimismo el significado físico del fenómeno analizado. Dos puntos a una distancia de muchos kilómetros, si no existe relieve entre ellos, resultarán como visibles entre si efectuamos un análisis como el descrito. No obstante, por las propias limitaciones de la visión humana, así como por efectos atmosféricos y otros factores, no es lógico pensar que tales puntos puedan verse. El análisis visual debe, por tanto, limitarse a una distancia acorde con el proceso modelizado.
+
+En la figura :num:`figcuencavisual` puede verse la cuenca visual asociada a una celda concreta.
 
 .. figure:: Cuenca_visual.*
-	:width: 650px
+	:width: 450px
 
-	Cuenca visual asociada a un punto dado (en rojo). Se ha supuesto una altura del objeto de 20 metros. 
-
+	Cuenca visual asociada a un punto dado (en rojo). Se ha supuesto una altura del objeto de 20 metros.
 
 
 
@@ -1252,26 +1315,12 @@ Partiendo de este razonamiento, podemos extender el concepto de visibilidad, y g
 
 Para calcular el tamaño relativo de un objeto dimensión :math:`h` visto desde una celda concreta, se utiliza la expresión
 
-.. _Eq:chA06:RelativeSize:
-
 .. math::
 
 	{\sf{TAM}} = \arctan \left({\frac{h}{d_{AB}}}\right)
 
 
 siendo :math:`d_{AB}` la distancia entre la celda donde reside el objeto y la celda del observador. 
-
-%En la figura :num:`#figvisibilidadtamano` puede verse el tamaño relativo con el que se ve un objeto de 20 metros de alto desde los distintos puntos de la cuenca visual asociada al mismo.
-
-%.. _figvisibilidadtamano:
-
-.. figure:: Visibilidad_tamano.*
-	:width: 650px
-%
-	Tamaño relativo de un punto (en rojo) de 20 metros de alto, desde los puntos desde los cuales es visible. 
-
-
-%
 
 Esta altura que se añade a las celdas donde emplazamos un objeto, en realidad también puede añadirse a las restantes, ya que el observador también tiene una altura dada. En general, no obstante, tiende a no utilizarse esta. Nótese que añadir una altura a un objeto cambia en cierta medida el concepto de visibilidad, ya que, según el caso analizado, implicara ver el objeto en su totalidad, y no solo la parte superior que marca la altura máxima.
 
@@ -1282,11 +1331,9 @@ El resultado de este análisis de visibilidad repetido se conoce como *exposici�
 .. _figexposicionvisual:
 
 .. figure:: Exposicion_visual.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de exposición visual de un cauce, reflejando el número de celdas pertenecientes a este que son visibles desde cada una de las restantes, ponderadas por su importancia jerárquica en la red de drenaje. 
-
-
 
 
 Relacionado con la exposición visual, encontramos otros análisis derivados, de gran importancia en muchos estudios. Uno de ellos es el análisis de cobertura, que pretende calcular las formas óptimas de cubrir un terreno, de forma que un numero mínimo de observadores pueda observar la totalidad de un área. Dos son los análisis principales en este sentido: determinar el número mínimo de puntos y su localización para que todo un área quede bajo observación, o determinar la localización de un número :math:`n` de puntos que hace máxima el área observada.
@@ -1319,37 +1366,29 @@ Una primera clasificación la podemos obtener a partir del análisis de curvatur
 	Caracterización de procesos de acumulación según los valores de las curvaturas horizontal y vertical asociadas
 
 
- 
-
 
 Recordando el significado de las curvaturas, tendremos procesos de acumulación en las celdas con ambas curvaturas concavas, ya que el flujo se concentrará y tenderá a frenarse. Del mismo modo, las celdas con ambas curvaturas convexas registrarán procesos de dispersión. Entre estas, las combinaciones restantes identifican zonas de tránsito con diversas características.
 
-Con un planteamiento similar,  :cite:p:`Wood1996PhD` propone una división en 6 formas del relieve a partir de los valores de las segundas derivadas (Cuadro :ref:`Tabla:Clasificacion_curvaturas`).
-
-\begin{table}[!h]
- \centering
-\begin{tabular}{lllll}\toprule
-Tipo & :math:`\frac{\partial^2 z}{\partial x}` & :math:`\frac{\partial^2 z}{\partial y}` \\ \midrule
-Cima &+&+\\
-Collado(Punto de silla) &+&-\\
-Cresta &+&0\\
-Plano &0&0\\
-Cauce &-&0\\
-Depresión &-&-\\ \bottomrule
-\end{tabular}
-
-	Clasificación de formas del terreno en función de segundas derivadas, según  :cite:p:`Wood1996PhD.`
+Con un planteamiento similar,  :cite:p:`Wood1996PhD` propone una división en 6 formas del relieve a partir de los valores de las segundas derivadas 
 
 
-.. _Tabla:Clasificacion_curvaturas:
-\end{table}
+========================= ========================================== ===========================================
+Tipo                        :math:`\frac{\partial^2 z}{\partial x}`  :math:`\frac{\partial^2 z}{\partial y}` 
+========================= ========================================== ===========================================
+Cima                                         +                                       +
+Collado(Punto de silla)                      +                                       -
+Cresta                                       +                                       0
+Plano                                         0                                      0
+Cauce                                        -                                       0
+Depresión                                    -                                       -
+========================= ========================================== ===========================================
 
 Otra metodología distinta y muy aceptada es la propuesta por  :cite:p:`Dikau1991USGS`. Con anterioridad a la aparición de los Modelos Digitales del Terreno,  :cite:p:`Hammond1954AAG` estableció una clasificación del relieve en base a tres parámetros: la pendiente, el relieve relativo y la forma del perfil. El relieve relativo es el rango de valores de elevación en un entorno dado del punto, y el tipo de perfil se calcula con la distribución de pendientes en los puntos circundantes. Esta clasificación da un total de 96 clases posibles, derivadas de la división de los anteriores parámetros base en cuatro, seis y cuatro clases respectivamente, así como la combinación posterior de los mismos. 
 
- :cite:p:`Dikau1991USGS` adapta este planteamiento al empleo de MDE, de tal modo que se obtienen de forma automática mapas de formas del relieve a partir de estos. Estableciendo una ventana de análisis de un tamaño fijo (9.6 km originalmente), el parámetro relativo a la pendiente se obtiene mediante el recuento de celdas en la ventana que superan un umbral dado (8\% en dicha formulación original). El valor de este recuento, expresado en porcentaje de celdas totales de la ventana, se divide en cuatro clases. 
+:cite:p:`Dikau1991USGS` adapta este planteamiento al empleo de MDE, de tal modo que se obtienen de forma automática mapas de formas del relieve a partir de estos. Estableciendo una ventana de análisis de un tamaño fijo (9.6 km originalmente), el parámetro relativo a la pendiente se obtiene mediante el recuento de celdas en la ventana que superan un umbral dado (8\% en dicha formulación original). El valor de este recuento, expresado en porcentaje de celdas totales de la ventana, se divide en cuatro clases. 
 
 
- * menos del 20\% de celdas con pendiente mayor que el umbral.
+* menos del 20\% de celdas con pendiente mayor que el umbral.
 * entre el 20 y el 50\% de celdas con pendiente mayor que el umbral.
 * entre el 50 y el 80\% de celdas con pendiente mayor que el umbral.
 * más del 80\% de celdas con pendiente mayor que el umbral.
@@ -1358,35 +1397,26 @@ Otra metodología distinta y muy aceptada es la propuesta por  :cite:p:`Dikau199
 Para el caso del relieve relativo, se establecen asimismo seis grupos, a aplicar sobre el rango de valores en la misma ventana utilizada para el parámetro anterior:
 
 
- * 0 -- 30 m
- * 30 -- 91 m
- * 91 -- 152 m 
- * 152 -- 305 m
- * 305 -- 915 m
+* 0 -- 30 m
+* 30 -- 91 m
+* 91 -- 152 m 
+* 152 -- 305 m
+* 305 -- 915 m
 * más de 915 m
 
 
 Por último, se define el tipo de perfil viendo si las celdas con pendiente mayor que el umbral tienen elevación mayor o menor que la central. Se definen las siguientes 4 clases.
 
 
- * menos del 25\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
- * entre el 25\% y el 50\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
- * entre el 50\% y el 75\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
- * más del 75\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
+* menos del 25\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
+* entre el 25\% y el 50\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
+* entre el 50\% y el 75\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
+* más del 75\% de celdas con pendiente mayor que el umbral situadas en zonas de mayor elevación.
 
 
 Un enfoque bien distinto es el basado en clasificación no supervisada. La formación del relieve es un proceso que depende de muchos factores, no únicamente los relativos a la morfometría local. Combinando algunos de los parámetros que hemos visto hasta el momento, pueden establecerse clasificaciones a partir de técnicas de clasificación no supervisada (las estudiaremos en el apartado :ref:`Clasificacion_no_supervisada`). Por ejemplo,  :cite:p:`Irvin1995ESRI` emplea como parámetros la propia elevación, la pendiente, las curvaturas horizontal y vertical, el índice topográfico y la radiación solar. Estableciendo un número de clases a definir, se obtienen una categorización de las celdas de acuerdo con las formas del relieve que representan.
 
 De igual modo, puede plantearse un análisis similar pero utilizando clasificación supervisada  :cite:p:`Hengl2003SSSA`, o emplear no una clasificación discreta, sino un basada en el uso de lógica difusa  :cite:p:`Burrough2000FSS`  :cite:p:`Irvin1995ESRI`  :cite:p:`Hengl2003ITC`. Veremos algunas ideas sobre lógica difusa más adelante en este libro, particularmente en el apartado :ref:`Creacion_capa_combinar`.
-
-% \begin{figure}[h]   
-% \centering
-% \includegraphics[width=.6\mycolumnwidth]{Clasificacion_formas_relieve.png}
-% 
-	Caracterización de formas del relieve a partir de clasificación no supervisada
-
-.. _figclasificacionformasrelieve: 
-% 
 
 
 
@@ -1400,6 +1430,3 @@ El análisis del MDE mediante funciones focales se puede llevar a cabo mediante 
 Dentro del análisis hidrológico, existen diversos métodos para la asignación de direcciones de flujo. El D8 es el más elemental de ellos, y constituye la base conceptual de gran parte de los restantes. Estos nos permiten establecer relaciones entre las celdas y proceder así a un estudio regional. El área aportante es el parámetro principal de dicho análisis, y se puede emplear como parámetro de apoyo para la extracción de redes de drenaje.
 
 La combinación de parámetros, en particular área aportante y pendiente, da lugar a índices hidrológicos de gran interés.
-
-%\bibliographystyle{unsrt}
-%\bibliography{../../Libro_SIG}
