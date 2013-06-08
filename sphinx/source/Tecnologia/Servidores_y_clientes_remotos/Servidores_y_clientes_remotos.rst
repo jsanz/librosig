@@ -42,7 +42,7 @@ Supongamos la dirección Web ``http://wiki.osgeo.org/wiki/Libro\_SIG``, en la cu
 
 * ``http:`` El protocolo a usar, que define la forma en que se van a comunicar cliente y servidor. Aunque este es el más habitual, existen muchos otros tales como ``ftp`` o ``mailto``. Puede encontrarse más acerca de estos protocolos en  :cite:p:`protocolosWeb`.
 * ``wiki.osgeo.org`` Esta cadena identifica la máquina donde reside la página que buscamos. Es en realidad una versión más legible para el ojo humano de un código numérico que indica la dirección concreta. El navegador lo convierte en realidad en algo como 128.118.54.228.
-* ``wiki/Libro\_SIG`` La página que buscamos dentro de todas las que hay en esa máquina. Se expresa como una ruta a partir del directorio raíz del servidor, que no es necesariamente el directorio raíz de la maquina servidora.
+* ``wiki/Libro_SIG`` La página que buscamos dentro de todas las que hay en esa máquina. Se expresa como una ruta a partir del directorio raíz del servidor, que no es necesariamente el directorio raíz de la maquina servidora.
 
 
 

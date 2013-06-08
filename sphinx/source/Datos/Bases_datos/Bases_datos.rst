@@ -158,23 +158,23 @@ Cuando trabajamos con datos espaciales, es habitual emplear la componente espaci
 
 Por ejemplo, sean las siguientes tablas:
 
-=======  =============  ==========  ========  ===========
-``DNI``  ``Nombre``     ``Altura``  ``Edad``  ``Ciudad`` 
-=======  =============  ==========  ========  ===========
-50234561 Juan Gómez     1,85        35        Madrid
-13254673 Edurne Montero 1,60        30        Toledo 
-46576290 Luis Urrutia   1,75        46        Madrid 
-38941882 Juan Gómez     1, 71       55        Valencia
-=======  =============  ==========  ========  ===========
+========  ===============  ==========  ========  ===========
+``DNI``  ``Nombre``       ``Altura``  ``Edad``  ``Ciudad`` 
+========  ===============  ==========  ========  ===========
+50234561 Juan Gómez       1,85        35        Madrid
+13254673 Edurne Montero   1,60        30        Toledo 
+46576290 Luis Urrutia     1,75        46        Madrid 
+38941882 Juan Gómez       1, 71       55        Valencia
+========  ===============  ==========  ========  ===========
 
-=======  =============  ==========  ========  ===========
-``ID``  ``Nombre``     ``Altura``  ``Edad``  ``Ciudad`` 
-=======  =============  ==========  ========  ===========
-001      Juan Gómez     1,85        35        Madrid
-002      Edurne Montero 1,60        30        Toledo 
-003      Luis Urrutia   1,75        46        Madrid 
-004      Juan Gómez     1, 71       55        Valencia
-=======  =============  ==========  ========  ===========
+=======  ===============  ==========  ========  ===========
+``ID``   ``Nombre``       ``Altura``  ``Edad``  ``Ciudad`` 
+=======  ===============  ==========  ========  ===========
+001      Juan Gómez       1,85        35        Madrid
+002      Edurne Montero   1,60        30        Toledo 
+003      Luis Urrutia     1,75        46        Madrid 
+004      Juan Gómez       1, 71       55        Valencia
+=======  ===============  ==========  ========  ===========
 
 La primera tabla contiene un atributo único (DNI). La segunda tabla no contiene un atributo único entre sus datos, pero se añade el campo ``ID`` con un código arbitrario que puede ser empleado como clave. El nombre en este caso no sirve como atributo único, ya que hay dos personas en la tabla con el mismo nombre.
 
@@ -190,7 +190,7 @@ Toledo         80810            232
 ==========    ===============  =============================
 
 
-Es sencillo ver que puede vincularse una tabla a la otra a través del atributo que contiene el nombre de la ciudad. Nótese que este atributo no tiene el mismo nombre en ambas tablas, y que, mientras que en una de ellas representa la clave primaria [#fn1]_ , en la otra no puede serlo pues existen nombres de ciudades repetidos. Pese a ello, este atributo nos permite establecer una relación entre las tablas [#fn1]_, que podríamos denominar *nacido en*. A cada tupla de la primera tabla, que representa a una persona dada, podemos vincularla con una de la segunda tabla, que representa una ciudad en particular, ya que toda persona ha nacido en una ciudad y gracias al atributo ``CIUDAD`` podemos saber exactamente cuál es dicha ciudad.
+Es sencillo ver que puede vincularse una tabla a la otra a través del atributo que contiene el nombre de la ciudad. Nótese que este atributo no tiene el mismo nombre en ambas tablas, y que, mientras que en una de ellas representa la clave primaria [#fn1]_ , en la otra no puede serlo pues existen nombres de ciudades repetidos. Pese a ello, este atributo nos permite establecer una relación entre las tablas [#fn2]_, que podríamos denominar *nacido en*. A cada tupla de la primera tabla, que representa a una persona dada, podemos vincularla con una de la segunda tabla, que representa una ciudad en particular, ya que toda persona ha nacido en una ciudad y gracias al atributo ``CIUDAD`` podemos saber exactamente cuál es dicha ciudad.
 
 Las interrelaciones entre tablas pueden ser de distintos tipos en función del número de elementos distintos que se vinculan de cada tabla. En nuestra relación *vive en*, una persona puede vivir en una única ciudad, mientras que una ciudad puede tener muchas personas viviendo en ella. Es decir, cada tupla de la tabla ``PERSONAS`` se relaciona con una única de la tabla ``CIUDADES``, y cada tupla de esta última se relaciona con una o varias de la primera. Este tipo de relación se conoce como de *uno a muchos*.
 
@@ -317,7 +317,7 @@ La tablas que definamos en la base de datos pueden tener consecuencias directas 
 13254673       Edurne Montero       1,60              30              Toledo            80810                232
 46576290       Luis Urrutia         1,75              46              Madrid            6386932              607
 38941882       Juan Gomez           1, 71             55              Valencia          1564145              134 
-
+========       ==============       ===========       =========       ===========       ==============       ===============
 
 Esta tabla contiene la misma información que las dos tablas anteriores, y en principio permite realizar operaciones similares. Si quisiéramos saber la población de la ciudad donde ha nacido una persona en concreto, podríamos hacerlo de igual modo con independencia de cuál de las estructuras mostradas tenga la base de datos. En un caso deberemos acudir a dos tablas y una interrelación entre ellas, mientras que en el otro solo es necesario emplear una tabla, la única que por otra parte contiene nuestra base de datos. 
 

@@ -181,7 +181,7 @@ En la figura :num:`#figcatalogounex` puede verse un ejemplo de una interfaz de a
 .. _figcatalogounex:
 
 .. figure:: CatalogoUNEX.*
-	:width: 650px
+	:width: 750px
 	
 	Interfaz de acceso al catálogo de la IDE de la Universidad de Extremadura
 
@@ -200,8 +200,8 @@ La figura :num:`#figusuarioscatalogo` muestra un esquema de lo que la actividad 
 
 .. figure:: usuariosCatalogo.*
 	:width: 650px
-	\caption{Diagrama de interacción que muestra la utilización básica de servicios de catálogo y los
-elementos de IDE relacionados desde un punto de vista de un usuario (adaptado de  :cite:p:`RecetarioIDE`)}
+	
+	Diagrama de interacción que muestra la utilización básica de servicios de catálogo y los elementos de IDE relacionados desde un punto de vista de un usuario (adaptado de  :cite:p:`RecetarioIDE`)}
 
  
 
@@ -331,7 +331,7 @@ La figura :num:`#figevolucioninspire` muestra un esquema de la secuencia tempora
 .. _figevolucioninspire:
 
 .. figure:: EvolucionINSPIRE.*
-	:width: 650px
+	:width: 750px
 	
 	Secuencia temporal seguida por INSPIRE (adaptado de  :cite:p:`Craglia2009INSPIRE)`
 
@@ -340,57 +340,47 @@ La figura :num:`#figevolucioninspire` muestra un esquema de la secuencia tempora
 
 INSPIRE contiene 3 anexos en los que se especifica qué datos deben formar parte de la IDE, ya sea con carácter obligatorio o con carácter opcional. De este modo, se establece el contenido deseado para los datos creados y almacenados por los distintos nodos de la IDE, con objeto de obtener un conjunto global de datos coherente y facilitar la realización de la mayor parte de tareas en todos los lugares, así como a todos los niveles de detalle. Es decir, que exista una coherencia tanto horizontal como vertical en lo que a datos existentes respecta.
 
-Las tablas en :ref:`Tabla:INSPIREAnexos` muestran los tipos de datos que se recogen en los citados anexos.
+Los tipos de datos que se recogen en los citados anexos son los siguientes:
 
-\begin{table*}[!hbt]
-\centering 
+* Anexo I. Datos de referencia
 
-\begin{tabular}{cp{1cm}c}
-\begin{tabular}{c} \toprule
-\textsf{Anexo I: Datos de referencia} \\ \midrule
-Sistema de ref. de coordenadas\\
-Cuadrículas geográficas\\
-Nombres geográficos\\
-Unidades administrativas\\
-Redes de transporte\\
-Hidrografía\\
-Lugares protegidos \\ \bottomrule
-\end{tabular}
+	* Sistema de ref. de coordenadas
+	* Cuadrículas geográficas
+	* Nombres geográficos
+	* Unidades administrativas
+	* Redes de transporte
+	* Hidrografía
+	* Lugares protegidos
 
-& &
+* Anexo II
 
-\begin{tabular}{c} \toprule
-\textsf{Anexo I: Datos de referencia}  \\ \midrule
-Modelos de Elevaciones\\
-Direcciones y áreas postales\\
-Parcelas catastrales\\
-Ocupación del suelo\\
-Ortofotos \\ \bottomrule
-\end{tabular}
-\end{tabular}
-
-\vspace{0.5cm}
-
-\begin{tabular}{c|c} \toprule
-\multicolumn{2}{c}{\textsf{Anexo III: Datos temáticos}}  \\ \midrule
-Unidades estadísticas & Edificaciones\\
-Edafología & Geología \\
-Uso del suelo & Salud y seguridad humana\\
-Instalaciones de servicios & Instalaciones industriales y productivas\\
-Instalaciones Agrícolas y Acuicultura & Hábitats y biotopos \\
-Regiones biogeográficas & Demografía y distribución de la población\\
-Áreas restringidas o reguladas & Zonas de riesgos naturales \\
-Condiciones Atmosféricas & Características meteorológicas \\
-Características oceanográficas & Regiones Marinas\\
-\bottomrule
-\end{tabular}
+	* Modelos de Elevaciones
+	* Direcciones y áreas postales
+	* Parcelas catastrales
+	* Ocupación del suelo
+	* Ortofotos
 
 
-	Datos especificados por los anexos I, II y III de INSPIRE, estableciendo los datos de referencia y temáticos a incluir en una IDE.
+* Anexo III. Datos temáticos
 
-
-.. _Tabla:INSPIREAnexos:
-\end{table*}
+	* Unidades estadísticas
+	* Edificaciones
+	* Edafología
+	* Geología
+	* Uso del suelo 
+	* Salud y seguridad humana
+	* Instalaciones de servicios 
+	* Instalaciones industriales y productivas
+	* Instalaciones Agrícolas y Acuicultura 
+	* Hábitats y biotopos
+	* Regiones biogeográficas 
+	* Demografía y distribución de la población
+	* Áreas restringidas o reguladas 
+	* Zonas de riesgos naturales
+	* Condiciones Atmosféricas 
+	* Características meteorológicas 
+	* Características oceanográficas 
+	* Regiones Marinas
 
 
 Las IDE en España

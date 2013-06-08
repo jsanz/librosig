@@ -1,9 +1,9 @@
+.. _Operaciones_geometricas:
+
 **********************************************************
 Operaciones geométricas con datos vectoriales
 **********************************************************
 
-
-.. _Operaciones_geometricas:
 
 
 Las capas vectoriales contiene una parte de información geométrica (las geometrías como tales) y otra de carácter no geométrico (los atributos asociados) En este capítulo veremos cómo a través de operaciones geométricas pueden modificarse,combinarse y analizarse esas geometrías, y cómo estas operaciones son en cierta medida las equivalentes en el ámbito vectorial al álgebra de mapas ráster que vimos en el capítulo anterior.
@@ -78,7 +78,7 @@ Otro uso habitual de este tipo de zonas de influencia la encontramos en la gesti
 .. figure:: Zona_influencia_poligonos.*
 	:width: 650px
 
-	Zona de influencia a partir de polígonos. a) Hacia el exterior,b) hacia el interior. 
+	Zona de influencia a partir de polígonos. a) Hacia el exterior, b) hacia el interior. 
 
 
 
@@ -91,7 +91,7 @@ Sobre la base anterior de zonas de influencia delimitadas a partir de las geomet
 .. _figzonasinfluenciaconcentricas:
 
 .. figure:: Zonas_influencia_concentricas.*
-	:width: 650px
+	:width: 550px
 
 	Zonas de influencia concéntricas a partir de una entidad lineal 
 
@@ -123,7 +123,7 @@ Otra de las modificaciones que se pueden plantear a la creación de zonas de inf
 .. _figzonainfluenciadisolver:
 
 .. figure:: Zona_influencia_disolver.*
-	:width: 650px
+	:width: 450px
 
 	Zona de influencia única a partir de un conjunto de zonas de influencia individuales que se solapan. 
 
@@ -132,17 +132,6 @@ Otra de las modificaciones que se pueden plantear a la creación de zonas de inf
 
 En general, todas las entidades geográficas se prestan a la creación de zonas de influencia sin ninguna consideración especial. No obstante, en el caso de curvas o polígonos muy convolucionados pueden en ocasiones darse formas incoherentes.%, tal y como se refleja en la figura :num:`#figzonainfluenciaconvolucionado`.
 
-%.. _figzonainfluenciaconvolucionado:
-
-.. figure:: Zona_influencia_convolucionado.*
-	:width: 650px
-%
-	Zona de influencia de un polígono muy convolucionado.
-
-
-%
-
-%Es necesario en tal caso aplicar una disolución para evitar este tipo de solape.
 
 Operaciones de solape
 =====================================================
@@ -158,10 +147,10 @@ En dichas operaciones se aplican intensamente los conceptos de relaciones espaci
 Encontramos los siguientes tipos de operaciones de solape:
 
 
-	* Recorte
-	* Diferencia
-	* Intersección
-	* Unión
+* Recorte
+* Diferencia
+* Intersección
+* Unión
 
 
 Estas operaciones pueden entenderse como operaciones de conjuntos y visualizarse mediante sencillos diagramas, de forma similar a lo que veíamos en la sección :ref:`Mecanismos_consulta` al presentar los diagramas de Venn (Figura :num:`#figoperacionessolape`).
@@ -190,7 +179,7 @@ En la figura :num:`#figrecortevectorial` podemos ver cómo la capa de entrada co
 .. _figrecortevectorial:
 
 .. figure:: Recorte_vectorial.*
-	:width: 650px
+	:width: 750px
 
 	Recorte vectorial de un conjunto de capas de puntos, líneas y polígonos, con una capa de polígonos. 
 
@@ -203,7 +192,7 @@ Un aspecto muy importante en el recorte de capas vectoriales es el tratamiento d
 
 Cuando la capa recortada es de puntos, no existe problema en esto, ya que no se da modificación alguna de las geometrías. El recorte es en realidad una operación de consulta y selección. La información de la tabla sigue correspondiéndose con la entidad geométrica, ya que ninguna de las dos ha cambiado. Cuando se recortan líneas o polígonos, sin embargo, la situación es algo más compleja.
 
-Supongamos que la capa recortada es de polígonos tales como unidades administrativas. Si el registro original contiene información tal como por ejemplo el nombre de la unidad o su código postal asociado, no existe ningún problema,ya que estos valores se aplican de igual modo para la parte de cada polígono que quede tras el recorte. Una situación muy distinta la tenemos cuando la tabla de atributos contiene valores tales como el área, el perímetro o el número de habitantes de dicha unidad administrativa. En este último caso, dichos valores guardan una relación directa con la geometría, y al cambiar esta deberían modificarse igualmente.
+Supongamos que la capa recortada es de polígonos tales como unidades administrativas. Si el registro original contiene información tal como por ejemplo el nombre de la unidad o su código postal asociado, no existe ningún problema, ya que estos valores se aplican de igual modo para la parte de cada polígono que quede tras el recorte. Una situación muy distinta la tenemos cuando la tabla de atributos contiene valores tales como el área, el perímetro o el número de habitantes de dicha unidad administrativa. En este último caso, dichos valores guardan una relación directa con la geometría, y al cambiar esta deberían modificarse igualmente.
 
 No obstante, la operación de recorte no actúa sobre las tablas de atributos, ya que no posee información suficiente para poder hacerlo. Tanto el área como el perímetro deben recalcularse para que la información de la tabla de atributos sea coherente con el nuevo polígono al que se encuentra asociada. Como ya sabemos, medir estas propiedades de un polígono es sencillo a partir de sus coordenadas, y debe simplemente tenerse esa precaución. Se tiene que el recorte de la capa no es únicamente una operación geométrica, sino que, según sean los valores de la tabla de atributos, debe operarse también con ellos para completar dicha operación.
 
@@ -215,7 +204,6 @@ Diferencia
 --------------------------------------------------------------
 
 La diferencia es un operador contrario al recorte. En este último se mantienen en la capa resultante las geometrías de la capa recortada, pero tan solo aquellas que entran dentro del área de recorte definida por otra capa adicional (la capa de recorte). En la diferencia el proceso es semejante, pero en este caso las zonas que se mantienen son las que *no* entran dentro de la zona definida por la capa de recorte.
-
 
 
 Puede entenderse como la realización de un recorte, pero en lugar de utilizando un conjunto de polígonos de recorte, empleando su complementario.
@@ -236,7 +224,7 @@ Puede verse un sencillo ejemplo en la figura :num:`#figinterseccionvectorial`.
 .. _figinterseccionvectorial:
 
 .. figure:: Interseccion_vectorial.*
-	:width: 650px
+	:width: 800px
 
 	Interseccion entre dos capas de polígonos, mostrando las geometrías y la tabla de atributos resultante.
 
@@ -269,7 +257,7 @@ La figura :num:`#figunionvectorial` muestra un ejemplo de unión de capas vector
 .. _figunionvectorial:
 
 .. figure:: Union_vectorial.*
-	:width: 650px
+	:width: 800px
 
 	Unión de dos capas de polígonos, mostrando las geometrías y la tabla de atributos resultante.
 
@@ -294,9 +282,9 @@ La aparición de polígonos espúreos (también frecuentemente citados en su den
 Otra solución es la eliminación *a posteriori*, tratando de localizar los polígonos espúreos diferenciándolos de aquellos que sí representen regiones reales que deben conservarse. Algunas de las características que suelen presentar habitualmente y que pueden emplearse para esa distinción son:
 
 
-	* Pequeño tamaño
-	* Forma alargada
-	* Bajo número de lados. Son polígonos simples con pocos segmentos.
+* Pequeño tamaño
+* Forma alargada
+* Bajo número de lados. Son polígonos simples con pocos segmentos.
 
 
 La figura :num:`#figpoligonosespureos` muestra un ejemplo de la aparición de este tipo de polígonos.
@@ -335,7 +323,7 @@ Para comprender mejor esta operación, puede verse un ejemplo en la figura:num:`
 .. _figejemplojuntarcapas:
 
 .. figure:: Juntar_capas.*
-	:width: 650px
+	:width: 800px
 
 	Ejemplo de las tablas y entidades resultantes tras juntar dos capas. 
 
@@ -378,7 +366,7 @@ En la figura :num:`#figdisolver` se muestra un ejemplo de lo anterior.
 .. _figdisolver:
 
 .. figure:: Disolver.*
-	:width: 650px
+	:width: 800px
 
 	Obtención de una capa de comunidades autónomas a partir de una de provincias mediante un proceso de disolución. En la capa original se han representado los polígonos en función de la comunidad a la que pertenecen. Aunque aparecen con el mismo color, son polígonos independientes.
 
@@ -389,7 +377,7 @@ Al igual que en otras operaciones ya vistas, la tabla de atributos de la capa re
 
 En el caso de campos numéricos, pueden emplearse los datos de las capas de partida, aplicando operaciones diversas según sea la naturaleza de la variable. Por ejemplo, para un campo con el número de habitantes de cada término municipal, si aplicamos una operación de disolución y obtenemos una capa de comunidades autónomas, el valor de población de cada entidad resultante (cada comunidad autónoma), será la suma de los valores de los polígonos que han sido *disueltos* para obtener dicha entidad.
 
-Si el campo en cuestión recoge la estatura media de la población, el valor resultante deberá ser una media ponderada de los valores de cada término,utilizando el número de habitantes como ponderación. Si en lugar de la media se recoge la estatura máxima, el máximo de todos los valores de los términos será el valor a incluir en la tabla de atributos de la capa resultante en ese campo.
+Si el campo en cuestión recoge la estatura media de la población, el valor resultante deberá ser una media ponderada de los valores de cada término, utilizando el número de habitantes como ponderación. Si en lugar de la media se recoge la estatura máxima, el máximo de todos los valores de los términos será el valor a incluir en la tabla de atributos de la capa resultante en ese campo.
 
 Una vez más, es necesario considerar la naturaleza de la variable para establecer la forma de combinar los valores. Al hacerlo, y al igual que en otros casos, no deben perderse de vista los efectos derivados de la agregación que llevamos a cabo, los cuales ya conocemos.
 
@@ -399,13 +387,12 @@ Contornos mínimos
 Dado un conjunto de puntos, una de las operaciones geométricas más comunes que pueden llevarse a cabo es la delimitación de un contorno mínimo que los englobe. Conocer el espacio ocupado por este contorno puede ser útil para evaluar diversos parámetros tales como la zona de cobertura del fenómeno representado por dichos puntos.
 
 
-
 Existen diversas formas de contornos mínimos, entre las que cabe destacar.
 
 
-	* Envolvente convexa mínima
-	* Rectángulo mínimo
-	* Círculo mínimo
+* Envolvente convexa mínima
+* Rectángulo mínimo
+* Círculo mínimo
 
 
 .. _Convex_hull:
@@ -414,15 +401,12 @@ Envolvente convexa mínima (convex hull)
 --------------------------------------------------------------
 
 
-
-
-
 La envolvente convexa mínima (habitualmente citada como *convex hull*, su denominación en inglés) es la más común de las envolventes. Define el polígono convexo de menor área dentro del cual se contienen todos los puntos del conjunto, y su significado tanto geográfico como geométrico es de gran utilidad en muchos aspectos.
 
 .. _figconvexhull:
 
 .. figure:: Convex_hull.*
-	:width: 650px
+	:width: 600px
 
 	Contorno convexo mínimo. 
 
@@ -440,7 +424,7 @@ Una serie de envolventes convexas sucesivas sobre un conjunto de puntos forma un
 .. _figonionpeeling:
 
 .. figure:: Onion_peeling.*
-	:width: 650px
+	:width: 450px
 
 	Serie de contornos convexos formando una teselacion en capas (*onion peeling*). 
 
@@ -457,7 +441,7 @@ El círculo mínimo es aquel circulo que contiene a todos los puntos de un conju
 .. _figcirculominimo:
 
 .. figure:: Circulo_minimo.*
-	:width: 650px
+	:width: 450px
 
 	Círculo de radio mínimo que engloba a una serie de puntos.
 
@@ -486,12 +470,9 @@ El rectángulo mínimo es el rectángulo de menor área que cubre todos los punt
 .. _figrectangulominimo:
 
 .. figure:: Rectangulo_minimo.*
-	:width: 650px
+	:width: 450px
 
 	Rectángulo mínimo que engloba a un conjunto de puntos.
-
-
-
 
 
 
@@ -504,10 +485,6 @@ Generalmente, el rectángulo de menor área coincide con el de menor perímetro,
 Generalización de líneas
 =====================================================
 
-
-
-
-
 Como ya sabemos, toda la información vectorial la almacenamos en ultima instancia como un conjunto de puntos, ya sean aislados o unidos mediante segmentos o curvas para conformar líneas o contornos de polígonos. Una transformación habitual en el caso de líneas o polígonos consiste en la modificación de ese conjunto de puntos de tal modo que se reduzca su número pero se preserve en la medida de lo posible la información que originalmente contenían.
 
 Este proceso de simplificación es parte de la *generalización* de líneas, y es importante dentro de los Sistemas de Información Geográfica, tanto para la representación de datos como para su análisis o su simple almacenamiento, como ya vimos al inicio de este libro. 
@@ -515,23 +492,24 @@ Este proceso de simplificación es parte de la *generalización* de líneas, y e
 Las razones que por las cuales puede resultar de interés llevar a cabo un proceso de generalización de líneas son diversas, y entre ellas cabe destacar las dos siguientes  :cite:p:`McMaster1992AAG`.
 
 
-	* Reducción del tamaño de los datos. Una reducción del número de puntos elimina puntos en muchos casos superfluos, de tal forma que la capa simplificada presenta la misma utilidad pero ocupa un espacio menor.
-	* Reducción del tiempo de proceso. La capa generalizada se maneja de forma más rápida en operaciones tales como la representación en pantalla, la impresión, o la realización de otros cálculos. En términos generales, todos los cálculos con la linea generalizada, como por ejemplo el trazado de una zona de influencia o de cualquier otro de los procesos vistos en este capítulo, se efectúan con un menor costo de proceso, ya que requieren el análisis de un menor número de puntos. Otros procesos tales como la conversión de esa capa en una capa ráster también experimentan una ganancia en rendimiento.	
+* Reducción del tamaño de los datos. Una reducción del número de puntos elimina puntos en muchos casos superfluos, de tal forma que la capa simplificada presenta la misma utilidad pero ocupa un espacio menor.
+* Reducción del tiempo de proceso. La capa generalizada se maneja de forma más rápida en operaciones tales como la representación en pantalla, la impresión, o la realización de otros cálculos. En términos generales, todos los cálculos con la linea generalizada, como por ejemplo el trazado de una zona de influencia o de cualquier otro de los procesos vistos en este capítulo, se efectúan con un menor costo de proceso, ya que requieren el análisis de un menor número de puntos. Otros procesos tales como la conversión de esa capa en una capa ráster también experimentan una ganancia en rendimiento.	
 
 
 En ocasiones, la simplificación puede implicar la reducción de elementos más allá de puntos aislados, tal y como operan los algoritmos que a continuación veremos. Eliminando puntos a lo largo de una línea puede lograrse el resultado buscado, reduciendo el detalle longitudinalmente, pero un cambio de escala puede también implicar la necesidad de eliminar no únicamente puntos, sino líneas completas. Por ejemplo, si una capa de líneas recoge con detalle una vía mediante dos líneas, una para cada borde de la misma, no tiene sentido emplear una capa de tal detalle para un mapa a una escala tal como, por ejemplo, 1:200000. En este caso, puede sustituirse el par de líneas anteriores por una única, ya que la variación en el resultado no será perceptible. La simplificación de las líneas en este caso debe operar sustituyendo dos líneas por una única.
-	Si esa carretera queda recogida mediante un polígono, puede simplificarse mediante un proceso de *adelgazamiento* que convierta este en una línea central. La obtención de este eje del polígono se hace con un proceso que es similar a la zona de influencia hacia el interior de un polígono, la cual veíamos al principio de este mismo capítulo. 
+
+Si esa carretera queda recogida mediante un polígono, puede simplificarse mediante un proceso de *adelgazamiento* que convierta este en una línea central. La obtención de este eje del polígono se hace con un proceso que es similar a la zona de influencia hacia el interior de un polígono, la cual veíamos al principio de este mismo capítulo. 
 
 Una operación también relacionada con la generalización de líneas es el *suavizado*. En muchas ocasiones, las líneas de una capa vectorial son excesivamente angulosas y no presentan un aspecto natural, muy distinto del trazo suave con que un cartógrafo trazaría las mismas al realizar un mapa. Alterando el conjunto de puntos de la línea de forma similar a lo visto anteriormente, puede lograrse un redondeo en las curvas definidas por este. Dicho redondeo puede buscarse con meros fines estéticos, pero también para eliminar variaciones bruscas o desviaciones locales, manteniendo tan solo la forma general de la linea. Este es, por ejemplo, el proceso que debe realizarse si deseamos utilizar las lineas a una escala de menor detalle que la que originalmente se empleó en su creación. 
 
 El suavizado de líneas es también útil como preparación de datos de líneas procedentes de un proceso de digitalización. Aunque muchos elementos naturales tienen formas redondeadas, es habitual que el encargado de llevar a cabo esa digitalización genere elementos más angulosos que el objeto real que se digitaliza. 
 
-Algo similar sucede cuando las operaciones de vectorización se realizan de forma automática, tales como las que vimos en en capítulo :ref:`Creacion_capas_vectoriales`. El suavizado de las líneas mejora en tal caso la calidad de estas, no solo en su aspecto estético, sino también en muchos casos su similitud con el objeto modelizado, pues se trata de formas más naturales(Figura :num:`#figsuavizardigitalizado`).
+Algo similar sucede cuando las operaciones de vectorización se realizan de forma automática, tales como las que vimos en en capítulo :ref:`Creacion_capas_vectoriales`. El suavizado de las líneas mejora en tal caso la calidad de estas, no solo en su aspecto estético, sino también en muchos casos su similitud con el objeto modelizado, pues se trata de formas más naturales (Figura :num:`#figsuavizardigitalizado`).
 
 .. _figsuavizardigitalizado:
 
 .. figure:: Suavizar_digitalizado.*
-	:width: 650px
+	:width: 500px
 
 	Suavizado de una línea procedente de vectorización a partir de una capa ráster. En negro, línea original con esquinas angulosas. En rojo, línea suavizada. 
 
@@ -562,11 +540,11 @@ Puesto que no todos los puntos deben ser considerados de igual modo, existen mé
 Podemos clasificar las rutinas de generalización de líneas en los siguientes bloques  :cite:p:`McMaster1987Cartographica`.
 
 
-	* Rutinas de vecindad inmediata. Analizan cada punto y los inmediatamente anteriores y posteriores, estudiando los ángulos formados o las distancias.
-	* Rutinas de vecindad acotada. Estudian una serie de puntos vecinos, no necesariamente restringida a los inmediatos pero sí con algun umbral máximo de alejamiento o número de puntos.
-	* Rutinas de vecindad no acotada. Estudian los puntos vecinos y la región analizada depende de diversos factores, aunque no existe una dimensión máxima.
-	* Rutinas globales. Analizan la línea de forma global, no a nivel de los puntos que la componen.
-	* Rutinas que preservan la topología. Además de las propiedades geométricas ya sea a nivel global o local, estudian la conectividad y topología del conjunto de líneas para garantizar que la línea simplificada preserva dichas propiedades.
+* Rutinas de vecindad inmediata. Analizan cada punto y los inmediatamente anteriores y posteriores, estudiando los ángulos formados o las distancias.
+* Rutinas de vecindad acotada. Estudian una serie de puntos vecinos, no necesariamente restringida a los inmediatos pero sí con algun umbral máximo de alejamiento o número de puntos.
+* Rutinas de vecindad no acotada. Estudian los puntos vecinos y la región analizada depende de diversos factores, aunque no existe una dimensión máxima.
+* Rutinas globales. Analizan la línea de forma global, no a nivel de los puntos que la componen.
+* Rutinas que preservan la topología. Además de las propiedades geométricas ya sea a nivel global o local, estudian la conectividad y topología del conjunto de líneas para garantizar que la línea simplificada preserva dichas propiedades.
 
 
 Uno de los algoritmos más habitualmente utilizados es el propuesto por :cite:p:`Douglas1973TAC`, que pertenece al grupo de los globales. La intensidad del proceso de generalización se establece mediante un valor de tolerancia que indica la máxima desviación que se permite entre la línea original y la simplificada.
@@ -576,23 +554,20 @@ En la figura :num:`#figgeneralizacion` puede verse cómo una línea original se 
 .. _figgeneralizacion:
 
 .. figure:: Simplificacion_lineas.*
-	:width: 650px
+	:width: 750px
 
 	Generalización de un conjunto de líneas (en trazo punteado) mediante el algoritmo de  :cite:p:`Douglas1973TAC para valores de tolerancia de 10 (a), 20 (b) y 50 metros (c).` 
-
-
-
 
 
 Respecto a los algoritmos de suavizado, estos pueden dividirse en tres grupos principales  :cite:p:`McMaster1987Cartographica`:
 
 
-	* Media entre puntos. Se consideran un número :math:`n` de puntos vecinos, y en base a ellos se calcula la nueva posición. 
-	* Ajuste de funciones matemáticas. Ajustando funciones a los puntos que tengan un aspecto *suave*, tales como *splines* o curvas Bézier.
-	* Tolerancias. Se establece una tolerancia y un umbral de precisión, y se ignoran los detalles a lo largo de la línea que salen de ese umbral.
+* Media entre puntos. Se consideran un número :math:`n` de puntos vecinos, y en base a ellos se calcula la nueva posición. 
+* Ajuste de funciones matemáticas. Ajustando funciones a los puntos que tengan un aspecto *suave*, tales como *splines* o curvas Bézier.
+* Tolerancias. Se establece una tolerancia y un umbral de precisión, y se ignoran los detalles a lo largo de la línea que salen de ese umbral.
 
 
-En  :cite:p:`McMaster1989Cartographica` pueden encontrarse detallados métodos de todas las familias anteriores.
+En :cite:p:`McMaster1989Cartographica` pueden encontrarse detallados métodos de todas las familias anteriores.
 
 Resumen
 =====================================================
@@ -604,6 +579,3 @@ Las operaciones más importantes son el cálculo de zonas de influencia y las de
 Las tablas pueden también usarse para definir otro tipo de operaciones tales como la disolución, en la que se unen regiones que comparten algún atributo común.
 
 Por último, las operaciones de generalización de líneas son útiles para disminuir el tamaño de los datos vectoriales, con las ventajas de manejo y proceso que ello conlleva.
-
-%\bibliographystyle{unsrt}
-%\bibliography{../../Libro_SIG}

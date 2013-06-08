@@ -44,7 +44,7 @@ La figura :num:`#figpropositomapa` muestra un ejemplo claro de lo anterior a tra
 .. _figpropositomapa:
 
 .. figure:: PropositoMapa.*
-	:width: 650px
+	:width: 750px
 
 	Dos formas distintas de mostrar una información a través de un mapa. En función del propósito de este y el publico al que va dirigido, cada una de ellas podrá ser adecuada o no. (Imágenes cortesía de AEMET)
 
@@ -92,7 +92,7 @@ Como vimos en el apartado :ref:`ComponenteInformacionGeografica`, la componente 
 .. _figleerver:
 
 .. figure:: LeerVer.*
-	:width: 650px
+	:width: 800px
 
 	Comparación entre una representación incorrecta de la información por no emplear un esquema adecuado al tipo de esta (a) y una representación correcta utilizando un esquema coherente (b).
 
@@ -209,7 +209,7 @@ Aunque resulta práctico definir las clases utilizando alguna de las metodologí
 .. _figtintaselevacion:
 
 .. figure:: TintasElevacion.*
-	:width: 650px
+	:width: 750px
 
 	Los intervalos pueden incorporar valores de importancia para una determinada variable. En este caso, para la variable elevación resulta particularmente relevante el valor cero, que delimita el comienzo de las clases representadas en azul.
 
@@ -241,7 +241,7 @@ Los siguientes son los elementos fundamentales que podemos emplear para componer
 .. _figelementosmapa:
 
 .. figure:: ElementosMapa.*
-	:width: 650px
+	:width: 800px
 
 	Ejemplo de mapa mostrando sus elementos más habituales.
 
@@ -272,7 +272,7 @@ En lo que respecta a la forma de disponer los elementos sobre el lienzo que un m
 .. _figaprovechamientoespaciomapa:
 
 .. figure:: AprovechamientoEspacioMapa.*
-	:width: 650px
+	:width: 750px
 
 	Ejemplo de un aprovechamiento óptimo del espacio de un mapa (a) y un aprovechamiento incorrecto de este (b).
 
@@ -337,7 +337,7 @@ Aunque la variable visual tamaño presenta la propiedad cuantitativa, la percepc
 .. _figejemplosleyendasimbolosproporcionales:
 
 .. figure:: EjemplosLeyendaSimbolosProporcionales.*
-	:width: 650px
+	:width: 550px
 
 	Dos ejemplos de leyendas para un mapa de símbolos proporcionales.
 
@@ -376,7 +376,7 @@ La imagen :num:`#figmapapuntos` muestra un ejemplo de un mapa de puntos.
 .. _figmapapuntos:
 
 .. figure:: MapaPuntos.*
-	:width: 650px
+	:width: 750px
 
 	Mapa de puntos.
 
@@ -461,7 +461,7 @@ Existen muchos otros tipos de mapas, adecuados para representar tipos particular
 	.. _figmapaflujo:
 
 	.. figure:: MapaFlujo.*
-		:width: 650px
+		:width: 800px
 
 		Mapa de flujo de Charles Joseph Minard sobre la campaña de Napoleón en Rusia.
 

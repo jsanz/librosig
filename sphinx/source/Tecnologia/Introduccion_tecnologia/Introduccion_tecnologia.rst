@@ -84,7 +84,7 @@ Todas estos elementos conforman el panorama global de la tecnología SIG, con un
 
 
 La adaptación de las aplicaciones SIG. El SIG como base genérica
-=====================================================
+===============================================================================
 	
 Los SIG han crecido mucho desde su origen y, además de ampliar horizontes y mejorar el trabajo con ellos, han añadido numerosas funcionalidades adicionales. Como cabe esperar, un SIG actual no solo permite hacer las cosas mejor, sino que también permite hacer más cosas. Como herramienta rica en capacidades, un SIG puede entenderse como una aplicación preparada para responder a todas las posibles necesidades dentro del campo del análisis geográfico.
 

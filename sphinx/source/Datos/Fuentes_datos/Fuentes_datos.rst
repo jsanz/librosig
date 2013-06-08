@@ -362,7 +362,7 @@ A continuación se relacionan algunos de los sistemas de teledetección principa
 * IKONOS  :cite:p:`webIkonos`. Este satélite, lanzado en 1999, monta un sensor con resolución de 1 metro para imágenes pancromáticas y 4 metros para imágenes multibanda (4 bandas). Las imágenes cubren una área de 11 :math:`\times` 11 km y el satélite tiene una resolución temporal de entre 3 y 5 días.
 
 * SPOT\footnote{Satellite Pour l' Observation de la Terre}  :cite:p:`webSPOT`. Un conjunto de satélites lanzados inicialmente por la agencia espacial francesa, con especial énfasis en la recogida de información relativa a variables ambientales. De los cinco puestos en órbita, dos siguen actualmente en funcionamiento. El último de ellos, lanzado en 2002, monta el sensor HRG con capacidad de producir imágenes pancromáticas con resolución entre 2,5 y 5 metros, e imágenes multibanda con resolución de 10 metros. El periodo de revisita es de entre 1 y 4 días.
-Es de destacar que el sensor permite inclinaciones de hasta 27\degree respecto al nadir hacia ambos lados, por lo que puede cubrir una banda más ancha y tomar imágenes fuera del área determinada en cada instante por la órbita.
+Es de destacar que el sensor permite inclinaciones de hasta 27:math:`^\circ` respecto al nadir hacia ambos lados, por lo que puede cubrir una banda más ancha y tomar imágenes fuera del área determinada en cada instante por la órbita.
 
 * QuickBird.  :cite:p:`webQuickbird`. Ofrece imágenes en pancromático y multibanda (azul, verde, rojo e infrarrojo cercano). Las primeras tiene una resolución de 60 cm y las multibanda de 2,4 metros, aunque combinando las dos ofrece imágenes en color con 60 cm de resolución. 
 La órbita del satélite es heliosíncrona y la resolución temporal varía entre los 3 y 7 días. Cada imagen cubre una superficie de 16,5 :math:`\times` 16,5 km.
@@ -646,7 +646,7 @@ Al igual que con la digitalización automática, las condiciones de la imagen de
 .. _Geocodificacion:
 
 Digitalización o creación de capas a partir de coordenadas. Geocodificación
---------------------------------------------------------------
+------------------------------------------------------------------------------
 
 
 Junto a las formas de digitalización que acabamos de ver, existe una forma aún más básica: la digitalización directa de valores y coordenadas, sin necesidad alguna de dispositivos especializados o elementos gráficos. En este tipo de digitalización no existe un mapa o documento cartográfico, sino simplemente una serie de datos espaciales expresados de forma alfanumérica que son susceptibles de convertirse en una capa y emplearse así dentro de un SIG.

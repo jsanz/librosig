@@ -369,7 +369,7 @@ Con los valores de las celdas contenidas en la ventana de análisis pueden reali
 
 .. image:: Kernel.pdf
 
- Este conjunto de valores de :math:`k_i` así expresados se conoce comúnmente como *núcleo* o *kernel* de la convolución. Nótese que el núcleo anterior se corresponde con el cálculo de la media aritmética, pudiendo expresarse este descriptor estadístico como una combinación lineal de los valores de la ventana, a través de un núcleo.
+Este conjunto de valores de :math:`k_i` así expresados se conoce comúnmente como *núcleo* o *kernel* de la convolución. Nótese que el núcleo anterior se corresponde con el cálculo de la media aritmética, pudiendo expresarse este descriptor estadístico como una combinación lineal de los valores de la ventana, a través de un núcleo.
 
 * Operaciones matemáticas de forma general. No necesariamente combinaciones lineales, aplican operadores más complejos a los valores de la ventana.
 * Clasificaciones. En función de la configuración de los valores dentro de la ventana clasifican la celda en una serie de posibles grupos, de acuerdo con unas reglas definidas. El resultado es una capa de información discreta, frente a las anteriores que producen capas continuas. Un ejemplo de esto lo encontramos la clasificación de formas de terreno, la cual veremos en el apartado :ref:`Caracterizacion_terreno`, o en la asignación de direcciones de flujo según el modelo D8 (:ref:`Direcciones_flujo`).

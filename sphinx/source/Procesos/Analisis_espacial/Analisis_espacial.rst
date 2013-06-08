@@ -204,7 +204,7 @@ Existencia de tendencias espaciales
 
 Podemos decir que existe una tendencia espacial cuando los valores de una variable están relacionados con sus propias coordenadas geográficas. Por ejemplo, existe una tendencia a que la temperatura disminuya conforme nos alejamos del ecuador. Por ello, en un mapa de temperaturas para una región lo suficientemente amplia, cabe esperar valores menores en el extremo más distante del ecuador.
 
-El dato de localización geográfica plantea un contexto dentro del cual se sitúan los restantes valores, en este caso, la temperatura observada. Esto hace que el mismo valor de una variable no tenga el mismo significado cuando aparece en un punto que cuando lo hace en otro. No es lo mismo un valor de temperatura de 40\degree C en Madrid que en Oslo. El valor en sí es idéntico, pero su interpretación es distinta.
+El dato de localización geográfica plantea un contexto dentro del cual se sitúan los restantes valores, en este caso, la temperatura observada. Esto hace que el mismo valor de una variable no tenga el mismo significado cuando aparece en un punto que cuando lo hace en otro. No es lo mismo un valor de temperatura de 40:math:`^\circ` C en Madrid que en Oslo. El valor en sí es idéntico, pero su interpretación es distinta.
 
 Conocer las tendencias existentes para una variable nos ayuda a comprender mejor esta y analizarla de forma correcta. Si es posible cuantificar dicha tendencia, resulta factible eliminar su influencia de los datos, de forma que estos ya no se vean afectados por ella, o bien considerarla explícitamente como parte del análisis.
 
@@ -544,21 +544,18 @@ Dependiendo de los tipos de entidades que se consideren, existen distintos índi
 
  Por ejemplo, la *relación de subdivisión del área interior* (*internal areasplitting ratio(IAR)*), (Figura :num:`#figinternalareasplitting`), se define cómo el mínimo área de las dos que quedan a cada uno de los lados de la línea dentro de la región, dividido por el área total de región.
 
-.. math::
+	.. math::
 
-	 IAR = \frac{a_{min}}{a_{total}}
-
-
-
-.. _figinternalareasplitting:
-
-.. figure:: Internal_area_splitting.*
-	:width: 350px
-
-	Esquema de la forma en que una línea divide a una región. La menor de las dos (en oscuro), dividida por el área total, define la *relación de subdivisión del área interior*. 
+		 IAR = \frac{a_{min}}{a_{total}}
 
 
- 
+
+	.. _figinternalareasplitting:
+
+	.. figure:: Internal_area_splitting.*
+		:width: 350px
+
+		Esquema de la forma en que una línea divide a una región. La menor de las dos (en oscuro), dividida por el área total, define la *relación de subdivisión del área interior*. 
 
 
  Para una descripción más detallada de otros índices puede consultarse la referencia original.
@@ -566,13 +563,10 @@ Dependiendo de los tipos de entidades que se consideren, existen distintos índi
 * Cercanía. Los índices de cercanía cuantifican el alejamiento entre partes disjuntas de los objetos relacionados. Para su cálculo, se utilizan medidas de distancia como las descritas en :ref:`Calculos_espaciales_basicos`. Cuatro son los índices definidos, que miden
 
 
-* La distancia entre la frontera de la línea y la de la región, cuando la línea está en el exterior de la región.
-* La distancia entre la frontera de la línea y la de la región, cuando la línea está en el interior de la región.
-* La distancia del recorrido mínimo entre el interior de la línea y la frontera de la región si el interior de la línea está en el exterior de la región.
-* La distancia del recorrido mínimo entre el interior de la línea y la frontera de la región si el interior de la línea está en el interior de la región.
-
-
-
+	* La distancia entre la frontera de la línea y la de la región, cuando la línea está en el exterior de la región.
+	* La distancia entre la frontera de la línea y la de la región, cuando la línea está en el interior de la región.
+	* La distancia del recorrido mínimo entre el interior de la línea y la frontera de la región si el interior de la línea está en el exterior de la región.
+	* La distancia del recorrido mínimo entre el interior de la línea y la frontera de la región si el interior de la línea está en el interior de la región.
 
 Para el caso de dos líneas,  :cite:p:`Nedas2007IJGIS` propone estudiar también las mismas propiedades --- subdivisión y cercanía ---, desarrollando un planteamiento similar.  :cite:p:`Xu2007IJGIS`, por su parte, añade elementos direccionales a las relaciones entre líneas, definiendo un ángulo local (el ángulo puntual en el punto de corte) y uno global (el definido por las direcciones globales de las líneas). Asimismo, incluye relaciones entre los rectángulos mínimos que engloban a las líneas, teniendo de este modo relaciones de área que complementan a las anteriores.
 

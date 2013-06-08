@@ -21,6 +21,7 @@ Se concede permiso para copiar, distribuir o modificar esta obra bajo los térmi
 
 Los nombre de productos o corporaciones que aparecen en el texto pueden constituir marcas registradas y se emplean sin otro afán que el meramente identificativo. Asimismo, la inclusión o no de uno de tales productos no expresa recomendación alguna por parte del autor.
 
+Aplicaciones/Aplicaciones.rst
 
 **Índice:**
 
@@ -34,7 +35,7 @@ Los nombre de productos o corporaciones que aparecen en el texto pueden constitu
    Procesos/Procesos.rst
    Visualizacion/Visualizacion.rst
    Factor_organizativo/Factor_organizativo.rst
-   Aplicaciones/Aplicaciones.rst
+
 
 
 

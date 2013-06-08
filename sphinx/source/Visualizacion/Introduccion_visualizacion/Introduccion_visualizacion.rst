@@ -21,7 +21,7 @@ En ambos casos, no obstante, lo más relevante de cara a los conocimientos que e
 
 
 Particularidades del SIG como herramienta de visualización
-=====================================================
+================================================================
 
 Como herramienta de visualización, el SIG tiene sus particularidades, las cuales deben unirse a las propias de los modelos de almacenamiento que empleamos para recoger la información geográfica a visualizar. Esto hace que el trabajo de generar una representación visual de una determinada información geográfica no sea igual en el caso de realizarse mediante un SIG que cuando se lleva a cabo en base a la labor clásica del cartógrafo. Trabajar en un SIG añade, entre otros elementos, el hecho de que la información se encuentra almacenada según un modelo dado (ráster o vectorial). Si esta distinción implica, como ya sabemos, notables diferencias a la hora de analizar esa información u optimizar el acceso a los datos que la contienen, no es menos cierto que también va a conllevar un enfoque distinto a la hora de visualizar unos u otros tipo de datos.
 
@@ -58,7 +58,7 @@ Consideremos por ejemplo, las representaciones de la figura :num:`#figvisualizac
 .. _figvisualizacioncientifica:
 
 .. figure:: SciVis.*
-	:width: 650px
+	:width: 750px
 
 	Dos ejemplos de visualización científica.
 

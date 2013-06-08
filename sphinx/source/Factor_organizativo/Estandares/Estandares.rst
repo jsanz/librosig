@@ -154,7 +154,7 @@ De entre todos los elementos definidos por el W3C, resulta de especial importanc
 Entrar en detalles acerca de XML escapa del ámbito de este libro. No obstante, para aquellos que deseen saber más, Internet está llena de buenas referencias libres sobre XML, como por ejemplo  :cite:p:`wikibookXML`.
 
 Estándares para representación y obtención de información geográfica
-=====================================================
+======================================================================
 
 Entre los estándares más importantes encontramos aquellos que especifican la forma de recoger la información geográfica, así como aquellos que definen el modo en que esta se transmite.
 
@@ -344,7 +344,7 @@ Los contextos pueden a su vez catalogarse y descubrirse, ofreciendo así un nive
 .. _estandaresCatalogos:
 
 Estándares para metadatos, catálogos y consulta de datos
-=====================================================
+============================================================
 
 
 

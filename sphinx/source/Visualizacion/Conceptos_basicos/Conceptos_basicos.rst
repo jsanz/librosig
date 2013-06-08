@@ -30,7 +30,7 @@ Aunque dos personas conozcan a la perfección el lenguaje musical, no podrán, s
 
 Puesto que nuestro objetivo a lo largo de los capítulos de esta parte del libro es ser capaces de crear mapas y otros elementos visuales que transmitan la información geográfica, debemos estudiar qué clase de información vamos a transmitir y, sobre todo, qué nos permite transmitir el lenguaje visual. Del mismo modo que sabemos que los símbolos de nuestro lenguaje musical (pentagrama, figuras, etc.) no son capaces de transmitir una formula matemática, debemos ver si los elementos del lenguaje visual van a ser capaces de, por ejemplo, transmitir el patrón de distribución de un fenómeno en el espacio, las diferencias entre dos zonas distintas o la relación entre los valores de una variable en dos puntos. Además, debemos ver cómo emplearlos para que esa información se transmita de la mejor manera posible, ya que existen diversas propiedades de los elementos visuales que podemos emplear, siendo más adecuadas unas u otras según sea la circunstancia.
 
-Estas propiedades conforman lo que se conoce como *variables visuales*, y se aplican a los elementos básicos de la representación, que son aquellos objetos geométricos de que se compone esta. Las variables visuales permiten diferenciar unos de otros y asignarles unas ciertas características, susceptibles a su vez de ser interpretadas junto al propio significado que el objeto pueda tener. Dados dos elementos, estos pueden diferenciarse por las siguientes variables :num:`#figvariablesvisuales`.
+Estas propiedades conforman lo que se conoce como *variables visuales*, y se aplican a los elementos básicos de la representación, que son aquellos objetos geométricos de que se compone esta. Las variables visuales permiten diferenciar unos de otros y asignarles unas ciertas características, susceptibles a su vez de ser interpretadas junto al propio significado que el objeto pueda tener. Dados dos elementos, estos pueden diferenciarse por las siguientes variables (Figura:num:`#figvariablesvisuales`).
 
 
 * Posición
@@ -77,7 +77,7 @@ El tamaño se refiere a la dimensión del símbolo. Para el caso de símbolos pu
 .. _figtamanotexturas:
 
 .. figure:: Texturas.*
-	:width: 650px
+	:width: 550px
 
 	Uso del tamaño en símbolos de superficie mediante texturas.
 
@@ -96,7 +96,7 @@ Existen muchas formas de representar y crear un color, a través de los denomina
 .. _fighsv:
 
 .. figure:: HSV.*
-	:width: 650px
+	:width: 450px
 
 	Espacio de color HSV explicando el significado de las componentes tono, valor y saturación (adaptado de Wikipedia).
 
@@ -122,7 +122,7 @@ La figura :num:`#figselectorcolores` muestra el aspecto de un selector de colore
 .. _figselectorcolores:
 
 .. figure:: SelectorColores.*
-	:width: 650px
+	:width: 550px
 
 	Selector de colores mediante sus componentes tono (H), saturación (S) y luminosidad (L). La componente de la parte inferior es la denominada *alpha*, que indica la transparencia del color.
 
@@ -141,7 +141,7 @@ Las texturas se aprovechan plenamente sobre los símbolos de superficie, ya que 
 
 .. _figtexturas:
 
-.. figure:: Texturas.*
+.. figure:: Texturas_lineas.*
 	:width: 650px
 
 	Aplicación de la variable visual textura a los símbolos lineales.
@@ -193,24 +193,16 @@ Por último, la propiedad cuantitativa la presentan aquellas variables visuales 
 
 El valor, que ya sabemos que presenta la propiedad ordenada, podría pensarse que también presenta la propiedad cuantitativa, pero no sucede así. Es difícil e impreciso afirmar que un color es el doble de oscuro que otro, y lo más que podemos hacer es situarlo entre dos valores distintos (de ahí que posea la propiedad ordenada), pero no deducir una cifra que exprese una cantidad o proporción. Las restantes variables visuales resulta claro que no poseen esta propiedad.
 
-En el cuadro :ref:`Tabla:PropiedadesVariablesVisuales` se muestra un resumen de todo lo anterior.
+En la tabla siguiente se muestra un resumen de todo lo anterior.
 
-\begin{table}[!hbt]
-\small
-\centering  
-
-.. _Tabla:PropiedadesVariablesVisuales:
-\begin{tabular}{p{3.6cm}ccccccc}  
- & \rotatebox{60}{\textbf{Posición}} & \rotatebox{60}{\textbf{Tamaño}} & \rotatebox{60}{\textbf{Forma}} & \rotatebox{60}{\textbf{Valor}} & \rotatebox{60}{\textbf{Tono}} & \rotatebox{60}{\textbf{Textura}} & \rotatebox{60}{\textbf{Orientación}} \\ \midrule   
-\textbf{Asociativa}& :math:`\diamondsuit` & - & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
-\textbf{Selectiva}& :math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` & :math:`\diamondsuit` \\
-\textbf{Ordenada}&:math:`\diamondsuit` & :math:`\diamondsuit` & - & :math:`\diamondsuit` & - & - & - \\
-\textbf{Cuantitativa}& :math:`\diamondsuit` & :math:`\diamondsuit` & - & - & - & - & -  \\
-\bottomrule \end{tabular}
-
-	Cuadro resumen con las propiedades de las variables visuales.
-\end{table}
-
+=================  ===================== ==================== ====================  ==================== ====================  ====================  ==================== 
+                   Posición              Tamaño               Forma                   Valor              Tono                  Textura               Orientación
+=================  ===================== ==================== ====================  ==================== ====================  ====================  ====================
+Asociativa         :math:`\diamondsuit`  ---                  :math:`\diamondsuit`  ---                  :math:`\diamondsuit`  :math:`\diamondsuit`  :math:`\diamondsuit` 
+Selectiva          :math:`\diamondsuit`  :math:`\diamondsuit` ---                   :math:`\diamondsuit` :math:`\diamondsuit`  :math:`\diamondsuit`  :math:`\diamondsuit` 
+Ordenada           :math:`\diamondsuit`  :math:`\diamondsuit` ---                   :math:`\diamondsuit` ---                   ---                   --- 
+Cuantitativa       :math:`\diamondsuit`  :math:`\diamondsuit` ---                   ---                  ---                   ---                   --- 
+=================  ===================== ==================== ====================  ==================== ====================  ====================  ====================
 
 Aunque las ideas de Bertin conforman una sólida base teórica de reconocido valor, lo cierto es que debe permitirse cierta laxitud en la aplicación de estas, y no considerar que existe una dicotomía estricta en el caso de las propiedades antes presentadas. Hay muchos factores y circunstancias que pueden alterar la forma en que estas propiedades se presentan, y alterar la intensidad con que aparecen en unas u otras variables visuales. Por ejemplo, aunque el tono no presenta, según la propuesta original de Bertin, la propiedad ordenada, sí que puede emplearse para representar un orden en determinadas circunstancias. Si estamos simbolizando unos valores de temperatura, podemos establecer una transición de colores entre el rojo y el azul, que serán fácilmente identificados y ordenados por el observador del mapa, ya que el primero de estos colores se asocia habitualmente al calor y el segundo al frío. En este contexto particular, el tono sí presenta la propiedad ordenada. En los capítulos :ref:`Algebra_de_mapas` o :ref:`Creacion_capas_raster` verás muchos ejemplos de representaciones en que se usan gradaciones de tono para simbolizar variables de tipo cuantitativo, ya sean razones o proporciones. Estas guardan, no obstante, cierta lógica, de tal modo que puede entenderse adecuadamente su significado. Como veremos en el próximo capítulo, esto también tiene relación con el tipo de mapa, de tal modo que ciertos tipos de mapas permiten por sus propias características el uso del tono para este tipo de variables.
 
@@ -224,7 +216,7 @@ Para explicar cada una de las variables visuales, hemos visto diversos ejemplos 
 .. _figcombinacionvariablesvisuales:
 
 .. figure:: CombinacionVariablesVisuales.*
-	:width: 650px
+	:width: 750px
 
 	Combinación de variables visuales.
 
@@ -270,7 +262,7 @@ Cuando la percepción de un elemento cambia aunque el estimulo no lo haga, en lu
 .. _figzollner:
 
 .. figure:: Zollner_illusion.*
-	:width: 650px
+	:width: 500px
 
 	Ilusión de Zollner que demuestra el contraste perceptivo de la orientación.
 
@@ -307,7 +299,7 @@ Un factor clave en este sentido es la adecuado separación entre el fondo y la f
 .. _figcuporfaces:
 
 .. figure:: Cup_or_faces_paradox.*
-	:width: 650px
+	:width: 500px
 
 	Sin un adecuado contraste entre fondo y figura la imagen presenta ambigüedad.
 
@@ -327,7 +319,7 @@ Como ejemplo de lo anterior, la figura :num:`#figjerarquiamapa` muestra un ejemp
 .. _figjerarquiamapa:
 
 .. figure:: JerarquiaMapa.*
-	:width: 650px
+	:width: 750px
 
 	Mapa con jerarquía incorrecta (a) y mapa adecuadamente jerarquizado (b).
 

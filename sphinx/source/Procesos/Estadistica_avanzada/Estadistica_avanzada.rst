@@ -1,11 +1,13 @@
+
+.. _Estadistica_avanzada:
+
 **********************************************************
 Más estadística espacial
 ********************************************************** 
 
-.. _Estadistica_avanzada:
 
 
-En el capítulo ~:ref:`Estadistica_espacial` vimos algunos elementos estadísticos aplicados al ámbito de los datos espaciales. Dentro de este continuaremos extendiendo ese conjunto de formulaciones estadísticas y viendo cómo otras pueden adaptarse de un modo similar.
+En el capítulo :ref:`Estadistica_espacial` vimos algunos elementos estadísticos aplicados al ámbito de los datos espaciales. Dentro de este continuaremos extendiendo ese conjunto de formulaciones estadísticas y viendo cómo otras pueden adaptarse de un modo similar.
 
 Las formulaciones de este capítulo se aplican mayoritariamente sobre capas de datos ráster, y el álgebra de mapas es la herramienta principal que debe conocerse para entender dichas formulaciones. Algunas metodologías nos permitirán generar capas ráster a partir de datos vectoriales, lo que hace interesante haber leído anteriormente el capítulo :ref:`Creacion_capas_raster`. Las imágenes son un tipo de dato muy utilizado en algunas de estas formulaciones, por lo que la lectura del capítulo dedicado a estas también es recomendable.
 
@@ -41,7 +43,7 @@ Esta clasificación se desarrolla mediante procedimientos diversos que evalúan 
 Dos circunstancias son de reseñar en relación con la naturaleza de las capas de partida:
 
 
- * Por tratarse de variables continuas en la mayoría de los casos, se suele trabajar principalmente con capas ráster como capas de origen.
+* Por tratarse de variables continuas en la mayoría de los casos, se suele trabajar principalmente con capas ráster como capas de origen.
 * Por utilizarse en general más de una variable, se requieren varias capas para almacenar estas.
 
 
@@ -62,14 +64,14 @@ La clasificación, pues, puede definirse como el proceso que, dados un conjunto 
 Este proceso conlleva dos etapas:
 
 
- * Definición de las clases
+* Definición de las clases
 * Asignación de cada elemento a una de dichas clases
 
 
 En función de cómo se lleve a cabo la definición de las clases, los métodos de clasificación pueden dividirse en dos grupos principales:
 
 
- * Clasificación supervisada. Además de emplear las capas como entrada, debe añadirse información adicional que ayude en la definición de las distintas clases, definiendo el número de estas y sus características.
+* Clasificación supervisada. Además de emplear las capas como entrada, debe añadirse información adicional que ayude en la definición de las distintas clases, definiendo el número de estas y sus características.
 * Clasificación no supervisada. La única entrada son las capas y el número de clases a definir. Las características de dichas clases se establecen en función del conjunto de valores con los que se trabaja.
 
 
@@ -100,7 +102,7 @@ La forma en que pueden proporcionarse definiciones de clase a un método de clas
 
 Al utilizar zonas de entrenamiento, el operador debe delimitar algunas zonas en las que se conozca *a priori* el tipo de clase existente. Esto puede hacerse con una capa de polígonos adicional que tenga asociado en un campo de su tabla de atributos el tipo de clase presente en dicho polígono. El algoritmo de clasificación, en su primera fase, estudiará las celdas de las capas de entrada que caen dentro de los polígonos de cada clase, y con sus valores tratará de definir los rasgos generales de esas clases que permitirán identificar clases similares en otros puntos.
 
-A la hora de definir estas zonas de entrenamiento debe procurarse que cubran toda la casuística de las clases que definen. Si, por ejemplo, queremos clasificar un área de estudio en tres simples clases como ``bosque'', ``cultivo'' y ``carretera'', y las zonas de bosque son heterogéneas (distintas especies, distinta densidad, etc.), será conveniente definir zonas de entrenamiento en distintos tipos de bosque, para que puedan extraerse las características comunes a todas las subtipologías que vamos a englobar en una única clase.
+A la hora de definir estas zonas de entrenamiento debe procurarse que cubran toda la casuística de las clases que definen. Si, por ejemplo, queremos clasificar un área de estudio en tres simples clases como *bosque*, *cultivo* y *carretera*, y las zonas de bosque son heterogéneas (distintas especies, distinta densidad, etc.), será conveniente definir zonas de entrenamiento en distintos tipos de bosque, para que puedan extraerse las características comunes a todas las subtipologías que vamos a englobar en una única clase.
 
 Por supuesto, si queremos definir una clase concreta, debemos establecer una o varias zonas de entrenamiento de esta. Es decir, el algoritmo solo clasifica en los grupos que el operador haya definido. Si en el área de estudio mencionada anteriormente existieran zonas en barbecho (que no pertenecen a ninguna de las tres clases señaladas), estas no van a asignarse a una clase nueva. En función de la metodología que posteriormente se use para dicha asignación, o bien quedarán sin clasificar (si son muy distintas sus características de las de todas las clases establecidas), o bien quedarán englobadas dentro de la clase con la cual presenten una mayor similitud (que probablemente, y pese a ser la más similar de las tres definidas, no sea muy parecida a la realidad).
 
@@ -116,7 +118,7 @@ Una vez que las clases se han definido, el proceso de clasificación asocia cada
 
 
 * Clasificación por paralelepípedos.
- * Clasificación por mínima distancia
+* Clasificación por mínima distancia
 * Clasificación por máxima verosimilitud
 
 
@@ -127,7 +129,8 @@ Para más información, pueden consultarse, entre otras referencias,  :cite:p:`B
 Antes de aplicar cualquiera de estos métodos o los que seguidamente veremos con detalle, puede resultar recomendable homogeneizar los rangos de las distintas variables. En el caso de emplear únicamente imágenes, los Niveles Digitales de estas se encuentran siempre en el mismo rango (0--255), pero este puede ser más heterogéneo si se usan capas con otro tipo de variables. Un proceso de normalización (lo vimos en :ref:`Funciones_locales`) es una opción habitual en este caso, empleándose como preparación previa al análisis y la clasificación.
 
 Paralelepípedos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+
 
 .. _Paralelepipedos:
 
@@ -151,7 +154,7 @@ Una característica de este método es que pueden existir elementos que no pueda
 En general, la precisión de este método es baja, y el número de elementos sin clasificar o clasificados en varias categorías es alto. Su mayor ventaja reside no en su exactitud, sino en la velocidad de proceso, al no requerir operaciones complejas,
 
 Mínima distancia
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 El método de mínima distancia se basa también en conceptos geométricos dentro del espacio de atributos. En este caso se emplea únicamente la media de cada clase, prescindiéndose de la desviación típica.
 
@@ -183,7 +186,7 @@ Puede verse que esta metodología guarda similitud conceptual con la interpolaci
 
 A diferencia del método anterior, todos los elementos pueden ser clasificados, ya que siempre existe uno más cercano. Esto constituye una de las potenciales desventajas del método, ya que puede hacer asignaciones incorrectas en el caso de que un elemento sea muy distinto a todas las clases de partida. Se asignará a la clase más similar, lo cual no significa necesariamente que sea lo suficientemente similar a ella como para considerarlo parte de la misma.
 
-Por ejemplo, y repitiendo un ejemplo ya citado, si tenemos las clases `bosque'', ``cultivo'' y ``carretera'', y en nuestro área de estudio existe una zona en barbecho, esta será clasificada dentro de alguno de los grupos anteriores, que puede ser uno u otro en función de los datos que empleemos para la clasificación. Con independencia de cuál sea esa clase escogida, resulta claro que sera una asignación errónea, y que o bien debería haberse incorporado esta clase dentro de las zonas de entrenamiento, o bien toda esa zona de barbecho debería quedar sin clasificar.
+Por ejemplo, y repitiendo un ejemplo ya citado, si tenemos las clases `bosque'', *cultivo* y *carretera*, y en nuestro área de estudio existe una zona en barbecho, esta será clasificada dentro de alguno de los grupos anteriores, que puede ser uno u otro en función de los datos que empleemos para la clasificación. Con independencia de cuál sea esa clase escogida, resulta claro que sera una asignación errónea, y que o bien debería haberse incorporado esta clase dentro de las zonas de entrenamiento, o bien toda esa zona de barbecho debería quedar sin clasificar.
 
 Un método similar al de mínima distancia es el basado en distancia de Mahalanobis. 
 
@@ -205,23 +208,21 @@ La distancia de Mahalanobis es una generalización de esta, y en su forma matric
 
 donde :math:`C` es la matriz de covarianzas entre las variables estudiadas. Es decir, una matriz de la forma
 
-\begin{equation}
+.. math::
 
-.. _Eq:Matriz_covarianzas:
-C = \left(
-\begin{array}{cccc}
-\sigma_{11} & \sigma_{12} & \cdots & \sigma_{1n} \\
-\sigma_{21} & \sigma_{22} & \cdots & \sigma_{2n} \\   
-\vdots & \vdots & \ddots & \vdots \\
-\sigma_{n1} & \sigma_{n2} & \cdots & \sigma_{nn} \\  
-\end{array}
-\right)
-\end{equation}
+	C = \left(
+	\begin{array}{cccc}
+	\sigma_{11} & \sigma_{12} & \cdots & \sigma_{1n} \\
+	\sigma_{21} & \sigma_{22} & \cdots & \sigma_{2n} \\   
+	\vdots & \vdots & \ddots & \vdots \\
+	\sigma_{n1} & \sigma_{n2} & \cdots & \sigma_{nn} \\  
+	\end{array}
+	\right)
 
 donde :math:`\sigma_{ij}` es la covarianza entre las variables :math:`i` y :math:`j`.
 
 Máxima verosimilitud
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A diferencia de los anteriores, el método de máxima verosimilitud no evalúa un parámetro geométrico dentro del espacio de atributos, sino que se basa en fundamentos estadísticos. Conociendo la media y desviación típica que caracteriza a una clase, podemos suponer una función de densidad de probabilidad, y con los valores de un elemento dado estimar la probabilidad de que estos correspondan a cada clase. La clase con una mayor probabilidad es aquella a la que se asigna el elemento.
 
@@ -253,7 +254,7 @@ Los métodos de clasificación no supervisada no requieren del operador la defin
 
 En general, se trata de procedimientos iterativos en los que una clasificación inicial va convergiendo hacia una final en la cual se cumplen las características buscadas de homogeneidad, número de clases, etc.
 
-Por su propia naturaleza, estos métodos no generan clases de las cuales se conoce su significado, y será necesario estudiarlas después para saber qué representa cada una de ellas. Si en un método de clasificación supervisada definimos zonas de entrenamiento con distintas clases de suelo, el resultado sera una capa con clases de suelo. Si diferenciamos según otro criterio, será ese criterio el que quede reflejado en la capa resultante. En el caso de la clasificación no supervisada, no existe tal criterio, ya que simplemente se aplican meras operaciones estadísticas con los datos, pero no se trabaja con el significado de estos. Al utilizar una zona de entrenamiento sí estamos empleando este significado, ya que le estamos diciendo al algoritmo que los valores de dicha zona representan una clase dada, esto es, que ``significan'' dicha clase.
+Por su propia naturaleza, estos métodos no generan clases de las cuales se conoce su significado, y será necesario estudiarlas después para saber qué representa cada una de ellas. Si en un método de clasificación supervisada definimos zonas de entrenamiento con distintas clases de suelo, el resultado sera una capa con clases de suelo. Si diferenciamos según otro criterio, será ese criterio el que quede reflejado en la capa resultante. En el caso de la clasificación no supervisada, no existe tal criterio, ya que simplemente se aplican meras operaciones estadísticas con los datos, pero no se trabaja con el significado de estos. Al utilizar una zona de entrenamiento sí estamos empleando este significado, ya que le estamos diciendo al algoritmo que los valores de dicha zona representan una clase dada, esto es, que *significan* dicha clase.
 
 Junto a la capa de clases resultantes, los métodos de clasificación no supervisada proporcionan una definición de dichas clases a través de los valores estadísticos de las mismas. Estos valores se emplearán para asignar una interpretación a cada clase una vez estas hayan sido definidas. Junto a ellas, es habitual añadir la varianza de cada clase, como indicador de la homogeneidad lograda en la clasificación.
 
@@ -262,12 +263,12 @@ Aunque los métodos de clasificación no supervisada son validos de por sí para
 Al igual que sucedía en el caso supervisado, existen numerosos métodos de clasificación no supervisada. La literatura estadística es rica en este tipo de formulaciones, conocidos como métodos de *clustering*\footnote{De *cluster* (agregado), nombre que recibe cada una de las clases o agrupaciones en las que se dividen los elementos de partida}, siendo dos de los más habituales dentro del ámbito de los Sistemas de Información geográfica los siguientes:
 
 
-	* Distancia mínima iterativa	
-	* ISODATA
+* Distancia mínima iterativa	
+* ISODATA
 
 
 Distancia mínima iterativa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 El método de *distancia mínima iterativa*  :cite:p:`Forgy1965Biometrics` se basa en un proceso iterativo en el cual, a partir de unas clases iniciales definidas arbitrariamente, se asignan los distintos elementos a estas mediante un método de los vistos en el apartado anterior, particularmente el de distancia mínima. El número de clases iniciales es definido por el operador, y será el que aparezca en la capa resultante. Para aplicar la clasificación por distancia mínima solo es necesario conocer los valores medios de las clases, siendo este el único estadístico de cada clase con el que se va a trabajar.  
 
@@ -307,11 +308,8 @@ En la figura :num:`#figetapasclustering` pueden verse algunas etapas de un proce
 
 
 
-
-
-
 ISODATA
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 El método ISODATA (Iterative Self--Organizing Data Analysis Technique) comparte los mismos fundamentos que el anterior, pero le añade algunos elementos adicionales que permiten al operador tener algo más de control sobre el proceso, al tiempo que aportan una mayor flexibilidad a los resultados.
 
@@ -337,7 +335,7 @@ Como conclusión de esta sección dedicada a la clasificación y los métodos ex
 
 
 Clustering jerárquico
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Un algoritmo habitual en clasificación de objetos es la utilización de árboles jerárquicos. El proceso se basa en la creación de un árbol en el cual se disponen en sus extremos todos los objetos a clasificar, y las ramas que estos conforman se van unificando, agrupándose por similitud hasta llegar a formar una única (Figura :num:`#figclusteringjerarquico`)
 
@@ -365,7 +363,7 @@ Hasta este punto hemos clasificado cada elemento en función únicamente de su p
 
 La información que puede utilizarse puede ser tanto la correspondiente a los datos de partida (es decir, las valores de las variables estudiadas en dichas celdas circundantes) como la resultante de la propia clasificación, ya que las clases resultantes también se presentan en un contexto espacial.
 
-Si suponemos el sencillo caso comentado anteriormente de clasificar un área de estudio en las categorías ``bosque'', ``cultivo'' y ``carretera'', una celda de carretera rodeada por completo de celdas de bosque no parece lógico. Este hecho puede utilizarse como ayuda a la clasificación. Con un razonamiento similar, aquellos métodos con los que es posible que existan elementos sin clasificar pueden tomar esta información contextual como apoyo. Una celda sin clasificar rodeada por celdas de bosque, lo más probable es que también ella pertenezca a esta tipología, a pesar de que a partir de sus valores el método de clasificación no haya sido capaz de establecer dicho resultado.
+Si suponemos el sencillo caso comentado anteriormente de clasificar un área de estudio en las categorías *bosque*, *cultivo* y *carretera*, una celda de carretera rodeada por completo de celdas de bosque no parece lógico. Este hecho puede utilizarse como ayuda a la clasificación. Con un razonamiento similar, aquellos métodos con los que es posible que existan elementos sin clasificar pueden tomar esta información contextual como apoyo. Una celda sin clasificar rodeada por celdas de bosque, lo más probable es que también ella pertenezca a esta tipología, a pesar de que a partir de sus valores el método de clasificación no haya sido capaz de establecer dicho resultado.
 
 La incorporación de esta relación entre celdas vecinas puede llevarse a cabo a través de la utilización de filtros sobre la capa resultante. Un filtro de mayoría es una opción adecuada para homogeneizar la capa resultante y eliminar celdas aisladas cuya clase asignada no esté en consonancia con las de su alrededor.
 
@@ -386,24 +384,12 @@ En contraste con los métodos de clasificación anteriores, en particular los de
 
 Estos resultados son de forma general una serie de capas ---tantas como clases a las que asignar las distintas celdas existan---, en los cuales el valor de cada celda indica la probabilidad de que dicha celda pertenezca a la clase en cuestión. De este modo, los clasificadores de tipo suave representan una etapa intermedia dentro del proceso de clasificación, ya que recogen los valores que se calculan a lo largo de este, pero no dan un veredicto posterior en base a ellos.
 
-%En la figura :num:`#figsoftclassification` pueden verse las capas correspondientes al método de máxima verosimilitud para las tres clases de uso de suelo definidas en el ejemplo de la figura :num:`#figcomparacionmetodosclasificacion`.
-%
-%.. _figsoftclassification:
-
-.. figure:: Soft_classification.*
-	:width: 650px
-%
-	Capas de probabilidad correspondientes a las tres clases de usos de suelo definidas, como resultado de un proceso de clasificación débil.
-%
-
-
-%
 
 Si se toma el conjunto de las capas y se aplica un operador local de tipo *capa de máximo valor*, el resultado que se obtendrá será una única capa, que coincidirá con la que se obtiene directamente al aplicar el método de clasificación supervisada de la forma habitual (es decir, como clasificación fuerte).
 
 ¿Cuál es la ventaja que se obtiene entonces al aplicar un método de clasificación débil y obtener las capas intermedias? En general, la información que estas capas intermedias contienen es más detallada, y además de poder emplearse para la obtención directa de la capa clasificada ---el producto más habitual---, pueden utilizarse para dar una interpretación adicional a la pertenencia de cada celda a una u otra de las clases definidas.
 
-Por ejemplo, resulta de interés conocer no solo cuál es la clase con mayor probabilidad sino también aquella que se sitúa inmediatamente después. Si clasificamos un píxel como ``bosque caducifolio'' y la segunda clase más probable es ``bosque de coníferas'', esa asignación de clase no tiene el mismo significado que si dicha segunda clase más probable es ``barbecho''.
+Por ejemplo, resulta de interés conocer no solo cuál es la clase con mayor probabilidad sino también aquella que se sitúa inmediatamente después. Si clasificamos un píxel como *bosque caducifolio* y la segunda clase más probable es *bosque de coníferas*, esa asignación de clase no tiene el mismo significado que si dicha segunda clase más probable es *barbecho*.
 
 De igual modo, la diferencia entre la probabilidad de la primera y la segunda clase nos dan una idea de la fiabilidad con que podemos afirmar que una celda dada pertenece a la clase a la que es asignada. En relación con este hecho se define el concepto de *incertidumbre de clasificación*, el cual para una celda dada se expresa mediante la siguiente fórmula:
 
@@ -416,7 +402,7 @@ donde :math:`max` es la probabilidad máxima de entre todas las correspondientes
 
 Otra de las posibilidades que los métodos de clasificación suave aportan es la clasificación a nivel de detalle mayor que el propio píxel. El hecho de disponer de varios valores para cada píxel hace que se pueda inferir información acerca de la variabilidad que se da en el mismo, y pueden así definirse pixels mixtos, es decir que no pertenecen puramente a una clase, sino a varias. 
 
-Por ejemplo, si en un píxel dado tiene una probabilidad de 0,69 de pertenecer a la clase ``bosque de coníferas'' y un 0,31 de pertenecer a la clase ``bosque caducifolio'', puede entenderse que la masa boscosa del píxel esta formada por ambos tipos de especies, caducifolias y coniferas, en las proporciones que indican sus probabilidades asociadas.
+Por ejemplo, si en un píxel dado tiene una probabilidad de 0,69 de pertenecer a la clase *bosque de coníferas* y un 0,31 de pertenecer a la clase *bosque caducifolio*, puede entenderse que la masa boscosa del píxel esta formada por ambos tipos de especies, caducifolias y coniferas, en las proporciones que indican sus probabilidades asociadas.
 
 Esta interpretación viene condicionada, no obstante, al cumplimiento de ciertas condiciones tales como la pureza de las zonas de entrenamiento (que no existan píxeles mixtos en los píxeles empleados para extraer las características de cada clase), circunstancia que en muchos casos es difícil de encontrar. No obstante, los valores de probabilidad de las clases, correctamente interpretados, ofrecen de cualquier forma mayor detalle que un simple valor de clase.
 
@@ -448,24 +434,17 @@ Este parámetro es sumamente sencillo y no refleja la naturaleza de la modificac
 
 Uno de los elementos habituales en estudio de las diferencias entre dos capas categóricas es la denominada *matriz de confusión* o *matriz de contingencias*, que ya mencionamos en el capítulo dedicado a la calidad de los datos espaciales. Se trata de una matriz de dimensiones :math:`n\times n`, siendo :math:`n` el número de clases diferentes que existen en el conjunto de las capas. El elemento :math:`(i,j)` de la matriz representa el número de celdas que pertenecen a la clase :math:`i` en la primera capa y sin embargo están dentro de la clase :math:`j` en la segunda.
 
-La tabla :ref:`Tabla:Matriz_contingencias` muestra una posible matriz de contingencias para el caso de dos capas con un total de 4 clases.% sobre la que posteriormente realizaremos algunos cálculos adicionales.
+La tabla siguiente muestra una posible matriz de contingencias para el caso de dos capas con un total de 4 clases.
 
-\begin{table}
-\begin{center}
-\begin{tabular}{lllll}\toprule
-Clase & A & B & C & D \\ \midrule
-A & 20135 & 15 & 20 & 0 \\ 
-B & 22 & 18756 & 133 & 512 \\ 
-C & 19 & 70 & 30452 & 345\\ 
-D & 3 & 457 &  272 & 7018\\ \bottomrule
-\end{tabular}
-\end{center}
+====== ====== ====== ======= ========
+Clase   A     B       C       D
+====== ====== ====== ======= ========
+A       20135 15     20       0  
+B       22    18756  133      512 
+C       19    70     30452    345
+D       3     457    272      7018
+====== ====== ====== ======= ========
 
-	Matriz de confusión.
-
-
-.. _Tabla:Matriz_contingencias:
-\end{table} 
 
 Con los valores anteriores puede comprobarse entre qué clases se dan los mayores cambios (los mayores errores de clasificación) o cuáles son las que presentan una clasificación  más robusta. Por ejemplo, las clases D y B parecen ser difíciles de clasificar, ya que el numero de celdas de la primera asignados a la segunda es elevado, y también al contrario. Por el contrario, la clase A parece no presentar problemas, ya que tanto su fila como su columna correspondiente presentan ambas valores bajos fuera de la celda :math:`(1,1)`, que es la que representa las celdas correctamente clasificados.
 
@@ -518,7 +497,7 @@ Por otra parte, la comprobación puede no ser espacialmente representativa. Si c
 
 Además de las consideraciones espaciales anteriores, también deben considerarse las relaciones en el espacio de atributos. Es decir, las relaciones entre las clases. La matriz de confusión no considera estas relaciones, que sin embargo deberían tenerse en cuenta para evaluar el verdadero significado de sus valores.
 
-Supongamos que se clasifica un área de estudio en tres clases de usos de suelo como ``bosque caducifolio'', ``bosque de coníferas'' y ``lago''. Si en un emplazamiento encontramos un bosque caducifolio, es un error tanto clasificarlo como bosque de coníferas como asignarlo a la clase de lago, pero no cabe duda que esta segunda posibilidad supone un mayor error. Al no existir ponderación de las celdas de la matriz de confusión a la hora de calcular índices de concordancia, este hecho no se tiene en cuenta.
+Supongamos que se clasifica un área de estudio en tres clases de usos de suelo como *bosque caducifolio*, *bosque de coníferas* y *lago*. Si en un emplazamiento encontramos un bosque caducifolio, es un error tanto clasificarlo como bosque de coníferas como asignarlo a la clase de lago, pero no cabe duda que esta segunda posibilidad supone un mayor error. Al no existir ponderación de las celdas de la matriz de confusión a la hora de calcular índices de concordancia, este hecho no se tiene en cuenta.
 
 El hecho de que los bosques de coníferas y caducifolios sean clases similares entre sí y los lagos sean una clase bien distinta, hace aparecer un nuevo elemento descriptor de las circunstancias que se dan en la clasificación: la *separabilidad*. El concepto es sencillo: resulta más fácil distinguir un bosque de coníferas de un lago, que hacerlo de un bosque caducifolio. Esta mayor facilidad o dificultad también se traduce a los algoritmos de clasificación como os que hemos visto.
 
@@ -534,8 +513,6 @@ Ya hemos tratado anteriormente algunos conceptos estadísticos, y hemos comentad
 
 Uno de los análisis estadísticos con una presencia muy habitual en el ámbito SIG es el uso de regresiones, sean estas simples o múltiples. Como vimos en :ref:`Ajuste_de_polinomios`, a partir de los valores de una serie de predictores en un punto se puede estimar el valor en dicho punto de otra variable dada, conociendo la relación que existe entre ellas, de la forma
 
-.. _Eq:Regresion_multiple:
-
 .. math::
 
 	\widehat{z} = h_0 + h_1x_1 + \ldots, h_nx_n + e
@@ -547,9 +524,8 @@ Llevando a cabo este tipo de regresión, se asume que las observaciones son inde
 
 El modelo anterior supone igualmente que a lo largo de la zona estudiada no existen variaciones de los parámetros estimados, es decir, que estos son constantes con independencia de la localización. Esta segunda suposición tampoco ha de ser necesariamente correcta, ya que en el contexto espacial en el que se disponen las observaciones sobre las que se basa la regresión, pueden existir variaciones locales de los parámetros de ajuste.
 
-De existir esta variación, debe entenderse como parte del error. Adaptar las formulaciones habituales para el cálculo de regresiones al ámbito espacial en el que trabajamos, requiere superar de uno u otro modo las anteriores circunstancias, y buscar la manera en que la variación no forme parte del residuo. De las soluciones existentes, una de ellas, construida sobre las anteriores ideas, es la conocida como *Geographically Weighted Regression*\footnote{Regresión Ponderada Geográficamente}(GWR) :cite:p:`Fotheringam2002Wiley`. En este modelo de regresión, la ecuación :ref:`Eq:Regresion_multiple` se expresa de modo más genérico como 
+De existir esta variación, debe entenderse como parte del error. Adaptar las formulaciones habituales para el cálculo de regresiones al ámbito espacial en el que trabajamos, requiere superar de uno u otro modo las anteriores circunstancias, y buscar la manera en que la variación no forme parte del residuo. De las soluciones existentes, una de ellas, construida sobre las anteriores ideas, es la conocida como *Geographically Weighted Regression* (GWR, Regresión Ponderada Geográficamente) :cite:p:`Fotheringam2002Wiley`. En este modelo de regresión, la ecuación anterior se expresa de modo más genérico como 
 
-.. _Eq:GWR:
 
 .. math::
 
@@ -558,14 +534,14 @@ De existir esta variación, debe entenderse como parte del error. Adaptar las fo
 
 En este caso, también los parámetros estimados dependen la localización, que viene expresada a través de las coordenadas :math:`u` y :math:`v`
 
-La estimación de estos parámetros exige también adaptar el método de Mínimos Cuadrados Ordinarios, utilizado habitualmente para la estimar los de la ecuación :ref:`Eq:Regresion_multiple`. Los parámetros para un modelo de regresión lineal se obtienen según la expresión matricial 
+La estimación de estos parámetros exige también adaptar el método de Mínimos Cuadrados Ordinarios, utilizado habitualmente para la estimar los de la ecuación de una regresión múltiple. Los parámetros para un modelo de regresión lineal se obtienen según la expresión matricial 
 
 .. math::
 
 	h = (X^TX)^{-1}X^TY
 
 
-Añadiendo una ponderación que dependa a su vez de la localización, tenemos la siguiente expresión, que permite calcular los parámetros de la ecuación :ref:`Eq:GWR`.
+Añadiendo una ponderación que dependa a su vez de la localización, tenemos la siguiente expresión, que permite calcular los parámetros de la ecuación que define el metodo de regresion GWR.
 
 .. math::
 
@@ -593,12 +569,12 @@ donde :math:`d` es la distancia entre las coordenadas de la observación y :math
 
 
 
-
+.. _Evaluacion_multicriterio:
 
 Evaluación multicriterio y combinación de capas
 ===================================================== 
 
-.. _Evaluacion_multicriterio:
+
 
 La combinación de capas es una operación muy habitual. Diferentes variables, cada una de ellas recogida en una capa, se combinan para obtener algún tipo de resultado en base a la información que representan. Dentro de un SIG, conocemos ya operaciones de combinación de capas tanto en formato ráster (mediante el álgebra de mapas y sus funciones focales) como en formato vectorial (mediante operaciones de solape). Es, no obstante, con las primeras con las que podemos plantear expresiones complejas que incorporen esas variables, tal como, por ejemplo, la Ecuación Universal de Pérdidas de Suelo (USLE) que vimos en su momento en el apartado :ref:`Introduccion_algebra_de_mapas`.
 
@@ -617,8 +593,8 @@ En líneas generales, presentaremos formulaciones que nos permitan combinar las 
 Dos son los apartados en los que ampliaremos nuestros conocimientos sobre la elaboración de modelos como los anteriores:
 
 
-	* La creación y preparación de las capas que reflejan los distintos criterios a aplicar
-	* La forma de combinar esos criterios en una expresión matemática.
+* La creación y preparación de las capas que reflejan los distintos criterios a aplicar
+* La forma de combinar esos criterios en una expresión matemática.
 
 
 
@@ -683,7 +659,7 @@ La diferencia entre los resultados que se obtienen al aplicar una función de mi
 .. figure:: Capas_logica_difusa.*
 	:width: 650px
 
-	a) Capa de distancias a un punto. b) Separación en dos clases  de viabilidad en función de la pertenencia a un intervalo óptimo de distancia (en blanco zonas viables, en negro zonas inviables). c) Certidumbre de pertenencia a la clase viable aplicando la función de miembro de la figura :num:`#figfunciondemiembro`.
+	Capa de distancias a un punto (a). Separación en dos clases  de viabilidad en función de la pertenencia a un intervalo óptimo de distancia (en blanco zonas viables, en negro zonas inviables) (a). Certidumbre de pertenencia a la clase viable aplicando la función de miembro de la figura :num:`#figfunciondemiembro` (a).
 
 
 
@@ -692,38 +668,37 @@ La diferencia entre los resultados que se obtienen al aplicar una función de mi
 La función de miembro puede ser cualquier función, y no necesariamente similar a la que se muestra en la figura :num:`#figfunciondemiembro`. Basta con que cumpla las siguiente condiciones:
 
 
-	* Estar acotada entre 0 y 1
-	* Asignar valor 1 a los elementos que indudablemente pertenecen al conjunto o clase
-	* Presentar un descenso *suave* desde los elementos con valor 1 hasta los restantes.
+* Estar acotada entre 0 y 1
+* Asignar valor 1 a los elementos que indudablemente pertenecen al conjunto o clase
+* Presentar un descenso *suave* desde los elementos con valor 1 hasta los restantes.
 
 
 Es habitual, no obstante, encontrarnos con situaciones como las anteriores, en las que tengamos dos rangos, uno para el óptimo dentro del cual tendremos valor 1 (sea este rango acotado por los valores :math:`b` y :math:`c`, :math:`b < c`), y otro más amplio que abarca todos los valores distintos de 0 (entre los valores :math:`a` y :math:`d`, :math:`a < d`). En esta situación, lo único necesario es definir las transiciones desde el óptimo hasta los límites exteriores, es decir, los descensos suaves anteriormente citados.
 
 En el ejemplo de la figura esta transición es lineal, y la función de miembro se puede definir de la siguiente manera:
 
-\begin{eqnarray}
-f(x) = \left\{ \begin{array}{ll}
-0 & \textrm{si :math:`x < a`}\\
-\frac{x-a}{b-a} & \textrm{si :math:`a \leq x \leq b`}\\
-1 & \textrm{si :math:`b < x < c`}\\
-\frac{d-x}{d-c} & \textrm{si :math:`c \leq x \leq d`}\\
-0 & \textrm{si :math:`x > d`}
-  \end{array} \right. 
-\end{eqnarray}
+.. math::
+	f(x) = \left\{ \begin{array}{ll}
+	0 & \textrm{si :math:`x < a`}\\
+	\frac{x-a}{b-a} & \textrm{si :math:`a \leq x \leq b`}\\
+	1 & \textrm{si :math:`b < x < c`}\\
+	\frac{d-x}{d-c} & \textrm{si :math:`c \leq x \leq d`}\\
+	0 & \textrm{si :math:`x > d`}
+	  \end{array} \right. 
 
 Pueden elegirse cualesquiera valores para los parámetros :math:`a, b, c` y :math:`d`, obteniéndose toda una familia de curvas distintas. Por ejemplo, el intervalo óptimo puede reducirse a un único punto (:math:`b=c`), en cuyo caso tendríamos una función triangular.
 
 Otra solución habitual es emplear una función sigmoidal para las transiciones, quedando la definición global de la función de miembro como sigue:
 
-\begin{eqnarray}
-f(x) = \left\{ \begin{array}{ll}
-0 & \textrm{si :math:`x < a`}\\
-\frac{1}{2} \left(1 + \cos \left(\pi \frac{x-a}{b-a}\right)\right) & \textrm{si :math:`a \leq x \leq b`}\\
-1 & \textrm{si :math:`b < x < c`}\\
-\frac{1}{2} \left(1 + \cos \left(\pi \frac{d-x}{d-c}\right)\right) & \textrm{si :math:`c \leq x \leq d`}\\
-0 & \textrm{si :math:`x > d`}
-  \end{array} \right. 
-\end{eqnarray}
+.. math::
+
+	f(x) = \left\{ \begin{array}{ll}
+	0 & \textrm{si :math:`x < a`}\\
+	\frac{1}{2} \left(1 + \cos \left(\pi \frac{x-a}{b-a}\right)\right) & \textrm{si :math:`a \leq x \leq b`}\\
+	1 & \textrm{si :math:`b < x < c`}\\
+	\frac{1}{2} \left(1 + \cos \left(\pi \frac{d-x}{d-c}\right)\right) & \textrm{si :math:`c \leq x \leq d`}\\
+	0 & \textrm{si :math:`x > d`}
+	  \end{array} \right. 
 
 Un función de distribución de probabilidad gaussiana (esto es, una campana de Gauss), también puede utilizarse como función de miembro. En este caso, el óptimo sería el punto que coincide con la media de dicha distribución.
 
@@ -740,7 +715,6 @@ La mera suma de los distintos valores es empleada también con frecuencia. Si lo
 
 Una opción más elaborada es una media ponderada de los distintos factores, de la forma
 
-.. _Eq:Media_ponderada:
 
 .. math::
 
@@ -749,10 +723,10 @@ Una opción más elaborada es una media ponderada de los distintos factores, de 
 
 Esta es una solución habitual en la evaluación multicriterio  :cite:p:`Maguire2005ESRI`.
 
-Además de estos métodos, existen otros que, según las circunstancias, pueden resultar más adecuados para una correcta combinación de los factores considerados. Entre ellos, encontramos la denominada *regla de Dempster*. En el caso de aplicar una media ponderada como la de la ecuación :ref:`Eq:Media_ponderada`, la elección de los pesos :math:`a_i` no es trivial, especialmente cuando el número de factores es elevado. La metodología de *Jerarquías Analíticas*, que también veremos, nos ayudará a establecer dichos pesos de forma coherente con la importancia de cada factor.
+Además de estos métodos, existen otros que, según las circunstancias, pueden resultar más adecuados para una correcta combinación de los factores considerados. Entre ellos, encontramos la denominada *regla de Dempster*. En el caso de aplicar una media ponderada como la de la ecuación anterior, la elección de los pesos :math:`a_i` no es trivial, especialmente cuando el número de factores es elevado. La metodología de *Jerarquías Analíticas*, que también veremos, nos ayudará a establecer dichos pesos de forma coherente con la importancia de cada factor.
 
 Regla de Dempster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 La regla de Dempster esta basada en la denominada *Teoría de la Evidencia*, una extensión de la teoría bayesiana de la probabilidad  :cite:p:`Shafer1976Princeton`.
 
@@ -760,7 +734,6 @@ El elemento básico para agregar las distintas evidencias dentro de esta teoría
 
 La expresión de la regla de Dempster es la siguiente:
 
-.. _Eq:Dempster:
 
 .. math::
 
@@ -774,24 +747,26 @@ Las probabilidades se denotan con la letra :math:`m` (de *masa*) y se conocen co
 Veamos un ejemplo concreto. Supongamos que en base a la altitud sabemos que existe una probabilidad igual a 0,6 de que aparezca una especie en una zona dada, y que en función del suelo dicha probabilidad es de 0,8. Se tiene así que
 
 
-	* :math:`m_1(X) = 0,6` (posibilidad de que aparezca según la altitud)
-	* :math:`m_1(Y) = 0,4` (posibilidad de que no aparezca según la altitud)
-	* :math:`m_2(X) = 0,8` (posibilidad de que aparezca según las características del suelo)
-	* :math:`m_2(Y) = 0,2` (posibilidad de que no aparezca según las características del suelo)
+* :math:`m_1(X) = 0,6` (posibilidad de que aparezca según la altitud)
+* :math:`m_1(Y) = 0,4` (posibilidad de que no aparezca según la altitud)
+* :math:`m_2(X) = 0,8` (posibilidad de que aparezca según las características del suelo)
+* :math:`m_2(Y) = 0,2` (posibilidad de que no aparezca según las características del suelo)
 
 
-Aplicando la ecuación :ref:`Eq:Dempster`, se tiene
+Aplicando la ecuación ~de la fórmula de Dempster, se tiene
 
-\begin{eqnarray}
-m(Z) &=& \frac{m_1(X)m_2(X)}{1- (m_1(X)m_2(Y) + m_2(X)m_1(Y))} \nonumber \\&=& \frac{0,48}{1-(0,12 + 0,36)} = 0,92
-\end{eqnarray}
+.. math::
+
+	m(Z) &=& \frac{m_1(X)m_2(X)}{1- (m_1(X)m_2(Y) + m_2(X)m_1(Y))} \nonumber \\&=& \frac{0,48}{1-(0,12 + 0,36)} = 0,92
+
 
 La Teoría de la Evidencia es mucho más compleja que lo mostrado aquí, y admite casos mucho más elaborados que el presentado. Simplemente se ha mostrado un ejemplo para comprender las propiedades de la regla de Dempster, pero el lector interesado en profundizar en el tema puede encontrar en  :cite:p:`Shafer1976Princeton, Gordon1985AI` exposiciones más detalladas al respecto. Más ejemplos de la regla de Dempster y de numerosas variantes de la misma pueden encontrarse en  :cite:p:`Sentz2002Sandia`.
 
-Jerarquías Analíticas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-
 .. _AHP:
+
+Jerarquías Analíticas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Una suma ponderada de los distintos factores es uno de los métodos más habituales de combinar estos. Si los factores son solo dos, o incluso tres, no resulta difícil asignar los pesos a cada uno de ellos conociendo la importancia relativa que tienen. Sin embargo, cuando son más numerosos  (lo cual sucede muy habitualmente), asignar pesos de forma consistente no resulta sencillo, ya que las relaciones uno a uno entre los distintos factores son demasiadas como para poder tener una visión global de ellas. Es necesario para ello recurrir a alguna metodología con cierta sistematicidad.
 
@@ -799,47 +774,39 @@ La más popular de estas metodologías es la de las denominadas *Jerarquías Ana
 
 Los pesos de las distintas parejas de factores se colocan en una matriz de dimensiones :math:`n\times n`, siendo :math:`n` el número de factores que se quieren ponderar. El valor en la posición :math:`(i,j)` representa la ponderación entre el factor :math:`i` y el factor :math:`j`, esto es, la importancia relativa de este primero frente al segundo. En esta matriz (sea :math:`M`), se cumple siempre que :math:`M_{ij}=\frac{1}{M_{ji}}`, y :math:`M_{ii} = 1`.
 
-Existen estudios psicológicos que muestran que no se puede comparar simultáneamente más de :math:`7\pm2` elementos, y en base a este hecho los autores de esta metodología recomiendan utilizar valores entre 1 y 9, según lo mostrado en el cuadro :ref:`Tabla:AHP`.
+Existen estudios psicológicos que muestran que no se puede comparar simultáneamente más de :math:`7\pm2` elementos, y en base a este hecho los autores de esta metodología recomiendan utilizar valores entre 1 y 9, según lo mostrado en la siguiente tabla
 
-\begin{table}
-
-.. _Tabla:AHP:
-\begin{center}
-\begin{tabular}{cp{.5\mycolumnwidth}} \toprule
-Valor & Descripción\\ \midrule 
-1 & Misma importancia\\
-3 & Predominancia moderada de un factor sobre otro\\ 
-5 & Predominancia fuerte\\ 
-7 & Predominancia muy fuerte\\ 
-9 & Predominancia extrema \\ 
-2, 4, 6, 8 & valores intermedios \\ 
-Valores recíprocos & Valores para comparación inversa \\ \bottomrule
-\end{tabular}
-
-	Valores de comparación en la metodología de jerarquías analíticas
-\end{center}
-\end{table}
+==================  ================================================
+Valor               Descripción
+1                   Misma importancia
+3                   Predominancia moderada de un factor sobre otro
+5                   Predominancia fuerte
+7                   Predominancia muy fuerte
+9                   Predominancia extrema  
+2, 4, 6, 8          Valores intermedios 
+Valores recíprocos  Valores para comparación inversa 
+==================  ================================================
 
 Una vez creada la matriz de comparaciones, el autovector principal de la misma contiene los distintos pesos a asignar a cada uno de los factores.
 
 Veamos un ejemplo. Supongamos tres capas con tres factores, sean  \textsf{a}, \textsf{b} y \textsf{c}, y la siguiente matriz de comparaciones entre pares de ellos, que describe la importancia de cada uno de los mismos frente a los restantes.
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|} \hline
- & a & b & c \\ \hline 
-a & 1 & 4 & 5 \\ \hline
-b & 1/4 & 1 & 1/2 \\ \hline
-c & 1/5 & 2 & 1 \\ \hline
-\end{tabular}
-\end{center}
 
-Según la tabla, el factor \textsf{a} es cinco veces más relevante que el \textsf{c} y, consecuentemente, \textsf{c} tiene un quinto de la importancia de \textsf{a}. 
+=== === === === 
+    a    b  c 
+a   1    4  5 
+b   1/4  1  1/2
+c   1/5  2  1 
+=== === === === 
+
+
+Según la tabla, el factor *a* es cinco veces más relevante que el *c* y, consecuentemente, *c* tiene un quinto de la importancia de *a*. 
 
 El autovector principal de esta matriz es :math:`[0.95018, 0.17502, 0.25791]`.
 
 
 Factores y restricciones
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A la hora de combinar una serie de capas, el papel que estas juegan en el modelo puede ser bien distinto en función de la variable que contengan. Por ejemplo, existiendo una limitación legal a la construcción cerca de un cauce, trabajar con una capa de distancia al cauce con las herramientas que acabamos de ver para preparar y combinar capas no aporta ninguna ventaja adicional. La distancia no es en este caso un factor cuya influencia pueda graduarse, sino una restricción que simplemente nos servirá para saber si es posible o no construir en un emplazamiento dado.
 
@@ -870,9 +837,7 @@ Análisis de Componentes Principales
 
 
 
-El Análisis de Componentes Principales (ACP, también conocido como *transformación de Kahunen--Loeve o de Hotelling\footnote{El estadístico y economista Harold Hotelling (1895--1973) fue el primero en citar esta técnica en su trabajo de 1933  ``Analysis of a Complex of Statistical Variables with Principal Components''*}) es otra técnica estadística con gran importancia dentro de los SIG, en especial, y de modo similar a la clasificación (aunque al igual que entonces, no exclusivamente), en el trabajo con imágenes.
-
-
+El Análisis de Componentes Principales (ACP, también conocido como *transformación de Kahunen--Loeve o de Hotelling* es otra técnica estadística con gran importancia dentro de los SIG, en especial, y de modo similar a la clasificación (aunque al igual que entonces, no exclusivamente), en el trabajo con imágenes.
 
 El ACP es una transformación que pretende disminuir la dimensionalidad de un conjunto de variables, reduciendo este a uno más pequeño de forma que se pierda la menor información posible. Se trata de *resumir* la información que esas variables contienen, pero eliminando partes redundantes como por ejemplo las derivadas de la dependencia que pueda existir entre las variables. Se busca, pues, eliminar datos sin eliminar información.
 
@@ -898,16 +863,16 @@ En  :cite:p:`Fung1987PERS` y  :cite:p:`Byne1980RSE` pueden encontrarse sendos ej
 
 Para calcular la matriz del cambio de base que define la transformación, se puede partir de la matriz de covarianzas :math:`C` (ver ecuación :ref:`Eq:Matriz_covarianzas`) o bien de la matriz de correlación :math:`\rho`, en la cual los elementos son los coeficientes de correlación de Pearson. Es decir,
 
-\begin{equation}
-\rho = \left(
-\begin{array}{cccc}
-\rho_{11} & \rho_{12} & \cdots & \rho_{1n} \\
-\rho_{21} & \rho_{22} & \cdots & \rho_{2n} \\   
-\vdots & \vdots & \ddots & \vdots \\
-\rho_{n1} & \rho_{n2} & \cdots & \rho_{nn} \\  
-\end{array}
-\right)
-\end{equation}
+.. math::
+
+	\rho = \left(
+	\begin{array}{cccc}
+	\rho_{11} & \rho_{12} & \cdots & \rho_{1n} \\
+	\rho_{21} & \rho_{22} & \cdots & \rho_{2n} \\   
+	\vdots & \vdots & \ddots & \vdots \\
+	\rho_{n1} & \rho_{n2} & \cdots & \rho_{nn} \\  
+	\end{array}
+	\right)
 
 donde :math:`\rho_{ij}` se calcula según
 
@@ -920,20 +885,8 @@ Esta ultima matriz se emplea en lugar de la de covarianzas en caso de que las un
 
 El siguiente paso una vez se tiene la matriz es la obtención de sus autovalores y autovectores\footnote{Si necesitas ayuda con estos conceptos matemáticos, la red está llena de textos libres sobre álgebra lineal. En  :cite:p:`algebraLineal` puedes encontrar una excelente referencia en español.}. Estos autovectores son los vectores de la nueva base, y sus autovalores asociados nos sirven para establecer el orden en que han de considerarse. Así, el mayor autovalor indica que su vector propio asociado es aquel cuya dirección es la de la máxima variabilidad, y el de mínimo valor se asocia, de modo similar, al vector en la dirección de mínima variabilidad.
 
-%Como ejemplo de aplicación de esta técnica, la figura :num:`#figpca` muestra la reducción de las capas de una imagen LANDSAT TM+ a tres únicas bandas.
-%
-%.. _figpca:
 
-.. figure:: PCA.*
-	:width: 650px
-%
-	Reducción de un conjunto de bandas procedentes de un sensor LANDSAT TM+ a un conjunto de tres bandas, mediante el uso de Componentes Principales .
-%
-
-
-%
-
-Para más detalles,  :cite:p:`Chuvieco1996Rialp` ofrece información detallada sobre el análisis de componentes principales y su uso en el campo de la teledetección.\footnote{Más accesible, una muy buena referencia on--line es  :cite:p:`gabOrtizACP`}
+Para más detalles,  :cite:p:`Chuvieco1996Rialp` ofrece información detallada sobre el análisis de componentes principales y su uso en el campo de la teledetección. Más accesible, una muy buena referencia on--line es  :cite:p:`gabOrtizACP`
 
 Resumen
 =====================================================
@@ -947,7 +900,3 @@ Si en el proceso de clasificación se aporta algún tipo de información adicion
 Otras formulaciones vistas son las relativas a la combinación de capas. A la hora de combinar varias de ellas, podemos realizar operaciones aritméticas sencillas (mediante operaciones locales del álgebra de mapas) o aplicar otra serie de formulaciones más elaboradas. Metodologías como las *jerarquías analíticas* permiten establecer ponderaciones más correctas cuando el número de capas a combinar es elevado y resulta difícil asignar pesos relativos a las mismas. El significado de una capa en una operación de combinación puede ser distinto en función de si representa un factor más a considerar en la ecuación, o una restricción en el modelo.
 
 Por último, hemos visto cómo el método de análisis de componentes principales permite reducir el número de variables con los que se trabaja en un modelo, reduciendo un conjunto de :math:`n` capas a uno menor, tomando aquellas que explican la mayor variabilidad. Esto es de utilidad para establecer modelos de combinación entre capas, así como para reducir el volumen de datos en imágenes.
-
-
-%\bibliographystyle{unsrt}
-%\bibliography{../../Libro_SIG}

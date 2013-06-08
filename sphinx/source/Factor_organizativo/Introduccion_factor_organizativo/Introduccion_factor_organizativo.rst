@@ -103,46 +103,25 @@ Entre estos dos extremos encontramos un diverso abanico de usuarios que emplear�
 * Especialistas en la aplicación. Expertos que conocen con detalle el SIG y también el campo de aplicación de este. Se incluyen aquí los analistas SIG y los cartógrafos, para cuyo trabajo se requiere un alto conocimiento de todos los elementos implicados.
 
 
-Un resumen distinto de estas ideas acerca de los usuarios de un SIG lo encontrarás en la tabla :ref:`Tabla:LaboresUsuariosSIG`, donde puedes ver una definición de las principales labores que estos y los perfiles correspondientes a estas.
+Un resumen distinto de estas ideas acerca de los usuarios de un SIG lo encontrarás en la tabla siguiente, donde puedes ver una definición de las principales labores que estos desempeñan y los perfiles correspondientes a estas.
 
-\begin{table}[!hbt]
-\centering 
-\begin{tabular}{p{4cm}p{4cm}p{4cm}} \toprule
-\textbf{Actor} & \textbf{Tareas} & \textbf{Actores específicos} \\ \midrule
-Proveedores de datos. & Generan nuevos datos espaciales.
-
-Son los dueños de los datos del sistema.
- 
-Proveen información espacial.
- 
-& Grupos de investigación dentro de la institución. 
-  
-Otras entidades interesadas en el mismo espacio\\ \midrule
-Administradores de datos. & Mantenimiento y estandarización de datos espaciales.
-
-Mantenimiento de los procesos que aseguran eficiencia y estandarización para manejar y entregar datos
-& Especialistas en SIG y programación. \\ \midrule
-
-
-Usuarios de datos&  Acceso y recombinación de datos espaciales Generación de nueva información geográfica y de bases de datos.
-
-Adición de conocimientos, hechos, interpretaciones y análisis al sistema.
-
-& Profesionales en GIS y geografía. 
-
-Analistas de información espacial. 
-
-Planificadores. \\ \midrule
-
-Clientes y usuarios de datos fuera de la institución. & Uso de la información y de los datos geográficos generados a partir del SIG
-institucional.& De diversa naturaleza, interesados en los fenómenos espaciales. \\ \bottomrule
-\end{tabular}
-
-	Labores principales desempeñadas por los usuarios de un SIG (adaptado de  :cite:p:`Keating2003URISA)`
-
-
-.. _Tabla:LaboresUsuariosSIG:
-\end{table}
+==================================  ======================================================  =======================================================
+Actor                                Tareas                                                 Actores específicos
+==================================  ======================================================  =======================================================
+Proveedores de datos                Generan nuevos datos espaciales.                        Grupos de investigación dentro de la institución.  
+                                    Son los dueños de los datos del sistema.                Otras entidades interesadas en el mismo espacio.
+                                    Proveen información espacial. 
+Administradores de datos            Mantenimiento y estandarización de datos espaciales.    Especialistas en SIG y programación.
+                                    Mantenimiento de los procesos que aseguran eficiencia 
+                                    y estandarización para manejar y entregar datos.
+Usuarios de datos                   Acceso y recombinación de datos espaciales.             Profesionales en GIS y geografía. 
+                                    Generación de nueva información geográfica.             Analistas de información espacial. 
+                                    y de bases de datos.                                    Planificadores
+                                    Adición de conocimientos, hechos, interpretaciones 
+                                    y análisis al sistema.
+Clientes y usuarios de datos        Uso de la información y de los datos geográficos        De diversa naturaleza, interesados en los fenómenos 
+fuera de la institución.            generados a partir del SIG institucional.               espaciales.
+==================================  ======================================================  =======================================================
 
 Con todo lo anterior, tenemos ya un marco en el que trabajar a la hora de implantar un SIG, tratando de no dejar fuera de este a ningún grupo de usuarios y adaptándolo a las distintas formas de utilizarlo que estos presentan.
 

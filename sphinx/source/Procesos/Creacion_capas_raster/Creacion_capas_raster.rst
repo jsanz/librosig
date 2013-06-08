@@ -84,13 +84,14 @@ La lógica nos indica que el valor en esta celda debe estar alrededor de 10, ya 
 Otro ejemplo sería el siguiente:
 
 
-: Creacion_capas_raster/EjInterpolacion_2.pdf
-
+.. figure:: EjInterpolacion_2.pdf
+	:width: 650px
+	
 En este caso, la lógica nos indica que el valorá ser inferior a 10, y también probablemente a la media de los valores muestrales (9), ya que la celda problema se sitúa más cerca de los valores inferiores que de los superiores a ese valor medio. Razonando de este modo, aplicamos el hecho de que la proximidad incrementa la semejanza de valores. Es decir, que existe autocorrelación espacial para la variable interpolada.
 
 El caso siguiente ya es algo distinto:
 
-.. figure:: Creacion_capas_raster/EjInterpolacion_3.*
+.. figure:: EjInterpolacion_3.*
 	:width: 650px
 
 
@@ -129,11 +130,9 @@ El resultado es una capa con saltos abruptos (tanto como lo sean las diferencias
 .. _figinterpolacionvecindad:
 
 .. figure:: Interpolacion_vecindad.png
-	:width:650px
+	:width: 650px
 
 	Superficie obtenida mediante interpolación por vecindad.
-
-. 
 
 
 La interpolación por vecindad no es adecuada para el trabajo con variables continuas, pero sí para variables categóricas. Por ejemplo, para un conjunto de puntos cada uno de los cuales esté identificado con un código numérico, la interpolación por vecindad de ese valor da como resultado una capa donde los valores de las celdas identifican el punto más cercano. Esto puede utilizarse para calcular la influencia de cada uno de ellos en el espacio representado.
@@ -472,14 +471,13 @@ No existe un método universalmente establecido como más adecuado en todas situ
 .. figure:: Kriging_resultados.*	
 	:width: 650px
 
-	Distintos resultados obtenidos por kriging a partir de un mismo juego de puntos, utilizando diferentes ajustes. 
-
+	Distintos resultados obtenidos por kriging a partir de un mismo conjunto de puntos, utilizando diferentes ajustes. 
  
 
 
- Pese a lo anterior, el kriging es utilizado habitualmente sin considerar estos aspectos, obteniéndose resultados aparentemente correctos pero con frecuencia erróneos. La experiencia del usuario es un elemento clave en la aplicación de métodos de interpolación, y debe ponerse gran énfasis en este aspecto.
+Pese a lo anterior, el kriging es utilizado habitualmente sin considerar estos aspectos, obteniéndose resultados aparentemente correctos pero con frecuencia erróneos. La experiencia del usuario es un elemento clave en la aplicación de métodos de interpolación, y debe ponerse gran énfasis en este aspecto.
 
- No debe olvidarse tampoco que algunos métodos asumen que se dan ciertas condiciones de los datos de partida, y esto puede no ser cierto, o bien requerirse algún tipo de transformación para que así suceda. Es necesario siempre comprobar que se dan estos supuestos.
+No debe olvidarse tampoco que algunos métodos asumen que se dan ciertas condiciones de los datos de partida, y esto puede no ser cierto, o bien requerirse algún tipo de transformación para que así suceda. Es necesario siempre comprobar que se dan estos supuestos.
 
 * El uso de la capa resultante. No es lo mismo utilizar un MDE para crear una vista 3D con una fotografía aérea, que emplearlo para crear una ortofoto. Los requerimientos de calidad en el primer caso son menores, tan solo de tipo visual, y cualquiera de los métodos puede sernos válido. Aplicar una metodología compleja y laboriosa como el kriging quizás no sea la mejor opción en este caso, y sí lo sea el empleo de una ponderación por distancia.
 

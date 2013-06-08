@@ -1,3 +1,5 @@
+.. _Fundamentos_cartograficos:
+
 ****************************************
 Fundamentos cartográficos y geodésicos
 ****************************************
@@ -95,11 +97,9 @@ Si añadimos las diferencias tecnológicas y metodológicas que también existí
 
 La siguiente tabla  muestra algunos de los elipsoides de uso más extendido en diversas partes del mundo, con sus correspondientes parámetros.
 
-.. _tablaelipsiodes
-
-=================================  =============   =============  ==================
+=================================  =============   =============  ===================
 Elipsoide                          Semieje mayor   Semieje menor  :math:`\frac{1}{f}`
-=================================  =============   =============  ==================
+=================================  =============   =============  ===================
 Australian National                6378160.000     6356774.719    298.250000
 Bessel 1841                        6377397.155     6356078.963    299.152813 
 Clarke 1866                        6378206.400     6356583.800    294.978698 
@@ -112,7 +112,7 @@ SGS 85                             6378136.000     6356751.302    298.257000
 South American 1969                6378160.000     6356774.719    298.250000 
 WGS 72                             6378135.000     6356750.520    298.260000 
 WGS 84                             6378137.000     6356752.314    298.257224  
-=================================  =============   =============  ==================
+=================================  =============   =============  ===================
 
 
 La necesidad de trabajar con un elipsoide global para todo el planeta es más reciente, pero ya desde hace casi un siglo se hace patente que debe realizarse un esfuerzo por homogeneizar el uso de elipsoides, de tal modo que pueda trabajarse con una referencia internacional que facilite el uso de cartografía en las distintas zonas del planeta. Como consecuencia de esto, surgen los primeros elipsoides *generales* (en contraste con los elipsoides *locales*), los cuales, además de buscar un ajuste óptimo, han de cumplir las siguientes características:
@@ -132,7 +132,7 @@ El geoide no es, sin embargo, una superficie regular como el elipsoide, y presen
 .. _figcoordenadasgeograficas:
 
 .. figure:: Geoide.*
-	:width: 650px
+	:width: 450px
 
 	Representación gráfica del geoide (Fuente: Misión GRACE (NASA)).
 
@@ -199,7 +199,7 @@ En la figura :num:`#figcoordenadasgeograficas` puede verse un esquema de los con
 .. _figcoordenadasgeograficas:
 
 .. figure:: Coordenadas_geograficas.*
-
+	:width: 500px
 	Esquema de los elementos del sistema de coordenadas geográficas.
 
 
@@ -207,19 +207,19 @@ En la figura :num:`#figcoordenadasgeograficas` puede verse un esquema de los con
 
 La siguiente tabla recoge las coordenadas geográficas de algunas ciudades importantes, a modo de ejemplo.
 
-=======     =========     =========
-Ciudad      Latitud       Longitud
-=======     =========     =========
-Badajoz     38.53 N       6.58 O 
-Barcelona   41.23 N       2.11 E 
-Cadiz       36.32 N       6.18 O 
-Girona      41.59 N       2.49 E 
-Granada     37.11 N       3.35 O
-Madrid      40.24 N       3.41 O
-Segovia     40.57 N       4.07 O 
-Valencia    39.28 N       0.22 O
-Zaragoza    41.39 N       0.52 O 
-
+=========     =========     =========
+Ciudad        Latitud       Longitud
+=========     =========     =========
+Badajoz       38.53 N       6.58 O 
+Barcelona     41.23 N       2.11 E 
+Cadiz         36.32 N       6.18 O 
+Girona        41.59 N       2.49 E 
+Granada       37.11 N       3.35 O
+Madrid        40.24 N       3.41 O
+Segovia       40.57 N       4.07 O 
+Valencia      39.28 N       0.22 O
+Zaragoza      41.39 N       0.52 O 
+=========     =========     =========
 
 Las coordenadas geográficas resultan de gran utilidad, especialmente cuando se trabaja con grandes regiones. No obstante, no se trata de un sistema cartesiano, y tareas como la medición de áreas o distancias es mucho más complicada. Si bien la distancia entre dos paralelos es prácticamente constante (es decir, un grado de latitud equivale más o menos a una misma distancia en todos los puntos), la distancia entre dos meridianos no lo es, y varía entre unos 11,3 kilómetros en el Ecuador hasta los cero kilómetros en los polos, donde los meridianos convergen. 
 
@@ -237,15 +237,11 @@ Por todo ello, se deduce que existe una necesidad de poder trasladar la informac
 Más exactamente, una \textit{proyección cartográfica} es la correspondencia matemática biunívoca entre los puntos de una esfera o elipsoide y sus transformados en un plano  :cite:p:`Martin1983IGN`. Es decir, una aplicación :math:`f` que a cada par de coordenadas geográficas :math:`(\phi, \lambda)` le hace corresponder un par de coordenadas cartesianas :math:`(x, y)`, según
 
 
-.. _Eq:Proyecciones:
-
 .. math::
 
 	x = f(\phi, \lambda) \; ; \; y = f(\phi, \lambda)
 
 De igual modo, las coordenadas geográficas puede obtenerse a partir de las cartesianas según
-
-.. _Eq:Proyecciones2:
 
 .. math::
 
@@ -259,7 +255,7 @@ La figura :num:`#figproyeccion` muestra un esquema del concepto de proyección, 
 .. _figproyeccion:
 
 .. figure:: Proyeccion.*
-	:width: 650px
+	:width: 500px
 
 	Esquema del concepto de proyección. A los puntos :math:`A, B` y :math:`C` sobre la superficie del elipsoide se les asocian equivalentes :math:`a, b` y :math:`c` sobre un plano.
 
@@ -284,7 +280,7 @@ Las superficies más habituales son el cono y el cilindro (junto con, por supues
 .. _figproyeccioncilindrica:
 
 .. figure:: Proyeccion_cilindrica.*
-	:width: 650px
+	:width: 500px
 
 	Esquema de una proyección cilíndrica (tomado de Wikipedia)
 
@@ -299,7 +295,7 @@ Las superficies más habituales son el cono y el cilindro (junto con, por supues
 .. _figproyeccionconica:
 
 .. figure:: Proyeccion_conica.*
-	:width: 650px
+	:width: 500px
 
 	Esquema de una proyección cónica (tomado de Wikipedia)
 
@@ -361,7 +357,7 @@ Una zona UTM se localiza, por tanto, con un número y una letra, y es en funció
 .. _figorigenutm:
 
 .. figure:: Origen_UTM.*
-	:width: 650px
+	:width: 500px
 
 	Determinación del origen de una zona UTM
 
@@ -538,7 +534,7 @@ Este proceso en realidad puede verse como un tipo de generalización *al vuelo*.
 .. _figpiramides:
 
 .. figure:: Piramide.*
-	:width: 650px
+	:width: 500px
 
 	Pirámides de representación con imágenes preparadas a distintas escalas (Fuente: OSGeo).
 

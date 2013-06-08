@@ -199,7 +199,7 @@ En el caso que nos ocupa del estudio de líneas, pueden considerarse todos y cad
 
 A continuación se mostrarán brevemente los estadísticos más frecuentes para datos circulares, con especial énfasis en su aplicación al análisis de líneas dentro de un SIG. Descripciones más detalladas de estos y otros elementos de estadística circular, junto a sus aplicaciones en áreas donde el empleo de SIG es habitual, pueden consultarse en  :cite:p:`Batchelet1981Academic` o  :cite:p:`Fisher1993Cambridge`.
 
-Para comenzar, el cálculo de la media de dos ángulos ejemplifica bien las particularidades de los datos circulares. Sean tres ángulos de 5 :math:`^{\circ}`, 10 :math:`\textdegree` y 15:math:`\degree` respectivamente. El concepto habitual de media aplicado a estos valores resultaría en un ángulo medio de 10\degree, correcto en este caso. Si giramos ese conjunto de ángulos 10 grados en sentido antihorario, dejándolos como 355\degree, 0\degree, 5\degree, la media debería ser 0\degree, pero en su lugar se tiene un valor medio de 120\degree.
+Para comenzar, el cálculo de la media de dos ángulos ejemplifica bien las particularidades de los datos circulares. Sean tres ángulos de 5 :math:`^{\circ}`, 10 :math:`\textdegree` y 15:math:`:math:`^\circ`` respectivamente. El concepto habitual de media aplicado a estos valores resultaría en un ángulo medio de 10:math:`^\circ`, correcto en este caso. Si giramos ese conjunto de ángulos 10 grados en sentido antihorario, dejándolos como 355:math:`^\circ`, 0:math:`^\circ`, 5:math:`^\circ`, la media debería ser 0:math:`^\circ`, pero en su lugar se tiene un valor medio de 120:math:`^\circ`.
 
 Una forma correcta de operar con ángulos :math:`\alpha_1,\ldots,\alpha_n` consiste en hacerlo con las proyecciones del vector unitario según dichos ángulos, es decir :math:`\sin{\alpha_1},\ldots.\sin{\alpha_n}` y :math:`\cos{\alpha_1},\ldots.\cos{\alpha_n}`. Aplicando luego los estadísticos habituales sobre estos valores se obtienen unos nuevos valores de senos y cosenos que permiten obtener el ángulo resultante aplicando sobre ellos la función arcotangente. 
 
@@ -225,7 +225,7 @@ siendo :math:`S` y :math:`C` las sumas de senos y cosenos, respectivamente.
 	 S = \sum_{i=1}^N \sin{\alpha_i} \qquad ; \qquad  S = \sum_{i=1}^N \cos{\alpha_i}
 
 
-El módulo :math:`\overline{R}` se conoce también como *concentración angular* y es una medida inversa de la dispersión angular. No obstante, hay que tener en cuenta que valores próximos a cero, los cuales indicarían gran dispersión, puede proceder de dos agrupaciones de ángulos similares (es decir, con poca dispersión) si estas agrupaciones se diferencian entre sí 180\degree.
+El módulo :math:`\overline{R}` se conoce también como *concentración angular* y es una medida inversa de la dispersión angular. No obstante, hay que tener en cuenta que valores próximos a cero, los cuales indicarían gran dispersión, puede proceder de dos agrupaciones de ángulos similares (es decir, con poca dispersión) si estas agrupaciones se diferencian entre sí 180:math:`^\circ`.
 
 .. _figmediavectorial:
 
@@ -238,7 +238,7 @@ El módulo :math:`\overline{R}` se conoce también como *concentración angular*
 
 
 
-Cuando se trabaja con direcciones en lugar de orientaciones, es frecuente multiplicar por dos los valores angulares y posteriormente simplificar el ángulo aplicando módulo 360\degree. Es decir, aplicar la transformación :math:`\alpha' = 2\alpha \mod 360\degree`.
+Cuando se trabaja con direcciones en lugar de orientaciones, es frecuente multiplicar por dos los valores angulares y posteriormente simplificar el ángulo aplicando módulo 360:math:`^\circ`. Es decir, aplicar la transformación :math:`\alpha' = 2\alpha \mod 360:math:`^\circ``.
 
 La forma en que las distintas orientaciones se congregan entorno a la media, relacionada directamente con la dispersión, puede servir para inferir la existencia de una dirección predominante o bien que los valores angulares se hallan uniformemente distribuidos. La comprobación de que existe una tendencia direccional es de interés para el estudio de muchos procesos tales como el estudio de movimiento de individuos de una especie, que puede denotar la existencia de una linea migratoria preferida o revelar la presencia de algún factor que causa dicha predominancia en las direcciones.
 

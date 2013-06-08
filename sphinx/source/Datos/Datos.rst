@@ -25,3 +25,4 @@ Esta parte versa sobre los datos empleados dentro de un SIG, elementos imprescin
 	Fuentes_datos/Fuentes_datos.rst
 	Calidad_datos/Calidad_datos.rst
 	Bases_datos/Bases_datos.rst
+

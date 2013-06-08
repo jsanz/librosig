@@ -187,9 +187,9 @@ Coordenadas geográficas
 El sistema de coordenadas geográficas es un sistema de coordenadas esféricas mediante el cual un punto se localiza con dos valores angulares: 
 
 
-	* la *latitud* :math:`\phi` es el ángulo entre la línea que une el centro de la esfera con un punto de su superficie y el plano ecuatorial. Las lineas formadas por puntos de la misma latitud se denominan *paralelos* y forman círculos concéntricos paralelos al ecuador. Por definición la latitud es de 0\degree en el ecuador, que divide el globo en los hemisferios Norte y Sur. La latitud puede expresarse especificando si el punto se sitúa al Este o al Oeste, por ejemplo 24\degree, 21' 11'' N, o bien utilizando un signo, en cuyo caso los puntos al Sur del ecuador tienen signo negativo.
+	* la *latitud* :math:`\phi` es el ángulo entre la línea que une el centro de la esfera con un punto de su superficie y el plano ecuatorial. Las lineas formadas por puntos de la misma latitud se denominan *paralelos* y forman círculos concéntricos paralelos al ecuador. Por definición la latitud es de 0:math:`^\circ` en el ecuador, que divide el globo en los hemisferios Norte y Sur. La latitud puede expresarse especificando si el punto se sitúa al Este o al Oeste, por ejemplo 24:math:`^\circ`, 21' 11'' N, o bien utilizando un signo, en cuyo caso los puntos al Sur del ecuador tienen signo negativo.
 	* la *longitud* :math:`\lambda` es el ángulo formado por la linea que une el centro de la esfera con un punto de su superficie y un plano que contiene una linea que une los polos tomada como referencia. Las líneas formadas por puntos de igual longitud se denominan *meridianos* y convergen en los polos.
-	Como meridiano de referencia internacional se toma aquel que pasa por el observatorio de Greenwich, en el Reino Unido. Éste divide a su vez el globo en dos hemisferios: el Este y el Oeste. La longitud puede expresarse especificando si el punto se sitúa al Este o al Oeste, por ejemplo 32\degree, 12' 43'' E, o bien utilizando un signo, en cuyo caso los puntos al Oeste del meridiano de referencia tienen signo negativo.
+	Como meridiano de referencia internacional se toma aquel que pasa por el observatorio de Greenwich, en el Reino Unido. Éste divide a su vez el globo en dos hemisferios: el Este y el Oeste. La longitud puede expresarse especificando si el punto se sitúa al Este o al Oeste, por ejemplo 32:math:`^\circ`, 12' 43'' E, o bien utilizando un signo, en cuyo caso los puntos al Oeste del meridiano de referencia tienen signo negativo.
 
 
 En la figura :num:`#figcoordenadasgeograficas` puede verse un esquema de los conceptos anteriores.
@@ -355,9 +355,9 @@ En la actualidad, una de las proyecciones más extendidas en todos los ámbitos es
 
 Con el sistema UTM, las coordenadas de un punto no se expresan como coordenadas terrestres absolutas, sino mediante la zona correspondiente y las coordenadas relativas a la zona UTM en la que nos encontremos.
 
-La cuadricula UTM tiene un total de 60 husos numerados entre 1 y 60, cada uno de los cuales abarca una amplitud de 6\degree de longitud. el huso 1 se sitúa entre los 180\degree y 174\degree Oeste, y la numeración avanza en sentido Este. 
+La cuadricula UTM tiene un total de 60 husos numerados entre 1 y 60, cada uno de los cuales abarca una amplitud de 6:math:`^\circ` de longitud. el huso 1 se sitúa entre los 180:math:`^\circ` y 174:math:`^\circ` Oeste, y la numeración avanza en sentido Este. 
 
-En latitud, cada huso se divide en 20 zonas, que van desde los 80\degree S hasta los 84\degree N. Éstas se codifican con letras desde la C a la X, no utilizándose las letras I y O por su similitud con los dígitos 1 y 0. Cada zona abarca 8 grados de longitud, excepto la X que se prolonga unos 4 grados adicionales. 
+En latitud, cada huso se divide en 20 zonas, que van desde los 80:math:`^\circ` S hasta los 84:math:`^\circ` N. Éstas se codifican con letras desde la C a la X, no utilizándose las letras I y O por su similitud con los dígitos 1 y 0. Cada zona abarca 8 grados de longitud, excepto la X que se prolonga unos 4 grados adicionales. 
 
 La figura :num:`#figzonasutm` muestra un esquema de la cuadrícula UTM.
 
@@ -372,7 +372,7 @@ La figura :num:`#figzonasutm` muestra un esquema de la cuadrícula UTM.
  
 
 
-Una zona UTM se localiza, por tanto, con un número y una letra, y es en función de la zona como posteriormente se dan las coordenadas que localizan un punto. Estas coordenadas se expresan en metros y expresan la distancia entre el punto y el origen de la zona UTM en concreto. El origen de la zona se sitúa en el punto de corte entre el meridiano central de la zona y el ecuador. Por ejemplo, para las zonas UTM en el huso 31, el cual va desde los 0\degree hasta los 6\degree, el origen se sitúa en el punto de corte entre el ecuador y el meridiano de 3\degree (Figura :num:`#figorigenutm`).
+Una zona UTM se localiza, por tanto, con un número y una letra, y es en función de la zona como posteriormente se dan las coordenadas que localizan un punto. Estas coordenadas se expresan en metros y expresan la distancia entre el punto y el origen de la zona UTM en concreto. El origen de la zona se sitúa en el punto de corte entre el meridiano central de la zona y el ecuador. Por ejemplo, para las zonas UTM en el huso 31, el cual va desde los 0:math:`^\circ` hasta los 6:math:`^\circ`, el origen se sitúa en el punto de corte entre el ecuador y el meridiano de 3:math:`^\circ` (Figura :num:`#figorigenutm`).
 
 .. _figorigenutm:
 

@@ -95,11 +95,17 @@ Como puede verse, para tomar este tipo de decisiones es necesario tener en cuent
 Una vez se ha definido la posición más adecuada para las etiquetas, es necesario decidir cómo representar cada una de ellas. Algunas etiquetas son más relevantes que otras, y la claridad con la que una etiqueta transmite su información depende en gran medida de cómo esta se escribe. Los conceptos de la tipografía son de relevancia en este caso, y son a los que debemos acudir. He aquí algunos de ellos.
 
 * El uso de las variables visuales que conocemos es limitado en el caso de las etiquetas y, salvo el tamaño, no suelen emplearse para diferenciar unas de otras o darles más importancia. 
+
 * El uso del tono o el valor debe llevarse a cabo con precaución. La legibilidad de la etiqueta, no obstante, está en relación con el fondo, ya que el color de este puede dificultar su lectura, y en esta situación es a veces necesario usar uno u otro tono para garantizar esa legibilidad. La etiqueta siempre está en un primer plano, por lo que el resto del mapa bajo ella y en su entorno forma parte del fondo. Como ya vimos, un adecuado contraste entre fondo y figura es importante, por lo que variar el color de una etiqueta puede a veces ser necesario para que esta pueda leerse correctamente. 
+
  Algunos elementos se etiquetan sistemáticamente con colores establecidos, como en el caso de los ríos, del mismo color azul que la propia geometría de estos.
+
 * El tamaño es la forma principal de jerarquizar las etiquetas y darles más importancia. Se puede aplicar directamente sobre el tamaño de la fuente, aunque también es posible hacerlo sobre el grosor (fuente normal o negrita).
+
 * El uso de mayúsculas o minúsculas sirve igualmente para conceder más importancia a unas u otras etiquetas.
+
 * La separación entre caracteres se puede modificar para hacer que la etiqueta cubra un espacio mayor a lo largo de un objeto lineal, eliminando en ocasiones la necesidad de un etiquetado múltiple de esta. Un espaciado mayor también aporta mayor énfasis a la etiqueta. También se puede optar por un espaciado menor en etiquetas menos importantes, o en zonas con alta densidad, para disminuir el espacio que estas ocupan y evitar solapes.
+
 * El uso de fuentes artísticas o decorativas no es recomendable. Se deben utilizar fuentes sencillas y que sean lo más legibles posible.	
 
 La información necesaria para realizar todos estos ajustes a las etiquetas debe estar contenida en la tabla de atributos de la capa. Así, podemos incluir en esta campos que indiquen el ángulo en el que se escribe la etiqueta, el tamaño a utilizar o la separación de carácter, entre otras características. Incluso la propia posición puede especificarse de esta forma. En caso de existir estos valores, el SIG los usará en lugar de aquellos que resultarían de la aplicación de los algoritmos de etiquetado automático de que disponga, entendiendo que el ajuste manual es de mejor calidad. Dado que este tipo de configuración es habitual si se desea crear un mapa de calidad, algunos SIG permiten la incorporación de capas de etiquetado, que contienen toda la información necesaria para el establecimiento de etiquetas, de forma que estas se incorporan al mapa por separado y no a partir de los objetos a los que hacen referencia y sus atributos. Esta manera de proceder, no obstante, es más laboriosa.
@@ -211,9 +217,9 @@ En el caso, sin embargo, de trabajar con las capas de forma independiente, y si 
 .. _figrepresentacioncapasincoherente:
 
 .. figure:: Representacion_capas_incoherente.*
-	:width: 650px
+	:width: 750px
 
-	a) dos representaciones incorrectas de conjuntos de capas, debido a incoherencia entre los parámetros de representación empleados en cada una de ellas. b) representación correcta y homogénea con parámetros de representación comunes.
+	Dos representaciones incorrectas de conjuntos de capas, debido a incoherencia entre los parámetros de representación empleados en cada una de ellas (a). Representación correcta y homogénea con parámetros de representación comunes (b).
 
 
  
@@ -246,7 +252,7 @@ A la hora de preparar cartografía impresa, la resolución no es un problema, ya
 .. _figserifas:
 
 .. figure:: Serifas.*
-	:width: 650px
+	:width: 450px
 
 	Concepto de serifa.
 
@@ -278,7 +284,7 @@ El mismo problema sucede en el caso de emplear símbolos. Si, por ejemplo, tenem
 .. _figproblemasrepresentacionsimbolos:
 
 .. figure:: ProblemasRepresentacionSimbolos.*
-	:width: 650px
+	:width: 750px
 
 	El cambio de escala varía el tamaño de los símbolos tales como las etiquetas, haciéndolos demasiado pequeños (a) o demasiado grandes (b)
 
@@ -364,7 +370,7 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 	.. _figexageracionrelieve:
 
 	.. figure:: ExageracionRelieve.*
-		:width: 650px
+		:width: 750px
 
 		La exageración del relieve permite hacer más evidente la configuración de este.
 

@@ -403,16 +403,13 @@ La consulta tendría en este caso una forma como la siguiente:
 
 Al igual que en el apartado anterior, el objetivo de este apartado no es mostrar con detalle la sintaxis del lenguaje SQL cuando este se emplea para la realización de consultas espaciales. Los anteriores son únicamente algunos ejemplos para poner de manifiesto la potencia de este planteamiento y mostrar cómo los elementos espaciales se integran en el lenguaje SQL. Puede encontrarse más información en  :cite:p:`Egenhofer1994IEEE`.
 
-Además de esta extensión a SQL, existen otras propuestas propuestas alternativas tales como Geo--SQL :cite:p:`geoSQL`, SSQL (Spatial SQL) :cite:p:`SSQL`o SQL-MM.
+Además de esta extensión a SQL, existen otras propuestas propuestas alternativas tales como Geo--SQL :cite:p:`geoSQL`, SSQL (Spatial SQL) :cite:p:`SSQL` o SQL-MM.
                                                           
 
 .. _Indices_espaciales:
 
 Índices espaciales
 --------------------------------------------------------------
-
-
-
 
 
 Si realizamos una consulta a una base de datos, el resultado es un subconjunto de esta con los elementos que cumplen el criterio expresado en la consulta. Si se implementa de forma *directa* dicha consulta, esta operación implica comprobar todos los elementos de la base de datos y ver cuáles son los que cumplen con el citado criterio. Teniendo en cuenta que una base de datos puede tener un gran tamaño, esta forma de proceder no es la óptima.

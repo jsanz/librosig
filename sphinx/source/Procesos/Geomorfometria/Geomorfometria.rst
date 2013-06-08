@@ -331,6 +331,7 @@ Podemos expresar ambas formulaciones como el resultado de convoluciones (ver :re
 
 
 .. image:: Kernel_Evans.*
+	:width: 400px
 
 Como ya sabemos, la estructura ráster del MDE es similar a la de una imagen digital. Esto hace que no solo sea sencillo combinar el MDE con imágenes aéreas o satelitales, sino que también en las técnicas y algoritmos existe una notable similitud. En particular, veremos más adelante en el capítulo dedicado al análisis de imágenes que los núcleos anteriores se conocen como *núcleos de Prewitt* y son frecuentemente utilizado para la detección de bordes.
 
@@ -388,7 +389,7 @@ El mapa de orientaciones para la zona del juego de datos de referencia se muestr
 .. _figmapaorientacion:
 
 .. figure:: Orientacion.*
-	:width: 650px
+	:width: 450px
 
 	Mapa de orientaciones obtenido a partir del MDE.
 
@@ -396,14 +397,14 @@ El mapa de orientaciones para la zona del juego de datos de referencia se muestr
 
 
 
-Es de reseñar que la orientación es un parámetro circular, ya que :math:`a` y :math:`a+360`{\degree} indican la misma dirección. Por esta razón, debe tenerse cuidado al realizar análisis estadísticos sobre los valores de orientación. Una posible solución que elimina este hecho es trabajar con las proyecciones   :math:`\cos(a)` y :math:`\sin(a)`  :cite:p:`King1999Geoderma` (ver :ref:`Estadisticas_lineas`). También a la hora de crear una representación gráfica de un mapa de orientaciones debe tenerse en cuenta la naturaleza circular del parámetros. Nótese como en la figura :num:`#figmapaorientacion` la escala de colores también es circular, de tal modo que el valor máximo (360) tiene asociado el mismo color que el mínimo (0), ya que en realidad representan una misma orientación.\par
+Es de reseñar que la orientación es un parámetro circular, ya que :math:`a` y :math:`a+360`{:math:`^\circ`} indican la misma dirección. Por esta razón, debe tenerse cuidado al realizar análisis estadísticos sobre los valores de orientación. Una posible solución que elimina este hecho es trabajar con las proyecciones   :math:`\cos(a)` y :math:`\sin(a)`  :cite:p:`King1999Geoderma` (ver :ref:`Estadisticas_lineas`). También a la hora de crear una representación gráfica de un mapa de orientaciones debe tenerse en cuenta la naturaleza circular del parámetros. Nótese como en la figura :num:`#figmapaorientacion` la escala de colores también es circular, de tal modo que el valor máximo (360) tiene asociado el mismo color que el mínimo (0), ya que en realidad representan una misma orientación.\par
 
 Tanto la orientación como pendiente pueden representarse de modo simultaneo no como una capa nueva de valores, sino mediante elementos vectoriales (líneas) que representen el gradiente, las cuales pueden acompañar a la propia capa de elevaciones a partir de la cual se calculan (Figura :num:`#figrepresentaciongradiente`). Es de interés reseñar que, aunque la pendiente y la elevación son habitualmente aplicadas a una capa de elevaciones como todos los restantes parámetros que vemos en este capítulo, no ha de limitarse su aplicación a estas. Para cualquier otra variable de la cual queramos ver cómo varía en el espacio, ambos parámetros son perfectamente aplicables.
 
 .. _figrepresentaciongradiente:
 
 .. figure:: Representacion_gradiente.*
-	:width: 650px
+	:width: 550px
 
 	Representación del gradiente mediante elementos lineales. Para una mejor interpretación se han añadido curvas de nivel cada 10 metros.
 
@@ -416,7 +417,7 @@ Como veremos más en detalle en las próximas secciones, la orientación tiene r
 .. _figindiceconvergencia:
 
 .. figure:: Indice_convergencia.*
-	:width: 650px
+	:width: 450px
 
 	Indice de convergencia.
 
@@ -431,7 +432,7 @@ Una primera aproximación mediante un modelo sencillo se obtiene combinando los 
 .. _figrelievesombreado:
 
 .. figure:: Relieve_sombreado.*
-	:width: 650px
+	:width: 800px
 
 	Utilización de una capa de relieve sombreado para mejorar la visualización de una imagen aérea 
 
@@ -518,12 +519,9 @@ La figura :num:`#figinsolacion` muestra un mapa de insolación anual.
 .. _figinsolacion:
 
 .. figure:: Insolacion.*
-	:width: 650px
+	:width: 450px
 
 	Mapas de insolación total a lo largo de un año (en kWh/m:math:`^2`).
-
-
-
 
 
 No obstante, la introducción de factores como la masa de aire añaden una cierta subjetividad al modelo al ser datos estimados a su vez a partir de otros parámetros, pudiendo restar en cierta medida aplicabilidad a este planteamiento, según casos. Junto a esto, otra serie factores tales como el albedo debido a la nubosidad no son considerados en el anterior modelo, y serían difíciles de integrar. Y por último, la radiación difusa debe considerarse, pues su aporte es relevante  :cite:p:`Hengl2008Elsevier`
@@ -560,7 +558,7 @@ Al contrario que sucedía con la pendiente o la orientación, no existe una úni
 .. _figseccionnormal:
 
 .. figure:: Seccion_normal.*
-	:width: 500px
+	:width: 400px
 
 	Una sección normal es la resultante de la intersección de la superficie con un plano que contiene al vector normal a esta en un punto.
 
@@ -592,7 +590,7 @@ Junto con la notación introducida anteriormente, utilizaremos la siguiente para
 
 .. math::
 
-	r=\frac{\partial^2 z}{\partial x^2}; \qquad s=\frac{\partial^2z}{\partial x \partial y}; \qquad t=\frac{\partial^2 z}{\partialy^2};
+	r=\frac{\partial^2 z}{\partial x^2}; \qquad s=\frac{\partial^2z}{\partial x \partial y}; \qquad t=\frac{\partial^2 z}{\partial y^2};
 
 Derivando tanto la fórmula de  :cite:p:`Evans1972Harper` como la de  :cite:p:`Zevenbergen1987ESPL`, y dadas la expresiones escogidas para estas, se tiene que las derivadas parciales :math:`r`, :math:`s` y :math:`t` coinciden respectivamente con los coeficiente :math:`r`, :math:`s` y :math:`t` de aquellas, calculados en la sección :ref:`Modelos_MDE`.
 
@@ -669,7 +667,7 @@ Un enfoque distinto es el propuesto por \cite{Hobson1972Harper}, incluyendo elem
 	R = \frac{{\sqrt {\left( {\sum\limits_{i = 1}^n {{\rm X}_i } } \right)^2  + \left( {\sum\limits_{i = 1}^n {{\rm Y}_i } } \right)^2  + \left( {\sum\limits_{i = 1}^n {{\rm Z}_i } } \right)^2 } }}{n}
 
 
-siendo :math:`n` el número de celdas en la ventana de análisis y :math:`{\rm X}_i, {\rm Y}_i$ y ${\rm Z}_i` las componentes del vector unitario normal a la superficie en cada una de dichas celdas. Estas pueden calcularse a partir de la pendiente y la orientación según las expresiones:
+siendo :math:`n` el número de celdas en la ventana de análisis y :math:`{\rm X}_i, {\rm Y}_i` y :math:`{\rm Z}_i` las componentes del vector unitario normal a la superficie en cada una de dichas celdas. Estas pueden calcularse a partir de la pendiente y la orientación según las expresiones:
 
 .. math::
 
@@ -697,6 +695,8 @@ Veíamos en el apartado :ref:`Preparacion_MDE` cómo resultaba necesario corregi
 
 La asignación de direcciones de flujo se lleva a cabo mediante un análisis de tipo focal, al igual que los parámetros morfométricos que hemos visto hasta el momento. Esas direcciones, no obstante, implican una conectividad entre las celdas del MDE, y esta conectividad la emplearemos para definir regiones de celdas hidrológicamente relacionadas entre sí y realizar un análisis regional.
 
+.. _Direcciones flujo:
+
 Direcciones de flujo
 ----------------------
 
@@ -705,7 +705,7 @@ Las direcciones de flujo definen el comportamiento hidrológico de cada celda co
 
 El modelo más sencillo de asignación de direcciones de flujo es el denominado \emph{D8} \cite{Callaghan1984CVGIP}, acrónimo derivado de su denominación en lengua inglesa \emph{Deterministic 8}. Esta formulación es la implementada en la gran mayoría de SIG con capacidades de análisis hidrológico, debido principalmente a su sencillez operativa y facilidad de comprensión. 
 
-Los fundamentos teóricos de esta metodología son intuitivos e inmediatos. Dada una celda problema, el flujo puede abandonar esta únicamente en ocho direcciones posibles, esto es, las ocho que resultan de unir el centro de la celda inicial con los de las las ocho circundantes en la ventana de análisis $3 \times 3$. El ángulo de desplazamiento del flujo queda así discretizado en intervalos de $45\degree (360\degree/8)$, circunstancia que se erige como principal inconveniente del método al restringir la variedad de situaciones reales a tan solo $8$ posibles. 
+Los fundamentos teóricos de esta metodología son intuitivos e inmediatos. Dada una celda problema, el flujo puede abandonar esta únicamente en ocho direcciones posibles, esto es, las ocho que resultan de unir el centro de la celda inicial con los de las las ocho circundantes en la ventana de análisis $3 \times 3$. El ángulo de desplazamiento del flujo queda así discretizado en intervalos de 45 :math:`^\circ` (360 :math:`^\circ` / 8), circunstancia que se erige como principal inconveniente del método al restringir la variedad de situaciones reales a tan solo $8$ posibles. 
 
 El proceso de cálculo de la dirección de flujo es sencillo, y requiere únicamente el cálculo de una pendiente media entre la celda central y las 8 circundantes, la cual se evalúa mediante la expresión
 
@@ -718,14 +718,14 @@ donde :math:`l` representa la distancia entre los centros de las celdas entre la
 
 %La figura \ref{Fig:Ejemplo_D8} muestra un pequeño ejemplo aplicado de esta metodología.
 
-La principal ventaja del método, su simplicidad, es también su principal defecto. La discretización de las direcciones en múltiplos de 45\degree\; hace que flujos que presenten rutas ciertamente distintas (con diferencias en orientación tan importantes como esos mismos 45\degree) pueden quedar englobadas dentro de un misma dirección, ya que la dirección real resulta truncada para encajar dentro de uno de los intervalos. 
+La principal ventaja del método, su simplicidad, es también su principal defecto. La discretización de las direcciones en múltiplos de 45:math:`^\circ`\; hace que flujos que presenten rutas ciertamente distintas (con diferencias en orientación tan importantes como esos mismos 45:math:`^\circ`) pueden quedar englobadas dentro de un misma dirección, ya que la dirección real resulta truncada para encajar dentro de uno de los intervalos. 
 
 La aparición de segmentos rectilíneos paralelos en zonas llanas (Figura :num:`figlineasparalelasd8`) o la acumulación de errores en pendientes monótonas (:num:`#figacumulacionerrord8`), son, entre otras, algunas de las consecuencias indeseadas de lo anterior.
 
 .. _figacumulacionerrord8:
 
 .. figure:: Acumulacion_error_D8.*
-	:width: 650px
+	:width: 500px
 
 	Propagación de errores de dirección en el modelo D8.La flecha señala la dirección real de la pendiente y las celdas sombreadas la dirección de flujo calculada
 
@@ -744,7 +744,7 @@ Partiendo de la base conceptual del D8, se han elaborado modelos que tratan de s
 
  :cite:p:`Fairfield1991WRR` introduce un elemento estocástico en su modelo *Rho8*, manteniendo el resto de conceptos del D8. De este modo, aunque no se elimina la discretización ni la concepción unidimensional del flujo, se soluciona el problema de las líneas de flujo paralelas o la acumulación del error en pendientes uniformes.
 
-En lugar de calcular la dirección flujo según la máxima pendiente con las celdas circundantes, se calcula la orientación de la celda y en función de esta se asigna hacia una de las dos celdas que definen una dirección más similar. Por ejemplo, para una celda con orientación 15\degree, la dirección asignada puede ser hacia la celda superior (0\degree) o la superior derecha (45\degree). La asignación de una u otra dirección se produce con una probabilidad :math:`p` establecida en función de la diferencia entre la orientación de la celda y la de cada dirección posible. Así, para el ejemplo mencionado, se tendría
+En lugar de calcular la dirección flujo según la máxima pendiente con las celdas circundantes, se calcula la orientación de la celda y en función de esta se asigna hacia una de las dos celdas que definen una dirección más similar. Por ejemplo, para una celda con orientación 15:math:`^\circ`, la dirección asignada puede ser hacia la celda superior (0:math:`^\circ`) o la superior derecha (45:math:`^\circ`). La asignación de una u otra dirección se produce con una probabilidad :math:`p` establecida en función de la diferencia entre la orientación de la celda y la de cada dirección posible. Así, para el ejemplo mencionado, se tendría
 
 .. math::
 
@@ -789,7 +789,7 @@ Aunque muy poco habituales, existen asimismo metodologías no basadas en el mode
 .. _figkra:
 
 .. figure:: KRAD8.*
-	:width: 650px
+	:width: 450px
 
 	Cálculo de dirección de flujo según Kinematic Routing Algorithm (KRA) :cite:p:`Lea1992Chapman(trazo fino) y comparación con D8 \cite{Callaghan1984CVGIP` (trazo grueso)}
 
@@ -813,6 +813,7 @@ Sea la siguiente ventana de análisis:
 
 
 .. image:: EjZonas_planas.*
+	:width: 400px
 
 
 Puesto que no existe pendiente entre la celda central y las circundantes, no es posible asignar una dirección de flujo a la celda central. Incluso en el caso de no utilizar el D8, tampoco sería posible, ya que otros algoritmo utilizan principios similares o se basan en la orientación, la cual no se encuentra definida para celdas sin pendiente, como vimos en :ref:`Eq:Orientacion2`. La intuición y la mera observación nos dicen, no obstante, que el agua se desplazará a través del relieve definido por la anterior ventana.
@@ -822,6 +823,7 @@ En realidad, puede considerarse que las zonas planas son un artificio dentro de 
 Supongamos que la anterior ventana se encuentra dentro de un área más amplia con los siguiente valores:
 
 .. image:: EjZonas_planas2.*
+	:width: 400px
 
 En este caso, resulta fácil intuir que el flujo se desplazará de Este a Oeste, de las zonas de mayor elevación a las de menor. El relieve circundante contiene, pues, información que puede utilizarse para asignar los valores dentro de la zona llana.
 
@@ -837,7 +839,7 @@ Respecto a la primera, podemos asimilar la dirección de flujo de la celda a la 
 .. _figzonasplanasdirflujo:
 
 .. figure:: Zonas_planas_dir_flujo.*
-	:width: 650px
+	:width: 450px
 
 	Cálculo de dirección de flujo sobre una celda llana (en trazo grueso) como suma vectorial de las direcciones de las celdas que vierten sobre la misma (en trazo fino).
 
@@ -849,9 +851,9 @@ Si alguna de las celdas situadas alrededor de la celda problema es a su vez plan
 
 Aunque solucionando eficientemente la dificultad de las zonas planas, esta metodología adolece de algunos problemas de precisión, permitiendo la evaluación de una dirección de flujo en zonas planas pero arrojando en determinadas ocasiones resultados con ciertas deficiencias, especialmente para zonas planas de gran extensión.  La posibilidad de existencia de más de un punto de salida o la indeterminación en ciertos casos de la dirección a asignar por existir varias opciones válidas implica la introducción de elementos arbitrarios que conllevan una serie de aspectos negativos. El problema de las líneas paralelas de flujo es en este caso uno de los principales defectos que pueden asociarse con esta metodología.
 
- :cite:p:`Jenson1988PERS` propone una filosofía opuesta empleando las celdas hacia las que vierte la zona llana y que tengan por sí mismas un flujo bien definido. Con ellas, aplicando un proceso iterativo similar al anterior, se define el flujo de las celdas circundantes a las mismas encaminándolo hacia ellas y continuando de este modo hacia las restantes celdas hasta completar la totalidad de la zona llana (Figura :ref:`Zonas_planas_dir_flujo_jenson`).  No obstante, la similitud en cuanto a sus conceptos, aunque con algunas diferencias, hace que puedan asociarse a esta alternativa unas desventajas similares a las comentadas en el método anterior.
+:cite:p:`Jenson1988PERS` propone una filosofía opuesta empleando las celdas hacia las que vierte la zona llana y que tengan por sí mismas un flujo bien definido. Con ellas, aplicando un proceso iterativo similar al anterior, se define el flujo de las celdas circundantes a las mismas encaminándolo hacia ellas y continuando de este modo hacia las restantes celdas hasta completar la totalidad de la zona llana (Figura :num:`#figzonasplanasjenson`).  No obstante, la similitud en cuanto a sus conceptos, aunque con algunas diferencias, hace que puedan asociarse a esta alternativa unas desventajas similares a las comentadas en el método anterior.
 
-.. _Zonas_planas_dir_flujo_jenson:
+.. _figzonasplanasjenson:
 
 .. figure:: Zonas_planas_dir_flujo_jenson.*
 	:width: 650px
@@ -864,15 +866,15 @@ Aunque solucionando eficientemente la dificultad de las zonas planas, esta metod
 
 El segundo planteamiento, la modificación del MDE para darle una cierta pendiente sobre las zonas llanas, es más adecuado, puesto que da como resultado un MDE hidrológicamente correcto sobre el que pueden aplicarse sin problemas las formulaciones habituales.  :cite:p:`Garbrecht1997JH` propone establecer dicha modificación aplicando los conceptos de las dos soluciones anteriores. Es decir, considerando que el flujo sigue la dirección marcada por las celdas aguas arriba, alejándose de las zonas altas, y confluyendo hacia la dirección señalada por las celdas aguas abajo.
 
-Para ello, define dos capas de elevaciones modificadas, una reflejando cada uno de los fenómenos anteriores (alejamiento de las zonas altas y direccionamiento hacia las zonas bajas), la suma de las cuales da lugar al MDE modificado sin zonas llanas (Figura :ref:`Zonas_planas_dir_flujo_garbrecht`).
+Para ello, define dos capas de elevaciones modificadas, una reflejando cada uno de los fenómenos anteriores (alejamiento de las zonas altas y direccionamiento hacia las zonas bajas), la suma de las cuales da lugar al MDE modificado sin zonas llanas (Figura :num:`#figzonasplanasgarbrecht`).
 
 
-.. _Zonas_planas_dir_flujo_garbrecht:
+.. _figzonasplanasgarbrecht:
 
 .. figure:: Zonas_planas_dir_flujo_garbrecht.*
 	:width: 650px
 
-	Modificación del MDE para el cálculo de direcciones de flujo sobre zonas llanas según  :cite:p:`Garbrecht1997JH. De izquierda a derecha y de arriba a abajo: elevaciones originales, modificación de elevaciones según los dos supuestos considerados y elevaciones finales resultantes.`
+	Modificación del MDE para el cálculo de direcciones de flujo sobre zonas llanas según  :cite:p:`Garbrecht1997JH`. De izquierda a derecha y de arriba a abajo: elevaciones originales, modificación de elevaciones según los dos supuestos considerados y elevaciones finales resultantes.
 
 
 
@@ -887,13 +889,14 @@ Sea la siguiente ventana de análisis:
 
 
 .. image:: EjDepresion.*
+	:width: 400px
 
 Nos encontramos con un problema similar al anterior, ya que todas las pendientes desde la celda central son positivas, y no existe ninguna dirección de flujo que represente un movimiento hacia aguas abajo. En la realidad, no obstante, una depresión como la anterior no hace que el agua detenga su movimiento. El flujo rellenará la depresión y verterá por la celda de menor elevación, continuando su camino.
 
 Una depresión no siempre lleva implícita la imposibilidad de asignar una dirección de flujo a todas sus celdas. Sea el siguiente fragmento de un MDE.
 
 .. image:: EjDepresion2.*
-
+	:width: 400px
 
 En este caso, de las dos celdas de la depresión, solo una de ellas no tiene dirección de flujo (de elevación 57), pero en la otra (de elevación 58) esta es incorrecta, puesto que vierte sobre la primera y la tendencia natural del terreno es la contraria. El proceso que tiene lugar será bien distinto, ya que el flujo rellenará la depresión y saldrá de esta desde la celda de elevación 58 y hacia la de menor elevación de su entorno, en este caso 59.
 
@@ -920,7 +923,7 @@ La figura :num:`#figllenadodepresiones` presenta un esquema comparativo de los d
 .. _figllenadodepresiones:
 
 .. figure:: Llenado_depresiones.*
-	:width: 650px
+	:width: 750px
 
 	De derecha a izquierda, elevaciones originales, eliminación de la depresión usando llenado y eliminación de la depresión mediante llenado y modificación de celdas obstáculo. En negro, celda de desagüe. En gris, celdas modificadas.
 
@@ -1099,7 +1102,7 @@ La estimación de un valor óptimo de umbral de forma automatizada es difícil, 
 
 Aunque es con mucha diferencia la opción más habitual, la utilización del área acumulada como parámetro de apoyo no es en absoluto ideal. Su utilización implica la generación de redes con densidad de drenaje constante, algo que realmente no sucede en la naturaleza, siendo esta mayor en los tramos altos que en los medios y bajos de los cauces.
 
- :cite:p:`Montgomery1989WRR` propone sustituir el área acumulada por un parámetro de la forma
+:cite:p:`Montgomery1989WRR` propone sustituir el área acumulada por un parámetro de la forma
 
 .. math::
 
@@ -1174,7 +1177,7 @@ Si asignamos ordenes jerárquicos de Shreve  :cite:p:`Shreve1966JGeol`, tendremo
 .. _figsubcuencasshreve:
 
 .. figure:: Subcuencas_shreve.*
-	:width: 650px
+	:width: 450px
 
 	División de una cuenca en subcuencas con puntos de salida en confluencias con variación de órdenes de a)
 
@@ -1195,9 +1198,11 @@ La información sobre la superficie y forma de la cuenca, así como la de los va
 
 En primer lugar, tenemos el área y perímetro de la cuenca, parámetros clásicos sencillos de calcular sobre la capa que define la cuenca, bien contando las celdas o las celdas de borde. El centro de masas del conjunto de celdas es el centro de masas de la cuenca, de interés para el cálculo de parámetros accesorios con significado hidrológico.
 
-Como ya vimos en \ref{Funciones_globales}, la capa con la cuenca puede usarse como máscara para limitar las celdas con valores válidos de una determinada variable a aquellas dentro de la cuenca. Haciendo esto, el histograma de frecuencia de estos valores o una curva hipsográfica calculada con ellos sirve como descriptor de la cuenca.\index{Curva!hipsográfica}
+Como ya vimos en \ref{Funciones_globales}, la capa con la cuenca puede usarse como máscara para limitar las celdas con valores válidos de una determinada variable a aquellas dentro de la cuenca. Haciendo esto, el histograma de frecuencia de estos valores o una curva hipsográfica calculada con ellos sirve como descriptor de la cuenca.
 
-Un parámetro de interés es la distancia de flujo desde cada celda hasta el punto de salida. Suponiendo una velocidad media en las celdas de la cuenca, estas distancias pueden convertirse en tiempos de salida. La estimación de la velocidad constante puede hacerse, por ejemplo, utilizando el tiempo de concentración de la cuenca. El histograma de frecuencias de estos puede emplearse para obtener un hidrograma unitario de la cuenca (Figura \ref{Fig:Tiempos_salida}).\index{Hidrogama unitario}\index{Tiempo de concentración}
+Un parámetro de interés es la distancia de flujo desde cada celda hasta el punto de salida. Suponiendo una velocidad media en las celdas de la cuenca, estas distancias pueden convertirse en tiempos de salida. La estimación de la velocidad constante puede hacerse, por ejemplo, utilizando el tiempo de concentración de la cuenca. El histograma de frecuencias de estos puede emplearse para obtener un hidrograma unitario de la cuenca (Figura :num:`#figtiempossalida`).
+
+.. _figtiempossalida:
 
 .. figure:: Tiempo_salida.*
 
@@ -1225,7 +1230,7 @@ Con todos los parámetros, tanto hidrológicos como morfométricos, que hemos vi
 * Factor topográfico LS
 
 
-Todos ellos se basan en la pendiente y en el área acumulada específica como parámetros básicos\index{Pendiente}
+Todos ellos se basan en la pendiente y en el área acumulada específica como parámetros básicos
 
 El *índice topográfico de humedad :cite:p:`Beven1979HS` se define como
 
@@ -1237,7 +1242,7 @@ donde :math:`a'` es el área acumulada específica y :math:`s` la pendiente.
 
 Es habitual sustituir la pendiente nula por una de valor muy pequeño, del orden de 0,0001\% por ejemplo, para evitar que el índice no quede definido en celdas planas.
 
-Detrás de su aspecto sencillo, este índice esconde una gran cantidad de información. Originalmente fue definido con objeto de expresar la relación entre la morfología del relieve y la acumulación de agua en el suelo, responsable esta a su vez de la escorrentía generada, velocidad de flujo, etc. En particular, un uso principal de este índice es el relacionado con la producción de escorrentía bajo el supuesto de que esta se produce en presencia de una saturación de agua en el suelo, momento en el que nivel freático alcanza la superficie.\index{Escorrentía}
+Detrás de su aspecto sencillo, este índice esconde una gran cantidad de información. Originalmente fue definido con objeto de expresar la relación entre la morfología del relieve y la acumulación de agua en el suelo, responsable esta a su vez de la escorrentía generada, velocidad de flujo, etc. En particular, un uso principal de este índice es el relacionado con la producción de escorrentía bajo el supuesto de que esta se produce en presencia de una saturación de agua en el suelo, momento en el que nivel freático alcanza la superficie.
 
 Valores altos del índice implican zonas con baja pendiente o con gran cantidad de área acumulada. Por tanto, se trata de celdas a las que llegarán flujos abundantes y que no evacuan bien dicho flujo, teniendo tendencia a acumular humedad. Por el contrario, las celdas con valores bajos, con elevada pendiente y baja área acumulada, serán celdas en las que no se encontrará humedad edáfica.
 
@@ -1246,10 +1251,11 @@ La figura :num:`#figindicetopografico` muestra el mapa de este parámetro.
 .. _figindicetopografico:
 
 .. figure:: Indice_humedad.*
+	:width: 450px
 
 	Mapa de índice topográfico de humedad.
 
-De formulación similar el anterior, el \emph{índice de potencia de cauce} caracteriza la energía de los flujos a través de cada celda. Su expresión es la siguiente:
+De formulación similar el anterior, el *índice de potencia de cauce* caracteriza la energía de los flujos a través de cada celda. Su expresión es la siguiente:
 
 .. math::
 	
@@ -1300,7 +1306,9 @@ Aunque existen similitudes entre el concepto de una cuenca hidrológica y una cu
 
 En el cálculo de visibilidades, ha de incorporarse asimismo el significado físico del fenómeno analizado. Dos puntos a una distancia de muchos kilómetros, si no existe relieve entre ellos, resultarán como visibles entre si efectuamos un análisis como el descrito. No obstante, por las propias limitaciones de la visión humana, así como por efectos atmosféricos y otros factores, no es lógico pensar que tales puntos puedan verse. El análisis visual debe, por tanto, limitarse a una distancia acorde con el proceso modelizado.
 
-En la figura :num:`figcuencavisual` puede verse la cuenca visual asociada a una celda concreta.
+En la figura :num:`#figcuencavisual` puede verse la cuenca visual asociada a una celda concreta.
+
+.. _figcuencavisual:
 
 .. figure:: Cuenca_visual.*
 	:width: 450px
@@ -1375,12 +1383,12 @@ Con un planteamiento similar,  :cite:p:`Wood1996PhD` propone una división en 6 
 ========================= ========================================== ===========================================
 Tipo                        :math:`\frac{\partial^2 z}{\partial x}`  :math:`\frac{\partial^2 z}{\partial y}` 
 ========================= ========================================== ===========================================
-Cima                                         +                                       +
-Collado(Punto de silla)                      +                                       -
-Cresta                                       +                                       0
+Cima                                         :math:`+`                               :math:`+`
+Collado(Punto de silla)                      :math:`+`                               :math:`-`
+Cresta                                       :math:`+`                               0
 Plano                                         0                                      0
-Cauce                                        -                                       0
-Depresión                                    -                                       -
+Cauce                                        :math:`-`                               0
+Depresión                                    :math:`-`                               :math:`-`
 ========================= ========================================== ===========================================
 
 Otra metodología distinta y muy aceptada es la propuesta por  :cite:p:`Dikau1991USGS`. Con anterioridad a la aparición de los Modelos Digitales del Terreno,  :cite:p:`Hammond1954AAG` estableció una clasificación del relieve en base a tres parámetros: la pendiente, el relieve relativo y la forma del perfil. El relieve relativo es el rango de valores de elevación en un entorno dado del punto, y el tipo de perfil se calcula con la distribución de pendientes en los puntos circundantes. Esta clasificación da un total de 96 clases posibles, derivadas de la división de los anteriores parámetros base en cuatro, seis y cuatro clases respectivamente, así como la combinación posterior de los mismos. 

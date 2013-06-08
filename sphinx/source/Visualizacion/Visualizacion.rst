@@ -15,6 +15,8 @@ En esta parte se describen los conceptos relativos a la visualización de la inf
 * El capítulo :ref:`Visualizacion_SIG` particulariza todo lo anterior para el caso de trabajar con un SIG. De carácter eminentemente práctico, desarrolla los elementos que encontramos	 en un SIG para crear representaciones visuales y, basándose en lo visto en los otros capítulos de esta parte, profundiza en la mejor forma de hacerlo para los distintos tipos de datos geográficos que podemos encontrar en un SIG.
 
 **Contenido:**
+	
+
 
 .. toctree::
 

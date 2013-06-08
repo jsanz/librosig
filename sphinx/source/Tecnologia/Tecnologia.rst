@@ -18,10 +18,11 @@ En esta parte trataremos los programas informáticos en sí (el *software*) y ot
 
 **Contenido:**
 
+Servidores_y_clientes_remotos/Servidores_y_cliesntes_remotos.rst
+
 .. toctree::
 
 	Introduccion_tecnologia/Introduccion_tecnologia.rst
-	SIGs_escritorio/SIGs_escritorio.rst
-	Servidores_y_clientes_remotos/Servidores_y_clientes_remotos.rst
+	SIGs_escritorio/SIGs_escritorio.rst	
 	Otros_tecnologia/Otros_tecnologia.rst
 

@@ -1,8 +1,8 @@
+.. _Creacion_capas_vectoriales:
+
 **********************************************************
 Creación de capas vectoriales
 **********************************************************
-
-.. _Creacion_capas_vectoriales:
 
 
 En el capítulo :ref:`Creacion_capas_raster` vimos cómo crear capas ráster a partir de capas vectoriales, en particular capas de puntos. En este capítulo veremos el proceso opuesto: la creación de capas vectoriales a partir de capas ráster. Esto completará lo visto anteriormente, de forma que sabremos como convertir entre datos vectoriales y datos ráster en ambas direcciones, pudiendo disponer de los datos espaciales en el formato que resulte más ventajoso para el tipo de trabajo que queramos realizar en cada caso.
@@ -48,8 +48,8 @@ Por último, a partir de esa capa ráster podemos obtener de nuevo un dato vecto
 A lo largo de este capítulo vamos a ver dos clases de procesos para crear capas vectoriales a partir de capas ráster.
 
 
-	* Conversión de capas ráster discretas. Vectorización.
-	* Conversión de capas ráster continuas.
+* Conversión de capas ráster discretas. Vectorización.
+* Conversión de capas ráster continuas.
 
 
 Partiendo de una capa ráster discreta, el proceso de vectorización pretende generar una capa vectorial que recoja las geometrías que aparecen en dicha capa. Estas geometrías vienen definidas por la forma en que los valores de las mismas clases se disponen en la malla de celdas. Este es el caso que encontramos cuando disponemos de una capa ráster pero el modelo conceptual del espacio geográfico no es modelo de campos sino un modelo de entidades discretas. Cada una de estas entidades se constituyen mediante conjuntos de celdas contiguas con el mismo valor. Esta idea se recoge en la figura :num:`#figvectorizacion`
@@ -59,17 +59,16 @@ Partiendo de una capa ráster discreta, el proceso de vectorización pretende ge
 .. figure:: Vectorizacion.*
 	:width: 650px
 
-	Vectorización de capas ráster discretas en capas de polígonos (a) y de líneas (b). .
-
-. 
-
+	Vectorización de capas ráster discretas en capas de polígonos (a) y de líneas (b).
 
 En la conversión de capas continuas, veremos cómo expresar una capa ráster continua mediante un conjunto de entidades, en particular mediante lineas y polígonos. Para el caso de líneas, analizaremos cómo delinear un conjunto de isolíneas a partir de una capa ráster. En el caso de polígonos, estudiaremos cómo crear un TIN, estructura de triángulos irregulares que, como ya vimos, sirve para almacenar variables continuas, particularmente la elevación.
+
+.. _Vectorizacion:
+
 
 Vectorización de entidades
 ===================================================== 
 
-.. _Vectorizacion:
 
 
 La vectorización de entidades tiene como base una capa ráster con una variable de tipo nominal u ordinal, en la cual se reflejan distintas categorías. El objetivo es expresar mediante entidades vectoriales los conjuntos de celdas de una misma categoría.
@@ -88,8 +87,6 @@ Otros procesos de vectorización que ya conocemos son los que se llevan a cabo a
 	:width: 650px
 
 	b)Imagen con polígonos y lineas para vectorizar. a) y c) La misma imagen tras ser trasformada con objeto de mejorar las condiciones para la vectorización (como capas de líneas y polígonos respectivamente) y aumentar la calidad de esta.
-
-. 
 
 
 El paso de las versiones originales a estas versiones óptimas implica el uso de operaciones de álgebra de mapas, así como las que se vieron en las secciones :ref:`Segmentacion` o :ref:`Operaciones_morfologicas`, dentro del capítulo dedicado al tratamiento de imágenes. Los algoritmos que trataremos en esta sección supondrán ya que se trabaja sobre una capa donde las entidades a vectorizar están representadas por valores uniformes, dependiendo su rendimiento de esta circunstancia. No obstante, haremos mención también a los procesos de preparación previos, ya que en algunos casos son parte inseparable de ciertos procesos de vectorización muy frecuentes en un SIG.
@@ -144,10 +141,10 @@ siendo en este último paso en el que nos centramos dentro de este capítulo.
 Para esta conversión ráster--vectorial, el algoritmo correspondiente debe seguir un esquema genérico como el siguiente, a aplicar para cada una de las curvas de nivel.
 
 
-	* Localizar una celda de la curva.
-	* Analizar las celdas alrededor suyo para localizar la siguiente celda de la curva.
-	* Desplazarse a esa celda.
-	* Repetir los pasos anteriores.
+* Localizar una celda de la curva.
+* Analizar las celdas alrededor suyo para localizar la siguiente celda de la curva.
+* Desplazarse a esa celda.
+* Repetir los pasos anteriores.
 
 
 Este proceso se detiene hasta que se cumple un criterio dado, que es el que concluye la vectorización de la línea. En general, el criterio a aplicar suele ser que se regrese a la celda de partida, o que no pueda encontrarse una nueva celda entre las circundantes (a excepción de la anterior desde la cual se ha llegado a esta).
@@ -156,7 +153,7 @@ Siguiendo este esquema, se dota de un orden a las celdas de la línea. Mediante 
 
 Hay muchos algoritmos distintos de vectorización. Las diferencias van desde la forma en que se analizan las celdas circundantes o el criterio que hace que se concluya la vectorización de la línea, hasta formulaciones más complejas que siguen un esquema distinto.
 
-Más allá de lo visto en este apartado, la conversión de mapas topográficos en capas de curvas de nivel es un proceso complejo del que existe abundante literatura. Buenas visiones generales de este pueden encontrarse en  :cite:p:`Arrighi1999Geovision,Chen2006IEEE,Leberl1982PERS,Greenlee1987PERS`
+Más allá de lo visto en este apartado, la conversión de mapas topográficos en capas de curvas de nivel es un proceso complejo del que existe abundante literatura. Buenas visiones generales de este pueden encontrarse en  :cite:p:`Arrighi1999Geovision`, :cite:p:`Chen2006IEEE`, :cite:p:`Leberl1982PERS`, :cite:p:`Greenlee1987PERS`
 
 Además de la vectorización de curvas de nivel, tarea habitual que ya hemos visto, existen otras muy variadas que presentan cada una de ellas distintas circunstancias. Así, y aún disponiendo ya de una capa que presente las condiciones idóneas para ser vectorizada, el proceso puede presentar más dificultad de la que con lo visto hasta este punto puede pensarse. No hay que olvidar que, a la hora de vectorizar un conjunto de líneas, estas se definen no únicamente por su forma, sino por otros elementos tales como, por ejemplo, la topología. 
 
@@ -185,18 +182,21 @@ De las operaciones morfológicas que conocemos, la erosión nos da una idea de l
 .. figure:: Erosion_para_vectorizacion.*
 	:width: 650px
 
-	a) Imagen base con un polígono a vectorizar. Las celdas que forman el contorno se muestran en gris. b) La imagen anterior tras un proceso de dilatación. c) Contorno del polígono obtenido a partir de la diferencia entre las dos imágenes anteriores.
+	Imagen base con un polígono a vectorizar. Las celdas que forman el contorno se muestran en gris (a). La imagen anterior tras un proceso de dilatación (b). Contorno del polígono obtenido a partir de la diferencia entre las dos imágenes anteriores (c).
 
 . 
 
 
 El proceso de erosión se aplica en este caso con un elemento estructural como el siguiente, en lugar del que vimos en el apartado :ref:`Operaciones_morfologicas`.
 
-\begin{center}
-\includegraphics[width=.2\mycolumnwidth]{Creacion_capas_vectoriales/Kernel.pdf}
-\end{center}
 
-Esto no es estrictamente necesario ya que, de aplicar el que vimos entonces, y aunque el contorno resultante sería distinto, el resultado sería igualmente vectorizable\footnote{Otra forma de ver esto es la siguiente. A la hora de ir recorriendo el contorno podemos hacerlo desplazándonos solo en horizontal y vertical (como lo haría la torre en un tablero de ajedrez), o bien en todas direcciones (como lo haría la reina). Con el elemento estructural que vimos en la sección :ref:`Operaciones_morfologicas` el contorno resultante puede ser recorrido haciendo movimientos de torre, mientras que con el que hemos aplicado en este caso (y como puede apreciarse en la figura) recorrer el contorno exige movimientos en diagonal.\\ En la jerga del tratamiento de imágenes se dice que existe *conectividad--4* en el primer caso y *conectividad--8* en el segundo, haciendo referencia al numero de celdas circundantes a las que uno puede desplazarse según cada uno de estos esquemas de movimiento\\Otra forma habitual de referirse a estos conceptos es hablar de *vecindad de Von Neumann* para el caso de 4 posibles conexiones o *vecindad de Moore* para el caso de 8.}.
+.. image:: Kernel.*
+	:width: 250px
+
+
+Esto no es estrictamente necesario ya que, de aplicar el que vimos entonces, y aunque el contorno resultante sería distinto, el resultado sería igualmente vectorizable.
+
+Otra forma de ver esto es la siguiente. A la hora de ir recorriendo el contorno podemos hacerlo desplazándonos solo en horizontal y vertical (como lo haría la torre en un tablero de ajedrez), o bien en todas direcciones (como lo haría la reina). Con el elemento estructural que vimos en la sección :ref:`Operaciones_morfologicas` el contorno resultante puede ser recorrido haciendo movimientos de torre, mientras que con el que hemos aplicado en este caso (y como puede apreciarse en la figura) recorrer el contorno exige movimientos en diagonal. En la jerga del tratamiento de imágenes se dice que existe *conectividad--4* en el primer caso y *conectividad--8* en el segundo, haciendo referencia al numero de celdas circundantes a las que uno puede desplazarse según cada uno de estos esquemas de movimiento. Otra forma habitual de referirse a estos conceptos es hablar de *vecindad de Von Neumann* para el caso de 4 posibles conexiones o *vecindad de Moore* para el caso de 8.
 
 Sobre este contorno, el proceso de digitalización ya no difiere, a primera vista, del que efectuábamos sobre una curva de nivel. El objetivo es asignar un orden a las celdas de ese contorno, de modo que siguiendo dicho orden quede definido el perímetro del polígono.
 
@@ -209,8 +209,6 @@ Para ello, y como en el caso de las curvas de nivel, basta comenzar en uno de lo
 
 	Mientras que en la vectorización de líneas (a) se toman las coordenadas del centro de la celda, en el caso de polígonos (b) se deben utilizar las de los vértices para delinear completo el contorno del objeto.
 
-. 
-
 
 Los resultados en los dos supuestos representados en la figura son bien distintos, a pesar de que el objeto a vectorizar es el mismo, pero en un caso se interpreta como una línea y en otro como un polígono.
 
@@ -218,12 +216,13 @@ Un algoritmo para vectorizar el contorno de un polígono debe localizar una celd
 
 Al igual que sucedía con dichas líneas, la complejidad del objeto puede presentar problemas para su vectorización. El algoritmo anterior no contempla, por ejemplo, la presencia de *huecos* en el polígono. Como ya conocemos, esos huecos son polígonos internos que han de incorporarse a su vez a la entidad, y por tanto deben ser a su vez vectorizados.
 
+.. _Isolineas:
+
 Isolíneas
 ===================================================== 
 
-.. _Isolineas:
 
-Otro resultado vectorial que puede generarse a partir de una capa ráster son las *isolíneas* o curvas de nivel. Aunque el caso más habitual es utilizarlas para representar elevaciones (tal y como aparecen en un mapa topográfico habitual), se emplean también para otro tipo de variables de tipo continuo tales como la presión (*isobaras*), la precipitación(*isoyetas*) o el tiempo(*isocronas*). La forma de obtenerlas a partir de una capa ráster es, no obstante, la misma en todos los casos.
+Otro resultado vectorial que puede generarse a partir de una capa ráster son las *isolíneas* o curvas de nivel. Aunque el caso más habitual es utilizarlas para representar elevaciones (tal y como aparecen en un mapa topográfico habitual), se emplean también para otro tipo de variables de tipo continuo tales como la presión (*isobaras*), la precipitación (*isoyetas*) o el tiempo(*isocronas*). La forma de obtenerlas a partir de una capa ráster es, no obstante, la misma en todos los casos.
 
 Aunque, como ya sabemos, las variables de tipo continuo como la elevación se recogen de forma más ventajosa en el modelo de representación ráster, y este permite un mejor análisis de estas, hay diversas razones por las que puede resultar de interés el disponer de esa misma información expresada como un conjunto de isolíneas. La más habitual de ellas es la necesidad de incorporar información de elevaciones en un documento cartográfico que recoja algún otro tipo de variable. 
 
@@ -237,8 +236,6 @@ Las curvas de nivel se integran fácilmente con otro tipo de capas, de forma má
 	Adición de curvas de nivel a un mapa de pendientes. Estas facilitan la interpretación a la vez que no interfieren con la visualización del mapa principal
 
 
-. 
-
 
 De este modo, las curvas de nivel aportan una valiosa información adicional y facilitan la interpretación de la variable principal (la pendiente), pero sin interferir en la visualización de esta. Veremos más acerca de los mapas de isolíneas y su representación en el apartado :ref:`MapasIsolineas`.
 
@@ -251,8 +248,8 @@ Respecto al cálculo a partir de una estructura regular como una capa ráster, l
 Existen dos enfoques principales a la hora de trazar curvas de nivel en base a una malla de datos regulares  :cite:p:`Sutcliffe1980Academic`
 
 
-	* Seguimiento de líneas
-	* Análisis por celdas
+* Seguimiento de líneas
+* Análisis por celdas
 
 
 En el seguimiento de líneas, se localiza un punto que pertenezca a la curva de nivel y después se *sigue* esa curva de nivel hasta que se alcanza un borde de la malla ráster, o bien la curva se cierra regresando al punto inicial. 
@@ -276,11 +273,9 @@ El fundamento de este método es el hecho de que, si una curva de nivel atravies
 .. _figmarchingsquares:
 
 .. figure:: Marching_squares.*
-	:width: 650px
+	:width: 450px
 
 	Posibles configuraciones de una celda según el algoritmo *Marching Squares. Los vértices en negro estan dentro de la curva de nivel, mientras que los blancos se encuentran fuera.*
-
-. 
 
 
 En base a esto, se recorren todas las celdas, se analiza en cuál de las configuraciones se encuentra cada una de ellas y, cuando corresponda, se traza una linea entre el punto de entrada y de salida de la curva de nivel en la celda. Estos puntos se calculan, al igual que ya veíamos para los métodos de seguimiento, mediante interpolación.
@@ -299,8 +294,8 @@ Estos triángulos aparecen en mayor número en las zonas donde la variable prese
 La creación de un TIN a partir de otro modelo de datos como, por ejemplo, una capa ráster, implica las siguientes operaciones:
 
 
-	* Selección de puntos más representativos.
-	* Triangulación de dichos puntos.
+* Selección de puntos más representativos.
+* Triangulación de dichos puntos.
 
 
 Selección de puntos
@@ -321,14 +316,13 @@ La significancia de una celda se obtiene mediante un análisis local con una ven
 
 	La significancia de una celda es la media de las significancias según las cuatro direcciones definidas. Para una dirección definida (en rojo), la significancia es la distancia :math:`d` entre la celda central y la recta que une las celdas de los extremos
 
-. 
 
 
 En cada dirección se traza una recta que pasa por dos puntos extremos, teniendo en cuenta la elevación de los mismos. La distancia entre la celda central y dicha recta es la que define la significancia. La media de las cuatro significancias calculadas según todas las direcciones posible es la significancia global de la celda.
 
-Otro algoritmo basado en análisis local es el propuesto por  :cite:p:`Fowler1979CG`, que se basa en el análisis de las formas del terreno mediante ventanas :math:`3\times 3` y :math:`2\times 2`, y busca hallar los puntos más representativos mediante la caracterización del tipo de forma del terreno. El análisis mediante la ventana :math:`2\times 2` es muy similar a lo que vimos en el análisis hidrológico en la página \pageref{Fig:Celdas_concavas_peucker} de este libro (véase la figura :num:`#figceldasconcavaspeucker`)
+Otro algoritmo basado en análisis local es el propuesto por  :cite:p:`Fowler1979CG`, que se basa en el análisis de las formas del terreno mediante ventanas :math:`3\times 3` y :math:`2\times 2`, y busca hallar los puntos más representativos mediante la caracterización del tipo de forma del terreno. El análisis mediante la ventana :math:`2\times 2` es muy similar a lo que vimos en el análisis hidrológico (véase la figura :num:`#figceldasconcavaspeucker`)
 
-Un enfoque distinto a los anteriores es el propuesto por  :cite:p:`Lee89ACSM`, denominado *drop heuristic*, que crea un TIN con todas las celdas\footnote{Realmente no es un TIN *sensu stricto*, puesto que no es irregular. Los vértices presentan la misma estructura regular que caracteriza a la capa ráster de la que parte.} y después recorre iterativamente todos sus vértices, eliminando aquellos que se evalúen como de menor importancia.
+Un enfoque distinto a los anteriores es el propuesto por  :cite:p:`Lee89ACSM`, denominado *drop heuristic*, que crea un TIN con todas las celdas y después recorre iterativamente todos sus vértices, eliminando aquellos que se evalúen como de menor importancia.
 
 Triangulación
 --------------------------------------------------------------
@@ -338,26 +332,26 @@ Una vez se tiene el conjunto de puntos significativos, es necesario conectar est
 Para una conjunto de puntos :math:`V`, una triangulación es una conjunto de triángulos que cumple las siguientes propiedades :cite:p:`Dyn1990IMA`:
 
 
-	* El conjunto de todos los vértices de esos triángulos es igual a :math:`V`
-	* Cada lado de un triángulo contiene únicamente dos vértices.
-	* La intersección de dos triángulos cualesquiera es nula
-	* La unión de todos los triángulos forma la envolvente mínima convexa del conjunto de puntos\footnote{Este es un polígono de gran importancia que veremos en la sección :ref:`Convex_hull`.}.}
+* El conjunto de todos los vértices de esos triángulos es igual a :math:`V`.
+* Cada lado de un triángulo contiene únicamente dos vértices.
+* La intersección de dos triángulos cualesquiera es nula.
+* La unión de todos los triángulos forma la envolvente mínima convexa del conjunto de puntos. La unión convexa es un polígono de gran importancia que veremos en la sección :ref:`Convex_hull`.
 
 
 Los algoritmos de triangulación de un conjunto de puntos se basan la mayoría en considerar la tarea como un problema de optimización, siendo diversos los criterios aplicados. No obstante, las propiedades de la triangulación es interesante que guarden relación con el uso que vamos a darle al considerarla el elemento definitorio de un TIN, siendo esta una estructura en la que recogemos en general la forma de un terreno. 
 
-Puesto que dentro del triángulo van a asumirse unas propiedades constantes (pendiente, orientación), la idea es que los triángulos engloben áreas que, efectivamente, sean constantes en este aspecto. Esto se logra favoreciendo la creación de triángulos con ángulos cercanos a 60\degree, de modo que dichos triángulos sean lo más homogéneos posibles, evitándose aquellos de formas alargadas.
+Puesto que dentro del triángulo van a asumirse unas propiedades constantes (pendiente, orientación), la idea es que los triángulos engloben áreas que, efectivamente, sean constantes en este aspecto. Esto se logra favoreciendo la creación de triángulos con ángulos cercanos a 60:math:`^\circ`, de modo que dichos triángulos sean lo más homogéneos posibles, evitándose aquellos de formas alargadas.
 
 La forma más habitual de lograr esto es creando un tipo particular de triangulación conocida como *Triangulación de Delaunay* :cite:p:`Delaunay1934OMEN`. Esta presenta las siguientes propiedades:
 
 
-	* Dado un triángulo cualquiera de dicha triangulación, el círculo que en que se inscribe no contiene a ningún otro punto.
-	* Dados cuatro puntos que forman dos triángulos contiguos, la triangulación maximiza el mínimo ángulo interno del cuadrilatero formado.
+* Dado un triángulo cualquiera de dicha triangulación, el círculo que en que se inscribe no contiene a ningún otro punto.
+* Dados cuatro puntos que forman dos triángulos contiguos, la triangulación maximiza el mínimo ángulo interno del cuadrilatero formado.
 
 
 Esta ultima propiedad es de especial interés para garantizar que los triángulos son óptimos en cuanto a su capacidad de representar fielmente el relieve.
 
-La triangulación de Delaunay es el dual de otra estructura denominada *Teselación de Voronoi*, como puede verse en la figura :num:`#figdelaunayvoronoi`. La teselación de Voronoi asocia a cada punto un polígono que representa el lugar geométrico de las coordenadas que tienen a dicho punto como punto más cercano de todos los del conjunto. Esto es similar a lo que veíamos para el método de interpolación por vecino más cercano, el cual genera, de hecho, una teselación de Voronoi\footnote{Aunque en aquel momento lo analizábamos desde un punto de vista ráster.}.
+La triangulación de Delaunay es el dual de otra estructura denominada *Teselación de Voronoi*, como puede verse en la figura :num:`#figdelaunayvoronoi`. La teselación de Voronoi asocia a cada punto un polígono que representa el lugar geométrico de las coordenadas que tienen a dicho punto como punto más cercano de todos los del conjunto. Esto es similar a lo que veíamos para el método de interpolación por vecino más cercano, el cual genera, de hecho, una teselación de Voronoi.
 
 .. _figdelaunayvoronoi:
 
@@ -366,7 +360,6 @@ La triangulación de Delaunay es el dual de otra estructura denominada *Teselaci
 
 	Teselación de Voronoi (en trazo discontinuo) y Triangulación de Delaunay (en trazo continuo) a partir de un conjunto de puntos (en azul)
 
-. 
 
 
 Los algoritmos para crear una triangulación de Delaunay son abundantes, y existe mucha literatura al respecto. Comparaciones entre los más habituales y descripciones de estos pueden encontrarse en   :cite:p:`Su1995ACM` y  :cite:p:`Fortune1992WC`, donde se tratan con detalle los más importantes. La dirección Web  :cite:p:`TriangulacionWeb` describe asimismo más detalles sobre triangulaciones de puntos y polígonos. En la dirección Web  :cite:p:`AppletDelaunay` puede encontrarse un *applet* interactivo en el que poder experimentar la creación tanto de la triangulación de Delaunay como de la teselación de Voronoi a partir de puntos introducidos por el usuario.
@@ -393,19 +386,16 @@ Como se muestra en la figura :num:`#figsimplificaciontriangulacion`, pueden elim
 	Esquema de la eliminación de un vértice (en rojo) en una triangulación
 
 
-. 
-
 
 Este procedimiento de simplificación es similar al que vimos para el algoritmo de selección de puntos *drop heuristic*, que partía de un TIN muy denso con todas las celdas ráster como vértices. Si en lugar de partir de dicho TIN se comienza con otro calculado según algún otro algoritmo, este puede irse simplificando hasta alcanzar un nuevo nivel de precisión fijado de antemano. La figura :num:`#figtinsimplificado` muestra un TIN y dos versiones simplificadas del mismo, de distinto grado de simplificación. Nótese cómo en la imagen, si se eliminan puntos del exterior, varía el contorno de la triangulación.
 
 .. _figtinsimplificado:
 
 .. figure:: TIN_Simplificado.*
-	:width: 650px
+	:width: 800px
 
 	TIN original (a) y dos simplificaciones (b, c) en base al anterior.
 
-. 
 
 
 Más detalle sobre algoritmos de simplificación puede encontrarse en  :cite:p:`andrews96simplifying`.
@@ -416,6 +406,3 @@ Resumen
 Las capas ráster pueden convertirse en capas vectoriales empleando algoritmos a tal efecto. Estos algoritmos pueden aplicarse sobre capas ráster de variables continuas o discretas, siendo distintos en cada caso. En el caso de variables discretas, las capas vectoriales generadas definen las geometrías que las distintas clases dentro de la capa ráster forman. Estas geometrías pueden ser poligonales o lineales. 
 
 En el caso de variables continuas, las capas vectoriales que se generan pueden ser de los tres tipos básico de geometrías: puntos, líneas o polígonos. Para generar una capa de puntos, la conversión no requiere ningún algoritmo específico, pues basta calcular los valores de la capa ráster en las coordenadas de dichos puntos. Para representar una variable continua mediante líneas, se crea una capa de isolíneas. Por último, para el caso de polígonos, una estructura como un TIN puede generarse igualmente a partir de la capa ráster, seleccionando los puntos más importantes y después triangulándolos.
-
-%\bibliographystyle{unsrt}
-%\bibliography{../../Libro_SIG}
