@@ -1,4 +1,4 @@
-.. _Introduccion_factor_organizativo:
+.. _introduccion_factor_organizativo:
 
 **********************************************************
 Introducción. ¿Cómo se organiza un SIG?

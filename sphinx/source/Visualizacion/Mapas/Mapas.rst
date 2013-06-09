@@ -1,4 +1,4 @@
-.. _El_Mapa:
+.. _el_mapa:
 
 **********************************************************
 El mapa y la comunicación cartográfica
@@ -45,6 +45,7 @@ La figura :num:`#figpropositomapa` muestra un ejemplo claro de lo anterior a tra
 
 .. figure:: PropositoMapa.*
 	:width: 750px
+	:align: center
 
 	Dos formas distintas de mostrar una información a través de un mapa. En función del propósito de este y el publico al que va dirigido, cada una de ellas podrá ser adecuada o no. (Imágenes cortesía de AEMET)
 
@@ -93,6 +94,7 @@ Como vimos en el apartado :ref:`ComponenteInformacionGeografica`, la componente 
 
 .. figure:: LeerVer.*
 	:width: 800px
+	:align: center
 
 	Comparación entre una representación incorrecta de la información por no emplear un esquema adecuado al tipo de esta (a) y una representación correcta utilizando un esquema coherente (b).
 
@@ -120,6 +122,7 @@ Las siguientes son algunas ideas básicas a este respecto referidas a los distin
 
 .. figure:: RepresentacionInfoNominal.*
 	:width: 650px
+	:align: center
 
 	Representación de la información nominal para los distintos tipos de elementos geométricos.
 
@@ -146,6 +149,7 @@ En la figura :num:`#figresumenrepresentaciontiposinformacion` se muestra un cuad
 
 .. figure:: ResumenRepresentacionTiposInformacion.*
 	:width: 650px
+	:align: center
 
 	Utilización de las variables visuales según el tipo de información.
 
@@ -162,12 +166,13 @@ Razonamientos similares se pueden aplicar para el caso particular de capas con v
 
 .. figure:: MalUsoValor.*
 	:width: 650px
+	:align: center
 
 	Uso incorrecto de la variable visual valor para representar información cualitativa. Puede transmitirse una falsa sensación de que existe un orden en las clases representadas.
 
 
  
-.. _CreacionClases:
+.. _creacionclases:
 
 Creación y asignación de clases
 --------------------------------------------------------------
@@ -199,6 +204,7 @@ Una comparación visual del resultado de aplicar algunos de los métodos anterio
 
 .. figure:: TiposIntervalosClases.*
 	:width: 650px
+	:align: center
 
 	Comparación entre distintos esquemas para la creación de intervalos de clase.
 
@@ -210,6 +216,7 @@ Aunque resulta práctico definir las clases utilizando alguna de las metodologí
 
 .. figure:: TintasElevacion.*
 	:width: 750px
+	:align: center
 
 	Los intervalos pueden incorporar valores de importancia para una determinada variable. En este caso, para la variable elevación resulta particularmente relevante el valor cero, que delimita el comienzo de las clases representadas en azul.
 
@@ -242,6 +249,7 @@ Los siguientes son los elementos fundamentales que podemos emplear para componer
 
 .. figure:: ElementosMapa.*
 	:width: 800px
+	:align: center
 
 	Ejemplo de mapa mostrando sus elementos más habituales.
 
@@ -273,6 +281,7 @@ En lo que respecta a la forma de disponer los elementos sobre el lienzo que un m
 
 .. figure:: AprovechamientoEspacioMapa.*
 	:width: 750px
+	:align: center
 
 	Ejemplo de un aprovechamiento óptimo del espacio de un mapa (a) y un aprovechamiento incorrecto de este (b).
 
@@ -311,7 +320,7 @@ Los mapas temáticos representan la mayor parte de los creados en un SIG, por lo
 En este apartado detallaremos los siguientes tipos de mapas temáticos: mapas de coropletas, mapas de isolíneas, mapas de densidad de puntos y mapas de símbolos proporcionales. Todos ellos se utilizan para la representación de variables cuantitativas.
 
 
-.. _MapasSimbolosGraduados:
+.. _mapassimbolosgraduados:
 
 Mapas de símbolos proporcionales
 --------------------------------------------------------------
@@ -338,6 +347,7 @@ Aunque la variable visual tamaño presenta la propiedad cuantitativa, la percepc
 
 .. figure:: EjemplosLeyendaSimbolosProporcionales.*
 	:width: 550px
+	:align: center
 
 	Dos ejemplos de leyendas para un mapa de símbolos proporcionales.
 
@@ -377,6 +387,7 @@ La imagen :num:`#figmapapuntos` muestra un ejemplo de un mapa de puntos.
 
 .. figure:: MapaPuntos.*
 	:width: 750px
+	:align: center
 
 	Mapa de puntos.
 
@@ -384,7 +395,7 @@ La imagen :num:`#figmapapuntos` muestra un ejemplo de un mapa de puntos.
  
 
 
-.. _MapasIsolineas:
+.. _mapasisolineas:
 
 Mapas de isolíneas
 --------------------------------------------------------------
@@ -410,6 +421,7 @@ A la hora de simbolizar las isolíneas, y con independencia de su tipo, la varia
 
 .. figure:: Isolineas.*
 	:width: 650px
+	:align: center
 
 	Mapa de isolíneas. Se ha empleado para su representación tanto las líneas como el coloreado de las franjas entre estas.
 
@@ -462,6 +474,7 @@ Existen muchos otros tipos de mapas, adecuados para representar tipos particular
 
 	.. figure:: MapaFlujo.*
 		:width: 800px
+	:align: center
 
 		Mapa de flujo de Charles Joseph Minard sobre la campaña de Napoleón en Rusia.
 
@@ -475,6 +488,7 @@ Existen muchos otros tipos de mapas, adecuados para representar tipos particular
 
 	.. figure:: Cartograma.*
 		:width: 650px
+	:align: center
 
 		Un ejemplo de cartograma (Adaptado de Wikipedia).
 

@@ -1,4 +1,4 @@
-.. _Conceptos_basicos_visualizacion:
+.. _conceptos_basicos_visualizacion:
 
 **********************************************************
 Conceptos básicos de visualización y representación
@@ -45,6 +45,7 @@ Estas propiedades conforman lo que se conoce como *variables visuales*, y se apl
 
 .. figure:: VariablesVisuales.*
 	:width: 650px
+	:align: center
 
 	Ejemplo de uso de las distintas variables visuales. De izquierda a derecha: posición, forma, tamaño, tono, valor, textura, y orientación
 
@@ -78,6 +79,7 @@ El tamaño se refiere a la dimensión del símbolo. Para el caso de símbolos pu
 
 .. figure:: Texturas.*
 	:width: 550px
+	:align: center
 
 	Uso del tamaño en símbolos de superficie mediante texturas.
 
@@ -97,6 +99,7 @@ Existen muchas formas de representar y crear un color, a través de los denomina
 
 .. figure:: HSV.*
 	:width: 450px
+	:align: center
 
 	Espacio de color HSV explicando el significado de las componentes tono, valor y saturación (adaptado de Wikipedia).
 
@@ -123,6 +126,7 @@ La figura :num:`#figselectorcolores` muestra el aspecto de un selector de colore
 
 .. figure:: SelectorColores.*
 	:width: 550px
+	:align: center
 
 	Selector de colores mediante sus componentes tono (H), saturación (S) y luminosidad (L). La componente de la parte inferior es la denominada *alpha*, que indica la transparencia del color.
 
@@ -143,6 +147,7 @@ Las texturas se aprovechan plenamente sobre los símbolos de superficie, ya que 
 
 .. figure:: Texturas_lineas.*
 	:width: 650px
+	:align: center
 
 	Aplicación de la variable visual textura a los símbolos lineales.
 
@@ -177,6 +182,7 @@ Para ver más exactamente el significado de estas propiedades, estudiemos con de
 
 .. figure:: PropiedadesVariablesVisuales.*
 	:width: 650px
+	:align: center
 
 	Representación de un conjunto de símbolos aplicando de forma individual las distintas variables visuales.
 
@@ -217,6 +223,7 @@ Para explicar cada una de las variables visuales, hemos visto diversos ejemplos 
 
 .. figure:: CombinacionVariablesVisuales.*
 	:width: 750px
+	:align: center
 
 	Combinación de variables visuales.
 
@@ -263,6 +270,7 @@ Cuando la percepción de un elemento cambia aunque el estimulo no lo haga, en lu
 
 .. figure:: Zollner_illusion.*
 	:width: 500px
+	:align: center
 
 	Ilusión de Zollner que demuestra el contraste perceptivo de la orientación.
 
@@ -281,12 +289,13 @@ Las siguientes son algunas de las ideas más importantes a tener en cuenta a est
 
 .. figure:: ContrasteTamano.*
 	:width: 650px
+	:align: center
 
 	Contraste perceptivo del tamaño. Ambos circulos grises tienen el mismo tamaño, pero el de la izquierda aparenta ser mayor.
 
 
  
-.. _AyudasPercepcion:
+.. _ayudaspercepcion:
 
 Ayudas a la percepción
 --------------------------------------------------------------
@@ -300,6 +309,7 @@ Un factor clave en este sentido es la adecuado separación entre el fondo y la f
 
 .. figure:: Cup_or_faces_paradox.*
 	:width: 500px
+	:align: center
 
 	Sin un adecuado contraste entre fondo y figura la imagen presenta ambigüedad.
 
@@ -320,6 +330,7 @@ Como ejemplo de lo anterior, la figura :num:`#figjerarquiamapa` muestra un ejemp
 
 .. figure:: JerarquiaMapa.*
 	:width: 750px
+	:align: center
 
 	Mapa con jerarquía incorrecta (a) y mapa adecuadamente jerarquizado (b).
 

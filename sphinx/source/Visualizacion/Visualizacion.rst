@@ -1,4 +1,4 @@
-.. _Visualizacion:
+.. _visualizacion:
 
 ##################
 La visualización

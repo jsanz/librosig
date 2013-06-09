@@ -1,4 +1,4 @@
-.. _Introduccion_datos:
+.. _introduccion_datos:
 
 **********************************************************
 Introducción. ¿Con qué trabajo en un SIG?
@@ -38,7 +38,7 @@ Aspectos como estos son realmente mucho más complejos, y el estudio de la relac
 
 En este capítulo de introducción a esta parte dedicada a los datos, veremos más acerca de la información que de los datos espaciales, pues la manera en que concebimos esta condiciona la forma de los datos. Será en el capítulo siguiente cuando tratemos ya los datos, abordando uno de los problemas fundamentales: la creación del dato espacial.
 
-.. _ComponenteInformacionGeografica:
+.. _componenteinformaciongeografica:
 
 Las componentes de la información geográfica
 =====================================================
@@ -88,6 +88,7 @@ Un concepto a tener en cuenta en relación con las componentes de la informació
 
 .. figure:: Dimensiones.*
 	:width: 650px
+	:align: center
 
 	Dimensión de los datos geográficos
 
@@ -97,11 +98,11 @@ Un concepto a tener en cuenta en relación con las componentes de la informació
 
 Por ultimo, un aspecto importante de toda variable estudiada es su *continuidad*. Se entiende esta continuidad como la capacidad de la variable para tomar todos los valores dentro de un rango definido. La temperatura, la presión o la elevación son valores continuos, mientras que ninguna variable de tipo nominal puede ser continua, ya que se encuentra limitada a un numero (finito) de identificadores posibles. Por ejemplo, en el caso del número de un DNI, los valores son siempre enteros, existe el valor 1 y el valor 2, pero no los infinitos valores decimales entre ambos.
 
-La continuidad de la variable temática se puede estudiar igualmente en relación con la componente espacial. Así, existen variables que varían de forma continua en el espacio, mientras que otras no lo hacen. Se emplea aquí el concepto matemático de continuidad, es decir, que si trazáramos un perfil de la variable a lo largo de un recorrido dado, la representación de dicho perfil sería una curva que podría dibujarse sin levantar el lápiz del papel\footnote{Definiciones más rigurosas del concepto de continuidad puede encontrarse en cualquier texto básico de cálculo elemental o, por ejemplo, en  :cite:p:`wikipediaContinuidad`}
+La continuidad de la variable temática se puede estudiar igualmente en relación con la componente espacial. Así, existen variables que varían de forma continua en el espacio, mientras que otras no lo hacen. Se emplea aquí el concepto matemático de continuidad, es decir, que si trazáramos un perfil de la variable a lo largo de un recorrido dado, la representación de dicho perfil sería una curva que podría dibujarse sin levantar el lápiz del papel (definiciones más rigurosas del concepto de continuidad puede encontrarse en cualquier texto básico de cálculo elemental o, por ejemplo, en  :cite:p:`wikipediaContinuidad`)
 
 Todas estas ideas referidas a las distintas variables (distintas informaciones que pretendemos recoger de una zona de estudio dada) nos servirán para detallar los diferentes enfoques de representación y almacenamiento que veremos en el próximo capítulo, y escoger en cada caso el más apropiado.
 
-.. _divisionHorizontal:
+.. _divisionhorizontal:
 
 División horizontal de la información geográfica
 =====================================================
@@ -135,6 +136,7 @@ La figura :num:`#figdistintasescalashorizontal` muestra un ejemplo de lo anterio
 
 .. figure:: Distintas_escalas_horizontal.*
 	:width: 650px
+	:align: center
 
 	Integración de datos en sentido horizontal. A pesar de que la escala de detalle es distinta para las fotografías aéreas de la imagen, estas se combinan sin problema en un SIG, representándose a una escala dada todas ellas de forma sencilla. Nótese la mayor definición en la parte inferior de la imagen, que se forma con imágenes tomadas a una escala distinta a la de las de la parte superior. Adviértase igualmente la distinta iluminación, ya que han sido tomadas en fecha y horas distintas.
 
@@ -160,6 +162,7 @@ Para comprender mejor el concepto de capa, pensemos en un mapa topográfico clá
 
 .. figure:: Concepto_capa.*
 	:width: 650px
+	:align: center
 
 	Concepto de *capa* de información geográfica dentro de un SIG
 

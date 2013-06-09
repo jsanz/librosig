@@ -1,5 +1,5 @@
 
-.. _Estadistica_avanzada:
+.. _estadistica_avanzada:
 
 **********************************************************
 Más estadística espacial
@@ -29,7 +29,7 @@ Por último, cerraremos el capítulo presentando algunas metodologías que nos a
 
 Si el campo de la estadística es amplio de por sí, el de la estadística espacial no lo es menos. Además de las adaptaciones particulares de los procedimientos estadísticos más relevantes al ámbito espacial, existen formulaciones particulares con un rango más o menos amplio de aplicación. No es el objetivo de este capítulo el tratarlas todas ellas en profundidad, ni tan siquiera citarlas, sino presentar por un lado algunos de los fundamentos de las operaciones más habituales y prácticas, y por otro mostrar con algo más de extensión que lo ya visto la forma en que la estadística clásica se adapta al ámbito en el que trabajamos dentro de un SIG.
 
-.. _Clasificacion:
+.. _clasificacion:
 
 Clasificación
 =====================================================
@@ -86,6 +86,7 @@ La figura :num:`#figesquemaclasificacionsupervisada` muestra un esquema de este 
 
 .. figure:: Esquema_clasificacion_supervisada.*
 	:width: 650px
+	:align: center
 
 	Esquema del proceso de clasificación supervisada
 
@@ -132,7 +133,7 @@ Paralelepípedos
 ~~~~~~~~~~~~~~~~
 
 
-.. _Paralelepipedos:
+.. _paralelepipedos:
 
 El método de clasificación por paralelepípedos establece regiones, una por cada clase, con dicha forma de paralelepípedos dentro del espacio de atributos en el que se trabaja. La pertenencia de una localización a una de las clases se establece viendo si la posición que sus valores definen en el espacio de atributos está dentro de la región correspondiente a la clase.
 
@@ -142,6 +143,7 @@ Los distintos lados de los paralelepípedos vienen definidos por la media de cad
 
 .. figure:: Paralelepipedos.*
 	:width: 650px
+	:align: center
 
 	Método de clasificación por paralelepípedos
 
@@ -177,6 +179,7 @@ Puede verse que esta metodología guarda similitud conceptual con la interpolaci
 
 .. figure:: Minima_distancia.*
 	:width: 650px
+	:align: center
 
 	Método de clasificación por mínima distancia
 
@@ -234,6 +237,7 @@ Puede verse un gráfico relativo a este método en la figura :num:`#figmaximaver
 
 .. figure:: Maxima_verosimilitud.*
 	:width: 650px
+	:align: center
 
 	Método de clasificación por máxima verosimilitud.
 
@@ -243,7 +247,7 @@ Puede verse un gráfico relativo a este método en la figura :num:`#figmaximaver
 
 Es importante recalcar que al emplear este método se asume que los datos tienen una distribución normal, lo cual no ha de ser necesariamente cierto según qué tipo de variables manejemos. Es importante tener en cuenta este hecho antes de utilizar este clasificador sobre nuestros datos.
 
-.. _Clasificacion_no_supervisada:
+.. _clasificacion_no_supervisada:
 
 Clasificación no supervisada
 --------------------------------------------------------------
@@ -260,7 +264,7 @@ Junto a la capa de clases resultantes, los métodos de clasificación no supervi
 
 Aunque los métodos de clasificación no supervisada son validos de por sí para establecer una separación categórica dentro de un área de estudio, es habitual que se empleen como soporte a métodos de clasificación supervisada. Mediante estos métodos se obtiene una primera división, que puede utilizarse posteriormente bien sea para la definición de zonas de entrenamiento o bien para operaciones más complejas como la clasificación basada en objetos que veremos más adelante. 
 
-Al igual que sucedía en el caso supervisado, existen numerosos métodos de clasificación no supervisada. La literatura estadística es rica en este tipo de formulaciones, conocidos como métodos de *clustering*\footnote{De *cluster* (agregado), nombre que recibe cada una de las clases o agrupaciones en las que se dividen los elementos de partida}, siendo dos de los más habituales dentro del ámbito de los Sistemas de Información geográfica los siguientes:
+Al igual que sucedía en el caso supervisado, existen numerosos métodos de clasificación no supervisada. La literatura estadística es rica en este tipo de formulaciones, conocidos como métodos de *clustering*, siendo dos de los más habituales dentro del ámbito de los Sistemas de Información geográfica los siguientes:
 
 
 * Distancia mínima iterativa	
@@ -288,6 +292,7 @@ En la figura :num:`#figclasesinicialesisoclusters` puede verse gráficamente la 
 
 .. figure:: Clases_iniciales_isoclusters.*
 	:width: 650px
+	:align: center
 
 	Definición de clases iniciales para el proceso de clasificación no supervisada, estableciendo los centros de clases equiespaciados en el espacio de atributos.
 
@@ -303,6 +308,7 @@ En la figura :num:`#figetapasclustering` pueden verse algunas etapas de un proce
 
 .. figure:: Etapas_clustering.*
 	:width: 650px
+	:align: center
 
 	Distintas etapas de un proceso de clasificación no supervisada por distancia mínima iterativa.
 
@@ -327,6 +333,7 @@ Como conclusión de esta sección dedicada a la clasificación y los métodos ex
 
 .. figure:: Comparacion_clasificacion.*
 	:width: 650px
+	:align: center
 
 	Comparación de la clasificación en clases de uso de suelo generada partir de una imagen de satélite y parámetros fisiográficos mediante los métodos de a) mínima distancia b) máxima verosimilitud y c) mínima distancia iterativa (no supervisada)
 
@@ -343,6 +350,7 @@ Un algoritmo habitual en clasificación de objetos es la utilización de árbole
 
 .. figure:: Cluster_jerarquico.*
 	:width: 650px
+	:align: center
 
 	Dendrograma resultante de un proceso de clustering jerárquico
 
@@ -406,7 +414,7 @@ Por ejemplo, si en un píxel dado tiene una probabilidad de 0,69 de pertenecer a
 
 Esta interpretación viene condicionada, no obstante, al cumplimiento de ciertas condiciones tales como la pureza de las zonas de entrenamiento (que no existan píxeles mixtos en los píxeles empleados para extraer las características de cada clase), circunstancia que en muchos casos es difícil de encontrar. No obstante, los valores de probabilidad de las clases, correctamente interpretados, ofrecen de cualquier forma mayor detalle que un simple valor de clase.
 
-.. _Validacion:
+.. _validacion:
 
 Validación
 --------------------------------------------------------------
@@ -563,13 +571,14 @@ donde :math:`d` es la distancia entre las coordenadas de la observación y :math
 
 .. figure:: Ponderacion_GWR.*
 	:width: 650px
+	:align: center
 
 	Funcion de ponderación para la estimación de parámetros en el método de Regresión Ponderada Geográficamente (GWR).
 
 
 
 
-.. _Evaluacion_multicriterio:
+.. _evaluacion_multicriterio:
 
 Evaluación multicriterio y combinación de capas
 ===================================================== 
@@ -598,7 +607,7 @@ Dos son los apartados en los que ampliaremos nuestros conocimientos sobre la ela
 
 
 
-.. _Creacion_capa_combinar:
+.. _creacion_capa_combinar:
 
 Creación de capas a combinar
 --------------------------------------------------------------
@@ -641,6 +650,7 @@ Por ejemplo, para el supuesto de utilizar la distancia a una ciudad como variabl
 
 .. figure:: Funcion_de_miembro.*
 	:width: 650px
+	:align: center
 
 	Un ejemplo de función de miembro. En trazo punteado, aspecto de una función de miembro que asignara tan solo valores *verdadero* y *falso*.
 
@@ -658,6 +668,7 @@ La diferencia entre los resultados que se obtienen al aplicar una función de mi
 
 .. figure:: Capas_logica_difusa.*
 	:width: 650px
+	:align: center
 
 	Capa de distancias a un punto (a). Separación en dos clases  de viabilidad en función de la pertenencia a un intervalo óptimo de distancia (en blanco zonas viables, en negro zonas inviables) (a). Certidumbre de pertenencia a la clase viable aplicando la función de miembro de la figura :num:`#figfunciondemiembro` (a).
 
@@ -762,7 +773,7 @@ Aplicando la ecuación ~de la fórmula de Dempster, se tiene
 
 La Teoría de la Evidencia es mucho más compleja que lo mostrado aquí, y admite casos mucho más elaborados que el presentado. Simplemente se ha mostrado un ejemplo para comprender las propiedades de la regla de Dempster, pero el lector interesado en profundizar en el tema puede encontrar en  :cite:p:`Shafer1976Princeton, Gordon1985AI` exposiciones más detalladas al respecto. Más ejemplos de la regla de Dempster y de numerosas variantes de la misma pueden encontrarse en  :cite:p:`Sentz2002Sandia`.
 
-.. _AHP:
+.. _ahp:
 
 Jerarquías Analíticas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -822,6 +833,7 @@ Las operaciones lógicas pueden evaluarse como operaciones aritméticas, aplican
 
 .. figure:: Factores_restricciones.*
 	:width: 650px
+	:align: center
 
 	Combinación de factores y restricciones en un modelo sencillo. Los factores a) y b) se combinan para obtener un resultado ponderado d). A este se le aplica después la restricción c) para obtener el mapa final e)..
 
@@ -830,7 +842,7 @@ Las operaciones lógicas pueden evaluarse como operaciones aritméticas, aplican
 
 
 
-.. _Componentes_principales:
+.. _componentes_principales:
 
 Análisis de Componentes Principales
 =====================================================
@@ -861,7 +873,7 @@ Si tomamos como :math:`n` variables un conjunto de :math:`n` medidas de una úni
 
 En  :cite:p:`Fung1987PERS` y  :cite:p:`Byne1980RSE` pueden encontrarse sendos ejemplos del usos de transformaciones de componentes principales en la detección de cambios de uso de suelo a partir de series de imágenes. Veremos más sobre este tipo de análisis, tanto mediante este como mediante otros métodos, en el capítulo :ref:`Gestion_ambiental`.
 
-Para calcular la matriz del cambio de base que define la transformación, se puede partir de la matriz de covarianzas :math:`C` (ver ecuación :ref:`Eq:Matriz_covarianzas`) o bien de la matriz de correlación :math:`\rho`, en la cual los elementos son los coeficientes de correlación de Pearson. Es decir,
+Para calcular la matriz del cambio de base que define la transformación, se puede partir de la matriz de covarianzas :math:`C`  o bien de la matriz de correlación :math:`\rho`, en la cual los elementos son los coeficientes de correlación de Pearson. Es decir,
 
 .. math::
 

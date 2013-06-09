@@ -1,4 +1,4 @@
-.. _Datos:
+.. _datos:
 
 ##############
 Los datos

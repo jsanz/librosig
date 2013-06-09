@@ -1,4 +1,4 @@
-.. _Fundamentos_cartograficos:
+.. _fundamentos_cartograficos:
 
 ****************************************
 Fundamentos cartográficos y geodésicos
@@ -70,12 +70,10 @@ siendo :math:`r_1` el semieje mayor y :math:`r_2` el semieje menor.
 
 .. _figelipsoide:
 
-.. _Tabla:
-
-.. _figgeoide:
 
 .. figure:: Elipsoide.*
 	:width: 650px
+	:align: center
 
 	Parámetros que definen el elipsoide
 
@@ -129,10 +127,11 @@ El geoide es la otra superficie de referencia, definida como la superficie tridi
 El geoide no es, sin embargo, una superficie regular como el elipsoide, y presenta protuberancias y depresiones que lo diferencian, como puede observarse en la figura :num:`#figgeoide`. La densidad de la Tierra no es constante en todos sus puntos, y ello da lugar a que el geoide sea una superficie irregular como consecuencia de las anomalías gravimétricas que dichas variaciones de densidad ocasionan.
 
 
-.. _figcoordenadasgeograficas:
+.. _figgeoide:
 
 .. figure:: Geoide.*
 	:width: 450px
+	:align: center
 
 	Representación gráfica del geoide (Fuente: Misión GRACE (NASA)).
 
@@ -152,6 +151,7 @@ La figura :num:`#figtressuperficies` muestra una comparación esquemática entre
 
 .. figure:: Tres_superficies.*
 	:width: 650px
+	:align: center
 
 	Tres superficies fundamentales: superficie real de la Tierra, geoide y elipsoide (Adaptado de Wikipedia).
 
@@ -187,11 +187,11 @@ Coordenadas geográficas
 El sistema de coordenadas geográficas es un sistema de coordenadas esféricas mediante el cual un punto se localiza con dos valores angulares: 
 
 
-* la *latitud* :math:`\phi` es el ángulo entre la línea que une el centro de la esfera con un punto de su superficie y el plano ecuatorial. Las lineas formadas por puntos de la misma latitud se denominan *paralelos* y forman círculos concéntricos paralelos al ecuador. Por definición la latitud es de 0:math:`degree` en el ecuador, que divide el globo en los hemisferios norte y sur. La latitud puede expresarse especificando si el punto se sitúa al norte o al sur, por ejemplo 24:math:`degree`, 21' 11'' N, o bien utilizando un signo, en cuyo caso los puntos al Sur del ecuador tienen signo negativo.
+* la *latitud* :math:`\phi` es el ángulo entre la línea que une el centro de la esfera con un punto de su superficie y el plano ecuatorial. Las lineas formadas por puntos de la misma latitud se denominan *paralelos* y forman círculos concéntricos paralelos al ecuador. Por definición la latitud es de 0:math:`^\circ` en el ecuador, que divide el globo en los hemisferios norte y sur. La latitud puede expresarse especificando si el punto se sitúa al norte o al sur, por ejemplo 24:math:`^\circ`, 21' 11'' N, o bien utilizando un signo, en cuyo caso los puntos al Sur del ecuador tienen signo negativo.
 
 * la *longitud* :math:`\lambda` La longitud es el angulo formado entre dos de los planos que contienen a la linea de los Polos. El primero es un plano arbitrario que se toma como referencia y el segundo es el que, ademas de contener a la linea de los polos, contiene al punto en cuestión. Las líneas formadas por puntos de igual longitud se denominan *meridianos* y convergen en los polos.
 
-Como meridiano de referencia internacional se toma aquel que pasa por el observatorio de Greenwich, en el Reino Unido. Este divide a su vez el globo en dos hemisferios: el Este y el Oeste. La longitud puede expresarse especificando si el punto se sitúa al Este o al Oeste, por ejemplo 32:math:`degree`, 12' 43'' E, o bien utilizando un signo, en cuyo caso los puntos al Oeste del meridiano de referencia tienen signo negativo.
+Como meridiano de referencia internacional se toma aquel que pasa por el observatorio de Greenwich, en el Reino Unido. Este divide a su vez el globo en dos hemisferios: el Este y el Oeste. La longitud puede expresarse especificando si el punto se sitúa al Este o al Oeste, por ejemplo 32:math:`^\circ`, 12' 43'' E, o bien utilizando un signo, en cuyo caso los puntos al Oeste del meridiano de referencia tienen signo negativo.
 
 
 En la figura :num:`#figcoordenadasgeograficas` puede verse un esquema de los conceptos anteriores.
@@ -200,6 +200,8 @@ En la figura :num:`#figcoordenadasgeograficas` puede verse un esquema de los con
 
 .. figure:: Coordenadas_geograficas.*
 	:width: 500px
+	:align: center
+	
 	Esquema de los elementos del sistema de coordenadas geográficas.
 
 
@@ -256,6 +258,7 @@ La figura :num:`#figproyeccion` muestra un esquema del concepto de proyección, 
 
 .. figure:: Proyeccion.*
 	:width: 500px
+	:align: center
 
 	Esquema del concepto de proyección. A los puntos :math:`A, B` y :math:`C` sobre la superficie del elipsoide se les asocian equivalentes :math:`a, b` y :math:`c` sobre un plano.
 
@@ -281,6 +284,7 @@ Las superficies más habituales son el cono y el cilindro (junto con, por supues
 
 .. figure:: Proyeccion_cilindrica.*
 	:width: 500px
+	:align: center
 
 	Esquema de una proyección cilíndrica (tomado de Wikipedia)
 
@@ -296,6 +300,7 @@ Las superficies más habituales son el cono y el cilindro (junto con, por supues
 
 .. figure:: Proyeccion_conica.*
 	:width: 500px
+	:align: center
 
 	Esquema de una proyección cónica (tomado de Wikipedia)
 
@@ -336,9 +341,9 @@ En la actualidad, una de las proyecciones más extendidas en todos los ámbitos 
 
 Con el sistema UTM, las coordenadas de un punto no se expresan como coordenadas terrestres absolutas, sino mediante la zona correspondiente y las coordenadas relativas a la zona UTM en la que nos encontremos.
 
-La cuadricula UTM tiene un total de 60 husos numerados entre 1 y 60, cada uno de los cuales abarca una amplitud de 6:math:`degree` de longitud. El huso 1 se sitúa entre los 180:math:`degree` y 174:math:`degree` O, y la numeración avanza hacia el Este. 
+La cuadricula UTM tiene un total de 60 husos numerados entre 1 y 60, cada uno de los cuales abarca una amplitud de 6:math:`^\circ` de longitud. El huso 1 se sitúa entre los 180:math:`^\circ` y 174:math:`^\circ` O, y la numeración avanza hacia el Este. 
 
-En latitud, cada huso se divide en 20 zonas, que van desde los 80:math:`degree` S hasta los 84:math:`degree` N. Estas se codifican con letras desde la C a la X, no utilizándose las letras I y O por su similitud con los dígitos 1 y 0. Cada zona abarca 8 grados de longitud, excepto la X que se prolonga unos 4 grados adicionales. 
+En latitud, cada huso se divide en 20 zonas, que van desde los 80:math:`^\circ` S hasta los 84:math:`^\circ` N. Estas se codifican con letras desde la C a la X, no utilizándose las letras I y O por su similitud con los dígitos 1 y 0. Cada zona abarca 8 grados de longitud, excepto la X que se prolonga unos 4 grados adicionales. 
 
 La figura :num:`#figzonasutm` muestra un esquema de la cuadrícula UTM.
 
@@ -347,17 +352,19 @@ La figura :num:`#figzonasutm` muestra un esquema de la cuadrícula UTM.
 
 .. figure:: Zonas_UTM.*
 	:width: 650px
+	:align: center
 
 	Representación parcial de la cuadrícula UTM en Europa (tomado de Wikipedia)
 
 
-Una zona UTM se localiza, por tanto, con un número y una letra, y es en función de la zona como posteriormente se dan las coordenadas que localizan un punto. Estas coordenadas se expresan en metros y expresan la distancia entre el punto y el origen de la zona UTM en concreto. El origen de la zona se sitúa en el punto de corte entre el meridiano central de la zona y el ecuador. Por ejemplo, para las zonas UTM en el huso 31, el cual va desde los 0:math:`degree` hasta los 6:math:`degree`, el origen se sitúa en el punto de corte entre el ecuador y el meridiano de 3:math:`degree` (Figura :num:`#figorigenutm`).
+Una zona UTM se localiza, por tanto, con un número y una letra, y es en función de la zona como posteriormente se dan las coordenadas que localizan un punto. Estas coordenadas se expresan en metros y expresan la distancia entre el punto y el origen de la zona UTM en concreto. El origen de la zona se sitúa en el punto de corte entre el meridiano central de la zona y el ecuador. Por ejemplo, para las zonas UTM en el huso 31, el cual va desde los 0:math:`^\circ` hasta los 6:math:`^\circ`, el origen se sitúa en el punto de corte entre el ecuador y el meridiano de 3:math:`^\circ` (Figura :num:`#figorigenutm`).
 
 
 .. _figorigenutm:
 
 .. figure:: Origen_UTM.*
 	:width: 500px
+	:align: center
 
 	Determinación del origen de una zona UTM
 
@@ -407,6 +414,8 @@ Esta información constituye el *EPSG geodetic parameter dataset*, un repositori
 
 Información detallada sobre los códigos EPSG puede encontrarse en  :cite:p:`webEPSG`.
 
+.. _escala:
+
 Escala
 ======
 
@@ -441,6 +450,7 @@ Veremos más ideas sobre la escala de análisis y algunas implicaciones al respe
 
 Un tipo de datos espaciales particulares con los que se trabaja en un SIG, los datos *ráster*, tienen a su vez un parámetro de resolución, con una clara relación con el concepto de escala. Veremos más al respecto en el capítulo :ref:`Tipos_datos`.
 
+.. _generalizacioncartografica:
 
 Generalización cartográfica
 ===========================
@@ -481,6 +491,7 @@ Existen diversas operaciones que se emplean en el proceso de generalización. Al
 
 .. figure:: Generalizacion_agregacion.*
 	:width: 650px
+	:align: center
 
 	Un ejemplo de generalización por agregación. Dos carreteras prácticamente paralelas y unidas se representan como dos elementos en el mapa, pero en el localizador de la parte superior izquierda, a escala de menor detalle, se generalizan como una única (Tomado de Yahoo Maps).
 
@@ -520,6 +531,7 @@ En la figura :num:`#figsigmultiescala` puede verse un esquema de lo anterior. A 
 
 .. figure:: SIG_multi_escala.*
 	:width: 650px
+	:align: center
 
 	En un SIG es habitual manejar información a diferentes escalas. En función de la escala de representación, la información visualizada será una u otra.
 
@@ -535,6 +547,7 @@ Este proceso en realidad puede verse como un tipo de generalización *al vuelo*.
 
 .. figure:: Piramide.*
 	:width: 500px
+	:align: center
 
 	Pirámides de representación con imágenes preparadas a distintas escalas (Fuente: OSGeo).
 

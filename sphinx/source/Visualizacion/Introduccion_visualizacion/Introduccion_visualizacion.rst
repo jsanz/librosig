@@ -1,4 +1,4 @@
-.. _Introduccion_visualizacion:
+.. _introduccion_visualizacion:
 
 **********************************************************
 Introducción. Los SIG como herramientas de visualización
@@ -53,12 +53,13 @@ En segundo lugar, existen en la actualidad otras herramientas de visualización 
 
 Los conceptos de la visualización científica pueden ser aprovechados por los SIG, que aproximan de ese modo sus funcionalidades a las de las aplicaciones de visualización genérica de datos. En algunos casos, las diferencias son meramente formales y debidas a los enfoques tradicionales que se vienen empleando en estos campos, pero la integración entre ambos es posible al menos en lo que a sus conceptos y fundamentos respecta.
 
-Consideremos por ejemplo, las representaciones de la figura :num:`#figvisualizacioncientifica`. La de la izquierda se ha producido a partir de datos obtenidos en un túnel de viento y muestra las presiones ejercidas por el aire sobre un ciclista, así como las lineas de flujo que se forman. La de la derecha representa la actividad cerebral en un ratón tras un estímulo, y se ha creado en base a los datos proporcionados por un tomógrafo. Salvando las diferencias en cuanto al campo de la ciencia del que provienen, ambas representaciones guardan muchas semejanzas con, por ejemplo, las obtenidas a partir de un MDE, en las que habitualmente se emplea una paleta de colores similar para visualizar los valores de las distintas celdas. Puedes ir al capítulo :ref:`Creacioncapasraster` para encontrar un buen número de ellas y comprobar por ti mismo esa similitud.	
+Consideremos por ejemplo, las representaciones de la figura :num:`#figvisualizacioncientifica`. La de la izquierda se ha producido a partir de datos obtenidos en un túnel de viento y muestra las presiones ejercidas por el aire sobre un ciclista, así como las lineas de flujo que se forman. La de la derecha representa la actividad cerebral en un ratón tras un estímulo, y se ha creado en base a los datos proporcionados por un tomógrafo. Salvando las diferencias en cuanto al campo de la ciencia del que provienen, ambas representaciones guardan muchas semejanzas con, por ejemplo, las obtenidas a partir de un MDE, en las que habitualmente se emplea una paleta de colores similar para visualizar los valores de las distintas celdas. Puedes ir al capítulo :ref:`creacion_capas_raster` para encontrar un buen número de ellas y comprobar por ti mismo esa similitud.	
 
 .. _figvisualizacioncientifica:
 
 .. figure:: SciVis.*
 	:width: 750px
+	:align: center
 
 	Dos ejemplos de visualización científica.
 
@@ -87,6 +88,7 @@ Este nuevo enfoque que se produce en el ámbito cartográfico al incorporar part
 
 .. figure:: CuboCartografico.*
 	:width: 650px
+	:align: center
 
 	El *cubo cartográfico*.
 

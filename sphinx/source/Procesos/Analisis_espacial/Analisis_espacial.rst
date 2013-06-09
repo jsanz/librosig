@@ -1,5 +1,5 @@
 
-.. _Analisis_espacial:
+.. _analisis_espacial:
 
 **********************************************************
 Conceptos básicos para el análisis espacial
@@ -30,7 +30,7 @@ El carácter especial del dato espacial deriva de la existencia de posición. Es
 
 Algunos de estos puntos representan problemas que han de tenerse presentes en el análisis. Otros son simplemente conceptos básicos que deben conocerse pero no han de implicar necesariamente una dificultad asociada.
 
-.. _Escala_analisis:
+.. _escala_analisis:
 
 Escala
 --------------------------------------------------------------
@@ -49,6 +49,7 @@ Por ejemplo, sea el conjunto de puntos de la figura :num:`#figestructuraescalas`
 
 .. figure:: Estructura_escalas.*
 	:width: 500px
+	:align: center
 
 	Dependiendo de la escala de análisis, la estructura de un conjunto de puntos puede ser distinta.
 
@@ -64,6 +65,7 @@ Si vamos a llevar a cabo un estudio de cómo el relieve influye en los movimient
 
 .. figure:: Escalas_formas_terreno.*
 	:width: 550px
+	:align: center
 
 	Dependiendo de la escala de análisis, un mismo relieve puede ser caracterizado como cima (a) o fondo de valle (b)
 
@@ -73,7 +75,7 @@ Si vamos a llevar a cabo un estudio de cómo el relieve influye en los movimient
 
 Por tanto, debemos observar el relieve desde la distancia correcta a la cual la información que nos proporciona es la más adecuada para un análisis dado. Además de existir una escala de mayor relevancia para un análisis concreto, lo cierto es que el conjunto de todas las escalas de análisis contiene en su totalidad una información más amplia que la correspondiente a una única escala, y por tanto resulta de interés el trabajar a múltiples escalas y combinar los resultados.
 
-Este enfoque de escalas múltiples es relevante también en relación con los propios datos, independientemente de lo que representan. Es decir, independientemente de la escala y la dimensión *real*, y en relación solo con la escala definida por el formato de los mismos. Por ejemplo, en el caso de imágenes, el uso de operadores a diferentes escalas (referida aquí la escala al número de píxeles utilizados en el operador) es ventajoso para realizar ciertas operaciones tales como la detección de bordes  :cite:p:`Rossenfeld1971IEEE`(véase :ref:`DeteccionBordes`). Combinado esto con lo anterior, la importancia de la escala en el análisis espacial es de primer orden, y resulta necesaria su consideración en todo momento.
+Este enfoque de escalas múltiples es relevante también en relación con los propios datos, independientemente de lo que representan. Es decir, independientemente de la escala y la dimensión *real*, y en relación solo con la escala definida por el formato de los mismos. Por ejemplo, en el caso de imágenes, el uso de operadores a diferentes escalas (referida aquí la escala al número de píxeles utilizados en el operador) es ventajoso para realizar ciertas operaciones tales como la detección de bordes  :cite:p:`Rossenfeld1971IEEE` (véase :ref:`DeteccionBordes`). Combinado esto con lo anterior, la importancia de la escala en el análisis espacial es de primer orden, y resulta necesaria su consideración en todo momento.
 
 Podemos ver más ejemplos de cómo la escala de análisis condiciona los resultados obtenidos. Supóngase un elemento lineal tal como un camino o el contorno de una finca cuyo perímetro quiere medirse. Como puede verse en la figura :num:`#figmedidalineafractal`, la unidad de medida empleada provoca que se obtengan resultados distintos. Para medir la longitud de la línea utilizamos una unidad mínima, que podemos asimilar a una especie de *vara de medir*. Todos los elementos de la línea que son menores que esa unidad mínima no se recogen. En el caso a) se obtiene un resultado de siete unidades. Si reducimos a la mitad la unidad, cabe esperar que la longitud sea el doble. Sin embargo, obtenemos un total de 17 unidades, de forma que la proporción entre el tamaño de nuestra vara de medida y el número de unidades resultante no se mantiene.
 
@@ -81,6 +83,7 @@ Podemos ver más ejemplos de cómo la escala de análisis condiciona los resulta
 
 .. figure:: Medida_linea_fractal.*
 	:width: 550px
+	:align: center
 
 	La unidad de medida empleada modifica el resultado obtenido.
 
@@ -100,7 +103,7 @@ También el propio formato de almacenamiento condiciona el efecto de la escala. 
 
 Una situación distinta es la que sucede con los datos ráster, donde el tamaño de celda está indirectamente condicionando una escala. La medición de áreas y distancias se encuentra influida por el tamaño elegido. Del mismo modo que no podemos recoger los detalles mínimos de una curva al utilizar una vara de medir de mayor tamaño, en el caso de una capa ráster, todo aquello que suceda en una escala inferior a la definida por el tamaño de celda queda ignorado. La espacial resolución es, por tanto, un elemento directamente relacionado con los resultados del análisis cuando se utilizan datos ráster.
 
-.. _MAUP:
+.. _maup:
 
 El *Problema de la Unidad de Área Modificable*
 --------------------------------------------------------------
@@ -133,7 +136,7 @@ Autocorrelación espacial
 -------------------------------------------------------------- 
 
 
-.. _Autocorrelacion_espacial:
+.. _autocorrelacion_espacial:
 
 Supóngase que se estudian una serie de poblaciones cercanas en las cuales se mide el porcentaje de personas afectadas por una determinada enfermedad infecciosa. Cabe esperar que, puesto que los habitantes de esas poblaciones están relacionados entre sí de diversas formas, la distribución de los valores recogidos obedezca en parte a la existencia de dichas relaciones. Por ejemplo, si en una población contraen la enfermedad un número dado de habitantes, es más factible que estos puedan contagiar a los de las poblaciones cercanas que a los de otros núcleos más alejados.
 
@@ -153,6 +156,7 @@ La figura :num:`#figautocorrelacionespacial` muestra unas sencillas capas ráste
 
 .. figure:: Autocorrelacion_espacial.*
 	:width: 750px
+	:align: center
 
 	Autocorrelación espacial positiva (a). Autocorrelación espacial negativa (b). Ausencia de autocorrelación espacial (independencia) (c)
 
@@ -184,6 +188,7 @@ Tanto la disposición de los datos como las propiedades de la variable estudiada
 
 .. figure:: Estructura_espacial.*
 	:width: 550px
+	:align: center
 
 	Dos estructuras distintas con diferentes implicaciones a la hora del análisis de los datos que representan
 
@@ -210,7 +215,7 @@ Conocer las tendencias existentes para una variable nos ayuda a comprender mejor
 
 Las consecuencias de la existencia de tendencias son similares a las que se derivan de la presencia de autocorrelación espacial, ya que invalidan el supuesto de independencia de los datos.
 
-.. _EfectoBorde:
+.. _efectoborde:
 
 Efectos de borde
 --------------------------------------------------------------
@@ -231,6 +236,7 @@ Otros análisis que en breve veremos hacen uso de un mecanismo similar. Por ejem
 
 .. figure:: Efecto_borde.*
 	:width: 450px
+	:align: center
 
 	Representación del efecto borde y cómo este afecta en mayor o menor medida en función de la escala de análisis. Las zonas en trazo continuo no se ven afectadas. Las zonas en trazo punteado están afectadas de efecto de borde en diferente grado.
 
@@ -255,6 +261,7 @@ Para cada una de estas unidades, se tiene un valor de la variable estudiada, per
 
 .. figure:: Support_size.*
 	:width: 550px
+	:align: center
 
 	El valor recogido en una unidad puede interpretarse con distintos criterios. a) Media de la celda. b) Valor en el punto medio.
 
@@ -265,7 +272,7 @@ Para cada una de estas unidades, se tiene un valor de la variable estudiada, per
 Este tipo de cuestiones deben considerarse al trabajar con los datos espaciales, y homogeneizar los criterios en la medida de lo posible, siempre considerando la naturaleza de la variable recogida.
 
 	
-.. _Calculos_espaciales_basicos:
+.. _calculos_espaciales_basicos:
 
 Algunos cálculos espaciales básicos
 =====================================================
@@ -309,6 +316,7 @@ En la figura :num:`#figdistanciaraster` pueden verse los valores de distancia en
 
 .. figure:: Distancia_raster.*
 	:width: 650px
+	:align: center
 
 	Distintos tipos de distancia ráster: a) tablero de ajedrez, b) Manhattan, c) ortogonal, d) Chamfer 3--4
 
@@ -339,7 +347,6 @@ La distancia entre un punto y un polígono es la de dicho punto a la línea que 
 
 Para el caso de polígonos, dos son las magnitudes principales: área y perímetro. El área se calcula aplicando la fórmula
 
-.. _Eq:Area_poligono:
 
 .. math::
 
@@ -392,6 +399,7 @@ En la figura :num:`#figpuntoenpoligono` se muestra un ejemplo de lo anterior.
 
 .. figure:: Punto_en_poligono.*
 	:width: 650px
+	:align: center
 
 	Pertenencia de un punto al interior de un polígono en función del numero de cortes entre la frontera de dicho polígono y una semirecta con extremo en dicho punto.
 
@@ -405,6 +413,7 @@ La pertenencia o no del punto al polígono queda definida así en todos los caso
 
 .. figure:: Problema_punto_en_poligono.*
 	:width: 650px
+	:align: center
 
 	Problemas de la metodología para determinar si un punto se encuentra en el interior de un polígono cuando la semirecta coincide parcialmente con la frontera.
 
@@ -412,7 +421,7 @@ La pertenencia o no del punto al polígono queda definida así en todos los caso
  
 
 
-.. _Relaciones_espaciales:
+.. _relaciones_espaciales:
 
 Relaciones espaciales
 =====================================================
@@ -489,6 +498,7 @@ Teniendo cuatro elementos y dos posibles valores para cada uno, existen un total
 
 .. figure:: 4Intersection.*
 	:width: 650px
+	:align: center
 
 	Conjunto de relaciones posibles entre regiones según el modelo *4--Intersection*.
 
@@ -554,6 +564,7 @@ Dependiendo de los tipos de entidades que se consideren, existen distintos índi
 
 	.. figure:: Internal_area_splitting.*
 		:width: 350px
+	:align: center
 
 		Esquema de la forma en que una línea divide a una región. La menor de las dos (en oscuro), dividida por el área total, define la *relación de subdivisión del área interior*. 
 

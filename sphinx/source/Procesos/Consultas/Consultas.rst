@@ -1,8 +1,8 @@
+.. _consultas:
+
 **********************************************************
 Consultas y operaciones con bases de datos
 **********************************************************
-
-.. _Consultas:
 
 
 En este capítulo comenzaremos a estudiar las formas de análisis de los datos espaciales, tratando las consultas y operaciones relacionadas. Estas son operaciones sencillas que, sin embargo se encuentran entre las más frecuentes en el uso habitual de los SIG, pues permiten explotar en primera instancia la información de las capas.
@@ -44,6 +44,7 @@ Como veremos más en detalle en las siguientes secciones, las consultas pueden h
 
 .. figure:: Seleccion.*
 	:width: 800px
+	:align: center
 
 	El resultado de una consulta temática en un SIG es una selección de entidades, que implica tanto a la componente temática como a la espacial de cada una de ellas. En ambos casos, el color amarillo indica los elementos seleccionados.
 
@@ -78,7 +79,7 @@ Antes de la aparición de los SIG, la componente temática (el anuario estadíst
 Por un momento, dejemos de lado la componente espacial de cada país, y pensemos que solo conocemos de él algunas variables socio--económicas tales como el PIB, la población, el idioma que se habla o el nombre de su moneda, tal y como se recogen en la tabla de la figura :num:`#figseleccion`
 
 
-.. _Mecanismos_consulta:
+.. _mecanismos_consulta:
 
 Mecanismos de consulta y operaciones básicas
 --------------------------------------------------------------
@@ -115,7 +116,7 @@ Las consultas mediante expresiones condicionales pueden ser algo más complejas 
 * ¿En qué países de habla inglesa aumentó la población durante el último año?
 
 
-Para expresar esas consultas se han de incluir elementos de la denominada *lógica booleana*\footnote{Denominada así por el matemático irlandés George Boole(1815, 1864)}. Para entender de forma sencilla este concepto, podemos reescribir las consultas anteriores de la siguiente manera:
+Para expresar esas consultas se han de incluir elementos de la denominada *lógica booleana*. Para entender de forma sencilla este concepto, podemos reescribir las consultas anteriores de la siguiente manera:
 
 
 * ¿Qué países tienen como moneda el euro *y* a la vez tienen más de 40 millones de habitantes?
@@ -124,7 +125,7 @@ Para expresar esas consultas se han de incluir elementos de la denominada *lógi
 
 La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición ``Moneda = 'Euro'``, y al mismo tiempo la condición ``POBLACION_ACTUAL :math:`>` 40.000.000.`` La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés ``AND``, de forma que tendríamos la expresión ``MONEDA = 'Euro' AND POBLACIONACTUAL > 40000000``.
 
-Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (``OR``) o el operador de negación (``NOT``). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*\, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura :num:`#figvenn` pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
+Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (``OR``) o el operador de negación (``NOT``). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura :num:`#figvenn` pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
 
 Más adelante volveremos a encontrar esquemas similares a estos, en particular al estudiar las operaciones de solape entre capas vectoriales, en el capítulo :ref:`Operaciones_geometricas`.
 
@@ -133,6 +134,7 @@ Más adelante volveremos a encontrar esquemas similares a estos, en particular a
 
 .. figure:: Venn.*
 	:width: 650px
+	:align: center
 
 	Diagramas de Venn.
 
@@ -158,7 +160,7 @@ Veamos un ejemplo de una unión entre tablas para comprender el significado de e
 
 
 ===============   =================   ============
-``TIPO\_SUELO``   ``NOMBRE\_SUELO``   ``APTITUD``
+``TIPO_SUELO``    ``NOMBRE_SUELO``    ``APTITUD``
 ===============   =================   ============
 1                 Fluvisol            5  
 2                 Cambisol            7  
@@ -202,7 +204,7 @@ En realidad, son lenguajes que buscan dar solución a todas las necesidades de t
 
 Un lenguaje de consulta posee una sintaxis rígida, que lo asemeja a un lenguaje de programación (de hecho, se trata de un lenguaje de programación como tal). No obstante, la complejidad algorítmica inherente a la propia consulta queda oculta en la expresión, asemejándose en ese sentido más a un lenguaje natural. Un lenguaje de consulta no sirve para implementar algoritmos, sino que expresa de una forma más natural (aunque con una sintaxis adecuada al entorno computacional en que se encuentra) dichos algoritmos de consulta.
 
-Dicho de otro modo, estos lenguajes de consulta van a expresar en lineas generales *qué* es lo que se quiere hacer, pero no *cómo* se debe hacer, al contrario que los lenguajes de programación (tales como los que se emplean para programar, por ejemplo, un SIG), que permiten describir formalmente algoritmos y procedimientos\footnote{Los lenguajes de programación se dice que son lenguajes *procedurales*, mientras que los lenguajes de consulta se denominan *no procedurales*}.
+Dicho de otro modo, estos lenguajes de consulta van a expresar en lineas generales *qué* es lo que se quiere hacer, pero no *cómo* se debe hacer, al contrario que los lenguajes de programación (tales como los que se emplean para programar, por ejemplo, un SIG), que permiten describir formalmente algoritmos y procedimientos. Se dice que los lenguajes de programación se dice que son lenguajes *procedurales*, mientras que los lenguajes de consulta se denominan *no procedurales*.
 
 El siguiente paso es, pues, estudiar cómo los lenguajes de consulta se incorporan a un SIG y la forma de utilizar estos. El lenguaje de consulta más extendido para bases de datos relacionales, tanto dentro como fuera del ámbito SIG, es el denominado SQL (acrónimo de *Structured Query Language* o *Lenguaje de Consulta Estructurado*).
 
@@ -241,23 +243,21 @@ Sin animo de resultar un repaso exhaustivo a todos los elementos del lenguaje (e
 ::
 	SELECT *
 	FROM Paises
-	WHERE Moneda = 'Euro' AND 
-	      Poblacion_actual > 40000000 
+	WHERE Moneda = 'Euro' AND Poblacion_actual > 40000000 
 
 Esta consulta recupera todos aquellos registros en los que la población actual supera los 40 millones y la moneda es el euro. El asterisco indica que, para cada uno de estos registros, deben recuperarse todos los campos existentes. Se podría formar una nueva tabla solo con los nombres de los países que cumplen la condición establecida, mediante la siguiente sentencia:
 
 ::
 	SELECT Nombre
 	FROM Paises
-	WHERE Moneda = 'Euro' AND 
-	      Poblacion_actual > 40000000 
+	WHERE Moneda = 'Euro' AND  Poblacion_actual > 40000000 
 
 Las consultas pueden ser mucho más complejas, y las sentencias ``SELECT`` pueden usarse como parámetros dentro de un predicado lógico. Por ejemplo, supongamos que disponemos de una tabla denominada ``Capitales`` con datos de todas las capitales del mundo, y que cuenta con los siguientes campos:
 
 
 * ``NOMBRE``
-* ``POBLACION\_HOMBRES``
-* ``POBLACION\_MUJERES``
+* ``POBLACION_HOMBRES``
+* ``POBLACION_MUJERES``
 
 
 La sentencia siguiente recupera en una nueva tabla todos los países cuyas capitales tienen una población de hombres mayor que de mujeres.
@@ -265,8 +265,7 @@ La sentencia siguiente recupera en una nueva tabla todos los países cuyas capit
 ::
 	SELECT Nombre
 	FROM Paises
-	WHERE Capital IN (SELECT Nombre FROM Capitales 
-		WHERE Poblacion_hombres > Poblacion_mujeres)
+	WHERE Capital IN (SELECT Nombre FROM Capitales WHERE Poblacion_hombres > Poblacion_mujeres)
 
 
 La subconsulta entre paréntesis crea una tabla con los nombres de las capitales que cumplen la condición relativa a las poblaciones de hombres y mujeres. La otra consulta selecciona los países cuya capital aparece en dicha tabla (esa inclusión la define el comando ``IN``). En conjunto, tenemos una única consulta, pero que se basa en dos tablas con una relación entre sí.
@@ -335,6 +334,7 @@ La consulta sobre un punto concreto que hemos descrito la incorporan la gran may
 
 .. figure:: Seleccion_rectangulo.*
 	:width: 650px
+	:align: center
 
 	Consulta mediante rectángulo. Los países que intersecan con los limites definidos por dicho rectángulo quedan seleccionados.
 
@@ -377,8 +377,7 @@ Por ejemplo, para ver que países son atravesados por el río Nilo, podemos empl
 
 	SELECT Paises.Nombre,
 	FROM Rios, Paises
-	WHERE Cross(Rios.shape, Paises.Shape)
-	      AND Rios.Nombre = 'Nilo'
+	WHERE Cross(Rios.shape, Paises.Shape) AND Rios.Nombre = 'Nilo'
 
 La expresión ``Cross(Rios.Shape, Paises.Shape)`` hace uso del método ``Cross``, que devuelve 1 en caso de que las dos geometrías pasadas como parámetros se intersequen, y 0 en caso contrario. Este se utiliza para realizar la selección solo sobre aquellas que cumplan la condición de ser cortadas por una geometría dada, en este caso la del río Nilo. 
 
@@ -406,7 +405,7 @@ Al igual que en el apartado anterior, el objetivo de este apartado no es mostrar
 Además de esta extensión a SQL, existen otras propuestas propuestas alternativas tales como Geo--SQL :cite:p:`geoSQL`, SSQL (Spatial SQL) :cite:p:`SSQL` o SQL-MM.
                                                           
 
-.. _Indices_espaciales:
+.. _indices_espaciales:
 
 Índices espaciales
 --------------------------------------------------------------
@@ -422,7 +421,7 @@ Al utilizar una base de datos, si no disponemos de un índice deberemos recorrer
 
 Los índices nos permiten *alcanzar* los elementos que constituyen la respuesta a nuestra consulta, haciéndolo de la forma más rápida y llegando hasta ellos sin tener que pasar por todos los restantes.
 
-Describir los índices empleados en bases de datos no espaciales requiere describir asimismo estructuras de datos complejas que escapan del alcance de este texto (los denominados *árboles B+* son las estructuras utilizadas con más frecuencia para esta tarea)\footnote{Para el lector interesado, puede encontrarse este tema tratado con mayor profundidad en, por ejemplo,  :cite:p:`BTrees`. La descripción original de los árboles B+ aparece en  :cite:p:`Bayer1972Acta`}. Por esta razón, no se detallarán en este capítulo más allá de la anterior descripción básica, pudiéndose encontrar más información en las referencias proporcionadas a lo largo del capítulo.
+Describir los índices empleados en bases de datos no espaciales requiere describir asimismo estructuras de datos complejas que escapan del alcance de este texto (los denominados *árboles B+* son las estructuras utilizadas con más frecuencia para esta tarea). Por esta razón, no se detallarán en este capítulo más allá de la anterior descripción básica, pudiéndose encontrar más información en las referencias proporcionadas a lo largo del capítulo.
 
 Más interesantes que estos índices nos resultan aquellos que se utilizan en las bases de datos espaciales, que denominamos *índices espaciales*. El concepto es similar al de índices de bases de datos no espaciales: elementos que permiten optimizar las consultas mediante una correcta estructuración de los datos, en particular en este caso de su componente espacial.
 
@@ -448,6 +447,7 @@ Si vemos la figura :num:`#figejindicesespaciales`, para calcular cuales son los 
 
 .. figure:: Ej_indices_espaciales.*
 	:width: 650px
+	:align: center
 
 	Para calcular los diez puntos más cercanos a una coordenada dada (en rojo), nuestra intuición espacial nos ayuda a decidir que estos se han de buscar en un subconjunto reducido tal como el de los situados dentro del circulo azul de la figura. Este proceso de *filtrado* y *refinamiento* ahorra operaciones, y es el fundamento conceptual de los índices espaciales.
 

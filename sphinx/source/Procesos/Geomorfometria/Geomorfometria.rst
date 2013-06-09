@@ -1,4 +1,4 @@
-.. _Geomorfometria:
+.. _geomorfometria:
 
 **********************************************************
 Geomorfometría y análisis del terreno
@@ -61,7 +61,7 @@ El formato más adecuado, tanto por sus características como por la facilidad c
 
 Las características de una capa ráster que definen la aplicabilidad de este para un determinado análisis son sus resoluciones vertical y horizontal. En el caso del MDE, estos parámetros han sido ampliamente estudiados, así como su efecto en los resultados producidos a partir de dicho MDE. En  :cite:p:`Gyasi1995HydroProc` y  :cite:p:`Walker1998WWR` puede encontrarse más información al respecto 
 
-.. _Preparacion_MDE:
+.. _preparacion_mde:
 
 Creación y preparación del MDE
 =====================================================
@@ -128,7 +128,7 @@ La preparación del MDE corrige este comportamiento para solventar los dos princ
 
 Para una mejor comprensión de las formulaciones que permiten corregir la presencia de zonas llanas o depresiones, es necesario conocer con anterioridad los algoritmos de dirección de flujo, ya que son estos los afectados por ellas. Por esta razón, veremos las soluciones a estos problemas en una sección posterior de este capítulo.
 
-.. _Modelos_MDE:
+.. _modelos_mde:
 
 Modelos matemáticos locales del MDE
 =====================================================
@@ -217,7 +217,7 @@ El análisis morfométrico del MDE estudia el relieve y la orografía de la supe
 
 Puesto que la mayoría de análisis son de tipo focal, se necesita definir una ventana de análisis. El tamaño de esta ventana depende del tipo de medida a calcular. En el caso de medidas estadísticas, esta puede escogerse libremente, así como su forma. En el caso de las medidas geométricas, estas requieren de un modelo matemático del terreno, por lo que la ventana de análisis viene condicionada al modelo escogido. En realidad, una vez establecida la función que define localmente la superficie del MDE, hacemos uso directo de su expresión, motivo por el cual, según sea el modelo, se usarán unos u otros valores de los pertenecientes a la ventana de análisis.
 
-.. _Medidas_geometricas:
+.. _medidas_geometricas:
 
 Medidas geométricas
 --------------------------------------------------------------
@@ -230,11 +230,12 @@ Los conceptos subyacentes son los mismos para todos los modelos del terreno, aun
 
 Existen formulaciones no basadas en un análisis matemático del terreno  :cite:p:`Travis1975USDA`, aunque nos centraremos en aquellas con una base matemática, por su mayor idoneidad. Estas formulaciones que no hacen uso de la caracterización matemática local del terreno permiten obtener valores de pendiente y orientación, pero no de otros parámetros tales como curvaturas.
 
+
+.. _medidas_derivadas_primer_grado:
+
 Medidas basadas en derivadas de primer grado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-.. _Medidas_derivadas_primer_grado:
 
 Los parámetros geométricos más básicos parten del estudio de las derivadas parciales de primer orden de la superficie, y se obtienen a partir del *gradiente* de la superficie. El gradiente es un concepto básico del cálculo vectorial y se expresa en función de las antedichas primeras derivadas parciales, según
 
@@ -258,8 +259,6 @@ La pendiente refleja la variación máxima de la elevación y se define en funci
 Este valor representa el ángulo entre el plano horizontal y el tangencial a la superficie en el punto considerado. Este último queda definido por el gradiente, que es normal al mismo. El horizontal es, a su vez, normal a la curva de nivel que pasa por el punto.
 
 La pendiente obtenida de la expresión anterior viene expresada en unidades angulares tales como radianes o grados, aunque es habitual hacerlo en porcentaje. Para ello, utilizamos la expresión
-
-.. _Eq:Pendiente2:
 
 .. math::
 
@@ -320,6 +319,7 @@ Como ejemplo, el mapa de pendientes resultante de utilizar esta última formulac
 
 .. figure:: Pendiente.*
 	:width: 450px
+	:align: center
 
 	Mapa de pendientes obtenido a partir del MDE
 
@@ -332,6 +332,7 @@ Podemos expresar ambas formulaciones como el resultado de convoluciones (ver :re
 
 .. image:: Kernel_Evans.*
 	:width: 400px
+	:align: center
 
 Como ya sabemos, la estructura ráster del MDE es similar a la de una imagen digital. Esto hace que no solo sea sencillo combinar el MDE con imágenes aéreas o satelitales, sino que también en las técnicas y algoritmos existe una notable similitud. En particular, veremos más adelante en el capítulo dedicado al análisis de imágenes que los núcleos anteriores se conocen como *núcleos de Prewitt* y son frecuentemente utilizado para la detección de bordes.
 
@@ -390,6 +391,7 @@ El mapa de orientaciones para la zona del juego de datos de referencia se muestr
 
 .. figure:: Orientacion.*
 	:width: 450px
+	:align: center
 
 	Mapa de orientaciones obtenido a partir del MDE.
 
@@ -405,6 +407,7 @@ Tanto la orientación como pendiente pueden representarse de modo simultaneo no 
 
 .. figure:: Representacion_gradiente.*
 	:width: 550px
+	:align: center
 
 	Representación del gradiente mediante elementos lineales. Para una mejor interpretación se han añadido curvas de nivel cada 10 metros.
 
@@ -418,6 +421,7 @@ Como veremos más en detalle en las próximas secciones, la orientación tiene r
 
 .. figure:: Indice_convergencia.*
 	:width: 450px
+	:align: center
 
 	Indice de convergencia.
 
@@ -433,6 +437,7 @@ Una primera aproximación mediante un modelo sencillo se obtiene combinando los 
 
 .. figure:: Relieve_sombreado.*
 	:width: 800px
+	:align: center
 
 	Utilización de una capa de relieve sombreado para mejorar la visualización de una imagen aérea 
 
@@ -456,6 +461,7 @@ En la figura :num:`#figvisibilidadinsolacion` puede verse esto gráficamente.
 
 .. figure:: Visibilidad_insolacion.*
 	:width: 650px
+	:align: center
 
 	Zonas en sombra (a) frente a zonas bajo insolación (b), por comparación entre el perfil del terreno y la línea de visión entre la celda problema y el Sol. 
 
@@ -520,6 +526,7 @@ La figura :num:`#figinsolacion` muestra un mapa de insolación anual.
 
 .. figure:: Insolacion.*
 	:width: 450px
+	:align: center
 
 	Mapas de insolación total a lo largo de un año (en kWh/m:math:`^2`).
 
@@ -544,7 +551,7 @@ Aplicando este concepto al cálculo de la energía en una celda dada, esta puede
 
 Esta aproximación es sumamente útil si se dispone de datos puntuales procedentes de piranómetro, ya que, tomando dichos datos como referencia ---esto es, conociendo el valor exacto de :math:`E_0`---, se podrían calcular las restantes celdas de la malla aplicando la anterior relación. 
 
-.. _Curvaturas:
+.. _curvaturas:
 
 Medidas basadas en derivadas de segundo grado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -559,6 +566,7 @@ Al contrario que sucedía con la pendiente o la orientación, no existe una úni
 
 .. figure:: Seccion_normal.*
 	:width: 400px
+	:align: center
 
 	Una sección normal es la resultante de la intersección de la superficie con un plano que contiene al vector normal a esta en un punto.
 
@@ -579,6 +587,7 @@ De entre los planos que pueden tomarse, algunos aportan más información que ot
 
 .. figure:: Concepto_curvatura.*
 	:width: 450px
+	:align: center
 
 	La curvatura es el inverso del radio (:math:`1/R`)  del círculo que ajusta a la curva en un punto dado. Por convención, es positiva en el caso convexo (:math:`R_2 > 0`) y negativa en el concavo (:math:`R_1 < 0`).
 
@@ -695,7 +704,7 @@ Veíamos en el apartado :ref:`Preparacion_MDE` cómo resultaba necesario corregi
 
 La asignación de direcciones de flujo se lleva a cabo mediante un análisis de tipo focal, al igual que los parámetros morfométricos que hemos visto hasta el momento. Esas direcciones, no obstante, implican una conectividad entre las celdas del MDE, y esta conectividad la emplearemos para definir regiones de celdas hidrológicamente relacionadas entre sí y realizar un análisis regional.
 
-.. _Direcciones flujo:
+.. _direcciones_flujo:
 
 Direcciones de flujo
 ----------------------
@@ -726,6 +735,7 @@ La aparición de segmentos rectilíneos paralelos en zonas llanas (Figura :num:`
 
 .. figure:: Acumulacion_error_D8.*
 	:width: 500px
+	:align: center
 
 	Propagación de errores de dirección en el modelo D8.La flecha señala la dirección real de la pendiente y las celdas sombreadas la dirección de flujo calculada
 
@@ -734,6 +744,7 @@ La aparición de segmentos rectilíneos paralelos en zonas llanas (Figura :num:`
 
 .. figure:: Lineas_paralelas_D8.*
 	:width: 650px
+	:align: center
 
 	Líneas paralelas de flujo como resultado de la aplicación del modelo D8
 
@@ -767,7 +778,7 @@ Un modelo más elaborado que tiene en cuenta la divergencia de flujo es el FD8  
 
 donde :math:`f_m` es el flujo asignado a la celda :math:`m` de la ventana de análisis, :math:`s_i` la pendiente hacia la celda :math:`i`, y :math:`x` es un factor de convergencia cuyo valor define el comportamiento del algoritmo. A valores más altos de este coeficiente, el flujo resultante es más concentrado, resultando una mayor dispersión del mismo para valores bajos. La formulación original emplea un valor :math:`x=1`, y  :cite:p:`Pilesjo1997Geoinf` demuestra que este es un valor óptimo, especialmente en terrenos convexos. Autores como  :cite:p:`Holmgren1994Hydroproc` recomiendan el uso de valores entre 4 y 6, considerando que de este modo se obtiene un adecuado equilibrio entre los enfoques anteriormente comentados.
 
-Por otra parte los valores de las tangentes pueden obtenerse sencillamente según lo expresado en :ref:`Eq:Pendiente_D8`. Sólo deben emplearse aquellas tangentes que sean positivas, esto es, que representen ángulos entre la celda central y celdas de inferior elevación, pues es exclusivamente hacia estas hacia donde va a desplazarse el flujo. 
+Por otra parte los valores de las tangentes pueden obtenerse sencillamente según lo expresado en el caso del modelo D8. Sólo deben emplearse aquellas tangentes que sean positivas, esto es, que representen ángulos entre la celda central y celdas de inferior elevación, pues es exclusivamente hacia estas hacia donde va a desplazarse el flujo. 
 
 :cite:p:`Tarboton1997WRR` propone otra solución similar que pretende por un lado modelizar de forma más realista la difusión del flujo, y por otro aportar una formulación más robusta. El modelo propuesto sigue basándose en el D8, solventando el problema de la discretización de flujo en 8 direcciones únicas, y para indicarlo es bautizado como D:math:`\infty`.
 
@@ -790,8 +801,9 @@ Aunque muy poco habituales, existen asimismo metodologías no basadas en el mode
 
 .. figure:: KRAD8.*
 	:width: 450px
+	:align: center
 
-	Cálculo de dirección de flujo según Kinematic Routing Algorithm (KRA) :cite:p:`Lea1992Chapman(trazo fino) y comparación con D8 \cite{Callaghan1984CVGIP` (trazo grueso)}
+	Cálculo de dirección de flujo según Kinematic Routing Algorithm (KRA) :cite:p:`Lea1992Chapman`(trazo fino) y comparación con D8 :cite:p:`Callaghan1984CVGIP` (trazo grueso)
 
 
  
@@ -814,9 +826,10 @@ Sea la siguiente ventana de análisis:
 
 .. image:: EjZonas_planas.*
 	:width: 400px
+	:align: center
 
 
-Puesto que no existe pendiente entre la celda central y las circundantes, no es posible asignar una dirección de flujo a la celda central. Incluso en el caso de no utilizar el D8, tampoco sería posible, ya que otros algoritmo utilizan principios similares o se basan en la orientación, la cual no se encuentra definida para celdas sin pendiente, como vimos en :ref:`Eq:Orientacion2`. La intuición y la mera observación nos dicen, no obstante, que el agua se desplazará a través del relieve definido por la anterior ventana.
+Puesto que no existe pendiente entre la celda central y las circundantes, no es posible asignar una dirección de flujo a la celda central. Incluso en el caso de no utilizar el D8, tampoco sería posible, ya que otros algoritmo utilizan principios similares o se basan en la orientación, la cual no se encuentra definida para celdas sin pendiente, como ya vimos. La intuición y la mera observación nos dicen, no obstante, que el agua se desplazará a través del relieve definido por la anterior ventana.
 
 En realidad, puede considerarse que las zonas planas son un artificio dentro de un MDE, ya que una zona perfectamente plana no existe en la naturaleza como tal. En general, una resolución vertical escasa, bien sea en el almacenamiento o bien en la medición de los valores, es la causante de que estas aparezcan en el MDE.
 
@@ -824,6 +837,7 @@ Supongamos que la anterior ventana se encuentra dentro de un área más amplia c
 
 .. image:: EjZonas_planas2.*
 	:width: 400px
+	:align: center
 
 En este caso, resulta fácil intuir que el flujo se desplazará de Este a Oeste, de las zonas de mayor elevación a las de menor. El relieve circundante contiene, pues, información que puede utilizarse para asignar los valores dentro de la zona llana.
 
@@ -840,6 +854,7 @@ Respecto a la primera, podemos asimilar la dirección de flujo de la celda a la 
 
 .. figure:: Zonas_planas_dir_flujo.*
 	:width: 450px
+	:align: center
 
 	Cálculo de dirección de flujo sobre una celda llana (en trazo grueso) como suma vectorial de las direcciones de las celdas que vierten sobre la misma (en trazo fino).
 
@@ -857,8 +872,9 @@ Aunque solucionando eficientemente la dificultad de las zonas planas, esta metod
 
 .. figure:: Zonas_planas_dir_flujo_jenson.*
 	:width: 650px
+	:align: center
 
-	Cálculo de direcciones de flujo sobre zonas llanas según  :cite:p:`Jenson1988PERS. La malla de la izquierda representa las alturas del MDE, donde se aprecia la zona llana de elevación 1 (en gris). Las mallas sucesivas presentan las etapas del proceso iterativo de asignación de direcciones de flujo a partir del punto de salida existente.`
+	Cálculo de direcciones de flujo sobre zonas llanas según  :cite:p:`Jenson1988PERS`. La malla de la izquierda representa las alturas del MDE, donde se aprecia la zona llana de elevación 1 (en gris). Las mallas sucesivas presentan las etapas del proceso iterativo de asignación de direcciones de flujo a partir del punto de salida existente.
 
 
  
@@ -873,13 +889,14 @@ Para ello, define dos capas de elevaciones modificadas, una reflejando cada uno 
 
 .. figure:: Zonas_planas_dir_flujo_garbrecht.*
 	:width: 650px
+	:align: center
 
 	Modificación del MDE para el cálculo de direcciones de flujo sobre zonas llanas según  :cite:p:`Garbrecht1997JH`. De izquierda a derecha y de arriba a abajo: elevaciones originales, modificación de elevaciones según los dos supuestos considerados y elevaciones finales resultantes.
 
 
 
 
-.. _Depresiones:
+.. _depresiones:
 
 Depresiones
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -890,6 +907,7 @@ Sea la siguiente ventana de análisis:
 
 .. image:: EjDepresion.*
 	:width: 400px
+	:align: center
 
 Nos encontramos con un problema similar al anterior, ya que todas las pendientes desde la celda central son positivas, y no existe ninguna dirección de flujo que represente un movimiento hacia aguas abajo. En la realidad, no obstante, una depresión como la anterior no hace que el agua detenga su movimiento. El flujo rellenará la depresión y verterá por la celda de menor elevación, continuando su camino.
 
@@ -897,6 +915,7 @@ Una depresión no siempre lleva implícita la imposibilidad de asignar una direc
 
 .. image:: EjDepresion2.*
 	:width: 400px
+	:align: center
 
 En este caso, de las dos celdas de la depresión, solo una de ellas no tiene dirección de flujo (de elevación 57), pero en la otra (de elevación 58) esta es incorrecta, puesto que vierte sobre la primera y la tendencia natural del terreno es la contraria. El proceso que tiene lugar será bien distinto, ya que el flujo rellenará la depresión y saldrá de esta desde la celda de elevación 58 y hacia la de menor elevación de su entorno, en este caso 59.
 
@@ -924,6 +943,7 @@ La figura :num:`#figllenadodepresiones` presenta un esquema comparativo de los d
 
 .. figure:: Llenado_depresiones.*
 	:width: 750px
+	:align: center
 
 	De derecha a izquierda, elevaciones originales, eliminación de la depresión usando llenado y eliminación de la depresión mediante llenado y modificación de celdas obstáculo. En negro, celda de desagüe. En gris, celdas modificadas.
 
@@ -940,14 +960,15 @@ La figura :num:`#figplanchon` muestra un sencillo esquema del funcionamiento de 
 
 .. figure:: Depresiones_planchon.*
 	:width: 650px
+	:align: center
 
-	Eliminación de depresiones según  :cite:p:`Planchon2001Catena.`
+	Eliminación de depresiones según  :cite:p:`Planchon2001Catena`.
 
 
  
 
 
-.. _Area_acumulada:
+.. _area_acumulada:
 
 Área acumulada y parámetros derivados
 --------------------------------------------------------------
@@ -964,6 +985,7 @@ El D8 es, por su simplicidad, el más didáctico de los métodos, y permite comp
 
 .. figure:: Area_acumulada_D8.*
 	:width: 500px
+	:align: center
 
 	El área acumulada de una celda dada (en rojo) es la suma de las áreas de las celdas conectadas con esta y situadas aguas arriba (en azul). Los trazos indican la conectividad entre celdas según el modelo D8
 
@@ -971,25 +993,27 @@ El D8 es, por su simplicidad, el más didáctico de los métodos, y permite comp
  
 
 
-La diferencia entre los métodos de asignación de direcciones de flujo se ve de forma gráfica al calcular el área acumulada empleando cada uno de ellos. La figura :num:`#figdiferenciasmetodosareaacumulada` muestra los valores de área acumulada para una superficie generada artificialmente con forma de cono, calculados estos con cada uno de los métodos explicados en :ref:`Direcciones_flujo`.
+La diferencia entre los métodos de asignación de direcciones de flujo se ve de forma gráfica al calcular el área acumulada empleando cada uno de ellos. La figura :num:`#figdiferenciasmetodosareaacumulada` muestra los valores de área acumulada para una superficie generada artificialmente con forma de cono, calculados estos con cada uno de los métodos explicados en :ref:`direcciones_flujo`.
 
 .. _figdiferenciasmetodosareaacumulada:
 
 .. figure:: Diferencias_metodos_area_acumulada.*
 	:width: 650px
+	:align: center
 
-	Representación del área acumulada sobre un cono circular según los principales algoritmos de asignación de direcciones de flujo (adaptado de  :cite:p:`Conrad2007phd)`
+	Representación del área acumulada sobre un cono circular según los principales algoritmos de asignación de direcciones de flujo (adaptado de  :cite:p:`Conrad2007phd`)
 
 
  
 
 
-En la figura :num:`#figareaacumulada` puede verse el mapa de área acumulada para la región del juego de datos de ejemplo. Como se dijo en :ref:`Funcioneslocales`, el uso de una transformación logarítmica enriquece la representación resultante.
+En la figura :num:`#figareaacumulada` puede verse el mapa de área acumulada para la región del juego de datos de ejemplo. Como se dijo en :ref:`funciones_locales`, el uso de una transformación logarítmica enriquece la representación resultante.
 
 .. _figareaacumulada:
 
 .. figure:: Area_acumulada.*
 	:width: 450px
+	:align: center
 
 	Mapa de área acumulada. Se ha utilizado una representación logarítmica para aumentar la información visual proporcionada la imagen)
 
@@ -1005,6 +1029,7 @@ De igual modo, pueden emplearse algunos de los parámetros que hemos desarrollad
 
 .. figure:: Pendiente_acumulada.*
 	:width: 450px
+	:align: center
 
 	Mapa de pendiente media aguas arriba
 
@@ -1019,6 +1044,7 @@ Empleando un enfoque similar basado en el estudio de direcciones de flujo y cone
 
 .. figure:: Longitud_flujo.*
 	:width: 450px
+	:align: center
 
 	Mapa de longitud de flujo desde aguas arriba
 
@@ -1030,6 +1056,7 @@ Empleando un enfoque similar basado en el estudio de direcciones de flujo y cone
 
 .. figure:: Orden_strahler.*
 	:width: 450px
+	:align: center
 
 	Mapa de órdenes de Strahler.
 
@@ -1048,6 +1075,7 @@ La figura :num:`#figcontaminacionborde` muestra la porción del MDE de ejemplo q
 
 .. figure:: Contaminacion_borde.*
 	:width: 450px
+	:align: center
 
 	MDE tras aplicar una máscara basada en contaminación de borde. Las celdas con valores son las únicas para las que puede calcularse el área acumulada de forma fiable.
 
@@ -1091,6 +1119,7 @@ La figura :num:`#figreddrenaje` muestra dos capas con redes de drenaje extraída
 
 .. figure:: Red_drenaje.*
 	:width: 650px
+	:align: center
 
 	Redes de drenaje extraidas para umbrales de area acumulada de 10ha (a), 1ha (b) y 0,1ha (c)
 
@@ -1123,8 +1152,9 @@ La figura :num:`#figceldasconcavaspeucker` muestra gráficamente la aplicación 
 
 .. figure:: Celdas_concavas_peucker.*
 	:width: 550px
+	:align: center
 
-	Identificación de celdas de valle según  :cite:p:`Peuker1975CGIP. En cada pasada se señala la celda más elevada de cada cuatro. Las celdas no señaladas al final del proceso constituyen las celdas de valle.`
+	Identificación de celdas de valle según  :cite:p:`Peuker1975CGIP` . En cada pasada se señala la celda más elevada de cada cuatro. Las celdas no señaladas al final del proceso constituyen las celdas de valle.
 
 
  
@@ -1138,7 +1168,7 @@ Las celdas a modificar son, en el caso más habitual, aquellas sobre las que se 
 
 :cite:p:`Turcotte2001JH` propone una solución más compleja en la que las celdas de cauce se modifican todas ellas en un valor fijo, y aquellas situadas de las celdas de cauce a una distancia menor que un determinado umbral establecido se modifican igualmente, pero este caso en función de dicha distancia. De esta forma, la transición entre las celdas de cauce forzadas y las circundantes se produce de forma suave.
 
-.. _Delimitacion_cuencas:
+.. _delimitacion_cuencas:
 
 Delimitación y caracterización de cuencas vertientes
 -------------------------------------------------------------- 
@@ -1156,6 +1186,7 @@ Con el conocimiento de las direcciones de flujo y las conexiones entre celdas, e
 
 .. figure:: Comparacion_metodos_cuencas.*
 	:width: 650px
+	:align: center
 
 	Comparación entre una cuenca calculada mediante el método FD8 (a) y otra aplicando el método D8 (b). Las celdas en color gris solo aportan parte de su flujo a la unidad hidrológica. El punto rojo señala el punto de cierre.
 
@@ -1178,6 +1209,7 @@ Si asignamos ordenes jerárquicos de Shreve  :cite:p:`Shreve1966JGeol`, tendremo
 
 .. figure:: Subcuencas_shreve.*
 	:width: 450px
+	:align: center
 
 	División de una cuenca en subcuencas con puntos de salida en confluencias con variación de órdenes de a)
 
@@ -1232,7 +1264,7 @@ Con todos los parámetros, tanto hidrológicos como morfométricos, que hemos vi
 
 Todos ellos se basan en la pendiente y en el área acumulada específica como parámetros básicos
 
-El *índice topográfico de humedad :cite:p:`Beven1979HS` se define como
+El *índice topográfico de humedad* :cite:p:`Beven1979HS` se define como
 
 .. math::
 
@@ -1252,6 +1284,7 @@ La figura :num:`#figindicetopografico` muestra el mapa de este parámetro.
 
 .. figure:: Indice_humedad.*
 	:width: 450px
+	:align: center
 
 	Mapa de índice topográfico de humedad.
 
@@ -1272,6 +1305,9 @@ Por último, el factor LS de la Ecuación Universal de Pérdidas de Suelo, origi
 donde :math:`m` y :math:`n` son parámetros a establecer empíricamente, para los cuales :cite:p:`Moore1992JSWC` demuestran que, con laderas menores de 100 metros de longitud y pendientes hasta 14 :math:`^\circ` los valores :math:`m=0.6` y :math:`n=1.4` dan resultados ajustados a las formulaciones originales. Por su parte, :cite:p:`Foster1990Wiley` propone unos valores de $m=n=1$ para el caso en que la erosión predominante sea de tipo laminar, o bien :math:`m=1.6` y :math:`n=1.3` en caso de que exista predominio de erosión en regueros. 
 
 El hecho de emplear área acumulada en lugar de la longitud de pendiente hace que se tengan en cuenta factores como la convergencia de flujo, no contemplados en la formulación original.
+
+
+.. _visibilidad:
 
 Visibilidad
 ------------
@@ -1312,6 +1348,7 @@ En la figura :num:`#figcuencavisual` puede verse la cuenca visual asociada a una
 
 .. figure:: Cuenca_visual.*
 	:width: 450px
+	:align: center
 
 	Cuenca visual asociada a un punto dado (en rojo). Se ha supuesto una altura del objeto de 20 metros.
 
@@ -1340,6 +1377,7 @@ El resultado de este análisis de visibilidad repetido se conoce como *exposici�
 
 .. figure:: Exposicion_visual.*
 	:width: 450px
+	:align: center
 
 	Mapa de exposición visual de un cauce, reflejando el número de celdas pertenecientes a este que son visibles desde cada una de las restantes, ponderadas por su importancia jerárquica en la red de drenaje. 
 
@@ -1351,7 +1389,7 @@ Análisis como estos son útiles para determinar dónde establecer torres de vig
 Si los análisis de exposición visual ya implican un gran número de cálculos y requieren mucho tiempo de proceso, los análisis de cobertura añaden elementos combinatorios que hacen que sea imposible tratar el problema mediante un análisis por fuerza bruta (comprobando las posibles soluciones y eligiendo simplemente la mejor). Por ellos, estos análisis utilizan métodos heurísticos y se basan en Modelos Digitales de Elevaciones en formato TIN, ya que en ellos el análisis de visibilidad es menos costoso en términos de número de operaciones necesarias (el número de vértices de un TIN es sensiblemente menor que el número de celdas de una capa ráster). En  :cite:p:`Kaucic2005CIT` pueden encontrarse más detalles al respecto.
 
 
-.. _Caracterizacion_terreno:
+.. _caracterizacion_terreno:
 
 Caracterización de formas del terreno
 =====================================================
@@ -1370,6 +1408,7 @@ Una primera clasificación la podemos obtener a partir del análisis de curvatur
 
 .. figure:: Clasificacion_curvaturas.*
 	:width: 650px
+	:align: center
 
 	Caracterización de procesos de acumulación según los valores de las curvaturas horizontal y vertical asociadas
 

@@ -73,6 +73,7 @@ siendo :math:`r_1` el semieje mayor y :math:`r_2` el semieje menor.
 
 .. figure:: Elipsoide.*
 	:width: 650px
+	:align: center
 
 	Parámetros que definen el elipsoide
 
@@ -137,6 +138,7 @@ El geoide no es, sin embargo, una superficie regular como el elipsoide, y presen
 
 .. figure:: Geoide.*
 	:width: 650px
+	:align: center
 
 	Representación gráfica del geoide
 
@@ -154,6 +156,7 @@ La figura :num:`#figtressuperficies` muestra una comparación esquemática entre l
 
 .. figure:: Tres_superficies.*
 	:width: 650px
+	:align: center
 
 	Tres superficies fundamentales: superficie real de la tierra, geoide y elipsoide.
 
@@ -198,6 +201,7 @@ En la figura :num:`#figcoordenadasgeograficas` puede verse un esquema de los con
 
 .. figure:: Coordenadas_geograficas.*
 	:width: 650px
+	:align: center
 
 	Esquema de los elementos del sistema de coordenadas geográficas.
 
@@ -266,6 +270,7 @@ La figura :num:`#figproyeccion` muestra un esquema del concepto de proyección, e
 
 .. figure:: Proyeccion.*
 	:width: 650px
+	:align: center
 
 	Esquema del concepto de proyección. A los puntos :math:`A, B` y :math:`C` sobre la superficie del elipsoide les asocian equivalentes :math:`a, b` y :math:`c` sobre un plano.
 
@@ -316,6 +321,7 @@ Del mismo modo, encontramos proyecciones como la proyección *sinusoidal*, una pr
 
 .. figure:: Proyeccion_conica.*
 	:width: 650px
+	:align: center
 
 	Esquema de una proyección cónica
 
@@ -327,6 +333,7 @@ Del mismo modo, encontramos proyecciones como la proyección *sinusoidal*, una pr
 
 .. figure:: Proyeccion_cilindrica.*
 	:width: 650px
+	:align: center
 
 	Esquema de una proyección cilíndrica
 
@@ -365,6 +372,7 @@ La figura :num:`#figzonasutm` muestra un esquema de la cuadrícula UTM.
 
 .. figure:: Zonas_UTM.*
 	:width: 650px
+	:align: center
 
 	Representación parcial de la cuadrícula UTM en Europa (tomado de Wikipedia)
 
@@ -378,6 +386,7 @@ Una zona UTM se localiza, por tanto, con un número y una letra, y es en función 
 
 .. figure:: Origen_UTM.*
 	:width: 650px
+	:align: center
 
 	Determinación del origen de una zona UTM
 
@@ -502,6 +511,7 @@ Existen diversas operaciones que se emplean en el proceso de generalización. Alg
 
 .. figure:: Generalizacion_agregacion.*
 	:width: 650px
+	:align: center
 
 	Un ejemplo de generalización por agregación
 
@@ -545,6 +555,7 @@ En la figura :num:`#figsigmultiescala` puede verse un esquema de lo anterior. A 
 
 .. figure:: SIG_multi_escala.*
 	:width: 650px
+	:align: center
 
 	En un SIG es habitual manejar información a diferentes escalas. En función de la escala de representación, la información visualizada será una u otra.
 

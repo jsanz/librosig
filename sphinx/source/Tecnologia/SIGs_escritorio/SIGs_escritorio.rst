@@ -1,4 +1,4 @@
-.. _SIGs_escritorio:
+.. _sigs_escritorio:
 
 **********************************************************
 Herramientas de escritorio
@@ -32,7 +32,7 @@ Otra diferencia importante en la gestión de los datos es la capacidad de conexi
 
 En general, las capacidades de acceso a servicios remotos están en función del enfoque de la aplicación, y aquellas fuertemente enfocadas al análisis no suelen presentar tales funcionalidades, mientras que aquellas más orientadas a la visualización o las herramientas globales más completas sí que las incorporan.
 
-.. _Funcion_SIG_Visualizacion:
+.. _funcion_sig_visualizacion:
 
 Visualización
 --------------------------------------------------------------
@@ -52,6 +52,7 @@ Junto a este lienzo existen herramientas de navegación que permiten ampliar o r
 
 .. figure:: Herramientas_navegacion.*
 	:width: 650px
+	:align: center
 
 	Herramientas de navegación fundamentales en el entorno gráfico de un SIG de escritorio. a) alejamiento (*zoom out*), b) acercamiento (*zoom in*), c) desplazamiento (*pan*)
 
@@ -80,6 +81,7 @@ En el caso de una representación tridimensional real, los objetos poseen inform
 
 .. figure:: Tipos_vistas_3D.*
 	:width: 750px
+	:align: center
 
 	Distintas formas de representación 3D de capas de datos geográficos
 
@@ -142,6 +144,7 @@ Debe pensarse que el proceso presentado como ejemplo es muy sencillo y únicamen
 
 .. figure:: Proceso_complejo.*
 	:width: 650px
+	:align: center
 
 	Esquema de un proceso complejo creado a partir de operaciones simples de análisis con datos SIG.
 
@@ -174,6 +177,7 @@ Otras funciones de edición que encontramos son las que permiten simplificar alg
 
 .. figure:: Division_poligono.*
 	:width: 650px
+	:align: center
 
 	División automática de un polígono en dos nuevas entidades a partir de una línea. Funcionalidades de este tipo aparecen en los SIG para facilitar las tareas de edición.
 
@@ -188,7 +192,7 @@ Por último, la edición de capas ráster es mucho menos frecuente, y una gran m
 Este tipo de capacidades, no obstante, pueden ser de gran utilidad, especialmente en SIG orientados al manejo principal de capas ráster, donde sustituyen en cierta medida a las funcionalidades de edición vectorial equivalentes.
 
 
-.. _GeneracionCartografia:
+.. _generacioncartografia:
 
 Generación de cartografía
 --------------------------------------------------------------
@@ -224,6 +228,7 @@ La figura :num:`#figseriemapas` muestra un ejemplo de lo anterior.
 
 .. figure:: Serie_mapas.*
 	:width: 650px
+	:align: center
 
 	La automatización de las tareas de creación cartográfica permite simplificar la producción de grandes volúmenes de cartografía, como por ejemplo al dividir un área geográfica en una serie dada de mapas.
 
@@ -242,7 +247,7 @@ Un caso particular es el de aquellos SIG de escritorio que centran la gran mayor
 
 Comenzaremos por estos últimos para dar un breve repaso a los principales tipos de aplicaciones de escritorio en función de sus capacidades.
 
-.. _VisoresYExploradores:
+.. _visoresyexploradores:
 
 Visores y exploradores
 --------------------------------------------------------------
@@ -262,6 +267,7 @@ Así, existen visores que ocupan un papel secundario como parte de un producto c
 
 .. figure:: gearth.*
 	:width: 650px
+	:align: center
 
 	Aspecto de un globo o visor tridimensional (GoogleEarth).
 

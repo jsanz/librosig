@@ -1,5 +1,5 @@
 
-.. _Otros_tecnologia:
+.. _otros_tecnologia:
 
 **********************************************************
 SIG móvil
@@ -10,7 +10,7 @@ Los SIG no han sido ajenos a la popularización de las tecnologías móviles y l
 En este capítulo veremos las características de una nueva forma de SIG basada en su uso sobre dispositivos móviles, y trataremos las nuevas posibilidades que esto ofrece. Asimismo, y puesto que los SIG móviles se apoyan en otra serie de tecnologías (especialmente de comunicación y posicionamiento), desarrollaremos estas para definir el marco tecnológico en el que se encuadra esta rama particular del SIG.
 
 
-.. _SIG_Moviles:
+.. _sig_moviles:
 
 Introducción
 =====================================================
@@ -26,8 +26,6 @@ La implicación que estas nuevas tecnologías han tenido en el ámbito del SIG v
 Con la aparición de los dispositivos móviles y el crecimiento del mercado en torno a ellos, los SIG han dado un nuevo salto cualitativo. No solo han alcanzado un nuevo tipo de dispositivos con capacidades muy interesantes relacionadas con la información geográfica (destacando entre ellas la capacidad de conocer la posición del dispositivo), sino también a un nuevo público y a nuevos grupos de interés. Si con el salto a los ordenadores personales los SIG se hicieron más asequibles en términos económicos y de especialización informática, con la entrada de los dispositivos móviles se han hecho asequibles en lo que a conocimientos específicos del ámbito geográfico y cartográfico respecta. La información geográfica se abre paso en un mercado no especializado y, no solo su uso, sino también su creación, pasan ambos a ser actividades no exclusivas de los profesionales de este campo. Es un paso más allá en la labor que desde sus orígenes los SIG vienen realizando, esto es, facilitar el uso de información geográfica y dar presencia a esta en todos los terrenos, haciendo ver la importancia que tiene en la práctica totalidad de ámbitos.
 
 Algunas de las tecnologías y utilidades que aparecen con los SIG móviles distan mucho de la idea clásica de SIG, y constituyen de por sí un territorio nuevo que difiere notablemente de cuanto hemos visto hasta el momento. No obstante, la relevancia que estas tecnologías han adquirido y, sobre todo, la que van a adquirir en los próximos años, las hace merecedoras de un capítulo propio en este libro y de ser consideradas como parte muy importante del panorama actual del SIG.	
-
-.. _SIG_Moviles:
 
 Qué es el SIG móvil
 =====================================================
@@ -55,6 +53,7 @@ Hoy en día son muchos los dispositivos que podemos emplear para disponer de una
 
 .. figure:: TiposDispositivosMoviles.*
 	:width: 650px
+	:align: center
 	
 	Distintos tipos de dispositivos móviles
 
@@ -83,8 +82,9 @@ Por su parte,  :cite:p:`Brimicombre2002GIS` distingue tres elementos principales
 
 .. figure:: LBSInterseccion.*
 	:width: 500px
+	:align: center
 	
-	Clasificación de aplicaciones del ámbito del SIG móvil en función de las tecnologías empleadas (según  :cite:p:`Brimicombre2002GIS)`
+	Clasificación de aplicaciones del ámbito del SIG móvil en función de las tecnologías empleadas (según  :cite:p:`Brimicombre2002GIS`)
 
  
 
@@ -184,6 +184,7 @@ La figura :num:`#figmetodosposicionamiento` esquematiza lo anterior.
 
 .. figure:: MetodosPosicionamiento.*
 	:width: 750px
+	:align: center
 	
 	Metodos de posicionamiento basados en red (a) y en terminal (b)
 
@@ -248,7 +249,7 @@ Aunque un SIG móvil era en su concepción inicial un elemento autónomo capaz d
 
 En los dispositivos de mayor potencia, adecuados para un desarrollo profesional del SIG en campo y para la recogida de datos, el SIG conserva sus capacidades de acceder a datos locales, mientras que en otros menos potentes y especializados, tales como teléfonos móviles, se consumen exclusivamente datos remotos. Algunas aplicaciones con base SIG, tales como navegadores, pueden utilizar cartografía digital almacenada en el dispositivo, pero la aplicación como tal no permite la utilización de otros datos distintos o la lectura de diversos formatos, como sí sucede en un SIG de escritorio.
 
-En lo referente a la representación, la principal diferencia que se ha de considerar a la hora de diseñar un SIG móvil es, como parece lógico, la reducida dimensión de las pantallas. Especialmente a la hora de visualizar datos y aplicar una simbología a estos, se ha de tener en cuenta que existe una limitación de tamaño y que no pueden aplicarse ideas idénticas a las que serían adecuadas para una pantalla de ordenador común, ya que, al trasladarlas a la del dispositivo móvil, puede obtenerse como resultado un mapa carente de utilidad que no transmite adecuadamente la información geográfica que contiene. Los conceptos de generalización cartográfica que mencionamos en el apartado :ref:`GeneralizacionCartografica` (por ejemplo, la exageración de elementos) han de tenerse muy presentes en la creación de un SIG móvil.
+En lo referente a la representación, la principal diferencia que se ha de considerar a la hora de diseñar un SIG móvil es, como parece lógico, la reducida dimensión de las pantallas. Especialmente a la hora de visualizar datos y aplicar una simbología a estos, se ha de tener en cuenta que existe una limitación de tamaño y que no pueden aplicarse ideas idénticas a las que serían adecuadas para una pantalla de ordenador común, ya que, al trasladarlas a la del dispositivo móvil, puede obtenerse como resultado un mapa carente de utilidad que no transmite adecuadamente la información geográfica que contiene. Los conceptos de generalización cartográfica que mencionamos en el apartado :ref:`generalizacion_cartografica` (por ejemplo, la exageración de elementos) han de tenerse muy presentes en la creación de un SIG móvil.
 
 No solo en la forma de representación existen diferencias, sino también en las propias funcionalidades de visualización incorporadas en la aplicación. Esto está relacionado no únicamente con las limitaciones de la aplicación ---podemos decir que, en general, el SIG sobre un dispositivo móvil es una versión más simplificada y menos compleja de un SIG de escritorio---, sino con las necesidades que el usuario va a tener en este aspecto. 
 
@@ -266,6 +267,7 @@ A modo de ejemplo, y tras lo explicado hasta este punto, se muestra en la figura
 
 .. figure:: SigMovil.*
 	:width: 500px
+	:align: center
 	
 	Aspecto de una aplicación SIG móvil (gvSIG Mobile)
 
@@ -280,6 +282,7 @@ La imagen :num:`#figejemploslbs` muestra dos ejemplos de aplicaciones para servi
 
 .. figure:: EjemplosLBS.*
 	:width: 650px
+	:align: center
 	
 	Dos servicios basados en localizacion sobre un teléfono móvil. A la izquierda, Foursquare (http://www.foursquare.com). A la derecha, Google Latitude(http://www.google.com/latitude).
 
@@ -329,6 +332,7 @@ Al contrario que en el caso de usar un dispositivo móvil como un navegador GPS,
 
 .. figure:: RealidadAumentada.*
 	:width: 750px
+	:align: center
 	
 	Dos ejemplos de realidad aumentada (cortesía de 5 Magazine)
 

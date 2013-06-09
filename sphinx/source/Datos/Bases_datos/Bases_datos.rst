@@ -1,4 +1,4 @@
-.. _Bases_datos:
+.. _bases_datos:
 
 **********************************************************
 Bases de datos
@@ -89,6 +89,7 @@ La figura :num:`#figcomparacionbbdd` muestra una comparación esquemática de lo
 
 .. figure:: ComparacionModelos.*
 	:width: 800px
+	:align: center
 
 	Comparación entre algunos modelos de base de datos más frecuentes (adaptado de  :cite:p:`USDT2001`).
 
@@ -129,6 +130,7 @@ En la figura :num:`#figelementosmodelorelacional` puede verse un esquema de los 
 
 .. figure:: ElementosModeloRelacional.*
 	:width: 650px
+	:align: center
 
 	Elementos del modelo relacional.
 
@@ -150,7 +152,7 @@ Por convención,  las claves se escriben subrayadas al definir el esquema de la 
 
 	PERSONAS(DNI, Nombre, Altura, Edad, Ciudad)
 
-Si no existe ningún atributo que cumpla los requisitos para ser utilizado como clave, este puede incorporarse al esquema de la relación, añadiendo por ejemplo un nuevo atributo con un código arbitrario. Un ejemplo de esto lo podemos encontrar en el cuadro :ref:`Tabla:clavePrimaria`, donde se incorpora un atributo que hace la función de clave a una tabla con información sobre personas pero que no contiene el DNI de estas entre esa información y, por tanto, carece de un atributo adecuado para servir de clave. 
+Si no existe ningún atributo que cumpla los requisitos para ser utilizado como clave, este puede incorporarse al esquema de la relación, añadiendo por ejemplo un nuevo atributo con un código arbitrario. 
 
 En la definición de clave cabe también la presencia de claves compuestas, es decir, formadas por varios atributos cuya combinación es única para cada tupla. No obstante, la utilización de claves simples es preferible generalmente, ya que simplifica gran parte de las operaciones en las que la presencia de una clave es necesaria.
 
@@ -159,12 +161,12 @@ Cuando trabajamos con datos espaciales, es habitual emplear la componente espaci
 Por ejemplo, sean las siguientes tablas:
 
 ========  ===============  ==========  ========  ===========
-``DNI``  ``Nombre``       ``Altura``  ``Edad``  ``Ciudad`` 
+``DNI``   ``Nombre``       ``Altura``  ``Edad``  ``Ciudad`` 
 ========  ===============  ==========  ========  ===========
-50234561 Juan Gómez       1,85        35        Madrid
-13254673 Edurne Montero   1,60        30        Toledo 
-46576290 Luis Urrutia     1,75        46        Madrid 
-38941882 Juan Gómez       1, 71       55        Valencia
+50234561  Juan Gómez       1,85        35        Madrid
+13254673  Edurne Montero   1,60        30        Toledo 
+46576290  Luis Urrutia     1,75        46        Madrid 
+38941882  Juan Gómez       1, 71       55        Valencia
 ========  ===============  ==========  ========  ===========
 
 =======  ===============  ==========  ========  ===========
@@ -228,6 +230,7 @@ La figura :num:`#figsgbd` esquematiza el papel que el SGBD juega en el manejo y 
 
 .. figure:: SGBD.*
 	:width: 650px
+	:align: center
 
 	Representación esquemática del papel de un Sistema Gestor de Base de Datos.
 
@@ -237,7 +240,7 @@ La figura :num:`#figsgbd` esquematiza el papel que el SGBD juega en el manejo y 
 
 El SGBD tendrá unas u otras características en función del modelo de base de datos subyacente, ya que debe adaptarse a las características de este para ofrecer las funcionalidades correspondientes en el nivel de usuario.
 
-.. _DisenoBaseDatos:
+.. _disenobasedatos:
 
 Diseño y creación de una base de datos
 --------------------------------------------------------------
@@ -272,8 +275,12 @@ Por su parte, una *relación* expresa la dependencia existente entre entidades y
 Para desarrollar el diseño conceptual de una base de datos siguiendo el modelo E--R, estos son lo pasos principales:
 
 
-* Partimos de una descripción textual del problema o sistema que queremos recoger. Esta descripción contiene los requisitos necesarios y ha de formular la pregunta a la que queremos que la base de datos dé respuesta. Para nuestro ejemplo con datos sobre personas y ciudades\footnote{Aunque por meras razones didácticas hemos presentado en el capítulo las tablas ``PERSONAS`` y ``CIUDADES`` antes abordar lo relativo al modelos E--R y el diseño de la base de datos, no debe olvidarse que este modelo ER (o cualquier otro empleado para el diseño del modelo conceptual) es previo a la implementación de la base de datos, y las tablas correspondientes al modelo relacional son solo una implementación práctica de dicho esquema, en este caso según los requisitos de una base de datos que utiliza dicho modelo relacional.}, el problema podríamos formularlo como *¿qué personas han nacido en cada ciudad?*
+* Partimos de una descripción textual del problema o sistema que queremos recoger. Esta descripción contiene los requisitos necesarios y ha de formular la pregunta a la que queremos que la base de datos dé respuesta. Para nuestro ejemplo con datos sobre personas y ciudades, el problema podríamos formularlo como *¿qué personas han nacido en cada ciudad?*. 
+ 
+ Nótese que, aunque por meras razones didácticas hemos presentado en el capítulo las tablas ``PERSONAS`` y ``CIUDADES`` antes abordar lo relativo al modelos E--R y el diseño de la base de datos, no debe olvidarse que este modelo ER (o cualquier otro empleado para el diseño del modelo conceptual) es previo a la implementación de la base de datos, y las tablas correspondientes al modelo relacional son solo una implementación práctica de dicho esquema, en este caso según los requisitos de una base de datos que utiliza dicho modelo relacional.
+
 * Se toman los verbos y los sustantivos de la descripción textual. Los sustantivos son posibles entidades o atributos, mientras que los verbos son posibles relaciones. En nuestro caso, *persona* y *ciudad* serán entidades y *nacido en* una relación.
+
 * Se analizan las frases y determina la cardinalidad de las relaciones y otros detalles.
 
 
@@ -283,6 +290,7 @@ El modelo así creado se expresa mediante un diagrama en el que las entidades se
 
 .. figure:: SimbolosER.*
 	:width: 650px
+	:align: center
 
 	Simbología empleada en el modelo entidad--relación.
 
@@ -296,6 +304,7 @@ Como ejemplo de lo anterior, la información sobre personas y ciudades que venim
 
 .. figure:: EjemploDiagramaER.*
 	:width: 650px
+	:align: center
 
 	Ejemplo de diagrama E-R.
 
@@ -372,6 +381,7 @@ Existen, por tanto, dos subsistemas encargados de la gestión de los datos, cada
 
 .. figure:: ArquitecturaDual.*
 	:width: 650px
+	:align: center
 
 	Arquitectura dual con subsistemas distintos para el manejo de datos espaciales y no espaciales.
 

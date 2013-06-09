@@ -1,4 +1,4 @@
-.. _Estandares:
+.. _estandares:
 
 **********************************************************
 Estándares
@@ -64,6 +64,7 @@ Para tener una noción de lo que en la práctica realmente significa el uso de e
 
 .. figure:: Esquema_no_interoperable.*
 	:width: 650px
+	:align: center
 
 	Esquema de una arquitectura no interoperable.
 
@@ -88,6 +89,7 @@ En contraste con lo anterior, tenemos una situación de plena interoperabilidad 
 
 .. figure:: Esquema_interoperable.*
 	:width: 650px
+	:align: center
 
 	Esquema de una arquitectura interoperable.
 
@@ -149,7 +151,7 @@ El W3C no guarda una relación directa con los SIG, pero parece lógico pensar q
 
 Visto de otro modo, el W3C persigue objetivos similares a los de las organizaciones que elaboran estándares para la información geoespacial, pero su campo de actuación es la red en términos generales.
 
-De entre todos los elementos definidos por el W3C, resulta de especial importancia el lenguaje XML (eXtensible Markup Language\footnote{Lenguaje de Marcado Extensible}). XML no es un lenguaje en sí, sino que permite definir la gramática de otros lenguajes. Es lo que se conoce como *metalenguaje*. De este modo, puede utilizarse para definir reglas para crear formas de expresión que permitan recoger cualquier tipo de información. Esto hace que pueda emplearse para el intercambio de información de toda clase, y como veremos es la base de la mayoría de estándares a tratar en este capítulo.
+De entre todos los elementos definidos por el W3C, resulta de especial importancia el lenguaje XML (*eXtensible Markup Language*, Lenguaje de Marcado Extensible). XML no es un lenguaje en sí, sino que permite definir la gramática de otros lenguajes. Es lo que se conoce como *metalenguaje*. De este modo, puede utilizarse para definir reglas para crear formas de expresión que permitan recoger cualquier tipo de información. Esto hace que pueda emplearse para el intercambio de información de toda clase, y como veremos es la base de la mayoría de estándares a tratar en este capítulo.
 
 Entrar en detalles acerca de XML escapa del ámbito de este libro. No obstante, para aquellos que deseen saber más, Internet está llena de buenas referencias libres sobre XML, como por ejemplo  :cite:p:`wikibookXML`.
 
@@ -160,7 +162,7 @@ Entre los estándares más importantes encontramos aquellos que especifican la f
 
 Los siguientes estándares OGC forman parte de este grupo.
 
-.. _SimpleFeatures:
+.. _simplefeatures:
 
 Simple Features for SQL (SFS)
 ------------------------------
@@ -185,6 +187,7 @@ Existe un objeto fundamental denominado *Geometry* del que heredan los restantes
 
 .. figure:: Jerarquia_clases_SFS.*
 	:width: 650px
+	:align: center
 
 	Esquema de clases de geometrías en *Simple Features for SQL.*
 
@@ -228,7 +231,7 @@ Para realizar lo anterior, un servicio WFS debe permitir las siguientes operacio
 * ``GetCapabilities``. Esta operación devuelve los metadatos correspondientes al propio servicio WFS. Estos contienen una descripción del contenido del servicio y los parámetros que este acepta a la hora de realizar peticiones sobre él. Es decir, la respuesta a esta operación es un documento que informa acerca del servicio y de los datos disponibles a través de este. Este documento es un archivo XML que debe comunicar al cliente el tipo de entidades que sirve y las operaciones que soporta sobre estas.		
 * ``DescribeFeatureType``. La respuesta a esta operación es la descripción de la estructura de las entidades que pueden servirse, indicando tipo de geometría y nombre y tipo de campos asociados a esta.
 * ``GetFeature``. Como respuesta a esta operación, el servidor devuelve un conjunto de entidades. El cliente puede especificar restricciones tanto espaciales como no espaciales en los parámetros de la operación, para así limitar el conjunto de entidades obtenidas. Estas entidades son devueltas por el servidor en formato GML.
-* ``Transaction``. El servidor puede realizar transacciones. Estas se componen de operaciones que modifican las entidades, tales como la creación de una nueva, o la actualización o eliminación de una ya existente\footnote{Recuérdese el concepto de *transacción* visto en el capítulo :ref:`Bases_datos` sobre bases de datos}.
+* ``Transaction``. El servidor puede realizar transacciones. Estas se componen de operaciones que modifican las entidades, tales como la creación de una nueva, o la actualización o eliminación de una ya existente.
 
 
 En función de lo anterior, podemos distinguir dos tipos de servicios WFS:
@@ -307,7 +310,7 @@ En un servicio WMS, cuando el cliente pide un mapa al servidor, puede controlar 
 
 Para solucionar esto y ampliar las capacidades del servicio WMS, aparece otro nuevo estándar: SLD.
 
-.. _SLD:
+.. _sld:
 
 Standard Layer Description (SLD)
 --------------------------------------------------------------
@@ -341,7 +344,7 @@ Los usos que se le pueden dar a un contexto son variados, entre ellos los siguie
 
 Los contextos pueden a su vez catalogarse y descubrirse, ofreciendo así un nivel de granularidad más amplio que las capas individuales. Pueden crearse diferentes contextos predefinidos y después hacer estos accesibles para facilitar el establecimiento de una determinada configuración en un cliente.
 
-.. _estandaresCatalogos:
+.. _estandarescatalogos:
 
 Estándares para metadatos, catálogos y consulta de datos
 ============================================================
@@ -395,7 +398,7 @@ En España, existe el Núcleo Español de Metadatos (NEM), un subconjunto de la 
 Nomenclátor (Gazetteer)
 -------------------------------------------------------------- 
 
-.. _Nomenclator:
+.. _nomenclator:
 
 Un *nomenclátor* o {gazeteer} permite la localización de fenómenos geográficos a partir de un determinado nombre. El catálogo sobre el que se basa es una colección de estos fenómenos, cada uno de ellos asociados a un identificador geográfico. Dicho identificador es una referencia espacial en forma de etiqueta o código que identifica un lugar en el mundo real  :cite:p:`iso19112`. Ejemplos de tales identificadores son los nombres de ciudades o pueblos (Burgos, Plasencia), los códigos postales (10600), los accidentes geográficos (Puerto de Navacerrada, Pico de la Miel) o las direcciones (Carretera N--V p.k.35, Calle Mayor 32), entre otros. Así, el servicio de nomenclátor permite establecer un sistema de referencia basado en identificadores geográficos.
 

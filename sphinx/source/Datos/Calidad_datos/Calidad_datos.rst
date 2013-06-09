@@ -1,5 +1,5 @@
 
-.. _Calidad_datos:
+.. _calidad_datos:
 
 **********************************************************
 La calidad de los datos espaciales
@@ -73,8 +73,9 @@ Es posible, no obstante, que un dato sea muy preciso pero poco exacto, ya que la
 
 .. figure:: Imprecision_exactitud.*
 	:width: 500px
+	:align: center
 
-	Diferencia entre precisión y exactitud (Tomado de  :cite:p:`Heywood1998Longman). En a) y b) la precisión es elevada, mientras que en c) y d) es baja. Por su parte, en a) y c) la exactitud es baja, siendo alta en b) y d).`
+	Diferencia entre precisión y exactitud (Tomado de  :cite:p:`Heywood1998Longman`). En a) y b) la precisión es elevada, mientras que en c) y d) es baja. Por su parte, en a) y c) la exactitud es baja, siendo alta en b) y d).
 
 
 Por último, un parámetro relativo al error es la *incertidumbre*. Habitualmente, el valor real es desconocido, por lo que el error no puede conocerse. La incertidumbre refleja la medida en que no podemos tener certeza de la validez de nuestros datos. La incertidumbre es un concepto más amplio que el error, y auna tres componentes  :cite:p:`Fisher1999Wiley`:
@@ -137,6 +138,7 @@ Es importante recalcar que los errores que pueden incorporarse en estas componen
 
 .. figure:: Error_cualitativo_elevacion.*
 	:width: 650px
+	:align: center
 
 	MDE con valores reales (a). Dos MDE con errores posicionales en :math:`z` (b y c). En el caso c), el error no solo es cualitativo, sino también cuantitativo, ya que modifica la forma del terreno, pasando de ser una depresión a ser un pico.
 
@@ -153,6 +155,7 @@ Así, los errores posicionales son más comunes en el caso de capas vectoriales,
 
 .. figure:: Errores_digitalizacion.*
 	:width: 650px
+	:align: center
 
 	Algunos errores que aparecen en la digitalización de lineas. a) Registro inexacto, b) puntos mal situados, c) desplazamientos por vértices insuficientes, d) errores de registro.
 
@@ -167,7 +170,7 @@ En el caso de capas ráster, sin embargo, existen algunas fuentes de error que t
 
 Ello no significa que las capas ráster no presenten errores en sus valores, pero el origen de estos es diferente. Un error habitual aparece en capas con información categórica que proceden de la clasificación de imágenes aéreas o de satélite. Los procesos que clasifican cada píxel de la imagen en función de sus Niveles Digitales (los cuales veremos en el capítulo :ref:`Estadistica_avanzada`) introducen frecuentemente errores, y aparecen píxeles mal clasificados cuyo valor de clase no es correcto.
 
-Los errores posicionales se presentan de forma distinta a lo mostrado en la capa :num:`#figerroresdigitalizacion`. Las entidades tales como líneas van a tener una representación errónea debido a la resolución de la capa ráster, que no va a permitir registrar con fidelidad su forma real. Por otra parte, la georreferenciación de una imagen incorpora asimismo errores, que son equivalentes al error de registro en la digitalización vectorial. Este error va a ser distinto según las zonas de la imagen, ya que la distorsión que implica la transformación realizada no supone un error constante. Veremos estas funciones con más detalle también en el capítulo :ref:`Procesadoimagenes`, donde se tratan los dos principales errores que afectan a las imágenes: errores geométricos y errores radiométricos (básicamente, errores posicionales y errores en los Niveles Digitales).
+Los errores posicionales se presentan de forma distinta a lo mostrado en la figura :num:`#figerroresdigitalizacion`. Las entidades tales como líneas van a tener una representación errónea debido a la resolución de la capa ráster, que no va a permitir registrar con fidelidad su forma real. Por otra parte, la georreferenciación de una imagen incorpora asimismo errores, que son equivalentes al error de registro en la digitalización vectorial. Este error va a ser distinto según las zonas de la imagen, ya que la distorsión que implica la transformación realizada no supone un error constante. Veremos estas funciones con más detalle también en el capítulo :ref:`procesado_imagenes`, donde se tratan los dos principales errores que afectan a las imágenes: errores geométricos y errores radiométricos (básicamente, errores posicionales y errores en los Niveles Digitales).
 
 Además de los errores de un único dato espacial (una capa de información), es importante considerar la forma en que los errores de distintos datos interactúan entre sí. En el trabajo con SIG es raro emplear una única capa, y lo más frecuente es trabajar con varias de ellas coordinadamente, cada una con sus respectivos errores. El modo en que esos errores se afectan entre sí puede condicionar la calidad de los resultados de forma similar a como los propios errores como tales lo hacen.
 
@@ -177,6 +180,7 @@ Como muestra la figura :num:`#figsinergiaerrores`, dos errores sistemáticos de 
 
 .. figure:: Sinergias_errores.*
 	:width: 750px
+	:align: center
 
 	Un error :math:`e` pueden tener distintas consecuencias según interactúe con los errores de otros datos espaciales (:math:`e'`). En a) los errores casi se anulan, mientras que en b) se suman y dan lugar a un resultado erróneo. Los elementos en negro y gris indican la posición real.
 
@@ -205,7 +209,7 @@ En el terreno de los atributos, la detección de errores puede llevarse a cabo e
 
 Observaciones de este tipo, alejadas de las características generales del conjunto de datos, pueden derivar de medidas erróneas tales como las provocadas por un equipo de medición en mal estado, aunque también pueden representar valores correctos pero de carácter excepcional. 
 
-Si se combina la componente espacial con la componente temática encontramos otro tipo de valores inusuales, los denominados *outliers espaciales*. Estos se definen como observaciones que son discordantes con las observaciones realizadas en su vecindad\footnote{Este hecho tiene relación con el concepto de *autocorrelación espacial*, que veremos en detalle en el capítulo :ref:`Analisis_espacial`, y que expresa la idea lógica de que las mediciones cercanas deben tener valores similares}  :cite:p:`Lu2003IEEE`. 
+Si se combina la componente espacial con la componente temática encontramos otro tipo de valores inusuales, los denominados *outliers espaciales*. Estos se definen como observaciones que son discordantes con las observaciones realizadas en su vecindad :cite:p:`Lu2003IEEE`. Este hecho tiene relación con el concepto de *autocorrelación espacial*, que veremos en detalle en el capítulo :ref:`Analisis_espacial`, y que expresa la idea lógica de que las mediciones cercanas deben tener valores similares . 
 
 La diferencia entre un *outlier* en la componente temática y un *outlier* espacial es clara. Así, un valor de 10000 metros en elevación constituye siempre un valor excepcional, ya que va a encontrarse lejos de los valores medios recogidos, independientemente del lugar donde se hayan efectuado las mediciones. Un valor de 5000 metros puede constituir un *outlier* espacial en unas zonas (si tomamos medidas de elevación en, por ejemplo, Madrid, ya que será muy distinto del resto de elevaciones), pero puede ser un valor perfectamente lógico en otras zonas de estudio.
 
@@ -217,6 +221,7 @@ En base a lo anterior, existen una serie de procedimientos y metodologías para 
 
 .. figure:: Deteccion_outliers.*
 	:width: 650px
+	:align: center
 
 	Clasificación de métodos para la detección de observaciones inconsistentes *(outliers)*
 
@@ -273,6 +278,7 @@ En la figura :num:`#figesquemamontecarlo` se muestra un esquema gráfico de esta
 
 .. figure:: Esquema_MonteCarlo.*
 	:width: 650px
+	:align: center
 
 	Esquema de la modelación de errores mediante simulaciones de Monte Carlo
 
@@ -284,8 +290,9 @@ Para ver con más claridad el efecto de este proceso, la figura :num:`#figsimula
 
 .. figure:: Simulaciones_MonteCarlo.*
 	:width: 650px
+	:align: center
 
-	Curvatura horizontal obtenida a partir del MDE original (a) o como media de 20 (b) y 50 simulaciones (c) de Monte Carlo (tomado de  :cite:p:`Hengl2008Elsevier)`
+	Curvatura horizontal obtenida a partir del MDE original (a) o como media de 20 (b) y 50 simulaciones (c) de Monte Carlo (tomado de  :cite:p:`Hengl2008Elsevier`)
 
 Pese a su importancia, las herramientas para estos análisis no se implementan de forma habitual en los SIG, sino que deben llevarse a cabo utilizando funcionalidades individuales de análisis y programando los procesos repetitivos que son necesarios para calcular todas las capas derivadas empleadas. Por esta razón, es extraño que estos procesos se lleven a cabo en proyectos SIG de modo genérico. El usuario de SIG es consciente de los errores que presentan los datos espaciales con los que trabaja y las implicaciones de estos en lo que respecta a la calidad de datos, pero raramente desarrolla procesos de modelación de la incertidumbre, que quedan por el momento reservados para un ámbito más teórico que práctico.
 

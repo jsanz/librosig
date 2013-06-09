@@ -1,4 +1,4 @@
-.. _Factor_organizativo:
+.. _factor_organizativo:
 
 #########################
 El factor organizativo

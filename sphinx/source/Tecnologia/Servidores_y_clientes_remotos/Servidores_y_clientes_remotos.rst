@@ -1,4 +1,4 @@
-.. _Servidores_y_clientes_remotos:
+.. _servidores_y_clientes_remotos:
 
 **********************************************************
 Servidores remotos y clientes. *Web Mapping*
@@ -35,9 +35,9 @@ Cuando consultamos una página Web existen tres elementos fundamentales que entr
 
 Conocemos como *servidor* al elemento encargado de *servir* algún tipo de contenido. En el ámbito SIG, se trata fundamentalmente (aunque no con carácter exclusivo) de datos geográficos, que constituyen el principal producto que se distribuye a través de la red dentro de nuestro campo. En el ejemplo anterior, la máquina que contiene la página de interés es el servidor. También se conoce como servidor el programa que, residiendo en esa máquina, interpreta la petición y la procesa, sirviendo así la página.
 
-El *cliente* es responsable de *pedir* ese dato al servidor, tomarlo y trabajar con él. Nuestro navegador Web es el cliente en este caso, ya que es el que realiza la petición. Para ello, basta con introducir la dirección Web\footnote{Técnicamente, una dirección Web como esta se conoce como URL (Uniform Resource Locator\footnote{Ver RFC 1738 :ref:`RFC1738`})} correspondiente en la barra de direcciones del navegador. Al hacer esto, proporcionamos una serie de datos que son los que se emplean para realizar el proceso, y que vamos a ver a continuación en detalle.
+El *cliente* es responsable de *pedir* ese dato al servidor, tomarlo y trabajar con él. Nuestro navegador Web es el cliente en este caso, ya que es el que realiza la petición. Para ello, basta con introducir la dirección Web correspondiente en la barra de direcciones del navegador. Al hacer esto, proporcionamos una serie de datos que son los que se emplean para realizar el proceso, y que vamos a ver a continuación en detalle.
 
-Supongamos la dirección Web ``http://wiki.osgeo.org/wiki/Libro\_SIG``, en la cual puedes encontrar información relacionada con este libro e incluso descargarlo. Si visitas esa página estás efectuando una petición a través de esa URL, la cual se compone de las siguientes partes:
+Supongamos la dirección Web ``http://wiki.osgeo.org/wiki/Libro_SIG``, en la cual puedes encontrar información relacionada con este libro e incluso descargarlo. Si visitas esa página estás efectuando una petición a través de esa URL, la cual se compone de las siguientes partes:
 
 
 * ``http:`` El protocolo a usar, que define la forma en que se van a comunicar cliente y servidor. Aunque este es el más habitual, existen muchos otros tales como ``ftp`` o ``mailto``. Puede encontrarse más acerca de estos protocolos en  :cite:p:`protocolosWeb`.
@@ -60,6 +60,7 @@ La figura :num:`#figasifuncionainternet` muestra un esquema de este proceso.
 
 .. figure:: Asi_funciona_internet.*
 	:width: 650px
+	:align: center
 
 	Esquema del proceso de consulta de una página Web desde un navegador.
 
@@ -118,6 +119,7 @@ La figura :num:`#figxeroxparc` muestra una imagen de una primigenia cartografía
 
 .. figure:: XeroxPARC.*
 	:width: 650px
+	:align: center
 
 	Visor de mapas Xerox PARC Map Viewer, uno de los primeros en su campo
 
@@ -148,8 +150,9 @@ AJAX \footnote{Asynchronous JavaScript And XML}  :cite:p:`garrett2005ajax` es un
 
 .. figure:: ajax.*
 	:width: 650px
+	:align: center
 
-	Comparación entre el esquema de una aplicación Web tradicional y una basada en AJAX.(adaptado de  :cite:p:`garrett2005ajax).`
+	Comparación entre el esquema de una aplicación Web tradicional y una basada en AJAX.(adaptado de  :cite:p:`garrett2005ajax`).
 
 
 
@@ -159,6 +162,7 @@ Profundizar más en estos aspectos es, no obstante, demasiado técnico para el e
 
 .. figure:: tiger.*
 	:width: 650px
+	:align: center
 
 	Interfaz de TIGER MapServer (año 1997)
 
@@ -187,6 +191,7 @@ La figura :num:`#figtiposcartografiaweb` muestra un esquema de la evolución de 
 
 .. figure:: tipos_cartografia_web.*
 	:width: 650px
+	:align: center
 
 	Evolución de los tipos de cartografía en la Web (según  :cite:p:`Kraak2001Francis`)
 
@@ -226,6 +231,7 @@ En primer lugar, veamos algunas ideas básicas sobre la arquitectura cliente--se
 
 .. figure:: Servidores_y_clientes.*
 	:width: 650px
+	:align: center
 
 	Relación entre clientes y servidores.
 
@@ -240,7 +246,7 @@ En el sistema cliente--servidor se presentan las siguientes características pri
 * Los clientes no dependen de la ubicación física del usuario, el sistema operativo o la arquitectura física de la máquina. Esto es así porque el cliente no necesita conocer la lógica interna del servidor para usar sus servicios. Lo único necesario es que el servidor pueda exponer una interfaz externa que actúe como un modo de comunicación para recibir las peticiones del cliente, siendo esta comunicación siempre transparente para este último. 
 * La carga de proceso se puede repartir entre cliente y servidor. En función del servicio y de las capacidades del cliente, el trabajo puede dividirse de una u otra forma entre las partes implicadas.
 
-.. _Servidores:
+.. _servidores:
 
 Servidores
 --------------------------------------------------------------
@@ -267,6 +273,7 @@ El servidor es el elemento encargado de ofrecer el servicio como tal, respondien
 
 .. figure:: Datos_y_procesos_remotos.*
 	:width: 650px
+	:align: center
 
 	Esquema de acceso a un servicio de procesos remotos, el cual a su vez utiliza datos de un segundo servidor. El encadenamiento de procesos permite ampliar notablemente la utilidad de estos.
 
@@ -296,7 +303,8 @@ Distinguimos así dos tipos de clientes en función de las capacidades que tenga
  La evolución de la cartografía Web en esta dirección se dirige desde el *Web Mapping* al *Web GIS*, tal y como comentamos algunas páginas atrás.
  
 * Cliente pesado. A diferencia del cliente ligero, el cliente *pesado* es una aplicación individual que no se ejecuta sobre otra aplicación soporte como puede ser un navegador Web. Al ser un programa independiente, debe ocuparse de toda la lógica del proceso y de proveer todas las funcionalidades necesarias, por lo que su tamaño es generalmente mayor. Pese a ello, un cliente pesado no ha de ser necesariamente más potente y con más funcionalidades que uno ligero (aunque habitualmente lo es), ya que existen aplicaciones muy sencillas con capacidad para conectarse a servicios de mapas, que ofrecen poco más que un visor de cartografía. La diferencia no estriba en las capacidades del programa, sino en el enfoque a la hora de implementar este y el uso o no de otra aplicación *plataforma*, generalmente en forma de un navegador Web.
-Los clientes pesados suelen permitir el uso de datos no procedentes directamente del acceso a servicios, tales como datos en ficheros locales, y no están pensados exclusivamente como clientes, sino como aplicaciones más amplias que además disponen de capacidades para aprovechar un determinado tipo de servicios. Dicho de otro modo, un cliente pesado tal y como un SIG de escritorio tiene utilidad aunque no se emplee como cliente de ningún servicio y no se disponga de conexión a red alguna, ya que puede alimentarse con datos locales y todas sus restantes funcionalidades (análisis, preparación de cartografía, etc.) pueden aprovecharse con dichos datos.
+ 
+ Los clientes pesados suelen permitir el uso de datos no procedentes directamente del acceso a servicios, tales como datos en ficheros locales, y no están pensados exclusivamente como clientes, sino como aplicaciones más amplias que además disponen de capacidades para aprovechar un determinado tipo de servicios. Dicho de otro modo, un cliente pesado tal y como un SIG de escritorio tiene utilidad aunque no se emplee como cliente de ningún servicio y no se disponga de conexión a red alguna, ya que puede alimentarse con datos locales y todas sus restantes funcionalidades (análisis, preparación de cartografía, etc.) pueden aprovecharse con dichos datos.
 
 
 
@@ -336,6 +344,7 @@ El uso conjunto de *tiling* y *cacheo* puede disminuir sensiblemente el volumen 
 
 .. figure:: Tiling.*
 	:width: 650px
+	:align: center
 
 	Esquema del uso de *tiling* y *cacheo* para optimizar la transmisión de datos en una aplicación SIG Web
 

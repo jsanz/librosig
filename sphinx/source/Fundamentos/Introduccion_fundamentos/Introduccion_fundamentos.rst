@@ -161,6 +161,7 @@ Las aplicaciones CAD (Figura :num:`#figcad`) permiten el diseño informatizado d
 
 .. figure:: CAD.*
 	:width: 650px
+	:align: center
 
 	Entorno de trabajo de una aplicación CAD.
 
@@ -203,6 +204,7 @@ La figura :num:`#figrelacionsubsistemas` muestra el esquema de estos tres subsis
 
 .. figure:: Relacion_subsistemas.*
 	:width: 450px
+	:align: center
 
 	Esquema de un SIG con sus tres subsistemas fundamentales: datos, visualización y análisis
 
@@ -226,6 +228,7 @@ Otra forma distinta de ver el sistema SIG es atendiendo a los elementos básicos
 
 .. figure:: Elementos_SIG.*
 	:width: 600px
+	:align: center
 
 	Elementos que forman el sistema SIG
 
@@ -247,8 +250,9 @@ Algunos autores proponen modificar el esquema clásico de cinco elementos para r
 
 .. figure:: Elementos_SIG2.*
 	:width: 600px
+	:align: center
 
-	Una división distinta del sistema SIG (según  :cite:p:`webGISEvolve)`
+	Una división distinta del sistema SIG (según  :cite:p:`webGISEvolve`)
 
 
  

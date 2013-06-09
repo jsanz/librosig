@@ -1,4 +1,4 @@
-.. _IDEs:
+.. _ides:
 
 **********************************************************
 Infraestructuras de Datos Espaciales
@@ -147,8 +147,9 @@ A medida que descendemos en esta clasificación, aumenta la especialización al 
 
 .. figure:: usuariosIDE.*
 	:width: 650px
+	:align: center
 	
-	Clasificación de usuarios de una IDE (según  :cite:p:`Rodriguez2005JIDEE)`
+	Clasificación de usuarios de una IDE (según  :cite:p:`Rodriguez2005JIDEE`)
 
  
 
@@ -182,6 +183,7 @@ En la figura :num:`#figcatalogounex` puede verse un ejemplo de una interfaz de a
 
 .. figure:: CatalogoUNEX.*
 	:width: 750px
+	:align: center
 	
 	Interfaz de acceso al catálogo de la IDE de la Universidad de Extremadura
 
@@ -192,7 +194,7 @@ Cuando nos referimos a un usuario del catálogo, este no ha de ser necesariament
 
 De otro modo, podemos entender al catálogo como el bibliotecario que nos proporciona acceso a los documentos de una biblioteca. Es a él a quién debemos dirigirnos para obtener uno de sus documentos, pero, en caso de que la biblioteca no disponga de lo que buscamos, puede llamar a otras bibliotecas y preguntar en ellas e incluso, si existen acuerdos de prestamo, facilitarnos la obtención del documento sin necesidad de que tengamos que acudir personalmente a la biblioteca donde se encuentra. Puesto esto en el contexto de Internet y con información geográfica digital en lugar de documentos físicos, tenemos una descripción acertada del papel de los catálogos como herramientas para el descubrimiento y obtención de esa información.
 
-Se suele emplear el término *harvesting*\footnote{del inglés *to harvest*: cosechar, recolectar} para indicar la capacidad de un nodo para recoger la información de otros y poder así responder a peticiones teniendo en cuenta esa información ajena. Si los nodos soportan este tipo de operaciones, es posible sincronizar los metadatos entre ellos, de forma que cada nodo del catálogo se enriquece con los restantes sin que ello suponga una carga extra de organización y mantenimiento de metadatos.
+Se suele emplear el término *harvesting* para indicar la capacidad de un nodo para recoger la información de otros y poder así responder a peticiones teniendo en cuenta esa información ajena. Si los nodos soportan este tipo de operaciones, es posible sincronizar los metadatos entre ellos, de forma que cada nodo del catálogo se enriquece con los restantes sin que ello suponga una carga extra de organización y mantenimiento de metadatos.
 
 La figura :num:`#figusuarioscatalogo` muestra un esquema de lo que la actividad de un usuario sobre un catálogo supone en otros elementos de la IDE, y cómo estos se relacionan a la hora de dar respuesta a su consulta.
 
@@ -200,6 +202,7 @@ La figura :num:`#figusuarioscatalogo` muestra un esquema de lo que la actividad 
 
 .. figure:: usuariosCatalogo.*
 	:width: 650px
+	:align: center
 	
 	Diagrama de interacción que muestra la utilización básica de servicios de catálogo y los elementos de IDE relacionados desde un punto de vista de un usuario (adaptado de  :cite:p:`RecetarioIDE`)}
 
@@ -332,8 +335,9 @@ La figura :num:`#figevolucioninspire` muestra un esquema de la secuencia tempora
 
 .. figure:: EvolucionINSPIRE.*
 	:width: 750px
+	:align: center
 	
-	Secuencia temporal seguida por INSPIRE (adaptado de  :cite:p:`Craglia2009INSPIRE)`
+	Secuencia temporal seguida por INSPIRE (adaptado de  :cite:p:`Craglia2009INSPIRE`)
 
  
 
@@ -413,8 +417,9 @@ La importancia de las IDE regionales no debe subestimarse, ya que sin ellas el f
 
 .. figure:: EjemploIDE.*
 	:width: 650px
+	:align: center
 	
-	Ejemplo de estructura a distintos niveles para una IDE particular (IDE de Pamplona) (adaptado de  :cite:p:`Echeverria2001Boletic)`
+	Ejemplo de estructura a distintos niveles para una IDE particular (IDE de Pamplona) (adaptado de  :cite:p:`Echeverria2001Boletic`)
 
  
 

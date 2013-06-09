@@ -1,4 +1,4 @@
-.. _Introduccion_tecnologia:
+.. _introduccion_tecnologia:
 
 **********************************************************
 Introducción. ¿Cómo son las aplicaciones SIG?
@@ -76,6 +76,7 @@ Todas estos elementos conforman el panorama global de la tecnología SIG, con un
 
 .. figure:: Esquema_tecnologia_SIG.*
 	:width: 650px
+	:align: center
 
 	Clases principales de software SIG y relaciones entre ellas
 

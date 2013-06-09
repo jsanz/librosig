@@ -1,5 +1,5 @@
 
-.. _Visualizacion_SIG:
+.. _visualizacion_sig:
 
 **********************************************************
 La visualización en términos SIG
@@ -28,7 +28,7 @@ Además de esa representación habitual de capas que constituye la adaptación d
 Visualización de capas vectoriales
 =====================================================
 
-La visualización de capas vectoriales en el seno de un SIG es similar a la labor de la cartografía clásica, en cuanto a que los objetos que se representan son del mismo tipo, esto es, objetos geométricos en forma de puntos, líneas y polígonos. A diferencia de las capas ráster, que no tienen un equivalente en un mapa clásico (no es probable que hayas visto un mapa previo a la aparición de los SIG con un aspecto como las imágenes de, por ejemplo, la figura :num:`#figrepresentacionraster`), las capas vectoriales guardan mucha similitud con los elementos que un cartógrafo clásico plasma en un mapa. Las geometrías de las capas vectoriales son los objetos básicos sobre los que el cartógrafo aplica las variables visuales según vimos en el capítulo :ref:`Conceptosbasicosvisualizacion`, y por tanto la manera de proceder es similar. Las herramientas que el SIG proporciona son aquellas que permiten modificar las variables visuales en función de las características asociadas a cada geometría a representar.
+La visualización de capas vectoriales en el seno de un SIG es similar a la labor de la cartografía clásica, en cuanto a que los objetos que se representan son del mismo tipo, esto es, objetos geométricos en forma de puntos, líneas y polígonos. A diferencia de las capas ráster, que no tienen un equivalente en un mapa clásico (no es probable que hayas visto un mapa previo a la aparición de los SIG con un aspecto como las imágenes de, por ejemplo, la figura :num:`#figrepresentacionraster`), las capas vectoriales guardan mucha similitud con los elementos que un cartógrafo clásico plasma en un mapa. Las geometrías de las capas vectoriales son los objetos básicos sobre los que el cartógrafo aplica las variables visuales según vimos en el capítulo :ref:`conceptos_basicos_visualizacion`, y por tanto la manera de proceder es similar. Las herramientas que el SIG proporciona son aquellas que permiten modificar las variables visuales en función de las características asociadas a cada geometría a representar.
 
 Un papel destacado en la visualización lo juega la tabla de atributos, ya que es la que contiene esas características que son necesarias para saber *cómo* representar cada objeto. El SIG provee la conexión entre los valores de los atributos y la representación visual, de forma que se interpretan aquellos para poder obtener los distintos tipos de mapas que ya conocemos del capítulo :ref:`El_Mapa`.
 
@@ -73,6 +73,7 @@ En el caso de líneas que se entrecruzan (calles, ríos, etc.), es importante ev
 
 .. figure:: EtiquetasLineas.*
 	:width: 650px
+	:align: center
 
 	La posición de la etiqueta sobre una línea en un cruce puede dar lugar a ambigüedades (a) o a situaciones bien definidas (b).
 
@@ -83,6 +84,7 @@ Para el caso particular de las isolíneas, se recomienda situar la etiqueta sobr
 
 .. figure:: EtiquetasIsolineas.*
 	:width: 650px
+	:align: center
 
 	Etiquetado de isolíneas. Deben situarse las etiquetas cercanas entre sí y sobre la línea, como en el ejemplo b)
 
@@ -138,6 +140,7 @@ Mencionábamos en el apartado :ref:`CreacionClases` que no se recomienda un núm
 
 .. figure:: RepresentacionRaster.*
 	:width: 650px
+	:align: center
 
 	Representación de dos capas ráster con valores de elevación (a) y ángulo de iluminación (b) mediante 255 (izquierda) y 8 (derecha) clases.
 
@@ -158,6 +161,7 @@ Pese a esto, resulta claro que a la hora de representar la información geográf
 
 .. figure:: DiferenciaCombinacionCapas.*
 	:width: 650px
+	:align: center
 
 	Añadir capas adicionales que complementen a aquella que resulta de interés nos ayuda a interpretar mejor esta y a lograr una representación más eficaz.
 
@@ -173,6 +177,7 @@ La figura :num:`#figordenpintadocapas` muestra un claro ejemplo de lo anterior e
 
 .. figure:: OrdenPintadoCapas.*
 	:width: 650px
+	:align: center
 
 	Variar el orden de las capas puede suponer un cambio radical en la representación final obtenida. Todas las imágenes proceden del mismo conjunto de capas, pero las representaciones son muy distintas.
 
@@ -190,6 +195,7 @@ En ocasiones, un determinado orden viene impuesto por el significado que tienen 
 
 .. figure:: CruceCarreterasRios.*
 	:width: 650px
+	:align: center
 
 	Representación erronea (a) y correcta (b) de capas al combinar una de carreteras (en marrón) y otra de red de drenaje (en azul). La inclusión de un elemento que simbolice el cruce (c) supone, no obstante, una mejor solución desde el punto de vista cartográfico.
 
@@ -218,6 +224,7 @@ En el caso, sin embargo, de trabajar con las capas de forma independiente, y si 
 
 .. figure:: Representacion_capas_incoherente.*
 	:width: 750px
+	:align: center
 
 	Dos representaciones incorrectas de conjuntos de capas, debido a incoherencia entre los parámetros de representación empleados en cada una de ellas (a). Representación correcta y homogénea con parámetros de representación comunes (b).
 
@@ -253,6 +260,7 @@ A la hora de preparar cartografía impresa, la resolución no es un problema, ya
 
 .. figure:: Serifas.*
 	:width: 450px
+	:align: center
 
 	Concepto de serifa.
 
@@ -285,6 +293,7 @@ El mismo problema sucede en el caso de emplear símbolos. Si, por ejemplo, tenem
 
 .. figure:: ProblemasRepresentacionSimbolos.*
 	:width: 750px
+	:align: center
 
 	El cambio de escala varía el tamaño de los símbolos tales como las etiquetas, haciéndolos demasiado pequeños (a) o demasiado grandes (b)
 
@@ -300,6 +309,7 @@ Una solución a esto es especificar un tamaño absoluto de estos elementos que n
 
 .. figure:: RepresentacionSaturada.*
 	:width: 650px
+	:align: center
 
 	Representación saturada al representar elementos con tamaño fijo a una escala baja.
 
@@ -335,6 +345,7 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 
 	.. figure:: Extrusion.*
 		:width: 650px
+	:align: center
 
 		La extrusión permite la creación de objetos volumétricos a partir de objetos planos. Los edificios de la imagen se han creado únicamente a partir de la planta y un valor de altura para cada uno de ellos.
 
@@ -345,6 +356,7 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 
 	.. figure:: Coropletas3D.*
 		:width: 650px
+	:align: center
 
 		La dimensión vertical puede emplearse como variable visual para visualizar la componente temática de la información geográfica.
 
@@ -358,6 +370,7 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 
 	.. figure:: Superficie3D.*
 		:width: 650px
+	:align: center
 
 		La dimensión vertical puede utilizarse también para simbolizar capas ráster con variables distintas a la elevación.
 
@@ -371,6 +384,7 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 
 	.. figure:: ExageracionRelieve.*
 		:width: 750px
+	:align: center
 
 		La exageración del relieve permite hacer más evidente la configuración de este.
 
@@ -419,6 +433,7 @@ Algunos de los nuevos elementos que pueden añadirse a una representación en un
 
 	.. figure:: FotografiasInmersivas.*
 		:width: 650px
+	:align: center
 
 		Las fotografias inmersivas permiten al usuario *meterse* en el mapa, ampliando la información que se muestra acerca de un lugar con imágenes reales tomadas sobre el terreno. Al igual que se navega por un mapa, el usuario puede navegar por el terreno haciendo uso de los controles interactivos correspondientes (imagen tomada de Google Street View).
 

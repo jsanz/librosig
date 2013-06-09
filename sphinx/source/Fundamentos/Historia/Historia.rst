@@ -1,3 +1,5 @@
+.. _historia:
+
 ********************
 Historia de los SIG
 ********************
@@ -28,12 +30,13 @@ Simultáneamente a los trabajos canadienses, se producen desarrollos en Estados 
 
 En el Harvard Laboratory, ve la luz en 1964 SYMAP, un aplicación que permitía la entrada de información en forma de puntos, líneas y áreas, lo cual se corresponde a grandes rasgos con el enfoque que conocemos hoy en día como *vectorial*. En la imagen :num:`#figsymap` puede verse que los resultados cartográficos de este *software* son aún de poca calidad. No obstante, el interés que despertaron las novedosas capacidades del programa para la generación de cartografía impulsó el desarrollo posterior y la evolución hacia sistemas más avanzados.
 
-En 1969, utilizando elementos de una versión anterior de SYMAP, David Sinton, también en el Harvard Laboratory, desarrolla GRID, un programa en el que la información es almacenada en forma de cuadrículas. Hasta ese momento, la estructura de cuadrículas regulares era solo utilizada para las salidas de los programas, pero no para la entrada y almacenamiento de datos. Son los inicios de los Sistemas de Información Geográfica *ráster*\footnote{los conceptos de SIG ráster y vectorial se tratan extensamente en el capítulo :ref:`Tipos_datos`. No te preocupes si ahora no comprendes completamente qué representa cada uno de ellos y qué los diferencia.}.
+En 1969, utilizando elementos de una versión anterior de SYMAP, David Sinton, también en el Harvard Laboratory, desarrolla GRID, un programa en el que la información es almacenada en forma de cuadrículas. Hasta ese momento, la estructura de cuadrículas regulares era solo utilizada para las salidas de los programas, pero no para la entrada y almacenamiento de datos. Son los inicios de los Sistemas de Información Geográfica *ráster* (veremos lo que esto significa en el capítulo :ref:`Tipos_datos`. No te preocupes si ahora no comprendes completamente qué representa cada uno de ellos y qué los diferencia).
 
 .. _figsymap:
 
 .. figure:: SYMAP.*
 	:width: 450px
+	:align: center
 
 	Aspecto de un mapa generado con SYMAP
 
@@ -41,12 +44,13 @@ En 1969, utilizando elementos de una versión anterior de SYMAP, David Sinton, t
  
 
 
-SYMAP evoluciona y nuevos programas aparecen, tales como SYMVU (Figura :num:`#figsymvu`), con capacidad de representación tridimensional, o CALFORM, con nuevas capacidades de representación y de generación de resultados impresos. GRID da lugar a IMGRID (Interactive Manipulation GRID), que sentará la base para el trabajo de Dana Tomlin con su paquete MAP, el cual incluye todos los elementos que hoy en día son imprescindibles para el análisis ráster (y que veremos en el capítulo :ref:`Algebrademapas`)
+SYMAP evoluciona y nuevos programas aparecen, tales como SYMVU (Figura :num:`#figsymvu`), con capacidad de representación tridimensional, o CALFORM, con nuevas capacidades de representación y de generación de resultados impresos. GRID da lugar a IMGRID (Interactive Manipulation GRID), que sentará la base para el trabajo de Dana Tomlin con su paquete MAP, el cual incluye todos los elementos que hoy en día son imprescindibles para el análisis ráster (y que veremos en el capítulo :ref:`algebra_de_mapas`)
 
 .. _figsymvu:
 
 .. figure:: SYMVU.*
 	:width: 450px
+	:align: center
 
 	Representación tridimensional creada con SYMVU
 
@@ -62,6 +66,7 @@ A partir de este punto, el campo de los SIG recorre sucesivas etapas hasta nuest
 
 .. figure:: Etapas_historia.*
 	:width: 800px
+	:align: center
 
 	Esquema temporal de la evolución de los SIG.
 
@@ -169,6 +174,9 @@ La evolución de los datos no es solo una evolución técnica, sino también de 
 El ejemplo más destacado de estas es la IDE Nacional de los Estados Unidos (NSDI) :cite:p:`Clinton1994FR`, surgida a raíz de la Orden Ejecutiva 12096, que fue promulgada en 1994 y tuvo una vital importancia en este ámbito. En Europa, la directiva INSPIRE :cite:p:`Craglia2009INSPIRE`, con fecha 14 de marzo de 2007, pretende la creación de una infraestructura similar.
 
 Muchos de estos desarrollos y actividades se adhieren a las especificaciones establecidas por el *Open GIS Consortium* (OGC), un consorcio internacional fundado en 1994 para homogeneizar el empleo y difusión de los datos geográficos.
+
+
+.. _evolucion_tecnicas:
 
 La evolución de las técnicas y formulaciones
 =============================================

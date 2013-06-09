@@ -1,4 +1,4 @@
-.. _Metadatos:
+.. _metadatos:
 
 **********************************************************
 Metadatos
@@ -177,6 +177,7 @@ Podemos encontrar el caso opuesto, en el que varias capas comparten los mismos m
 
 .. figure:: Granularidad_metadatos.*
 	:width: 650px
+	:align: center
 
 	Granularidad de los metadatos. Los metadatos pueden hacer referencia a elementos a distinta escala.
 

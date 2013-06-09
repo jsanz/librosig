@@ -1,4 +1,4 @@
-.. _Tipos_datos:
+.. _tipos_datos:
 
 **********************************************************
 Modelos para la información geográfica
@@ -49,7 +49,9 @@ Un campo es un modelo de variación dentro de un marco n--dimensional, en el cua
 En el caso más habitual, :math:`m=1`, es decir, que a cada punto del espacio vectorial origen se le asocia un único valor escalar. Se tiene así lo que se denomina un *campo escalar*. La mayoría de las variables que se emplean en un SIG necesitan un único valor para describirse (piénsese en variables como la elevación, la temperatura o la presión atmosférica, que solo requieren de un número para expresarse), por lo que los campos escalares son los más habituales en el ámbito geográfico. 
 
  
-No obstante, también encontramos los denominados *campos vectoriales*\footnote{El empleo del término *vectorial* para calificar a los campos vectoriales o los espacios vectoriales no debe confundirse con el modelo de representación vectorial que veremos más adelante en este capítulo. En el caso de campos y espacio, se trata de la terminología estándar del ámbito matemático, mientras que en el modelo de representación vectorial es una terminología propia de los Sistemas de Información Geográfica.}, en el cual el espacio vectorial de destino es multidimensional. Por ejemplo, para definir el movimiento del viento en un punto geográfico no basta con un único valor, sino dos: la velocidad y la dirección en la que sopla dicho viento. Dentro de un SIG, es habitual recoger los campos vectoriales como un conjunto de varios campos escalares, cada uno de ellos en una capa distinta. Así, se tendría una capa con la dirección y otra con la velocidad, ambas magnitudes escalares. Operando de esta manera, la solución no es única, ya que el vector resultante puede definirse mediante su módulo y dirección (como en el caso anterior), pero también por sus propias coordenadas en la base del espacio vectorial destino (en el caso anterior, las componentes :math:`x` e :math:`y` del vector que indica el movimiento del viento).
+No obstante, también encontramos los denominados *campos vectoriales* [#fn1]_ , en el cual el espacio vectorial de destino es multidimensional. Por ejemplo, para definir el movimiento del viento en un punto geográfico no basta con un único valor, sino dos: la velocidad y la dirección en la que sopla dicho viento. Dentro de un SIG, es habitual recoger los campos vectoriales como un conjunto de varios campos escalares, cada uno de ellos en una capa distinta. Así, se tendría una capa con la dirección y otra con la velocidad, ambas magnitudes escalares. Operando de esta manera, la solución no es única, ya que el vector resultante puede definirse mediante su módulo y dirección (como en el caso anterior), pero también por sus propias coordenadas en la base del espacio vectorial destino (en el caso anterior, las componentes :math:`x` e :math:`y` del vector que indica el movimiento del viento).
+
+
 
 
 
@@ -88,7 +90,7 @@ Los modelos geográficos nos ofrecen una concepción particular del espacio geog
 
 
 
-Antes de entrar a describir los distintos modelos de representación, veamos algunos ejemplos que nos presentarán casos particulares de estos modelos, aclarando sus diferencias antes de proceder a una definición más detallada. En la figura :num:`#figmdemodelosrepresentacion` pueden verse distintas formas de representar la elevación de una zona, la cual, como ya sabemos, es una variable continua y puede concebirse mediante un campo escalar. Por el contrario, la red viaria se adapta mejor a un modelo de entidades discretas, y se muestran en la figura :num:`#figviasmodelos_representacion` sendas representaciones de esta variable según distintos modelos de datos. Mediante los ejemplos de estas figuras presentaremos los modelos de datos principales, así como su relación con los modelos conceptuales estudiados en el punto anterior.
+Antes de entrar a describir los distintos modelos de representación, veamos algunos ejemplos que nos presentarán casos particulares de estos modelos, aclarando sus diferencias antes de proceder a una definición más detallada. En la figura :num:`#figmdemodelosrepresentacion` pueden verse distintas formas de representar la elevación de una zona, la cual, como ya sabemos, es una variable continua y puede concebirse mediante un campo escalar. Por el contrario, la red viaria se adapta mejor a un modelo de entidades discretas, y se muestran en la figura :num:`#figviasmodelosrepresentacion` sendas representaciones de esta variable según distintos modelos de datos. Mediante los ejemplos de estas figuras presentaremos los modelos de datos principales, así como su relación con los modelos conceptuales estudiados en el punto anterior.
 
 
 
@@ -96,6 +98,7 @@ Antes de entrar a describir los distintos modelos de representación, veamos alg
 
 .. figure:: MDE_modelos_representacion.*
 	:width: 750px
+	:align: center
 
 	Distintas formas de representar una capa con información altitudinal.
 
@@ -107,6 +110,7 @@ Antes de entrar a describir los distintos modelos de representación, veamos alg
 
 .. figure:: Vias_modelos_representacion.*
 	:width: 650px
+	:align: center
 
 	Distintas formas de representar una capa con información sobre una red viaria.
 
@@ -150,6 +154,7 @@ De forma esquemática, los enfoques de los modelos de representación ráster y 
 
 .. figure:: Esquemas_modelos_representacion.*
 	:width: 650px
+	:align: center
 
 	Comparación entre los esquema del modelo de representación vectorial (a) y ráster (b).
 
@@ -163,7 +168,7 @@ Podemos entender estos enfoques haciendo uso del esquema de Sinton presentado co
 
 Antes de pasar a la definición detallada de los modelos ráster y vectorial, mencionar que, como modelos principales empleados para la definición de capas de información geográfica, las expresiones *capa vectorial* y *capa ráster* son de uso habitual, y se emplearán de aquí en adelante tanto en este como en posteriores capítulos.
 
-.. _Modelo_raster:
+.. _modelo_raster:
 
 Modelo ráster
 --------------------------------------------------------------
@@ -176,6 +181,7 @@ En el modelo ráster, la zona de estudio se divide de forma sistemática en una 
 
 .. figure:: Raster_closeup.*
 	:width: 500px
+	:align: center
 
 	Celdas de una malla ráster con sus valores asociados.
 
@@ -187,7 +193,7 @@ La característica principal del modelo ráster, y que le confiere gran parte de
 
 Como unidad mínima pueden tomarse elementos de diversas formas. La más habitual es mediante unidades de forma cuadrada, aunque también pueden ser formas rectangulares, o incluso triangulares o hexagonales  :cite:p:`Diaz1986Reading`. No obstante, los SIG habituales se limitan a modelos de celdas cuadradas, y las implementaciones de otros modelos son de uso muy reducido y en aplicaciones muy especificas que en general no están orientadas al uso general ni disponibles de forma accesible al usuario común. Junto a esto, la información geográfica en formatos ráster distintos de la división en celdas cuadradas es prácticamente inexistente, haciendo más difícil el empleo de estos formatos en condiciones normales de trabajo.
 
-De igual modo, existen representaciones ráster no regulares, en las que todas las unidades mínimas no tienen un mismo tamaño. Este tipo de representaciones no tiene apenas presencia en los SIG, pero son habituales en otros ámbitos tales como el de la representaciones 3D, con unos requerimientos bien distintos\footnote{Véase, por ejemplo, el concepto de Nivel Continuo de Detalle (Continuous Level of Detail, CLOD), para lograr representaciones de detalle con el menor gasto de recursos posible, y que es habitual en este campo.}. Esto está relacionado a su vez con los modelos de almacenamiento ráster, que veremos más adelante en este mismo capítulo.
+De igual modo, existen representaciones ráster no regulares, en las que todas las unidades mínimas no tienen un mismo tamaño. Este tipo de representaciones no tiene apenas presencia en los SIG, pero son habituales en otros ámbitos tales como el de la representaciones 3D, con unos requerimientos bien distintos. Esto está relacionado a su vez con los modelos de almacenamiento ráster, que veremos más adelante en este mismo capítulo.
 
 
 
@@ -210,6 +216,7 @@ Lo más habitual es definir el emplazamiento de una única celda (habitualmente 
 
 .. figure:: Elementos_capa_raster.*
 	:width: 600px
+	:align: center
 
 	La estructura regular de la malla ráster permite conocer las coordenadas de las celdas sin necesidad de almacenar estas, sino tan solo recogiendo algunos parámetros de la malla como la localización de una celda base (:math:`x,y`), la orientación global o el tamaño de celda (:math:`d`).
 
@@ -225,6 +232,7 @@ No obstante, puede suceder que la fuente de datos original no se adhiera a este 
 
 .. figure:: Malla_raster_rotada.*
 	:width: 650px
+	:align: center
 
 	Aunque la zona de estudio no tenga orientación Norte--Sur, los SIG trabajan habitualmente con esta orientación, y las imágenes deben adecuarse a ello.
 
@@ -245,6 +253,7 @@ Para el caso de capas ráster de variables continuas, en la sección :ref:`Elecc
 
 .. figure:: Diferentes_resoluciones.*
 	:width: 750px
+	:align: center
 
 	Imágenes de diferente resolución en función del sensor con que han sido obtenidas. Al tener distintos tamaños de píxel, servirán para distintos usos dentro de un SIG.
 
@@ -262,7 +271,7 @@ Un caso especial de capa ráster son las imágenes, de las que hemos visto ya un
 
 Mientras que, como hemos visto en los ejemplos, una misma información se puede recoger en formatos ráster y vectorial, las imágenes se recogen únicamente en formato ráster, tanto por ser ese modelo mucho más adecuado, como por ser mucho más coherente con el tipo de información y la procedencia de esta.
 
-El concepto de celda en una malla ráster es el equivalente al de píxel\footnote{acrónimo de *picture element*}, bien conocido en el campo de las imágenes digitales. Así, cuando decimos que una cámara digital tiene tres megapíxeles, queremos decir que captura un total de tres millones de píxeles. De otra forma, la malla ráster que se genera tiene tres millones de celdas. Las imágenes con las que trabajamos en un SIG no se diferencian de las que tomamos con una cámara digital, salvo en el hecho particular de que representan una porción de terreno dentro de un sistema de coordenadas dado, pero la estructura es la misma: una malla de celdas (píxeles).
+El concepto de celda en una malla ráster es el equivalente al de píxel (acrónimo de *picture element*), bien conocido en el campo de las imágenes digitales. Así, cuando decimos que una cámara digital tiene tres megapíxeles, queremos decir que captura un total de tres millones de píxeles. De otra forma, la malla ráster que se genera tiene tres millones de celdas. Las imágenes con las que trabajamos en un SIG no se diferencian de las que tomamos con una cámara digital, salvo en el hecho particular de que representan una porción de terreno dentro de un sistema de coordenadas dado, pero la estructura es la misma: una malla de celdas (píxeles).
 
 Otra particularidad de las imágenes es la presencia de *bandas*. Los valores recogidos en las imágenes indican de forma general la reflectancia en una determinada longitud de onda (esto se explica con mayor detalle en los capítulos :ref:`Fuentes_datos` y :ref:`Procesado_imagenes`). Puesto que el espectro de radiación puede subdividirse en distintos grupos, los sensores que toman estas imágenes recogen varias capas, una para cada uno de estos grupos. En lugar de almacenarse como un conjunto de capas separadas, es más frecuente que lo hagan en una única que contiene varias *bandas*, es decir, varios niveles distintos, cada uno de los cuales podría constituir por sí mismo una capa ráster.
 
@@ -281,6 +290,7 @@ Si el modelo ráster era similar al modelo conceptual de campos, el vectorial lo
 
 .. figure:: Primitivas_vectoriales.*
 	:width: 750px
+	:align: center
 
 	Primitivas geométricas en el modelo de representación vectorial y ejemplos particulares de cada una de ellas con atributos asociados
 
@@ -295,6 +305,7 @@ Una única entidad (para la cual existirá un único conjunto de valores asociad
 
 .. figure:: Casos_particulares_poligonos.*
 	:width: 650px
+	:align: center
 
 	Casos particulares de polígonos: a) varios polígonos disjuntos en una misma entidad (en este caso, mismo país), b) Polígonos con islas (huecos).
 
@@ -309,6 +320,7 @@ Como se muestra en la figura :num:`#figpoligonosconhuecos`, el conjunto del terr
 
 .. figure:: Poligonos_con_huecos.*
 	:width: 650px
+	:align: center
 
 	Los huecos de un polígono han de considerarse como parte de este.
 
@@ -344,7 +356,7 @@ En el caso de las capas ráster, no es necesario recurrir a una base de datos, y
 
 El establecimiento de las bases de datos, su manejo y su implementación dentro de un SIG es un tema altamente complejo. La forma en que el manejo de la componente temática y la gestión de la base de datos se establecen, así como la imbricación de la una en la otra, es la materia exclusiva del capítulo :ref:`Bases_datos`, donde todos estos temas se desarrollarán con profundidad.
 
-.. _Topologia:
+.. _topologia:
 
 Topología
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -364,6 +376,7 @@ En la figura :num:`#figtopologiaedicion` se puede observar la diferencia existen
 
 .. figure:: Topologia_edicion.*
 	:width: 550px
+	:align: center
 
 	Diferencias entre la edición (desplazamiento de un punto) no disponiendo de topología (a) o con ella (b).
 
@@ -382,6 +395,7 @@ Estas circunstancias se recogen de forma esquemática en la figura :num:`#figtop
 
 .. figure:: Topologia_vias.*
 	:width: 750px
+	:align: center
 
 	Capa de vías de comunicación sin topología (a) o con ella (b). Los puntos en este segundo caso indican conexiones entre vias, y son una representación visible de la topología existente. Las flechas indican la dirección de circulación y, al igual que sucede con las conexiones, solo están presentes si existe topología
 
@@ -424,6 +438,7 @@ Existen diversos modelos para almacenar tanto las propias geometrías como sus r
 
 .. figure:: Modelos_topologia.*
 	:width: 650px
+	:align: center
 
 	Dos modelos para representar la topología de líneas y polígonos. a) DIME, b) arco--nodo.
 
@@ -455,7 +470,7 @@ Algunos modelos empleados comúnmente para el almacenamiento de redes son los si
 * Matriz de incidencias arco--nodo
 * Matriz de adyacencias nodo--nodo
 * Listas de adyacencia
-* Estrella directa e inversa\footnote{Forward and reverse star}
+* Estrella directa e inversa (*Forward and reverse star*)
 
 
 La matriz de adyacencias nodo--nodo es sumamente sencilla, ya que simplemente, para un número :math:`n` de nodos, contiene una matriz de tamaño :math:`n\times n`, en la que cada elemento (:math:`i,j`) indica la existencia o no de conexión entre los nodos :math:`i` y :math:`j` y la naturaleza de dicha conexión. Si el elemento es igual a cero indica que no existe posibilidad de desplazarse directamente del nodo :math:`i` al nodo :math:`j`. En caso contrario, el valor es igual a la propiedad que se desee recoger del tramo, por ejemplo el tiempo que se tarda en recorrer o la velocidad máxima a la que puede hacerse ese recorrido.
@@ -466,7 +481,7 @@ El método de estrella directa e inversa, por su parte, no es tan sencillo (una 
 
 Más allá de los detalles particulares del modelo de representación, lo importante es tener presente que existen diversas formas de representar el dato geográfico, y que cada una de ellas tiene sus ventajas e inconvenientes en relación con la función que los datos hayan de desempeñar.
 
-.. _TIN:
+.. _tin:
 
 TIN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -510,6 +525,7 @@ La comparación entre ambos modelos resulta necesaria para hacer un uso correcto
 
  .. figure:: Imprecision_raster.*
 	:width: 500px
+	:align: center
 
 	Imprecisión de forma en el modelo de representación ráster. La división del espacio en unidades cuadradas impide la representación fiel de entidades tales como curvas como la mostrada en trazo rojo en la figura.
 
@@ -525,6 +541,7 @@ La comparación entre ambos modelos resulta necesaria para hacer un uso correcto
 
  .. figure:: Ambiguedad_raster.*
 	:width: 600px
+	:align: center
 
 	Ambigüedad en la asignación de valores a una celda en una capa ráster, debido al tamaño de esta, que condiciona la precisión con la que puede recogerse la realidad existente sobre el terreno.
 
@@ -552,7 +569,7 @@ Así, en el desarrollo de un trabajo pueden aparecer circunstancias que hagan m�
 
 Por último, es importante tener en cuenta que existen procedimientos para convertir entre los formatos ráster y vectorial, de forma que el disponer de datos en un modelo de representación particular no implica que debamos desarrollar nuestro trabajo sobre dichos datos directamente, sino que podemos efectuar previamente una conversión. Los capítulos :ref:`Creacion_capas_raster` y :ref:`Creacion_capas_vectoriales` tratan estos temas en profundidad.
 
-.. _Modelos_almacenamiento:
+.. _modelos_almacenamiento:
 
 Modelos de almacenamiento
 =====================================================
@@ -602,6 +619,7 @@ A la hora de tratar el conjunto de todas las celdas, se define un orden en el qu
 
 .. figure:: Ordenes_escaneo.*
 	:width: 700px
+	:align: center
 
 	Ordenes de escaneo. a) fila a fila sin retorno, b) fila a fila con retorno.
 
@@ -619,6 +637,7 @@ La matriz que contiene los valores de orden de Morton (el orden en que se visita
 
 .. figure:: Orden_Morton.*
 	:width: 500	px
+	:align: center
 
 	Un ejemplo sencillo de barrido de una capa ráster según órdenes de Morton. Los valores en las celdas no indican los valores de la variable, sino el orden en que se visita dicha celda según este esquema de barrido
 
@@ -631,14 +650,15 @@ Un ejemplo de este orden de barrido aplicado a una pequeña matriz puede verse e
 Una estructura más avanzada son los denominados *Quadtrees* o árboles cuaternarios. Estas estructuras también dividen el espacio en cuadrantes sucesivamente, pero lo hacen con más profundidad en aquellas zonas que así lo requieran por contener mayor número de elementos y necesitar mayor resolución. En el caso de una capa ráster, se requerirá más detalle siempre que todas las celdas dentro de un cuadrante no tengan el mismo valor. En el caso más extremo, se ha de descender hasta el nivel de una sola celda, pero puede ser que un bloque de celdas contiguas tenga el mismo valor, en cuyo caso el cuadrante correspondiente las engloba a todas y las define con dicho único valor, sin necesidad de subdividirse más. De este modo, se adapta el modelo de almacenamiento a la propia estructura de la capa y al comportamiento que en esta muestra la variable estudiada.
 
 
-Un ejemplo gráfico de un árbol cuaternario puede encontrarse en la figura :num:`#figquadtree`. Los arboles cuaternarios son empleados también en los *índices espaciales*, asociados a representaciones vectoriales, que veremos en :ref:`Indicesespaciales` (de hecho, puede apreciarse que la figura anterior representa la aplicación de un árbol cuaternario a un conjunto de puntos, no a una capa ráster, aunque el concepto es el mismo y su aplicación a este segundo caso se realiza como ya se ha mencionado previamente).
+Un ejemplo gráfico de un árbol cuaternario puede encontrarse en la figura :num:`#figquadtree`. Los arboles cuaternarios son empleados también en los *índices espaciales*, asociados a representaciones vectoriales, que veremos en :ref:`indices_espaciales` (de hecho, puede apreciarse que la figura anterior representa la aplicación de un árbol cuaternario a un conjunto de puntos, no a una capa ráster, aunque el concepto es el mismo y su aplicación a este segundo caso se realiza como ya se ha mencionado previamente).
 
 Los quadtrees son estructuras complejas, y no profundizaremos más en su descripción dentro de este capítulo. Para el lector interesado, la definición original de esta estructura de datos puede encontrarse en  :cite:p:`Finkel1974Acta`. 
 
 .. _figquadtree:
 
-.. figure:: Point_quadtree.*
+.. figure:: Quadtree.*
 	:width: 650px
+	:align: center
 
 	Ejemplo de un árbol cuaternario. En las zonas con más variabilidad (mayor densidad de puntos), los cuadrantes se subdividen hasta una profundidad mayor. La estructura es tal que cada cuadrante tiene dentro a lo sumo un punto. (Tomado de Wikipedia)
 
@@ -666,6 +686,7 @@ La figura :num:`#figesquemasalmacenamientobandas` se muestra un ejemplo muy senc
 
 .. figure:: Esquemas_almacenamiento_bandas.*
 	:width: 650px
+	:align: center
 
 	Esquemas de almacenamiento para imágenes multibanda. Los números indican el orden en que se almacena cada valor.
 
@@ -698,6 +719,7 @@ Existen dos enfoques principales para los índices espaciales: continuos y discr
 
 .. figure:: Tipos_indices_espaciales.*
 	:width: 650px
+	:align: center
 
 	Aproximación continua (a) y discreta (b) para un índice espacial.
 
@@ -705,7 +727,7 @@ Existen dos enfoques principales para los índices espaciales: continuos y discr
  
 
 
-En el caso continuo, se sustituye toda la complejidad del polígono por simplemente cuatro puntos: aquellos que conforman el rectángulo dentro del que este se inscribe. En el caso discreto, se reduce el polígono a unas cuantas celdas de una malla. Realizar comprobaciones sobre estas estructuras resulta mucho más sencillo, y por ello se emplean para realizar aproximaciones que simplifican las operaciones\footnote{Este proceso, conocido como *filtrado y refinamiento*, lo veremos en detalle en el capítulo :ref:`Consultas`}.
+En el caso continuo, se sustituye toda la complejidad del polígono por simplemente cuatro puntos: aquellos que conforman el rectángulo dentro del que este se inscribe. En el caso discreto, se reduce el polígono a unas cuantas celdas de una malla. Realizar comprobaciones sobre estas estructuras resulta mucho más sencillo, y por ello se emplean para realizar aproximaciones que simplifican las operaciones. Este procese se conoce como *filtrado y refinamiento*, y lo veremos en detalle en el capítulo :ref:`Consultas`.
 
 Supongamos que utilizamos un índice espacial del primer tipo y queremos saber qué polígonos de una capa se intersecan con otro dado. Para comprobar qué polígonos se intersecan con este, en primer lugar podemos comprobar los solapes existentes entre sus rectángulos. Si los rectángulos no se solapan, es inmediato ver que los polígonos tampoco, con lo que no es necesario ya operar con ellos. Ver si dos rectángulos se solapan es casi inmediato, mientras que esta misma operación para polígonos complejos requiere un numero mucho mayor de operaciones.
 
@@ -728,3 +750,6 @@ En el modelo ráster el espacio se divide sistemáticamente en unidades mínimas
 
 La ultima etapa es la que conlleva el almacenamiento de los modelos de representación, convirtiendo los elementos base de estos en valores numéricos manejables por el ordenador. Cada modelo de representación tiene sus particulares modelos de almacenamiento, los cuales tratan de maximizar el rendimiento de las operaciones realizadas sobre los datos espaciales, al tiempo que reducen el espacio que dichos datos ocupan.
 
+.. rubric:: Footnotes
+
+.. [#fn1] Nótese que el empleo del término *vectorial* para calificar a los campos vectoriales o los espacios vectoriales no debe confundirse con el modelo de representación vectorial que veremos más adelante en este capítulo. En el caso de campos y espacio, se trata de la terminología estándar del ámbito matemático, mientras que en el modelo de representación vectorial es una terminología propia de los Sistemas de Información Geográfica.

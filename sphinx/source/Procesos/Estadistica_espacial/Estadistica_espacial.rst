@@ -1,4 +1,4 @@
-.. _Estadistica_espacial:
+.. _estadistica_espacial:
 
 **********************************************************
 Estadísticas espaciales
@@ -81,6 +81,7 @@ En la figura :num:`#figcentromediano` puede verse una representación de lo ante
 
 .. figure:: Centro_mediano.*
 	:width: 650px
+	:align: center
 
 	Centro mediano y lineas de división pasando por este, las cuales dividen el conjunto de puntos en dos partes iguales a Este y Oeste, y Norte y Sur, respectivamente.
 
@@ -121,6 +122,7 @@ Una forma de representar esta distancia típica es mediante un circulo de radio 
 
 .. figure:: Centro_medio_y_desviacion.*
 	:width: 650px
+	:align: center
 
 	Circulo de radio igual a la distancia típica centrado en el centro medio del conjunto.
 
@@ -178,13 +180,14 @@ En la figura :num:`#figdistanciarelativa` puede verse cómo distribuciones espac
 
 .. figure:: Distancia_relativa.*
 	:width: 650px
+	:align: center
 
 	Aunque ambas distribuciones tienen la misma distancia típica, la dispersión en relación al área analizada es distinta, con lo que los valores de distancia relativa serán distintos.
 
  
 
 
-.. _Estadisticas_lineas:
+.. _estadisticas_lineas:
 
 Estadísticas sobre líneas. Variables circulares
 =====================================================
@@ -199,7 +202,7 @@ En el caso que nos ocupa del estudio de líneas, pueden considerarse todos y cad
 
 A continuación se mostrarán brevemente los estadísticos más frecuentes para datos circulares, con especial énfasis en su aplicación al análisis de líneas dentro de un SIG. Descripciones más detalladas de estos y otros elementos de estadística circular, junto a sus aplicaciones en áreas donde el empleo de SIG es habitual, pueden consultarse en  :cite:p:`Batchelet1981Academic` o  :cite:p:`Fisher1993Cambridge`.
 
-Para comenzar, el cálculo de la media de dos ángulos ejemplifica bien las particularidades de los datos circulares. Sean tres ángulos de 5 :math:`^{\circ}`, 10 :math:`\textdegree` y 15:math:`:math:`^\circ`` respectivamente. El concepto habitual de media aplicado a estos valores resultaría en un ángulo medio de 10:math:`^\circ`, correcto en este caso. Si giramos ese conjunto de ángulos 10 grados en sentido antihorario, dejándolos como 355:math:`^\circ`, 0:math:`^\circ`, 5:math:`^\circ`, la media debería ser 0:math:`^\circ`, pero en su lugar se tiene un valor medio de 120:math:`^\circ`.
+Para comenzar, el cálculo de la media de dos ángulos ejemplifica bien las particularidades de los datos circulares. Sean tres ángulos de 5 :math:`^{\circ}`, 10 :math:`^\circ` y 15 :math:`^\circ` respectivamente. El concepto habitual de media aplicado a estos valores resultaría en un ángulo medio de 10 :math:`^\circ`, correcto en este caso. Si giramos ese conjunto de ángulos 10 grados en sentido antihorario, dejándolos como 355 :math:`^\circ`, 0 :math:`^\circ`, 5 :math:`^\circ`, la media debería ser 0 :math:`^\circ`, pero en su lugar se tiene un valor medio de 120 :math:`^\circ`.
 
 Una forma correcta de operar con ángulos :math:`\alpha_1,\ldots,\alpha_n` consiste en hacerlo con las proyecciones del vector unitario según dichos ángulos, es decir :math:`\sin{\alpha_1},\ldots.\sin{\alpha_n}` y :math:`\cos{\alpha_1},\ldots.\cos{\alpha_n}`. Aplicando luego los estadísticos habituales sobre estos valores se obtienen unos nuevos valores de senos y cosenos que permiten obtener el ángulo resultante aplicando sobre ellos la función arcotangente. 
 
@@ -231,6 +234,7 @@ El módulo :math:`\overline{R}` se conoce también como *concentración angular*
 
 .. figure:: Media_vectorial.*
 	:width: 650px
+	:align: center
 
 	Media vectorial (en rojo) de una serie de segmentos.
 
@@ -276,7 +280,7 @@ Puesto que las desviaciones positivas deben ser iguales a las negativas, lo ante
 
 Para un numero de puntos dado y un intervalo de confianza establecido, los valores de :math:`U` están tabulados, y pueden así rechazarse o aceptarse la hipótesis nula de uniformidad. Dichas tablas pueden encontrarse, por ejemplo, en  :cite:p:`Russell1995CSSC`.
 
-.. _Analisis_patrones_puntos:
+.. _analisis_patrones_puntos:
 
 Análisis de patrones de puntos
 =====================================================
@@ -303,6 +307,7 @@ Como se puede observar en la figura :num:`#figpatronespuntos`, existen tres tipo
 
 .. figure:: Patrones_puntos.*
 	:width: 650px
+	:align: center
 
 	De izquierda a derecha, patrones de puntos agregado, aleatorio y regular.
 
@@ -344,6 +349,7 @@ Otra debilidad de este método es que no es capaz de diferenciar entre distribuc
 
 .. figure:: Debilidad_cuadrantes.*
 	:width: 650px
+	:align: center
 
 	Dos disposiciones de puntos distintas que darían un mismo resultado al analizarse por el método de cuadrantes.
 
@@ -449,7 +455,7 @@ Tiene sentido estudiar esta función tan solo para valores de :math:`h` pequeño
 
 Un estimador de la función K es
 
-.. _Eq:Ripley:
+.. _eq:ripley:
 
 .. math::
 
@@ -524,6 +530,8 @@ Al igual que los métodos restantes, el empleo de funciones K se realiza con car
 
 Junto con los anteriores métodos de análisis de patrones de puntos, existen muchos otros en la bibliografía, siendo esta un área con un desarrollo notable en la actualidad.
 
+.. _autocorrelacion_espacial:
+
 Autocorrelación espacial
 =====================================================
 
@@ -542,12 +550,101 @@ Para el caso de puntos, esta vecindad puede establecerse por distancia, consider
 
 De forma general, pueden considerarse todos aquellos factores que hagan que una entidad ejerza influencia sobre otra, y en el grado en la que dicha influencia tenga lugar. Esto puede incluir la consideración de otras relaciones existentes, como por ejemplo movimientos migratorios de especies, que *enlazan* unas entidades con otras y causan la existencia de interacción entre ellas más allá de la propia existente por distancia o contigüidad  :cite:p:`Anselin1992NCGIA`. 
 
-En la función K de Ripley ya vimos en la ecuación :ref:`Eq:Ripley` cómo el uso del indicador :math:`I` definía ese concepto de vecindad *efectiva*, ya que tomaba valor cero para los puntos a una distancia mayor que :math:`h`, haciendo que dichos puntos no tuvieran efecto sobre el resultado final de la función. De forma similar, puede extenderse el concepto de este indicador para construir la denominada *matriz de ponderación espacial*.
+En la función K de Ripley ya vimos en la ecuación correspondiente cómo el uso del indicador :math:`I` definía ese concepto de vecindad *efectiva*, ya que tomaba valor cero para los puntos a una distancia mayor que :math:`h`, haciendo que dichos puntos no tuvieran efecto sobre el resultado final de la función. De forma similar, puede extenderse el concepto de este indicador para construir la denominada *matriz de ponderación espacial*.
 
 Para un conjunto de :math:`N` entidades se tiene una matriz :math:`W` de dimensiones :math:`N \times N` en la que el elemento :math:`w_{ij}` refleja la influencia de la entidad :math:`i` sobre la :math:`j`. Por convención, los valores :math:`w_{ii}` son iguales a cero. En el caso más sencillo, la matriz es de tipo binario, conteniendo únicamente valores 1 (existe vecindad efectiva entre las entidades) o 0 (no existe vecindad), pero los valores pueden ser cualesquiera. En la práctica, es de hecho habitual dividir estos valores por la suma de todos los valores de la columna, de forma que estén acotados siempre entre 0 y 1.
 
 Mas allá de los valores que pueda contener, una característica primordial de la matriz de ponderación espacial es el método con el que ha sido creada, ya que la forma en la que se establece la vecindad entre los distintos elementos tiene influencia directa sobre dicha matriz, Esto, sin duda, afecta a las operaciones realizadas posteriormente sobre esta, por lo que la elección del método a emplear en su creación es altamente relevante.
 
+
+Medidas de autocorrelación espacial
+-------------------------------------
+
+Dos son las medidas más habituales para cuantificar la autocorrelación espacial de una variable: el parámetro :math:`I` de Moran :cite:p:`Moran1948JRSS` y el parámetro :math:`c` de Geary :cite:p:`Geary1954Incorporated`. Ambos hacen uso de la matriz de ponderación espacial antes descrita.
+
+En el caso del parámetro $I$ de Moran, su expresión es
+
+.. math::
+
+	I = \frac{N}{S_0} \sum_{i=1}^N\sum_{j=1}^N \frac{w_{ij}(x_i-\mu)(x_j-\mu)}{\sum_{i=1}^N (x_i - \mu)^2}
+
+
+donde :math:`\mu` es la media de la variable :math:`x` y :math:`S_0` es un factor de normalización igual a la suma de todos los elementos de la matriz.
+
+.. math::
+
+	S_0 = \sum_{i=1}^N\sum_{j=1}^N w_{ij}
+
+
+Si los valores de la matriz han sido normalizados dividiéndolos por la suma de las columnas, $S_0 = N$ y la expresión anterior se simplifica.
+
+
+.. math::
+	
+	I^* = \sum_{i=1}^N\sum_{j=1}^N \frac{w_{ij}(x_i-\mu)(x_j-\mu)}{\sum_{i=1}^N (x_i - \mu)^2}
+
+El valor esperado de I es:
+
+.. math::
+
+	E(I) = \frac{-1}{N-1}
+
+Valores por debajo de este valor esperado indican autocorrelación negativa, mientras que los situados por encima reflejan autocorrelación positiva. Al igual que sucede para otros parámetros, los valores de la desviación típica del parámetro $I$ son conocidos, lo que permite establecer intervalos de confianza para rechazar o aceptar la hipótesis nula de ausencia de autocorrelación espacial.
+
+Estos valores de la desviación típica tienen distintas expresiones en función de bajo qué supuestos se determinen. Estos supuestos y las expresiones resultantes no se tratarán aquí, pero pueden consultarse, por ejemplo, en :cite:p:Cliff1973Pion`.
+
+
+Respecto el parámetro :math:`c` de Geary, su expresión es
+
+.. math::
+
+	c = \frac{N-1}{2S_0} \sum_{i=1}^N\sum_{j=1}^N \frac{w_{ij}(x_i-x_j)^2}{\sum_{i=1}^N (x_i - \mu)^2}
+
+
+Mientras que el parámetro :math:`I` da una caracterización más global, el parámetro :math:`c` es más sensible a las variaciones locales a distancia reducida.
+
+El valor esperado de :math:`c` es 1. Valores menores de 1 indican autocorrelación espacial positiva, mientras que los superiores indican una autocorrelación negativa.
+
+Ambos parámetros son parte de una familia de estadísticos denotadas como :math:`\Gamma`, de la forma
+
+.. math::
+
+	\Gamma = \sum_{i=1}^N\sum_{j=1}^N a_{ij}b_{ij}
+
+
+Con este esquema pueden expresarse otros indicadores tales como los denominados *índices de conteo conjunto* (*joint count*) :cite:p:`Cliff1973Pion` u otros más específicos.\index{Indice@Índice!de conteo conjunto}
+
+Todo estos parámetros caracterizan la autocorrelación espacial para el conjunto completo de puntos, es decir, para todo el área de estudio. Junto a estos, existen otros parámetros que miden la autocorrelación espacial a nivel local.
+
+:cite:p:`Getis1992GeoAnal` proponen dos nuevos parámetros :math:`G_i(d)$` y :math:`G^*_i(d)` que cuantifican si un punto dado :math:`i` se encuentra rodeado por agrupaciones de puntos con valores altos o bajos. En el caso de :math:`G_i(d)` no se tiene en cuenta el valor del punto :math:`i` mientras que en el caso de :math:`G^*_i(d)` sí se emplea este.
+
+De forma similar, :cite:p:`Anselin1995GeoAnal` propone una versión local del parámetro :math:`I` de Moran, denotándolo como *indicador local de asociación espacial* (*Local Indicator of Spatial Association*, LISA).
+
+La forma de interpretar estos parámetros locales es similar a lo visto anteriormente, y las formulaciones concretas de cada uno pueden consultarse en las referencias correspondientes.
+ 
+.. _variogramas:
+
+Variogramas
+-----------
+
+Los variogramas son elementos clave para definir la autocorrelación espacial y aprovechar el conocimiento de esta dentro de formulaciones como el kriging (ver :ref:`Kriging`). Los variogramas se fundamentan en el concepto de semivarianza.\index{Variograma}\index{Semivarianza}
+
+La semivarianza es una medida de la autocorrelación espacial de una variable :math:`x` entre dos puntos :math:`i,j`, y viene expresada por
+
+.. math::
+
+	\gamma(x_i,x_j) = \frac12(z_i-z_j)^2
+
+
+El cuadrado de las varianzas se multiplica por :math:`\frac12` debido a que  :math:`\gamma(x_i,x_j) = \gamma(x_j,x_i)`. De ahí el uso del prefijo *semi*.
+
+Puesto que puede calcularse la distancia entre dichos puntos, pueden representarse los valores de $\gamma$ frente a las distancias $h$. Se obtiene una nube de puntos (nube del variograma) como la mostrada en la figura :num`:`fignubevariograma`.
+
+.. figure:: Nube_variograma.*
+	:width: 650px
+	:align: center
+	
+	Representación de valores de semivarianza frente a distancia, formando la nube del variograma.
 
 
 
@@ -570,6 +667,7 @@ La nube de puntos de la figura :num:`#fignubevariograma` se resume en el variogr
 
 .. figure:: Variograma.*
 	:width: 650px
+	:align: center
 
 	Resumen de la nube del variograma en un variograma experimental con sus elementos definitorios.
 
@@ -601,6 +699,7 @@ Si se traza un perfil de valores de esta superficie desde el punto central hasta
 
 .. figure:: Superficie_variografica.*
 	:width: 500px
+	:align: center
 
 	Superficie variográfica
 
@@ -612,6 +711,7 @@ A partir de los puntos que forman el variograma experimental, puede definirse un
 
 .. figure:: Variogramas.*
 	:width: 650px
+	:align: center
 
 	Distintos modelos de variograma teórico con los mismos parámetros de forma.
 
@@ -663,6 +763,7 @@ El conjunto de valores de covarianza y distancias entre puntos da lugar a una nu
 
 .. figure:: Variograma_correlograma.*
 	:width: 850px
+	:align: center
 
 	Relación entre correlograma (a) y variograma (b)
 

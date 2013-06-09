@@ -1,4 +1,4 @@
-.. _Operaciones_geometricas:
+.. _operaciones_geometricas:
 
 **********************************************************
 Operaciones geométricas con datos vectoriales
@@ -26,7 +26,7 @@ Muchas de las operaciones geométricas que pueden realizarse con datos vectorial
 
 Esta equiparación entre el álgebra de mapas ráster y estas transformaciones geométricas (también una especie de álgebra de mapas vectorial, en cierta medida) puede plantear una disyuntiva desde el punto de vista del usuario de SIG que pretende analizar sus datos. Utilizar uno u otro modelo a la hora del análisis representa una elección igual que lo es el optar por una u otra forma de almacenamiento, vayamos o no a efectuar análisis sobre los datos almacenados. Sin embargo, no son opciones mutuamente excluyentes, y lo ideal es conocer los puntos fuertes y débiles de cada planteamiento, para así combinar ambos de la mejor forma posible. Como ya sabemos, los SIG hoy en día no son puramente ráster o vectoriales, sino que incluyen herramientas con ambos planteamientos. Utilizarlas conjuntamente es la forma más idónea de aprovechar toda su potencia. 
 
-.. _Zona_influencia_vectorial:
+.. _zona_influencia_vectorial:
 
 Zonas de influencia
 =====================================================
@@ -45,6 +45,7 @@ El hecho de poder plantear este análisis de dos formas distintas es debido a qu
 
 .. figure:: Zona_influencia_circular.*
 	:width: 650px
+	:align: center
 
 	Zona de influencia a partir de puntos. La influencia puede analizarse a partir de los puntos que la ejercen (a) o los que la reciben (b)
 
@@ -63,6 +64,7 @@ De igual modo que en el ejemplo anterior, el análisis se pueden plantear de for
 
 .. figure:: Zona_influencia_lineas.*
 	:width: 650px
+	:align: center
 
 	Zona de influencia a partir de elementos lineales (cauces).
 
@@ -77,6 +79,7 @@ Otro uso habitual de este tipo de zonas de influencia la encontramos en la gesti
 
 .. figure:: Zona_influencia_poligonos.*
 	:width: 650px
+	:align: center
 
 	Zona de influencia a partir de polígonos. a) Hacia el exterior, b) hacia el interior. 
 
@@ -92,6 +95,7 @@ Sobre la base anterior de zonas de influencia delimitadas a partir de las geomet
 
 .. figure:: Zonas_influencia_concentricas.*
 	:width: 550px
+	:align: center
 
 	Zonas de influencia concéntricas a partir de una entidad lineal 
 
@@ -112,6 +116,7 @@ La figura :num:`#figzonainfluenciavariable` muestra el aspecto de una zona de in
 
 .. figure:: Zona_influencia_variable.*
 	:width: 650px
+	:align: center
 
 	Zonas de influencia variable establecidas en función de los ordenes de los cauces. 
 
@@ -124,6 +129,7 @@ Otra de las modificaciones que se pueden plantear a la creación de zonas de inf
 
 .. figure:: Zona_influencia_disolver.*
 	:width: 450px
+	:align: center
 
 	Zona de influencia única a partir de un conjunto de zonas de influencia individuales que se solapan. 
 
@@ -159,6 +165,7 @@ Estas operaciones pueden entenderse como operaciones de conjuntos y visualizarse
 
 .. figure:: Operaciones_solape.*
 	:width: 650px
+	:align: center
 
 	Tipos de operaciones de solape entre dos elementos individuales. 
 
@@ -180,6 +187,7 @@ En la figura :num:`#figrecortevectorial` podemos ver cómo la capa de entrada co
 
 .. figure:: Recorte_vectorial.*
 	:width: 750px
+	:align: center
 
 	Recorte vectorial de un conjunto de capas de puntos, líneas y polígonos, con una capa de polígonos. 
 
@@ -225,6 +233,7 @@ Puede verse un sencillo ejemplo en la figura :num:`#figinterseccionvectorial`.
 
 .. figure:: Interseccion_vectorial.*
 	:width: 800px
+	:align: center
 
 	Interseccion entre dos capas de polígonos, mostrando las geometrías y la tabla de atributos resultante.
 
@@ -258,13 +267,14 @@ La figura :num:`#figunionvectorial` muestra un ejemplo de unión de capas vector
 
 .. figure:: Union_vectorial.*
 	:width: 800px
+	:align: center
 
 	Unión de dos capas de polígonos, mostrando las geometrías y la tabla de atributos resultante.
 
 
 
 
-.. _Poligonos_espureos:
+.. _poligonos_espureos:
 
 Polígonos espúreos
 --------------------------------------------------------------
@@ -293,13 +303,14 @@ La figura :num:`#figpoligonosespureos` muestra un ejemplo de la aparición de es
 
 .. figure:: Poligonos_espureos.*
 	:width: 650px
+	:align: center
 
 	Aparición de polígonos espúreos de pequeño tamaño tras el solape entre capas con discrepancias.
 
 
 
 
-.. _Juntar_capas:
+.. _juntar_capas:
 
 Juntar capas
 =====================================================
@@ -324,6 +335,7 @@ Para comprender mejor esta operación, puede verse un ejemplo en la figura:num:`
 
 .. figure:: Juntar_capas.*
 	:width: 800px
+	:align: center
 
 	Ejemplo de las tablas y entidades resultantes tras juntar dos capas. 
 
@@ -367,6 +379,7 @@ En la figura :num:`#figdisolver` se muestra un ejemplo de lo anterior.
 
 .. figure:: Disolver.*
 	:width: 800px
+	:align: center
 
 	Obtención de una capa de comunidades autónomas a partir de una de provincias mediante un proceso de disolución. En la capa original se han representado los polígonos en función de la comunidad a la que pertenecen. Aunque aparecen con el mismo color, son polígonos independientes.
 
@@ -395,7 +408,7 @@ Existen diversas formas de contornos mínimos, entre las que cabe destacar.
 * Círculo mínimo
 
 
-.. _Convex_hull:
+.. _convex_hull:
 
 Envolvente convexa mínima (convex hull)
 --------------------------------------------------------------
@@ -407,6 +420,7 @@ La envolvente convexa mínima (habitualmente citada como *convex hull*, su denom
 
 .. figure:: Convex_hull.*
 	:width: 600px
+	:align: center
 
 	Contorno convexo mínimo. 
 
@@ -425,6 +439,7 @@ Una serie de envolventes convexas sucesivas sobre un conjunto de puntos forma un
 
 .. figure:: Onion_peeling.*
 	:width: 450px
+	:align: center
 
 	Serie de contornos convexos formando una teselacion en capas (*onion peeling*). 
 
@@ -442,6 +457,7 @@ El círculo mínimo es aquel circulo que contiene a todos los puntos de un conju
 
 .. figure:: Circulo_minimo.*
 	:width: 450px
+	:align: center
 
 	Círculo de radio mínimo que engloba a una serie de puntos.
 
@@ -471,6 +487,7 @@ El rectángulo mínimo es el rectángulo de menor área que cubre todos los punt
 
 .. figure:: Rectangulo_minimo.*
 	:width: 450px
+	:align: center
 
 	Rectángulo mínimo que engloba a un conjunto de puntos.
 
@@ -480,7 +497,7 @@ Pare el cálculo del rectángulo mínimo se aplica el hecho de que al menos un l
 
 Generalmente, el rectángulo de menor área coincide con el de menor perímetro, pero no siempre es así. De cualquier modo, este último también cumple la condición citada con respecto a la envolvente convexa, por lo que su cálculo puede hacerse por un procedimiento idéntico.
 
-.. _Generalizacion_lineas:
+.. _generalizacion_lineas:
 
 Generalización de líneas
 =====================================================
@@ -510,6 +527,7 @@ Algo similar sucede cuando las operaciones de vectorización se realizan de form
 
 .. figure:: Suavizar_digitalizado.*
 	:width: 500px
+	:align: center
 
 	Suavizado de una línea procedente de vectorización a partir de una capa ráster. En negro, línea original con esquinas angulosas. En rojo, línea suavizada. 
 
@@ -528,6 +546,7 @@ No obstante, no todos los puntos de un línea tienen la misma importancia y apor
 
 .. figure:: Simplificacion_importancia_ptos.*
 	:width: 650px
+	:align: center
 
 	La eliminación de puntos de la linea original (a) puede dar lugar a líneas muy similares (b) o muy distintas (c), ya que no todos los puntos tienen la misma importancia.
 
@@ -555,8 +574,9 @@ En la figura :num:`#figgeneralizacion` puede verse cómo una línea original se 
 
 .. figure:: Simplificacion_lineas.*
 	:width: 750px
+	:align: center
 
-	Generalización de un conjunto de líneas (en trazo punteado) mediante el algoritmo de  :cite:p:`Douglas1973TAC para valores de tolerancia de 10 (a), 20 (b) y 50 metros (c).` 
+	Generalización de un conjunto de líneas (en trazo punteado) mediante el algoritmo de  :cite:p:`Douglas1973TAC` para valores de tolerancia de 10 (a), 20 (b) y 50 metros (c). 
 
 
 Respecto a los algoritmos de suavizado, estos pueden dividirse en tres grupos principales  :cite:p:`McMaster1987Cartographica`:

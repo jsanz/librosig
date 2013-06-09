@@ -1,4 +1,4 @@
-.. _Procesado_imagenes:
+.. _procesado_imagenes:
 
 **********************************************************
 Procesado de imágenes
@@ -78,7 +78,7 @@ Algunas de las principales diferencias entre el análisis visual y el automátic
 
 Es importante tener en cuenta estas diferencias, ya que las circunstancias en las que va a ser necesaria la interpretación de una imagen pueden ser muy variadas, debiendo en cada caso procederse a ella de la forma más adecuada.
 
-.. _Correccion_imagenes:
+.. _correccion_imagenes:
 
 Correcciones y preparación de imágenes
 =====================================================
@@ -112,7 +112,7 @@ Por la propia naturaleza del proceso de toma de imágenes, estas presentan habit
 
 Para disminuir estos efectos existen una serie de métodos cuya finalidad es corregir y distorsionar la imagen original con objeto de que esta constituya una representación más fiable de la escena original  :cite:p:`Lillesand1997Wiley`. Dos son los métodos más utilizados para la corrección geométrica de las imágenes: la *rectificación* y la *ortorectificación*.
 
-.. _Rectificacion:
+.. _rectificacion:
 
 Rectificación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,6 +156,7 @@ La imagen :num:`#figrectificacion` muestra un ejemplo gráfico de este proceso. 
 
 .. figure:: Rectificacion.*
 	:width: 750px
+	:align: center
 
 	Proceso de referenciación de una imagen (mapa escaneado), empleando para la localización de puntos de control (en amarillo) una fotografía aérea ya georreferenciada.
 
@@ -174,6 +175,7 @@ Esta elevación provoca un desplazamiento aparente de los píxeles y, según el 
 
 .. figure:: Ortorrectificacion.*
 	:width: 700px
+	:align: center
 
 	Fotografía aérea antes y después del proceso de ortorrectificación
 
@@ -187,6 +189,7 @@ La figura :num:`#figempirestate` muestra claramente el efecto de las distorsione
 
 .. figure:: Empire_state.*
 	:width: 650px
+	:align: center
 
 	Las distorsiones provocadas por el hecho de que la escena fotografiada no es plana se aprecian con claridad en esta imagen.
 
@@ -264,7 +267,7 @@ La gráfica establece una relación entre el Nivel Digital original y su tonalid
 
 A la hora de definir estas funciones de transformación, un elemento de utilidad es el histograma, ya que da una visión global de los Niveles Digitales presentes en el conjunto de píxeles de la imagen. La distribución de Niveles Digitales representada en el histograma aporta una información a partir de la cual pueden definirse estas operaciones de mejora a nivel de píxel.
 
-.. _Segmentacion:
+.. _segmentacion:
 
 Segmentación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -281,6 +284,7 @@ La figura :num:`#figsegmentacion` nos muestra el resultado de una operación de 
 
 .. figure:: Segmentacion.*
 	:width: 650px
+	:align: center
 
 	Imagen original (a) y resultado de un proceso de segmentación (b)
 
@@ -292,6 +296,7 @@ La figura :num:`#figsegmentacion` nos muestra el resultado de una operación de 
 
 .. figure:: Curva_segmentacion.*
 	:width: 650px
+	:align: center
 
 	Curva de transformación asociada a una segmentación por umbral.
 
@@ -320,7 +325,7 @@ Para el lector interesado, en  :cite:p:`Gonzales1993Addison` o  :cite:p:`Haralic
 Desde el punto de vista de las operaciones del álgebra de mapas que conocemos, la segmentación es una reclasificación de valores lo más sencilla posible, ya que únicamente se crean dos clases (la de valores por debajo del umbral y la de valores por encima de él). Un proceso algo más complejo es la definición de varios umbrales, de forma que aparezcan más clases, siendo este también equivalente a la reclasificación según la vimos en su momento. No obstante, en el ámbito del análisis de imágenes esta operación se conoce habitualmente con el nombre de *Density slicing*.
 
 
-.. _ExpansionContraste:
+.. _expansioncontraste:
 
 Expansión de contraste
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -332,6 +337,7 @@ Puesto que muchos de los procedimientos de este apartado están, como se ha dich
 
 .. figure:: Expansion_contraste.*
 	:width: 550px
+	:align: center
 
 	Imagen de partida tras un proceso de expansión de contraste
 
@@ -354,7 +360,7 @@ donde :math:`ND` es el Nivel Digital de la imagen original y :math:`ND'` el de l
 
 Si recordamos lo visto en el apartado :ref:`Funciones_locales`, la normalización era una función de tipo local dentro del álgebra de mapas, y respondía a una expresión similar a la anterior. El fundamento en este caso es el mismo, aunque la finalidad sea aquí la de mejorar la imagen de cara a su visualización.
 
-En el tratamiento de imágenes es habitual no aplicar directamente la expresión :ref:`Eq:Normalizar_imagen` con los valores mínimo y máximo absolutos de la imagen. De hacerlo así, la presencia de valores atípicos alejados de la media (píxeles muy o muy poco brillantes) puede desvirtuar el rango en el que se sitúan realmente los Niveles Digitales de la imagen, y no conseguirse mediante la expansión de contraste el efecto deseado. 
+En el tratamiento de imágenes es habitual no aplicar directamente la expresión de normalización de la imagen con los valores mínimo y máximo absolutos de la imagen. De hacerlo así, la presencia de valores atípicos alejados de la media (píxeles muy o muy poco brillantes) puede desvirtuar el rango en el que se sitúan realmente los Niveles Digitales de la imagen, y no conseguirse mediante la expansión de contraste el efecto deseado. 
 
 Una solución es acudir al histograma y tomar como valores de :math:`x` y :math:`X` no los extremos absolutos, sino los correspondientes a los percentiles del 5\% y el 95\%. Al operar con estos valores límite, aparecerán valores resultantes fuera del rango de destino (0--255 en el caso más habitual que citamos), que se igualan a los valores mínimo o máximo de dicho rango en función de si se encuentran fuera por el lado negativo o el positivo.
 
@@ -373,6 +379,7 @@ Tanto el brillo como el contraste pueden modificarse mediante funciones lineales
 
 .. figure:: Brillo_contraste.*
 	:width: 750px
+	:align: center
 
 	Imagen original y modificación del brillo y el contraste, junto con sus curvas de transformación asociadas
 
@@ -411,6 +418,7 @@ El caso de la expansión de contraste es un caso particular de este tipo de tran
 
 .. figure:: Curva_expansion_contraste.*
 	:width: 450px
+	:align: center
 
 	Curva de transformación correspondiente a una expansión de contraste
 
@@ -445,6 +453,7 @@ La figura :num:`#figecualizar` muestra la comparación entre la imagen original 
 
 .. figure:: Ecualizar.*
 	:width: 650px
+	:align: center
 
 	Imagen e histograma acumulado originales (a). Imagen e histograma acumulado tras un proceso de ecualización (b).
 
@@ -460,7 +469,7 @@ siendo :math:`N` el número total de píxeles de la imagen y :math:`T(x)` la fun
 
 Al trabajar con imágenes de varias bandas, deben tenerse en cuenta los mismos aspectos ya comentados para la expansión de contraste, en relación a la relación entre las distintas bandas. En  :cite:p:`Lucchesse2001ICIP` pueden encontrarse detalles sobre ecualización de imágenes en color.
 
-.. _Filtros:
+.. _filtros:
 
 Filtros
 --------------------------------------------------------------
@@ -487,6 +496,7 @@ Como muestra la figura :num:`#figsuavizado`, los filtros de suavizado (también 
 
 .. image:: Kernel_media.*
 	:width: 250px
+	:align: center
 
 
 El efecto del filtro de media vimos que, aplicado sobre una capa de elevación, *redondeaba* el relieve. En el caso de ser aplicado sobre una imagen hace que esta aparezca más borrosa. La cantidad de suavizado puede ser controlada, al igual que en el caso de aplicarse sobre otro tipo de capas ráster, mediante el tamaño de la ventana, que puede ser mayor que el habitual :math:`3\times3` anterior.
@@ -495,6 +505,7 @@ Otra forma de modificar el efecto del suavizado, en este caso limitándolo, es d
 
 .. image:: Kernel_media_2.*
 	:width: 250px
+	:align: center
 
 La media es sensible a los valores extremos de la ventana, por lo que una opción habitual es sustituir el filtro de media por uno de mediana. Este no es sensible a la presencia de valores extremos muy alejados de la media (*outliers*), y además garantiza que el valor resultante es un valor que existe como tal en la ventana de píxeles circundantes, lo cual puede resultar de interés en algunas circunstancias.	
 
@@ -504,6 +515,7 @@ El filtro de mediana no es una convolución, y no puede por tanto expresarse med
 
 .. figure:: Suavizado.*
 	:width: 550px
+	:align: center
 
 	Imagen tras la aplicación de un filtro de suavizado
 
@@ -519,6 +531,7 @@ En la figura :num:`#figfiltromediana` puede observarse como la presencia de una 
 
 .. figure:: Filtro_mediana.*
 	:width: 750px
+	:align: center
 
 	Eliminación de una línea errónea por aplicación de un filtro de mediana
 
@@ -539,6 +552,7 @@ Para limpiar estas imágenes resultantes, se emplean también filtros como los a
 
 .. figure:: Filtro_salt_pepper.*
 	:width: 550px
+	:align: center
 
 	Eliminación de ruido de tipo *sal y pimienta* mediante filtro de mediana.
 
@@ -555,6 +569,7 @@ Los filtros de realce (o *de paso alto*) tienen el efecto justamente contrario a
 
 .. figure:: Realce.*
 	:width: 550px
+	:align: center
 
 	Imagen tras la aplicación de un filtro de realce
 
@@ -568,10 +583,11 @@ El núcleo que caracteriza esta transformación puede obtenerse realizando el mi
 
 .. image:: Kernel_realce.*
 	:width: 250px
+	:align: center
 
 
 
-.. _DeteccionBordes:
+.. _deteccionbordes:
 
 Filtros de detección de bordes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -584,6 +600,7 @@ Un operador habitual para la detección de bordes es el denominado *filtro Lapla
 
 .. image:: Kernel_laplaciano.*
 	:width: 250px
+	:align: center
 
 Para hacer su expresión más sencilla, tanto este núcleo como los siguientes no se aplican según la ecuación de una convolución, sino según la siguiente:
 
@@ -602,6 +619,7 @@ Para mostrar más claramente el resultado de estos filtros, se ha escogido una r
 
 .. figure:: Deteccion_bordes.*
 	:width: 650px
+	:align: center
 
 	Aplicación de un filtro de detección de bordes sobre la imagen original (a) y la imagen ecualizada (b).
 
@@ -615,6 +633,7 @@ Aplicando filtros de esta segunda clase, la detección de bordes puede hacerse r
 
 .. image:: Kernel_sobel.*
 	:width: 450px
+	:align: center
 
 El resultado de aplicar estos filtros puede verse en la figura :num:`#figsobel`.
 
@@ -622,6 +641,7 @@ El resultado de aplicar estos filtros puede verse en la figura :num:`#figsobel`.
 
 .. figure:: Sobel.*
 	:width: 650px
+	:align: center
 
 	Aplicación de un filtro de Sobel vertical (a) y horizontal (b).
 
@@ -633,6 +653,7 @@ Otros filtros habituales son los siguientes, denominados *filtros de Prewitt*,
 
 .. image:: Kernel_prewitt.*
 	:width: 450px
+	:align: center
 
 Las variantes de estos filtros en las direcciones indicadas pueden combinarse en un filtro global según la expresión 
 
@@ -651,11 +672,12 @@ La relación entre los filtros de detección de bordes y los de realce puede ver
 
 .. image:: Kernel_laplaciano_mas_identidad.*
 	:width: 250px
+	:align: center
 
 
 Aplicando este filtro se obtiene una imagen que mantiene un aspecto similar a la imagen original, pero con mayor definición. Es decir, el mismo efecto que si se aplicara un filtro de realce.
 
-.. _Fusion_imagenes:
+.. _fusion_imagenes:
 
 Fusión de imágenes
 --------------------------------------------------------------
@@ -710,6 +732,7 @@ En la figura :num:`#figihs` puede verse un esquema del proceso de fusión de im�
 
 .. figure:: IHS.*
 	:width: 650px
+	:align: center
 
 	Fusión de imágenes mediante transformación IHS
 
@@ -756,7 +779,7 @@ Análisis y extracción de información
 
 Con las imágenes ya preparadas y tratadas con objeto de *exponer* en la mayor medida posible la información que contienen, puede procederse a su análisis. El fin de este análisis puede ser la delineación e identificación de ciertos elementos (masas de agua, formaciones rocosas, construcciones, etc.), o bien la caracterización de las distintas áreas del terreno (tipo de uso de suelo, condiciones fisico--químicas, etc.), existiendo para cada uno de estos propósitos una serie de algoritmos y formulaciones.
 
-.. _Visualizacion_imagenes:
+.. _visualizacion_imagenes:
 
 Visualización
 --------------------------------------------------------------
@@ -773,6 +796,7 @@ Las imágenes que tomamos con una cámara digital o una fotografía aérea en co
 
 .. figure:: Descomposicion_RGB.*
 	:width: 650px
+	:align: center
 
 	Descomposición de una imagen en color en sus componentes RGB.
 
@@ -812,6 +836,7 @@ La figura :num:`#figfalsocolor` muestra distintas composiciones a partir de las 
 
 .. figure:: Falso_color.*
 	:width: 750px
+	:align: center
 
 	Distintas composiciones a partir de las bandas de una imagen LANDSAT TM. a) 1, 2, 5; b) 2, 4, 3; c) 2, 5, 3
 
@@ -819,7 +844,7 @@ La figura :num:`#figfalsocolor` muestra distintas composiciones a partir de las 
  
 
 
-.. _Operaciones_morfologicas:
+.. _operaciones_morfologicas:
 
 Operaciones morfológicas
 --------------------------------------------------------------
@@ -832,6 +857,7 @@ Las operaciones morfológicas producen modificaciones de las *formas* presentes 
 
 .. figure:: Imagen_binaria.*
 	:width: 350px
+	:align: center
 
 	Una sencilla imagen binaria. Para más claridad, se han trazado líneas divisorias entre los distintos píxeles.
 
@@ -871,6 +897,7 @@ Las dos principales operaciones morfológicas son la erosión y la dilatación. 
 
 .. figure:: Erosion_dilatacion.*
 	:width: 650px
+	:align: center
 
 	Resultado de aplicar operaciones de erosión (a) y dilatación (b) sobre la imagen base.
 
@@ -890,6 +917,7 @@ Como en muchas operaciones de tipo focal, la ventana más sencilla y habitual es
 
 .. image:: Kernel_erosion.*
 	:width: 250px
+	:align: center
 
 
 Para efectuar dicha erosión desplazamos la ventana por todos los píxeles de los elementos que se quieren erosionar (que en una imagen binaria tendrán un valor 255 o 1 según hemos visto en el apartado dedicado a la segmentación de imágenes). Si con el anterior núcleo centrado en un píxel concreto todos los píxeles circundantes en la imagen coinciden con los valores de la ventana, entonces el píxel mantiene su valor 1 como píxel de un elemento. En caso contrario, pasa a tener un valor cero, pasando a ser un píxel del fondo.
@@ -920,6 +948,7 @@ Una aplicación práctica de estas operaciones la podemos encontrar en la imagen
 
 .. figure:: Esqueletizacion.*
 	:width: 750px
+	:align: center
 
 	Imagen original con un objeto lineal desconectado (a). Objeto conectado tras la aplicación de una operación de cierre (b). Esqueleto del anterior objeto obtenido mediante la aplicación de operaciones morfológicas (c).
 
@@ -932,10 +961,11 @@ La operación de cierre produce, como hemos dicho, un rellenado de los huecos de
 El resultado de aplicar una operación de cierre puede verse en la imagen :math:`b)` dentro de la figura  :num:`#figesqueleto`. Además de *cerrar* la vía, ha causado que el elemento en conjunto haya aumentado de tamaño y sea ahora más grueso. La forma de corregir este hecho (que no es adecuado para otras operaciones) es lo que veremos seguidamente con una nueva operación morfológica: la esqueletización.
 
 
+.. _esqueletizacion:
+
 Esqueletización
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _Esqueletizacion:
 
 Hemos visto cómo resulta posible a partir de la aplicación de métodos sencillos reducir el tamaño de los distintos objetos de la imagen, y aplicando estos sucesivamente, reducir dicho tamaño más y más hasta el punto deseado. Utilizando ideas similares podemos reducir un objeto de una imagen binaria hasta un conjunto mínimo de píxeles que preserven la forma y las propiedades topológicas del objeto original, habiendo eliminado el mayor numero posible de ellos, que quedarían como píxeles de fondo. En particular, un conjunto de un único píxel de ancho es la estructura mínima que puede obtenerse.
 
@@ -971,6 +1001,7 @@ En la figura :num:`#figfirmasespectrales` pueden verse algunas firmas espectrale
 
 .. figure:: Firmas_espectrales.*
 	:width: 650px
+	:align: center
 
 	Firmas espectrales tipo de algunos elementos habituales
 
@@ -1009,7 +1040,7 @@ Microondas                 Rotación molecular y emisión térmica           Com
 
 Veremos a continuación con algo más de detalle cómo deducir propiedades de los dos tipos anteriores en relación con tres de los elementos básicos del estudio del medio: el suelo, la vegetación y el agua.
 
-.. _Parametros_de_la_vegetacion:
+.. _parametros_de_la_vegetacion:
 
 Parámetros de la vegetación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1030,6 +1061,7 @@ Sin necesidad de definir aún ningún índice, podemos ver claramente este hecho
 
 .. figure:: Garden_city.*
 	:width: 650px
+	:align: center
 
 	La creación de una imagen de falso color con un esquema RGB=NRG permite localizar las zonas de vegetación por su coloración roja intensa. Esto es debido a la alta reflectancia en las banda del infrarrojo visible y la baja reflectancia en el rango visible, causadas ambas por la actividad fotosintética.
 
@@ -1076,6 +1108,7 @@ En la figura :num:`#figndvi` puede verse el aspecto de una capa de NDVI para la 
 
 .. figure:: NDVI.*
 	:width: 650px
+	:align: center
 
 	(NDVI)
 
@@ -1119,6 +1152,7 @@ El fundamento en el que reside el uso de la linea de suelo y su incorporación a
 
 .. figure:: Linea_del_suelo.*
 	:width: 650px
+	:align: center
 
 	Representación gráfica de la línea de suelo, un punto correspondiente a suelo desnudo (:math:`X`) y un punto correspondiente a la presencia de cierta vegetación (:math:`X'`)
 
@@ -1272,6 +1306,7 @@ Del mismo modo, extraer la localización de cada árbol dentro de una masa arbó
 
 .. figure:: Identificacion_edificios.*
 	:width: 650px
+	:align: center
 
 	Identificación automatizada de edificios a partir de una imagen aérea (cortesía de Visual Learning Systems, Inc)
 

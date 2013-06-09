@@ -1,4 +1,4 @@
-.. _Costes:
+.. _costes:
 
 **********************************************************
 Costes, distancias y áreas de influencia
@@ -53,6 +53,7 @@ Aunque la capa con la superficie de fricción cubre toda una extensión dada, es
 
 .. figure:: Ejemplo_superficie_friccion.*
 	:width: 450px
+	:align: center
 
 	Una superficie de fricción permite calcular el coste de una ruta definida sobre ella.
 
@@ -109,6 +110,7 @@ En la figura :num:`#figcosteacumulado` podemos ver la capa de coste acumulado re
 
 .. figure:: Coste_acumulado.*
 	:width: 500px
+	:align: center
 
 	Capa de coste acumulado para tres puntos de destino y con una superficie de fricción constante. Para lograr una visualización más explícita se ha añadido un sombreado en función del propio coste.
 
@@ -122,6 +124,7 @@ Para calcular la superficie de coste acumulado necesitamos puntos de destino, co
 
 .. figure:: Coste_acumulado_area.*
 	:width: 500px
+	:align: center
 
 	Superficie de coste acumulado representando el coste mínimo a un área de destino. Las celdas en blanco indican las  celdas de destino, para las cuales el coste acumulado es nulo.
 
@@ -137,6 +140,7 @@ Para solventar en parte este inconveniente, una opción es analizar no solo esas
 
 .. figure:: Tipos_vecindad.*
 	:width: 650px
+	:align: center
 
 	Tipos de vecindad. a) de caballo, b) de reina.
 
@@ -189,6 +193,7 @@ La figura :num:`#figdistanciacauce` muestra un mapa de distancia euclídea a un 
 
 .. figure:: Distancia_cauce.*
 	:width: 650px
+	:align: center
 
 	Distancia euclídea al cauce (a). Distancia hidrológica al cauce (b).
 
@@ -217,7 +222,7 @@ Las componentes de cada variable de coste sobre los ejes :math:`x` e :math:`y` y
 
 Estas ya pueden utilizarse para obtener superficies de coste acumulado de la forma antes detallada.
 
-.. _Rutas_optimas:
+.. _rutas_optimas:
 
 Cálculo de rutas óptimas
 =====================================================
@@ -232,6 +237,7 @@ Para entender mejor la forma de llevar esto a cabo, resulta de interés represen
 
 .. figure:: Coste_acumulado_3D.*
 	:width: 600px
+	:align: center
 
 	Representación tridimensional de una capa de coste acumulado y una ruta óptima sobre esta.
 
@@ -243,7 +249,7 @@ La superficie de coste acumulado es en realidad una superficie de potencial, y e
 
 Por la propia forma en la que se construye la superficie de coste acumulado, no existen sumideros aparte de las propias celdas de destino, y siempre existe una celda de menor valor alrededor de cualquier otra, excepto en dichas celdas de destino, que son mínimos absolutos.
 
-.. _Zona_influencia_raster:
+.. _zona_influencia_raster:
 
 Zonas de influencia
 =====================================================
@@ -260,7 +266,7 @@ En las de dimensión variable, la dimensión de la zona de influencia varía seg
 
 Frente al cálculo de zonas de influencia que vimos para las capas vectoriales, la diferencia estriba en que en este caso no se trata de una operación geométrica, y de que la zona no es *exacta*, pues su forma y precisión depende de la resolución de celda.
 
-.. _Zonas_influencia_dimension_fija:
+.. _zonas_influencia_dimension_fija:
 
 Zonas de influencia de dimensión fija
 --------------------------------------------------------------
@@ -273,6 +279,7 @@ Para comenzar, la figura :num:`#figzonainfluenciaraster` muestra una comparació
 
 .. figure:: Zona_influencia_raster.*
 	:width: 750px
+	:align: center
 
 	Comparación entre a) zona de influencia en formato vectorial y b) zona de influencia en formato ráster.
 
@@ -290,6 +297,7 @@ Por otra parte, este mismo proceso lo podemos realizar utilizando otras superfic
 
 .. figure:: Zona_influencia_dist_hidro.*
 	:width: 450px
+	:align: center
 
 	Zona de influencia de un cauce basada en distancia hidrológica.
 
@@ -305,6 +313,7 @@ Este análisis puede realizarse de forma similar con datos vectoriales, pero en 
 
 .. figure:: Zona_influencia_especie.*
 	:width: 500px
+	:align: center
 
 	Zona de influencia de una especie dada su área de residencia y un coste máximo de desplazamiento.
 
@@ -317,7 +326,7 @@ Pueden calcularse también las zonas de influencia de una manera similar a la ve
 Zonas de influencia de dimensión variable
 -------------------------------------------------------------- 
 
-.. _Zonas_influencia_dimension_variable:
+.. _zonas_influencia_dimension_variable:
 
 Al realizar el cálculo de una zona de influencia de dimensión fija, establecemos un umbral de coste acumulado, a partir del cual consideramos que no existe tal influencia. Todos los elementos en el limite del área delimitada tienen el mismo valor de coste acumulado. En ocasiones, no obstante, lo interesante para definir la influencia de un elemento geográfico puede no ser el coste acumulado desde el mismo a las celdas del entorno, sino el propio coste unitario de dichas celdas, o bien otro valor asociado a las mismas, no necesariamente un coste.
 
@@ -333,6 +342,7 @@ El modelo de coste, pese a incluir la pendiente, es en esta ocasión isotrópico
 
 .. figure:: Zona_influencia_vehiculo.*
 	:width: 500px
+	:align: center
 
 	Zona de influencia (en azul) de una vía (en rojo) , suponiendo que es posible el desplazamiento desde esta siempre que la pendiente no supere el 5\%. En el fondo, mapa de pendientes. Tonalidades más oscuras indican mayor pendiente.
 
@@ -352,6 +362,7 @@ Si en el caso del vehículo teníamos un umbral fijo, ahora este umbral es varia
 
 .. figure:: Influencia_calado.*
 	:width: 650px
+	:align: center
 
 	El calado :math:`h` define la inundabilidad de las zonas circundantes al cauce, en función de la elevación de estas. En rojo, celda central del cauce. 
 
@@ -378,7 +389,7 @@ En :ref:`Densidad` suponíamos que la zona de influencia para el cálculo de den
 
 
 
-.. _Analisis_redes:
+.. _analisis_redes:
 
 Análisis de redes
 ==================
@@ -409,6 +420,7 @@ La figura :num:`#figdijkstra` muestra un ejemplo de un grafo muy sencillo y el p
 
 .. figure:: Dijkstra.*
 	:width: 700px
+	:align: center
 
 	Ejemplo de aplicación del algoritmo de Dijkstra para cálculo de rutas de mínimo coste. De izquierda a derecha, etapas sucesivas de asignación de coste por nodos (Adaptado de Wikipedia).
 
@@ -431,6 +443,7 @@ Puesto que se obtiene como resultado un árbol y este es un grafo de tipo acícl
 
 .. figure:: MST.*
 	:width: 450px
+	:align: center
 
 	Árbol mínimo de recubrimiento para un conjunto de puntos.
 
@@ -452,6 +465,7 @@ En la figura :num:`#figtsp` puede verse el circuito óptimo para el conjunto de 
 
 .. figure:: TSP.*
 	:width: 450px
+	:align: center
 
 	Solución al problema del viajante para un conjunto de puntos.
 
@@ -467,6 +481,7 @@ La figura :num:`#figbuffervectorialred` muestra una red viaria con costes asocia
 
 .. figure:: Buffer_vectorial_red.*
 	:width: 650px
+	:align: center
 
 	Zona de influencia de un punto considerando distancias sobre una red en lugar de distancia euclídea.
 

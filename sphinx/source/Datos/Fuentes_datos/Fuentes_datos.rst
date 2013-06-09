@@ -1,4 +1,4 @@
-.. _Fuentes_datos:
+.. _fuentes_datos:
 
 **********************************************************
 Fuentes principales de datos espaciales
@@ -22,7 +22,7 @@ Hoy en día, la situación es bien distinta a la de aquellos primeros tiempos, y
 
 Integrar dentro del trabajo con un SIG todas las fuentes de datos disponibles es una tarea que requiere un conocimiento detallado de estas, con objeto de poder establecer la mejor manera de combinarlas, y elegir en cada caso la mejor opción de las disponibles. A lo largo de este capítulo veremos las principales técnicas existentes para la creación de datos geograficos en un formato apto para su uso en un SIG, centrándonos en los pormenores de proceso y las particularidades de los datos generados en cada caso. Para ello, veremos todo el conjunto de fuentes de las cuales pueden provenir los datos con los que trabajamos en un SIG, desde las más modernas hasta las más antiguas, así como las metodologías que permiten convertir las formas no digitales en datos aptos para su uso en dicho SIG. El objetivo es que, al final del capítulo, se conozcan con detalle todas las formas en las que los datos geográficos pueden presentarse, se entiendan estas completamente con independencia de su origen, y se sepan utilizar y combinar todas las fuentes de datos, extrayendo lo mejor de cada una de ellas.
 
-.. _Datos_digitales_y_analogicos:
+.. _datos_digitales_y_analogicos:
 
 Datos digitales y datos analógicos
 =====================================================
@@ -87,6 +87,7 @@ Las fotografías aéreas fueron el primer producto de la teledetección, pero ho
 
 .. figure:: Elementos_teledeteccion.*
 	:width: 650px
+	:align: center
 
 	Esquema de un sistema de teledetección.
 
@@ -110,16 +111,17 @@ Es necesario conocer los conceptos fundamentales sobre la radiación y su intera
 La radiación electromagnética
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-La radiación electromagnética es una de las cuatro fuerzas fundamentales de la naturaleza\footnote{las otras tres son la gravitatoria, la interacción nuclear débil y la interacción nuclear fuerte} y deriva del campo electromagnético, el cual es ejercido por las partículas cargadas eléctricamente. Para explicar esta existen dos modelos conocidos como *modelo ondulatorio* y *modelo de partículas*. Según el primero, que será en el que profundicemos algo más, la radiación electromagnética es producto de las alteraciones en los campos eléctrico y magnético, que generan dos ondas ortogonales entre sí, correspondientes a cada uno de los campos anteriores (Figura :num:`#figradiacionelectromagnetica`).
+La radiación electromagnética es una de las cuatro fuerzas fundamentales de la naturaleza (las otras tres son la gravitatoria, la interacción nuclear débil y la interacción nuclear fuerte) y deriva del campo electromagnético, el cual es ejercido por las partículas cargadas eléctricamente. Para explicar esta existen dos modelos conocidos como *modelo ondulatorio* y *modelo de partículas*. Según el primero, que será en el que profundicemos algo más, la radiación electromagnética es producto de las alteraciones en los campos eléctrico y magnético, que generan dos ondas ortogonales entre sí, correspondientes a cada uno de los campos anteriores (Figura :num:`#figradiacionelectromagnetica`).
 
 .. _figradiacionelectromagnetica:
 
 .. figure:: Onde_electromagnetique.*
 	:width: 650px
+	:align: center
 
 	Ondas correspondientes a los campos magnético y eléctrico, ortogonales entre sí (Tomado de Wikipedia). 
 
-Estas ondas se desplazan a a la velocidad de la luz, y se pueden describir con los parámetros habituales, tales como la longitud de onda o la frecuencia\footnote{Se supone que el lector tiene cierta familiaridad con estos conceptos físicos básicos. En caso contrario, una referencia que puede encontrarse en la red es  :cite:p:`webbookOndas`}. Una mayor longitud de onda (y, por tanto una menor frecuencia) tiene asociada una mayor energía de la radiación.
+Estas ondas se desplazan a a la velocidad de la luz, y se pueden describir con los parámetros habituales, tales como la longitud de onda o la frecuencia. Una mayor longitud de onda (y, por tanto una menor frecuencia) tiene asociada una mayor energía de la radiación. Se supone que el lector tiene cierta familiaridad con estos conceptos físicos básicos. En caso contrario, una referencia que puede encontrarse en la red es  :cite:p:`webbookOndas`.
 
 La radiación electromagnética puede cubrir de forma continua todo un amplio rango de valores de longitudes de onda. Este rango se conoce como *espectro electromagnético*. Pese a la continuidad de sus valores, es habitual agruparlos en regiones, discretizando la amplitud del espectro, ya que las radiaciones en longitudes de onda similares presentan a su vez comportamientos similares en muchos sentidos. En la figura :num:`#figespectroelectromagnetico` se muestra un esquema del espectro electromágnético y sus principales regiones de interés.
 
@@ -127,6 +129,7 @@ La radiación electromagnética puede cubrir de forma continua todo un amplio ra
 
 .. figure:: Electromagnetic_spectrum-es.*
 	:width: 750px
+	:align: center
 
 	Espectro electromagnético y sus principales regiones de interés (Tomado de Wikipedia).
 
@@ -144,7 +147,7 @@ Dentro de estas regiones, son de destacar las siguientes:
 Las distintas longitudes de onda dentro de esta región son las responsables de los distintos colores que percibimos. Así, por ejemplo, el azul se corresponde con el rango entre 0.4 :math:`\mu` y 0.5 :math:`\mu`, mientras que el verde lo hace con el rango entre 0.5 :math:`\mu` y 0.6 :math:`\mu`
 * Infrarrojo cercano :math:`(0.7 \mu` - 1.3 \mu)`.
 * Infrarrojo medio  :math:`(1.3 :\mu` - 8 :\mu)`.
-* Infrarrojo lejano o térmico :math:`(8 \mu` - 14 \mu)`. Dentro de esta región se encuentran principalmente las radiaciones emitidas por los cuerpos debido a su temperatura\footnote{Esta emisión se calcula según la denominada *ley de Stefan--Boltzmann*. Puede encontrarse más al respecto en  :cite:p:`webSBoltzman`}.
+* Infrarrojo lejano o térmico :math:`(8 \mu` - 14 \mu)`. Dentro de esta región se encuentran principalmente las radiaciones emitidas por los cuerpos debido a su temperatura. Esta emisión se calcula según la denominada *ley de Stefan--Boltzmann*. Puede encontrarse más al respecto en  :cite:p:`webSBoltzman`.
 * Microondas :math:`(1 mm - 25 cm)`.
 
 
@@ -222,12 +225,13 @@ Debido al movimiento que causa las distintas franjas, los satélites con este ti
 
 .. figure:: Orbita_landsat.*
 	:width: 650px
+	:align: center
 
 	Esquema de barrido de un satélite con órbita heliosíncrona. Tomado de  :cite:p:`webLandsat`
 
 
 
-.. _Sensores:
+.. _sensores:
 
 Sensores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
@@ -247,7 +251,7 @@ Aunque el producto habitual de la teledetección son las imágenes, entendidas e
 
 Estos sensores, no obstante, operan de un modo similar a lo que ya conocemos, y se consideran igualmente dentro del ámbito de la teledetección, pues se adscriben a la definición de esta dada al principio de este apartado. Veremos igualmente ejemplos de algunos de ellos cuando veamos más adelante algunos sensores de particular relevancia, ya que tienen una gran importancia en la actualidad para la generación de cartografía variada, como por ejemplo la ya citada de elevaciones.
 
-El radar \footnote{Acrónimo de *Radio Detection and Ranging*, detección y medición a partir de ondas de radio} es la tecnología más importante dentro de este grupo. El sensor envía pulsos de radio, y posteriormente recoge estos midiendo su intensidad y pudiendo calcular también la distancia al objeto. 
+El radar (acrónimo de *Radio Detection and Ranging*, detección y medición a partir de ondas de radio} es la tecnología más importante dentro de este grupo. El sensor envía pulsos de radio, y posteriormente recoge estos midiendo su intensidad y pudiendo calcular también la distancia al objeto. 
 
 Puesto que la región de microondas en la que trabaja el radar es amplia, esta se divide a su vez en bandas. Los sensores de radar pueden trabajar con diferentes bandas de entre estas, las cuales tienen asignada una nomenclatura estandarizada. Además de esto, también puede trabajarse con diferentes polarizaciones de la señal de radio, obteniéndose resultados distintos en cada caso, lo que hace posible una mayor riqueza de resultados. 
 
@@ -261,6 +265,7 @@ Los sistemas modernos de LiDAR son capaces de proporcionar además varios retorn
 
 .. figure:: LiDARWTC.*
 	:width: 650px
+	:align: center
 
 	Modelo del World Trade Center realizado a partir de datos LiDAR tomados el día 27 de septiembre de 2001 (Fuente: NOAA/U.S. Army JPSD)
 
@@ -279,6 +284,7 @@ Los denominados sensores *de empuje* (Figura :num:`#figtipossensores`b) eliminan
 
 .. figure:: Tipos_sensores.*
 	:width: 650px
+	:align: center
 
 	Esquema de funcionamiento de un sensor de barrido (a) y uno de empuje (b)
 
@@ -292,9 +298,9 @@ Resoluciones
 Uno de los parámetros principales que definen las propiedades de un sistema de teledetección son las *resoluciones*. Estas establecen el nivel de detalle de los productos que el sistema genera, determinando este en las distintas magnitudes en las que el sistema opera. Las resoluciones dependen del sensor y de la plataforma como binomio operativo, y de las características propias de ambos. Distinguimos cuatro resoluciones, a saber:
 
 
-* Resolución espacial. Indica la dimensión del objeto más pequeño que puede distinguirse en la imagen. En líneas generales es el equivalente al tamaño de píxel\footnote{Desde un punto de vista formal, no ha de ser necesariamente así, ya que la imagen puede tomarse originalmente con unas características y después, mediante operaciones matemáticas (veremos estas en el capítulo :ref:`Algebra_de_mapas`), modificar el tamaño de píxel. Aunque este tamaño sea menor al original, los objetos de menor dimensión que podrán discernirse en esa imagen no serán iguales a ese tamaño, sino mayores.} es decir, a la dimensión real que un píxel de la imagen tiene sobre el terreno.
+* Resolución espacial. Indica la dimensión del objeto más pequeño que puede distinguirse en la imagen. En líneas generales es el equivalente al tamaño de píxel, es decir, a la dimensión real que un píxel de la imagen tiene sobre el terreno. 
 
- La resolución espacial está en función de la capacidad resolutiva del sensor y las características de la plataforma tales como la altura a la que se sitúa. Asimismo, la resolución espacial esta relacionada con la superficie que cada imagen cubre sobre el terreno. El concepto de *Campo Instantáneo de Visión*\footnote{Instantaneous Field of View (IFOV)}  indica el ángulo de visión que abarca el sensor, y se utiliza habitualmente es este sentido. El *Campo Instantáneo de Visión en Tierra*\footnote{Ground Instantaneous Field of Vision (GIFOV)} expresa esta misma idea pero en unidades de longitud sobre el terreno, y es función del IFOV y la altura a la que se encuentre el sensor.
+ La resolución espacial está en función de la capacidad resolutiva del sensor y las características de la plataforma tales como la altura a la que se sitúa. Asimismo, la resolución espacial esta relacionada con la superficie que cada imagen cubre sobre el terreno. El concepto de *Campo Instantáneo de Visión* (*Instantaneous Field of View*, IFOV) indica el ángulo de visión que abarca el sensor, y se utiliza habitualmente es este sentido. El *Campo Instantáneo de Visión en Tierra* (*Ground Instantaneous Field of Vision*, GIFOV) expresa esta misma idea pero en unidades de longitud sobre el terreno, y es función del IFOV y la altura a la que se encuentre el sensor.
 
  En el diseño de la órbita de un satélite debe tenerse en cuenta el campo de visión del sensor para optimizar el ciclo de toma de imágenes, así como para evitar que las distintas franjas que este cubre queden sin solaparse y existan zonas de las que no se tomen imágenes.
 
@@ -308,7 +314,7 @@ Uno de los parámetros principales que definen las propiedades de un sistema de 
 
 * Resolución radiométrica. Para cada una de las bandas que produce un sensor (asociada esta a una determinada región del espectro según su resolución espectral), el dato recogido, que constituye su Nivel Digital, indica la intensidad correspondiente a esa región. El nivel de detalle con el que puede medirse esa intensidad es el que define la resolución radiométrica del sensor.
 
- El número de Niveles Digitales distintos que pueden recogerse es la medida de la resolución espacial, y habitualmente es una potencia de dos (de la forma :math:`2^n`). Tanto las imágenes en blanco y negro como las imágenes en color trabajan con 256 (:math:`2^8`) niveles, ya que este es el valor más cercano al número de diferentes intensidades que el ojo humano puede diferenciar\footnote{En el ámbito del tratamiento de imágenes esto se conoce como *profundidad de color*. Una mayor profundidad de color indica mayor número de colores posibles. Una pantalla normal de ordenador puede mostrar un total de 16.7 millones de colores distintos , que corresponden a las combinaciones entre los 256 posibles niveles de cada una de las tres bandas (:math:`256 ^3 = 16,777,216`)}. No obstante, los sensores de teledetección pueden tener una mayor resolución radiométrica (hasta 1024 o 2048 niveles), que si bien no se aprecia en la representación visual, sí que supone una diferencia en el tratamiento analítico de esos Niveles Digitales.
+ El número de Niveles Digitales distintos que pueden recogerse es la medida de la resolución espacial, y habitualmente es una potencia de dos (de la forma :math:`2^n`). Tanto las imágenes en blanco y negro como las imágenes en color trabajan con 256 (:math:`2^8`) niveles, ya que este es el valor más cercano al número de diferentes intensidades que el ojo humano puede diferenciar. En el ámbito del tratamiento de imágenes esto se conoce como *profundidad de color*. Una mayor profundidad de color indica mayor número de colores posibles. Una pantalla normal de ordenador puede mostrar un total de 16.7 millones de colores distintos , que corresponden a las combinaciones entre los 256 posibles niveles de cada una de las tres bandas (:math:`256 ^3 = 16,777,216`). No obstante, los sensores de teledetección pueden tener una mayor resolución radiométrica (hasta 1024 o 2048 niveles), que si bien no se aprecia en la representación visual, sí que supone una diferencia en el tratamiento analítico de esos Niveles Digitales.
 
  En la figura :num:`#figresolucionradiometrica` puede apreciarse la diferencia entre dos imágenes, cada una de las cuales tiene una resolución radiométrica distinta.
 
@@ -316,6 +322,7 @@ Uno de los parámetros principales que definen las propiedades de un sistema de 
 
 .. figure:: Resolucion_radiometrica.*
 	:width: 650px
+	:align: center
 
 	Dos imágenes con distinta resolución radiométrica (de izquierda a derecha, 8 y 256 niveles, respectivamente).
 
@@ -342,7 +349,7 @@ La utilización simultánea de datos de varios sensores en un proyecto es una al
 
 Además de lo anterior, un único sensor montado a bordo de un satélite puede operar en varios *modos* distintos. Es habitual que un sensor multibanda pueda registrar también imágenes de una sola banda, recogiendo en ella la intensidad de la radiación correspondiente a todo el espectro visible, de tal forma que genere una representación visual real. Estas se suelen representar habitualmente en escala de grises, resultando una imagen en blanco y negro.
 
-Las imágenes de este tipo se conocen como *pancromáticas*\footnote{El término *pancromático* deriva de la fotografía clásica, conociéndose así al tipo de película sensible a todas las longitudes de onda del visible. Por similitud de conceptos, se emplea el término también para hacer referencia a las imágenes digitales monobanda generadas por sensores según lo comentado anteriormente}, y suelen tener mayor resolución espacial, por lo que pueden emplearse para la fusión de imágenes señalada anteriormente. Así, un mismo sensor provee todos los datos necesarios para llevar a cabo ese proceso, tanto la imagen de gran resolución espacial (la pancromática) como la de gran resolución espectral (la imagen multibanda).
+Las imágenes de este tipo se conocen como *pancromáticas*, y suelen tener mayor resolución espacial, por lo que pueden emplearse para la fusión de imágenes señalada anteriormente. Así, un mismo sensor provee todos los datos necesarios para llevar a cabo ese proceso, tanto la imagen de gran resolución espacial (la pancromática) como la de gran resolución espectral (la imagen multibanda). El término *pancromático* deriva de la fotografía clásica, conociéndose así al tipo de película sensible a todas las longitudes de onda del visible. Por similitud de conceptos, se emplea el término también para hacer referencia a las imágenes digitales monobanda generadas por sensores según lo comentado anteriormente.
 
 
 Principales sensores y productos
@@ -355,29 +362,29 @@ A continuación se relacionan algunos de los sistemas de teledetección principa
 
 * LANDSAT  :cite:p:`webLandsat`. Se trata de un programa completo de adquisición de datos mediante teledetección, que ha lanzado hasta la fecha un total de siete satélites entre 1972 y 1999. Por ello, el volumen de datos recogido es enorme, y lo convierte en una de las fuentes de datos más ricas  de entre las existentes en la actualidad. 
 
- El último satélite, LANDSAT 7, tiene una órbita heliosíncrona y una resolución temporal de 16 días. A bordo de él se monta el sensor ETM+\footnote{Enhanced Thematic Mapper Plus}, que permite la obtención de imágenes pancromáticas con resolución de 15 metros, e imagenes multibanda con resolución de 60 metros. El sensor recoge un total de 8 bandas, y el tamaño de la imagen es de 170 :math:`\times` 183 km.
+ El último satélite, LANDSAT 7, tiene una órbita heliosíncrona y una resolución temporal de 16 días. A bordo de él se monta el sensor ETM+ (*Enhanced Thematic Mapper Plus*), que permite la obtención de imágenes pancromáticas con resolución de 15 metros, e imagenes multibanda con resolución de 60 metros. El sensor recoge un total de 8 bandas, y el tamaño de la imagen es de 170 :math:`\times` 183 km.
 
- Los sensores TM\footnote{Thematic Mapper} y MSS \footnote{Multispectral Scanner} se montan a bordo del satélite LANDSAT 5, todavía en funcionamiento y con una resolución temporal de 16 días. El sensor TM ofrece imágenes multibanda de 7 bandas con resolución de 30 metros, excepto en la banda del infrarrojo térmico, donde la resolución es de 120 metros. Las imágenes tienen un tamaño de 185 :math:`\times` 172 km.
+ Los sensores TM (*Thematic Mapper*) y MSS (*Multispectral Scanner*) se montan a bordo del satélite LANDSAT 5, todavía en funcionamiento y con una resolución temporal de 16 días. El sensor TM ofrece imágenes multibanda de 7 bandas con resolución de 30 metros, excepto en la banda del infrarrojo térmico, donde la resolución es de 120 metros. Las imágenes tienen un tamaño de 185 :math:`\times` 172 km.
 
 * IKONOS  :cite:p:`webIkonos`. Este satélite, lanzado en 1999, monta un sensor con resolución de 1 metro para imágenes pancromáticas y 4 metros para imágenes multibanda (4 bandas). Las imágenes cubren una área de 11 :math:`\times` 11 km y el satélite tiene una resolución temporal de entre 3 y 5 días.
 
-* SPOT\footnote{Satellite Pour l' Observation de la Terre}  :cite:p:`webSPOT`. Un conjunto de satélites lanzados inicialmente por la agencia espacial francesa, con especial énfasis en la recogida de información relativa a variables ambientales. De los cinco puestos en órbita, dos siguen actualmente en funcionamiento. El último de ellos, lanzado en 2002, monta el sensor HRG con capacidad de producir imágenes pancromáticas con resolución entre 2,5 y 5 metros, e imágenes multibanda con resolución de 10 metros. El periodo de revisita es de entre 1 y 4 días.
-Es de destacar que el sensor permite inclinaciones de hasta 27:math:`^\circ` respecto al nadir hacia ambos lados, por lo que puede cubrir una banda más ancha y tomar imágenes fuera del área determinada en cada instante por la órbita.
+* SPOT (*Satellite Pour l' Observation de la Terre*)  :cite:p:`webSPOT`. Un conjunto de satélites lanzados inicialmente por la agencia espacial francesa, con especial énfasis en la recogida de información relativa a variables ambientales. De los cinco puestos en órbita, dos siguen actualmente en funcionamiento. El último de ellos, lanzado en 2002, monta el sensor HRG con capacidad de producir imágenes pancromáticas con resolución entre 2,5 y 5 metros, e imágenes multibanda con resolución de 10 metros. El periodo de revisita es de entre 1 y 4 días.
+Es de destacar que el sensor permite inclinaciones de hasta 27 :math:`^\circ` respecto al nadir hacia ambos lados, por lo que puede cubrir una banda más ancha y tomar imágenes fuera del área determinada en cada instante por la órbita.
 
 * QuickBird.  :cite:p:`webQuickbird`. Ofrece imágenes en pancromático y multibanda (azul, verde, rojo e infrarrojo cercano). Las primeras tiene una resolución de 60 cm y las multibanda de 2,4 metros, aunque combinando las dos ofrece imágenes en color con 60 cm de resolución. 
 La órbita del satélite es heliosíncrona y la resolución temporal varía entre los 3 y 7 días. Cada imagen cubre una superficie de 16,5 :math:`\times` 16,5 km.
 
-* Aqua y Terra. Dos satélites lanzados por la NASA dentro de un proyecto de ámbito internacional para la observación de la Tierra. Cada uno de ellos monta una serie de diversos sensores, que recogen información relativa al ciclo hidrológico (en el caso del Aqua) y la superficie terrestre (en el caso del Terra). Entre estos sensores cabe destacar el MODIS, a bordo de ambos, o el ASTER, a bordo del satélite Terra. ASTER \footnote{Advanced Spaceborne Thermal Emission and Reflection Radiometer} recoge información en 14 bandas distintas, con una resolución entre 15 y 90 metros, mientras que MODIS\footnote{Moderate Resolution Imaging Spectroradiometer} es un satélite de menor resolución espacial (250, 500 o 1000 metros según la banda ), 36 bandas y una resolucion temporal de 1 a 2 días. 
+* Aqua y Terra. Dos satélites lanzados por la NASA dentro de un proyecto de ámbito internacional para la observación de la Tierra. Cada uno de ellos monta una serie de diversos sensores, que recogen información relativa al ciclo hidrológico (en el caso del Aqua) y la superficie terrestre (en el caso del Terra). Entre estos sensores cabe destacar el MODIS, a bordo de ambos, o el ASTER, a bordo del satélite Terra. ASTER (*Advanced Spaceborne Thermal Emission and Reflection Radiometer*) recoge información en 14 bandas distintas, con una resolución entre 15 y 90 metros, mientras que MODIS (*Moderate Resolution Imaging Spectroradiometer*) es un satélite de menor resolución espacial (250, 500 o 1000 metros según la banda ), 36 bandas y una resolucion temporal de 1 a 2 días. 
 
  Además de los datos directos de los sensores, se proporcionan de forma gratuita numerosos productos derivados, lo que lo convierte en una fuente de datos de primer orden para un gran número de aplicaciones, especialmente las relacionadas con el estudio del medio, la vegetación, etc. En la dirección Web  :cite:p:`webModisData` pueden obtenerse tanto datos originales como productos derivados.
 
-* NOAA--AVHRR\footnote{Advanced Very High Resolution Radiometer}. Se encuentra principalmente enfocado al estudio de los océanos, aunque sus datos pueden aplicarse en muchos más estudios. El sensor tiene una resolución de 1,1 km, y proporciona imágenes de 5 bandas en las regiones del infrarrojo y el visible. La resolución temporal es de medio día, produciendo una imagen nocturna y otra diurna.
+* NOAA--AVHRR (*Advanced Very High Resolution Radiometer*). Se encuentra principalmente enfocado al estudio de los océanos, aunque sus datos pueden aplicarse en muchos más estudios. El sensor tiene una resolución de 1,1 km, y proporciona imágenes de 5 bandas en las regiones del infrarrojo y el visible. La resolución temporal es de medio día, produciendo una imagen nocturna y otra diurna.
 
 * RADARSAT. Desarrollado por la Agencia Espacial Canadiense, monta un radar de apertura sintética (SAR), y su principal propósito es el control de las variaciones ambientales y de los recursos naturales. Más información en  :cite:p:`webRADARSAT`.
 
 * ERS--1 y ERS--2. Desarrollados por la Agencia Espacial Europea. Al igual que el anterior, ambos están pensados para la observación medioambiental, y montan tanto sensores activos como pasivos. Más información en  :cite:p:`webERS2`.
 
-* SRTM. La misión SRTM\footnote{Shuttle Radar Topography Mission} es un proyecto internacional de gran envergadura destinado a la creación de una cobertura de elevaciones a nivel mundial. Utilizando sensores basados en radar montados sobre una lanzadera espacial, se realizó un vuelo global de la superficie terrestre a lo largo de 11 días, recogiendo el relieve de todas las zonas situadas entre los 56 grados sur y los 60 grados norte de latitud. La resolución de los datos obtenidos es de un segundo de arco (aproximadamente 30 metros), aunque solo se encuentran disponibles para Estados Unidos, siendo de unos 90 metros en el resto de zonas. Los datos SRTM se pueden descargar gratuitamente en  :cite:p:`webSRTMDownload`. Más información sobre el proyecto puede encontrarse en  :cite:p:`webSRTM`. 
+* SRTM. La misión SRTM (*Shuttle Radar Topography Mission*) es un proyecto internacional de gran envergadura destinado a la creación de una cobertura de elevaciones a nivel mundial. Utilizando sensores basados en radar montados sobre una lanzadera espacial, se realizó un vuelo global de la superficie terrestre a lo largo de 11 días, recogiendo el relieve de todas las zonas situadas entre los 56 grados sur y los 60 grados norte de latitud. La resolución de los datos obtenidos es de un segundo de arco (aproximadamente 30 metros), aunque solo se encuentran disponibles para Estados Unidos, siendo de unos 90 metros en el resto de zonas. Los datos SRTM se pueden descargar gratuitamente en  :cite:p:`webSRTMDownload`. Más información sobre el proyecto puede encontrarse en  :cite:p:`webSRTM`. 
 
 
 Cartografía impresa. Digitalización
@@ -416,7 +423,7 @@ La digitalización manual es mucho más costosa y su resultado es muy variable e
 
 Asimismo, un proceso automático, en caso de proceder de forma correcta, tendrá una exactitud absoluta y *clonará* con absoluta fidelidad los elementos del mapa impreso. Esto resulta una ventaja a la hora de obtener una gran precisión, pero impide que en el proceso de digitalización se puedan corregir errores existentes en el documento original. Un operario puede advertir esos errores y corregirlos a medida que digitaliza. Un sistema automático, por el contrario, no puede.
  
-.. _Digitalizacion_manual:
+.. _digitalizacion_manual:
 
 Digitalización manual
 --------------------------------------------------------------
@@ -446,6 +453,7 @@ La forma tradicional de proceder a la digitalización manual de entidades es uti
 
 .. figure:: Tableta_digitalizadora.*
 	:width: 650px
+	:align: center
 
 	Esquema de una tableta digitalizadora y los elementos del proceso de digitalización.
 
@@ -496,6 +504,7 @@ En la figura :num:`#figdigitalizacionenpantalla` puede verse un ejemplo de la di
 
 .. figure:: Digitalizacion_en_pantalla.*
 	:width: 650px
+	:align: center
 
 	Digitalización en pantalla. En rojo, polígono ya digitalizado. Las lineas rojas indican un nuevo polígono, actualmente en edición
 
@@ -518,6 +527,7 @@ Frente a dicho trabajo con tableta digitalizadora, la digitalización en pantall
 
 .. figure:: Correccion_digitalizacion.*
 	:width: 650px
+	:align: center
 
 	Corrección de entidades con las funciones de edición de un SIG. El polígono de la derecha se encuentra en edición, siendo modificado uno de sus vértices.
 
@@ -531,7 +541,7 @@ La digitalización automática limita el trabajo del operario, ya que este no es
 
 Este segundo caso, no obstante, requiere una cartografía en condiciones especiales, no siendo adecuada para todo tipo de mapas. En caso de no presentarse esas condiciones, los resultados de la digitalización no son óptimos, y requieren posteriormente un gran trabajo de corrección y supervisión.
 
-.. _Escaneo:
+.. _escaneo:
 
 Escaneo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -557,6 +567,7 @@ Existen tres tipos principales de escáneres:
 
 .. figure:: Escaner_sobremesa.*
 	:width: 650px
+	:align: center
 
 	Escáner de sobremesa (tomado de Wikipedia)
 
@@ -565,6 +576,7 @@ Existen tres tipos principales de escáneres:
 
 .. figure:: Escaner_tambor.*
 	:width: 650px
+	:align: center
 
 	Escáner de tambor (fotografía: Stefan Kuehn)
 
@@ -643,7 +655,7 @@ Para ello, dispone de sensores luminosos y de láser que buscan las líneas en l
 
 Al igual que con la digitalización automática, las condiciones de la imagen de partida son básicas para obtener resultados de calidad. En un mapa, por ejemplo, las líneas habitualmente se ven interrumpidas por etiquetas (por ejemplo, para indicar la altura de una curva de nivel), o bien se dibujan en trazo punteado, o bien puede aparecer alguna mancha sobre ellas. Este tipo de elementos dificultan o incluso imposibilitan el correcto funcionamiento del dispositivo, ya que este no puede seguir las líneas adecuadamente, obteniéndose resultados de poca calidad.
 
-.. _Geocodificacion:
+.. _geocodificacion:
 
 Digitalización o creación de capas a partir de coordenadas. Geocodificación
 ------------------------------------------------------------------------------
@@ -677,6 +689,7 @@ La geocodificación de estos elementos implica establecer una coordenada geográ
 
 .. figure:: Geocodificacion.*
 	:width: 450px
+	:align: center
 
 	Interpolación de direcciones. En azul, direcciones conocidas. En rojo, direcciones interpoladas.
 
@@ -690,7 +703,7 @@ Otro aspecto a tener en cuenta es que el edificio señalado con una dirección d
 
 Por todo ello, la interpolación de direcciones permite una aproximación válida para muchos usos, pero en aquellos casos en los que se requiera más precisión no pueden emplearse estas direcciones con total seguridad, ya que la exactitud de las coordenadas asociadas por el proceso de interpolación puede variar notablemente según sea la propia configuración de los distintos edificios.
 
-.. _Fotogrametria:
+.. _fotogrametria:
 
 Fotogrametría
 --------------------------------------------------------------
@@ -733,6 +746,7 @@ Cuando se emplean imágenes de satélite, los pares se pueden obtener con aquell
 
 .. figure:: Par_estereo_satelite.*
 	:width: 650px
+	:align: center
 
 	Toma de pares de imágenes estereosópicas desde un satélite, mediante variación del ángulo de visión.
 
@@ -745,6 +759,7 @@ Las formas de conseguir que el observador perciba la profundidad de la escena a 
 
 .. figure:: Estacion_fotogrametrica_digital.*
 	:width: 650px
+	:align: center
 
 	Estación fotogramétrica digital.
 
@@ -758,7 +773,7 @@ Por último el software que implementan, y que es el encargado de representar la
 
 Para el lector interesado en saber más acerca de los distintos elementos de la fotogrametría, obras como   :cite:p:`Lerma2002UPV` o  :cite:p:`Brito2002IME` son recomendables, esta última disponible de forma libre. En la dirección Web  :cite:p:`webFotogrametriaUNEX` puede encontrarse otra excelente referencia libre en dos tomos sobre fotogrametría analítica y digital.
 
-.. _Condiciones_digitalizacion:
+.. _condiciones_digitalizacion:
 
 
 Calidad de la digitalización
@@ -777,6 +792,7 @@ Dentro de los errores que aparecen como consecuencia de la digitalización en s�
 
 .. figure:: Imprecisiones_digitalizacion.*
 	:width: 650px
+	:align: center
 
 	Errores derivados del proceso de digitalización. a) Versión correcta, con nodos coincidentes. b) y c) Versiones con errores que causan una falsa desconexión entre las líneas.
 
@@ -791,6 +807,7 @@ De este modo, polígonos adyacentes o lineas que se cortan en un punto dado lo h
 
 .. figure:: Snapping.*
 	:width: 550px
+	:align: center
 
 	Ajuste automático mediante tolerancia(*snapping*). El nodo azul representa el nodo en edición. La tolerancia de enlace queda marcada por el circulo punteado. Puesto que el nodo rojo de la línea preexistente se encuentra dentro de esa tolerancia, al añadir el nuevo nodo (azul), este automáticamente se situará en las coordenadas del nodo rojo, garantizándose así la coincidencia.
 
@@ -810,18 +827,18 @@ La digitalización de entidades en caso de querer recoger la topología de las m
 
 Todos aspectos relativos a la calidad de datos, entre los cuales se incluyen las aspectos relativos a los errores del proceso de digitalización, se tratan con mayor profundidad en el capítulo :ref:`Calidad_datos`.
 
-.. _GPS:
+.. _gps:
 
 GPS
 =====================================================
 
 
 
-Uno de los hitos en la aparición de nuevas fuentes de datos geográficos es la aparición de los *Sistemas Globales de Navegación por Satélite* (GNSS)\footnote{*Global Navigation Satellite System*}, que permiten la obtención de coordenadas geográficas de un modo inmediato, con las consecuencias que esto tiene para su uso en actividades como la elaboración de cartografía.
+Uno de los hitos en la aparición de nuevas fuentes de datos geográficos es la aparición de los *Sistemas Globales de Navegación por Satélite* (*Global Navigation Satellite System*, GNSS), que permiten la obtención de coordenadas geográficas de un modo inmediato, con las consecuencias que esto tiene para su uso en actividades como la elaboración de cartografía.
 
 En esencia, un GNSS es un sistema que permite conocer en todo momento y en cualquier punto del globo la localización exacta de dicho punto con un margen de error del orden de unos pocos metros o menos. Para ello, se basan en el envío de señales entre un dispositivo situado en el punto concreto y una red de satélites, pudiendo establecerse la posición exacta mediante las características de dicha transmisión.
 
-El ejemplo más extendido de un GNSS es el Sistema de Posicionamiento Global (Global Positioning System, o GPS)\footnote{El nombre completo del sistema es NAVSTAR--GPS (NAVigation SysTem And Ranging - Global Position System)}, originalmente puesto en funcionamiento por el Departamento de Defensa de los Estados Unidos. Actualmente, este es el único GNSS completamente operativo, aunque existen otros tales como el GLONASS ruso, el COMPASS chino o el *Galileo* europeo, cuyo funcionamiento completo está previsto a corto plazo. 
+El ejemplo más extendido de un GNSS es el Sistema de Posicionamiento Global (Global Positioning System, o GPS), originalmente puesto en funcionamiento por el Departamento de Defensa de los Estados Unidos. Actualmente, este es el único GNSS completamente operativo, aunque existen otros tales como el GLONASS ruso, el COMPASS chino o el *Galileo* europeo, cuyo funcionamiento completo está previsto a corto plazo. 
 
 Fundamentos del sistema GPS
 --------------------------------------------------------------
@@ -861,12 +878,13 @@ Un número mayor de satélites (cuatro al menos) es necesario, no obstante, para
 
 Los receptores actuales están preparados para trabajar con un número máximo de satélites habitualmente igual a 12, por lo que en todas circunstancias el receptor trata de localizar siempre el mayor número posible de satélites con objeto de lograr una mayor precisión.
 
-El diseño de la red de satélites está pensado para garantizar que en cualquier punto de la superficie terrestre y en cualquier momento, un receptor puede localizar el número necesario de satélites para obtener con exactitud su precisión. La localización en la que se disponen los satélites con los que se establece comunicación no es irrelevante, ya que condiciona la precisión del posicionamiento, afectando a lo que se conoce como *dilución de la precisión* (DOP\footnote{Dilution of Precision}). Si los ángulos de los satélites son grandes, la precisión que se obtiene es mayor que si estos son menores (Figura :num:`#figdop`).
+El diseño de la red de satélites está pensado para garantizar que en cualquier punto de la superficie terrestre y en cualquier momento, un receptor puede localizar el número necesario de satélites para obtener con exactitud su precisión. La localización en la que se disponen los satélites con los que se establece comunicación no es irrelevante, ya que condiciona la precisión del posicionamiento, afectando a lo que se conoce como *dilución de la precisión* (*Dilution of Precision*, DOP). Si los ángulos de los satélites son grandes, la precisión que se obtiene es mayor que si estos son menores (Figura :num:`#figdop`).
 
 .. _figdop:
 
 .. figure:: DOP.*
 	:width: 650px
+	:align: center
 
 	Dilución de la precisión. La geometría de los satélites en el ejemplo a) da una mayor precisión en el cálculo de la posición del receptor que la del ejemplo b).
 
@@ -899,6 +917,7 @@ La figura :num:`#figdgps` muestra un esquema del funcionamiento del GPS diferenc
 
 .. figure:: DGPS.*
 	:width: 650px
+	:align: center
 
 	Esquema de funcionamiento del GPS diferencial
 
@@ -941,6 +960,7 @@ Por último, y teniendo en cuenta que el sistema GPS mide las coordenadas :math:
 
 .. figure:: gps.*
 	:width: 650px
+	:align: center
 
 	Receptor GPS de bajo coste para uso general (a) y receptor GPS de alta precisión con antena externa (b)
 
@@ -985,7 +1005,7 @@ La diferencia principal entre estas técnicas es el tiempo necesario para la rec
 
  Muchos de estos procedimientos vienen definidos por el equipo a utilizar, y los tiempos de paradas en cada punto medido, así como otros aspectos, son recomendados por el propio fabricante. La forma más correcta de llevar a cabo una toma de datos en campo, en este caso, es seguir las indicaciones concretas del fabricante de para cada producto.
 
- Un caso particular dentro de los métodos cinemáticos es el *cinemático en tiempo real* (RTK)\footnote{Real Time Kinematic}, en el que, a diferencia de los anteriores, las correcciones necesarias se efectúan en tiempo real y no requieren postproceso. Se trata de la técnica más actual, y proporciona al operario mediciones exactas de su posición de forma instantánea, con las ventajas que ello conlleva. Las mediciones son más precisas, ya que el operario que las toma conoce el valor recogido en el mismo momento de hacer la medición, y puede de esa forma realizar una comprobación en el acto. Información más detallada sobre esta técnica puede encontrarse en  :cite:p:`Rizos1998BCG`.
+ Un caso particular dentro de los métodos cinemáticos es el *cinemático en tiempo real* (*Real Time Kinematic*, RTK}, en el que, a diferencia de los anteriores, las correcciones necesarias se efectúan en tiempo real y no requieren postproceso. Se trata de la técnica más actual, y proporciona al operario mediciones exactas de su posición de forma instantánea, con las ventajas que ello conlleva. Las mediciones son más precisas, ya que el operario que las toma conoce el valor recogido en el mismo momento de hacer la medición, y puede de esa forma realizar una comprobación en el acto. Información más detallada sobre esta técnica puede encontrarse en  :cite:p:`Rizos1998BCG`.
 
 
 Para profundizar más al respecto, en  :cite:p:`Asenjo1997UPV` puede encontrarse información sobre la realización de levantamientos con GPS, así como en  :cite:p:`GPSUSArmy`.
@@ -1036,7 +1056,7 @@ El volumen de trabajo que se requiere una vez que los datos han sido recogidos d
 Para el lector interesado, una referencia completa sobre el uso de GPS de cara a la integración de los datos en un SIG es  :cite:p:`Steede2000ESRI`.  En el ya mencionado apartado :ref:`SIG_Moviles` veremos con detalle la tecnología de los SIG móviles, un ámbito en el que SIG y GPS se unen para conformar herramientas conjuntas. 
 
 
-.. _VGI:
+.. _vgi:
 
 Información Geográfica Voluntaria
 =====================================================
@@ -1083,14 +1103,14 @@ A modo de resumen, he aquí una lista de metodologías a partir de las cuales pu
 * Digitalización de curvas de nivel. En ocasiones la cartografía de elevaciones ya existe, aunque no en el formato adecuado para su empleo en un SIG. Ya conocemos los métodos de digitalización de entidades, tanto manuales como automáticos, y ya sea en pantalla o en equipo especializado, y mediante ellos podemos digitalizar las curvas de nivel, obteniendo una capa de líneas con la información altitudinal que contiene un mapa topográfico habitual.
 * Estereografía. A partir de pares estereoscópicos, y con el concurso de una estación fotogramétrica digital pueden delinearse líneas o puntos de una elevación dada, digitalizando así la información altimétrica. El procedimiento es similar a la simple digitalización de curvas de nivel, solo que en este caso estas no están presentes explícitamente en las imágenes de partida, y se infieren a partir de la visualización tridimensional de las mismas.
 * Interferometría. La interferometría es una técnica cuyos fundamentos son en cierta medida similares a los de la estereografía, pues se basan en la información recogida de un punto concreto desde dos puntos distintos. Si en el caso de emplear simples imágenes esto permitía crear una imagen tridimensional, en el caso de la interferometría el estudio de las diferencias de fases entre las ondas recibidas en dos puntos distintos permite el cálculo de distancias. Se trata, por tanto, de un proceso automatizado, que requiere menos intervención que en el caso de la restitución fotogramétrica.
- Un uso muy habitual de esta técnica es con los denominados *Radares de Apertura Sintética*\footnote{Synthetic Aperture Radar (SAR)}, utilizado por ejemplo en el caso de la misión SRTM, que reseñamos anteriormente como producto importante. La medición desde dos puntos puede hacerse con dos pasadas de satélite (caso por ejemplo del ERS) o bien en una sola si la plataforma dispone de dos receptores separados una cierta distancia (caso del SRTM). En  :cite:p:`SARInterferometry` puede encontrarse una descripción detallada de este tipo de técnicas y las etapas que comprenden.
+ Un uso muy habitual de esta técnica es con los denominados *Radares de Apertura Sintética* (*Synthetic Aperture Radar*, SAR), utilizado por ejemplo en el caso de la misión SRTM, que reseñamos anteriormente como producto importante. La medición desde dos puntos puede hacerse con dos pasadas de satélite (caso por ejemplo del ERS) o bien en una sola si la plataforma dispone de dos receptores separados una cierta distancia (caso del SRTM). En  :cite:p:`SARInterferometry` puede encontrarse una descripción detallada de este tipo de técnicas y las etapas que comprenden.
 * LiDAR. La técnica más avanzada en la actualidad es el uso de aparatos de altimetría basados en láser, como el LiDAR, que ya hemos visto en este mismo capítulo. El LiDAR ofrece posibilidades muy interesantes tales como la obtención de MDE y MDS (Modelo Digital de Superficie) por separado. 
  El resultado de un trabajo con LiDAR es una nube de puntos, normalmente en un número muy elevado debido a la precisión del instrumento, la cual puede emplearse para crear otro tipo de capas, tales como capas ráster. El nivel de postproceso que se requiere para la obtención final de una capa es mucho menor que con otras técnicas.
 
 
 A la hora de plantear un proyecto SIG, debe elegirse entre estas fuentes, tanto si se desea adquirir la cartografía ya elaborada como si se desea crearla a partir de otras fuentes. La variedad de opciones existentes es grande, y cada una de ellas tiene sus características peculiares. Para saber más al respecto, algunas referencias donde puede encontrarse una comparación entre las metodologías anteriores son  :cite:p:`Nikolakopoulos2006IJRS`,  :cite:p:`Mercer1999ISPRS` y  :cite:p:`Mercer2001PW`.
 
-.. _Formatos_archivo:
+.. _formatos_archivo:
 
 Formatos de archivo
 =====================================================
@@ -1173,6 +1193,7 @@ En la imagen :num:`#figcompresionconperdidas` puede verse el efecto de la utiliz
 
 .. figure:: Compresion_con_perdidas.*
 	:width: 650px
+	:align: center
 
 	Efectos de la utilización de algoritmos de compresión con pérdidas. a) Imagen original. b) Imagen almacenada mediante compresión con pérdidas. c) Imagen tras diez procesos de lectura y almacenamiento en un formato de archivo con compresión con pérdidas. El efecto de la degradación sucesiva que la imagen sufre es claramente apreciable.
 
@@ -1218,7 +1239,7 @@ Algunos formatos específicos para imágenes SIG tales como imágenes de satéli
 Por último, entre los formatos para datos ráster (no imágenes) más comunes destacar el siguiente:
 
 
-* ArcInfo ASCII (asc). Un formato en texto plano ASCII\footnote{*American Standard Code for Information Interchange*. Un esquema de codificación de caracteres ampliamente utilizado.}. Únicamente soporta una única banda, y permite almacenar el valor a considerar como valor de sin datos.
+* ArcInfo ASCII (asc). Un formato en texto plano ASCII (*American Standard Code for Information Interchange*. Un esquema de codificación de caracteres ampliamente utilizado). Únicamente soporta una única banda, y permite almacenar el valor a considerar como valor de sin datos.
 
 
 
