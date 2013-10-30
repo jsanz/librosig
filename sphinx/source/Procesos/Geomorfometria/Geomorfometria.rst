@@ -399,7 +399,7 @@ El mapa de orientaciones para la zona del juego de datos de referencia se muestr
 
 
 
-Es de reseñar que la orientación es un parámetro circular, ya que :math:`a` y :math:`a+360`{:math:`^\circ`} indican la misma dirección. Por esta razón, debe tenerse cuidado al realizar análisis estadísticos sobre los valores de orientación. Una posible solución que elimina este hecho es trabajar con las proyecciones   :math:`\cos(a)` y :math:`\sin(a)`  :cite:p:`King1999Geoderma` (ver :ref:`Estadisticas_lineas`). También a la hora de crear una representación gráfica de un mapa de orientaciones debe tenerse en cuenta la naturaleza circular del parámetros. Nótese como en la figura :num:`#figmapaorientacion` la escala de colores también es circular, de tal modo que el valor máximo (360) tiene asociado el mismo color que el mínimo (0), ya que en realidad representan una misma orientación.\par
+Es de reseñar que la orientación es un parámetro circular, ya que :math:`a` y :math:`a+360\circ` indican la misma dirección. Por esta razón, debe tenerse cuidado al realizar análisis estadísticos sobre los valores de orientación. Una posible solución que elimina este hecho es trabajar con las proyecciones   :math:`\cos(a)` y :math:`\sin(a)`  :cite:p:`King1999Geoderma` (ver :ref:`Estadisticas_lineas`). También a la hora de crear una representación gráfica de un mapa de orientaciones debe tenerse en cuenta la naturaleza circular del parámetros. Nótese como en la figura :num:`#figmapaorientacion` la escala de colores también es circular, de tal modo que el valor máximo (360) tiene asociado el mismo color que el mínimo (0), ya que en realidad representan una misma orientación.\par
 
 Tanto la orientación como pendiente pueden representarse de modo simultaneo no como una capa nueva de valores, sino mediante elementos vectoriales (líneas) que representen el gradiente, las cuales pueden acompañar a la propia capa de elevaciones a partir de la cual se calculan (Figura :num:`#figrepresentaciongradiente`). Es de interés reseñar que, aunque la pendiente y la elevación son habitualmente aplicadas a una capa de elevaciones como todos los restantes parámetros que vemos en este capítulo, no ha de limitarse su aplicación a estas. Para cualquier otra variable de la cual queramos ver cómo varía en el espacio, ambos parámetros son perfectamente aplicables.
 
@@ -436,7 +436,7 @@ Una primera aproximación mediante un modelo sencillo se obtiene combinando los 
 .. _figrelievesombreado:
 
 .. figure:: Relieve_sombreado.*
-	:width: 800px
+	:width: 900px
 	:align: center
 
 	Utilización de una capa de relieve sombreado para mejorar la visualización de una imagen aérea 
@@ -780,7 +780,7 @@ donde :math:`f_m` es el flujo asignado a la celda :math:`m` de la ventana de an�
 
 Por otra parte los valores de las tangentes pueden obtenerse sencillamente según lo expresado en el caso del modelo D8. Sólo deben emplearse aquellas tangentes que sean positivas, esto es, que representen ángulos entre la celda central y celdas de inferior elevación, pues es exclusivamente hacia estas hacia donde va a desplazarse el flujo. 
 
-:cite:p:`Tarboton1997WRR` propone otra solución similar que pretende por un lado modelizar de forma más realista la difusión del flujo, y por otro aportar una formulación más robusta. El modelo propuesto sigue basándose en el D8, solventando el problema de la discretización de flujo en 8 direcciones únicas, y para indicarlo es bautizado como D:math:`\infty`.
+:cite:p:`Tarboton1997WRR` propone otra solución similar que pretende por un lado modelizar de forma más realista la difusión del flujo, y por otro aportar una formulación más robusta. El modelo propuesto sigue basándose en el D8, solventando el problema de la discretización de flujo en 8 direcciones únicas, y para indicarlo es bautizado como D :math:`\infty`.
 
 Se considera la submalla :math:`3\times3` como una superficie representada por caras triangulares , cada uno de los cuales está definido por la celda central y dos celdas consecutivas de su entorno. Se tienen así un total de 8 de estos triángulos, cada uno de los cuales define un plano que permite el cálculo de una pendiente asociada.
 
@@ -800,10 +800,10 @@ Aunque muy poco habituales, existen asimismo metodologías no basadas en el mode
 .. _figkra:
 
 .. figure:: KRAD8.*
-	:width: 450px
+	:width: 300px
 	:align: center
 
-	Cálculo de dirección de flujo según Kinematic Routing Algorithm (KRA) :cite:p:`Lea1992Chapman`(trazo fino) y comparación con D8 :cite:p:`Callaghan1984CVGIP` (trazo grueso)
+	Cálculo de dirección de flujo según Kinematic Routing Algorithm (KRA) :cite:p:`Lea1992Chapman` (trazo fino) y comparación con D8 :cite:p:`Callaghan1984CVGIP` (trazo grueso)
 
 
  
@@ -825,7 +825,7 @@ Sea la siguiente ventana de análisis:
 
 
 .. image:: EjZonas_planas.*
-	:width: 400px
+	:width: 300px
 	:align: center
 
 
@@ -836,7 +836,7 @@ En realidad, puede considerarse que las zonas planas son un artificio dentro de 
 Supongamos que la anterior ventana se encuentra dentro de un área más amplia con los siguiente valores:
 
 .. image:: EjZonas_planas2.*
-	:width: 400px
+	:width: 300px
 	:align: center
 
 En este caso, resulta fácil intuir que el flujo se desplazará de Este a Oeste, de las zonas de mayor elevación a las de menor. El relieve circundante contiene, pues, información que puede utilizarse para asignar los valores dentro de la zona llana.
@@ -853,7 +853,7 @@ Respecto a la primera, podemos asimilar la dirección de flujo de la celda a la 
 .. _figzonasplanasdirflujo:
 
 .. figure:: Zonas_planas_dir_flujo.*
-	:width: 450px
+	:width: 350px
 	:align: center
 
 	Cálculo de dirección de flujo sobre una celda llana (en trazo grueso) como suma vectorial de las direcciones de las celdas que vierten sobre la misma (en trazo fino).
@@ -906,7 +906,7 @@ Sea la siguiente ventana de análisis:
 
 
 .. image:: EjDepresion.*
-	:width: 400px
+	:width: 300px
 	:align: center
 
 Nos encontramos con un problema similar al anterior, ya que todas las pendientes desde la celda central son positivas, y no existe ninguna dirección de flujo que represente un movimiento hacia aguas abajo. En la realidad, no obstante, una depresión como la anterior no hace que el agua detenga su movimiento. El flujo rellenará la depresión y verterá por la celda de menor elevación, continuando su camino.
@@ -914,7 +914,7 @@ Nos encontramos con un problema similar al anterior, ya que todas las pendientes
 Una depresión no siempre lleva implícita la imposibilidad de asignar una dirección de flujo a todas sus celdas. Sea el siguiente fragmento de un MDE.
 
 .. image:: EjDepresion2.*
-	:width: 400px
+	:width: 300px
 	:align: center
 
 En este caso, de las dos celdas de la depresión, solo una de ellas no tiene dirección de flujo (de elevación 57), pero en la otra (de elevación 58) esta es incorrecta, puesto que vierte sobre la primera y la tendencia natural del terreno es la contraria. El proceso que tiene lugar será bien distinto, ya que el flujo rellenará la depresión y saldrá de esta desde la celda de elevación 58 y hacia la de menor elevación de su entorno, en este caso 59.
@@ -1140,7 +1140,7 @@ Aunque es con mucha diferencia la opción más habitual, la utilización del ár
 
 donde :math:`a'` es el área aportante específica, :math:`s` la pendiente en la celda y :math:`\alpha` un factor que debe determinarse empíricamente, proponiendo el autor para las zonas por él estudiadas un valor de :math:`\alpha=2`. 
 
- :cite:p:`Peckham1998WS` propone el uso de la malla de valores de órdenes jerárquicos de Strahler, de tal modo que el establecimiento de un umbral se asemeja a *podar* la estructura arbórea de la red que conforman todas las conexiones entre celdas hidrológicamente relacionadas, hasta reducirla a los tramos de orden superior que forman la red de drenaje real.
+:cite:p:`Peckham1998WS` propone el uso de la malla de valores de órdenes jerárquicos de Strahler, de tal modo que el establecimiento de un umbral se asemeja a *podar* la estructura arbórea de la red que conforman todas las conexiones entre celdas hidrológicamente relacionadas, hasta reducirla a los tramos de orden superior que forman la red de drenaje real.
 
 Por último,  :cite:p:`Tarboton2001WWERC` propone utilizar el área acumulada, pero de tal forma que esta refleje solo las celdas aguas arriba que cumplan una condición dada. En particular, se considera que las celdas que tienen una influencia que debe ser considerada sobre el establecimiento o no de cauces y la presencia de fenómenos de flujo encauzado son aquellas de tipo cóncavo, entendiéndose que estas son las que concentran el flujo de agua.
 

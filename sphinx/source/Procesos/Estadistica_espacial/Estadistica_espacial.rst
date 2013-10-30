@@ -223,6 +223,7 @@ y con un módulo :math:`\overline{R}` según
 
 
 siendo :math:`S` y :math:`C` las sumas de senos y cosenos, respectivamente.
+
 .. math::
 
 	 S = \sum_{i=1}^N \sin{\alpha_i} \qquad ; \qquad  S = \sum_{i=1}^N \cos{\alpha_i}
@@ -265,8 +266,8 @@ siendo
 .. math::
 
 	T_i = \left\{ \begin{array}{ll}
-	 \alpha_{i+1} - \alpha_i & \textrm{si :math:`1 \leq i \< N-1`}\\
-	 360 - \alpha_n + \alpha_1 & \textrm{si :math:`i = N`}
+	 \alpha_{i+1} - \alpha_i & \textrm{si} 1 \leq i \< N-1\\
+	 360 - \alpha_n + \alpha_1 & \textrm{si} :math:`i = N
 	  \end{array} \right. 
 
 
@@ -306,7 +307,7 @@ Como se puede observar en la figura :num:`#figpatronespuntos`, existen tres tipo
 .. _figpatronespuntos:
 
 .. figure:: Patrones_puntos.*
-	:width: 650px
+	:width: 750px
 	:align: center
 
 	De izquierda a derecha, patrones de puntos agregado, aleatorio y regular.
@@ -471,7 +472,8 @@ siendo :math:`I_h` una función indicadora de la forma
 	\begin{array}{ll}
 	1 & \textrm{ si } d_{ij} \leq h \\
 	0 & \textrm{ si } d_{ij} > h \\
-	\end{array}\right.
+	\end{array}\right.\end{array}
+
 
 
 En este estimador no se consideran los efectos de borde, y aquellos puntos situados cerca de la frontera de la zona de estudio tendrán estimaciones inferiores a las reales. Un estimador que corrige estos efectos  :cite:p:`Ripley1977JRSS` es el siguiente:
@@ -530,7 +532,6 @@ Al igual que los métodos restantes, el empleo de funciones K se realiza con car
 
 Junto con los anteriores métodos de análisis de patrones de puntos, existen muchos otros en la bibliografía, siendo esta un área con un desarrollo notable en la actualidad.
 
-.. _autocorrelacion_espacial:
 
 Autocorrelación espacial
 =====================================================
@@ -762,7 +763,7 @@ El conjunto de valores de covarianza y distancias entre puntos da lugar a una nu
 .. _figvariogramacorrelograma:
 
 .. figure:: Variograma_correlograma.*
-	:width: 850px
+	:width: 950px
 	:align: center
 
 	Relación entre correlograma (a) y variograma (b)
@@ -776,8 +777,8 @@ Existe una relación directa entre el variograma y el correlagrama, como puede v
 .. math::
 
 	\gamma(h) = \left\{ \begin{array}{ll}
-	0 & \textrm{si} \|h\| = 0`}\\
-	C_0 + C_1\left(1-e^{h/a}\right) & \textrm{si} \|h\| \> a}
+	0 & \textrm{si} \|h\| = 0\\
+	C_0 + C_1\left(1-e^{h/a}\right) & \textrm{si} \|h\| \> a
 	  \end{array} \right. 
 
 Para el correlograma, se tiene que
@@ -785,8 +786,8 @@ Para el correlograma, se tiene que
 .. math::
 
 	\gamma(h) = \left\{ \begin{array}{ll}
-	C_0 + C_1 & \textrm{si} \|h\| = 0`}\\
-	C_1\left(e^{h/a}\right) & \textrm{si} \|h\| \> a}
+	C_0 + C_1 & \textrm{si} \|h\| = 0\\
+	C_1\left(e^{h/a}\right) & \textrm{si} \|h\| \> a
 	  \end{array} \right. 
 
 En la práctica, se emplea el variograma porque resulta más sencillo modelizar las semivarianzas que las covarianzas.

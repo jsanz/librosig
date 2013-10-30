@@ -216,25 +216,34 @@ En función de la causa que los ha originado, distinguimos los siguientes tipos 
 
 
 * Errores debidos a los sensores. Los sensores pueden introducir errores en las imágenes tanto en forma de distorsión como en forma de ruido, ya sea este regular o aleatorio.		
-Por ejemplo, los sensores ópticos pueden presentar distorsiones achacables a las lentes, que con frecuencia se manifiesta en áreas más oscuras en el borde de las imágenes en comparación con las celdas centrales. En el caso de sensores electro-ópticos, deben emplearse datos auxiliares para la calibración de estos y así garantizar el registro correcto de los valores correspondientes.
-Errores habituales dentro de este grupo son igualmente los píxeles o líneas perdidas, apareciendo píxeles aislados o líneas completas cuyos valores deben descartarse. La estimación de valores para dichos píxeles o líneas se realiza empleando los valores de píxeles circundantes, pues existe una relación clara entre ellos. El empleo de filtros (ver más adelante el apartado :ref:`Filtros`), es una técnica habitual para realizar esta corrección.
-Existe también correlación entre las distintas bandas de una imagen, por lo que no solo pueden utilizarse los píxeles de la misma banda, sino también los propios píxeles perdidos, pero en otras bandas. En general, los sensores que recogen las distintas longitudes de onda (las distintas bandas) son independientes, por lo que el error no debe aparecer en todas ellas.
-* Errores debidos a la topografía. Además de producir distorsiones geométricas como ya hemos visto, las formas del relieve condicionan la forma en que la radiación es reflejada, ya que dicha reflexión esta condicionada por el ángulo de incidencia. El uso de Modelos Digitales de Elevaciones e información sobre las condiciones de iluminación en las que se ha tomado la imagen permite plantear modelos de iluminación que pueden corregir estos efectos.
- Existen diversas formas de aplicar una corrección a una imagen y eliminar el efecto de la topografía, algunas de ellas relativamente simples. Una formulación simple es la siguiente:
 
-	* A partir de un Modelo Digital del Elevaciones se calcula una capa de relieve sombreado. Los parámetros empleados para su creación (azimut y elevación) deben coincidir en la medida de lo posible con las existentes en el momento en que la imagen fue recogida.
-	* Se realiza una regresión entre esta capa de relieve sombreado y la imagen a corregir, de forma que se tenga una función de la forma :math:`y=ax + b`.
-	* Se aplica la transformación definida por la anterior ecuación a los valores de la capa de relieve sombreado.
-	* Se resta la capa resultante a la imagen a corregir.
-	* Se suma a la capa resultante del paso anterior el valor de reflectancia media de la imagen original.
+	Por ejemplo, los sensores ópticos pueden presentar distorsiones achacables a las lentes, que con frecuencia se manifiesta en áreas más oscuras en el borde de las imágenes en comparación con las celdas centrales. En el caso de sensores electro-ópticos, deben emplearse datos auxiliares para la calibración de estos y así garantizar el registro correcto de los valores correspondientes.
+
+	Errores habituales dentro de este grupo son igualmente los píxeles o líneas perdidas, apareciendo píxeles aislados o líneas completas cuyos valores deben descartarse. La estimación de valores para dichos píxeles o líneas se realiza empleando los valores de píxeles circundantes, pues existe una relación clara entre ellos. El empleo de filtros (ver más adelante el apartado :ref:`Filtros`), es una técnica habitual para realizar esta corrección.
+
+	Existe también correlación entre las distintas bandas de una imagen, por lo que no solo pueden utilizarse los píxeles de la misma banda, sino también los propios píxeles perdidos, pero en otras bandas. En general, los sensores que recogen las distintas longitudes de onda (las distintas bandas) son independientes, por lo que el error no debe aparecer en todas ellas.
+
+* Errores debidos a la topografía. Además de producir distorsiones geométricas como ya hemos visto, las formas del relieve condicionan la forma en que la radiación es reflejada, ya que dicha reflexión esta condicionada por el ángulo de incidencia. El uso de Modelos Digitales de Elevaciones e información sobre las condiciones de iluminación en las que se ha tomado la imagen permite plantear modelos de iluminación que pueden corregir estos efectos.
+ 
+	Existen diversas formas de aplicar una corrección a una imagen y eliminar el efecto de la topografía, algunas de ellas relativamente simples. Una formulación simple es la siguiente:
+
+		* A partir de un Modelo Digital del Elevaciones se calcula una capa de relieve sombreado. Los parámetros empleados para su creación (azimut y elevación) deben coincidir en la medida de lo posible con las existentes en el momento en que la imagen fue recogida.
+		* Se realiza una regresión entre esta capa de relieve sombreado y la imagen a corregir, de forma que se tenga una función de la forma :math:`y=ax + b`.
+		* Se aplica la transformación definida por la anterior ecuación a los valores de la capa de relieve sombreado.
+		* Se resta la capa resultante a la imagen a corregir.
+		* Se suma a la capa resultante del paso anterior el valor de reflectancia media de la imagen original.
 
 * Errores debidos al efecto de la atmósfera en la radiación. Los errores debidos a la atmósfera son de los más importantes dentro de los que provocan alteraciones radiométricas en la imagen, y son estudiados en ocasiones de forma independiente, en lugar de como un subtipo de error radiométrico. 
- Para comprender la necesidad de esta corrección debe tenerse en cuenta que en algunos casos lo que interesa de la imagen no son los Niveles Digitales, sino una variable con sentido físico como la radiancia correspondiente a cada longitud de onda. Será esta radiancia la que luego se analice para la obtención de otros parámetros físicos derivados, y su obtención se realiza a partir de los Niveles Digitales aplicando ecuaciones lineales con parámetros dependientes del sensor.
- El problema estriba en que la radiancia que se obtiene al aplicar este proceso es la que ha alcanzado el sensor, que no ha de corresponderse necesariamente con la que se tiene sobre el terreno o la que recibiría el sensor si estuviera a una distancia mínima del objeto. La atmósfera afecta a la radiación en su camino desde el suelo hasta el sensor, y distorsiona la información recogida.
- Los efectos atmosféricos son principalmente de dos clases: *difusión* y *absorción*. La difusión es causada por las partículas de pequeño tamaño de la atmósfera, que desvían una parte de la energía radiante, alterando su dirección. La modificación que se produce depende del tamaño de las partículas implicadas en relación con la longitud de onda de la radiación  :cite:p:`Liou2002Academic`. La absorción, por su parte, se produce cuando los elementos constituyentes de la atmósfera absorben parte de la radiación para emitirla posteriormente en una longitud de onda distinta. La intensidad de la radiación disminuye con el efecto de la difusión.
- Ambos efectos conjuntos producen un efecto de *neblina* en la imagen, restándole contraste. La difusión, asimismo, tiene un efecto adicional de adyacencia, ya que cada píxeles recoge parcialmente la radiación que en realidad debería corresponder a otros píxeles contiguos.
- La corrección de los efectos atmosféricos es compleja y existen muchas formulaciones distintas que escapan al alcance de este texto. Para saber más, una buena descripción de estos métodos puede encontrarse en  :cite:p:`Kaufman1989Wiley`
 
+	Para comprender la necesidad de esta corrección debe tenerse en cuenta que en algunos casos lo que interesa de la imagen no son los Niveles Digitales, sino una variable con sentido físico como la radiancia correspondiente a cada longitud de onda. Será esta radiancia la que luego se analice para la obtención de otros parámetros físicos derivados, y su obtención se realiza a partir de los Niveles Digitales aplicando ecuaciones lineales con parámetros dependientes del sensor.
+ 	
+ 	El problema estriba en que la radiancia que se obtiene al aplicar este proceso es la que ha alcanzado el sensor, que no ha de corresponderse necesariamente con la que se tiene sobre el terreno o la que recibiría el sensor si estuviera a una distancia mínima del objeto. La atmósfera afecta a la radiación en su camino desde el suelo hasta el sensor, y distorsiona la información recogida.
+ 	
+ 	Los efectos atmosféricos son principalmente de dos clases: *difusión* y *absorción*. La difusión es causada por las partículas de pequeño tamaño de la atmósfera, que desvían una parte de la energía radiante, alterando su dirección. La modificación que se produce depende del tamaño de las partículas implicadas en relación con la longitud de onda de la radiación  :cite:p:`Liou2002Academic`. La absorción, por su parte, se produce cuando los elementos constituyentes de la atmósfera absorben parte de la radiación para emitirla posteriormente en una longitud de onda distinta. La intensidad de la radiación disminuye con el efecto de la difusión.
+ 	
+ 	Ambos efectos conjuntos producen un efecto de *neblina* en la imagen, restándole contraste. La difusión, asimismo, tiene un efecto adicional de adyacencia, ya que cada píxeles recoge parcialmente la radiación que en realidad debería corresponder a otros píxeles contiguos.
+ 	
+ 	La corrección de los efectos atmosféricos es compleja y existen muchas formulaciones distintas que escapan al alcance de este texto. Para saber más, una buena descripción de estos métodos puede encontrarse en  :cite:p:`Kaufman1989Wiley`
 
 
 Mejoras
@@ -260,8 +269,10 @@ Las operaciones de esta clase se corresponden con las funciones de tipo local de
 
 Según sea la función, tenemos un tipo u otro de operación, con un efecto concreto. Para mostrar estas funciones de forma gráfica, emplearemos gráficas como la siguiente, la cual se corresponde con la transformación identidad. 
 
-.. image:: Funcion_transformacion_identidad.pdf
-\end{center}
+.. image:: Funcion_transformacion_identidad.png
+	:align: center
+
+
 
 La gráfica establece una relación entre el Nivel Digital original y su tonalidad asociada (en abscisas) y los correspondientes en la imagen resultante (en ordenadas). Aplicando esta transformación a todos los píxeles, se obtiene la imagen mejorada.
 
@@ -295,7 +306,7 @@ La figura :num:`#figsegmentacion` nos muestra el resultado de una operación de 
 .. _figcurvasegmentacion:
 
 .. figure:: Curva_segmentacion.*
-	:width: 650px
+	:width: 450px
 	:align: center
 
 	Curva de transformación asociada a una segmentación por umbral.
@@ -378,7 +389,7 @@ Tanto el brillo como el contraste pueden modificarse mediante funciones lineales
 .. _figbrillocontraste:
 
 .. figure:: Brillo_contraste.*
-	:width: 750px
+	:width: 850px
 	:align: center
 
 	Imagen original y modificación del brillo y el contraste, junto con sus curvas de transformación asociadas
@@ -417,7 +428,7 @@ El caso de la expansión de contraste es un caso particular de este tipo de tran
 .. _figcurvaexpansioncontraste:
 
 .. figure:: Curva_expansion_contraste.*
-	:width: 450px
+	:width: 350px
 	:align: center
 
 	Curva de transformación correspondiente a una expansión de contraste
@@ -495,7 +506,7 @@ Filtros de suavizado
 Como muestra la figura :num:`#figsuavizado`, los filtros de suavizado (también conocidos como filtros *de paso bajo*) provocan una perdida de foco en la imagen. Este efecto se consigue disminuyendo las diferencias entre píxeles contiguos, algo que puede obtenerse por ejemplo mediante un filtro de media. Como ya vimos, este puede expresarse mediante un núcleo como el siguiente:
 
 .. image:: Kernel_media.*
-	:width: 250px
+	:width: 150px
 	:align: center
 
 
@@ -504,7 +515,7 @@ El efecto del filtro de media vimos que, aplicado sobre una capa de elevación, 
 Otra forma de modificar el efecto del suavizado, en este caso limitándolo, es dando más peso al píxel central. Para ello puede emplearse un núcleo como el mostrado a continuación:
 
 .. image:: Kernel_media_2.*
-	:width: 250px
+	:width: 150px
 	:align: center
 
 La media es sensible a los valores extremos de la ventana, por lo que una opción habitual es sustituir el filtro de media por uno de mediana. Este no es sensible a la presencia de valores extremos muy alejados de la media (*outliers*), y además garantiza que el valor resultante es un valor que existe como tal en la ventana de píxeles circundantes, lo cual puede resultar de interés en algunas circunstancias.	
@@ -582,7 +593,7 @@ Para obtener un filtro de realce, puede partirse de uno de suavizado, ya que una
 El núcleo que caracteriza esta transformación puede obtenerse realizando el mismo calculo sobre los núcleos de las operaciones independientes. Es decir, restando al núcleo identidad el de media, obteniendo el siguiente:
 
 .. image:: Kernel_realce.*
-	:width: 250px
+	:width: 150px
 	:align: center
 
 
@@ -599,7 +610,7 @@ Con un fundamento similar a los anteriores, los filtros de detección de bordes 
 Un operador habitual para la detección de bordes es el denominado *filtro Laplaciano*, el cual puede expresarse mediante un núcleo de la forma
 
 .. image:: Kernel_laplaciano.*
-	:width: 250px
+	:width: 150px
 	:align: center
 
 Para hacer su expresión más sencilla, tanto este núcleo como los siguientes no se aplican según la ecuación de una convolución, sino según la siguiente:
@@ -640,7 +651,7 @@ El resultado de aplicar estos filtros puede verse en la figura :num:`#figsobel`.
 .. _figsobel:
 
 .. figure:: Sobel.*
-	:width: 650px
+	:width: 750px
 	:align: center
 
 	Aplicación de un filtro de Sobel vertical (a) y horizontal (b).
@@ -671,7 +682,7 @@ Con respecto al filtro Laplaciano, los filtros basados en derivadas direccionale
 La relación entre los filtros de detección de bordes y los de realce puede verse en el siguiente ejemplo. Si se toma un filtro Laplaciano y se le añade un filtro identidad (es decir, a la imagen resultante se le suma la imagen original), tenemos el filtro mostrado a continuación.
 
 .. image:: Kernel_laplaciano_mas_identidad.*
-	:width: 250px
+	:width: 150px
 	:align: center
 
 
@@ -818,8 +829,14 @@ En otros casos, no existen tales bandas, y puede o bien tomarse una banda altern
 
 .. math::
 
-	Rojo = Banda 2 \\
-	Verde = \frac{Banda 3 + Banda 1}4 \\
+	Rojo = Banda 2 
+
+.. math::
+
+	Verde = \frac{Banda 3 + Banda 1}4 
+
+.. math::
+
 	Azul = Banda 1 \\
 
 El cociente entre dos bandas dadas es también una solución habitual a utilizar para obtener los valores para los distintos canales.

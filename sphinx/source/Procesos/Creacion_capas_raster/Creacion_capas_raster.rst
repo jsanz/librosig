@@ -76,7 +76,7 @@ Supongamos el siguiente ejemplo sencillo:
 
 
 .. figure:: EjInterpolacion_1.*
-	:width: 650px
+	:width: 450px
 	:align: center
 
 Los cuatro puntos señalados han sido muestreados y se dispone de un valor en ellos. Adviértase que no han de encontrarse necesariamente en el centro de las celdas. Queremos estimar los valores en las celdas de la malla, en particular en la celda marcada con un interrogante.
@@ -86,8 +86,8 @@ La lógica nos indica que el valor en esta celda debe estar alrededor de 10, ya 
 Otro ejemplo sería el siguiente:
 
 
-.. figure:: EjInterpolacion_2.pdf
-	:width: 650px
+.. figure:: EjInterpolacion_2.*
+	:width: 450px
 	:align: center
 	
 En este caso, la lógica nos indica que el valorá ser inferior a 10, y también probablemente a la media de los valores muestrales (9), ya que la celda problema se sitúa más cerca de los valores inferiores que de los superiores a ese valor medio. Razonando de este modo, aplicamos el hecho de que la proximidad incrementa la semejanza de valores. Es decir, que existe autocorrelación espacial para la variable interpolada.
@@ -95,7 +95,7 @@ En este caso, la lógica nos indica que el valorá ser inferior a 10, y también
 El caso siguiente ya es algo distinto:
 
 .. figure:: EjInterpolacion_3.*
-	:width: 650px
+	:width: 450px
 	:align: center
 
 
@@ -134,7 +134,7 @@ El resultado es una capa con saltos abruptos (tanto como lo sean las diferencias
 .. _figinterpolacionvecindad:
 
 .. figure:: Interpolacion_vecindad.png
-	:width: 650px
+	:width: 600px
 	:align: center
 
 	Superficie obtenida mediante interpolación por vecindad.
@@ -407,7 +407,7 @@ La figura :num:`#figinterpolacionkriging` muestra una superficie obtenida median
 .. _figinterpolacionkriging:
 
 .. figure:: Interpolacion_kriging.*
-	:width: 550px
+	:width: 650px
 	:align: center
 
 	Superficie obtenida mediante interpolación por kriging ordinario y capa de varianzas. Nótese que, para lograr una representación visual mejor, la vista 3D tiene una orientación contraria a la vista 2D. 
@@ -419,7 +419,7 @@ Cuando no puede asumirse la estacionariedad de primer orden y existen una tenden
 
 
 .. figure:: Tipos_muestreo.*
-	:width: 650px
+	:width: 750px
 	:align: center
 
 	Tipos de muestreo. a) regular, b) aleatorio, c) estratificado 

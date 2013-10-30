@@ -271,6 +271,7 @@ Para ver un ejemplo que sea manejable, en la figura :num:`#figcombinacioncapasca
 Para interpretar esta última, las tablas siguientes muestran el esquema de reclasificación y el significado de los valores de la capa obtenida.
 
 
+**Tabla 1**
 
 ===========  ==============  =====================
 Tipo         Valor original  Valor reclasificado 
@@ -282,6 +283,8 @@ Uso suelo A  1               8
 Uso suelo B  2               16 
 Uso suelo C  3               32 
 ===========  ==============  =====================
+
+**Tabla 2**
 
 ================  ============  ================
 Valor resultante  Tipo suelo    Tipo uso suelo 
@@ -329,7 +332,7 @@ Las funciones de análisis focal operan sobre una sola capa de datos, asignando 
 .. _figfuncionesfocales:
 
 .. figure:: Funciones_focales.*
-	:width: 500px
+	:width: 400px
 	:align: center
 
 	Las funciones de análisis focal analizan los valores de una celda y las situadas en un entorno de esta para obtener el valor resultante. En rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.
@@ -411,7 +414,7 @@ Con independencia de dicho tamaño de ventana, siempre vamos a tener algunas cel
 .. _figanalisisfocalbordes:
 
 .. figure:: Analisis_focal_bordes.*
-	:width: 500px
+	:width: 400px
 	:align: center
 
 	En las celdas de borde la ventana de análisis no puede definirse en su totalidad. Las celdas en rojo representan celdas fuera de la capa para las cuales no existe información.
@@ -429,7 +432,7 @@ Las funciones de análisis zonal asocian a cada celda valores relativos no a dic
 .. _figfuncioneszonales:
 
 .. figure:: Funciones_zonales.*
-	:width: 550px
+	:width: 400px
 	:align: center
 
 	Las funciones de análisis zonal analizan los valores de todas las celdas asociadas a una misma clase cada para obtener el valor resultante. En rojo, celdas de partida analizadas. En verde, celda que recoge el resultado.

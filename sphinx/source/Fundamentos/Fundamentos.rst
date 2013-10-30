@@ -1,4 +1,4 @@
-.. _introduccion_fundamentos:
+.. _fundamentos:
 
 ################
 Los fundamentos

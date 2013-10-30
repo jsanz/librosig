@@ -27,7 +27,7 @@ Antes de que los SIG incorporan las bases de datos como parte integrante, los si
 
 Siguiendo este mismo enfoque, estudiaremos en primer lugar los conceptos fundamentales relativos a consultas en bases de datos, sin tratar por el momento la componente espacial. Posteriormente extenderemos estos conceptos para ver la verdadera potencia de estas dentro del ámbito SIG, que resulta de añadir la componente espacial y los conceptos sobre relaciones espaciales que vimos en el capítulo :ref:`Analisis_espacial`.
 
- Si el lector esta familiarizado con los conceptos relativos a bases de datos no espaciales y las consultas sobre estas, puede prescindir de leer la próxima sección y avanzar hasta la siguiente para ver directamente las particularidades del trabajo con bases de datos espaciales. De cualquier modo, el capítulo no pretende ser un manual sobre el uso de bases de datos o sus fundamentos, ya que este tema es muy amplio y escapa por completo al alcance de este texto.
+Si el lector esta familiarizado con los conceptos relativos a bases de datos no espaciales y las consultas sobre estas, puede prescindir de leer la próxima sección y avanzar hasta la siguiente para ver directamente las particularidades del trabajo con bases de datos espaciales. De cualquier modo, el capítulo no pretende ser un manual sobre el uso de bases de datos o sus fundamentos, ya que este tema es muy amplio y escapa por completo al alcance de este texto.
 
 Consultas dentro de un SIG
 =====================================================
@@ -123,7 +123,7 @@ Para expresar esas consultas se han de incluir elementos de la denominada *lógi
 * ¿Que países hablan inglés *y* sufrieron un aumento de población durante el último año?
 
 
-La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición ``Moneda = 'Euro'``, y al mismo tiempo la condición ``POBLACION_ACTUAL :math:`>` 40.000.000.`` La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés ``AND``, de forma que tendríamos la expresión ``MONEDA = 'Euro' AND POBLACIONACTUAL > 40000000``.
+La partícula *y* nos indica que realmente nuestra consulta se compone de dos condiciones. Por ejemplo, en el primero de los casos se debe cumplir la condición ``Moneda = 'Euro'``, y al mismo tiempo la condición ``POBLACION_ACTUAL > 40.000.000``. La sintaxis habitual para expresar esto a la hora de formular la consulta es emplear el termino inglés ``AND``, de forma que tendríamos la expresión ``MONEDA = 'Euro' AND POBLACIONACTUAL > 40000000``.
 
 Otros operadores lógicos que podemos emplear son el operador disyuntivo *o* (``OR``) o el operador de negación (``NOT``). Añadiéndolos a las expresiones condicionales podemos crear consultas más elaboradas para extraer la información que buscamos. En realidad, formular una consulta de este tipo es buscar un subconjunto particular (el formado por las entidades que quedarán seleccionadas) dentro de un conjunto global (la capa geográfica). Por ello, es útil plantear estas operaciones lógicas desde el punto de vista de la teoría de conjuntos, y hacer uso de los denominados *diagramas de Venn*, que muestran de forma gráfica y muy intuitiva el significado de dichas operaciones. En la figura :num:`#figvenn` pueden verse los diagramas correspondientes a las operaciones que hemos visto hasta el momento.
 
@@ -148,6 +148,8 @@ Lógicamente, si la información se encuentra disponible en una serie de tablas,
 
 Veamos un ejemplo de una unión entre tablas para comprender el significado de esta operación. Se muestran a continuación dos tablas.
 
+**Tabla 1**
+
 =======  ===============
 ``ID``   ``TIPO_SUELO``
 =======  ===============
@@ -158,6 +160,7 @@ Veamos un ejemplo de una unión entre tablas para comprender el significado de e
 5         2  
 =======  ===============
 
+**Tabla 2**
 
 ===============   =================   ============
 ``TIPO_SUELO``    ``NOMBRE_SUELO``    ``APTITUD``
@@ -446,7 +449,7 @@ Si vemos la figura :num:`#figejindicesespaciales`, para calcular cuales son los 
 .. _figejindicesespaciales:
 
 .. figure:: Ej_indices_espaciales.*
-	:width: 650px
+	:width: 450px
 	:align: center
 
 	Para calcular los diez puntos más cercanos a una coordenada dada (en rojo), nuestra intuición espacial nos ayuda a decidir que estos se han de buscar en un subconjunto reducido tal como el de los situados dentro del circulo azul de la figura. Este proceso de *filtrado* y *refinamiento* ahorra operaciones, y es el fundamento conceptual de los índices espaciales.

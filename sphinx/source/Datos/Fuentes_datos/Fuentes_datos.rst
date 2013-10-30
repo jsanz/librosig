@@ -140,14 +140,20 @@ La radiación electromagnética puede cubrir de forma continua todo un amplio ra
 Dentro de estas regiones, son de destacar las siguientes:
 
 
-* Rayos :math:`\gamma`  < 0.03 nm`.
-* Rayos X :math:`(0.03 nm` - 3 nm)`.
-* Ultravioleta :math:`(3 nm` - 0.3 \mu)`.
-* Visible :math:(0.3 `\mu` - 0.7 \mu)`. Se corresponde con las radiaciones que pueden ser detectadas por el ojo humano o por aparatos tales como una cámara fotográfica común. Observando la figura :num:`#figespectroelectromagnetico` puede apreciarse que esta región representa una porción muy pequeña del total del espectro. Existen muchas otras regiones que no podemos *ver* pero que, empleando la tecnología adecuada, sí que pueden aprovecharse para crear imágenes dentro de un proceso de teledetección, siendo de gran utilidad para el estudio de numerosos procesos.
-Las distintas longitudes de onda dentro de esta región son las responsables de los distintos colores que percibimos. Así, por ejemplo, el azul se corresponde con el rango entre 0.4 :math:`\mu` y 0.5 :math:`\mu`, mientras que el verde lo hace con el rango entre 0.5 :math:`\mu` y 0.6 :math:`\mu`
-* Infrarrojo cercano :math:`(0.7 \mu` - 1.3 \mu)`.
-* Infrarrojo medio  :math:`(1.3 :\mu` - 8 :\mu)`.
-* Infrarrojo lejano o térmico :math:`(8 \mu` - 14 \mu)`. Dentro de esta región se encuentran principalmente las radiaciones emitidas por los cuerpos debido a su temperatura. Esta emisión se calcula según la denominada *ley de Stefan--Boltzmann*. Puede encontrarse más al respecto en  :cite:p:`webSBoltzman`.
+* Rayos :math:`\gamma < 0.03 nm`.
+
+* Rayos X :math:`(0.03 nm - 3 nm)`.
+
+* Ultravioleta :math:`(3 nm - 0.3 \mu)`.
+
+* Visible :math:(0.3 `\mu` - 0.7 \mu)`. Se corresponde con las radiaciones que pueden ser detectadas por el ojo humano o por aparatos tales como una cámara fotográfica común. Observando la figura :num:`#figespectroelectromagnetico` puede apreciarse que esta región representa una porción muy pequeña del total del espectro. Existen muchas otras regiones que no podemos *ver* pero que, empleando la tecnología adecuada, sí que pueden aprovecharse para crear imágenes dentro de un proceso de teledetección, siendo de gran utilidad para el estudio de numerosos procesos. Las distintas longitudes de onda dentro de esta región son las responsables de los distintos colores que percibimos. Así, por ejemplo, el azul se corresponde con el rango entre 0.4 :math:`\mu` y 0.5 :math:`\mu`, mientras que el verde lo hace con el rango entre 0.5 :math:`\mu` y 0.6 :math:`\mu`
+
+* Infrarrojo cercano :math:`(0.7 \mu - 1.3 \mu)`.
+
+* Infrarrojo medio  :math:`(1.3 :\mu - 8 :\mu)`.
+
+* Infrarrojo lejano o térmico :math:`(8 \mu - 14 \mu)`. Dentro de esta región se encuentran principalmente las radiaciones emitidas por los cuerpos debido a su temperatura. Esta emisión se calcula según la denominada *ley de Stefan--Boltzmann*. Puede encontrarse más al respecto en  :cite:p:`webSBoltzman`.
+
 * Microondas :math:`(1 mm - 25 cm)`.
 
 
@@ -677,7 +683,7 @@ Este proceso se conoce como *geocodificación*  :cite:p:`Davis2003Geoinfo` e imp
 
 Todos estos datos presentan en común que, recogidos de un modo u otro, conforman un conjunto de coordenadas puntuales que habitualmente sirven para el trabajo fuera de un SIG y no llegan a incorporarse a este, o que al menos no están dispuestos en la forma habitual de capa con la que trabajamos en un SIG. 
 
-En el caso de encontrarse en formato analógico, estos datos pueden digitalizarse mediante la simple introducción manual de coordenadas a través del teclado o bien mediante algún sistema más específico como el escaneo del documento y el empleo de algún software de reconocimiento de caracteres (OCR)\footnote{Optical Character Recognition}.
+En el caso de encontrarse en formato analógico, estos datos pueden digitalizarse mediante la simple introducción manual de coordenadas a través del teclado o bien mediante algún sistema más específico como el escaneo del documento y el empleo de algún software de reconocimiento de caracteres (OCR, Optical Character Recognition).
 
 En el caso de encontrarse ya en formato digital, estos datos pueden presentarse como tablas en una hoja de cálculo, datos asociados a otro dato de cualquier tipo (como en el caso del *geotagging*) o incluso simples archivo de texto. Muchos SIG incorporan métodos para leer estos archivos y después utilizar las coordenadas que contienen con el fin de crear una nueva capa, en general de puntos.
 
@@ -947,10 +953,10 @@ Por último, y teniendo en cuenta que el sistema GPS mide las coordenadas :math:
 
 
 * GPS para uso general. Unidades pequeñas y portátiles, de bajo coste, para actividades al aire libre, donde no se requiere una precisión elevada sino simplemente un conocimiento de la posición aproximada. Se emplean, por ejemplo, para recoger rutas en senderismo o navegación. Estas unidades, además de informar de la posición y ser capaces de almacenar esta, suelen disponer de capacidades de representación de mapas en pantalla, de forma que la información sobre la posición sea más útil para el usuario. Otros, como los navegadores GPS para coche, son capaces de calcular rutas óptimas, combinando la posición calculada con una cartografía de vías previamente incorporada al dispositivo.
- La figura :num:`#figgps1`a muestra un receptor GPS de uso general.
+ La figura :num:`#figgps1` (a) muestra un receptor GPS de uso general.
 
 * GPS para la medición topográfica. Unidades de medio tamaño, generalmente con una antena independiente que se conecta a la unidad y que el propio operario carga a la espalda. La antena garantiza mayor precisión y una mejor localización de satélites en condiciones tales como zonas bajo arbolado. Están pensados para un uso profesional en levantamientos o replanteos, ofreciendo buena precisión en todas las coordenadas. 
- En la figura :num:`#figgps1`b puede verse unos de estos receptores.
+ En la figura :num:`#figgps1` (b) puede verse unos de estos receptores.
  Estos son los GPS de mayor interés para el uso dentro de un SIG, ya que ofrecen datos de campo precisos que cumplen con las necesidades que habitualmente se tienen en un proyecto SIG. Los datos recogidos por estas unidades pueden ser sencillamente incorporados a un ordenador, y en ocasiones la propia unidad dispone de aplicaciones propias, más allá de la mera visualización de cartografía asociada, como en el caso anterior.
 
 * GPS para la medición del tiempo. Estos GPS no resultan de tanto interés para su uso en un SIG, ya que se encuentran fijos en un punto y no conceden importancia a la localización espacial, sino tan solo al tiempo. Se utilizan en estudios que requieran una medición muy precisa del tiempo, ya que la referencia temporal que ofrece el sistema GPS es muy precisa y estable.

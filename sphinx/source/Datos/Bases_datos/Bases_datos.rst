@@ -160,6 +160,8 @@ Cuando trabajamos con datos espaciales, es habitual emplear la componente espaci
 
 Por ejemplo, sean las siguientes tablas:
 
+**Tabla 1**
+
 ========  ===============  ==========  ========  ===========
 ``DNI``   ``Nombre``       ``Altura``  ``Edad``  ``Ciudad`` 
 ========  ===============  ==========  ========  ===========
@@ -168,6 +170,8 @@ Por ejemplo, sean las siguientes tablas:
 46576290  Luis Urrutia     1,75        46        Madrid 
 38941882  Juan Gómez       1, 71       55        Valencia
 ========  ===============  ==========  ========  ===========
+
+**Tabla 2**
 
 =======  ===============  ==========  ========  ===========
 ``ID``   ``Nombre``       ``Altura``  ``Edad``  ``Ciudad`` 
@@ -184,7 +188,7 @@ La primera tabla contiene un atributo único (DNI). La segunda tabla no contiene
 El empleo de estas claves permite relacionar tablas entre sí, siempre que estas compartan algún atributo común. Por ejemplo, pensemos en una base de datos que contenga la tabla anterior y junto a esta la tabla mostrada a continuación. Es decir, la base de datos contiene información sobre personas y sobre ciudades.
 
 ==========    ===============  =============================
-``Nombre``     ``Habitantes``  ``Superficie(:math:`km^2`)``
+``Nombre``     ``Habitantes``  ``Superficie``(:math:`km^2`)
 ==========    ===============  =============================
 Madrid         6386932          607	 
 Valencia       1564145          134

@@ -286,4 +286,4 @@ epub_copyright = u'2013, Víctor Olaya'
 # Allow duplicate toc entries.
 #epub_tocdup = True
 
-natbib = {"file": "d:/zrefs.bib", "style" : "numbers"}
+natbib = {"file": "./source/zrefs.bib", "style" : "numbers"}

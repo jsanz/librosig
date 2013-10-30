@@ -132,11 +132,11 @@ Puede afirmarse que el Problema de la Unidad de Área Modificable es aún materi
 
 Un problema particular relacionado con el PUAM es la denominada *falacia ecológica* :cite:p:`Openshaw1983Geobooks`, que consiste en asumir que los valores calculados para una unidad de área pueden aplicarse a los individuos de la población existente en dicha área. Sólo en el caso de que exista una completa homogeneidad para la variable analizada, lo cual muy raramente sucede, la anterior suposición sería cierta.
 
-Autocorrelación espacial
--------------------------------------------------------------- 
-
 
 .. _autocorrelacion_espacial:
+
+Autocorrelación espacial
+-------------------------------------------------------------- 
 
 Supóngase que se estudian una serie de poblaciones cercanas en las cuales se mide el porcentaje de personas afectadas por una determinada enfermedad infecciosa. Cabe esperar que, puesto que los habitantes de esas poblaciones están relacionados entre sí de diversas formas, la distribución de los valores recogidos obedezca en parte a la existencia de dichas relaciones. Por ejemplo, si en una población contraen la enfermedad un número dado de habitantes, es más factible que estos puedan contagiar a los de las poblaciones cercanas que a los de otros núcleos más alejados.
 
@@ -488,7 +488,7 @@ Uno de los sistemas iniciales de predicados es el conocido como *4--Intersection
 
 .. math::
 
-	\Im_4(A,B) = \left( \begin{array}{cc} A  \cap  B & A \cap \delta B \delta A \cap B &\delta A \cap \delta B 
+	\Im_4(A,B) = \left( \begin{array}{cc} A  \cap  B & A \cap \delta B \delta A \cap B & \delta A \cap \delta B  \end{array} \right)
 
 Para cada una de las cuatro intersecciones se estudia algún invariante topológico, es decir, alguna propiedad que sea invariante a las transformaciones topológicas. De entre ellas, lo más habitual es emplear el contenido, esto es, si la región delimitada por la intersección esta vacía (:math:`\varnothing`) o no (:math:`\neg \varnothing`).
 
@@ -503,9 +503,6 @@ Teniendo cuatro elementos y dos posibles valores para cada uno, existen un total
 	Conjunto de relaciones posibles entre regiones según el modelo *4--Intersection*.
 
 
- 
-
-
 Un razonamiento similar puede aplicarse al caso de líneas, cuya principal diferencia radica en que conforman elementos con fronteras no cerradas. No obstante, la forma de proceder y las relaciones definidas son análogas en gran medida.
 
 A partir del modelo *4--Intersection*, Egenhofer  :cite:p:`Egenhofer1989Springer` desarrolla el modelo *9--Intersection*, en el cuál se amplia el anterior a la consideración de tres elementos en lugar de dos. Además de considerar las fronteras e interiores de los objetos A y B, se consideran asimismo los exteriores de los mismos (:math:`A^-` y :math:`B^-`). La matriz característica queda entonces de la forma
@@ -516,7 +513,7 @@ A partir del modelo *4--Intersection*, Egenhofer  :cite:p:`Egenhofer1989Springer
 	\Im_9(A,B) = \left( \begin{array}{ccc}
 	A  \cap  B & A \cap \delta B & A \cap B^- \\
 	\delta A \cap B &\delta A \cap \delta B & \delta A \cap B^- \\
-	A^- \cap B &A^- \cap \delta B & A^- \cap B^- \\
+	A^- \cap B &A^- \cap \delta B & A^- \cap B^- \\ \end{array} \right)
 
 
 El numero total de matrices posibles es en este caso de :math:`2^9 = 512`. De todas ellas, solo un pequeño subconjunto representan relaciones posibles en :math:`\mathbb{R}^2` a las cuales pueda asignarse una interpretación geométrica. 
@@ -564,7 +561,7 @@ Dependiendo de los tipos de entidades que se consideren, existen distintos índi
 
 	.. figure:: Internal_area_splitting.*
 		:width: 350px
-	:align: center
+		:align: center
 
 		Esquema de la forma en que una línea divide a una región. La menor de las dos (en oscuro), dividida por el área total, define la *relación de subdivisión del área interior*. 
 
