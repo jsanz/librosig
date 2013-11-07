@@ -12,16 +12,14 @@ En cada capítulo se destacan los elementos particulares que resultan de mayor i
 
 * El capítulo :ref:`Ecologia` repasa las principales aplicación del SIG dentro del campo de la ecología tales como la modelización de comunidades animales o vegetales, entre otras.
 
-* Relacionado con el anterior, el capítulo :ref:`Gestion_ambiental` trata el uso de SIG para la gestión de recursos naturales y la planificación territorial.
+* El capítulo :ref:`Gestion_ambiental` trata el uso de SIG para la gestión de recursos naturales y la planificación territorial.
 
 **Contenido:**
 
 
 .. toctree::
 	
-	Introduccion_aplicaciones/Introduccion_aplicaciones
+	Introduccion_aplicaciones/Introduccion_aplicaciones	
 	Analisis_riesgos/Analisis_riesgos
-	Ciencias_sociales/Ciencias_sociales
-	Gestion_ambiental/Gestion_ambiental
-	Ecologia/Ecologia
+	Gestion_ambiental/Gestion_ambiental	
 	

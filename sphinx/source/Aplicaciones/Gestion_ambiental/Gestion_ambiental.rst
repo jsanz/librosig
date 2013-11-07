@@ -178,7 +178,8 @@ La figura :num:`#figmapacosecha` muestra una mapa de productividad realizado con
 .. _figmapacosecha:
 
 .. figure:: MapaCosecha.*
-	:width: 650px
+	:width: 600px
+	:align: center
 
 	Mapa de productividad de una cosecha generado mediante elementos SIG a bordo de una cosechadora (adaptado de  :cite:p:`SearcyPrecisionFarming).`
 
@@ -195,7 +196,8 @@ La figura :num:`#figmaquinariaagriculturaprecision` muestra un ejemplo de la tec
 .. _figmaquinariaagriculturaprecision:
 
 .. figure:: Greenstar.*
-	:width: 650px
+	:width: 600px
+	:align: center
 
 	La tecnología GIS montada a bordo de maquinaria agrícola permite el desarrollo de la agricultura de precisión (Cortesía John Deere).
 
@@ -236,7 +238,8 @@ Un esquema funcional de este proceso se recoge en la figura :num:`#figesquemacam
 .. _figesquemacamarkov:
 
 .. figure:: EsquemaCAMarkov.*
-	:width: 650px
+	:width: 600px
+	:align: center
 
 	Esquema del proceso de modelización de cambios en los usos del suelo.
 
@@ -248,7 +251,7 @@ Comenzando con el estudio de la evolución pasada, este se basa en tomar la cart
 
 
 ============  ============   ============   ==============
-               Urbano         Agrícola       Forestal 
+Medio          Urbano         Agrícola       Forestal 
 ============  ============   ============   ==============              
 Urbano        0,98           0,01           0,01
 Agrícola      0,30           0,65           0,05 
@@ -351,7 +354,8 @@ Las líneas mostradas unen cada punto de demanda con su punto de oferta más cer
 .. _figlocalizacionoptima:
 
 .. figure:: LocalizacionOptima.*
-	:width: 650px
+	:width: 550px
+	:align: center
 
 	Resultados del análisis de localización óptima para el caso de suma mínima (a), desviación típica mínima (b) y suma máxima (c).
 

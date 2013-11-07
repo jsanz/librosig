@@ -200,6 +200,7 @@ Este índice forma parte del modelo TOPMODEL  :cite:p:`Beven1979HS`, un modelo a
 
 .. figure:: Variacion_area_TOPMODEL.*
 	:width: 650px
+	:align: center
 
 	Variación del área contribuyente (en negro) a medida que se modifica el umbral de saturación en función del índice topográfico.
 
@@ -215,6 +216,7 @@ La figura :num:`#figesquemamdtmodeloshidro` muestra la relación existente entre
 
 .. figure:: Esquema_MDT_modelos_hidro.*
 	:width: 650px
+	:align: center
 
 	Esquema de la utilización e incorporación de Modelos Digitales del Terreno y otros datos de partida en los diferentes elementos que forman parte de un proceso de modelización hidrológica genérico.
 
@@ -235,7 +237,8 @@ Para establecer una caracterización de la cuenca mediante valores únicos, se h
 .. _figponderacionthiessen:
 
 .. figure:: Ponderacion_Thiessen.*
-	:width: 650px
+	:width: 450px
+	:align: center
 
 	Ponderación de estaciones en función de polígonos de Thiessen. El peso asignado a cada una de ellas se establece en relación con el área de su polígono correspondiente situada dentro de la cuenca.
 
@@ -267,7 +270,7 @@ Cada celda constituye un elemento en equilibrio desde el punto de vista hidroló
 .. _figbalancehidricocelda:
 
 .. figure:: Balance_hidrico_celda.*
-	:width: 650px
+	:width: 450px
 
 	Cada celda es un elemento en equilibrio en el que tienen lugar distintos procesos de entrada y salida.
 
@@ -417,6 +420,7 @@ Un ejemplo de esto se muestra en la figura :num:`#figmdeinvertido`.
 
 .. figure:: MDEInvertido.*
 	:width: 650px
+	:align: center
 
 	Inversión del MDE para calcular el área alcanzable aguas abajo como área aguas arriba en el MDE invertido. El círculo señala el punto de inicio del movimiento, que en el cálculo se emplea como punto de cierre de la zona aguas arriba.
 
@@ -436,7 +440,7 @@ El planteamiento y la situación resultan en cierto modo similares a lo que veí
 
 Todas estas variables pueden recogerse en capas de datos, una vez más siendo estas de tipo ráster generalmente. Las formulaciones que combinan estos elementos pueden implementarse en un SIG para el cálculo de nuevas capas que indiquen el riesgo de que se produzcan tales desplazamientos en cada una de las celdas. Los resultados de este tipo de análisis son principalmente de tipo cualitativo, clasificando las distintas zonas del terreno en grupos de riesgo.
 
-El uso exclusivo de la pendiente es una primera opción que, a rasgos generales, puede indicar el condicionamiento que este parámetro ---no el único implicado, aunque quizás el más importante--- plantea de cara a la estabilidad del terreno representado por las distintas celdas. El valor de :math:`35:math:`^\circ``, denominado habitualmente *ángulo de reposo*, es empleado con frecuencia para establecer una división sencilla entre las celdas de pendiente mayor que dicho valor ---con riesgo de deslizamiento--- o menores ---sin riego---. Una sencilla reclasificación de una capa de pendientes nos da así una primera aproximación a una capa de riesgo de desplazamientos en masa.
+El uso exclusivo de la pendiente es una primera opción que, a rasgos generales, puede indicar el condicionamiento que este parámetro ---no el único implicado, aunque quizás el más importante--- plantea de cara a la estabilidad del terreno representado por las distintas celdas. El valor de :math:`35^\circ`, denominado habitualmente *ángulo de reposo*, es empleado con frecuencia para establecer una división sencilla entre las celdas de pendiente mayor que dicho valor ---con riesgo de deslizamiento--- o menores ---sin riego---. Una sencilla reclasificación de una capa de pendientes nos da así una primera aproximación a una capa de riesgo de desplazamientos en masa.
 
 Si introducimos otras variables además de la pendiente, podemos obtener resultados más refinados.  :cite:p:`Pack1999SINMAP` propone en su modelo SINMAP un índice de estabilidad basado en la teoría de *pendiente infinita*  :cite:p:`Hammond1992USDA` ---también conocida como de *talud infinito*---, la cual define un factor de seguridad como la relación entre las fuerzas gravitatorias ---desestabilizantes--- y las de cohesión ---estabilizantes---.
 
@@ -444,8 +448,9 @@ Si introducimos otras variables además de la pendiente, podemos obtener resulta
 
 .. figure:: SINMAP.*
 	:width: 650px
+	:align: center
 
-	Valores de índice de estabilidad en el modelo SINMAP en función de área y pendiente (adaptado de  :cite:p:`Pack1999SINMAP).`
+	Valores de índice de estabilidad en el modelo SINMAP en función de área y pendiente (adaptado de  :cite:p:`Pack1999SINMAP`)
 
 Introduciendo la influencia de la humedad, estimada esta en función de la topografía, se tiene un índice de estabilidad (IE) fundamentalmente basado en la pendiente y el área acumulada, La gráfica mostrada en la figura :num:`#figsinmap` refleja un esquema de los posibles valores de este índice que se obtienen en función de los parámetros anteriores. Con los valores del índice obtenidos se tienen seis grupos fundamentales, tal y como se reseña en la tabla siguiente.
 
@@ -491,6 +496,7 @@ En la figura :num:`#figmodelizacionfuego` puede verse un mapa de tiempo de ignic
 
 .. figure:: Modelizacion_fuego.*
 	:width: 650px
+	:align: center
 
 	Tiempo de ignición a partir de dos focos iniciales. Las zonas en blanco representan áreas de las que no se dispone de información acerca de su modelo de combustible, o bien son incombustibles (embalses, zonas asfaltadas, etc.).
 
@@ -561,6 +567,7 @@ La figura :num:`#figincendiomontecarlo` muestra la una capa de probabilidad de i
 
 .. figure:: Incendio_MonteCarlo.*
 	:width: 650px
+	:align: center
 
 	Probabilidad de ignición en función de la propagación de fuego desde celdas vecinas, a partir de simulaciones de Monte Carlo.
 
@@ -578,7 +585,8 @@ La figura :num:`#figesquemariesgoincendio` muestra un esquema de los proceso des
 .. _figesquemariesgoincendio:
 
 .. figure:: Esquema_riesgo_incendio.*
-	:width: 650px
+	:width: 550px
+	:align: center
 
 	Esquema funcional del análisis de riesgo de incendios.
 

@@ -344,8 +344,8 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 	.. _figextrusion:
 
 	.. figure:: Extrusion.*
-		:width: 650px
-	:align: center
+		:width: 550px
+		:align: center
 
 		La extrusión permite la creación de objetos volumétricos a partir de objetos planos. Los edificios de la imagen se han creado únicamente a partir de la planta y un valor de altura para cada uno de ellos.
 
@@ -355,8 +355,8 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 	.. _figcoropletas3d:
 
 	.. figure:: Coropletas3D.*
-		:width: 650px
-	:align: center
+		:width: 550px
+		:align: center
 
 		La dimensión vertical puede emplearse como variable visual para visualizar la componente temática de la información geográfica.
 
@@ -370,7 +370,7 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 
 	.. figure:: Superficie3D.*
 		:width: 650px
-	:align: center
+		:align: center
 
 		La dimensión vertical puede utilizarse también para simbolizar capas ráster con variables distintas a la elevación.
 
@@ -383,8 +383,8 @@ Por todo ello, porque el factor visual es de gran relevancia en los SIG 3D, una 
 	.. _figexageracionrelieve:
 
 	.. figure:: ExageracionRelieve.*
-		:width: 750px
-	:align: center
+		:width: 850px
+		:align: center
 
 		La exageración del relieve permite hacer más evidente la configuración de este.
 
@@ -433,12 +433,14 @@ Algunos de los nuevos elementos que pueden añadirse a una representación en un
 
 	.. figure:: FotografiasInmersivas.*
 		:width: 650px
-	:align: center
+		:align: center
 
 		Las fotografias inmersivas permiten al usuario *meterse* en el mapa, ampliando la información que se muestra acerca de un lugar con imágenes reales tomadas sobre el terreno. Al igual que se navega por un mapa, el usuario puede navegar por el terreno haciendo uso de los controles interactivos correspondientes (imagen tomada de Google Street View).
 
 * Vídeos. Del mismo modo que las fotografías, aportan más información sobre la zona representada y permiten una exploración mayor. Aunque son una tecnología aún muy experimental, existen también vídeos de tipo inmersivo.
+
 * Sonido. Los elementos no han de ser necesariamente visuales, sino que pueden proporcionar información a través de otros sentidos distintos.
+
 * Documentos. Un SIG puede incorporar documentos complejos tales como páginas Web o textos varios.
 
 

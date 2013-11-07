@@ -94,6 +94,7 @@ Los tipos principales de deficiencias que puede contener una imagen son los sigu
 
 * Geométricas. Distorsiones de forma provocadas por los movimientos y oscilaciones del sensor, o por el relieve del terreno, entre otros factores.
 Con una base conceptual relacionada con las técnicas de corrección de estas deficiencias, existe un paso básico que debemos llevar a cabo en muchos casos: la georreferenciación de la imagen. Para incorporar dicha imagen dentro del ámbito de un SIG, es necesario que le asignemos una referencia geográfica ya que, como bien sabemos, todos los datos espaciales han de tener definida su posición en el espacio. Cuando esta referencia no existe, es necesario llevar a cabo un proceso que la defina. 
+
 * Radiométricas. Valores incorrectamente recogidos por el sensor. Pueden ser debidas a errores del sensor o introducidos en el proceso de almacenamiento o transmisión, o bien a distorsiones debidas al efecto que la atmósfera ejerce sobre la radiación (y por tanto sobre los valores recogidos).
 
 
@@ -269,8 +270,9 @@ Las operaciones de esta clase se corresponden con las funciones de tipo local de
 
 Según sea la función, tenemos un tipo u otro de operación, con un efecto concreto. Para mostrar estas funciones de forma gráfica, emplearemos gráficas como la siguiente, la cual se corresponde con la transformación identidad. 
 
-.. image:: Funcion_transformacion_identidad.png
+.. image:: Funcion_transformacion_identidad.*
 	:align: center
+	:width: 450px
 
 
 
@@ -379,7 +381,6 @@ Otra solución frecuente para la selección de :math:`x` y :math:`X` consiste en
 
 Si se aplica la normalización a una imagen multibanda, es importante tener en cuenta que las relaciones entre los Niveles Digitales de estas han de preservarse. Cuando se aplica normalización sobre un conjunto de capas ráster, el objetivo es escalar las distintas variables para que ocupen un rango homogéneo, y esta relación no es relevante. En el caso de imágenes, y trabajando con bandas en lugar de capas, sí lo es, ya que de ella dependen, por ejemplo, los colores obtenidos al componerlas para formar imágenes en falso color según veremos más adelante. 
 
-%Información adicional sobre este tema puede encontrarse en  :cite:p:`1999SPIE`.
 
 Modificación de brillo y contraste
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1031,13 +1032,14 @@ Más detalladamente, y para un píxel caracterizado por su firma espectral, dos 
 
 * ¿Qué hay en ese píxel? Puesto que los distintos objetos van a presentar firmas espectrales particulares, pueden caracterizarse las firmas más habituales de una serie de objetos tipo, y después tratar de identificar a cuál de ellas se asemeja más la presente en un píxel concreto.
  Los fundamentos teóricos de este proceso, que son de tipo genérico y pueden aplicarse a otras fuentes de datos además de las imágenes, se tratarán en el capitulo :ref:`Estadistica_avanzada`. En este capítulo principalmente veremos los aspectos relacionados con la identificación de factores físicos a partir de imágenes, que podrán emplearse en conjunción con los que se verán entonces.
- En general, la clasificación de elementos del medio hace uso de las denominadas *bases de datos espaciales*\footnote{No ha de confundirse esto con la tecnología de bases de datos con capacidad de manejo de elementos espaciales, la cual ya hemos visto en otros capítulos. En este caso no nos referimos a la tecnología, sino a un conjunto particular de datos que almacenan esas firmas espectrales de una serie de elementos conocidos.}, que recogen las características de dichos elementos expresadas en función de las energías recibidas en las distintas longitudes de onda.
+ En general, la clasificación de elementos del medio hace uso de las denominadas *bases de datos espaciales*\footnote{No ha de confundirse esto con la tecnología de bases de datos con capacidad de manejo de elementos espaciales, la cual ya hemos visto en otros capítulos. En este caso no nos referimos a la tecnología, sino a un conjunto particular de datos que almacenan esas firmas espectrales de una serie de elementos conocidos.}, que recogen las características de dichos elementos expresadas en función de las energías recibidas en las distintas longitudes de onda. 
  Más información sobre bases de datos de firmas espectrales puede encontrarse en  :cite:p:`Ruby2002SPIE`.
+
 * ¿Cómo es lo que hay en ese píxel? Conociendo qué tipo de elemento encontramos en un píxel (por ejemplo, una superficie de agua como un embalse), pueden estimarse asimismo las cualidades particulares del mismo. Características como la temperatura de ese agua tienen efecto sobre la firma espectral, y pueden deducirse mediante formulaciones desarrolladas a tal efecto. 
 
 
 
-Según sea la propiedad que queremos conocer o el tipo de elemento que pretendemos detectar en el terreno, será una u otra longitud de onda (es decir, uno u otro sensor y una u otra banda de las imágenes generadas por el mismo) la que aporte una información más relevante. En la siguiente tabla se muestran de forma resumida las aplicaciones principales de las distintas longitudes de onda, en función de los procesos en los que dichas radiaciones toman parte. 
+Según sea la propiedad que queremos conocer o el tipo de elemento que pretendemos detectar en el terreno, será una u otra longitud de onda (es decir, uno u otro sensor y una u otra banda de las imágenes generadas por este) la que aporte una información más relevante. En la siguiente tabla se muestran de forma resumida las aplicaciones principales de las distintas longitudes de onda, en función de los procesos en los que dichas radiaciones toman parte. 
 
 =========================  ==========================================    ======================================
 Región del espectro        Procesos                                       Aplicaciones
@@ -1350,5 +1352,4 @@ La imagen corregida puede ser mejorada mediante algoritmos que hagan más patent
 
 .. rubric:: Footnotes
 
-.. [fn1] Este esquema es de uso habitual y se denota como RGB = NRG, siendo N = Near infrared (infrarrojo cercano), R = Red (rojo) y G = Green (verde). Como regla mnemotécnica, la lectura en ingles del acrónimo NRG suena parecida a la del vocablo inglés *energy* (energía), y es también común referirse así a él.
-Este esquema es de uso habitual y se denota como RGB = NRG, siendo N = Near infrared (infrarrojo cercano), R = Red (rojo) y G = Green (verde). Como regla mnemotécnica, la lectura en ingles del acrónimo NRG suena parecida a la del vocablo inglés *energy* (energía), y es también común referirse así a él.
+.. [#fn1] Este esquema es de uso habitual y se denota como RGB = NRG, siendo N = Near infrared (infrarrojo cercano), R = Red (rojo) y G = Green (verde). Como regla mnemotécnica, la lectura en ingles del acrónimo NRG suena parecida a la del vocablo inglés *energy* (energía), y es también común referirse así a él.

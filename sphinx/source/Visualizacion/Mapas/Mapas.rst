@@ -474,7 +474,7 @@ Existen muchos otros tipos de mapas, adecuados para representar tipos particular
 
 	.. figure:: MapaFlujo.*
 		:width: 800px
-	:align: center
+		:align: center
 
 		Mapa de flujo de Charles Joseph Minard sobre la campaña de Napoleón en Rusia.
 

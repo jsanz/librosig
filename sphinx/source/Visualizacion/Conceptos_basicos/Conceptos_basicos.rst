@@ -202,7 +202,7 @@ El valor, que ya sabemos que presenta la propiedad ordenada, podría pensarse qu
 En la tabla siguiente se muestra un resumen de todo lo anterior.
 
 =================  ===================== ==================== ====================  ==================== ====================  ====================  ==================== 
-                   Posición              Tamaño               Forma                   Valor              Tono                  Textura               Orientación
+Propiedad          Posición              Tamaño               Forma                   Valor              Tono                  Textura               Orientación
 =================  ===================== ==================== ====================  ==================== ====================  ====================  ====================
 Asociativa         :math:`\diamondsuit`  ---                  :math:`\diamondsuit`  ---                  :math:`\diamondsuit`  :math:`\diamondsuit`  :math:`\diamondsuit` 
 Selectiva          :math:`\diamondsuit`  :math:`\diamondsuit` ---                   :math:`\diamondsuit` :math:`\diamondsuit`  :math:`\diamondsuit`  :math:`\diamondsuit` 
@@ -269,7 +269,7 @@ Cuando la percepción de un elemento cambia aunque el estimulo no lo haga, en lu
 .. _figzollner:
 
 .. figure:: Zollner_illusion.*
-	:width: 500px
+	:width: 400px
 	:align: center
 
 	Ilusión de Zollner que demuestra el contraste perceptivo de la orientación.
@@ -288,7 +288,7 @@ Las siguientes son algunas de las ideas más importantes a tener en cuenta a est
 .. _figcontrastetamano:
 
 .. figure:: ContrasteTamano.*
-	:width: 650px
+	:width: 550px
 	:align: center
 
 	Contraste perceptivo del tamaño. Ambos circulos grises tienen el mismo tamaño, pero el de la izquierda aparenta ser mayor.
@@ -308,7 +308,7 @@ Un factor clave en este sentido es la adecuado separación entre el fondo y la f
 .. _figcuporfaces:
 
 .. figure:: Cup_or_faces_paradox.*
-	:width: 500px
+	:width: 400px
 	:align: center
 
 	Sin un adecuado contraste entre fondo y figura la imagen presenta ambigüedad.

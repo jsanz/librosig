@@ -332,7 +332,7 @@ Como conclusión de esta sección dedicada a la clasificación y los métodos ex
 .. _figcomparacionmetodosclasificacion:
 
 .. figure:: Comparacion_clasificacion.*
-	:width: 650px
+	:width: 800px
 	:align: center
 
 	Comparación de la clasificación en clases de uso de suelo generada partir de una imagen de satélite y parámetros fisiográficos mediante los métodos de a) mínima distancia b) máxima verosimilitud y c) mínima distancia iterativa (no supervisada)
@@ -349,7 +349,7 @@ Un algoritmo habitual en clasificación de objetos es la utilización de árbole
 .. _figclusteringjerarquico:
 
 .. figure:: Cluster_jerarquico.*
-	:width: 650px
+	:width: 600px
 	:align: center
 
 	Dendrograma resultante de un proceso de clustering jerárquico
@@ -690,11 +690,11 @@ En el ejemplo de la figura esta transición es lineal, y la función de miembro 
 
 .. math::
 	f(x) = \left\{ \begin{array}{ll}
-	0 & \textrm{si :math:`x < a`}\\
-	\frac{x-a}{b-a} & \textrm{si :math:`a \leq x \leq b`}\\
-	1 & \textrm{si :math:`b < x < c`}\\
-	\frac{d-x}{d-c} & \textrm{si :math:`c \leq x \leq d`}\\
-	0 & \textrm{si :math:`x > d`}
+	0 & \textrm{si} x < a\\
+	\frac{x-a}{b-a} & \textrm{si} a \leq x \leq b\\
+	1 & \textrm{si} b < x < c\\
+	\frac{d-x}{d-c} & \textrm{si} c \leq x \leq d\\
+	0 & \textrm{si} x > d
 	  \end{array} \right. 
 
 Pueden elegirse cualesquiera valores para los parámetros :math:`a, b, c` y :math:`d`, obteniéndose toda una familia de curvas distintas. Por ejemplo, el intervalo óptimo puede reducirse a un único punto (:math:`b=c`), en cuyo caso tendríamos una función triangular.
@@ -704,11 +704,11 @@ Otra solución habitual es emplear una función sigmoidal para las transiciones,
 .. math::
 
 	f(x) = \left\{ \begin{array}{ll}
-	0 & \textrm{si :math:`x < a`}\\
-	\frac{1}{2} \left(1 + \cos \left(\pi \frac{x-a}{b-a}\right)\right) & \textrm{si :math:`a \leq x \leq b`}\\
+	0 & \textrm{si} x < a\\
+	\frac{1}{2} \left(1 + \cos \left(\pi \frac{x-a}{b-a}\right)\right) & \textrm{si} a \leq x \leq b\\
 	1 & \textrm{si :math:`b < x < c`}\\
-	\frac{1}{2} \left(1 + \cos \left(\pi \frac{d-x}{d-c}\right)\right) & \textrm{si :math:`c \leq x \leq d`}\\
-	0 & \textrm{si :math:`x > d`}
+	\frac{1}{2} \left(1 + \cos \left(\pi \frac{d-x}{d-c}\right)\right) & \textrm{si} c \leq x \leq d\\
+	0 & \textrm{si} x > d
 	  \end{array} \right. 
 
 Un función de distribución de probabilidad gaussiana (esto es, una campana de Gauss), también puede utilizarse como función de miembro. En este caso, el óptimo sería el punto que coincide con la media de dicha distribución.
@@ -789,6 +789,7 @@ Existen estudios psicológicos que muestran que no se puede comparar simultánea
 
 ==================  ================================================
 Valor               Descripción
+==================  ================================================
 1                   Misma importancia
 3                   Predominancia moderada de un factor sobre otro
 5                   Predominancia fuerte
@@ -800,15 +801,16 @@ Valores recíprocos  Valores para comparación inversa
 
 Una vez creada la matriz de comparaciones, el autovector principal de la misma contiene los distintos pesos a asignar a cada uno de los factores.
 
-Veamos un ejemplo. Supongamos tres capas con tres factores, sean  \textsf{a}, \textsf{b} y \textsf{c}, y la siguiente matriz de comparaciones entre pares de ellos, que describe la importancia de cada uno de los mismos frente a los restantes.
+Veamos un ejemplo. Supongamos tres capas con tres factores, sean  *a*, *b* y *c*, y la siguiente matriz de comparaciones entre pares de ellos, que describe la importancia de cada uno de los mismos frente a los restantes.
 
 
-=== === === === 
-    a    b  c 
-a   1    4  5 
-b   1/4  1  1/2
-c   1/5  2  1 
-=== === === === 
+==== === === === 
+v/v' a    b  c 
+==== === === ===     
+a    1    4  5 
+b    1/4  1  1/2
+c    1/5  2  1 
+==== === === ===      
 
 
 Según la tabla, el factor *a* es cinco veces más relevante que el *c* y, consecuentemente, *c* tiene un quinto de la importancia de *a*. 
@@ -838,10 +840,6 @@ Las operaciones lógicas pueden evaluarse como operaciones aritméticas, aplican
 	Combinación de factores y restricciones en un modelo sencillo. Los factores a) y b) se combinan para obtener un resultado ponderado d). A este se le aplica después la restricción c) para obtener el mapa final e)..
 
 
-
-
-
-
 .. _componentes_principales:
 
 Análisis de Componentes Principales
@@ -849,7 +847,7 @@ Análisis de Componentes Principales
 
 
 
-El Análisis de Componentes Principales (ACP, también conocido como *transformación de Kahunen--Loeve o de Hotelling* es otra técnica estadística con gran importancia dentro de los SIG, en especial, y de modo similar a la clasificación (aunque al igual que entonces, no exclusivamente), en el trabajo con imágenes.
+El Análisis de Componentes Principales (ACP, también conocido como *transformación de Kahunen--Loeve o de Hotelling*) es otra técnica estadística con gran importancia dentro de los SIG, en especial, y de modo similar a la clasificación (aunque al igual que entonces, no exclusivamente), en el trabajo con imágenes.
 
 El ACP es una transformación que pretende disminuir la dimensionalidad de un conjunto de variables, reduciendo este a uno más pequeño de forma que se pierda la menor información posible. Se trata de *resumir* la información que esas variables contienen, pero eliminando partes redundantes como por ejemplo las derivadas de la dependencia que pueda existir entre las variables. Se busca, pues, eliminar datos sin eliminar información.
 
