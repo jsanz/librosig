@@ -1,0 +1,327 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>La calidad de los datos espaciales &mdash; Sistemas de Información Geográfica 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Sistemas de Información Geográfica 1.0 documentation" href="../../index.html" />
+    <link rel="up" title="Los datos" href="../Datos.html" />
+    <link rel="next" title="Bases de datos" href="../Bases_datos/Bases_datos.html" />
+    <link rel="prev" title="Fuentes principales de datos espaciales" href="../Fuentes_datos/Fuentes_datos.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../Bases_datos/Bases_datos.html" title="Bases de datos"
+             accesskey="N">siguiente</a> |</li>
+        <li class="right" >
+          <a href="../Fuentes_datos/Fuentes_datos.html" title="Fuentes principales de datos espaciales"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="../../index.html">Sistemas de Información Geográfica 1.0 documentation</a> &raquo;</li>
+          <li><a href="../Datos.html" accesskey="U">Los datos</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="la-calidad-de-los-datos-espaciales">
+<span id="calidad-datos"></span><h1>La calidad de los datos espaciales<a class="headerlink" href="#la-calidad-de-los-datos-espaciales" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Todo dato espacial contiene algún tipo de error, en mayor o menor medida. Conocer las razones por las cuales aparecen esos errores es importante para poder evaluar correctamente la validez del trabajo que realizamos con los datos y los resultados que obtenemos a partir de ellos. En este capítulo se estudiaran los principales errores que pueden afectar a los distintos tipos de datos espaciales, las fuentes principales de dichos errores y las maneras en que estos pueden gestionarse dentro de un proyecto SIG.</p>
+<p>Puesto que los datos son la materia prima para obtención de nuevos datos a través de los procesos y operaciones que dentro de un SIG realizamos con ellos, trataremos también la forma en que los errores en los datos de partida afectan a los resultados que derivemos de ellos.</p>
+<div class="section" id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puesto que los datos son la base de todo el trabajo que realizamos en un SIG, su calidad es vital para que ese trabajo tenga sentido y aporte unos resultados coherentes y útiles. Siendo la calidad el conjunto de propiedades y de características de un producto o servicio que le confieren su aptitud para satisfacer unas necesidades explícitas e implícitas  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-aenor1995">54</a><span class="citation">)</span></span>, desde el punto de vista del SIG unos datos espaciales de calidad serán aquellos que puedan servir para alcanzar los objetivos de un proyecto concreto, dando sentido a este. En este aspecto, se debe considerar la disposición de los datos <em>per se</em>, aunque también las necesidades a las que pretendemos dar respuesta mediante los datos que utilizamos.</p>
+<p>Por definición, ningún dato es perfecto. Todo dato que utilicemos va a contener errores, y estos pueden ser desde totalmente irrelevantes para el desarrollo de un proceso de análisis hasta de tal magnitud que desvirtúen por completo los resultados de dicho análisis. Es importante no solo contar con datos de calidad en los que estos errores sean mínimos, sino conocer el tipo de error que existe en nuestros datos y la magnitud de estos. Saber gestionar el error y ser consciente de las limitaciones de los datos de los que se dispone es importante para saber interpretar los resultados derivados del trabajo con dichos datos.</p>
+<p>A lo largo de este capítulo veremos los aspectos más importantes que derivan de considerar el error como parte inevitable de nuestro trabajo con datos espaciales. Ello nos permitirá saber evaluar las capacidades de los datos para servir como punto de partida de nuestro trabajo, y a llevar este a cabo de la mejor manera posible, considerando que se trabaja simultáneamente con un conjunto de datos y con un error implícito asociado a estos.</p>
+<p><span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-gomez2004geofocus">55</a><span class="citation">)</span></span> apunta las siguientes etapas para la modelación del error:</p>
+<ul class="simple">
+<li>Identificación de la fuente de error.</li>
+<li>Detección y medida del error.</li>
+<li>Modelación de la propagación del error.</li>
+<li>Propuestas de estrategias para la gestión y reducción del error.</li>
+</ul>
+<p>Será sobre estas distintas fases sobre las que trataremos en las próximas secciones.</p>
+</div>
+<div class="section" id="la-importancia-de-la-calidad-de-los-datos">
+<h2>La importancia de la calidad de los datos<a class="headerlink" href="#la-importancia-de-la-calidad-de-los-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A pesar de su gran importancia, la calidad de los datos espaciales no ha sido una preocupación hasta hace relativamente poco tiempo. Los textos sobre Sistemas de Información Geográfica tales como este mismo libro apenas trataban el tema en sus inicios  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-foote2000">56</a><span>, </span><a class="reference internal" href="../../bibliografia.html#citation-oort2005ngc">57</a><span class="citation">)</span></span>, y solo en la actualidad aparece una concienciación acerca de la importancia que la calidad de los datos espaciales tiene sobre el desarrollo de cualquier trabajo basado en ellos.</p>
+<p>Las razones por las que la calidad de los datos empieza a considerarse como un elemento de gran relevancia en el ámbito geográfico son principalmente dos  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-oort2005ngc">57</a><span class="citation">)</span></span>:</p>
+<ul class="simple">
+<li>Aparición de los SIG.</li>
+<li>Amplio crecimiento del volumen de datos espaciales disponibles, especialmente los derivados de satélites.</li>
+</ul>
+<p>Estos dos factores, inevitablemente unidos, han favorecido que el volumen de trabajo sobre datos espaciales sea mayor y que además se use un número más elevado de datos distintos. Es lógico pensar que, a raíz de esto, haya surgido el interés por evaluar y tratar de forma rigurosa las condiciones en las que estos trabajos se están llevando a cabo.</p>
+<p>La preocupación por la calidad de los datos es básica por el simple hecho de que datos de mala calidad generan invariablemente resultados de mala calidad. Utilizar un dato de mala calidad es equivalente a utilizar un modelo equivocado. Si el modelo no es cierto, no importa la buena calidad de los datos, ya que los resultados que arrojará tampoco lo serán. Del mismo modo, un dato con un error superior al que puede resultar tolerable para una determinada tarea hace que la calidad de este sea insuficiente, y los resultados obtenidos carecen de valor.</p>
+<p>A pesar de que la aparición de los SIG ha sido una de las razones principales para que se tenga en consideración la calidad de los datos y se especifique formalmente el modo de tratarla y gestionarla, los SIG en sí no disponen apenas de herramientas para asistir en estas tareas. Aunque la ciencia de la información geográfica ha avanzado mucho en ese sentido, y el conocimiento relativo a la calidad de los datos espaciales es mucho mayor, los SIG no han incorporado ese conocimiento, y carecen de funcionalidades al respecto. Dicho de otro modo, existen las formulaciones y los elementos teóricos, pero estos aún no se han visto materializados (o lo han hecho de forma prácticamente anecdótica) en los SIG de uso habitual. Por esta razón, la mayoría de usuarios de SIG no tienen en cuenta rigurosa y formalmente la calidad de los datos a la hora de desarrollar su trabajo, quedando aún mucho por avanzar en este sentido.</p>
+<p>Un elemento clave para el control de la calidad es la existencia de metadatos, que informan acerca de dichos datos sobre una serie de aspectos relativos a estos, entre ellos aquellos que afectan a la calidad. Los metadatos se tratan con gran profundidad dentro de este libro en el capítulo <a class="reference internal" href="../../Factor_organizativo/Metadatos/Metadatos.html#metadatos"><em>Metadatos</em></a>.</p>
+</div>
+<div class="section" id="conceptos-y-definiciones-sobre-calidad-de-datos">
+<h2>Conceptos y definiciones sobre calidad de datos<a class="headerlink" href="#conceptos-y-definiciones-sobre-calidad-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Antes de entrar en el estudio directo de la calidad de los datos espaciales y el estudio de los errores que pueden presentarse en un dato espacial, es necesario definir algunos conceptos básicos y alguna terminología al respecto.</p>
+<p>El concepto básico es el <em>error</em>, que no es sino la discrepancia existente entre el valor real (puede ser un valor de posición, de un atributo, o cualquier otro), y el valor recogido en una capa. El error puede ser de dos tipos: <em>sistemático</em> y <em>aleatorio</em>.</p>
+<p>Dos términos importantes en el estudio de la calidad son la <em>precisión</em> y <em>exactitud</em>. La precisión indica el nivel de detalle con el que se recoge la información. Un capa en la que las posiciones se han medido con 5 valores decimales es más precisa que una en la que se han medido con un único decimal.</p>
+<p>Dependiendo del uso que se pretenda dar a una capa de datos geográficos, se requerirá una u otra precisión. Un trabajo geodésico requerirá medir la localización de un punto con precisión milimétrica, mientras que para un muestreo para inventario forestal es suficiente localizar las parcelas correspondientes con una precisión mucho menor.</p>
+<p>Por su parte, la exactitud nos indica el grado en que los valores estimados se asemejan al valor real.</p>
+<p>La exactitud se calcula con el error sistemático, mientras que la precisión se calcula a partir del error aleatorio. Existe una relación directa entre precisión y exactitud, y en ocasiones se emplean ambos términos indistintamente. Si no existen errores sistemáticos (no existe un sesgo), la precisión y la exactitud son iguales.</p>
+<p>Es posible, no obstante, que un dato sea muy preciso pero poco exacto, ya que las magnitudes de los distintos tipos de errores pueden ser muy distintas. Este hecho puede verse claramente en la figura <a href="#figimprecisionexactitud"> 21</a>.</p>
+<div class="figure align-center" id="figimprecisionexactitud">
+<img alt="../../_images/Imprecision_exactitud.pdf.png" src="../../_images/Imprecision_exactitud.pdf.png" style="width: 500px;" />
+<p class="caption">Figura 21: Diferencia entre precisión y exactitud (Tomado de  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-heywood1998longman">58</a><span class="citation">)</span></span>). En a) y b) la precisión es elevada, mientras que en c) y d) es baja. Por su parte, en a) y c) la exactitud es baja, siendo alta en b) y d).</p>
+</div>
+<p>Por último, un parámetro relativo al error es la <em>incertidumbre</em>. Habitualmente, el valor real es desconocido, por lo que el error no puede conocerse. La incertidumbre refleja la medida en que no podemos tener certeza de la validez de nuestros datos. La incertidumbre es un concepto más amplio que el error, y auna tres componentes  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-fisher1999wiley">59</a><span class="citation">)</span></span>:</p>
+<ul class="simple">
+<li>Error</li>
+<li>Vaguedad. Aparece como consecuencia de definiciones pobres o incompletas, así como cuando los objetos que se modelizan en los datos no presentan límites bien definidos. Por ejemplo, en una capa de clases de vegetación, la transición entre una clase y otra se produce normalmente de forma gradual, por lo que el establecimiento de una frontera brusca es un hecho artificial que aumenta la incertidumbre, y el significado de que un punto en concreto se asigne a una clase dada es más vago cuanto más cerca de esa frontera nos encontramos.</li>
+<li>Ambigüedad. Cuando no existen definiciones inequívocas de los conceptos fundamentales, aparecen ambigüedades que añaden igualmente incertidumbre al dato creado en función de estos.</li>
+</ul>
+<p>Tradicionalmente se ha trabajado con el error y no con el concepto de incertidumbre, pero conocer esta es igualmente importante a la hora de evaluar la calidad de los datos, y la modelización de la incertidumbre es una alternativa a la modelización del error.</p>
+</div>
+<div class="section" id="fuentes-y-tipos-de-errores">
+<h2>Fuentes y tipos de errores<a class="headerlink" href="#fuentes-y-tipos-de-errores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Cuando un dato espacial llega a nosotros para ser empleado en un SIG, ha pasado por una serie de etapas a lo largo de los cuales puede haber incorporado errores. Estudiando esas etapas por separado, encontramos las siguientes fuentes de error  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-heuvelink1998taylor">60</a><span>, </span><a class="reference internal" href="../../bibliografia.html#citation-heywood1998longman">58</a><span class="citation">)</span></span>:</p>
+<ul class="simple">
+<li>Errores de concepto y modelo. Al recoger la información espacial utilizamos algún modelo de representación (ráster, vectorial), el cual siempre tiene alguna deficiencia. La realidad y las tareas que pretendemos realizar con una capa de información espacial no se adaptan por completo a ninguno de los modelos de representación, y el hecho de optar por uno u otro conlleva la introducción de algún error, o condiciona para la aparición de unos u otros errores en las etapas posteriores.</li>
+<li>Errores en las fuentes primarias. El dato vectorial del que disponemos proviene originariamente de una fuente primaria, la cual puede contener errores. Si esta fuente contiene errores, estos aparecerán también en los datos que se deriven de este. Así, si digitalizamos en base a un mapa escaneado y la hoja original es errónea, también lo serán las capas que creemos en esa digitalización.</li>
+<li>Errores en los procesos de creación de la capa. Los procesos que realizamos para crear la capa pueden incorporar errores en el resultado. Por ejemplo, en el proceso de digitalización en base a ese mapa escaneado pueden aparecer errores por razones tales como un mal trabajo del operario, ya sea al digitalizar las entidades sobre una tableta o al teclear los valores de los atributos.</li>
+</ul>
+<blockquote>
+<div>Otros procesos, como pueden ser los de conversión entre los modelos ráster y vectorial, también pueden tener como consecuencia la aparición de errores. Los capítulos <a class="reference internal" href="../../Procesos/Creacion_capas_raster/Creacion_capas_raster.html#creacion-capas-raster"><em>Creación de capas ráster</em></a> y <a class="reference internal" href="../../Procesos/Creacion_capas_vectoriales/Creacion_capas_vectoriales.html#creacion-capas-vectoriales"><em>Creación de capas vectoriales</em></a> tratan estos procesos de conversión, y se verá en su momento los posibles errores que pueden aparecer en cada caso y las razones por las que lo hacen. Igualmente, se verá como aplicar a esos procesos los elementos de medida del error que se desarrollarán más adelante en este capítulo.</div></blockquote>
+<ul class="simple">
+<li>Errores en los procesos de análisis. Un dato espacial puede derivar de un proceso de análisis, y en él pueden aparecer errores debidos principalmente a dos razones: o bien la capa original objeto de análisis contiene de por sí errores, o bien el proceso no es por completo correcto.</li>
+</ul>
+<p>Veremos en el capítulo <a class="reference internal" href="../../Procesos/Geomorfometria/Geomorfometria.html#geomorfometria"><em>Geomorfometría y análisis del terreno</em></a> cómo a partir de un MDE podemos calcular una capa con valores de pendiente, y cómo existen varios algoritmos distintos para realizar este cálculo. Ninguno de esos algoritmos es completamente preciso, y los valores calculados presentaran discrepancias de distinta magnitud con el valor real de pendiente, en función de diversos factores. Por su parte, el propio MDE también tiene sus propios errores, y estos se propagan a los resultados que derivamos de él, como veremos más adelante con detalle.</p>
+<p>En la parte de procesos veremos muchas operaciones que van a generar nuevos datos espaciales, y que pueden implicar la aparición de errores. Trataremos estos en su momento en la medida que ello pueda ser relevante para el manejo y utilización de esos datos derivados.</p>
+<div class="section" id="las-componentes-de-la-calidad">
+<h3>Las componentes de la calidad<a class="headerlink" href="#las-componentes-de-la-calidad" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La calidad de un dato espacial depende de muchos factores. Las características que dotan de dicha calidad al dato espacial son variadas, pues el dato espacial es en sí complejo, y cada una de estas características es susceptible de incorporar errores y por tanto de implicar una pérdida de calidad por ello. Las siguientes san algunos de los componentes principales de la calidad del dato espacial  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-oort2005ngc">57</a><span class="citation">)</span></span>:</p>
+<ul class="simple">
+<li>Exactitud posicional. Todo dato espacial tiene asociada una referencia geográfica. La precisión con la que se toma esta condiciona la calidad del dato.</li>
+</ul>
+<p>Esta precisión puede considerarse únicamente en los ejes <span class="math">\(x\)</span> e <span class="math">\(y\)</span>, o también en el eje <span class="math">\(z\)</span> (elevación). Esta última, no obstante, puede considerarse como un atributo si se trabaja en un SIG bidimensional, y tratarse de la misma forma que cualquier otra variable de similar índole sin significado espacial, tal como la temperatura en el punto (<span class="math">\(x,y)\)</span> en cuestión.</p>
+<ul class="simple">
+<li>Exactitud en los atributos. Si la componente espacial puede tener errores, estos también pueden aparecer en la componente temática. Los valores asociados a una coordenada u objeto espacial pueden haber sido medidos con más o menos exactitud, o presentar valores incorrectos por muy diversas causas.</li>
+</ul>
+<p>Cuando el atributo en cuestión es de tipo categórico, puede existir un error de clasificación (se asocia la entidad espacial a una categoría errónea), mientras que en el caso de atributos no categóricos pueden sencillamente aparecer valores mayores o menores que los reales.</p>
+<ul class="simple">
+<li>Consistencia lógica y coherencia topológica. Los datos espaciales no son elementos independientes, sino que existen relaciones entre ellos. Un dato de calidad debe recoger fielmente estas relaciones, siendo la topología la encargada de reflejar este tipo de información. Por ello, debe existir una coherencia topológica en el dato espacial.</li>
+</ul>
+<p>Además de la coherencia de las relaciones, existe una coherencia implícita en todo atributo o valor recogido, de forma que resulte lógico. Estos atributos y valores han de ser coherentes con las escalas de medida o el tipo de valor que se espera, entre otros. Así un valor de elevación no puede ser igual a <em>suelo calizo</em>, ni un valor de temperatura expresado en Kelvin igual a -87.</p>
+<ul class="simple">
+<li>Compleción. El dato espacial no recoge todo lo que existe en una zona dada. Algunos elementos pueden no haberse recogido por cuestiones de escala (menores de un tamaño mínimo), pero también pueden incluirse o excluirse en función de otros criterios, en especial para el caso de mapas temáticos. Estos criterios deben conocerse para saber por qué un dato espacial contiene una serie de valores o elementos y no otros.</li>
+<li>Calidad temporal. Aunque los datos espaciales son <em>imágenes</em> estáticas de la realidad, el tiempo es importante en muchos sentidos, pues afecta directamente a su calidad. La realidad que representa un dato geográfico es una realidad que varía con el paso del tiempo, y por tanto este paso del tiempo puede degradar la calidad del dato espacial en mayor o menor medida.</li>
+<li>Procedencia. Un dato espacial puede provenir de una fuente más o menos fiable, o haber sido generado a través de uno o varios procesos, en cada uno de los cuales se puede haber introducido algún tipo de error. Conocer la procedencia de un dato y los procesos que se han empleado en su confección es necesario para poder evaluar su calidad.</li>
+</ul>
+<p>Es importante recalcar que los errores que pueden incorporarse en estas componentes de la calidad pueden ser tanto de tipo cuantitativo como de tipo cualitativo, y que ello no está necesariamente ligado a la naturaleza de la componente o el tipo de variable a la que esta hace referencia. Así, un error en un atributo de tipo categórico supone un error cualitativo, pero un error posicional en la componente <span class="math">\(z\)</span> (o de atributo de tipo continuo, si lo consideramos como tal) también puede dar lugar a un error cualitativo, como se muestra en la figura <a href="#figerrorcualitativoelevacion"> 22</a>.</p>
+<div class="figure align-center" id="figerrorcualitativoelevacion">
+<img alt="../../_images/Error_cualitativo_elevacion.pdf.png" src="../../_images/Error_cualitativo_elevacion.pdf.png" style="width: 650px;" />
+<p class="caption">Figura 22: MDE con valores reales (a). Dos MDE con errores posicionales en <span class="math">\(z\)</span> (b y c). En el caso c), el error no solo es cualitativo, sino también cuantitativo, ya que modifica la forma del terreno, pasando de ser una depresión a ser un pico.</p>
+</div>
+<p>En la figura, que representa una porción de un Modelo Digital de Elevaciones y dos variantes alternativas con sendos errores de medición de la elevación, en el primer caso, y pese a que el error es mayor (hay mayor discrepancia entre el valor real y el recogido en el MDE), no varía la configuración del terreno. En la celda central encontramos una depresión, ya que en ella la elevación es menor que en las circundantes, y esto sigue ocurriendo así a pesar de existir ese error posicional. En el segundo caso (subfigura c), sin embargo, el error es menor en magnitud, pero al ser de signo contrario hace que la depresión se convierta en un pico, una configuración del terreno exactamente inversa. Si estudiamos las formas del terreno en ese punto (un análisis que arroja resultados cualitativos), obtendremos un valor erróneo.</p>
+<p>Veremos más adelante que este tipo de errores son de gran importancia para muchos análisis, en particular para los relacionados con el comportamiento hidrológico del terreno, que estudiaremos en el capítulo <a class="reference internal" href="../../Procesos/Geomorfometria/Geomorfometria.html#geomorfometria"><em>Geomorfometría y análisis del terreno</em></a>.</p>
+<p>La forma en que los distintos tipos de errores aparecen en una capa es diferente en función del modelo de representación empleado, ya que cada uno de estos modelos tiene sus propias debilidades, y las fuentes de datos de las que pueden proceder son asimismo distintas.</p>
+<p>Así, los errores posicionales son más comunes en el caso de capas vectoriales, y una de las fuentes de error principal en este sentido son los procesos de digitalización, especialmente si son de tipo manual. Junto a los errores de digitalización que vimos en el capítulo <a class="reference internal" href="../Fuentes_datos/Fuentes_datos.html#fuentes-datos"><em>Fuentes principales de datos espaciales</em></a> (véase la  figura <a href="../Fuentes_datos/Fuentes_datos.html#figimprecisionesdigitalizacion"> 43</a>), existen otros que pueden aparecer al crear una capa vectorial, tales como los que se muestran en la figura <a href="#figerroresdigitalizacion"> 23</a> para el caso de digitalizar una línea.</p>
+<div class="figure align-center" id="figerroresdigitalizacion">
+<img alt="../../_images/Errores_digitalizacion.pdf.png" src="../../_images/Errores_digitalizacion.pdf.png" style="width: 650px;" />
+<p class="caption">Figura 23: Algunos errores que aparecen en la digitalización de lineas. a) Registro inexacto, b) puntos mal situados, c) desplazamientos por vértices insuficientes, d) errores de registro.</p>
+</div>
+<p>Con independencia de la pericia y experiencia de un operador, resulta imposible que sea capaz de reproducir exactamente el objeto original y trazar con el cursor de la tableta digitalizadora o el ratón todos los detalles de este con absoluta fidelidad. Entre los errores que pueden aparecer encontramos falsos nudos (intersecciones de una línea consigo misma que no existen en realidad), puntos situados fuera del objeto, coincidencia imperfecta entre polígonos o mala referenciación de la hoja al situarla sobre la tableta (en el proceso de registro).</p>
+<p>El problema principal en el caso de digitalizar líneas o polígonos (que pueden causar la aparición de mayor número de errores por su mayor complejidad) estriba en que aquello que se digitaliza es un conjunto infinito de puntos, y el proceso de digitalización solo puede recoger un número finito de ellos y después unirlos mediante segmentos rectilíneos.</p>
+<p>La componente temática de una capa vectorial también puede adolecer de errores, que derivan a su vez tanto del proceso de introducción de los mismos como de los procesos de medición mediante los que se ha obtenido el valor concreto.</p>
+<p>En el caso de capas ráster, sin embargo, existen algunas fuentes de error que tienen menor importancia, mientras que otras sí han de tenerse en cuenta por su relevancia. Por ejemplo, la introducción de la componente temática en una capa vectorial puede hacerse manualmente con el teclado, mientras que en el caso de una capa ráster los valores de las celdas no se introducen manualmente.</p>
+<p>Ello no significa que las capas ráster no presenten errores en sus valores, pero el origen de estos es diferente. Un error habitual aparece en capas con información categórica que proceden de la clasificación de imágenes aéreas o de satélite. Los procesos que clasifican cada píxel de la imagen en función de sus Niveles Digitales (los cuales veremos en el capítulo <a class="reference internal" href="../../Procesos/Estadistica_avanzada/Estadistica_avanzada.html#estadistica-avanzada"><em>Más estadística espacial</em></a>) introducen frecuentemente errores, y aparecen píxeles mal clasificados cuyo valor de clase no es correcto.</p>
+<p>Los errores posicionales se presentan de forma distinta a lo mostrado en la figura <a href="#figerroresdigitalizacion"> 23</a>. Las entidades tales como líneas van a tener una representación errónea debido a la resolución de la capa ráster, que no va a permitir registrar con fidelidad su forma real. Por otra parte, la georreferenciación de una imagen incorpora asimismo errores, que son equivalentes al error de registro en la digitalización vectorial. Este error va a ser distinto según las zonas de la imagen, ya que la distorsión que implica la transformación realizada no supone un error constante. Veremos estas funciones con más detalle también en el capítulo <a class="reference internal" href="../../Procesos/Imagenes/Imagenes.html#procesado-imagenes"><em>Procesado de imágenes</em></a>, donde se tratan los dos principales errores que afectan a las imágenes: errores geométricos y errores radiométricos (básicamente, errores posicionales y errores en los Niveles Digitales).</p>
+<p>Además de los errores de un único dato espacial (una capa de información), es importante considerar la forma en que los errores de distintos datos interactúan entre sí. En el trabajo con SIG es raro emplear una única capa, y lo más frecuente es trabajar con varias de ellas coordinadamente, cada una con sus respectivos errores. El modo en que esos errores se afectan entre sí puede condicionar la calidad de los resultados de forma similar a como los propios errores como tales lo hacen.</p>
+<p>Como muestra la figura <a href="#figsinergiaerrores"> 24</a>, dos errores sistemáticos de igual magnitud en sendas capas pueden tener efectos distintos sobre el resultado dependiendo de sus signos.</p>
+<div class="figure align-center" id="figsinergiaerrores">
+<img alt="../../_images/Sinergias_errores.pdf.png" src="../../_images/Sinergias_errores.pdf.png" style="width: 750px;" />
+<p class="caption">Figura 24: Un error <span class="math">\(e\)</span> pueden tener distintas consecuencias según interactúe con los errores de otros datos espaciales (<span class="math">\(e'\)</span>). En a) los errores casi se anulan, mientras que en b) se suman y dan lugar a un resultado erróneo. Los elementos en negro y gris indican la posición real.</p>
+</div>
+<p>En la figura, tanto la capa de puntos como la de polígonos presentan un error sistemático. No obstante, un análisis que cuente el número de puntos dentro del polígono seguirá dando el mismo resultado en uno de los casos, ya que la forma de los errores de ambas capas hace que estos no afecten a este análisis, mientras que en el otro caso el resultado es completamente distinto del real.</p>
+</div>
+</div>
+<div class="section" id="deteccion-y-medicion-de-errores">
+<h2>Detección y medición de errores<a class="headerlink" href="#deteccion-y-medicion-de-errores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora que conocemos las fuentes y tipos de error, la evaluación y tratamiento de este empieza por su localización para saber a qué elementos del dato espacial afecta. Existen diversas metodologías para <em>inspeccionar</em> un dato espacial en busca de errores, que van desde métodos sencillos y obvios hasta avanzadas técnicas con base estadística para detectar patrones particulares o elementos <em>sospechosos</em> de contener algún error.</p>
+<p>La forma más sencilla es la mera exploración visual. Algunos errores resultan obvios y una inspección sencilla permitirá localizarlos sin dificultad. Una coincidencia deficiente entre polígonos dejará un espacio en blanco que, si es de tamaño suficiente, puede ser localizado sencillamente en una exploración visual. De igual modo sucede con otro tipo de errores, en particular los errores de posición tales como los falsos nudos o la aparición de formas <em>ilógicas</em> (calles con ángulos muy bruscos, por ejemplo).</p>
+<p>Es importante en este sentido que la representación del dato espacial sobre la que se realiza la exploración visual sea clara y adecuada, para revelar de la forma más notoria posible las posibles deficiencias de este. En este libro se dedica una parte entera a la visualización y representación de la información espacial y, al contrario de lo que pueda pensarse, esta no es solo de importancia para la generación de resultados al final de un flujo de trabajo, sino desde su mismo inicio. El análisis visual de los datos de partida, así como otros procesos de análisis, pueden beneficiarse de una representación correcta.</p>
+<p>Existen errores que pueden detectarse visualmente, pero cuya detección (y corrección) puede automatizarse. Errores de este tipo son, por ejemplo, las conexiones imprecisas entre segmentos, que ya vimos en el capítulo <a class="reference internal" href="../Fuentes_datos/Fuentes_datos.html#fuentes-datos"><em>Fuentes principales de datos espaciales</em></a>. La función de <em>snapping</em> (ajuste por tolerancias), que se utiliza a la hora de digitalizar una capa vectorial, puede aplicarse <em>a posteriori</em>, una vez que la capa ya ha sido digitalizada. El SIG puede buscar esos enlaces imperfectos y convertirlos en enlaces correctos, resolviendo las uniones en las que exista una distancia entre vértices menor que una tolerancia preestablecida.</p>
+<p>Como sabemos, hay SIG que son capaces de manejar topología y otros que no. También hay formatos de archivo que pueden almacenar topología y otros que no están pensados para ello. Por esta razón, los SIG topológicos trabajan a menudo con datos sin topología, pero a partir de los cuales puede crearse esta, e implementan por ello las funciones para dicha creación de topología. Esta creación implica la corrección de errores topológicos que puedan existir en los datos originales, que no son relevantes en el caso de no trabajar con topología, y por ello pueden no haber sido detectados o eliminados. Errores como las antedichas falsas conexiones o los polígonos con adyacencia imperfecta, ambos se pueden corregir de forma automática, formando parte esas funciones de corrección de las rutinas de creación de topología.</p>
+<p>Otros errores no pueden detectarse visualmente, en muchos casos porque los motivos del error no se representan y no aparecen en la visualización. Errores topológicos relativos a las estructuras de datos empleadas para recoger dicha topología entran en este grupo. En muchos casos, pueden no obstante corregirse de forma automática a través de operaciones de <em>filtrado</em> y <em>limpieza</em>, que se encargan de controlar la coherencia topológica del dato.</p>
+<p>En el terreno de los atributos, la detección de errores puede llevarse a cabo empleando las técnicas estadísticas habituales. La detección de valores improbables (<em>outliers</em>) es uno de los procesos básicos. Estos <em>outliers</em> son observaciones dentro de un conjunto de datos que no parecen guardar consistencia con el resto del conjunto  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-barnett1995wiley">61</a><span class="citation">)</span></span> y cuya detección puede llevarse a cabo de modo analítico o bien de modo visual, representando gráficamente los valores de los atributos. En general, las metodologías se fundamentan en comparar los valores con una distribución teórica y detectar la discordancia con esa distribución. Formas automatizadas de detectar <em>outliers</em> pueden encontrarse en  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-lastoutliers">62</a><span class="citation">)</span></span>.</p>
+<p>Observaciones de este tipo, alejadas de las características generales del conjunto de datos, pueden derivar de medidas erróneas tales como las provocadas por un equipo de medición en mal estado, aunque también pueden representar valores correctos pero de carácter excepcional.</p>
+<p>Si se combina la componente espacial con la componente temática encontramos otro tipo de valores inusuales, los denominados <em>outliers espaciales</em>. Estos se definen como observaciones que son discordantes con las observaciones realizadas en su vecindad <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-lu2003ieee">63</a><span class="citation">)</span></span>. Este hecho tiene relación con el concepto de <em>autocorrelación espacial</em>, que veremos en detalle en el capítulo <a class="reference internal" href="../../Procesos/Analisis_espacial/Analisis_espacial.html#analisis-espacial"><em>Conceptos básicos para el análisis espacial</em></a>, y que expresa la idea lógica de que las mediciones cercanas deben tener valores similares .</p>
+<p>La diferencia entre un <em>outlier</em> en la componente temática y un <em>outlier</em> espacial es clara. Así, un valor de 10000 metros en elevación constituye siempre un valor excepcional, ya que va a encontrarse lejos de los valores medios recogidos, independientemente del lugar donde se hayan efectuado las mediciones. Un valor de 5000 metros puede constituir un <em>outlier</em> espacial en unas zonas (si tomamos medidas de elevación en, por ejemplo, Madrid, ya que será muy distinto del resto de elevaciones), pero puede ser un valor perfectamente lógico en otras zonas de estudio.</p>
+<p>La detección de este tipo de valores puede realizarse, al igual que en el caso no espacial, de forma analítica o bien mediante exploración visual.</p>
+<p>En base a lo anterior, existen una serie de procedimientos y metodologías para la detección de valores ilógicos en un juego de datos, los cuales se dividen de forma más genérica en dos grupos principales: unidimensionales y multidimensionales. Cuando en los multidimensionales la vecindad se define únicamente en función de la localización espacial y sin utilizar la componente temática, se tiene la detección de <em>outliers</em> espaciales. La figura <a href="#figdeteccionoutliers"> 25</a> muestra un esquema de esta clasificación y las metodologías más habituales. En  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-shekhard2003unified">64</a><span class="citation">)</span></span> puede encontrarse más información al respecto.</p>
+<div class="figure align-center" id="figdeteccionoutliers">
+<img alt="../../_images/Deteccion_outliers.pdf.png" src="../../_images/Deteccion_outliers.pdf.png" style="width: 650px;" />
+<p class="caption">Figura 25: Clasificación de métodos para la detección de observaciones inconsistentes <em>(outliers)</em></p>
+</div>
+<p>Una vez localizado el error, este puede cuantificarse de diversas formas, según sea la naturaleza de la variable sobre la que se produce dicho error.</p>
+<p>Los errores posicionales o los atributos no categóricos son variables de tipo cuantitativo. El <em>Error Medio Cuadrático</em> es la forma más habitual de medir esos errores. Su expresión es:</p>
+<div class="math">
+\[\mathrm{EMC}= \sqrt{\sum_{i=1}^N{\frac{(y_i - y_i')^2}{N}}}\]</div>
+<p>donde <span class="math">\(N\)</span> es el total de puntos en los que se comprueba el error, <span class="math">\(y\)</span> el valor real, e <span class="math">\(y'\)</span> el valor estimado. En esencia, se trata de una desviación típica, por lo cual se asume al emplear esta medida que los errores son aleatorios y se distribuyen normalmente.</p>
+<p>Otras medidas utilizadas son el <em>Error Medio</em>, el <em>Error Medio Absoluto</em> o el <em>Error Máximo</em>.</p>
+<p>Para valores cualitativos no puede aplicarse esta medida, y deben emplearse otros parámetros. La medida del número de valores que coinciden (elementos correctamente atribuidos) es una forma de determinar el error existente. El uso de la <em>matriz de confusión</em> es la forma más habitual de medir el error en la componente temática cuando esta es de tipo cualitativo. Veremos con más detalle su empleo y el de otras técnicas más complejas de similar propósito en el apartado <a class="reference internal" href="../../Procesos/Estadistica_avanzada/Estadistica_avanzada.html#validacion"><em>Validación</em></a>.</p>
+</div>
+<div class="section" id="propagacion-de-errores-y-modelacion-del-error">
+<h2>Propagación de errores y modelación del error<a class="headerlink" href="#propagacion-de-errores-y-modelacion-del-error" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El análisis de un dato espacial con errores va a dar un resultado que contiene a su vez errores, y existirá una relación directa entre los errores en el dato de partida y aquellos que aparecen en el dato resultante de su análisis. Este hecho se conoce como <em>propagación de errores</em>.</p>
+<p>La propagación de errores puede ser muy variable en función del tipo de error que aparezca y la clase de análisis que se lleve a cabo. Errores de gran magnitud en el dato original pueden no tener apenas efecto en el resultado, mientras que pequeños errores pueden causar grandes alteraciones en la calidad del resultado  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-hengl2008elsevier">65</a><span class="citation">)</span></span>.</p>
+<p>Una de las áreas en las que más se ha trabajado en el estudio de la propagación de errores es el trabajo con Modelos Digitales de Elevaciones. Como veremos en el capítulo <a class="reference internal" href="../../Procesos/Geomorfometria/Geomorfometria.html#geomorfometria"><em>Geomorfometría y análisis del terreno</em></a>, los MDE son un dato de primer orden, ya que resultan de utilidad en prácticamente cualquier tipo de proyecto SIG, y son muy numerosos los distintos parámetros que podemos derivar de ellos. Por esta razón, la propagación de errores es un asunto importante dentro del trabajo con un MDE, pues de él se van a obtener muchos datos nuevos, e interesa saber cómo la calidad de estos nuevos datos se va a ver afectada por la calidad del MDE de partida.</p>
+<p>El error principal que se estudia en este tipo de análisis en un MDE es el de los atributos, es decir, el de la elevación. Los datos empleados se basan en el modelo de representación ráster, ya que este es el más habitualmente empleado para los análisis de un MDE. No obstante, metodologías como la que veremos a continuación pueden aplicarse igualmente para la modelación de otros errores, tales como los errores posicionales en la digitalización de una capa vectorial.</p>
+<p>La metodología más extendida para la modelación de errores es la basada en simulaciones de Monte Carlo. El fundamento de este método es considerar un dato espacial dado (un MDE para el caso de este ejemplo) como una de las posibles <em>versiones</em> de la realidad que pueden existir con una magnitud de error concreta. Evaluando el error existente en un dato espacial y su distribución, y realizando simulaciones estocásticas en base a este, pueden obtenerse otras de esas <em>versiones</em> de la realidad. Posteriormente, puede realizarse el análisis no sobre el MDE con tal, sino sobre todo ese conjunto de datos derivados del MDE y su distribución de error.</p>
+<p>De este modo, se simula la presencia de error añadiendo ruido al MDE original, pero de una forma acorde con el propio error existente en el dato base. De las alternativas que se obtienen mediante estas simulaciones, ninguna de ellas tiene que ser necesariamente correcta y carente de errores  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-chrisman1989autocarto">66</a><span class="citation">)</span></span> (lo más probable es que ninguna lo sea), pero el conjunto define un intervalo probable en el cual se situarán los valores reales. Se modela así la incertidumbre existente en el dato y la forma en que esta se propaga a los datos derivados.</p>
+<p>En el caso del MDE propuesto, y para una operación dada a aplicar sobre este, la forma de proceder puede resumirse en los siguientes pasos  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-heuvelink1998taylor">60</a><span class="citation">)</span></span>:</p>
+<ul class="simple">
+<li>Estudiar la distribución del error en el MDE en base a un juego de datos de referencia (generalmente un conjunto de puntos con mediciones precisas). Para modelizar el error no basta simplemente medir este con un parámetro como el error medio cuadrático, sino analizar su distribución y calcular parámetros estadísticos en base al conjunto de todos los errores medidos. Si se asume una distribución normal de los errores, la media y la desviación típica son necesarias para definir esa distribución.</li>
+</ul>
+<blockquote>
+<div><p>Al igual que sucede con los datos en sí, los errores presentan una dependencia espacial. Esto es, cerca de un valor que presenta un gran error, aparecerán otros también con errores notables, y cerca de valores donde el error es pequeño, no existirán puntos muy erróneos. La autocorrelación espacial, que veremos con detalle más adelante en este libro, se presenta tanto en los datos como en los errores.</p>
+<p>Por esta razón, la modelación del error requerirá conocer otros elementos adicionales para definir correctamente su distribución, tales como semivariogramas o correlogramas (estudiaremos estos en detalle en el capítulo <a class="reference internal" href="../../Procesos/Estadistica_espacial/Estadistica_espacial.html#estadistica-espacial"><em>Estadísticas espaciales</em></a>, dedicado a la estadística espacial).</p>
+</div></blockquote>
+<ul class="simple">
+<li>Utilizando la distribución de los errores se generan un número <span class="math">\(n\)</span> de nuevos MDE. Para cada uno de ellos, se genera una capa aleatoria de errores que se ajusta a la distribución definida, y esta se suma al MDE original. De este modo, en lugar de una posible versión de la realidad, se tienen <span class="math">\(n\)</span> versiones. La existencia de dependencia espacial puede añadirse en este paso si no se considera en el anterior, mediante el procesado de las capas de error y la aplicación de filtros sobre estas.</li>
+<li>Se aplica la operación sobre cada una de las <span class="math">\(n\)</span> capas obtenidas.</li>
+<li>Se calculan parámetros estadísticos de los <span class="math">\(n\)</span> resultados obtenidos, a partir de los cuales puede crearse un resultado único. Por ejemplo, la media de los <span class="math">\(n\)</span> resultados obtenidos puede considerarse como valor resultante de la operación, en sustitución del que se obtendría aplicando esta únicamente al MDE original.</li>
+</ul>
+<p>En la figura <a href="#figesquemamontecarlo"> 26</a> se muestra un esquema gráfico de esta metodología.</p>
+<div class="figure align-center" id="figesquemamontecarlo">
+<img alt="../../_images/Esquema_MonteCarlo.pdf.png" src="../../_images/Esquema_MonteCarlo.pdf.png" style="width: 650px;" />
+<p class="caption">Figura 26: Esquema de la modelación de errores mediante simulaciones de Monte Carlo</p>
+</div>
+<p>Para ver con más claridad el efecto de este proceso, la figura <a href="#figsimulacionesmontecarlo"> 27</a> muestra respectivamente los resultados obtenidos a partir de un MDE, y la media de 20 y 50 simulaciones obtenidas según lo explicado anteriormente para el calculo de la curvatura horizontal (esté parámetro se explica en el capítulo <a class="reference internal" href="../../Procesos/Geomorfometria/Geomorfometria.html#geomorfometria"><em>Geomorfometría y análisis del terreno</em></a>).</p>
+<div class="figure align-center" id="figsimulacionesmontecarlo">
+<img alt="../../_images/Simulaciones_MonteCarlo.png" src="../../_images/Simulaciones_MonteCarlo.png" style="width: 650px;" />
+<p class="caption">Figura 27: Curvatura horizontal obtenida a partir del MDE original (a) o como media de 20 (b) y 50 simulaciones (c) de Monte Carlo (tomado de  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-hengl2008elsevier">65</a><span class="citation">)</span></span>)</p>
+</div>
+<p>Pese a su importancia, las herramientas para estos análisis no se implementan de forma habitual en los SIG, sino que deben llevarse a cabo utilizando funcionalidades individuales de análisis y programando los procesos repetitivos que son necesarios para calcular todas las capas derivadas empleadas. Por esta razón, es extraño que estos procesos se lleven a cabo en proyectos SIG de modo genérico. El usuario de SIG es consciente de los errores que presentan los datos espaciales con los que trabaja y las implicaciones de estos en lo que respecta a la calidad de datos, pero raramente desarrolla procesos de modelación de la incertidumbre, que quedan por el momento reservados para un ámbito más teórico que práctico.</p>
+</div>
+<div class="section" id="gestion-de-errores">
+<h2>Gestión de errores<a class="headerlink" href="#gestion-de-errores" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Conocidos los tipos de errores fundamentales que encontramos en los datos espaciales y la manera de medir estos y su propagación, deben formularse estrategias para tratar de reducir el error y definir metodologías que permitan obtener resultados más precisos dentro de un proyecto SIG.</p>
+<p>Estas estrategias dependen, como es lógico, del tipo de proyecto, sus objetivos, o el tipo de dato que se emplee para su desarrollo, pues estos factores van a condicionar directamente el tipo de errores que aparecen, y por tanto también la forma de controlar estos.</p>
+<p>Podemos dividir estas estrategias en dos grupos fundamentales:</p>
+<ul class="simple">
+<li>Utilización de datos de partida más precisos. Deben establecerse parámetros de calidad referidos a los datos con los que se trabaja, que permitan tener garantía de que estos están en condiciones de dar respuestas correctas a las cuestiones que planteemos en base a ellos.</li>
+<li>Minimización de los errores a lo largo del desarrollo del trabajo. No todas las operaciones que realizamos en un SIG implican la introducción de errores en la misma medida. La propagación del error puede controlarse si estructuramos adecuadamente los pasos a realizar, situando al final de la cadena de procesos aquellos que sean más propensos a generar errores o sobre los que se tenga más incertidumbre en cuanto a la calidad de los resultados que arrojan.</li>
+</ul>
+<p>Con independencia de la forma en que la gestión de errores se aborde, es importante que a la hora de trabajar con un SIG se tengan en cuenta ciertas ideas fundamentales con objeto de evitar la introducción de errores innecesarios. Algunas de estas ideas se enumeran seguidamente:</p>
+<ul class="simple">
+<li>La utilización de capas de distintos orígenes y en distintos formatos favorece la aparición de errores y puede dar lugar a resultados de precisión insuficiente  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-vitek1984pecora">67</a><span class="citation">)</span></span>.</li>
+<li>La precisión disminuye a medida que lo hace la resolución espacial  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-walsh1987pers">68</a><span class="citation">)</span></span>.</li>
+<li>La precisión de un resultado nunca sera superior a la del dato de entrada con peor precisión  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-newcomer1984tac">69</a><span class="citation">)</span></span>.</li>
+<li>Cuanto mayor es el número de capas empleadas para un análisis, mayores oportunidades existen de incorporar error a este e imprecisión a los resultados  <span class="citation">(<a class="reference internal" href="../../bibliografia.html#citation-newcomer1984tac">69</a><span class="citation">)</span></span>.</li>
+</ul>
+<p>Es igualmente importante recalcar el hecho de que los datos digitales con los que trabajamos en un SIG no son <em>per se</em> mejores que los datos analógicos en cuanto a su precisión y su falta de errores. Si bien existen muchas ventajas asociadas a los datos digitales, tal y como vimos en el capítulo <a class="reference internal" href="../Fuentes_datos/Fuentes_datos.html#fuentes-datos"><em>Fuentes principales de datos espaciales</em></a>, la precisión no ha de ser necesariamente una de ellas, o al menos no como para poder asumir que su naturaleza digital implica que un dato es de calidad suficiente. En ocasiones, los usuarios de SIG pueden olvidar esto y trabajar bajo unas suposiciones incorrectas, introduciendo errores en sus resultados y no siendo conscientes de ello.</p>
+<p>La importancia de los metadatos es grande en este sentido, ya que la cartografía impresa habitualmente contiene información acerca de su calidad y su precisión, pero al trabajar con una capa en un SIG, esa información la contienen los metadatos. Mientras que en un mapa impreso no podemos separar el mapa en sí de esa información, en el contexto de capas de un SIG estas se encuentran formalmente separadas, hasta tal punto que la práctica más habitual es trabajar con capas sin metadatos o, de existir estos, no emplearse como parte importante de los propios datos.</p>
+</div>
+<div class="section" id="resumen">
+<h2>Resumen<a class="headerlink" href="#resumen" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Pese a no haber sido una preocupación importante en los comienzos de los SIG, la calidad de los datos geográficos es hoy en día un aspecto clave para el trabajo con SIG. Las etapas fundamentales relativas a la calidad de los datos son la identificación de la fuente de error, su detección y medición, su modelación y, por último, la gestión de dicho error.</p>
+<p>Las fuentes de error principales son las deficiencias de los datos originales, los errores conceptuales, los derivados de los procesos de digitalización y los introducidos en la realización de procesos con los datos. Estas fuentes introducen errores de posicionamiento, errores en los atributos asociados o de coherencia topológica, entre otros. Estas son algunas de las denominadas <em>componentes de la calidad</em>, entre las que también encontramos la procedencia de los datos o la validez temporal de los datos.</p>
+<p>Los errores aparecen de forma distinta en función de las características de los datos, en particular del modelo de representación elegido.</p>
+<p>Detectar los errores puede realizarse de forma visual o bien de forma analítica, pudiendo automatizarse en este segundo caso. El error medio cuadrático es la medida más habitual del error en el caso de variables cuantitativas, mientras que la matriz de confusión es empleada para variables cualitativas.</p>
+<p>Modelar el error y su propagación puede emplearse para conocer de forma más adecuada la validez de los resultados obtenidos a partir de un dato espacial. La realización de simulaciones condicionales mediante el método de Monte Carlo es la técnica más habitual para la modelación de errores.</p>
+<p>Por último, es importante ser consciente de los errores que contienen los datos y de la posible aparición de estos a medida que realizamos tareas con ellos, con objeto de minimizar dicha aparición y limitar la presencia e influencia de los errores en los resultados finales.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Contenidos</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">La calidad de los datos espaciales</a><ul>
+<li><a class="reference internal" href="#introduccion">Introducción</a></li>
+<li><a class="reference internal" href="#la-importancia-de-la-calidad-de-los-datos">La importancia de la calidad de los datos</a></li>
+<li><a class="reference internal" href="#conceptos-y-definiciones-sobre-calidad-de-datos">Conceptos y definiciones sobre calidad de datos</a></li>
+<li><a class="reference internal" href="#fuentes-y-tipos-de-errores">Fuentes y tipos de errores</a><ul>
+<li><a class="reference internal" href="#las-componentes-de-la-calidad">Las componentes de la calidad</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deteccion-y-medicion-de-errores">Detección y medición de errores</a></li>
+<li><a class="reference internal" href="#propagacion-de-errores-y-modelacion-del-error">Propagación de errores y modelación del error</a></li>
+<li><a class="reference internal" href="#gestion-de-errores">Gestión de errores</a></li>
+<li><a class="reference internal" href="#resumen">Resumen</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Tema anterior</h4>
+  <p class="topless"><a href="../Fuentes_datos/Fuentes_datos.html"
+                        title="Capítulo anterior">Fuentes principales de datos espaciales</a></p>
+  <h4>Próximo tema</h4>
+  <p class="topless"><a href="../Bases_datos/Bases_datos.html"
+                        title="Próximo capítulo">Bases de datos</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Búsqueda rápida</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir a" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="right" >
+          <a href="../Bases_datos/Bases_datos.html" title="Bases de datos"
+             >siguiente</a> |</li>
+        <li class="right" >
+          <a href="../Fuentes_datos/Fuentes_datos.html" title="Fuentes principales de datos espaciales"
+             >anterior</a> |</li>
+        <li><a href="../../index.html">Sistemas de Información Geográfica 1.0 documentation</a> &raquo;</li>
+          <li><a href="../Datos.html" >Los datos</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>
