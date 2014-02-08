@@ -269,6 +269,8 @@ Veremos en los siguientes puntos las diferentes modificaciones que pueden introd
 
 Puede apreciarse igualmente en la figura que se producen distorsiones al realizar la proyección. Es decir, que ciertas propiedades no se reproducen con fidelidad al pasar puntos desde la superficie curva al plano. Por ejemplo, la distancia entre los puntos :math:`A` y :math:`B` no es igual a la existente entre los puntos :math:`a` y :math:`b`. Con independencia de las características propias de la proyección, siempre existen distorsiones. Esto es así debido a que la esfera, como se ha dicho, no es desarrollable, mientras que el plano sí lo es, y por ello en el paso de coordenadas de uno a otra han de aparecen inevitablemente alteraciones.
 
+.. _tiposproyecciones:
+
 Tipos de proyecciones
 ----------------------
 

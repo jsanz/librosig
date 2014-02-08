@@ -259,7 +259,7 @@ Este tipo de modelos, además, permiten no solo aprovechar mejor la estructura e
 .. figure:: Celda_modelo_distribuido.*
 	:width: 650px
 
-	Caracterización de cada celda como una unidad independiente desde el punto de vista de sus características físicas. La base para el desarrollo de modelos distribuidos reside fuertemente en esta consideración (Adaptado de  :cite:p:`Wigmosta1999WRR)`
+	Caracterización de cada celda como una unidad independiente desde el punto de vista de sus características físicas. La base para el desarrollo de modelos distribuidos reside fuertemente en esta consideración (Adaptado de  :cite:p:`Wigmosta1999WRR`)
 
 
 
@@ -330,7 +330,7 @@ Detalles sobre los fundamentos de uno de estos modelos pueden encontrarse en  :c
 
 En general, el conjunto de herramientas necesarias para llevar a cabo todas las operaciones descritas en esta sección no se encuentra implementado de forma completa en un SIG. Las funcionalidades básicas que permiten trabajar con las capas de partida, en la mayoría de los casos sencillas operaciones del álgebra de mapas, sí se encuentran dentro de la práctica totalidad de los SIG (al menos en aquellos con un cierto soporte para datos ráster). Las formulaciones relativas al análisis hidrológico y, especialmente, el análisis hidráulico, se encuentran,  no obstante, mucho más desarrolladas en aplicaciones externas sin componente SIG. Lo habitual en esta situación es alimentar estas aplicaciones con datos procedentes del SIG, no siendo posible llevar a cabo dentro de dicho SIG también los procesos de modelización.
 
-Algunos modelos hidrológicos no excesivamente complejos tales como el ya citado TOPMODEL se encuentran implementados en ciertos SIG \footnote{Por ejemplo, de entre los SIG libres que se detallan en el anexo :ref:`Panorama_actual`, SAGA y GRASS lo implementan}, o bien existen interfaces para emplear estos modelos desde el propio SIG. El modelo SWAT (Soil And Water Assesment Tool)  :cite:p:`Arnold1998JAWRA` es otro de los modelos que podemos encontrar implementados en un SIG  :cite:p:`webSWAT`.
+Algunos modelos hidrológicos no excesivamente complejos tales como el ya citado TOPMODEL se encuentran implementados en ciertos SIG, o bien existen interfaces para emplear estos modelos desde el propio SIG. El modelo SWAT (Soil And Water Assesment Tool)  :cite:p:`Arnold1998JAWRA` es otro de los modelos que podemos encontrar implementados en un SIG  :cite:p:`webSWAT`.
 
 La utilización de los resultados de estos modelos para alimentar los procesos de modelización hidráulica no se realiza, sin embargo, dentro de un SIG. El empleo de los resultados hidrológicos tales como hidrogramas de tormenta se ha de llevar a cabo en aplicaciones de modelización hidráulica diseñadas a tal efecto, generalmente sin componente SIG alguna. 
 
@@ -617,7 +617,7 @@ Una tecnología de gran importancia tanto para la detección como para el seguim
 
 Los fundamentos principales del uso de imágenes de satélite para detección de incendios residen en el análisis de la información que estas pueden ofrecer acerca de la temperatura del terreno. Especialmente relevante para esta tarea es la banda del infrarrojo térmico, pues las emisiones debidas a la temperatura del cuerpo se presentan en la longitud de onda correspondiente a dicha banda. Este planteamiento ha sido desarrollado abundantemente :cite:p:`Chuvieco1990PEARS`, :cite:p:`Ellyett1974RSE`, y su aplicación ha demostrado la gran utilidad de las imágenes de satélite para estas tareas. El uso de la banda del infrarrojo medio también es otra posibilidad  :cite:p:`Robinson1991IJRS`, aunque menos habitual.
 
-Aunque puede utilizarse cualquier sensor cuyos productos incluyan una banda en la zona del infrarrojo térmico, es particularmente popular el uso del sensor AVHRR, cuya banda 3 (3,55--3,93:math:`\mu`m) es adecuada para este tipo de análisis.
+Aunque puede utilizarse cualquier sensor cuyos productos incluyan una banda en la zona del infrarrojo térmico, es particularmente popular el uso del sensor AVHRR, cuya banda 3 (3,55--3,93 :math:`\mu`m) es adecuada para este tipo de análisis.
 
 La clasificación de los píxeles en función de la temperatura extraída de la banda del infrarrojo térmico arroja, no obstante, falsos positivos en muchos casos, e indica como píxeles incendiados algunos que no lo son. Para filtrar los resultados, pueden aplicarse formulaciones adicionales como el análisis de los píxeles vecinos tanto en la propia banda del infrarrojo térmico como en otras.
 

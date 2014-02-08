@@ -24,7 +24,7 @@ Entrada y salida de datos
 
 Ya sabemos que los datos son una parte imprescindible de un SIG, y sin ellos no puede desarrollarse actividad con una aplicación SIG. Por esta razón, todas estas aplicaciones deben obligatoriamente implementar capacidades para leer datos y, opcionalmente, para guardarlos. Esta ultima es necesaria en el caso en que el SIG pueda generar nuevos datos geográficos (nuevas capas), pero no en aquellas aplicaciones sin capacidades de análisis o edición, donde su empleo no ha de crear nuevos datos.
 
-Pese a ser de tal importancia, la implementación de las capacidades de entrada y salida es muy variable en unos u otros SIG. Una razón por la que esto sucede es el gran número de formatos de fichero distintos, la cual no favorece la interoperabilidad, como ya vimos en el capítulo :ref:`Fuentes_datos`. Así, cada SIG es capaz de abrir unos u otros formatos de archivo, y mientras que algunos tratan a todos ellos por igual, ciertas aplicaciones [#fn1]_ trabajan en un formato propio con carácter nativo, y son capaces de incorporar datos en otros formatos a través de extensiones o funciones de conversión entre estos y el formato particular del programa.
+Pese a ser de tal importancia, la implementación de las capacidades de entrada y salida es muy variable en unos u otros SIG. Una razón por la que esto sucede es el gran número de formatos de fichero distintos, la cual no favorece la interoperabilidad, como ya vimos en el capítulo :ref:`Fuentes_datos`. Así, cada SIG es capaz de abrir unos u otros formatos de archivo, y mientras que algunos tratan a todos ellos por igual, ciertas aplicaciones trabajan en un formato propio con carácter nativo, y son capaces de incorporar datos en otros formatos a través de extensiones o funciones de conversión entre estos y el formato particular del programa.
 
 La existencia de librerías y componentes de acceso a datos en los que las aplicaciones SIG de escritorio pueden apoyarse mejora la conectividad entre estas y aporta cierta homogeneidad en este aspecto.
 
@@ -171,7 +171,7 @@ Aunque las tareas de edición más habituales son las relacionadas con la edici�
 
 Las herramientas destinadas a la edición de entidades geométricas heredan sus características de los programas de diseño asistido por ordenador (CAD), cuya funcionalidad principal es precisamente la edición de elementos gráficos. Estas incluyen la adición o eliminación de nuevas geometrías, la modificación de ellas editando sus puntos (recordemos que toda entidad vectorial se reduce a un conjunto de puntos en última instancia), así como otras operaciones geométricas básicas. En la sección :ref:`Digitalizacion_manual` vimos algunas de ellas a la hora de tratar la calidad de la digitalización en pantalla.
 
-Otras funciones de edición que encontramos son las que permiten simplificar algunas tareas, tales como la división de un polígono. La figura  :num:`#figdivisionpoligono` muestra cómo un polígono puede dividirse en dos simplemente trazando una línea divisoria.  Otras funcionalidades similares incluyen la eliminación automática de polígonos espúreos (véase :ref:`Poligonosespureos`), o el ajuste automático entre entidades.
+Otras funciones de edición que encontramos son las que permiten simplificar algunas tareas, tales como la división de un polígono. La figura  :num:`#figdivisionpoligono` muestra cómo un polígono puede dividirse en dos simplemente trazando una línea divisoria.  Otras funcionalidades similares incluyen la eliminación automática de polígonos espúreos (véase :ref:`poligonos_espureos`), o el ajuste automático entre entidades.
 
 .. _figdivisionpoligono:
 
@@ -320,5 +320,4 @@ En función del grado de desarrollo e implementación en que las anteriores func
 
 .. rubric:: Footnotes
 
-.. [#fn1] Como, por ejemplo, ILWIS o SAGA, que veremos en el anexo :ref:`Panorama_actual`
 .. [#fn2] Básicamente, estos servicios van a permitir acceder a datos geográficos que no están en nuestro ordenador, del mismo modo que accedemos a textos o imágenes a través de un navegador Web

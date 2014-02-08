@@ -251,9 +251,6 @@ Existe un amplio conjunto de herramientas que facilitan la labor de creación de
 
 
 
-En el anexo :ref:`Panorama_actual` veremos ejemplos de algunas de las principales herramientas existentes para el trabajo con metadatos.
-
-
 Algunos ejemplos
 =====================================================
 
